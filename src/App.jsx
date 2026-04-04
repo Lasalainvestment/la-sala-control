@@ -1,0 +1,1089 @@
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
+
+// ─── Pre-loaded data extracted from POS receipts (Miércoles 01 Abril 2026) ───
+const PRELOADED_CUADRES = [
+  {
+    date: "2026-04-01", venta_total: 2355000,
+    estanco: 593000, cocteles: 972600, pizzeria: 789400, otros_venta: 0,
+    efectivo: 0, tarjeta: 1747000, otros_pago: 608000,
+    pizza_80: 631520, gastos: 453000, nomina: 155000,
+    neto_sala: 1115480, faltante: 0,
+  },
+  {
+    date: "2026-04-02", venta_total: 3212600,
+    estanco: 721000, cocteles: 1660000, pizzeria: 831600, otros_venta: 0,
+    efectivo: 0, tarjeta: 2330000, otros_pago: 882600,
+    pizza_80: 665280, gastos: 727600, nomina: 155000,
+    neto_sala: 1664720, faltante: 0,
+  },
+  {
+    date: "2026-04-03", venta_total: 2414200,
+    estanco: 564000, cocteles: 1037000, pizzeria: 813200, otros_venta: 0,
+    efectivo: 3000, tarjeta: 1834800, otros_pago: 576400,
+    pizza_80: 650560, gastos: 301400, nomina: 275000,
+    neto_sala: 1187240, faltante: 0,
+  }
+];
+
+const PRELOADED_COCINA = [
+  {
+    date: "2026-04-01", total: 789400, total_units: 26,
+    productos: [
+      { nombre: "HB DE POLLO", cantidad: 5, valor: 185000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 5, valor: 66000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 3, valor: 95400 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 2, valor: 79200 },
+      { nombre: "PT AL CAMPO JR", cantidad: 2, valor: 64800 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ ESPANOLA MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "PZ CARNAVAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
+    ]
+  },
+  {
+    date: "2026-04-02", total: 831600, total_units: 23,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 4, valor: 127200 },
+      { nombre: "LASAGNA MIXTA", cantidad: 2, valor: 86000 },
+      { nombre: "PZ AB ESPECIAL GR", cantidad: 2, valor: 134400 },
+      { nombre: "PT ALFREDO RG", cantidad: 2, valor: 76800 },
+      { nombre: "PT CARBONARA RG", cantidad: 2, valor: 76800 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 2, valor: 22000 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "PT AL CAMPO RG", cantidad: 1, valor: 40200 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ MARGARITA MED", cantidad: 1, valor: 36000 },
+      { nombre: "LASAGNA VEGETARIANA", cantidad: 1, valor: 36000 },
+      { nombre: "PZ HONGOS Y HUERTOS PQ", cantidad: 1, valor: 32400 },
+      { nombre: "NACHOS CLASICOS", cantidad: 1, valor: 31800 },
+      { nombre: "PT BOLOGNESA RG", cantidad: 1, valor: 38400 },
+    ]
+  },
+  {
+    date: "2026-04-03", total: 813200, total_units: 24,
+    productos: [
+      { nombre: "PT CARBONARA RG", cantidad: 2, valor: 76800 },
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 2, valor: 108000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 3, valor: 33000 },
+      { nombre: "PZ DE LA CASA GR", cantidad: 1, valor: 66000 },
+      { nombre: "PZ AB CARNES GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ MARGARITA PQ", cantidad: 1, valor: 30000 },
+      { nombre: "PZ CARNAVAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "PT ALFREDO RG", cantidad: 1, valor: 38400 },
+      { nombre: "PT BOLOGNESA RG", cantidad: 1, valor: 38400 },
+      { nombre: "PT POLLO BECHAMEL JR", cantidad: 1, valor: 31200 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
+      { nombre: "ENSALADA MEDITERRANEA", cantidad: 1, valor: 34000 },
+      { nombre: "NACHOS CLASICOS", cantidad: 1, valor: 31800 },
+    ]
+  }
+];
+
+const PRELOADED_INVENTARIOS = [
+  {
+    date: "2026-04-01", tipo: "inicial",
+    items: [
+      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:8},{nombre:"AGTE BOTELLA CAUCANO",saldo:1},{nombre:"AGTE BOTELLA REAL",saldo:1},
+      {nombre:"AGTE MEDIA ANTIOQUENO",saldo:5},{nombre:"AGTE MEDIA CAUCANO",saldo:2},{nombre:"AGUA TONICA",saldo:26},
+      {nombre:"AMARETO",saldo:3},{nombre:"CACHAZA",saldo:1},{nombre:"CERVEZA CORONA",saldo:3},
+      {nombre:"CERVEZA NACIONAL",saldo:31},{nombre:"CHICLETS",saldo:204},{nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINI",saldo:3},{nombre:"ELECTROLIT",saldo:1},{nombre:"ENCENDEDOR",saldo:2},
+      {nombre:"GASEOSA 1.5",saldo:45},{nombre:"GINEBRA BOTELLA",saldo:19},{nombre:"GINEBRA DL",saldo:1},
+      {nombre:"GINEBRA ML",saldo:5},{nombre:"LICOR DE CAFE",saldo:2},{nombre:"LICOR DE MENTA",saldo:10},
+      {nombre:"RON CALDAS BOT",saldo:7},{nombre:"RON CALDAS MED",saldo:2},{nombre:"RON DL",saldo:1},
+      {nombre:"TEQUILA BOTELLA",saldo:1},{nombre:"TEQUILA MEDIA",saldo:1},{nombre:"TRIPLE SEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:2},{nombre:"VINO CASILLERO BOTELLA",saldo:2},
+      {nombre:"WHISKY BUCHANANS BOTEL",saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",saldo:1},{nombre:"WHISKY OLD PAR MEDIA",saldo:1},
+    ]
+  },
+  {
+    date: "2026-04-01", tipo: "final",
+    items: [
+      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:8},{nombre:"AGTE BOTELLA CAUCANO",entrada:3,saldo:1},
+      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:1},
+      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:3},{nombre:"AGUA",entrada:6,saldo:7},
+      {nombre:"AGUA TONICA",entrada:0,saldo:21},{nombre:"AMARETO",entrada:0,saldo:3},
+      {nombre:"CACHAZA",entrada:0,saldo:1},{nombre:"CAJA DE VINO",entrada:0,saldo:0},
+      {nombre:"CERVEZA CORONA",entrada:0,saldo:2},{nombre:"CERVEZA IMPORTADA",entrada:0,saldo:0},
+      {nombre:"CERVEZA NACIONAL",entrada:0,saldo:28},{nombre:"CHICLETS",entrada:0,saldo:190},
+      {nombre:"CURAZAO AZUL",entrada:0,saldo:1},{nombre:"DRY MARTINI",entrada:0,saldo:3},
+      {nombre:"ELECTROLIT",entrada:0,saldo:1},{nombre:"ENCENDEDOR",entrada:0,saldo:2},
+      {nombre:"GASEOSA 1.5",entrada:78,saldo:113},{nombre:"GINEBRA BOTELLA",entrada:0,saldo:19},
+      {nombre:"GINEBRA DL",entrada:0,saldo:1},{nombre:"GINEBRA ML",entrada:0,saldo:5},
+      {nombre:"LICOR DE CAFE",entrada:4,saldo:5},{nombre:"LICOR DE MENTA",entrada:0,saldo:14},
+      {nombre:"RON CALDAS BOT",entrada:0,saldo:7},{nombre:"RON CALDAS MED",entrada:0,saldo:2},
+      {nombre:"RON DL",entrada:0,saldo:1},{nombre:"TEQUILA BOTELLA",entrada:5,saldo:5},
+      {nombre:"TEQUILA LITRO",entrada:1,saldo:2},{nombre:"TEQUILA ML",entrada:8,saldo:6},
+      {nombre:"TRIPLE SEC",entrada:0,saldo:1},{nombre:"VINO BOTELLA",entrada:1,saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:2},{nombre:"VODKA DL",entrada:5,saldo:5},
+      {nombre:"WHISKY BUCHANANS BOTEL",entrada:0,saldo:1},{nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},
+      {nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
+    ]
+  },
+  {
+    date: "2026-04-02", tipo: "inicial",
+    items: [
+      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:8},{nombre:"AGTE BOTELLA CAUCANO",saldo:1},{nombre:"AGTE BOTELLA REAL",saldo:1},
+      {nombre:"AGTE MEDIA ANTIOQUENO",saldo:3},{nombre:"AGTE MEDIA CAUCANO",saldo:7},
+      {nombre:"AGUA",saldo:21},{nombre:"AGUA TONICA",saldo:3},{nombre:"AMARETO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},{nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:0},{nombre:"CERVEZA IMPORTADA",saldo:0},
+      {nombre:"CERVEZA NACIONAL",saldo:28},{nombre:"CHICLETS",saldo:190},
+      {nombre:"CREMA DE WHISKY",saldo:1},{nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINI",saldo:1},{nombre:"ELECTROLIT",saldo:2},{nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:113},{nombre:"GASEOSA 1.5",saldo:19},
+      {nombre:"GINEBRA BOTELLA",saldo:1},{nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},{nombre:"LICOR DE CAFE",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:0},{nombre:"LICOR DE MENTA",saldo:14},
+      {nombre:"RED BULL",saldo:0},{nombre:"RON CALDAS BOT",saldo:7},
+      {nombre:"RON CALDAS MED",saldo:2},{nombre:"RON DL",saldo:1},
+      {nombre:"TEQUILA BOTELLA",saldo:5},{nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:0},{nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLE SEC",saldo:6},{nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:2},
+      {nombre:"VODKA ABSOLUT BOTELLA",saldo:0},{nombre:"VODKA ABSOLUT MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:5},{nombre:"WHISKY BUCHANANS BOTEL",saldo:1},
+      {nombre:"WHISKY BUCHANANS MEDIA",saldo:0},{nombre:"WHISKY COCT",saldo:0},
+      {nombre:"WHISKY OLD PAR BOTELLA",saldo:0},{nombre:"WHISKY OLD PAR MEDIA",saldo:1},
+    ]
+  },
+  {
+    date: "2026-04-02", tipo: "final",
+    items: [
+      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:7},{nombre:"AGTE BOTELLA CAUCANO",entrada:4,saldo:4},
+      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:3},
+      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:7},
+      {nombre:"AGUA",entrada:0,saldo:20},{nombre:"AGUA TONICA",entrada:0,saldo:2},
+      {nombre:"AMARETO",entrada:0,saldo:0},{nombre:"CACHAZA",entrada:0,saldo:0},
+      {nombre:"CAJA DE VINO",entrada:0,saldo:2},{nombre:"CERVEZA CORONA",entrada:0,saldo:0},
+      {nombre:"CERVEZA IMPORTADA",entrada:0,saldo:26},{nombre:"CERVEZA NACIONAL",entrada:29,saldo:161},
+      {nombre:"CHICLETS",entrada:0,saldo:0},
+      {nombre:"CREMA DE WHISKY",entrada:0,saldo:0},{nombre:"CURAZAO AZUL",entrada:0,saldo:3},
+      {nombre:"DRY MARTINI",entrada:0,saldo:1},{nombre:"ELECTROLIT",entrada:0,saldo:2},
+      {nombre:"ENCENDEDOR",entrada:0,saldo:0},{nombre:"GASEOSA",entrada:0,saldo:88},
+      {nombre:"GASEOSA 1.5",entrada:0,saldo:19},{nombre:"GINEBRA BOTELLA",entrada:0,saldo:1},
+      {nombre:"GINEBRA DL",entrada:0,saldo:5},{nombre:"GINEBRA ML",entrada:0,saldo:4},
+      {nombre:"LICOR DE CAFE",entrada:0,saldo:0},{nombre:"LICOR DE MANZANA",entrada:2,saldo:12},
+      {nombre:"LICOR DE MENTA",entrada:0,saldo:0},{nombre:"RED BULL",entrada:0,saldo:7},
+      {nombre:"RON CALDAS BOT",entrada:0,saldo:2},{nombre:"RON CALDAS MED",entrada:0,saldo:1},
+      {nombre:"RON DL",entrada:0,saldo:2},{nombre:"TEQUILA BOTELLA",entrada:0,saldo:2},
+      {nombre:"TEQUILA LITRO",entrada:0,saldo:0},{nombre:"TEQUILA MEDIA",entrada:0,saldo:1},
+      {nombre:"TEQUILA ML",entrada:0,saldo:4},{nombre:"TRIPLE SEC",entrada:4,saldo:2},
+      {nombre:"VINO BOTELLA",entrada:0,saldo:1},{nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:0},
+      {nombre:"VODKA ABSOLUT BOTELLA",entrada:0,saldo:0},{nombre:"VODKA ABSOLUT MEDIA",entrada:0,saldo:3},
+      {nombre:"VODKA DL",entrada:0,saldo:3},{nombre:"WHISKY BUCHANANS BOTEL",entrada:0,saldo:1},
+      {nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:0},{nombre:"WHISKY COCT",entrada:4,saldo:2},
+      {nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
+    ]
+  },
+  {
+    date: "2026-04-03", tipo: "inicial",
+    items: [
+      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:7},{nombre:"AGTE BOTELLA CAUCANO",saldo:4},
+      {nombre:"AGTE BOTELLA REAL",saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",saldo:3},
+      {nombre:"AGTE MEDIA CAUCANO",saldo:7},{nombre:"AGUA",saldo:20},
+      {nombre:"AGUA TONICA",saldo:2},{nombre:"CERVEZA CORONA",saldo:0},
+      {nombre:"CERVEZA IMPORTADA",saldo:26},{nombre:"CERVEZA NACIONAL",saldo:161},
+      {nombre:"CREMA DE WHISKY",saldo:1},{nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINI",saldo:1},{nombre:"ELECTROLIT",saldo:2},
+      {nombre:"GASEOSA",saldo:88},{nombre:"GASEOSA 1.5",saldo:19},
+      {nombre:"GINEBRA BOTELLA",saldo:1},{nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:4},{nombre:"LICOR DE CAFE",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:12},{nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},{nombre:"RON CALDAS BOT",saldo:2},
+      {nombre:"RON CALDAS MED",saldo:1},{nombre:"RON DL",saldo:2},
+      {nombre:"TEQUILA BOTELLA",saldo:2},{nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:4},{nombre:"TRIPLE SEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:1},{nombre:"VODKA DL",saldo:3},
+      {nombre:"WHISKY BUCHANANS MEDIA",saldo:1},{nombre:"WHISKY COCT",saldo:2},
+      {nombre:"WHISKY OLD PAR BOTELLA",saldo:1},{nombre:"WHISKY OLD PAR MEDIA",saldo:1},
+    ]
+  },
+  {
+    date: "2026-04-03", tipo: "final",
+    items: [
+      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:7},{nombre:"AGTE BOTELLA CAUCANO",entrada:0,saldo:4},
+      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:2},
+      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:7},{nombre:"AGUA",entrada:0,saldo:13},
+      {nombre:"AGUA TONICA",entrada:0,saldo:2},{nombre:"CERVEZA CORONA",entrada:18,saldo:16},
+      {nombre:"CERVEZA IMPORTADA",entrada:6,saldo:31},{nombre:"CERVEZA NACIONAL",entrada:0,saldo:143},
+      {nombre:"CREMA DE WHISKY",entrada:0,saldo:1},{nombre:"CURAZAO AZUL",entrada:0,saldo:3},
+      {nombre:"DRY MARTINI",entrada:0,saldo:1},{nombre:"ELECTROLIT",entrada:0,saldo:0},
+      {nombre:"GASEOSA",entrada:18,saldo:83},{nombre:"GASEOSA 1.5",entrada:0,saldo:18},
+      {nombre:"GINEBRA BOTELLA",entrada:0,saldo:1},{nombre:"GINEBRA DL",entrada:0,saldo:5},
+      {nombre:"GINEBRA ML",entrada:0,saldo:3},{nombre:"LICOR DE CAFE",entrada:0,saldo:0},
+      {nombre:"LICOR DE MANZANA",entrada:0,saldo:11},{nombre:"LICOR DE MENTA",entrada:0,saldo:0},
+      {nombre:"RED BULL",entrada:0,saldo:7},{nombre:"RON CALDAS BOT",entrada:0,saldo:2},
+      {nombre:"RON CALDAS MED",entrada:0,saldo:1},{nombre:"RON DL",entrada:5,saldo:6},
+      {nombre:"TEQUILA BOTELLA",entrada:0,saldo:1},{nombre:"TEQUILA LITRO",entrada:0,saldo:0},
+      {nombre:"TEQUILA MEDIA",entrada:0,saldo:1},{nombre:"TEQUILA ML",entrada:0,saldo:3},
+      {nombre:"TRIPLE SEC",entrada:0,saldo:1},{nombre:"VINO BOTELLA",entrada:1,saldo:1},
+      {nombre:"VODKA DL",entrada:5,saldo:7},{nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},
+      {nombre:"WHISKY COCT",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},
+      {nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
+    ]
+  }
+];
+
+const PRELOADED_GASTOS = [
+  {
+    date: "2026-04-01", total: 453000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "Servilletas, azúcar, jugo Valle, bolsas, trapero, escoba", categoria: "Insumos", valor: 42000 },
+      { concepto: "1 canasta soda + domicilio", categoria: "Bebidas", valor: 75000 },
+      { concepto: "7 bolsas hielo", categoria: "Hielo", valor: 55000 },
+      { concepto: "Mermeladas, manzana, piña, mango, agraz, six leche, toalla cocina", categoria: "Frutas/Insumos", valor: 146000 },
+      { concepto: "Limón x bulto", categoria: "Frutas", valor: 90000 },
+      { concepto: "Medio x limón", categoria: "Frutas", valor: 40000 },
+    ]
+  },
+  {
+    date: "2026-04-02", total: 727600,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "1 bulto limón", categoria: "Frutas", valor: 100000 },
+      { concepto: "Cereza, 6 crema leche, 1 paq mentas", categoria: "Insumos", valor: 274000 },
+      { concepto: "4 six Stella + 3 six Heineken", categoria: "Bebidas/Licor", valor: 144000 },
+      { concepto: "1 vino caja + 1 vino botella", categoria: "Bebidas/Licor", valor: 46000 },
+      { concepto: "1 domicilio L.Jr", categoria: "Domicilios", valor: 5000 },
+      { concepto: "1 licor Don Luis (faltante)", categoria: "Bebidas/Licor", valor: 37000 },
+      { concepto: "1 AGT Botella", categoria: "Bebidas/Licor", valor: 55000 },
+      { concepto: "Jugo mandarina, mermeladas, 3 servilletas, 2 paño absorbente, toalla cocina", categoria: "Insumos", valor: 46600 },
+      { concepto: "2 domicilios L.Jr", categoria: "Domicilios", valor: 10000 },
+    ]
+  },
+  {
+    date: "2026-04-03", total: 301400,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "Gomas frozen, surtidas (5pq), 2 cabo madera, 2 manzanas verdes, 1 manzanas rojas, 3 toallas absorbentes", categoria: "Insumos", valor: 61400 },
+      { concepto: "4 bolsas hielo + domicilio", categoria: "Hielo", valor: 50000 },
+      { concepto: "1 canasta Poker + 1 six Corona", categoria: "Bebidas/Licor", valor: 80000 },
+      { concepto: "1 juego tubería, orinal, 2 cinta teflón, pegante", categoria: "Mantenimiento", valor: 50000 },
+      { concepto: "4 bolsas hielo", categoria: "Hielo", valor: 50000 },
+    ]
+  }
+];
+
+// ─── Storage ───
+const SK = { c:"sala5c", i:"sala5i", k:"sala5k", g:"sala5g" };
+
+// ─── Helpers ───
+const fmt=n=>{if(!n&&n!==0)return"$0";const a=Math.abs(n);if(a>=1e6)return`$${(n/1e6).toFixed(1)}M`;if(a>=1e3)return`$${(n/1e3).toFixed(0)}K`;return`$${n}`;};
+const fmtF=n=>"$"+Math.round(n||0).toLocaleString("es-CO");
+const pct=(a,b)=>b?`${((a/b)*100).toFixed(1)}%`:"—";
+const DAYS=["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+const MO=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+const fmtD=d=>{const t=new Date(d+"T12:00:00");return`${DAYS[t.getDay()]} ${t.getDate()} ${MO[t.getMonth()]} ${t.getFullYear()}`;};
+
+const C={bg:"#0c0b09",card:"#161412",bdr:"#2a2520",
+  gold:"#c9943e",goldDim:"#7a5d28",
+  green:"#34d399",greenDim:"#064e3b",red:"#f87171",redDim:"#7f1d1d",
+  blue:"#60a5fa",purple:"#a78bfa",orange:"#fb923c",pink:"#f472b6",cyan:"#22d3ee",
+  text:"#e8e0d4",dim:"#8a7e70",muted:"#5c554a"};
+const PIE=[C.gold,C.cyan,C.orange,C.purple,C.pink,C.blue,C.green];
+
+const Card=({children,style,accent})=><div style={{background:C.card,borderRadius:14,border:`1px solid ${C.bdr}`,padding:18,marginBottom:14,...(accent?{borderLeft:`3px solid ${accent}`}:{}),...style}}>{children}</div>;
+const Sec=({children,color})=><div style={{fontSize:13,color:color||C.dim,textTransform:"uppercase",letterSpacing:1.2,marginBottom:12,fontWeight:700}}>{children}</div>;
+
+export default function App(){
+  const [cuadres,setCuadres]=useState([]);
+  const [inventarios,setInventarios]=useState([]);
+  const [cocinaData,setCocinaData]=useState([]);
+  const [gastosData,setGastosData]=useState([]);
+  const [view,setView]=useState("dashboard");
+  const [selDate,setSelDate]=useState("2026-04-03");
+  const [loading,setLoading]=useState(true);
+
+  useEffect(()=>{
+    (async()=>{
+      try{
+        const [sc,si,sk,sg]=await Promise.all([
+          window.storage.get(SK.c).catch(()=>null),window.storage.get(SK.i).catch(()=>null),
+          window.storage.get(SK.k).catch(()=>null),window.storage.get(SK.g).catch(()=>null),
+        ]);
+        const merge=(st,pre,kf)=>{const s=st?.value?JSON.parse(st.value):[];const ks=new Set(s.map(kf));return[...s,...pre.filter(p=>!ks.has(kf(p)))].sort((a,b)=>(a.date||"").localeCompare(b.date||""));};
+        setCuadres(merge(sc,PRELOADED_CUADRES,c=>c.date));
+        setInventarios(merge(si,PRELOADED_INVENTARIOS,i=>`${i.date}_${i.tipo}`));
+        setCocinaData(merge(sk,PRELOADED_COCINA,k=>k.date));
+        setGastosData(merge(sg,PRELOADED_GASTOS,g=>g.date));
+      }catch{
+        setCuadres([...PRELOADED_CUADRES]);setInventarios([...PRELOADED_INVENTARIOS]);
+        setCocinaData([...PRELOADED_COCINA]);setGastosData([...PRELOADED_GASTOS]);
+      }
+      setLoading(false);
+    })();
+  },[]);
+
+  const c=useMemo(()=>cuadres.find(x=>x.date===selDate),[cuadres,selDate]);
+  const ini=useMemo(()=>inventarios.find(x=>x.date===selDate&&x.tipo==="inicial"),[inventarios,selDate]);
+  const fin=useMemo(()=>inventarios.find(x=>x.date===selDate&&x.tipo==="final"),[inventarios,selDate]);
+  const coc=useMemo(()=>cocinaData.find(x=>x.date===selDate),[cocinaData,selDate]);
+  const gas=useMemo(()=>gastosData.find(x=>x.date===selDate),[gastosData,selDate]);
+
+  const invCross=useMemo(()=>{
+    if(!ini||!fin) return null;
+    const diffs=[];
+    fin.items.forEach(f=>{
+      const i=ini.items.find(x=>x.nombre===f.nombre);
+      const sI=i?.saldo||0;const sF=f.saldo||0;const ent=f.entrada||0;
+      const consumo=sI+ent-sF;
+      if(consumo>0||ent>0) diffs.push({nombre:f.nombre,ini:sI,ent,fin:sF,consumo});
+    });
+    return diffs.sort((a,b)=>b.consumo-a.consumo);
+  },[ini,fin]);
+
+  const dates=useMemo(()=>{
+    const s=new Set([...cuadres.map(x=>x.date),...cocinaData.map(x=>x.date),...gastosData.map(x=>x.date)]);
+    return[...s].sort().reverse();
+  },[cuadres,cocinaData,gastosData]);
+
+  if(loading) return <div style={{background:C.bg,minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{color:C.gold,fontFamily:"'Poppins',sans-serif",fontSize:24}}>Cargando...</div></div>;
+
+  const tabs=[{id:"dashboard",l:"Dashboard",i:"📊"},{id:"invdash",l:"Inv. Control",i:"🔄"},{id:"resumen",l:"Día",i:"◉"},{id:"cocina",l:"Cocina",i:"🍕"},{id:"inventario",l:"Inventario",i:"📦"},{id:"gastos",l:"Gastos",i:"📋"}];
+
+  return(
+    <div style={{background:C.bg,minHeight:"100vh",fontFamily:"'Poppins',sans-serif",color:C.text}}>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+      <header style={{background:`linear-gradient(180deg,${C.card} 0%,${C.bg} 100%)`,borderBottom:`1px solid ${C.bdr}`,padding:"14px 16px",position:"sticky",top:0,zIndex:50}}>
+        <div style={{maxWidth:920,margin:"0 auto"}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
+            <div>
+              <h1 style={{fontFamily:"'Poppins',sans-serif",fontSize:24,color:C.gold,margin:0}}>La Sala</h1>
+              <p style={{fontSize:13,color:C.dim,margin:"2px 0 0",letterSpacing:1.5,textTransform:"uppercase"}}>Control de ventas · Abril 2026</p>
+            </div>
+          </div>
+          <div style={{display:"flex",gap:4,overflowX:"auto"}}>
+            {tabs.map(t=><button key={t.id} onClick={()=>setView(t.id)} style={{
+              background:view===t.id?C.gold:"transparent",color:view===t.id?C.bg:C.dim,
+              border:`1px solid ${view===t.id?C.gold:C.bdr}`,borderRadius:8,padding:"9px 14px",
+              cursor:"pointer",fontSize:13,fontWeight:600,fontFamily:"inherit",whiteSpace:"nowrap"
+            }}><span style={{marginRight:4}}>{t.i}</span>{t.l}</button>)}
+          </div>
+        </div>
+      </header>
+
+      {view!=="dashboard"&&view!=="invdash"&&<div style={{maxWidth:920,margin:"0 auto",padding:"10px 16px",display:"flex",gap:6,overflowX:"auto",alignItems:"center"}}>
+        <span style={{fontSize:14,color:C.dim,letterSpacing:1,textTransform:"uppercase",whiteSpace:"nowrap"}}>Día:</span>
+        {dates.map(d=><button key={d} onClick={()=>setSelDate(d)} style={{
+          background:selDate===d?C.goldDim+"50":"transparent",color:selDate===d?C.gold:C.muted,
+          border:`1px solid ${selDate===d?C.goldDim:"transparent"}`,borderRadius:6,padding:"6px 12px",
+          cursor:"pointer",fontSize:13,fontWeight:500,fontFamily:"inherit",whiteSpace:"nowrap"
+        }}>{fmtD(d)}</button>)}
+      </div>}
+
+      <div style={{maxWidth:920,margin:"0 auto",padding:"0 16px 60px"}}>
+        {view==="dashboard"&&<DashboardGeneral cuadres={cuadres} cocina={cocinaData} gastos={gastosData} inventarios={inventarios}/>}
+        {view==="invdash"&&<InventarioDashboard inventarios={inventarios} cuadres={cuadres}/>}
+        {view==="resumen"&&<Resumen c={c} coc={coc} gas={gas} cross={invCross} date={selDate}/>}
+        {view==="cocina"&&<Cocina coc={coc} date={selDate}/>}
+        {view==="inventario"&&<Inventario cross={invCross} ini={ini} fin={fin} date={selDate}/>}
+        {view==="gastos"&&<Gastos gas={gas} date={selDate}/>}
+      </div>
+    </div>
+  );
+}
+
+// ─── Dashboard General (Consolidado + Meta) ───
+function DashboardGeneral({cuadres,cocina,gastos,inventarios}){
+  const META=40000000;
+  const DIAS_MES=30;
+
+  if(cuadres.length===0) return <div style={{textAlign:"center",padding:60,color:C.dim}}><div style={{fontSize:52,marginBottom:14}}>📊</div><p style={{fontSize:20,fontWeight:600}}>Sin datos aún</p><p style={{fontSize:14}}>Envía las fotos del POS a Claude para registrar</p></div>;
+
+  const tot=cuadres.reduce((a,c)=>{
+    a.venta+=c.venta_total;a.estanco+=c.estanco||0;a.cocteles+=c.cocteles||0;
+    a.pizza+=c.pizzeria||0;a.efectivo+=c.efectivo;a.tarjeta+=c.tarjeta;
+    a.otros+=(c.otros_pago||0);a.p80+=c.pizza_80;a.gastos+=c.gastos;
+    a.nomina+=c.nomina;a.neto+=c.neto_sala||0;
+    return a;
+  },{venta:0,estanco:0,cocteles:0,pizza:0,efectivo:0,tarjeta:0,otros:0,p80:0,gastos:0,nomina:0,neto:0});
+
+  const totalGastos=tot.p80+tot.gastos+tot.nomina;
+  const avgDay=tot.venta/cuadres.length;
+  const proyeccion=avgDay*DIAS_MES;
+  const pctMeta=tot.venta/META;
+  const diasRestantes=DIAS_MES-cuadres.length;
+  const faltaMeta=META-tot.venta;
+  const necesitaDia=diasRestantes>0?faltaMeta/diasRestantes:0;
+  const barPct=tot.venta?(tot.estanco+tot.cocteles)/tot.venta:0;
+  const margenPct=tot.venta?(tot.neto/tot.venta):0;
+
+  const best=cuadres.reduce((a,b)=>a.venta_total>b.venta_total?a:b);
+  const worst=cuadres.reduce((a,b)=>a.venta_total<b.venta_total?a:b);
+
+  const chartData=cuadres.map(c=>{
+    const vt=c.venta_total||1;
+    return{
+      d:fmtD(c.date).split(" ").slice(0,2).join(" "),
+      venta:c.venta_total,estanco:c.estanco||0,cocteles:c.cocteles||0,pizza:c.pizzeria||0,
+      neto:c.neto_sala||0,
+      pctEst:((c.estanco||0)/vt*100).toFixed(1),
+      pctCoc:((c.cocteles||0)/vt*100).toFixed(1),
+      pctPiz:((c.pizzeria||0)/vt*100).toFixed(1),
+    };
+  });
+
+  let acum=0;
+  const acumData=cuadres.map((c,i)=>{
+    acum+=c.venta_total;
+    return{d:fmtD(c.date).split(" ").slice(0,2).join(" "),real:acum,meta:META/DIAS_MES*(i+1)};
+  });
+
+  // Top kitchen
+  const topK={};
+  cocina.forEach(d=>(d.productos||[]).forEach(p=>{
+    if(!topK[p.nombre])topK[p.nombre]={nombre:p.nombre,qty:0,total:0};
+    topK[p.nombre].qty+=p.cantidad||0;topK[p.nombre].total+=p.valor||0;
+  }));
+  const topKList=Object.values(topK).sort((a,b)=>b.qty-a.qty).slice(0,10);
+
+  // Top licores/cocteles from inventory consumption
+  const invConsumo=useMemo(()=>{
+    const prods={};
+    const finals=inventarios.filter(i=>i.tipo==="final");
+    finals.forEach(fin=>{
+      const ini=inventarios.find(i=>i.date===fin.date&&i.tipo==="inicial");
+      if(!ini)return;
+      fin.items.forEach(f=>{
+        const iItem=ini.items.find(x=>x.nombre===f.nombre);
+        const sI=iItem?.saldo||0;const ent=f.entrada||0;const sF=f.saldo||0;
+        const consumo=sI+ent-sF;
+        if(consumo>0){
+          if(!prods[f.nombre])prods[f.nombre]={nombre:f.nombre,total:0,days:0};
+          prods[f.nombre].total+=consumo;prods[f.nombre].days++;
+        }
+      });
+    });
+    return Object.values(prods).sort((a,b)=>b.total-a.total);
+  },[inventarios]);
+
+  // Classify inventory products
+  const licorCats=useMemo(()=>{
+    const cocteles=["GINEBRA","VODKA","RON","TEQUILA","WHISKY","LICOR","CURAZAO","DRY MARTINI","TRIPLE SEC","CACHAZA","AMARETO","CREMA DE WHISKY"];
+    const cervezas=["CERVEZA","CORONA"];
+    const mixers=["GASEOSA","AGUA TONICA","RED BULL","ELECTROLIT","AGUA"];
+    const classify=(name)=>{
+      const u=name.toUpperCase();
+      if(cervezas.some(c=>u.includes(c)))return"Cervezas";
+      if(cocteles.some(c=>u.includes(c)))return"Licores/Cocteles";
+      if(mixers.some(c=>u.includes(c)))return"Mixers/Bebidas";
+      if(u.includes("AGTE"))return"Aguardiente";
+      if(u.includes("VINO"))return"Vinos";
+      return"Otros";
+    };
+    const cats={};
+    invConsumo.forEach(p=>{
+      const cat=classify(p.nombre);
+      if(!cats[cat])cats[cat]=[];
+      cats[cat].push(p);
+    });
+    return cats;
+  },[invConsumo]);
+
+  // Gastos by category
+  const expCats={};
+  gastos.forEach(d=>(d.items||[]).forEach(it=>{
+    const cat=it.categoria||"Varios";
+    expCats[cat]=(expCats[cat]||0)+(it.valor||0);
+  }));
+  const expList=Object.entries(expCats).sort((a,b)=>b[1]-a[1]).map(([name,value],i)=>({name,value,fill:PIE[i%PIE.length]}));
+
+  // Day of week
+  const dowData=[0,1,2,3,4,5,6].map(dow=>{
+    const de=cuadres.filter(c=>new Date(c.date+"T12:00:00").getDay()===dow);
+    return{day:["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"][dow],avg:de.length?de.reduce((s,c)=>s+c.venta_total,0)/de.length:0,count:de.length};
+  });
+
+  const metaColor=pctMeta>=1?C.green:pctMeta>=0.5?"#fbbf24":C.red;
+  const proyColor=proyeccion>=META?C.green:proyeccion>=META*0.85?"#fbbf24":C.red;
+
+  // Custom tooltip with percentages
+  const DailyTooltip=({active,payload,label})=>{
+    if(!active||!payload?.length)return null;
+    const d=payload[0]?.payload;
+    return(<div style={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:10,padding:"10px 14px",fontSize:12}}>
+      <div style={{color:C.gold,fontWeight:700,marginBottom:6,fontSize:14}}>{label}</div>
+      <div style={{marginBottom:4}}>Total: <strong style={{color:C.text}}>{fmtF(d?.venta)}</strong></div>
+      <div style={{color:C.gold}}>Estanco: {fmtF(d?.estanco)} <span style={{color:C.muted}}>({d?.pctEst}%)</span></div>
+      <div style={{color:C.cyan}}>Cocteles: {fmtF(d?.cocteles)} <span style={{color:C.muted}}>({d?.pctCoc}%)</span></div>
+      <div style={{color:C.orange}}>Pizzería: {fmtF(d?.pizza)} <span style={{color:C.muted}}>({d?.pctPiz}%)</span></div>
+      <div style={{marginTop:4,paddingTop:4,borderTop:`1px solid ${C.bdr}`,color:d?.neto>=0?C.green:C.red}}>Neto: {fmtF(d?.neto)}</div>
+    </div>);
+  };
+
+  // Ranking renderer
+  const RankList=({items,color,unit})=>(
+    <div>{items.map((p,i)=>{
+      const mx=items[0]?.total||items[0]?.qty||1;
+      const val=p.total||p.qty;
+      return(<div key={i} style={{marginBottom:5}}>
+        <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:2}}>
+          <span><span style={{color:i<3?C.gold:C.dim,fontWeight:700,marginRight:6}}>{i+1}.</span>{p.nombre}</span>
+          <span style={{color,fontWeight:600}}>{val} {unit||"uds"}</span>
+        </div>
+        <div style={{background:C.bdr,borderRadius:3,height:5}}>
+          <div style={{background:color,height:"100%",width:`${(val/mx)*100}%`,borderRadius:3}}/>
+        </div>
+      </div>);
+    })}</div>
+  );
+
+  return(<div>
+    {/* ═══ META MENSUAL ═══ */}
+    <Card style={{background:`linear-gradient(135deg,${C.card} 0%,#1a1510 100%)`,padding:22,marginBottom:16}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14}}>
+        <div>
+          <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Meta abril</div>
+          <div style={{fontSize:32,fontWeight:800,color:C.gold,marginTop:4}}>{fmtF(META)}</div>
+        </div>
+        <div style={{textAlign:"right"}}>
+          <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Avance</div>
+          <div style={{fontSize:32,fontWeight:800,color:metaColor,marginTop:4}}>{(pctMeta*100).toFixed(1)}%</div>
+        </div>
+      </div>
+      <div style={{background:C.bdr,borderRadius:10,height:22,overflow:"hidden",marginBottom:10,position:"relative"}}>
+        <div style={{background:`linear-gradient(90deg,${C.goldDim},${C.gold})`,height:"100%",width:`${Math.min(pctMeta*100,100)}%`,borderRadius:10,transition:"width 0.8s ease"}}/>
+        <div style={{position:"absolute",top:0,left:0,right:0,bottom:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:700,color:"#fff"}}>{fmtF(tot.venta)} / {fmtF(META)}</div>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:10}}>
+        <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",textAlign:"center"}}>
+          <div style={{fontSize:11,color:C.dim,marginBottom:3}}>Faltan</div>
+          <div style={{fontSize:17,fontWeight:700,color:faltaMeta>0?C.gold:C.green}}>{faltaMeta>0?fmtF(faltaMeta):"✓ CUMPLIDA"}</div>
+        </div>
+        <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",textAlign:"center"}}>
+          <div style={{fontSize:11,color:C.dim,marginBottom:3}}>Necesita/día</div>
+          <div style={{fontSize:17,fontWeight:700,color:necesitaDia<=avgDay?C.green:necesitaDia<=avgDay*1.3?"#fbbf24":C.red}}>{diasRestantes>0?fmtF(necesitaDia):"—"}</div>
+        </div>
+        <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",textAlign:"center"}}>
+          <div style={{fontSize:11,color:C.dim,marginBottom:3}}>Proyección</div>
+          <div style={{fontSize:17,fontWeight:700,color:proyColor}}>{fmtF(proyeccion)}</div>
+        </div>
+      </div>
+      <div style={{marginTop:10,padding:"8px 12px",background:(proyeccion>=META?C.green:C.red)+"15",borderRadius:8,fontSize:13,color:proyeccion>=META?C.green:C.red,textAlign:"center",fontWeight:600}}>
+        {proyeccion>=META
+          ?`✓ Al ritmo actual (${fmtF(avgDay)}/día) se proyecta superar la meta por ${fmtF(proyeccion-META)}`
+          :`⚠ Al ritmo actual (${fmtF(avgDay)}/día) faltarían ${fmtF(META-proyeccion)} — necesita subir a ${fmtF(necesitaDia)}/día`}
+      </div>
+    </Card>
+
+    {/* ═══ KPIs ═══ */}
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(140px,1fr))",gap:10,marginBottom:14}}>
+      {[
+        {l:"Venta acumulada",v:fmtF(tot.venta),s:`${cuadres.length} días`,c:C.gold},
+        {l:"Promedio diario",v:fmtF(avgDay),s:`meta: ${fmtF(META/DIAS_MES)}/día`,c:avgDay>=META/DIAS_MES?C.green:"#fbbf24"},
+        {l:"Estanco",v:fmtF(tot.estanco),s:pct(tot.estanco,tot.venta),c:C.gold},
+        {l:"Cocteles",v:fmtF(tot.cocteles),s:pct(tot.cocteles,tot.venta),c:C.cyan},
+        {l:"Pizzería",v:fmtF(tot.pizza),s:pct(tot.pizza,tot.venta),c:C.orange},
+        {l:"Neto La Sala",v:fmtF(tot.neto),s:`margen ${(margenPct*100).toFixed(1)}%`,c:tot.neto>=0?C.green:C.red},
+      ].map((k,i)=>(
+        <Card key={i} accent={k.c} style={{padding:"13px 14px",marginBottom:0}}>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:.7,fontWeight:600,marginBottom:4}}>{k.l}</div>
+          <div style={{fontSize:18,fontWeight:700,color:k.c}}>{k.v}</div>
+          <div style={{fontSize:11,color:C.muted,marginTop:2}}>{k.s}</div>
+        </Card>
+      ))}
+    </div>
+
+    {/* ═══ ACUMULADO VS META ═══ */}
+    <Card>
+      <Sec>Acumulado vs meta ideal</Sec>
+      <ResponsiveContainer width="100%" height={220}>
+        <AreaChart data={acumData}>
+          <defs><linearGradient id="gAcum" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={C.gold} stopOpacity={0.3}/><stop offset="95%" stopColor={C.gold} stopOpacity={0}/></linearGradient></defs>
+          <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
+          <XAxis dataKey="d" tick={{fill:C.muted,fontSize:11}} axisLine={{stroke:C.bdr}}/>
+          <YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}} tickFormatter={fmt}/>
+          <Tooltip formatter={v=>fmtF(v)} contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
+          <Area type="monotone" dataKey="meta" name="Meta ideal" stroke={C.dim} strokeDasharray="5 5" fill="none" strokeWidth={1.5}/>
+          <Area type="monotone" dataKey="real" name="Venta real" stroke={C.gold} fill="url(#gAcum)" strokeWidth={2.5}/>
+        </AreaChart>
+      </ResponsiveContainer>
+    </Card>
+
+    {/* ═══ VENTA DIARIA CON % EN TOOLTIP ═══ */}
+    <Card>
+      <Sec>Venta diaria por categoría</Sec>
+      <ResponsiveContainer width="100%" height={200}>
+        <BarChart data={chartData}>
+          <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
+          <XAxis dataKey="d" tick={{fill:C.muted,fontSize:11}} axisLine={{stroke:C.bdr}}/>
+          <YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}} tickFormatter={fmt}/>
+          <Tooltip content={<DailyTooltip/>}/>
+          <Bar dataKey="estanco" name="Estanco" stackId="a" fill={C.gold}/>
+          <Bar dataKey="cocteles" name="Cocteles" stackId="a" fill={C.cyan}/>
+          <Bar dataKey="pizza" name="Pizzería" stackId="a" fill={C.orange} radius={[4,4,0,0]}/>
+        </BarChart>
+      </ResponsiveContainer>
+    </Card>
+
+    {/* ═══ BAR VS COCINA + PAGOS ═══ */}
+    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+      <Card>
+        <Sec>Bar vs cocina</Sec>
+        <div style={{display:"flex",height:28,borderRadius:8,overflow:"hidden",marginBottom:8}}>
+          <div style={{width:`${barPct*100}%`,background:`linear-gradient(90deg,${C.gold},${C.cyan})`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:700,color:C.bg}}>{(barPct*100).toFixed(0)}%</div>
+          <div style={{flex:1,background:C.orange,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:700,color:C.bg}}>{((1-barPct)*100).toFixed(0)}%</div>
+        </div>
+        <div style={{fontSize:12,color:C.dim}}>Bar: {fmtF(tot.estanco+tot.cocteles)} · Cocina: {fmtF(tot.pizza)}</div>
+        <div style={{marginTop:6,fontSize:12,padding:"5px 8px",background:(barPct>=.6?C.green:C.red)+"15",borderRadius:6,color:barPct>=.6?C.green:C.red}}>
+          {barPct>=.6?"✓ Bar lidera — alineado":"⚠ Cocina pesa más de lo esperado"}
+        </div>
+      </Card>
+      <Card>
+        <Sec>Métodos de pago</Sec>
+        {[{n:"Tarjeta",v:tot.tarjeta,c:C.blue},{n:"Nequi/Otros",v:tot.otros,c:C.purple},{n:"Efectivo",v:tot.efectivo,c:C.green}].map((p,i)=>(
+          <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:`1px solid ${C.bdr}`,fontSize:13}}>
+            <span style={{color:C.dim}}>{p.n}</span>
+            <span style={{color:p.c,fontWeight:600}}>{fmtF(p.v)} <span style={{fontSize:11,color:C.muted}}>({pct(p.v,tot.venta)})</span></span>
+          </div>
+        ))}
+      </Card>
+    </div>
+
+    {/* ═══ TOP LICORES / COCTELES / CERVEZAS (del inventario) ═══ */}
+    {invConsumo.length>0&&<>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+        {licorCats["Licores/Cocteles"]&&licorCats["Licores/Cocteles"].length>0&&<Card>
+          <Sec color={C.cyan}>🍸 Top licores / cocteles</Sec>
+          <RankList items={licorCats["Licores/Cocteles"].slice(0,8)} color={C.cyan} unit="uds"/>
+        </Card>}
+        {licorCats["Aguardiente"]&&licorCats["Aguardiente"].length>0&&<Card>
+          <Sec color={C.gold}>🥃 Aguardiente</Sec>
+          <RankList items={licorCats["Aguardiente"].slice(0,6)} color={C.gold} unit="uds"/>
+        </Card>}
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+        {licorCats["Cervezas"]&&licorCats["Cervezas"].length>0&&<Card>
+          <Sec color={"#fbbf24"}>🍺 Cervezas</Sec>
+          <RankList items={licorCats["Cervezas"].slice(0,6)} color={"#fbbf24"} unit="uds"/>
+        </Card>}
+        {licorCats["Mixers/Bebidas"]&&licorCats["Mixers/Bebidas"].length>0&&<Card>
+          <Sec color={C.blue}>🧊 Mixers / Bebidas</Sec>
+          <RankList items={licorCats["Mixers/Bebidas"].slice(0,6)} color={C.blue} unit="uds"/>
+        </Card>}
+      </div>
+      {licorCats["Vinos"]&&licorCats["Vinos"].length>0&&<Card>
+        <Sec color={C.purple}>🍷 Vinos</Sec>
+        <RankList items={licorCats["Vinos"].slice(0,6)} color={C.purple} unit="uds"/>
+      </Card>}
+    </>}
+
+    {/* ═══ TOP PRODUCTOS COCINA ═══ */}
+    {topKList.length>0&&<Card>
+      <Sec color={C.orange}>🍕 Top productos cocina — acumulado mes</Sec>
+      {topKList.map((p,i)=>{
+        const mx=topKList[0]?.qty||1;
+        return(<div key={i} style={{marginBottom:5}}>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:2}}>
+            <span><span style={{color:i<3?C.gold:C.dim,fontWeight:700,marginRight:6}}>{i+1}.</span>{p.nombre}</span>
+            <span><span style={{color:C.orange,fontWeight:600}}>{p.qty} uds</span> <span style={{color:C.muted,marginLeft:6}}>{fmtF(p.total)}</span></span>
+          </div>
+          <div style={{background:C.bdr,borderRadius:3,height:5}}>
+            <div style={{background:C.orange,height:"100%",width:`${(p.qty/mx)*100}%`,borderRadius:3}}/>
+          </div>
+        </div>);
+      })}
+    </Card>}
+
+    {/* ═══ GASTOS ═══ */}
+    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+      <Card>
+        <Sec color={C.red}>Desglose gastos operativos</Sec>
+        {[{n:"Pizza 80%",v:tot.p80,c:C.orange},{n:"Gastos operativos",v:tot.gastos,c:C.red},{n:"Nómina",v:tot.nomina,c:C.purple}].map((e,i)=>(
+          <div key={i} style={{marginBottom:8}}>
+            <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:3}}><span>{e.n}</span><span style={{color:e.c,fontWeight:600}}>{fmtF(e.v)}</span></div>
+            <div style={{background:C.bdr,borderRadius:3,height:6}}><div style={{background:e.c,height:"100%",width:`${totalGastos?(e.v/totalGastos)*100:0}%`,borderRadius:3}}/></div>
+          </div>
+        ))}
+        <div style={{display:"flex",justifyContent:"space-between",fontSize:14,fontWeight:700,paddingTop:8,borderTop:`1px solid ${C.bdr}`}}><span>Total</span><span style={{color:C.red}}>{fmtF(totalGastos)}</span></div>
+      </Card>
+      {expList.length>0&&<Card>
+        <Sec color={C.red}>Gastos por categoría</Sec>
+        <ResponsiveContainer width="100%" height={140}>
+          <PieChart><Pie data={expList} cx="50%" cy="50%" outerRadius={55} innerRadius={25} dataKey="value" paddingAngle={2}>
+            {expList.map((e,i)=><Cell key={i} fill={e.fill}/>)}
+          </Pie><Tooltip formatter={v=>fmtF(v)}/></PieChart>
+        </ResponsiveContainer>
+        <div style={{display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center"}}>{expList.map((e,i)=><span key={i} style={{fontSize:10,color:e.fill}}>● {e.name}</span>)}</div>
+      </Card>}
+    </div>
+
+    {/* ═══ PATRÓN SEMANAL ═══ */}
+    {cuadres.length>=3&&<Card>
+      <Sec>Venta promedio por día de la semana</Sec>
+      <ResponsiveContainer width="100%" height={160}>
+        <BarChart data={dowData.filter(d=>d.count>0)}>
+          <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/><XAxis dataKey="day" tick={{fill:C.muted,fontSize:12}} axisLine={{stroke:C.bdr}}/><YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}} tickFormatter={fmt}/>
+          <Tooltip formatter={v=>fmtF(v)} contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
+          <Bar dataKey="avg" name="Promedio" fill={C.gold} radius={[6,6,0,0]}/>
+        </BarChart>
+      </ResponsiveContainer>
+    </Card>}
+
+    {/* ═══ MEJOR / PEOR ═══ */}
+    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+      <Card accent={C.green}><div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:.8,fontWeight:600}}>Mejor día</div><div style={{fontSize:20,fontWeight:700,color:C.green,marginTop:4}}>{fmtF(best.venta_total)}</div><div style={{fontSize:13,color:C.muted}}>{fmtD(best.date)}</div><div style={{fontSize:12,color:C.dim,marginTop:2}}>Neto: {fmtF(best.neto_sala)}</div></Card>
+      <Card accent={C.red}><div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:.8,fontWeight:600}}>Día más bajo</div><div style={{fontSize:20,fontWeight:700,color:C.red,marginTop:4}}>{fmtF(worst.venta_total)}</div><div style={{fontSize:13,color:C.muted}}>{fmtD(worst.date)}</div><div style={{fontSize:12,color:C.dim,marginTop:2}}>Neto: {fmtF(worst.neto_sala)}</div></Card>
+    </div>
+
+    {/* ═══ HISTORIAL ═══ */}
+    <Card>
+      <Sec>Historial día a día</Sec>
+      {[...cuadres].reverse().map(c=>{
+        const bp=c.venta_total?(c.estanco+c.cocteles)/c.venta_total:0;
+        return(<div key={c.date} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 0",borderBottom:`1px solid ${C.bdr}`}}>
+          <div><div style={{fontSize:14,fontWeight:600,color:C.gold}}>{fmtD(c.date)}</div><div style={{fontSize:12,color:C.dim,marginTop:2}}>Est {fmtF(c.estanco)} · Coct {fmtF(c.cocteles)} · Pizza {fmtF(c.pizzeria)}</div></div>
+          <div style={{textAlign:"right"}}><div style={{fontSize:16,fontWeight:700,color:C.text}}>{fmtF(c.venta_total)}</div><div style={{fontSize:13,fontWeight:600,color:c.neto_sala>=0?C.green:C.red}}>Neto {fmtF(c.neto_sala)}</div></div>
+        </div>);
+      })}
+    </Card>
+  </div>);
+}
+
+// ─── Inventario Dashboard ───
+function InventarioDashboard({inventarios,cuadres}){
+  // Compute consumption across all days
+  const consumoTotal=useMemo(()=>{
+    const prods={};
+    const finals=inventarios.filter(i=>i.tipo==="final");
+    finals.forEach(fin=>{
+      const ini=inventarios.find(i=>i.date===fin.date&&i.tipo==="inicial");
+      if(!ini)return;
+      fin.items.forEach(f=>{
+        const iItem=ini.items.find(x=>x.nombre===f.nombre);
+        const sI=iItem?.saldo||0;const ent=f.entrada||0;const sF=f.saldo||0;
+        const consumo=sI+ent-sF;
+        if(!prods[f.nombre])prods[f.nombre]={nombre:f.nombre,consumo:0,entradas:0,saldoFinal:sF,days:0};
+        if(consumo>0){prods[f.nombre].consumo+=consumo;prods[f.nombre].days++;}
+        prods[f.nombre].entradas+=ent;
+        prods[f.nombre].saldoFinal=sF; // last known
+      });
+    });
+    return Object.values(prods).sort((a,b)=>b.consumo-a.consumo);
+  },[inventarios]);
+
+  // Last inventory snapshot (most recent final)
+  const lastFinal=useMemo(()=>{
+    const finals=inventarios.filter(i=>i.tipo==="final").sort((a,b)=>b.date.localeCompare(a.date));
+    return finals[0]||null;
+  },[inventarios]);
+
+  // Stock alerts
+  const stockBajo=useMemo(()=>{
+    if(!lastFinal)return[];
+    return lastFinal.items.filter(i=>i.saldo<=2).sort((a,b)=>(a.saldo||0)-(b.saldo||0));
+  },[lastFinal]);
+
+  // Daily consumption trend
+  const dailyTrend=useMemo(()=>{
+    const finals=inventarios.filter(i=>i.tipo==="final").sort((a,b)=>a.date.localeCompare(b.date));
+    return finals.map(fin=>{
+      const ini=inventarios.find(i=>i.date===fin.date&&i.tipo==="inicial");
+      if(!ini)return{d:fmtD(fin.date).split(" ").slice(0,2).join(" "),totalConsumo:0,totalEntradas:0};
+      let tc=0,te=0;
+      fin.items.forEach(f=>{
+        const iItem=ini.items.find(x=>x.nombre===f.nombre);
+        const c=(iItem?.saldo||0)+(f.entrada||0)-(f.saldo||0);
+        if(c>0)tc+=c;
+        te+=(f.entrada||0);
+      });
+      return{d:fmtD(fin.date).split(" ").slice(0,2).join(" "),totalConsumo:tc,totalEntradas:te};
+    });
+  },[inventarios]);
+
+  // Restock frequency
+  const restockItems=useMemo(()=>{
+    return consumoTotal.filter(p=>p.entradas>0).sort((a,b)=>b.entradas-a.entradas).slice(0,10);
+  },[consumoTotal]);
+
+  const daysWithData=inventarios.filter(i=>i.tipo==="final").length;
+
+  if(daysWithData===0) return <div style={{textAlign:"center",padding:60,color:C.dim}}><div style={{fontSize:52,marginBottom:14}}>📦</div><p style={{fontSize:20,fontWeight:600}}>Sin datos de inventario</p></div>;
+
+  return(<div>
+    <div style={{fontSize:22,fontWeight:700,color:C.cyan,marginBottom:4}}>📦 Control de Inventario</div>
+    <div style={{fontSize:13,color:C.dim,marginBottom:16}}>{daysWithData} días con cruce de inventario registrado</div>
+
+    {/* ═══ ALERTAS STOCK BAJO ═══ */}
+    {stockBajo.length>0&&<Card accent={C.red} style={{background:C.red+"08"}}>
+      <Sec color={C.red}>⚠️ Alerta stock bajo — inventario actual</Sec>
+      <div style={{fontSize:12,color:C.dim,marginBottom:10}}>Productos con 2 unidades o menos al cierre de {lastFinal?fmtD(lastFinal.date):""}</div>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
+        {stockBajo.map((p,i)=>(
+          <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"8px 12px",background:C.bg,borderRadius:8,fontSize:13,alignItems:"center"}}>
+            <span style={{color:p.saldo===0?C.red:C.text}}>{p.nombre}</span>
+            <span style={{fontWeight:700,color:p.saldo===0?C.red:C.orange,fontSize:14}}>{p.saldo===0?"AGOTADO":p.saldo}</span>
+          </div>
+        ))}
+      </div>
+    </Card>}
+
+    {/* ═══ CONSUMO DIARIO ═══ */}
+    {dailyTrend.length>0&&<Card>
+      <Sec color={C.cyan}>Consumo vs reposición diaria (unidades totales)</Sec>
+      <ResponsiveContainer width="100%" height={180}>
+        <BarChart data={dailyTrend}>
+          <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
+          <XAxis dataKey="d" tick={{fill:C.muted,fontSize:11}} axisLine={{stroke:C.bdr}}/>
+          <YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}}/>
+          <Tooltip contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
+          <Bar dataKey="totalConsumo" name="Consumo" fill={C.orange} radius={[4,4,0,0]}/>
+          <Bar dataKey="totalEntradas" name="Reposición" fill={C.green} radius={[4,4,0,0]}/>
+        </BarChart>
+      </ResponsiveContainer>
+    </Card>}
+
+    {/* ═══ TOP CONSUMO ACUMULADO ═══ */}
+    <Card>
+      <Sec color={C.cyan}>Top consumo acumulado — todos los productos</Sec>
+      <ResponsiveContainer width="100%" height={Math.min(consumoTotal.filter(p=>p.consumo>0).length*28+40,400)}>
+        <BarChart data={consumoTotal.filter(p=>p.consumo>0).slice(0,15)} layout="vertical" margin={{left:130}}>
+          <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
+          <XAxis type="number" tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}}/>
+          <YAxis type="category" dataKey="nombre" tick={{fill:C.text,fontSize:10}} axisLine={{stroke:C.bdr}} width={125}/>
+          <Tooltip contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
+          <Bar dataKey="consumo" name="Consumo total" fill={C.cyan} radius={[0,4,4,0]}/>
+        </BarChart>
+      </ResponsiveContainer>
+    </Card>
+
+    {/* ═══ REPOSICIONES MÁS FRECUENTES ═══ */}
+    {restockItems.length>0&&<Card>
+      <Sec color={C.green}>Productos con mayor reposición (entradas)</Sec>
+      {restockItems.map((p,i)=>{
+        const mx=restockItems[0]?.entradas||1;
+        return(<div key={i} style={{marginBottom:5}}>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:2}}>
+            <span><span style={{color:C.gold,fontWeight:700,marginRight:6}}>{i+1}.</span>{p.nombre}</span>
+            <span><span style={{color:C.green,fontWeight:600}}>{p.entradas} entradas</span> <span style={{color:C.muted,marginLeft:4}}>({p.consumo} consumidas)</span></span>
+          </div>
+          <div style={{background:C.bdr,borderRadius:3,height:5}}>
+            <div style={{background:C.green,height:"100%",width:`${(p.entradas/mx)*100}%`,borderRadius:3}}/>
+          </div>
+        </div>);
+      })}
+    </Card>}
+
+    {/* ═══ SNAPSHOT INVENTARIO ACTUAL ═══ */}
+    {lastFinal&&<Card>
+      <Sec>📋 Inventario actual — cierre {fmtD(lastFinal.date)}</Sec>
+      <div style={{fontSize:9,display:"grid",gridTemplateColumns:"1fr 50px",gap:4,padding:"6px 0",borderBottom:`2px solid ${C.bdr}`,color:C.dim,fontWeight:700,textTransform:"uppercase"}}>
+        <span>Producto</span><span style={{textAlign:"center"}}>Stock</span>
+      </div>
+      {[...lastFinal.items].sort((a,b)=>(b.saldo||0)-(a.saldo||0)).filter(i=>i.saldo>0||i.saldo===0).map((item,i)=>(
+        <div key={i} style={{display:"grid",gridTemplateColumns:"1fr 50px",gap:4,padding:"5px 0",borderBottom:`1px solid ${C.bdr}15`,fontSize:12,alignItems:"center"}}>
+          <span style={{color:item.saldo===0?C.red:item.saldo<=2?C.orange:C.text}}>{item.nombre}</span>
+          <span style={{textAlign:"center",fontWeight:700,color:item.saldo===0?C.red:item.saldo<=2?C.orange:item.saldo>=20?C.green:C.text,background:item.saldo<=2?C.red+"15":"transparent",borderRadius:4,padding:"2px 0"}}>{item.saldo}</span>
+        </div>
+      ))}
+    </Card>}
+  </div>);
+}
+
+function Resumen({c,coc,gas,cross,date}){
+  if(!c) return <div style={{textAlign:"center",padding:60,color:C.dim}}><div style={{fontSize:52,marginBottom:12}}>📸</div><p style={{fontFamily:"'Poppins',sans-serif",fontSize:20}}>Sin cuadre para {fmtD(date)}</p><p style={{fontSize:14}}>Envía las fotos de tus recibos del POS a Claude y los registro automáticamente</p></div>;
+
+  const barPct=(c.estanco+c.cocteles)/c.venta_total;
+  const venSplit=[{n:"Estanco",v:c.estanco,c:C.gold},{n:"Cocteles",v:c.cocteles,c:C.cyan},{n:"Pizzería",v:c.pizzeria,c:C.orange}].filter(x=>x.v>0);
+  const totalG=c.pizza_80+c.gastos+c.nomina;
+
+  return(<div>
+    <h2 style={{fontFamily:"'Poppins',sans-serif",fontSize:22,color:C.gold,margin:"0 0 4px"}}>{fmtD(date)}</h2>
+    <p style={{fontSize:14,color:C.dim,marginBottom:14}}>Datos extraídos de fotos del POS</p>
+
+    <Card accent={c.neto_sala>=0?C.green:C.red} style={{background:(c.neto_sala>=0?C.greenDim:C.redDim)+"12"}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+        <div><div style={{fontSize:14,color:C.dim,textTransform:"uppercase",letterSpacing:.8}}>Venta Total</div><div style={{fontSize:32,fontWeight:700,fontFamily:"'Poppins',sans-serif",color:C.gold,marginTop:4}}>{fmtF(c.venta_total)}</div></div>
+        <div style={{textAlign:"right"}}><div style={{fontSize:14,color:C.dim,textTransform:"uppercase",letterSpacing:.8}}>Neto La Sala</div><div style={{fontSize:32,fontWeight:700,fontFamily:"'Poppins',sans-serif",color:c.neto_sala>=0?C.green:C.red,marginTop:4}}>{fmtF(c.neto_sala)}</div></div>
+      </div>
+    </Card>
+
+    <Card>
+      <Sec color={C.gold}>Ventas por Categoría</Sec>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}}>
+        {venSplit.map((v,i)=><div key={i} style={{background:C.bg,borderRadius:10,padding:"10px 12px",borderLeft:`3px solid ${v.c}`}}>
+          <div style={{fontSize:14,color:C.dim}}>{v.n}</div>
+          <div style={{fontSize:22,fontWeight:700,color:v.c,fontFamily:"'Poppins',sans-serif"}}>{fmtF(v.v)}</div>
+          <div style={{fontSize:13,color:C.muted}}>{pct(v.v,c.venta_total)}</div>
+        </div>)}
+      </div>
+      <div style={{marginTop:10}}>
+        <div style={{fontSize:14,color:C.dim,marginBottom:4}}>Bar ({(barPct*100).toFixed(0)}%) vs Cocina ({((1-barPct)*100).toFixed(0)}%)</div>
+        <div style={{display:"flex",height:22,borderRadius:6,overflow:"hidden"}}>
+          <div style={{width:`${barPct*100}%`,background:`linear-gradient(90deg,${C.gold},${C.cyan})`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,fontWeight:700,color:C.bg}}>Bar</div>
+          <div style={{flex:1,background:C.orange,display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,fontWeight:700,color:C.bg}}>Cocina</div>
+        </div>
+        <div style={{marginTop:6,padding:"5px 8px",background:barPct>=.6?C.greenDim+"18":C.redDim+"18",borderRadius:6,fontSize:14,color:barPct>=.6?C.green:C.red}}>
+          {barPct>=.6?"✓ Bar genera "+((barPct*100).toFixed(0))+"% — alineado con la estrategia":"⚠ Cocina pesa más de lo esperado"}
+        </div>
+      </div>
+    </Card>
+
+    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
+      <Card><Sec color={C.blue}>Pagos</Sec>
+        {[{n:"Tarjeta",v:c.tarjeta,c:C.blue},{n:"Efectivo",v:c.efectivo,c:C.green},{n:"Otros (Nequi)",v:c.otros_pago,c:C.purple}].map((p,i)=>
+          <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:`1px solid ${C.bdr}`,fontSize:13}}><span style={{color:C.dim}}>{p.n}</span><span style={{color:p.c,fontWeight:600}}>{fmtF(p.v)}</span></div>
+        )}
+        {c.faltante===0&&<div style={{marginTop:6,fontSize:14,color:C.green}}>✓ Sin faltante</div>}
+      </Card>
+      <Card><Sec color={C.red}>Gastos</Sec>
+        {[{n:"Pizza 80%",v:c.pizza_80,c:C.orange},{n:"Gastos Op.",v:c.gastos,c:C.red},{n:"Nómina",v:c.nomina,c:C.purple}].map((e,i)=>
+          <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:`1px solid ${C.bdr}`,fontSize:13}}><span style={{color:C.dim}}>{e.n}</span><span style={{color:e.c,fontWeight:600}}>{fmtF(e.v)}</span></div>
+        )}
+        <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:14,fontWeight:700}}><span>Total</span><span style={{color:C.red}}>{fmtF(totalG)}</span></div>
+      </Card>
+    </div>
+
+    {coc&&coc.productos?.length>0&&<Card>
+      <Sec color={C.orange}>🍕 Cocina — {coc.total_units} productos</Sec>
+      {coc.productos.slice(0,10).map((p,i)=>{const mx=coc.productos[0]?.valor||1;return(
+        <div key={i} style={{marginBottom:5}}>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:2}}>
+            <span><span style={{color:C.gold,fontWeight:700,marginRight:4}}>{i+1}.</span>{p.nombre}</span>
+            <span style={{color:C.orange,fontWeight:600}}>{p.cantidad}× = {fmtF(p.valor)}</span>
+          </div>
+          <div style={{background:C.bdr,borderRadius:3,height:4}}><div style={{background:C.orange,height:"100%",width:`${(p.valor/mx)*100}%`,borderRadius:3}}/></div>
+        </div>
+      );})}
+    </Card>}
+
+    {cross&&cross.length>0&&<Card>
+      <Sec color={C.cyan}>📦 Movimiento Inventario</Sec>
+      <div style={{fontSize:13,display:"grid",gridTemplateColumns:"1fr 35px 35px 35px 45px",gap:4,padding:"4px 0",borderBottom:`1px solid ${C.bdr}`,color:C.dim,fontWeight:600,textTransform:"uppercase"}}>
+        <span>Producto</span><span style={{textAlign:"center"}}>Ini</span><span style={{textAlign:"center"}}>+Ent</span><span style={{textAlign:"center"}}>Fin</span><span style={{textAlign:"center"}}>Cons.</span>
+      </div>
+      {cross.filter(d=>d.consumo>0).slice(0,12).map((d,i)=>(
+        <div key={i} style={{display:"grid",gridTemplateColumns:"1fr 35px 35px 35px 45px",gap:4,padding:"4px 0",borderBottom:`1px solid ${C.bdr}15`,fontSize:14,alignItems:"center"}}>
+          <span style={{color:d.consumo>=3?C.text:C.dim}}>{d.nombre}</span>
+          <span style={{textAlign:"center",color:C.muted}}>{d.ini}</span>
+          <span style={{textAlign:"center",color:d.ent?C.green:C.muted}}>{d.ent||"—"}</span>
+          <span style={{textAlign:"center",color:C.muted}}>{d.fin}</span>
+          <span style={{textAlign:"center",fontWeight:700,color:d.consumo>=5?C.red:d.consumo>=3?C.orange:C.cyan,background:d.consumo>=3?C.orange+"15":"transparent",borderRadius:4}}>{d.consumo}</span>
+        </div>
+      ))}
+    </Card>}
+
+    {gas&&gas.items?.length>0&&<Card>
+      <Sec color={C.red}>📋 Gastos Detallados — {fmtF(gas.total)}</Sec>
+      {gas.items.map((it,i)=>(
+        <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"6px 0",borderBottom:`1px solid ${C.bdr}15`,fontSize:13}}>
+          <div><div>{it.concepto}</div><div style={{fontSize:13,color:C.muted,marginTop:1}}>{it.categoria}</div></div>
+          <span style={{color:C.red,fontWeight:600,whiteSpace:"nowrap"}}>{fmtF(it.valor)}</span>
+        </div>
+      ))}
+    </Card>}
+  </div>);
+}
+
+function Cocina({coc,date}){
+  if(!coc) return <div style={{textAlign:"center",padding:60,color:C.dim}}><p>Sin datos cocina — {fmtD(date)}</p></div>;
+  const byCat=useMemo(()=>{const cats={Pizzas:[],Hamburguesas:[],Alitas:[],Otros:[]};(coc.productos||[]).forEach(p=>{if(p.nombre.startsWith("PZ"))cats.Pizzas.push(p);else if(p.nombre.includes("HB"))cats.Hamburguesas.push(p);else if(p.nombre.includes("ALITAS"))cats.Alitas.push(p);else cats.Otros.push(p);});return Object.entries(cats).filter(([,v])=>v.length>0);},[coc]);
+  const pieData=(coc.productos||[]).map((p,i)=>({name:p.nombre,value:p.valor,fill:PIE[i%PIE.length]}));
+
+  return(<div>
+    <h2 style={{fontFamily:"'Poppins',sans-serif",fontSize:22,color:C.orange,margin:"0 0 14px"}}>🍕 Cocina — {fmtD(date)}</h2>
+    <Card accent={C.orange} style={{background:C.orange+"08"}}>
+      <div style={{display:"flex",justifyContent:"space-between"}}>
+        <div><div style={{fontSize:14,color:C.dim}}>Total</div><div style={{fontSize:32,fontWeight:700,color:C.orange,fontFamily:"'Poppins',sans-serif"}}>{fmtF(coc.total)}</div></div>
+        <div style={{textAlign:"right"}}><div style={{fontSize:14,color:C.dim}}>Productos</div><div style={{fontSize:32,fontWeight:700,color:C.text,fontFamily:"'Poppins',sans-serif"}}>{coc.total_units}</div></div>
+      </div>
+    </Card>
+    <Card>
+      <Sec>Distribución</Sec>
+      <ResponsiveContainer width="100%" height={200}>
+        <PieChart><Pie data={pieData.slice(0,8)} cx="50%" cy="50%" outerRadius={70} innerRadius={30} dataKey="value" paddingAngle={2}>
+          {pieData.slice(0,8).map((e,i)=><Cell key={i} fill={e.fill}/>)}
+        </Pie><Tooltip formatter={v=>fmtF(v)}/></PieChart>
+      </ResponsiveContainer>
+    </Card>
+    {byCat.map(([cat,prods])=><Card key={cat}>
+      <Sec color={C.orange}>{cat} ({prods.reduce((s,p)=>s+p.cantidad,0)} uds — {fmtF(prods.reduce((s,p)=>s+p.valor,0))})</Sec>
+      {prods.sort((a,b)=>b.valor-a.valor).map((p,i)=><div key={i} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:`1px solid ${C.bdr}15`,fontSize:14}}>
+        <span>{p.nombre}</span><span><span style={{color:C.dim,marginRight:8}}>{p.cantidad}×</span><span style={{color:C.orange,fontWeight:600}}>{fmtF(p.valor)}</span></span>
+      </div>)}
+    </Card>)}
+  </div>);
+}
+
+function Inventario({cross,ini,fin,date}){
+  return(<div>
+    <h2 style={{fontFamily:"'Poppins',sans-serif",fontSize:22,color:C.cyan,margin:"0 0 14px"}}>📦 Inventario — {fmtD(date)}</h2>
+    {cross&&cross.length>0?<>
+      <Card accent={C.cyan}>
+        <Sec color={C.cyan}>Cruce Inventario: Consumo Real</Sec>
+        <p style={{fontSize:14,color:C.dim,marginBottom:10}}>Saldo Inicial + Entradas − Saldo Final = Consumo</p>
+        <div style={{fontSize:13,display:"grid",gridTemplateColumns:"1fr 40px 40px 40px 50px",gap:4,padding:"6px 0",borderBottom:`2px solid ${C.bdr}`,color:C.dim,fontWeight:700,textTransform:"uppercase"}}>
+          <span>Producto</span><span style={{textAlign:"center"}}>Ini</span><span style={{textAlign:"center"}}>+Ent</span><span style={{textAlign:"center"}}>Fin</span><span style={{textAlign:"center"}}>Consumo</span>
+        </div>
+        {cross.map((d,i)=><div key={i} style={{display:"grid",gridTemplateColumns:"1fr 40px 40px 40px 50px",gap:4,padding:"5px 0",borderBottom:`1px solid ${C.bdr}20`,fontSize:13,alignItems:"center"}}>
+          <span style={{fontWeight:d.consumo>=3?600:400,color:d.consumo>=3?C.text:C.dim}}>{d.nombre}</span>
+          <span style={{textAlign:"center",color:C.muted}}>{d.ini}</span>
+          <span style={{textAlign:"center",color:d.ent?C.green:C.muted}}>{d.ent||"—"}</span>
+          <span style={{textAlign:"center",color:C.muted}}>{d.fin}</span>
+          <span style={{textAlign:"center",fontWeight:700,color:d.consumo>=5?C.red:d.consumo>=3?C.orange:C.cyan,background:d.consumo>=5?C.red+"15":d.consumo>=3?C.orange+"15":"transparent",borderRadius:4,padding:"2px 0"}}>{d.consumo}</span>
+        </div>)}
+      </Card>
+      <Card><Sec color={C.orange}>Alta Rotación</Sec>
+        <ResponsiveContainer width="100%" height={Math.min(cross.filter(d=>d.consumo>=2).length*28+40,300)}>
+          <BarChart data={cross.filter(d=>d.consumo>=2).slice(0,10)} layout="vertical" margin={{left:120}}>
+            <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
+            <XAxis type="number" tick={{fill:C.muted,fontSize:14}} axisLine={{stroke:C.bdr}}/>
+            <YAxis type="category" dataKey="nombre" tick={{fill:C.text,fontSize:13}} axisLine={{stroke:C.bdr}} width={115}/>
+            <Bar dataKey="consumo" name="Consumo" fill={C.cyan} radius={[0,4,4,0]}/>
+          </BarChart>
+        </ResponsiveContainer>
+      </Card>
+      {cross.filter(d=>d.fin<=2).length>0&&<Card accent={C.red}>
+        <Sec color={C.red}>⚠️ Stock Bajo (≤2 unidades)</Sec>
+        {cross.filter(d=>d.fin<=2).map((d,i)=><div key={i} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:`1px solid ${C.bdr}15`,fontSize:14}}>
+          <span>{d.nombre}</span><span style={{color:d.fin===0?C.red:C.orange,fontWeight:700}}>{d.fin===0?"AGOTADO":`${d.fin} uds`}</span>
+        </div>)}
+      </Card>}
+    </>:<Card><p style={{color:C.dim,textAlign:"center",padding:20}}>{!ini&&!fin?"Sin inventarios para este día":"Falta inventario "+(ini?"FINAL":"INICIAL")+" para cruzar"}</p></Card>}
+  </div>);
+}
+
+function Gastos({gas,date}){
+  if(!gas) return <div style={{textAlign:"center",padding:60,color:C.dim}}><p>Sin gastos para {fmtD(date)}</p></div>;
+  const byCat=useMemo(()=>{const cats={};(gas.items||[]).forEach(it=>{const c=it.categoria||"Varios";if(!cats[c])cats[c]={total:0,items:[]};cats[c].total+=it.valor;cats[c].items.push(it);});return Object.entries(cats).sort((a,b)=>b[1].total-a[1].total);},[gas]);
+  const pieData=byCat.map(([n,d],i)=>({name:n,value:d.total,fill:PIE[i%PIE.length]}));
+
+  return(<div>
+    <h2 style={{fontFamily:"'Poppins',sans-serif",fontSize:22,color:C.red,margin:"0 0 14px"}}>📋 Gastos — {fmtD(date)}</h2>
+    <Card accent={C.red} style={{background:C.redDim+"10"}}>
+      <div style={{fontSize:14,color:C.dim}}>Total Gastos</div>
+      <div style={{fontSize:32,fontWeight:700,color:C.red,fontFamily:"'Poppins',sans-serif",marginTop:4}}>{fmtF(gas.total)}</div>
+      <div style={{fontSize:14,color:C.muted,marginTop:2}}>{gas.items?.length} conceptos</div>
+    </Card>
+    <Card><Sec>Por Categoría</Sec>
+      <ResponsiveContainer width="100%" height={180}>
+        <PieChart><Pie data={pieData} cx="50%" cy="50%" outerRadius={65} innerRadius={28} dataKey="value" paddingAngle={3}>
+          {pieData.map((e,i)=><Cell key={i} fill={e.fill}/>)}
+        </Pie><Tooltip formatter={v=>fmtF(v)}/></PieChart>
+      </ResponsiveContainer>
+      <div style={{display:"flex",flexWrap:"wrap",gap:8,justifyContent:"center",marginTop:4}}>
+        {pieData.map((e,i)=><span key={i} style={{fontSize:14,color:e.fill}}>● {e.name}: {fmtF(e.value)}</span>)}
+      </div>
+    </Card>
+    {byCat.map(([cat,data],ci)=><Card key={cat} accent={PIE[ci%PIE.length]}>
+      <Sec color={PIE[ci%PIE.length]}>{cat} — {fmtF(data.total)}</Sec>
+      {data.items.map((it,i)=><div key={i} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:`1px solid ${C.bdr}15`,fontSize:14}}>
+        <span>{it.concepto}</span><span style={{color:C.red,fontWeight:600}}>{fmtF(it.valor)}</span>
+      </div>)}
+    </Card>)}
+  </div>);
+}
