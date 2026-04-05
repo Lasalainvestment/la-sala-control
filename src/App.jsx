@@ -23,6 +23,13 @@ const PRELOADED_CUADRES = [
     efectivo: 3000, tarjeta: 1834800, otros_pago: 576400,
     pizza_80: 650560, gastos: 301400, nomina: 275000,
     neto_sala: 1187240, faltante: 0,
+  },
+  {
+    date: "2026-04-04", venta_total: 1501200,
+    estanco: 449000, cocteles: 655000, pizzeria: 397200, otros_venta: 0,
+    efectivo: 2800, tarjeta: 820400, otros_pago: 678000,
+    pizza_80: 317760, gastos: 403000, nomina: 275000,
+    neto_sala: 505440, faltante: 0,
   }
 ];
 
@@ -86,6 +93,18 @@ const PRELOADED_COCINA = [
       { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
       { nombre: "ENSALADA MEDITERRANEA", cantidad: 1, valor: 34000 },
       { nombre: "NACHOS CLASICOS", cantidad: 1, valor: 31800 },
+    ]
+  },
+  {
+    date: "2026-04-04", total: 397200, total_units: 13,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 4, valor: 127200 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 4, valor: 44000 },
+      { nombre: "PZ POLLO BBQ GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ POLLO CHAMPI MED", cantidad: 1, valor: 54000 },
+      { nombre: "PT AL CAMPO RG", cantidad: 1, valor: 40200 },
+      { nombre: "PZ MEXICANA PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
     ]
   }
 ];
@@ -233,6 +252,51 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"WHISKY COCT",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},
       {nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
     ]
+  },
+  {
+    date: "2026-04-04", tipo: "inicial",
+    items: [
+      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:7},{nombre:"AGTE BOTELLA CAUCANO",saldo:4},
+      {nombre:"AGTE BOTELLA REAL",saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",saldo:2},
+      {nombre:"AGTE MEDIA CAUCANO",saldo:7},{nombre:"AGUA",saldo:13},
+      {nombre:"AGUA TONICA",saldo:0},{nombre:"CERVEZA CORONA",saldo:16},
+      {nombre:"CERVEZA IMPORTADA",saldo:31},{nombre:"CERVEZA NACIONAL",saldo:143},
+      {nombre:"CREMA DE WHISKY",saldo:1},{nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINI",saldo:1},{nombre:"ELECTROLIT",saldo:0},
+      {nombre:"GASEOSA",saldo:83},{nombre:"GASEOSA 1.5",saldo:18},
+      {nombre:"GINEBRA BOTELLA",saldo:1},{nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:3},{nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"RED BULL",saldo:7},{nombre:"RON CALDAS BOT",saldo:2},
+      {nombre:"RON CALDAS MED",saldo:1},{nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:1},{nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:3},{nombre:"TRIPLE SEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:1},{nombre:"VODKA DL",saldo:7},
+      {nombre:"WHISKY BUCHANANS MEDIA",saldo:1},{nombre:"WHISKY COCT",saldo:1},
+      {nombre:"WHISKY OLD PAR BOTELLA",saldo:1},{nombre:"WHISKY OLD PAR MEDIA",saldo:1},
+    ]
+  },
+  {
+    date: "2026-04-04", tipo: "final",
+    items: [
+      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:6},{nombre:"AGTE BOTELLA CAUCANO",entrada:0,saldo:4},
+      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:2},
+      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:7},{nombre:"AGUA",entrada:24,saldo:36},
+      {nombre:"AGUA TONICA",entrada:6,saldo:5},{nombre:"CERVEZA CORONA",entrada:24,saldo:31},
+      {nombre:"CERVEZA IMPORTADA",entrada:0,saldo:25},{nombre:"CERVEZA NACIONAL",entrada:60,saldo:178},
+      {nombre:"CREMA DE WHISKY",entrada:0,saldo:1},{nombre:"CURAZAO AZUL",entrada:0,saldo:3},
+      {nombre:"DRY MARTINI",entrada:0,saldo:1},{nombre:"ELECTROLIT",entrada:4,saldo:4},
+      {nombre:"CAJA DE VINO",entrada:2,saldo:2},{nombre:"GASEOSA",entrada:64,saldo:133},
+      {nombre:"GASEOSA 1.5",entrada:0,saldo:18},{nombre:"GINEBRA BOTELLA",entrada:0,saldo:1},
+      {nombre:"GINEBRA DL",entrada:0,saldo:5},{nombre:"GINEBRA ML",entrada:0,saldo:2},
+      {nombre:"LICOR DE MANZANA",entrada:0,saldo:11},{nombre:"RED BULL",entrada:0,saldo:7},
+      {nombre:"RON CALDAS BOT",entrada:0,saldo:2},{nombre:"RON CALDAS MED",entrada:0,saldo:1},
+      {nombre:"RON DL",entrada:0,saldo:5},{nombre:"TEQUILA BOTELLA",entrada:0,saldo:1},
+      {nombre:"TEQUILA MEDIA",entrada:0,saldo:1},{nombre:"TEQUILA ML",entrada:0,saldo:2},
+      {nombre:"TRIPLE SEC",entrada:0,saldo:1},{nombre:"VINO BOTELLA",entrada:0,saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:0},{nombre:"VODKA DL",entrada:0,saldo:7},
+      {nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},{nombre:"WHISKY COCT",entrada:0,saldo:1},
+      {nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
+    ]
   }
 ];
 
@@ -274,6 +338,14 @@ const PRELOADED_GASTOS = [
       { concepto: "1 juego tubería, orinal, 2 cinta teflón, pegante", categoria: "Mantenimiento", valor: 50000 },
       { concepto: "4 bolsas hielo", categoria: "Hielo", valor: 50000 },
     ]
+  },
+  {
+    date: "2026-04-04", total: 403000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "1 Corona + 2 Club Dorada + 1 domicilio", categoria: "Bebidas/Licor", valor: 298000 },
+      { concepto: "5 Ron", categoria: "Bebidas/Licor", valor: 100000 },
+    ]
   }
 ];
 
@@ -304,7 +376,7 @@ export default function App(){
   const [cocinaData,setCocinaData]=useState([]);
   const [gastosData,setGastosData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-04-03");
+  const [selDate,setSelDate]=useState("2026-04-04");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
