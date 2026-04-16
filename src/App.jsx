@@ -145,353 +145,319 @@ const PRELOADED_COCINA = [
 
 const PRELOADED_INVENTARIOS = [
   {
-    date: "2026-04-01", tipo: "inicial",
-    items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:8},{nombre:"AGTE BOTELLA CAUCANO",saldo:1},
-      {nombre:"AGTE BOTELLA REAL",saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",saldo:5},
-      {nombre:"AGTE MEDIA CAUCANO",saldo:2},{nombre:"AGUA",saldo:0},
-      {nombre:"AGUA TONICA",saldo:26},{nombre:"AMARETO",saldo:3},
-      {nombre:"CACHAZA",saldo:1},{nombre:"CAJA DE VINO",saldo:0},
-      {nombre:"CERVEZA CORONA",saldo:3},{nombre:"CERVEZA IMPORTADA",saldo:0},
-      {nombre:"CERVEZA NACIONAL",saldo:204},{nombre:"CHICLETS",saldo:0},
-      {nombre:"CIGARRILLOS",saldo:0},{nombre:"CREMA DE WHISKY",saldo:0},
-      {nombre:"CURAZAO AZUL",saldo:2},{nombre:"DRY MARTINI",saldo:3},
-      {nombre:"ELECTROLIT",saldo:1},{nombre:"ENCENDEDOR",saldo:2},
-      {nombre:"GASEOSA",saldo:0},{nombre:"GASEOSA 1.5",saldo:45},
-      {nombre:"GINEBRA BOTELLA",saldo:19},{nombre:"GINEBRA DL",saldo:1},
-      {nombre:"GINEBRA ML",saldo:5},{nombre:"LICOR DE CAFE",saldo:2},
-      {nombre:"LICOR DE MANZANA",saldo:0},{nombre:"LICOR DE MENTA",saldo:10},
-      {nombre:"RED BULL",saldo:0},{nombre:"RON CALDAS BOT",saldo:7},
-      {nombre:"RON CALDAS MED",saldo:2},{nombre:"RON DL",saldo:1},
-      {nombre:"TEQUILA BOTELLA",saldo:1},{nombre:"TEQUILA LITRO",saldo:1},
-      {nombre:"TEQUILA MEDIA",saldo:0},{nombre:"TEQUILA ML",saldo:1},
-      {nombre:"TRIPLE SEC",saldo:1},{nombre:"VINO BOTELLA",saldo:2},
-      {nombre:"VINO CASILLERO BOTELLA",saldo:2},{nombre:"VODKA ABSOLUT BOTELLA",saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",saldo:0},{nombre:"VODKA DL",saldo:0},
-      {nombre:"WHISKY BUCHANANS BOTEL",saldo:1},{nombre:"WHISKY BUCHANANS MEDIA",saldo:1},
-      {nombre:"WHISKY COCT",saldo:0},{nombre:"WHISKY OLD PAR BOTELLA",saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",saldo:1},
-    ]
-  },
-  {
     date: "2026-04-01", tipo: "final",
     items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:8},{nombre:"AGTE BOTELLA CAUCANO",entrada:3,saldo:1},
-      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:3},
-      {nombre:"AGTE MEDIA CAUCANO",entrada:6,saldo:7},{nombre:"AGUA TONICA",entrada:0,saldo:21},
-      {nombre:"AMARETO",entrada:0,saldo:3},{nombre:"CACHAZA",entrada:0,saldo:1},
-      {nombre:"CAJA DE VINO",entrada:0,saldo:0},{nombre:"CERVEZA CORONA",entrada:0,saldo:2},
-      {nombre:"CERVEZA IMPORTADA",entrada:0,saldo:0},{nombre:"CERVEZA NACIONAL",entrada:0,saldo:190},
-      {nombre:"CHICLETS",entrada:0,saldo:0},{nombre:"CIGARRILLOS",entrada:0,saldo:0},
-      {nombre:"CREMA DE WHISKY",entrada:0,saldo:0},{nombre:"CURAZAO AZUL",entrada:0,saldo:1},
-      {nombre:"DRY MARTINI",entrada:0,saldo:3},{nombre:"ELECTROLIT",entrada:0,saldo:1},
-      {nombre:"ENCENDEDOR",entrada:0,saldo:2},{nombre:"GASEOSA",entrada:0,saldo:0},
-      {nombre:"GASEOSA 1.5",entrada:78,saldo:113},{nombre:"GINEBRA BOTELLA",entrada:0,saldo:19},
-      {nombre:"GINEBRA DL",entrada:0,saldo:1},{nombre:"GINEBRA ML",entrada:0,saldo:5},
-      {nombre:"LICOR DE CAFE",entrada:4,saldo:5},{nombre:"LICOR DE MANZANA",entrada:0,saldo:0},
-      {nombre:"LICOR DE MENTA",entrada:4,saldo:14},{nombre:"RED BULL",entrada:0,saldo:0},
-      {nombre:"RON CALDAS BOT",entrada:0,saldo:7},{nombre:"RON CALDAS MED",entrada:0,saldo:2},
-      {nombre:"RON DL",entrada:0,saldo:1},{nombre:"TEQUILA BOTELLA",entrada:5,saldo:5},
-      {nombre:"TEQUILA LITRO",entrada:1,saldo:2},{nombre:"TEQUILA MEDIA",entrada:0,saldo:0},
-      {nombre:"TEQUILA ML",entrada:0,saldo:1},{nombre:"TRIPLE SEC",entrada:6,saldo:6},
-      {nombre:"VINO BOTELLA",entrada:1,saldo:3},{nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:2},
-      {nombre:"VODKA ABSOLUT BOTELLA",entrada:0,saldo:0},{nombre:"VODKA ABSOLUT MEDIA",entrada:0,saldo:0},
-      {nombre:"VODKA DL",entrada:5,saldo:5},{nombre:"WHISKY BUCHANANS BOTEL",entrada:0,saldo:1},
-      {nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},{nombre:"WHISKY COCT",entrada:0,saldo:0},
-      {nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
-    ]
-  },
-  {
-    date: "2026-04-02", tipo: "inicial",
-    items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:8},{nombre:"AGTE BOTELLA CAUCANO",saldo:1},
-      {nombre:"AGTE BOTELLA REAL",saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",saldo:3},
-      {nombre:"AGTE MEDIA CAUCANO",saldo:7},{nombre:"AGUA",saldo:21},
-      {nombre:"AGUA TONICA",saldo:3},{nombre:"AMARETO",saldo:1},
-      {nombre:"CACHAZA",saldo:0},{nombre:"CAJA DE VINO",saldo:2},
-      {nombre:"CERVEZA CORONA",saldo:0},{nombre:"CERVEZA IMPORTADA",saldo:28},
-      {nombre:"CERVEZA NACIONAL",saldo:190},{nombre:"CHICLETS",saldo:0},
-      {nombre:"CIGARRILLOS",saldo:0},{nombre:"CREMA DE WHISKY",saldo:1},
-      {nombre:"CURAZAO AZUL",saldo:3},{nombre:"DRY MARTINI",saldo:1},
-      {nombre:"ELECTROLIT",saldo:2},{nombre:"ENCENDEDOR",saldo:0},
-      {nombre:"GASEOSA",saldo:113},{nombre:"GASEOSA 1.5",saldo:19},
-      {nombre:"GINEBRA BOTELLA",saldo:1},{nombre:"GINEBRA DL",saldo:5},
-      {nombre:"GINEBRA ML",saldo:5},{nombre:"LICOR DE CAFE",saldo:0},
-      {nombre:"LICOR DE MANZANA",saldo:14},{nombre:"LICOR DE MENTA",saldo:0},
-      {nombre:"RED BULL",saldo:7},{nombre:"RON CALDAS BOT",saldo:2},
-      {nombre:"RON CALDAS MED",saldo:1},{nombre:"RON DL",saldo:5},
-      {nombre:"TEQUILA BOTELLA",saldo:2},{nombre:"TEQUILA LITRO",saldo:0},
-      {nombre:"TEQUILA MEDIA",saldo:1},{nombre:"TEQUILA ML",saldo:6},
-      {nombre:"TRIPLE SEC",saldo:3},{nombre:"VINO BOTELLA",saldo:2},
-      {nombre:"VINO CASILLERO BOTELLA",saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",saldo:0},{nombre:"VODKA DL",saldo:5},
-      {nombre:"WHISKY BUCHANANS BOTEL",saldo:1},{nombre:"WHISKY BUCHANANS MEDIA",saldo:1},
-      {nombre:"WHISKY COCT",saldo:0},{nombre:"WHISKY OLD PAR BOTELLA",saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",saldo:1},
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
+      {nombre:"AGT BOTLLA CAUCA",saldo:1},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:2},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:21},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:0},
+      {nombre:"CERVEZA IMPORTADA",saldo:28},
+      {nombre:"CERVEZA NACIONAL",saldo:156},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:6},
+      {nombre:"GASEOSA",saldo:113},
+      {nombre:"GASEOSA 1.5",saldo:14},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:15},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:5},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:5},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
     ]
   },
   {
     date: "2026-04-02", tipo: "final",
     items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:7},{nombre:"AGTE BOTELLA CAUCANO",entrada:4,saldo:4},
-      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:3},
-      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:7},{nombre:"AGUA",entrada:0,saldo:20},
-      {nombre:"AGUA TONICA",entrada:0,saldo:2},{nombre:"AMARETO",entrada:0,saldo:0},
-      {nombre:"CACHAZA",entrada:0,saldo:0},{nombre:"CAJA DE VINO",entrada:0,saldo:0},
-      {nombre:"CERVEZA CORONA",entrada:0,saldo:0},{nombre:"CERVEZA IMPORTADA",entrada:0,saldo:26},
-      {nombre:"CERVEZA NACIONAL",entrada:0,saldo:161},{nombre:"CHICLETS",entrada:0,saldo:0},
-      {nombre:"CIGARRILLOS",entrada:0,saldo:0},{nombre:"CREMA DE WHISKY",entrada:0,saldo:1},
-      {nombre:"CURAZAO AZUL",entrada:0,saldo:3},{nombre:"DRY MARTINI",entrada:0,saldo:1},
-      {nombre:"ELECTROLIT",entrada:0,saldo:2},{nombre:"ENCENDEDOR",entrada:0,saldo:0},
-      {nombre:"GASEOSA",entrada:0,saldo:88},{nombre:"GASEOSA 1.5",entrada:0,saldo:19},
-      {nombre:"GINEBRA BOTELLA",entrada:0,saldo:1},{nombre:"GINEBRA DL",entrada:0,saldo:5},
-      {nombre:"GINEBRA ML",entrada:0,saldo:4},{nombre:"LICOR DE CAFE",entrada:0,saldo:0},
-      {nombre:"LICOR DE MANZANA",entrada:0,saldo:12},{nombre:"LICOR DE MENTA",entrada:0,saldo:0},
-      {nombre:"RED BULL",entrada:0,saldo:7},{nombre:"RON CALDAS BOT",entrada:0,saldo:2},
-      {nombre:"RON CALDAS MED",entrada:0,saldo:1},{nombre:"RON DL",entrada:0,saldo:2},
-      {nombre:"TEQUILA BOTELLA",entrada:0,saldo:2},{nombre:"TEQUILA LITRO",entrada:0,saldo:0},
-      {nombre:"TEQUILA MEDIA",entrada:0,saldo:1},{nombre:"TEQUILA ML",entrada:0,saldo:4},
-      {nombre:"TRIPLE SEC",entrada:0,saldo:2},{nombre:"VINO BOTELLA",entrada:0,saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",entrada:0,saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",entrada:0,saldo:0},{nombre:"VODKA DL",entrada:0,saldo:3},
-      {nombre:"WHISKY BUCHANANS BOTEL",entrada:0,saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},
-      {nombre:"WHISKY COCT",entrada:4,saldo:2},{nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
-    ]
-  },
-  {
-    date: "2026-04-03", tipo: "inicial",
-    items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:7},{nombre:"AGTE BOTELLA CAUCANO",saldo:4},
-      {nombre:"AGTE BOTELLA REAL",saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",saldo:3},
-      {nombre:"AGTE MEDIA CAUCANO",saldo:7},{nombre:"AGUA",saldo:20},
-      {nombre:"AGUA TONICA",saldo:2},{nombre:"AMARETO",saldo:0},
-      {nombre:"CACHAZA",saldo:0},{nombre:"CAJA DE VINO",saldo:0},
-      {nombre:"CERVEZA CORONA",saldo:0},{nombre:"CERVEZA IMPORTADA",saldo:26},
-      {nombre:"CERVEZA NACIONAL",saldo:161},{nombre:"CHICLETS",saldo:0},
-      {nombre:"CIGARRILLOS",saldo:0},{nombre:"CREMA DE WHISKY",saldo:1},
-      {nombre:"CURAZAO AZUL",saldo:3},{nombre:"DRY MARTINI",saldo:1},
-      {nombre:"ELECTROLIT",saldo:2},{nombre:"ENCENDEDOR",saldo:0},
-      {nombre:"GASEOSA",saldo:88},{nombre:"GASEOSA 1.5",saldo:19},
-      {nombre:"GINEBRA BOTELLA",saldo:1},{nombre:"GINEBRA DL",saldo:5},
-      {nombre:"GINEBRA ML",saldo:4},{nombre:"LICOR DE CAFE",saldo:0},
-      {nombre:"LICOR DE MANZANA",saldo:12},{nombre:"LICOR DE MENTA",saldo:0},
-      {nombre:"RED BULL",saldo:7},{nombre:"RON CALDAS BOT",saldo:2},
-      {nombre:"RON CALDAS MED",saldo:1},{nombre:"RON DL",saldo:2},
-      {nombre:"TEQUILA BOTELLA",saldo:2},{nombre:"TEQUILA LITRO",saldo:0},
-      {nombre:"TEQUILA MEDIA",saldo:1},{nombre:"TEQUILA ML",saldo:4},
-      {nombre:"TRIPLE SEC",saldo:2},{nombre:"VINO BOTELLA",saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",saldo:0},{nombre:"VODKA DL",saldo:3},
-      {nombre:"WHISKY BUCHANANS BOTEL",saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",saldo:1},
-      {nombre:"WHISKY COCT",saldo:2},{nombre:"WHISKY OLD PAR BOTELLA",saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",saldo:1},
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:2},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:20},
+      {nombre:"AGUA TONICA",saldo:2},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:0},
+      {nombre:"CERVEZA CORONA",saldo:0},
+      {nombre:"CERVEZA IMPORTADA",saldo:26},
+      {nombre:"CERVEZA NACIONAL",saldo:127},
+      {nombre:"CHICLETS",saldo:8},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:89},
+      {nombre:"GASEOSA 1.5",saldo:19},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:4},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:2},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:3},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:2},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
     ]
   },
   {
     date: "2026-04-03", tipo: "final",
     items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:7},{nombre:"AGTE BOTELLA CAUCANO",entrada:0,saldo:4},
-      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:2},
-      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:7},{nombre:"AGUA",entrada:0,saldo:13},
-      {nombre:"AGUA TONICA",entrada:0,saldo:0},{nombre:"AMARETO",entrada:0,saldo:0},
-      {nombre:"CACHAZA",entrada:0,saldo:0},{nombre:"CAJA DE VINO",entrada:0,saldo:0},
-      {nombre:"CERVEZA CORONA",entrada:18,saldo:16},{nombre:"CERVEZA IMPORTADA",entrada:6,saldo:31},
-      {nombre:"CERVEZA NACIONAL",entrada:0,saldo:143},{nombre:"CHICLETS",entrada:0,saldo:0},
-      {nombre:"CIGARRILLOS",entrada:0,saldo:0},{nombre:"CREMA DE WHISKY",entrada:0,saldo:1},
-      {nombre:"CURAZAO AZUL",entrada:0,saldo:3},{nombre:"DRY MARTINI",entrada:0,saldo:1},
-      {nombre:"ELECTROLIT",entrada:0,saldo:0},{nombre:"ENCENDEDOR",entrada:0,saldo:0},
-      {nombre:"GASEOSA",entrada:18,saldo:83},{nombre:"GASEOSA 1.5",entrada:0,saldo:18},
-      {nombre:"GINEBRA BOTELLA",entrada:0,saldo:1},{nombre:"GINEBRA DL",entrada:0,saldo:5},
-      {nombre:"GINEBRA ML",entrada:0,saldo:3},{nombre:"LICOR DE CAFE",entrada:0,saldo:0},
-      {nombre:"LICOR DE MANZANA",entrada:0,saldo:11},{nombre:"LICOR DE MENTA",entrada:0,saldo:0},
-      {nombre:"RED BULL",entrada:0,saldo:7},{nombre:"RON CALDAS BOT",entrada:0,saldo:2},
-      {nombre:"RON CALDAS MED",entrada:0,saldo:1},{nombre:"RON DL",entrada:5,saldo:6},
-      {nombre:"TEQUILA BOTELLA",entrada:0,saldo:1},{nombre:"TEQUILA LITRO",entrada:0,saldo:0},
-      {nombre:"TEQUILA MEDIA",entrada:0,saldo:1},{nombre:"TEQUILA ML",entrada:0,saldo:3},
-      {nombre:"TRIPLE SEC",entrada:0,saldo:1},{nombre:"VINO BOTELLA",entrada:1,saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",entrada:0,saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",entrada:0,saldo:0},{nombre:"VODKA DL",entrada:5,saldo:7},
-      {nombre:"WHISKY BUCHANANS BOTEL",entrada:0,saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},
-      {nombre:"WHISKY COCT",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
-    ]
-  },
-  {
-    date: "2026-04-04", tipo: "inicial",
-    items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:7},{nombre:"AGTE BOTELLA CAUCANO",saldo:4},
-      {nombre:"AGTE BOTELLA REAL",saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",saldo:2},
-      {nombre:"AGTE MEDIA CAUCANO",saldo:7},{nombre:"AGUA",saldo:13},
-      {nombre:"AGUA TONICA",saldo:0},{nombre:"AMARETO",saldo:0},
-      {nombre:"CACHAZA",saldo:0},{nombre:"CAJA DE VINO",saldo:0},
-      {nombre:"CERVEZA CORONA",saldo:16},{nombre:"CERVEZA IMPORTADA",saldo:31},
-      {nombre:"CERVEZA NACIONAL",saldo:143},{nombre:"CHICLETS",saldo:0},
-      {nombre:"CIGARRILLOS",saldo:0},{nombre:"CREMA DE WHISKY",saldo:1},
-      {nombre:"CURAZAO AZUL",saldo:3},{nombre:"DRY MARTINI",saldo:1},
-      {nombre:"ELECTROLIT",saldo:0},{nombre:"ENCENDEDOR",saldo:0},
-      {nombre:"GASEOSA",saldo:83},{nombre:"GASEOSA 1.5",saldo:18},
-      {nombre:"GINEBRA BOTELLA",saldo:1},{nombre:"GINEBRA DL",saldo:5},
-      {nombre:"GINEBRA ML",saldo:3},{nombre:"LICOR DE CAFE",saldo:0},
-      {nombre:"LICOR DE MANZANA",saldo:11},{nombre:"LICOR DE MENTA",saldo:0},
-      {nombre:"RED BULL",saldo:7},{nombre:"RON CALDAS BOT",saldo:2},
-      {nombre:"RON CALDAS MED",saldo:1},{nombre:"RON DL",saldo:6},
-      {nombre:"TEQUILA BOTELLA",saldo:1},{nombre:"TEQUILA LITRO",saldo:0},
-      {nombre:"TEQUILA MEDIA",saldo:1},{nombre:"TEQUILA ML",saldo:3},
-      {nombre:"TRIPLE SEC",saldo:1},{nombre:"VINO BOTELLA",saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",saldo:0},{nombre:"VODKA DL",saldo:7},
-      {nombre:"WHISKY BUCHANANS BOTEL",saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",saldo:1},
-      {nombre:"WHISKY COCT",saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",saldo:1},
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:1},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:15},
+      {nombre:"AGUA TONICA",saldo:0},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:0},
+      {nombre:"CERVEZA CORONA",saldo:16},
+      {nombre:"CERVEZA IMPORTADA",saldo:31},
+      {nombre:"CERVEZA NACIONAL",saldo:149},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:0},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:84},
+      {nombre:"GASEOSA 1.5",saldo:18},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:1},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:2},
+      {nombre:"TRIPLESEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
     ]
   },
   {
     date: "2026-04-04", tipo: "final",
     items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:6},{nombre:"AGTE BOTELLA CAUCANO",entrada:0,saldo:4},
-      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:2},
-      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:7},{nombre:"AGUA",entrada:24,saldo:36},
-      {nombre:"AGUA TONICA",entrada:6,saldo:5},{nombre:"AMARETO",entrada:0,saldo:0},
-      {nombre:"CACHAZA",entrada:0,saldo:0},{nombre:"CAJA DE VINO",entrada:2,saldo:2},
-      {nombre:"CERVEZA CORONA",entrada:24,saldo:31},{nombre:"CERVEZA IMPORTADA",entrada:0,saldo:25},
-      {nombre:"CERVEZA NACIONAL",entrada:60,saldo:178},{nombre:"CHICLETS",entrada:0,saldo:0},
-      {nombre:"CIGARRILLOS",entrada:0,saldo:0},{nombre:"CREMA DE WHISKY",entrada:0,saldo:1},
-      {nombre:"CURAZAO AZUL",entrada:0,saldo:3},{nombre:"DRY MARTINI",entrada:0,saldo:1},
-      {nombre:"ELECTROLIT",entrada:4,saldo:4},{nombre:"ENCENDEDOR",entrada:0,saldo:0},
-      {nombre:"GASEOSA",entrada:64,saldo:133},{nombre:"GASEOSA 1.5",entrada:0,saldo:18},
-      {nombre:"GINEBRA BOTELLA",entrada:0,saldo:1},{nombre:"GINEBRA DL",entrada:0,saldo:5},
-      {nombre:"GINEBRA ML",entrada:0,saldo:2},{nombre:"LICOR DE CAFE",entrada:0,saldo:0},
-      {nombre:"LICOR DE MANZANA",entrada:0,saldo:11},{nombre:"LICOR DE MENTA",entrada:0,saldo:0},
-      {nombre:"RED BULL",entrada:0,saldo:7},{nombre:"RON CALDAS BOT",entrada:0,saldo:2},
-      {nombre:"RON CALDAS MED",entrada:0,saldo:1},{nombre:"RON DL",entrada:0,saldo:5},
-      {nombre:"TEQUILA BOTELLA",entrada:0,saldo:1},{nombre:"TEQUILA LITRO",entrada:0,saldo:0},
-      {nombre:"TEQUILA MEDIA",entrada:0,saldo:1},{nombre:"TEQUILA ML",entrada:0,saldo:2},
-      {nombre:"TRIPLE SEC",entrada:0,saldo:1},{nombre:"VINO BOTELLA",entrada:0,saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",entrada:0,saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",entrada:0,saldo:0},{nombre:"VODKA DL",entrada:0,saldo:7},
-      {nombre:"WHISKY BUCHANANS BOTEL",entrada:0,saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},
-      {nombre:"WHISKY COCT",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
-    ]
-  },
-  {
-    date: "2026-04-05", tipo: "inicial",
-    items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:6},{nombre:"AGTE BOTELLA CAUCANO",saldo:4},
-      {nombre:"AGTE BOTELLA REAL",saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",saldo:2},
-      {nombre:"AGTE MEDIA CAUCANO",saldo:7},{nombre:"AGUA",saldo:36},
-      {nombre:"AGUA TONICA",saldo:5},{nombre:"AMARETO",saldo:0},
-      {nombre:"CACHAZA",saldo:0},{nombre:"CAJA DE VINO",saldo:2},
-      {nombre:"CERVEZA CORONA",saldo:31},{nombre:"CERVEZA IMPORTADA",saldo:25},
-      {nombre:"CERVEZA NACIONAL",saldo:178},{nombre:"CHICLETS",saldo:0},
-      {nombre:"CIGARRILLOS",saldo:0},{nombre:"CREMA DE WHISKY",saldo:1},
-      {nombre:"CURAZAO AZUL",saldo:3},{nombre:"DRY MARTINI",saldo:1},
-      {nombre:"ELECTROLIT",saldo:4},{nombre:"ENCENDEDOR",saldo:0},
-      {nombre:"GASEOSA",saldo:133},{nombre:"GASEOSA 1.5",saldo:18},
-      {nombre:"GINEBRA BOTELLA",saldo:1},{nombre:"GINEBRA DL",saldo:5},
-      {nombre:"GINEBRA ML",saldo:2},{nombre:"LICOR DE CAFE",saldo:0},
-      {nombre:"LICOR DE MANZANA",saldo:11},{nombre:"LICOR DE MENTA",saldo:0},
-      {nombre:"RED BULL",saldo:7},{nombre:"RON CALDAS BOT",saldo:2},
-      {nombre:"RON CALDAS MED",saldo:1},{nombre:"RON DL",saldo:5},
-      {nombre:"TEQUILA BOTELLA",saldo:1},{nombre:"TEQUILA LITRO",saldo:0},
-      {nombre:"TEQUILA MEDIA",saldo:1},{nombre:"TEQUILA ML",saldo:2},
-      {nombre:"TRIPLE SEC",saldo:1},{nombre:"VINO BOTELLA",saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",saldo:0},{nombre:"VODKA DL",saldo:7},
-      {nombre:"WHISKY BUCHANANS BOTEL",saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",saldo:1},
-      {nombre:"WHISKY COCT",saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",saldo:1},
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:5},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:1},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:36},
+      {nombre:"AGUA TONICA",saldo:8},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:7},
+      {nombre:"CERVEZA CORONA",saldo:21},
+      {nombre:"CERVEZA IMPORTADA",saldo:25},
+      {nombre:"CERVEZA NACIONAL",saldo:188},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:4},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:135},
+      {nombre:"GASEOSA 1.5",saldo:18},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:6},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
     ]
   },
   {
     date: "2026-04-05", tipo: "final",
     items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:6},{nombre:"AGTE BOTELLA CAUCANO",entrada:0,saldo:4},
-      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:2},
-      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:7},{nombre:"AGUA",entrada:0,saldo:36},
-      {nombre:"AGUA TONICA",entrada:0,saldo:5},{nombre:"AMARETO",entrada:0,saldo:0},
-      {nombre:"CACHAZA",entrada:0,saldo:0},{nombre:"CAJA DE VINO",entrada:0,saldo:2},
-      {nombre:"CERVEZA CORONA",entrada:0,saldo:31},{nombre:"CERVEZA IMPORTADA",entrada:0,saldo:25},
-      {nombre:"CERVEZA NACIONAL",entrada:0,saldo:172},{nombre:"CHICLETS",entrada:0,saldo:0},
-      {nombre:"CIGARRILLOS",entrada:0,saldo:0},{nombre:"CREMA DE WHISKY",entrada:0,saldo:1},
-      {nombre:"CURAZAO AZUL",entrada:0,saldo:3},{nombre:"DRY MARTINI",entrada:0,saldo:1},
-      {nombre:"ELECTROLIT",entrada:0,saldo:4},{nombre:"ENCENDEDOR",entrada:0,saldo:0},
-      {nombre:"GASEOSA",entrada:0,saldo:127},{nombre:"GASEOSA 1.5",entrada:0,saldo:18},
-      {nombre:"GINEBRA BOTELLA",entrada:0,saldo:1},{nombre:"GINEBRA DL",entrada:0,saldo:5},
-      {nombre:"GINEBRA ML",entrada:0,saldo:2},{nombre:"LICOR DE CAFE",entrada:0,saldo:0},
-      {nombre:"LICOR DE MANZANA",entrada:0,saldo:11},{nombre:"LICOR DE MENTA",entrada:0,saldo:0},
-      {nombre:"RED BULL",entrada:0,saldo:7},{nombre:"RON CALDAS BOT",entrada:0,saldo:2},
-      {nombre:"RON CALDAS MED",entrada:0,saldo:1},{nombre:"RON DL",entrada:0,saldo:5},
-      {nombre:"TEQUILA BOTELLA",entrada:0,saldo:1},{nombre:"TEQUILA LITRO",entrada:0,saldo:0},
-      {nombre:"TEQUILA MEDIA",entrada:0,saldo:1},{nombre:"TEQUILA ML",entrada:0,saldo:2},
-      {nombre:"TRIPLE SEC",entrada:0,saldo:1},{nombre:"VINO BOTELLA",entrada:0,saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",entrada:0,saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",entrada:0,saldo:0},{nombre:"VODKA DL",entrada:0,saldo:7},
-      {nombre:"WHISKY BUCHANANS BOTEL",entrada:0,saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},
-      {nombre:"WHISKY COCT",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:5},
+      {nombre:"AGT BOTLLA CAUCA",saldo:2},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:1},
+      {nombre:"AGT MEDIA CAUCA",saldo:7},
+      {nombre:"AGUA",saldo:18},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:19},
+      {nombre:"CERVEZA IMPORTADA",saldo:33},
+      {nombre:"CERVEZA NACIONAL",saldo:138},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:106},
+      {nombre:"GASEOSA 1.5",saldo:10},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:2},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
     ]
   },
   {
-    date: "2026-04-06", tipo: "inicial",
+    date: "2026-04-15", tipo: "final",
     items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",saldo:6},{nombre:"AGTE BOTELLA CAUCANO",saldo:4},
-      {nombre:"AGTE BOTELLA REAL",saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",saldo:2},
-      {nombre:"AGTE MEDIA CAUCANO",saldo:7},{nombre:"AGUA",saldo:36},
-      {nombre:"AGUA TONICA",saldo:5},{nombre:"AMARETO",saldo:0},
-      {nombre:"CACHAZA",saldo:0},{nombre:"CAJA DE VINO",saldo:2},
-      {nombre:"CERVEZA CORONA",saldo:31},{nombre:"CERVEZA IMPORTADA",saldo:25},
-      {nombre:"CERVEZA NACIONAL",saldo:172},{nombre:"CHICLETS",saldo:0},
-      {nombre:"CIGARRILLOS",saldo:0},{nombre:"CREMA DE WHISKY",saldo:1},
-      {nombre:"CURAZAO AZUL",saldo:3},{nombre:"DRY MARTINI",saldo:1},
-      {nombre:"ELECTROLIT",saldo:4},{nombre:"ENCENDEDOR",saldo:0},
-      {nombre:"GASEOSA",saldo:127},{nombre:"GASEOSA 1.5",saldo:18},
-      {nombre:"GINEBRA BOTELLA",saldo:1},{nombre:"GINEBRA DL",saldo:5},
-      {nombre:"GINEBRA ML",saldo:2},{nombre:"LICOR DE CAFE",saldo:0},
-      {nombre:"LICOR DE MANZANA",saldo:11},{nombre:"LICOR DE MENTA",saldo:0},
-      {nombre:"RED BULL",saldo:7},{nombre:"RON CALDAS BOT",saldo:2},
-      {nombre:"RON CALDAS MED",saldo:1},{nombre:"RON DL",saldo:5},
-      {nombre:"TEQUILA BOTELLA",saldo:1},{nombre:"TEQUILA LITRO",saldo:0},
-      {nombre:"TEQUILA MEDIA",saldo:1},{nombre:"TEQUILA ML",saldo:2},
-      {nombre:"TRIPLE SEC",saldo:1},{nombre:"VINO BOTELLA",saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",saldo:0},{nombre:"VODKA DL",saldo:7},
-      {nombre:"WHISKY BUCHANANS BOTEL",saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",saldo:1},
-      {nombre:"WHISKY COCT",saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",saldo:1},
-    ]
-  },
-  {
-    date: "2026-04-06", tipo: "final",
-    items: [
-      {nombre:"AGTE BOTELLA ANTIOQUEN",entrada:0,saldo:6},{nombre:"AGTE BOTELLA CAUCANO",entrada:0,saldo:4},
-      {nombre:"AGTE BOTELLA REAL",entrada:0,saldo:1},{nombre:"AGTE MEDIA ANTIOQUENO",entrada:0,saldo:2},
-      {nombre:"AGTE MEDIA CAUCANO",entrada:0,saldo:7},{nombre:"AGUA",entrada:0,saldo:18},
-      {nombre:"AGUA TONICA",entrada:0,saldo:5},{nombre:"AMARETO",entrada:0,saldo:0},
-      {nombre:"CACHAZA",entrada:0,saldo:0},{nombre:"CAJA DE VINO",entrada:0,saldo:2},
-      {nombre:"CERVEZA CORONA",entrada:0,saldo:29},{nombre:"CERVEZA IMPORTADA",entrada:0,saldo:23},
-      {nombre:"CERVEZA NACIONAL",entrada:0,saldo:147},{nombre:"CHICLETS",entrada:0,saldo:0},
-      {nombre:"CIGARRILLOS",entrada:0,saldo:0},{nombre:"CREMA DE WHISKY",entrada:0,saldo:1},
-      {nombre:"CURAZAO AZUL",entrada:0,saldo:3},{nombre:"DRY MARTINI",entrada:0,saldo:1},
-      {nombre:"ELECTROLIT",entrada:0,saldo:3},{nombre:"ENCENDEDOR",entrada:0,saldo:0},
-      {nombre:"GASEOSA",entrada:0,saldo:101},{nombre:"GASEOSA 1.5",entrada:0,saldo:10},
-      {nombre:"GINEBRA BOTELLA",entrada:0,saldo:1},{nombre:"GINEBRA DL",entrada:0,saldo:5},
-      {nombre:"GINEBRA ML",entrada:0,saldo:2},{nombre:"LICOR DE CAFE",entrada:0,saldo:0},
-      {nombre:"LICOR DE MANZANA",entrada:0,saldo:11},{nombre:"LICOR DE MENTA",entrada:0,saldo:0},
-      {nombre:"RED BULL",entrada:0,saldo:7},{nombre:"RON CALDAS BOT",entrada:0,saldo:2},
-      {nombre:"RON CALDAS MED",entrada:0,saldo:1},{nombre:"RON DL",entrada:0,saldo:5},
-      {nombre:"TEQUILA BOTELLA",entrada:0,saldo:1},{nombre:"TEQUILA LITRO",entrada:0,saldo:0},
-      {nombre:"TEQUILA MEDIA",entrada:0,saldo:1},{nombre:"TEQUILA ML",entrada:0,saldo:2},
-      {nombre:"TRIPLE SEC",entrada:0,saldo:1},{nombre:"VINO BOTELLA",entrada:0,saldo:1},
-      {nombre:"VINO CASILLERO BOTELLA",entrada:0,saldo:0},{nombre:"VODKA ABSOLUT BOTELLA",entrada:0,saldo:0},
-      {nombre:"VODKA ABSOLUT MEDIA",entrada:0,saldo:0},{nombre:"VODKA DL",entrada:0,saldo:7},
-      {nombre:"WHISKY BUCHANANS BOTEL",entrada:0,saldo:0},{nombre:"WHISKY BUCHANANS MEDIA",entrada:0,saldo:1},
-      {nombre:"WHISKY COCT",entrada:0,saldo:1},{nombre:"WHISKY OLD PAR BOTELLA",entrada:0,saldo:1},
-      {nombre:"WHISKY OLD PAR MEDIA",entrada:0,saldo:1},
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:5},
+      {nombre:"AGT BOTLLA CAUCA",saldo:2},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:1},
+      {nombre:"AGT MEDIA CAUCA",saldo:7},
+      {nombre:"AGUA",saldo:18},
+      {nombre:"AGUA TONICA",saldo:5},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:23},
+      {nombre:"CERVEZA IMPORTADA",saldo:23},
+      {nombre:"CERVEZA NACIONAL",saldo:126},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:88},
+      {nombre:"GASEOSA 1.5",saldo:10},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:10},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0}
     ]
   }
 ];
+
 
 const PRELOADED_GASTOS = [
   {
@@ -617,22 +583,25 @@ export default function App(){
   },[]);
 
   const c=useMemo(()=>cuadres.find(x=>x.date===selDate),[cuadres,selDate]);
-  const ini=useMemo(()=>inventarios.find(x=>x.date===selDate&&x.tipo==="inicial"),[inventarios,selDate]);
   const fin=useMemo(()=>inventarios.find(x=>x.date===selDate&&x.tipo==="final"),[inventarios,selDate]);
+  const prevFin=useMemo(()=>{
+    const sorted=[...inventarios].filter(x=>x.tipo==="final"&&x.date<selDate).sort((a,b)=>b.date.localeCompare(a.date));
+    return sorted[0]||null;
+  },[inventarios,selDate]);
   const coc=useMemo(()=>cocinaData.find(x=>x.date===selDate),[cocinaData,selDate]);
   const gas=useMemo(()=>gastosData.find(x=>x.date===selDate),[gastosData,selDate]);
 
   const invCross=useMemo(()=>{
-    if(!ini||!fin) return null;
+    if(!fin) return null;
     const diffs=[];
     fin.items.forEach(f=>{
-      const i=ini.items.find(x=>x.nombre===f.nombre);
-      const sI=i?.saldo||0;const sF=f.saldo||0;const ent=f.entrada||0;
-      const consumo=sI+ent-sF;
-      if(consumo>0||ent>0) diffs.push({nombre:f.nombre,ini:sI,ent,fin:sF,consumo});
+      const prev=prevFin?.items?.find(x=>x.nombre===f.nombre);
+      const sI=prev?.saldo||0;const sF=f.saldo||0;
+      const consumo=sI-sF;
+      if(consumo>0||sI>0||sF>0) diffs.push({nombre:f.nombre,ini:sI,ent:0,fin:sF,consumo:Math.max(0,consumo)});
     });
     return diffs.sort((a,b)=>b.consumo-a.consumo);
-  },[ini,fin]);
+  },[fin,prevFin]);
 
   const dates=useMemo(()=>{
     const s=new Set([...cuadres.map(x=>x.date),...cocinaData.map(x=>x.date),...gastosData.map(x=>x.date)]);
@@ -679,7 +648,7 @@ export default function App(){
         {view==="invdash"&&<InventarioDashboard inventarios={inventarios} cuadres={cuadres}/>}
         {view==="resumen"&&<Resumen c={c} coc={coc} gas={gas} cross={invCross} date={selDate}/>}
         {view==="cocina"&&<Cocina coc={coc} date={selDate}/>}
-        {view==="inventario"&&<Inventario cross={invCross} ini={ini} fin={fin} date={selDate}/>}
+        {view==="inventario"&&<Inventario cross={invCross} prevFin={prevFin} fin={fin} date={selDate}/>}
         {view==="gastos"&&<Gastos gas={gas} date={selDate}/>}
       </div>
     </div>
@@ -1045,67 +1014,58 @@ function DashboardGeneral({cuadres,cocina,gastos,inventarios}){
 
 // ─── Inventario Dashboard ───
 function InventarioDashboard({inventarios,cuadres}){
-  // Compute consumption across all days
+  // Compute consumption by comparing consecutive final inventories
   const consumoTotal=useMemo(()=>{
     const prods={};
-    const finals=inventarios.filter(i=>i.tipo==="final");
-    finals.forEach(fin=>{
-      const ini=inventarios.find(i=>i.date===fin.date&&i.tipo==="inicial");
-      if(!ini)return;
-      fin.items.forEach(f=>{
-        const iItem=ini.items.find(x=>x.nombre===f.nombre);
-        const sI=iItem?.saldo||0;const ent=f.entrada||0;const sF=f.saldo||0;
-        const consumo=sI+ent-sF;
-        if(!prods[f.nombre])prods[f.nombre]={nombre:f.nombre,consumo:0,entradas:0,saldoFinal:sF,days:0};
+    const finals=inventarios.filter(i=>i.tipo==="final").sort((a,b)=>a.date.localeCompare(b.date));
+    for(let idx=1;idx<finals.length;idx++){
+      const prev=finals[idx-1];const curr=finals[idx];
+      curr.items.forEach(f=>{
+        const pItem=prev.items.find(x=>x.nombre===f.nombre);
+        const sI=pItem?.saldo||0;const sF=f.saldo||0;
+        const consumo=sI-sF;
+        if(!prods[f.nombre])prods[f.nombre]={nombre:f.nombre,consumo:0,saldoFinal:sF,days:0};
         if(consumo>0){prods[f.nombre].consumo+=consumo;prods[f.nombre].days++;}
-        prods[f.nombre].entradas+=ent;
-        prods[f.nombre].saldoFinal=sF; // last known
+        prods[f.nombre].saldoFinal=sF;
       });
-    });
+    }
     return Object.values(prods).sort((a,b)=>b.consumo-a.consumo);
   },[inventarios]);
 
-  // Last inventory snapshot (most recent final)
   const lastFinal=useMemo(()=>{
     const finals=inventarios.filter(i=>i.tipo==="final").sort((a,b)=>b.date.localeCompare(a.date));
     return finals[0]||null;
   },[inventarios]);
 
-  // Stock alerts
   const stockBajo=useMemo(()=>{
     if(!lastFinal)return[];
-    return lastFinal.items.filter(i=>i.saldo<=2).sort((a,b)=>(a.saldo||0)-(b.saldo||0));
+    return (lastFinal.items||[]).filter(i=>i.saldo<=2).sort((a,b)=>(a.saldo||0)-(b.saldo||0));
   },[lastFinal]);
 
-  // Daily consumption trend
+  // Daily consumption trend (compare each day vs previous)
   const dailyTrend=useMemo(()=>{
     const finals=inventarios.filter(i=>i.tipo==="final").sort((a,b)=>a.date.localeCompare(b.date));
-    return finals.map(fin=>{
-      const ini=inventarios.find(i=>i.date===fin.date&&i.tipo==="inicial");
-      if(!ini)return{d:fmtD(fin.date).split(" ").slice(0,2).join(" "),totalConsumo:0,totalEntradas:0};
-      let tc=0,te=0;
-      fin.items.forEach(f=>{
-        const iItem=ini.items.find(x=>x.nombre===f.nombre);
-        const c=(iItem?.saldo||0)+(f.entrada||0)-(f.saldo||0);
+    const trend=[];
+    for(let idx=1;idx<finals.length;idx++){
+      const prev=finals[idx-1];const curr=finals[idx];
+      let tc=0;
+      curr.items.forEach(f=>{
+        const pItem=prev.items.find(x=>x.nombre===f.nombre);
+        const c=(pItem?.saldo||0)-(f.saldo||0);
         if(c>0)tc+=c;
-        te+=(f.entrada||0);
       });
-      return{d:fmtD(fin.date).split(" ").slice(0,2).join(" "),totalConsumo:tc,totalEntradas:te};
-    });
+      trend.push({d:fmtD(curr.date).split(" ").slice(0,2).join(" "),totalConsumo:tc});
+    }
+    return trend;
   },[inventarios]);
-
-  // Restock frequency
-  const restockItems=useMemo(()=>{
-    return consumoTotal.filter(p=>p.entradas>0).sort((a,b)=>b.entradas-a.entradas).slice(0,10);
-  },[consumoTotal]);
 
   const daysWithData=inventarios.filter(i=>i.tipo==="final").length;
 
-  if(daysWithData===0) return <div style={{textAlign:"center",padding:60,color:C.dim}}><div style={{fontSize:52,marginBottom:14}}>📦</div><p style={{fontSize:20,fontWeight:600}}>Sin datos de inventario</p></div>;
+  if(daysWithData<=1) return <div style={{textAlign:"center",padding:60,color:C.dim}}><div style={{fontSize:52,marginBottom:14}}>📦</div><p style={{fontSize:20,fontWeight:600}}>Necesita al menos 2 días de inventario para calcular consumos</p></div>;
 
   return(<div>
     <div style={{fontSize:22,fontWeight:700,color:C.cyan,marginBottom:4}}>📦 Control de Inventario</div>
-    <div style={{fontSize:13,color:C.dim,marginBottom:16}}>{daysWithData} días con cruce de inventario registrado</div>
+    <div style={{fontSize:13,color:C.dim,marginBottom:16}}>{daysWithData} días con inventario · Consumo calculado entre días consecutivos</div>
 
     {/* ═══ ALERTAS STOCK BAJO ═══ */}
     {stockBajo.length>0&&<Card accent={C.red} style={{background:C.red+"08"}}>
@@ -1123,7 +1083,7 @@ function InventarioDashboard({inventarios,cuadres}){
 
     {/* ═══ CONSUMO DIARIO ═══ */}
     {dailyTrend.length>0&&<Card>
-      <Sec color={C.cyan}>Consumo vs reposición diaria (unidades totales)</Sec>
+      <Sec color={C.cyan}>Consumo diario (unidades totales)</Sec>
       <ResponsiveContainer width="100%" height={180}>
         <BarChart data={dailyTrend}>
           <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
@@ -1131,7 +1091,6 @@ function InventarioDashboard({inventarios,cuadres}){
           <YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}}/>
           <Tooltip contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
           <Bar dataKey="totalConsumo" name="Consumo" fill={C.orange} radius={[4,4,0,0]}/>
-          <Bar dataKey="totalEntradas" name="Reposición" fill={C.green} radius={[4,4,0,0]}/>
         </BarChart>
       </ResponsiveContainer>
     </Card>}
@@ -1149,23 +1108,6 @@ function InventarioDashboard({inventarios,cuadres}){
         </BarChart>
       </ResponsiveContainer>
     </Card>
-
-    {/* ═══ REPOSICIONES MÁS FRECUENTES ═══ */}
-    {restockItems.length>0&&<Card>
-      <Sec color={C.green}>Productos con mayor reposición (entradas)</Sec>
-      {restockItems.map((p,i)=>{
-        const mx=restockItems[0]?.entradas||1;
-        return(<div key={i} style={{marginBottom:5}}>
-          <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:2}}>
-            <span><span style={{color:C.gold,fontWeight:700,marginRight:6}}>{i+1}.</span>{p.nombre}</span>
-            <span><span style={{color:C.green,fontWeight:600}}>{p.entradas} entradas</span> <span style={{color:C.muted,marginLeft:4}}>({p.consumo} consumidas)</span></span>
-          </div>
-          <div style={{background:C.bdr,borderRadius:3,height:5}}>
-            <div style={{background:C.green,height:"100%",width:`${(p.entradas/mx)*100}%`,borderRadius:3}}/>
-          </div>
-        </div>);
-      })}
-    </Card>}
 
     {/* ═══ SNAPSHOT INVENTARIO ACTUAL ═══ */}
     {lastFinal&&<Card>
@@ -1308,20 +1250,19 @@ function Cocina({coc,date}){
   </div>);
 }
 
-function Inventario({cross,ini,fin,date}){
+function Inventario({cross,prevFin,fin,date}){
   return(<div>
     <h2 style={{fontFamily:"'Poppins',sans-serif",fontSize:22,color:C.cyan,margin:"0 0 14px"}}>📦 Inventario — {fmtD(date)}</h2>
     {cross&&cross.length>0?<>
       <Card accent={C.cyan}>
         <Sec color={C.cyan}>Cruce Inventario: Consumo Real</Sec>
-        <p style={{fontSize:14,color:C.dim,marginBottom:10}}>Saldo Inicial + Entradas − Saldo Final = Consumo</p>
-        <div style={{fontSize:13,display:"grid",gridTemplateColumns:"1fr 40px 40px 40px 50px",gap:4,padding:"6px 0",borderBottom:`2px solid ${C.bdr}`,color:C.dim,fontWeight:700,textTransform:"uppercase"}}>
-          <span>Producto</span><span style={{textAlign:"center"}}>Ini</span><span style={{textAlign:"center"}}>+Ent</span><span style={{textAlign:"center"}}>Fin</span><span style={{textAlign:"center"}}>Consumo</span>
+        <p style={{fontSize:14,color:C.dim,marginBottom:10}}>Saldo día anterior → Saldo hoy = Consumo{prevFin?` (vs ${fmtD(prevFin.date)})`:""}</p>
+        <div style={{fontSize:13,display:"grid",gridTemplateColumns:"1fr 50px 50px 50px",gap:4,padding:"6px 0",borderBottom:`2px solid ${C.bdr}`,color:C.dim,fontWeight:700,textTransform:"uppercase"}}>
+          <span>Producto</span><span style={{textAlign:"center"}}>Antes</span><span style={{textAlign:"center"}}>Hoy</span><span style={{textAlign:"center"}}>Consumo</span>
         </div>
-        {cross.map((d,i)=><div key={i} style={{display:"grid",gridTemplateColumns:"1fr 40px 40px 40px 50px",gap:4,padding:"5px 0",borderBottom:`1px solid ${C.bdr}20`,fontSize:13,alignItems:"center"}}>
+        {cross.map((d,i)=><div key={i} style={{display:"grid",gridTemplateColumns:"1fr 50px 50px 50px",gap:4,padding:"5px 0",borderBottom:`1px solid ${C.bdr}20`,fontSize:13,alignItems:"center"}}>
           <span style={{fontWeight:d.consumo>=3?600:400,color:d.consumo>=3?C.text:C.dim}}>{d.nombre}</span>
           <span style={{textAlign:"center",color:C.muted}}>{d.ini}</span>
-          <span style={{textAlign:"center",color:d.ent?C.green:C.muted}}>{d.ent||"—"}</span>
           <span style={{textAlign:"center",color:C.muted}}>{d.fin}</span>
           <span style={{textAlign:"center",fontWeight:700,color:d.consumo>=5?C.red:d.consumo>=3?C.orange:C.cyan,background:d.consumo>=5?C.red+"15":d.consumo>=3?C.orange+"15":"transparent",borderRadius:4,padding:"2px 0"}}>{d.consumo}</span>
         </div>)}
@@ -1342,7 +1283,7 @@ function Inventario({cross,ini,fin,date}){
           <span>{d.nombre}</span><span style={{color:d.fin===0?C.red:C.orange,fontWeight:700}}>{d.fin===0?"AGOTADO":`${d.fin} uds`}</span>
         </div>)}
       </Card>}
-    </>:<Card><p style={{color:C.dim,textAlign:"center",padding:20}}>{!ini&&!fin?"Sin inventarios para este día":"Falta inventario "+(ini?"FINAL":"INICIAL")+" para cruzar"}</p></Card>}
+    </>:<Card><p style={{color:C.dim,textAlign:"center",padding:20}}>{!fin?"Sin inventario para este día":"Es el primer día — no hay día anterior para comparar"}</p></Card>}
   </div>);
 }
 
