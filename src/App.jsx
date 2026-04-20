@@ -51,6 +51,13 @@ const PRELOADED_CUADRES = [
     efectivo: 1000, tarjeta: 2813400, otros_pago: 225000,
     pizza_80: 844320, gastos: 10000, nomina: 215000,
     neto_sala: 1970080, faltante: 0,
+  },
+  {
+    date: "2026-04-19", venta_total: 197000,
+    estanco: 26000, cocteles: 72000, pizzeria: 99000, otros_venta: 0,
+    efectivo: 14000, tarjeta: 0, otros_pago: 183000,
+    pizza_80: 79200, gastos: 28000, nomina: 155000,
+    neto_sala: -65200, faltante: 0,
   }
 ];
 
@@ -155,6 +162,14 @@ const PRELOADED_COCINA = [
       { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
       { nombre: "ADICION COMIDA", cantidad: 1, valor: 4000 },
+    ]
+  },
+  {
+    date: "2026-04-19", total: 99000, total_units: 3,
+    productos: [
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
     ]
   }
 ];
@@ -523,6 +538,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-04-19", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCA",saldo:3},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:2},
+      {nombre:"AGT MEDIA CAUCA",saldo:7},
+      {nombre:"AGUA",saldo:24},
+      {nombre:"AGUA TONICA",saldo:5},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:18},
+      {nombre:"CERVEZA IMPORTADA",saldo:15},
+      {nombre:"CERVEZA NACIONAL",saldo:91},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:2},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:89},
+      {nombre:"GASEOSA 1.5",saldo:8},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:9},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -603,6 +670,13 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
     ]
+  },
+  {
+    date: "2026-04-19", total: 28000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "Platos plásticos + 2 bolsas hielo", categoria: "Insumos", valor: 23000 },
+    ]
   }
 ];
 
@@ -633,7 +707,7 @@ export default function App(){
   const [cocinaData,setCocinaData]=useState([]);
   const [gastosData,setGastosData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-04-18");
+  const [selDate,setSelDate]=useState("2026-04-19");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
