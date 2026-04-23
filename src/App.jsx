@@ -72,6 +72,13 @@ const PRELOADED_CUADRES = [
     efectivo: 3000, tarjeta: 274800, otros_pago: 160000,
     pizza_80: 147680, gastos: 5000, nomina: 155000,
     neto_sala: 130120, faltante: 0,
+  },
+  {
+    date: "2026-04-22", venta_total: 0,
+    estanco: 0, cocteles: 0, pizzeria: 0, otros_venta: 0,
+    efectivo: 0, tarjeta: 0, otros_pago: 0,
+    pizza_80: 0, gastos: 0, nomina: 155000,
+    neto_sala: -155000, faltante: 0,
   }
 ];
 
@@ -853,7 +860,7 @@ export default function App(){
   const [cocinaData,setCocinaData]=useState([]);
   const [gastosData,setGastosData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-04-21");
+  const [selDate,setSelDate]=useState("2026-04-22");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
