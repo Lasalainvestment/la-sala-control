@@ -1472,6 +1472,9 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
   },{venta:0,estanco:0,cocteles:0,pizza:0,efectivo:0,tarjeta:0,otros:0,p80:0,gastos:0,nomina:0,cf:0,neto:0});
 
   const totalGastos=tot.p80+tot.gastos+tot.nomina+tot.cf;
+  const totalTransf=(gastosTransf||[]).reduce((a,g)=>a+(g.valor||0),0);
+  const netoReal=tot.neto-totalTransf;
+  const totalGastosReal=totalGastos+totalTransf;
   const avgDay=tot.venta/cuadres.length;
   const proyeccion=avgDay*DIAS_MES;
   const pctMeta=tot.venta/META;
@@ -1480,6 +1483,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
   const necesitaDia=diasRestantes>0?faltaMeta/diasRestantes:0;
   const barPct=tot.venta?(tot.estanco+tot.cocteles)/tot.venta:0;
   const margenPct=tot.venta?(tot.neto/tot.venta):0;
+  const margenRealPct=tot.venta?(netoReal/tot.venta):0;
 
   const best=cuadres.reduce((a,b)=>a.venta_total>b.venta_total?a:b);
   const worst=cuadres.reduce((a,b)=>a.venta_total<b.venta_total?a:b);
@@ -1647,9 +1651,11 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
         {l:"Estanco",v:fmtF(tot.estanco),s:pct(tot.estanco,tot.venta),c:C.gold},
         {l:"Cocteles",v:fmtF(tot.cocteles),s:pct(tot.cocteles,tot.venta),c:C.cyan},
         {l:"Pizzería",v:fmtF(tot.pizza),s:pct(tot.pizza,tot.venta),c:C.orange},
-        {l:"Neto La Sala",v:fmtF(tot.neto),s:`margen ${(margenPct*100).toFixed(1)}%`,c:tot.neto>=0?C.green:C.red},
+        {l:"Neto cuadres POS",v:fmtF(tot.neto),s:`margen ${(margenPct*100).toFixed(1)}%`,c:tot.neto>=0?C.green:C.red},
+        {l:"Gastos transferencia",v:fmtF(totalTransf),s:`${(gastosTransf||[]).length} pagos`,c:C.purple},
+        {l:"NETO REAL",v:fmtF(netoReal),s:`margen real ${(margenRealPct*100).toFixed(1)}%`,c:netoReal>=0?C.green:C.red},
       ].map((k,i)=>(
-        <Card key={i} accent={k.c} style={{padding:"13px 14px",marginBottom:0}}>
+        <Card key={i} accent={k.c} style={{padding:"13px 14px",marginBottom:0,...(k.l==="NETO REAL"?{background:(netoReal>=0?C.greenDim:C.redDim)+"18",borderWidth:2}:{})}}>
           <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:.7,fontWeight:600,marginBottom:4}}>{k.l}</div>
           <div style={{fontSize:18,fontWeight:700,color:k.c}}>{k.v}</div>
           <div style={{fontSize:11,color:C.muted,marginTop:2}}>{k.s}</div>
@@ -1761,14 +1767,16 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
     {/* ═══ GASTOS ═══ */}
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
       <Card>
-        <Sec color={C.red}>Desglose gastos operativos</Sec>
-        {[{n:"Pizza 80%",v:tot.p80,c:C.orange},{n:"Gastos operativos",v:tot.gastos,c:C.red},{n:"Nómina",v:tot.nomina,c:C.purple},{n:"Costo financiero (5% tarjeta)",v:tot.cf,c:C.blue}].map((e,i)=>(
+        <Sec color={C.red}>Desglose gastos consolidado</Sec>
+        {[{n:"Pizza 80%",v:tot.p80,c:C.orange},{n:"Gastos operativos (POS)",v:tot.gastos,c:C.red},{n:"Nómina (caja)",v:tot.nomina,c:C.purple},{n:"Costo financiero (5% tarjeta)",v:tot.cf,c:C.blue},{n:"Gastos por transferencia",v:totalTransf,c:C.pink}].map((e,i)=>(
           <div key={i} style={{marginBottom:8}}>
             <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:3}}><span>{e.n}</span><span style={{color:e.c,fontWeight:600}}>{fmtF(e.v)}</span></div>
-            <div style={{background:C.bdr,borderRadius:3,height:6}}><div style={{background:e.c,height:"100%",width:`${totalGastos?(e.v/totalGastos)*100:0}%`,borderRadius:3}}/></div>
+            <div style={{background:C.bdr,borderRadius:3,height:6}}><div style={{background:e.c,height:"100%",width:`${totalGastosReal?(e.v/totalGastosReal)*100:0}%`,borderRadius:3}}/></div>
           </div>
         ))}
-        <div style={{display:"flex",justifyContent:"space-between",fontSize:14,fontWeight:700,paddingTop:8,borderTop:`1px solid ${C.bdr}`}}><span>Total</span><span style={{color:C.red}}>{fmtF(totalGastos)}</span></div>
+        <div style={{display:"flex",justifyContent:"space-between",fontSize:14,fontWeight:700,paddingTop:8,borderTop:`1px solid ${C.bdr}`}}><span>Total gastos</span><span style={{color:C.red}}>{fmtF(totalGastosReal)}</span></div>
+        <div style={{display:"flex",justifyContent:"space-between",fontSize:13,paddingTop:6,marginTop:6,borderTop:`1px dashed ${C.bdr}`}}><span style={{color:C.dim}}>Venta total</span><span style={{color:C.gold,fontWeight:600}}>{fmtF(tot.venta)}</span></div>
+        <div style={{display:"flex",justifyContent:"space-between",fontSize:14,fontWeight:700,paddingTop:4}}><span>Neto REAL</span><span style={{color:netoReal>=0?C.green:C.red}}>{fmtF(netoReal)}</span></div>
       </Card>
       {expList.length>0&&<Card>
         <Sec color={C.red}>Gastos por categoría</Sec>
@@ -1783,13 +1791,11 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
 
     {/* ═══ GASTOS POR TRANSFERENCIA (semanales / proveedores) ═══ */}
     {gastosTransf&&gastosTransf.length>0&&(()=>{
-      const totalGT=gastosTransf.reduce((a,g)=>a+g.valor,0);
       const semanas=[...new Set(gastosTransf.map(g=>g.periodo))].sort();
       const semanaData=semanas.map(p=>{
         const items=gastosTransf.filter(g=>g.periodo===p);
         return{periodo:p,total:items.reduce((a,g)=>a+g.valor,0),items};
       });
-      const netoReal=tot.neto-totalGT;
       const catTotals={};
       gastosTransf.forEach(g=>{catTotals[g.categoria]=(catTotals[g.categoria]||0)+g.valor;});
       const catList=Object.entries(catTotals).map(([k,v],i)=>({name:k,value:v,fill:PIE[i%PIE.length]})).sort((a,b)=>b.value-a.value);
@@ -1799,13 +1805,13 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:14}}>
             <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",borderLeft:`3px solid ${C.purple}`}}>
               <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:.8}}>Total transferencias</div>
-              <div style={{fontSize:24,fontWeight:700,color:C.purple,fontFamily:"'Poppins',sans-serif",marginTop:4}}>{fmtF(totalGT)}</div>
+              <div style={{fontSize:24,fontWeight:700,color:C.purple,fontFamily:"'Poppins',sans-serif",marginTop:4}}>{fmtF(totalTransf)}</div>
               <div style={{fontSize:12,color:C.muted,marginTop:2}}>{gastosTransf.length} pagos en {semanas.length} semanas</div>
             </div>
             <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",borderLeft:`3px solid ${netoReal>=0?C.green:C.red}`}}>
               <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:.8}}>Neto REAL consolidado</div>
               <div style={{fontSize:24,fontWeight:700,color:netoReal>=0?C.green:C.red,fontFamily:"'Poppins',sans-serif",marginTop:4}}>{fmtF(netoReal)}</div>
-              <div style={{fontSize:12,color:C.muted,marginTop:2}}>Neto cuadres ({fmtF(tot.neto)}) − transferencias</div>
+              <div style={{fontSize:12,color:C.muted,marginTop:2}}>Neto cuadres ({fmtF(tot.neto)}) − transferencias ({fmtF(totalTransf)})</div>
             </div>
           </div>
           {semanaData.map((s,i)=>(
@@ -1843,7 +1849,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
                   <span>{g.concepto}</span>
                   <span style={{color:C.purple,fontWeight:600}}>{fmtF(g.valor)}</span>
                 </div>
-                <div style={{background:C.bdr,borderRadius:3,height:5}}><div style={{background:C.purple,height:"100%",width:`${(g.valor/totalGT)*100}%`,borderRadius:3}}/></div>
+                <div style={{background:C.bdr,borderRadius:3,height:5}}><div style={{background:C.purple,height:"100%",width:`${(g.valor/totalTransf)*100}%`,borderRadius:3}}/></div>
               </div>
             ))}
           </Card>
