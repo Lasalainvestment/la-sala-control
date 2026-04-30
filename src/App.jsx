@@ -1347,8 +1347,8 @@ const C={bg:"#0c0b09",card:"#161412",bdr:"#2a2520",
   text:"#e8e0d4",dim:"#8a7e70",muted:"#5c554a"};
 const PIE=[C.gold,C.cyan,C.orange,C.purple,C.pink,C.blue,C.green];
 
-const Card=({children,style,accent})=><div style={{background:C.card,borderRadius:14,border:`1px solid ${C.bdr}`,padding:18,marginBottom:14,...(accent?{borderLeft:`3px solid ${accent}`}:{}),...style}}>{children}</div>;
-const Sec=({children,color})=><div style={{fontSize:13,color:color||C.dim,textTransform:"uppercase",letterSpacing:1.2,marginBottom:12,fontWeight:700}}>{children}</div>;
+const Card=({children,style,accent,floating})=><div style={{background:C.card,borderRadius:20,border:`1px solid ${C.bdr}`,padding:20,marginBottom:16,boxShadow:floating!==false?"0 10px 30px rgba(0,0,0,0.5)":"none",...(accent?{borderLeft:`3px solid ${accent}`}:{}),...style}}>{children}</div>;
+const Sec=({children,color})=><div style={{fontSize:13,color:color||C.dim,textTransform:"uppercase",letterSpacing:2,marginBottom:14,fontWeight:700}}>{children}</div>;
 
 export default function App(){
   const [cuadres,setCuadres]=useState([]);
@@ -1409,20 +1409,25 @@ export default function App(){
     return[...s].sort().reverse();
   },[cuadres,cocinaData,gastosData]);
 
-  if(loading) return <div style={{background:C.bg,minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{color:C.gold,fontFamily:"'Poppins',sans-serif",fontSize:24}}>Cargando...</div></div>;
+  if(loading) return <div style={{background:`linear-gradient(135deg, ${C.bg} 0%, #14110d 50%, ${C.bg} 100%)`,minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{color:C.gold,fontFamily:"'Poppins',sans-serif",fontSize:24,fontWeight:800}}>Cargando...</div></div>;
 
   const tabs=[{id:"dashboard",l:"Dashboard",i:"📊"},{id:"invdash",l:"Inv. Control",i:"🔄"},{id:"resumen",l:"Día",i:"◉"},{id:"cocina",l:"Cocina",i:"🍕"},{id:"inventario",l:"Inventario",i:"📦"},{id:"gastos",l:"Gastos",i:"📋"}];
 
   return(
-    <div style={{background:C.bg,minHeight:"100vh",fontFamily:"'Poppins',sans-serif",color:C.text}}>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <div style={{background:`linear-gradient(135deg, ${C.bg} 0%, #14110d 50%, ${C.bg} 100%)`,backgroundAttachment:"fixed",minHeight:"100vh",fontFamily:"'Poppins',sans-serif",color:C.text}}>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+      <style>{`
+        @keyframes pulse-red { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
+        .pulse-dot { animation: pulse-red 1.5s ease-in-out infinite; }
+        @keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
+      `}</style>
 
-      <header style={{background:`linear-gradient(180deg,${C.card} 0%,${C.bg} 100%)`,borderBottom:`1px solid ${C.bdr}`,padding:"14px 16px",position:"sticky",top:0,zIndex:50}}>
+      <header style={{background:`linear-gradient(180deg,${C.card}f5 0%,${C.bg}e8 100%)`,backdropFilter:"blur(12px)",WebkitBackdropFilter:"blur(12px)",borderBottom:`1px solid ${C.bdr}`,padding:"14px 16px",position:"sticky",top:0,zIndex:50}}>
         <div style={{maxWidth:920,margin:"0 auto"}}>
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
             <div>
-              <h1 style={{fontFamily:"'Poppins',sans-serif",fontSize:24,color:C.gold,margin:0}}>La Sala</h1>
-              <p style={{fontSize:13,color:C.dim,margin:"2px 0 0",letterSpacing:1.5,textTransform:"uppercase"}}>Control de ventas · Abril 2026</p>
+              <h1 style={{fontFamily:"'Poppins',sans-serif",fontSize:26,fontWeight:800,color:C.gold,margin:0,letterSpacing:0.5}}>La Sala</h1>
+              <p style={{fontSize:12,color:C.dim,margin:"2px 0 0",letterSpacing:2,textTransform:"uppercase",fontWeight:500}}>Control de ventas · Abril 2026</p>
             </div>
           </div>
           <div style={{display:"flex",gap:4,overflowX:"auto"}}>
@@ -1574,17 +1579,17 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
   const metaColor=pctMeta>=1?C.green:pctMeta>=0.5?"#fbbf24":C.red;
   const proyColor=proyeccion>=META?C.green:proyeccion>=META*0.85?"#fbbf24":C.red;
 
-  // Custom tooltip with percentages
+  // Custom tooltip with percentages — glassmorphism style
   const DailyTooltip=({active,payload,label})=>{
     if(!active||!payload?.length)return null;
     const d=payload[0]?.payload;
-    return(<div style={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:10,padding:"10px 14px",fontSize:12}}>
-      <div style={{color:C.gold,fontWeight:700,marginBottom:6,fontSize:14}}>{label}</div>
-      <div style={{marginBottom:4}}>Total: <strong style={{color:C.text}}>{fmtF(d?.venta)}</strong></div>
-      <div style={{color:C.gold}}>Estanco: {fmtF(d?.estanco)} <span style={{color:C.muted}}>({d?.pctEst}%)</span></div>
-      <div style={{color:C.cyan}}>Cocteles: {fmtF(d?.cocteles)} <span style={{color:C.muted}}>({d?.pctCoc}%)</span></div>
-      <div style={{color:C.orange}}>Pizzería: {fmtF(d?.pizza)} <span style={{color:C.muted}}>({d?.pctPiz}%)</span></div>
-      <div style={{marginTop:4,paddingTop:4,borderTop:`1px solid ${C.bdr}`,color:d?.neto>=0?C.green:C.red}}>Neto: {fmtF(d?.neto)}</div>
+    return(<div style={{background:`${C.card}d0`,backdropFilter:"blur(14px) saturate(180%)",WebkitBackdropFilter:"blur(14px) saturate(180%)",border:`1px solid ${C.gold}30`,borderRadius:14,padding:"12px 16px",fontSize:12,boxShadow:"0 12px 36px rgba(0,0,0,0.7)"}}>
+      <div style={{color:C.gold,fontWeight:800,marginBottom:8,fontSize:14,letterSpacing:0.5}}>{label}</div>
+      <div style={{marginBottom:5}}>Total: <strong style={{color:C.text,fontWeight:700}}>{fmtF(d?.venta)}</strong></div>
+      <div style={{color:C.gold,marginBottom:2}}>● Estanco: {fmtF(d?.estanco)} <span style={{color:C.muted}}>({d?.pctEst}%)</span></div>
+      <div style={{color:C.cyan,marginBottom:2}}>● Cocteles: {fmtF(d?.cocteles)} <span style={{color:C.muted}}>({d?.pctCoc}%)</span></div>
+      <div style={{color:C.orange,marginBottom:2}}>● Pizzería: {fmtF(d?.pizza)} <span style={{color:C.muted}}>({d?.pctPiz}%)</span></div>
+      <div style={{marginTop:6,paddingTop:6,borderTop:`1px solid ${C.bdr}`,color:d?.neto>=0?C.green:C.red,fontWeight:700}}>Neto: {fmtF(d?.neto)}</div>
     </div>);
   };
 
@@ -1655,10 +1660,10 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
         {l:"Gastos transferencia",v:fmtF(totalTransf),s:`${(gastosTransf||[]).length} pagos`,c:C.purple},
         {l:"NETO REAL",v:fmtF(netoReal),s:`margen real ${(margenRealPct*100).toFixed(1)}%`,c:netoReal>=0?C.green:C.red},
       ].map((k,i)=>(
-        <Card key={i} accent={k.c} style={{padding:"13px 14px",marginBottom:0,...(k.l==="NETO REAL"?{background:(netoReal>=0?C.greenDim:C.redDim)+"18",borderWidth:2}:{})}}>
-          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:.7,fontWeight:600,marginBottom:4}}>{k.l}</div>
-          <div style={{fontSize:18,fontWeight:700,color:k.c}}>{k.v}</div>
-          <div style={{fontSize:11,color:C.muted,marginTop:2}}>{k.s}</div>
+        <Card key={i} accent={k.c} style={{padding:"14px 16px",marginBottom:0,...(k.l==="NETO REAL"?{background:`linear-gradient(135deg, ${(netoReal>=0?C.greenDim:C.redDim)}25 0%, ${C.card} 100%)`,borderWidth:2,boxShadow:`0 10px 40px ${(netoReal>=0?C.green:C.red)}25`}:{})}}>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:600,marginBottom:6}}>{k.l}</div>
+          <div style={{fontSize:20,fontWeight:800,color:k.c,fontFamily:"'Poppins',sans-serif",letterSpacing:-0.3}}>{k.v}</div>
+          <div style={{fontSize:11,color:C.muted,marginTop:3}}>{k.s}</div>
         </Card>
       ))}
     </div>
@@ -1666,15 +1671,18 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
     {/* ═══ ACUMULADO VS META ═══ */}
     <Card>
       <Sec>Acumulado vs meta ideal</Sec>
-      <ResponsiveContainer width="100%" height={220}>
+      <ResponsiveContainer width="100%" height={240}>
         <AreaChart data={acumData}>
-          <defs><linearGradient id="gAcum" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={C.gold} stopOpacity={0.3}/><stop offset="95%" stopColor={C.gold} stopOpacity={0}/></linearGradient></defs>
+          <defs>
+            <linearGradient id="gAcum" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={C.gold} stopOpacity={0.45}/><stop offset="95%" stopColor={C.gold} stopOpacity={0}/></linearGradient>
+            <filter id="glowGold" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
           <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
           <XAxis dataKey="d" tick={{fill:C.muted,fontSize:11}} axisLine={{stroke:C.bdr}}/>
           <YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}} tickFormatter={fmt}/>
-          <Tooltip formatter={v=>fmtF(v)} contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
+          <Tooltip formatter={v=>fmtF(v)} contentStyle={{background:`${C.card}d8`,backdropFilter:"blur(10px)",WebkitBackdropFilter:"blur(10px)",border:`1px solid ${C.gold}40`,borderRadius:12,fontSize:12,boxShadow:"0 8px 24px rgba(0,0,0,0.6)"}}/>
           <Area type="monotone" dataKey="meta" name="Meta ideal" stroke={C.dim} strokeDasharray="5 5" fill="none" strokeWidth={1.5}/>
-          <Area type="monotone" dataKey="real" name="Venta real" stroke={C.gold} fill="url(#gAcum)" strokeWidth={2.5}/>
+          <Area type="monotone" dataKey="real" name="Venta real" stroke={C.gold} fill="url(#gAcum)" strokeWidth={4} filter="url(#glowGold)" activeDot={{r:7,stroke:C.gold,strokeWidth:3,fill:C.bg}}/>
         </AreaChart>
       </ResponsiveContainer>
     </Card>
@@ -1690,7 +1698,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
           <Tooltip content={<DailyTooltip/>}/>
           <Bar dataKey="estanco" name="Estanco" stackId="a" fill={C.gold}/>
           <Bar dataKey="cocteles" name="Cocteles" stackId="a" fill={C.cyan}/>
-          <Bar dataKey="pizza" name="Pizzería" stackId="a" fill={C.orange} radius={[4,4,0,0]}/>
+          <Bar dataKey="pizza" name="Pizzería" stackId="a" fill={C.orange} radius={[8,8,0,0]}/>
         </BarChart>
       </ResponsiveContainer>
     </Card>
@@ -1857,14 +1865,131 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
       </>);
     })()}
 
+    {/* ═══ MAPA DE CALOR (semana × día) ═══ */}
+    {cuadres.length>=5&&(()=>{
+      // Build matrix: rows = semanas (ISO-like, lunes a domingo), cols = días de semana
+      const dowOrder=[1,2,3,4,5,6,0]; // Lun, Mar, Mié, Jue, Vie, Sáb, Dom
+      const dowLabels=["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
+      // Group by ISO week starting on Monday
+      const weekKey=d=>{
+        const t=new Date(d+"T12:00:00");
+        const day=(t.getDay()+6)%7; // 0=Lun, 6=Dom
+        const monday=new Date(t); monday.setDate(t.getDate()-day);
+        return`${monday.getFullYear()}-${String(monday.getMonth()+1).padStart(2,"0")}-${String(monday.getDate()).padStart(2,"0")}`;
+      };
+      const weekMap={};
+      cuadres.forEach(c=>{
+        const wk=weekKey(c.date);
+        if(!weekMap[wk]) weekMap[wk]={};
+        const dow=new Date(c.date+"T12:00:00").getDay();
+        weekMap[wk][dow]=c;
+      });
+      const sortedWeeks=Object.keys(weekMap).sort();
+      const allValues=cuadres.map(c=>c.venta_total).filter(v=>v>0);
+      const maxV=Math.max(...allValues,1);
+      const heatColor=v=>{
+        if(v===0||v==null) return C.bdr;
+        const t=Math.min(v/maxV,1);
+        // gold-cyan-red scale; we use gold opacity
+        const op=0.15+t*0.85;
+        return`rgba(201,148,62,${op})`;
+      };
+      const fmtWeek=wk=>{
+        const t=new Date(wk+"T12:00:00");
+        const end=new Date(t); end.setDate(t.getDate()+6);
+        return`${t.getDate()} ${MO[t.getMonth()]} - ${end.getDate()} ${MO[end.getMonth()]}`;
+      };
+      return(<Card>
+        <Sec color={C.gold}>🔥 Mapa de calor — venta por día de semana</Sec>
+        <div style={{fontSize:12,color:C.dim,marginBottom:12}}>Intensidad relativa al día con mayor venta ({fmtF(maxV)}). Tonalidad clara = día flojo · Tonalidad fuerte = día pico.</div>
+        <div style={{overflowX:"auto"}}>
+          <div style={{display:"grid",gridTemplateColumns:"110px repeat(7, 1fr)",gap:4,minWidth:520}}>
+            <div></div>
+            {dowLabels.map(d=><div key={d} style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,textAlign:"center",fontWeight:700,padding:"4px 0"}}>{d}</div>)}
+            {sortedWeeks.flatMap(wk=>[
+              <div key={wk+"_l"} style={{fontSize:10,color:C.muted,padding:"6px 4px",fontWeight:600}}>{fmtWeek(wk)}</div>,
+              ...dowOrder.map(dow=>{
+                const c=weekMap[wk]?.[dow];
+                const v=c?.venta_total||0;
+                return(<div key={wk+"_"+dow} title={c?`${fmtD(c.date)}: ${fmtF(v)}`:"Sin datos"} style={{background:heatColor(v),aspectRatio:"1.2",borderRadius:8,display:"flex",alignItems:"center",justifyContent:"center",fontSize:10,fontWeight:700,color:v>maxV*0.5?C.bg:C.text,cursor:c?"pointer":"default",transition:"transform 0.15s",position:"relative"}}>
+                  {v>0?fmt(v).replace("$",""):""}
+                </div>);
+              })
+            ])}
+          </div>
+        </div>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"flex-end",gap:6,marginTop:12,fontSize:10,color:C.muted}}>
+          <span>Bajo</span>
+          {[0.15,0.3,0.5,0.7,0.95].map(o=><div key={o} style={{width:18,height:14,background:`rgba(201,148,62,${o})`,borderRadius:3}}/>)}
+          <span>Alto</span>
+        </div>
+      </Card>);
+    })()}
+
+    {/* ═══ COMPARATIVA SEMANAL ═══ */}
+    {cuadres.length>=4&&(()=>{
+      // Take last 14 days, split into "esta semana" (last 7) and "semana anterior" (previous 7)
+      const sorted=[...cuadres].sort((a,b)=>a.date.localeCompare(b.date));
+      const last=sorted.slice(-7);
+      const prev=sorted.slice(-14,-7);
+      if(prev.length===0) return null;
+      const dowKeys=["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+      // Build comparison by day-of-week
+      const buildMap=(arr)=>{
+        const m={};
+        arr.forEach(c=>{const dow=new Date(c.date+"T12:00:00").getDay();m[dow]=c;});
+        return m;
+      };
+      const lastMap=buildMap(last);
+      const prevMap=buildMap(prev);
+      const compData=[1,2,3,4,5,6,0].map(dow=>({
+        day:dowKeys[dow],
+        actual:lastMap[dow]?.venta_total||0,
+        anterior:prevMap[dow]?.venta_total||0,
+      }));
+      const totalActual=last.reduce((a,c)=>a+c.venta_total,0);
+      const totalAnterior=prev.reduce((a,c)=>a+c.venta_total,0);
+      const variacion=totalAnterior>0?((totalActual-totalAnterior)/totalAnterior)*100:0;
+      return(<Card>
+        <Sec color={C.cyan}>📊 Comparativa: última semana vs semana anterior</Sec>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:10,marginBottom:14}}>
+          <div style={{background:C.bg,borderRadius:12,padding:"10px 14px",borderLeft:`3px solid ${C.cyan}`}}>
+            <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:600}}>Última semana</div>
+            <div style={{fontSize:20,fontWeight:800,color:C.cyan,marginTop:4}}>{fmtF(totalActual)}</div>
+            <div style={{fontSize:11,color:C.muted,marginTop:2}}>{last.length} días con datos</div>
+          </div>
+          <div style={{background:C.bg,borderRadius:12,padding:"10px 14px",borderLeft:`3px solid ${C.dim}`}}>
+            <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:600}}>Semana anterior</div>
+            <div style={{fontSize:20,fontWeight:800,color:C.text,marginTop:4}}>{fmtF(totalAnterior)}</div>
+            <div style={{fontSize:11,color:C.muted,marginTop:2}}>{prev.length} días con datos</div>
+          </div>
+          <div style={{background:`linear-gradient(135deg, ${(variacion>=0?C.greenDim:C.redDim)}25 0%, ${C.bg} 100%)`,borderRadius:12,padding:"10px 14px",borderLeft:`3px solid ${variacion>=0?C.green:C.red}`}}>
+            <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:600}}>Variación</div>
+            <div style={{fontSize:20,fontWeight:800,color:variacion>=0?C.green:C.red,marginTop:4}}>{variacion>=0?"▲":"▼"} {Math.abs(variacion).toFixed(1)}%</div>
+            <div style={{fontSize:11,color:C.muted,marginTop:2}}>{variacion>=0?"+":""}{fmtF(totalActual-totalAnterior)}</div>
+          </div>
+        </div>
+        <ResponsiveContainer width="100%" height={200}>
+          <BarChart data={compData} barGap={4}>
+            <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
+            <XAxis dataKey="day" tick={{fill:C.muted,fontSize:11}} axisLine={{stroke:C.bdr}}/>
+            <YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}} tickFormatter={fmt}/>
+            <Tooltip formatter={v=>fmtF(v)} contentStyle={{background:`${C.card}d8`,backdropFilter:"blur(10px)",WebkitBackdropFilter:"blur(10px)",border:`1px solid ${C.cyan}40`,borderRadius:12,fontSize:12,boxShadow:"0 8px 24px rgba(0,0,0,0.6)"}}/>
+            <Bar dataKey="anterior" name="Semana anterior" fill={C.dim} radius={[8,8,0,0]}/>
+            <Bar dataKey="actual" name="Última semana" fill={C.cyan} radius={[8,8,0,0]}/>
+          </BarChart>
+        </ResponsiveContainer>
+      </Card>);
+    })()}
+
     {/* ═══ PATRÓN SEMANAL ═══ */}
     {cuadres.length>=3&&<Card>
       <Sec>Venta promedio por día de la semana</Sec>
       <ResponsiveContainer width="100%" height={160}>
         <BarChart data={dowData.filter(d=>d.count>0)}>
           <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/><XAxis dataKey="day" tick={{fill:C.muted,fontSize:12}} axisLine={{stroke:C.bdr}}/><YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}} tickFormatter={fmt}/>
-          <Tooltip formatter={v=>fmtF(v)} contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
-          <Bar dataKey="avg" name="Promedio" fill={C.gold} radius={[6,6,0,0]}/>
+          <Tooltip formatter={v=>fmtF(v)} contentStyle={{background:`${C.card}d8`,backdropFilter:"blur(10px)",WebkitBackdropFilter:"blur(10px)",border:`1px solid ${C.gold}40`,borderRadius:12,fontSize:12,boxShadow:"0 8px 24px rgba(0,0,0,0.6)"}}/>
+          <Bar dataKey="avg" name="Promedio" fill={C.gold} radius={[8,8,0,0]}/>
         </BarChart>
       </ResponsiveContainer>
     </Card>}
@@ -1945,14 +2070,17 @@ function InventarioDashboard({inventarios,cuadres}){
     <div style={{fontSize:13,color:C.dim,marginBottom:16}}>{daysWithData} días con inventario · Consumo calculado entre días consecutivos</div>
 
     {/* ═══ ALERTAS STOCK BAJO ═══ */}
-    {stockBajo.length>0&&<Card accent={C.red} style={{background:C.red+"08"}}>
+    {stockBajo.length>0&&<Card accent={C.red} style={{background:`linear-gradient(135deg, ${C.red}10 0%, ${C.card} 100%)`}}>
       <Sec color={C.red}>⚠️ Alerta stock bajo — inventario actual</Sec>
-      <div style={{fontSize:12,color:C.dim,marginBottom:10}}>Productos con 2 unidades o menos al cierre de {lastFinal?fmtD(lastFinal.date):""}</div>
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
+      <div style={{fontSize:12,color:C.dim,marginBottom:12}}>Productos con 2 unidades o menos al cierre de {lastFinal?fmtD(lastFinal.date):""}</div>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
         {stockBajo.map((p,i)=>(
-          <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"8px 12px",background:C.bg,borderRadius:8,fontSize:13,alignItems:"center"}}>
-            <span style={{color:p.saldo===0?C.red:C.text}}>{p.nombre}</span>
-            <span style={{fontWeight:700,color:p.saldo===0?C.red:C.orange,fontSize:14}}>{p.saldo===0?"AGOTADO":p.saldo}</span>
+          <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"10px 14px",background:p.saldo===0?`${C.red}18`:C.bg,border:p.saldo===0?`1px solid ${C.red}50`:`1px solid ${C.bdr}`,borderRadius:10,fontSize:13,alignItems:"center",gap:8}}>
+            <div style={{display:"flex",alignItems:"center",gap:8,minWidth:0}}>
+              {p.saldo===0&&<span className="pulse-dot" style={{display:"inline-block",width:8,height:8,borderRadius:"50%",background:C.red,boxShadow:`0 0 8px ${C.red}`,flexShrink:0}}/>}
+              <span style={{color:p.saldo===0?C.red:C.text,fontWeight:p.saldo===0?700:500,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.nombre}</span>
+            </div>
+            <span style={{fontWeight:800,color:p.saldo===0?C.red:C.orange,fontSize:14,letterSpacing:0.5,flexShrink:0}}>{p.saldo===0?"AGOTADO":p.saldo}</span>
           </div>
         ))}
       </div>
@@ -1966,8 +2094,8 @@ function InventarioDashboard({inventarios,cuadres}){
           <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
           <XAxis dataKey="d" tick={{fill:C.muted,fontSize:11}} axisLine={{stroke:C.bdr}}/>
           <YAxis tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}}/>
-          <Tooltip contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
-          <Bar dataKey="totalConsumo" name="Consumo" fill={C.orange} radius={[4,4,0,0]}/>
+          <Tooltip contentStyle={{background:`${C.card}d8`,backdropFilter:"blur(10px)",WebkitBackdropFilter:"blur(10px)",border:`1px solid ${C.gold}40`,borderRadius:12,fontSize:12,boxShadow:"0 8px 24px rgba(0,0,0,0.6)"}}/>
+          <Bar dataKey="totalConsumo" name="Consumo" fill={C.orange} radius={[8,8,0,0]}/>
         </BarChart>
       </ResponsiveContainer>
     </Card>}
@@ -1980,8 +2108,8 @@ function InventarioDashboard({inventarios,cuadres}){
           <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
           <XAxis type="number" tick={{fill:C.muted,fontSize:10}} axisLine={{stroke:C.bdr}}/>
           <YAxis type="category" dataKey="nombre" tick={{fill:C.text,fontSize:10}} axisLine={{stroke:C.bdr}} width={125}/>
-          <Tooltip contentStyle={{background:C.card,border:`1px solid ${C.bdr}`,borderRadius:8,fontSize:12}}/>
-          <Bar dataKey="consumo" name="Consumo total" fill={C.cyan} radius={[0,4,4,0]}/>
+          <Tooltip contentStyle={{background:`${C.card}d8`,backdropFilter:"blur(10px)",WebkitBackdropFilter:"blur(10px)",border:`1px solid ${C.cyan}40`,borderRadius:12,fontSize:12,boxShadow:"0 8px 24px rgba(0,0,0,0.6)"}}/>
+          <Bar dataKey="consumo" name="Consumo total" fill={C.cyan} radius={[0,10,10,0]}/>
         </BarChart>
       </ResponsiveContainer>
     </Card>
