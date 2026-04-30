@@ -4,123 +4,137 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGri
 // ─── Pre-loaded data extracted from POS receipts (Miércoles 01 Abril 2026) ───
 const PRELOADED_CUADRES = [
   {
+    date: "2026-03-30", venta_total: 1036600,
+    estanco: 0, cocteles: 624000, pizzeria: 412600, otros_venta: 0,
+    efectivo: 5000, tarjeta: 535800, otros_pago: 495800,
+    pizza_80: 330080, gastos: 340800, nomina: 155000, costo_financiero: 26790,
+    neto_sala: 183930, faltante: 0,
+  },
+  {
+    date: "2026-03-31", venta_total: 1501000,
+    estanco: 0, cocteles: 1038000, pizzeria: 463000, otros_venta: 0,
+    efectivo: 0, tarjeta: 919600, otros_pago: 581400,
+    pizza_80: 370400, gastos: 426400, nomina: 155000, costo_financiero: 45980,
+    neto_sala: 503220, faltante: 0,
+  },
+  {
     date: "2026-04-01", venta_total: 2355000,
     estanco: 593000, cocteles: 972600, pizzeria: 789400, otros_venta: 0,
     efectivo: 0, tarjeta: 1747000, otros_pago: 608000,
-    pizza_80: 631520, gastos: 453000, nomina: 155000,
-    neto_sala: 1115480, faltante: 0,
+    pizza_80: 631520, gastos: 453000, nomina: 155000, costo_financiero: 87350,
+    neto_sala: 1028130, faltante: 0,
   },
   {
     date: "2026-04-02", venta_total: 3212600,
     estanco: 721000, cocteles: 1660000, pizzeria: 831600, otros_venta: 0,
     efectivo: 0, tarjeta: 2330000, otros_pago: 882600,
-    pizza_80: 665280, gastos: 727600, nomina: 155000,
-    neto_sala: 1664720, faltante: 0,
+    pizza_80: 665280, gastos: 727600, nomina: 155000, costo_financiero: 116500,
+    neto_sala: 1548220, faltante: 0,
   },
   {
     date: "2026-04-03", venta_total: 2414200,
     estanco: 564000, cocteles: 1037000, pizzeria: 813200, otros_venta: 0,
     efectivo: 3000, tarjeta: 1834800, otros_pago: 576400,
-    pizza_80: 650560, gastos: 301400, nomina: 275000,
-    neto_sala: 1187240, faltante: 0,
+    pizza_80: 650560, gastos: 301400, nomina: 275000, costo_financiero: 91740,
+    neto_sala: 1095500, faltante: 0,
   },
   {
     date: "2026-04-04", venta_total: 1501200,
     estanco: 449000, cocteles: 655000, pizzeria: 397200, otros_venta: 0,
     efectivo: 2800, tarjeta: 820400, otros_pago: 678000,
-    pizza_80: 317760, gastos: 403000, nomina: 275000,
-    neto_sala: 505440, faltante: 0,
+    pizza_80: 317760, gastos: 403000, nomina: 275000, costo_financiero: 41020,
+    neto_sala: 464420, faltante: 0,
   },
   {
     date: "2026-04-05", venta_total: 306000,
     estanco: 40000, cocteles: 146000, pizzeria: 120000, otros_venta: 0,
     efectivo: 300, tarjeta: 0, otros_pago: 305700,
-    pizza_80: 96000, gastos: 165700, nomina: 140000,
+    pizza_80: 96000, gastos: 165700, nomina: 140000, costo_financiero: 0,
     neto_sala: -95700, faltante: 0,
   },
   {
     date: "2026-04-06", venta_total: 2040400,
     estanco: 472000, cocteles: 636000, pizzeria: 932400, otros_venta: 0,
     efectivo: 397500, tarjeta: 0, otros_pago: 1642900,
-    pizza_80: 745920, gastos: 1437900, nomina: 205000,
+    pizza_80: 745920, gastos: 1437900, nomina: 205000, costo_financiero: 0,
     neto_sala: -348420, faltante: 0,
   },
   {
     date: "2026-04-18", venta_total: 3039400,
     estanco: 675000, cocteles: 1309000, pizzeria: 1055400, otros_venta: 0,
     efectivo: 1000, tarjeta: 2813400, otros_pago: 225000,
-    pizza_80: 844320, gastos: 10000, nomina: 215000,
-    neto_sala: 1970080, faltante: 0,
+    pizza_80: 844320, gastos: 10000, nomina: 215000, costo_financiero: 140670,
+    neto_sala: 1829410, faltante: 0,
   },
   {
     date: "2026-04-19", venta_total: 197000,
     estanco: 26000, cocteles: 72000, pizzeria: 99000, otros_venta: 0,
     efectivo: 14000, tarjeta: 0, otros_pago: 183000,
-    pizza_80: 79200, gastos: 28000, nomina: 155000,
+    pizza_80: 79200, gastos: 28000, nomina: 155000, costo_financiero: 0,
     neto_sala: -65200, faltante: 0,
   },
   {
     date: "2026-04-20", venta_total: 102000,
     estanco: 14000, cocteles: 15000, pizzeria: 73000, otros_venta: 0,
     efectivo: 3000, tarjeta: 94000, otros_pago: 5000,
-    pizza_80: 58400, gastos: 5000, nomina: 0,
-    neto_sala: 38600, faltante: 0,
+    pizza_80: 58400, gastos: 5000, nomina: 0, costo_financiero: 4700,
+    neto_sala: 33900, faltante: 0,
   },
   {
     date: "2026-04-21", venta_total: 437800,
     estanco: 56200, cocteles: 197000, pizzeria: 184600, otros_venta: 0,
     efectivo: 3000, tarjeta: 274800, otros_pago: 160000,
-    pizza_80: 147680, gastos: 5000, nomina: 155000,
-    neto_sala: 130120, faltante: 0,
+    pizza_80: 147680, gastos: 5000, nomina: 155000, costo_financiero: 13740,
+    neto_sala: 116380, faltante: 0,
   },
   {
     date: "2026-04-22", venta_total: 0,
     estanco: 0, cocteles: 0, pizzeria: 0, otros_venta: 0,
     efectivo: 0, tarjeta: 0, otros_pago: 0,
-    pizza_80: 0, gastos: 0, nomina: 155000,
+    pizza_80: 0, gastos: 0, nomina: 155000, costo_financiero: 0,
     neto_sala: -155000, faltante: 0,
   },
   {
     date: "2026-04-23", venta_total: 700600,
     estanco: 225000, cocteles: 166000, pizzeria: 309600, otros_venta: 0,
     efectivo: 2300, tarjeta: 399200, otros_pago: 299100,
-    pizza_80: 247680, gastos: 144100, nomina: 155000,
-    neto_sala: 153820, faltante: 0,
+    pizza_80: 247680, gastos: 144100, nomina: 155000, costo_financiero: 19960,
+    neto_sala: 133860, faltante: 0,
   },
   {
     date: "2026-04-24", venta_total: 1403800,
     estanco: 107000, cocteles: 1054000, pizzeria: 242800, otros_venta: 0,
     efectivo: 9000, tarjeta: 1184800, otros_pago: 210000,
-    pizza_80: 194240, gastos: 10000, nomina: 200000,
-    neto_sala: 999560, faltante: 0,
+    pizza_80: 194240, gastos: 10000, nomina: 200000, costo_financiero: 59240,
+    neto_sala: 940320, faltante: 0,
   },
   {
     date: "2026-04-25", venta_total: 809400,
     estanco: 364000, cocteles: 93000, pizzeria: 352400, otros_venta: 0,
     efectivo: 3600, tarjeta: 453800, otros_pago: 352000,
-    pizza_80: 281920, gastos: 152000, nomina: 200000,
-    neto_sala: 175480, faltante: 0,
+    pizza_80: 281920, gastos: 152000, nomina: 200000, costo_financiero: 22690,
+    neto_sala: 152790, faltante: 0,
   },
   {
     date: "2026-04-26", venta_total: 504000,
     estanco: 46000, cocteles: 205000, pizzeria: 253000, otros_venta: 0,
     efectivo: 20900, tarjeta: 291200, otros_pago: 191900,
-    pizza_80: 202400, gastos: 36900, nomina: 155000,
-    neto_sala: 109700, faltante: 0,
+    pizza_80: 202400, gastos: 36900, nomina: 155000, costo_financiero: 14560,
+    neto_sala: 95140, faltante: 0,
   },
   {
     date: "2026-04-27", venta_total: 222400,
     estanco: 6000, cocteles: 167000, pizzeria: 49400, otros_venta: 0,
     efectivo: 0, tarjeta: 178000, otros_pago: 213200,
-    pizza_80: 39520, gastos: 44400, nomina: 168800,
-    neto_sala: -30320, faltante: 0,
+    pizza_80: 39520, gastos: 44400, nomina: 168800, costo_financiero: 8900,
+    neto_sala: -39220, faltante: 0,
   },
   {
     date: "2026-04-28", venta_total: 657600,
     estanco: 238000, cocteles: 42000, pizzeria: 377600, otros_venta: 0,
     efectivo: 700, tarjeta: 92000, otros_pago: 564900,
-    pizza_80: 302080, gastos: 409900, nomina: 155000,
-    neto_sala: -209380, faltante: 0,
+    pizza_80: 302080, gastos: 409900, nomina: 155000, costo_financiero: 4600,
+    neto_sala: -213980, faltante: 0,
   }
 ];
 
@@ -1297,8 +1311,26 @@ const PRELOADED_GASTOS = [
   }
 ];
 
+// ─── Gastos pagados por transferencia (no aparecen en cuadre del POS) ───
+const PRELOADED_GASTOS_TRANSFERENCIA = [
+  // SEMANA 1: Lun 30 mar — Dom 5 abr (Total: $624.000)
+  { date: "2026-03-30", semana: 1, periodo: "Sem 1 (30 mar - 5 abr)", concepto: "Licor Milton", categoria: "Bebidas/Licor", valor: 0 },
+  { date: "2026-03-30", semana: 1, periodo: "Sem 1 (30 mar - 5 abr)", concepto: "Limón", categoria: "Insumos coctelería", valor: 100000 },
+  { date: "2026-03-30", semana: 1, periodo: "Sem 1 (30 mar - 5 abr)", concepto: "Claro internet", categoria: "Servicios", valor: 137000 },
+  { date: "2026-03-30", semana: 1, periodo: "Sem 1 (30 mar - 5 abr)", concepto: "Base caja", categoria: "Operación tesorería", valor: 387000 },
+  // SEMANA 2: Lun 6 abr — Dom 19 abr (Total: $270.000)
+  { date: "2026-04-06", semana: 2, periodo: "Sem 2 (6 - 19 abr)", concepto: "Arreglo TV", categoria: "Mantenimiento", valor: 120000 },
+  { date: "2026-04-06", semana: 2, periodo: "Sem 2 (6 - 19 abr)", concepto: "Arreglo sistema", categoria: "Mantenimiento", valor: 60000 },
+  { date: "2026-04-06", semana: 2, periodo: "Sem 2 (6 - 19 abr)", concepto: "Nómina", categoria: "Nómina", valor: 90000 },
+  // SEMANA 3: Lun 20 abr — Dom 26 abr (Total: $3.263.800)
+  { date: "2026-04-20", semana: 3, periodo: "Sem 3 (20 - 26 abr)", concepto: "Base caja", categoria: "Operación tesorería", valor: 520000 },
+  { date: "2026-04-20", semana: 3, periodo: "Sem 3 (20 - 26 abr)", concepto: "Nómina", categoria: "Nómina", valor: 659400 },
+  { date: "2026-04-20", semana: 3, periodo: "Sem 3 (20 - 26 abr)", concepto: "Licores JR", categoria: "Bebidas/Licor", valor: 1729400 },
+  { date: "2026-04-20", semana: 3, periodo: "Sem 3 (20 - 26 abr)", concepto: "Bavaria", categoria: "Bebidas/Licor", valor: 355000 },
+];
+
 // ─── Storage ───
-const SK = { c:"sala5c", i:"sala5i", k:"sala5k", g:"sala5g" };
+const SK = { c:"sala5c", i:"sala5i", k:"sala5k", g:"sala5g", gt:"sala5gt" };
 
 // ─── Helpers ───
 const fmt=n=>{if(!n&&n!==0)return"$0";const a=Math.abs(n);if(a>=1e6)return`$${(n/1e6).toFixed(1)}M`;if(a>=1e3)return`$${(n/1e3).toFixed(0)}K`;return`$${n}`;};
@@ -1323,6 +1355,7 @@ export default function App(){
   const [inventarios,setInventarios]=useState([]);
   const [cocinaData,setCocinaData]=useState([]);
   const [gastosData,setGastosData]=useState([]);
+  const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
   const [selDate,setSelDate]=useState("2026-04-28");
   const [loading,setLoading]=useState(true);
@@ -1330,18 +1363,21 @@ export default function App(){
   useEffect(()=>{
     (async()=>{
       try{
-        const [sc,si,sk,sg]=await Promise.all([
+        const [sc,si,sk,sg,sgt]=await Promise.all([
           window.storage.get(SK.c).catch(()=>null),window.storage.get(SK.i).catch(()=>null),
           window.storage.get(SK.k).catch(()=>null),window.storage.get(SK.g).catch(()=>null),
+          window.storage.get(SK.gt).catch(()=>null),
         ]);
         const merge=(st,pre,kf)=>{const s=st?.value?JSON.parse(st.value):[];const ks=new Set(s.map(kf));return[...s,...pre.filter(p=>!ks.has(kf(p)))].sort((a,b)=>(a.date||"").localeCompare(b.date||""));};
         setCuadres(merge(sc,PRELOADED_CUADRES,c=>c.date));
         setInventarios(merge(si,PRELOADED_INVENTARIOS,i=>`${i.date}_${i.tipo}`));
         setCocinaData(merge(sk,PRELOADED_COCINA,k=>k.date));
         setGastosData(merge(sg,PRELOADED_GASTOS,g=>g.date));
+        setGastosTransfData(merge(sgt,PRELOADED_GASTOS_TRANSFERENCIA,g=>`${g.date}_${g.concepto}`));
       }catch{
         setCuadres([...PRELOADED_CUADRES]);setInventarios([...PRELOADED_INVENTARIOS]);
         setCocinaData([...PRELOADED_COCINA]);setGastosData([...PRELOADED_GASTOS]);
+        setGastosTransfData([...PRELOADED_GASTOS_TRANSFERENCIA]);
       }
       setLoading(false);
     })();
@@ -1409,7 +1445,7 @@ export default function App(){
       </div>}
 
       <div style={{maxWidth:920,margin:"0 auto",padding:"0 16px 60px"}}>
-        {view==="dashboard"&&<DashboardGeneral cuadres={cuadres} cocina={cocinaData} gastos={gastosData} inventarios={inventarios}/>}
+        {view==="dashboard"&&<DashboardGeneral cuadres={cuadres} cocina={cocinaData} gastos={gastosData} gastosTransf={gastosTransfData} inventarios={inventarios}/>}
         {view==="invdash"&&<InventarioDashboard inventarios={inventarios} cuadres={cuadres}/>}
         {view==="resumen"&&<Resumen c={c} coc={coc} gas={gas} cross={invCross} date={selDate}/>}
         {view==="cocina"&&<Cocina coc={coc} date={selDate}/>}
@@ -1421,7 +1457,7 @@ export default function App(){
 }
 
 // ─── Dashboard General (Consolidado + Meta) ───
-function DashboardGeneral({cuadres,cocina,gastos,inventarios}){
+function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
   const META=40000000;
   const DIAS_MES=30;
 
@@ -1431,11 +1467,11 @@ function DashboardGeneral({cuadres,cocina,gastos,inventarios}){
     a.venta+=c.venta_total;a.estanco+=c.estanco||0;a.cocteles+=c.cocteles||0;
     a.pizza+=c.pizzeria||0;a.efectivo+=c.efectivo;a.tarjeta+=c.tarjeta;
     a.otros+=(c.otros_pago||0);a.p80+=c.pizza_80;a.gastos+=c.gastos;
-    a.nomina+=c.nomina;a.neto+=c.neto_sala||0;
+    a.nomina+=c.nomina;a.cf+=(c.costo_financiero||0);a.neto+=c.neto_sala||0;
     return a;
-  },{venta:0,estanco:0,cocteles:0,pizza:0,efectivo:0,tarjeta:0,otros:0,p80:0,gastos:0,nomina:0,neto:0});
+  },{venta:0,estanco:0,cocteles:0,pizza:0,efectivo:0,tarjeta:0,otros:0,p80:0,gastos:0,nomina:0,cf:0,neto:0});
 
-  const totalGastos=tot.p80+tot.gastos+tot.nomina;
+  const totalGastos=tot.p80+tot.gastos+tot.nomina+tot.cf;
   const avgDay=tot.venta/cuadres.length;
   const proyeccion=avgDay*DIAS_MES;
   const pctMeta=tot.venta/META;
@@ -1726,7 +1762,7 @@ function DashboardGeneral({cuadres,cocina,gastos,inventarios}){
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
       <Card>
         <Sec color={C.red}>Desglose gastos operativos</Sec>
-        {[{n:"Pizza 80%",v:tot.p80,c:C.orange},{n:"Gastos operativos",v:tot.gastos,c:C.red},{n:"Nómina",v:tot.nomina,c:C.purple}].map((e,i)=>(
+        {[{n:"Pizza 80%",v:tot.p80,c:C.orange},{n:"Gastos operativos",v:tot.gastos,c:C.red},{n:"Nómina",v:tot.nomina,c:C.purple},{n:"Costo financiero (5% tarjeta)",v:tot.cf,c:C.blue}].map((e,i)=>(
           <div key={i} style={{marginBottom:8}}>
             <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:3}}><span>{e.n}</span><span style={{color:e.c,fontWeight:600}}>{fmtF(e.v)}</span></div>
             <div style={{background:C.bdr,borderRadius:3,height:6}}><div style={{background:e.c,height:"100%",width:`${totalGastos?(e.v/totalGastos)*100:0}%`,borderRadius:3}}/></div>
@@ -1744,6 +1780,76 @@ function DashboardGeneral({cuadres,cocina,gastos,inventarios}){
         <div style={{display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center"}}>{expList.map((e,i)=><span key={i} style={{fontSize:10,color:e.fill}}>● {e.name}</span>)}</div>
       </Card>}
     </div>
+
+    {/* ═══ GASTOS POR TRANSFERENCIA (semanales / proveedores) ═══ */}
+    {gastosTransf&&gastosTransf.length>0&&(()=>{
+      const totalGT=gastosTransf.reduce((a,g)=>a+g.valor,0);
+      const semanas=[...new Set(gastosTransf.map(g=>g.periodo))].sort();
+      const semanaData=semanas.map(p=>{
+        const items=gastosTransf.filter(g=>g.periodo===p);
+        return{periodo:p,total:items.reduce((a,g)=>a+g.valor,0),items};
+      });
+      const netoReal=tot.neto-totalGT;
+      const catTotals={};
+      gastosTransf.forEach(g=>{catTotals[g.categoria]=(catTotals[g.categoria]||0)+g.valor;});
+      const catList=Object.entries(catTotals).map(([k,v],i)=>({name:k,value:v,fill:PIE[i%PIE.length]})).sort((a,b)=>b.value-a.value);
+      return(<>
+        <Card accent={C.purple}>
+          <Sec color={C.purple}>💸 Gastos por transferencia (no en cuadre POS)</Sec>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:14}}>
+            <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",borderLeft:`3px solid ${C.purple}`}}>
+              <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:.8}}>Total transferencias</div>
+              <div style={{fontSize:24,fontWeight:700,color:C.purple,fontFamily:"'Poppins',sans-serif",marginTop:4}}>{fmtF(totalGT)}</div>
+              <div style={{fontSize:12,color:C.muted,marginTop:2}}>{gastosTransf.length} pagos en {semanas.length} semanas</div>
+            </div>
+            <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",borderLeft:`3px solid ${netoReal>=0?C.green:C.red}`}}>
+              <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:.8}}>Neto REAL consolidado</div>
+              <div style={{fontSize:24,fontWeight:700,color:netoReal>=0?C.green:C.red,fontFamily:"'Poppins',sans-serif",marginTop:4}}>{fmtF(netoReal)}</div>
+              <div style={{fontSize:12,color:C.muted,marginTop:2}}>Neto cuadres ({fmtF(tot.neto)}) − transferencias</div>
+            </div>
+          </div>
+          {semanaData.map((s,i)=>(
+            <div key={i} style={{marginBottom:12,background:C.bg,borderRadius:10,padding:"10px 12px"}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6}}>
+                <span style={{fontSize:13,fontWeight:700,color:C.gold}}>{s.periodo}</span>
+                <span style={{fontSize:14,fontWeight:700,color:C.purple}}>{fmtF(s.total)}</span>
+              </div>
+              {s.items.map((it,j)=>(
+                <div key={j} style={{display:"flex",justifyContent:"space-between",fontSize:12,padding:"3px 0",borderBottom:j<s.items.length-1?`1px solid ${C.bdr}`:"none",color:it.valor===0?C.muted:C.text}}>
+                  <span>{it.concepto} <span style={{color:C.muted,fontSize:10}}>({it.categoria})</span></span>
+                  <span style={{fontWeight:600,color:it.valor===0?C.muted:C.text}}>{fmtF(it.valor)}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </Card>
+        {catList.length>1&&<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+          <Card>
+            <Sec color={C.purple}>Transferencias por categoría</Sec>
+            <ResponsiveContainer width="100%" height={140}>
+              <PieChart><Pie data={catList} cx="50%" cy="50%" outerRadius={55} innerRadius={25} dataKey="value" paddingAngle={2}>
+                {catList.map((e,i)=><Cell key={i} fill={e.fill}/>)}
+              </Pie><Tooltip formatter={v=>fmtF(v)}/></PieChart>
+            </ResponsiveContainer>
+            <div style={{display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center",marginTop:6}}>
+              {catList.map((e,i)=><span key={i} style={{fontSize:10,color:e.fill}}>● {e.name} {fmtF(e.value)}</span>)}
+            </div>
+          </Card>
+          <Card>
+            <Sec color={C.purple}>Top conceptos</Sec>
+            {[...gastosTransf].filter(g=>g.valor>0).sort((a,b)=>b.valor-a.valor).slice(0,5).map((g,i)=>(
+              <div key={i} style={{marginBottom:8}}>
+                <div style={{display:"flex",justifyContent:"space-between",fontSize:12,marginBottom:3}}>
+                  <span>{g.concepto}</span>
+                  <span style={{color:C.purple,fontWeight:600}}>{fmtF(g.valor)}</span>
+                </div>
+                <div style={{background:C.bdr,borderRadius:3,height:5}}><div style={{background:C.purple,height:"100%",width:`${(g.valor/totalGT)*100}%`,borderRadius:3}}/></div>
+              </div>
+            ))}
+          </Card>
+        </div>}
+      </>);
+    })()}
 
     {/* ═══ PATRÓN SEMANAL ═══ */}
     {cuadres.length>=3&&<Card>
@@ -1895,7 +2001,7 @@ function Resumen({c,coc,gas,cross,date}){
 
   const barPct=(c.estanco+c.cocteles)/c.venta_total;
   const venSplit=[{n:"Estanco",v:c.estanco,c:C.gold},{n:"Cocteles",v:c.cocteles,c:C.cyan},{n:"Pizzería",v:c.pizzeria,c:C.orange}].filter(x=>x.v>0);
-  const totalG=c.pizza_80+c.gastos+c.nomina;
+  const totalG=c.pizza_80+c.gastos+c.nomina+(c.costo_financiero||0);
 
   return(<div>
     <h2 style={{fontFamily:"'Poppins',sans-serif",fontSize:22,color:C.gold,margin:"0 0 4px"}}>{fmtD(date)}</h2>
@@ -1937,7 +2043,7 @@ function Resumen({c,coc,gas,cross,date}){
         {c.faltante===0&&<div style={{marginTop:6,fontSize:14,color:C.green}}>✓ Sin faltante</div>}
       </Card>
       <Card><Sec color={C.red}>Gastos</Sec>
-        {[{n:"Pizza 80%",v:c.pizza_80,c:C.orange},{n:"Gastos Op.",v:c.gastos,c:C.red},{n:"Nómina",v:c.nomina,c:C.purple}].map((e,i)=>
+        {[{n:"Pizza 80%",v:c.pizza_80,c:C.orange},{n:"Gastos Op.",v:c.gastos,c:C.red},{n:"Nómina",v:c.nomina,c:C.purple},{n:"Costo fin. (5%)",v:c.costo_financiero||0,c:C.blue}].map((e,i)=>
           <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:`1px solid ${C.bdr}`,fontSize:13}}><span style={{color:C.dim}}>{e.n}</span><span style={{color:e.c,fontWeight:600}}>{fmtF(e.v)}</span></div>
         )}
         <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:14,fontWeight:700}}><span>Total</span><span style={{color:C.red}}>{fmtF(totalG)}</span></div>
