@@ -1508,6 +1508,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-04-29", semana: 4, periodo: "Sem 4 (27 abr - 3 may)", concepto: "Nómina", categoria: "Nómina", valor: 155000 },
   { date: "2026-04-29", semana: 4, periodo: "Sem 4 (27 abr - 3 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 141500 },
   { date: "2026-04-29", semana: 4, periodo: "Sem 4 (27 abr - 3 may)", concepto: "Licores La Amistad", categoria: "Bebidas/Licor", valor: 1000700 },
+  { date: "2026-04-30", semana: 4, periodo: "Sem 4 (27 abr - 3 may)", concepto: "Limón", categoria: "Insumos coctelería", valor: 110000 },
 ];
 
 // ─── Storage ───
