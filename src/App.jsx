@@ -149,6 +149,13 @@ const PRELOADED_CUADRES = [
     efectivo: 186050, tarjeta: 2708400, otros_pago: 666750,
     pizza_80: 971360, gastos: 446750, nomina: 220000, costo_financiero: 135420,
     neto_sala: 1787670, faltante: 0,
+  },
+  {
+    date: "2026-05-01", venta_total: 3811200,
+    estanco: 905000, cocteles: 2001000, pizzeria: 905200, otros_venta: 0,
+    efectivo: 234800, tarjeta: 3330400, otros_pago: 246000,
+    pizza_80: 724160, gastos: 26000, nomina: 220000, costo_financiero: 166520,
+    neto_sala: 2674520, faltante: 0,
   }
 ];
 
@@ -378,6 +385,25 @@ const PRELOADED_COCINA = [
       { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
       { nombre: "CHAMPINONES PARMESANOS", cantidad: 1, valor: 28600 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 2, valor: 22000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-05-01", total: 905200, total_units: 23,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 4, valor: 127200 },
+      { nombre: "HB DE RES", cantidad: 4, valor: 140000 },
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 2, valor: 108000 },
+      { nombre: "PZ HAWAIANA MED", cantidad: 2, valor: 105600 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 2, valor: 79200 },
+      { nombre: "PZ AB ESPECIAL GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ FLORENTINA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ POLLO BBQ PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ PEPERNATA PEQ", cantidad: 1, valor: 38400 },
+      { nombre: "PT POLLO BECHAMEL RG", cantidad: 1, valor: 38400 },
+      { nombre: "HB BBQ", cantidad: 1, valor: 30000 },
+      { nombre: "PZ MARGARITA PQ", cantidad: 1, valor: 30000 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
     ]
   }
@@ -1319,6 +1345,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-01", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:2},
+      {nombre:"AGT MEDIA CAUCA",saldo:8},
+      {nombre:"AGUA",saldo:37},
+      {nombre:"AGUA TONICA",saldo:7},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:57},
+      {nombre:"CERVEZA IMPORTADA",saldo:54},
+      {nombre:"CERVEZA NACIONAL",saldo:197},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:131},
+      {nombre:"GASEOSA 1.5",saldo:18},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -1485,6 +1563,13 @@ const PRELOADED_GASTOS = [
       { concepto: "Servilletas, naranjas, toalla cocina, del valle, gomitas, jugo mandarina, leche, paño absorbente", categoria: "Insumos", valor: 50150 },
       { concepto: "Frutas/hierbas (piña, fresa, uchuvas, pulpa mango, agraz, aromáticas, uva, maracuyá, manzana)", categoria: "Insumos coctelería", valor: 56000 },
     ]
+  },
+  {
+    date: "2026-05-01", total: 26000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "Hierbabuena, naranjas, mango", categoria: "Insumos coctelería", valor: 16000 },
+    ]
   }
 ];
 
@@ -1509,6 +1594,9 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-04-29", semana: 4, periodo: "Sem 4 (27 abr - 3 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 141500 },
   { date: "2026-04-29", semana: 4, periodo: "Sem 4 (27 abr - 3 may)", concepto: "Licores La Amistad", categoria: "Bebidas/Licor", valor: 1000700 },
   { date: "2026-04-30", semana: 4, periodo: "Sem 4 (27 abr - 3 may)", concepto: "Limón", categoria: "Insumos coctelería", valor: 110000 },
+  // ─── MAYO 2026 ───
+  { date: "2026-05-01", semana: 5, periodo: "Sem 1 may (27 abr - 3 may)", concepto: "Filin Trío (show 30 abr - 1 may)", categoria: "Eventos/Artistas", valor: 1400000 },
+  { date: "2026-05-01", semana: 5, periodo: "Sem 1 may (27 abr - 3 may)", concepto: "Bavaria", categoria: "Bebidas/Licor", valor: 480400 },
 ];
 
 // ─── Storage ───
@@ -1539,7 +1627,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-04-30");
+  const [selDate,setSelDate]=useState("2026-05-01");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -1609,7 +1697,7 @@ export default function App(){
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
             <div>
               <h1 style={{fontFamily:"'Poppins',sans-serif",fontSize:26,fontWeight:800,color:C.gold,margin:0,letterSpacing:0.5}}>La Sala</h1>
-              <p style={{fontSize:12,color:C.dim,margin:"2px 0 0",letterSpacing:2,textTransform:"uppercase",fontWeight:500}}>Control de ventas · Abril 2026</p>
+              <p style={{fontSize:12,color:C.dim,margin:"2px 0 0",letterSpacing:2,textTransform:"uppercase",fontWeight:500}}>Control de ventas · Mayo 2026</p>
             </div>
           </div>
           <div style={{display:"flex",gap:4,overflowX:"auto"}}>
@@ -1645,12 +1733,21 @@ export default function App(){
 
 // ─── Dashboard General (Consolidado + Meta) ───
 function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
-  const META=40000000;
-  const DIAS_MES=30;
+  const META=45000000;
+  const DIAS_MES=31;
 
-  if(cuadres.length===0) return <div style={{textAlign:"center",padding:60,color:C.dim}}><div style={{fontSize:52,marginBottom:14}}>📊</div><p style={{fontSize:20,fontWeight:600}}>Sin datos aún</p><p style={{fontSize:14}}>Envía las fotos del POS a Claude para registrar</p></div>;
+  // Mes activo: por defecto el mes más reciente con datos
+  const allMonths=[...new Set(cuadres.map(c=>c.date.slice(0,7)))].sort();
+  const [activeMonth,setActiveMonth]=useState(allMonths[allMonths.length-1]||"2026-05");
+  const monthLabels={"2026-03":"Marzo","2026-04":"Abril","2026-05":"Mayo","2026-06":"Junio","2026-07":"Julio","2026-08":"Agosto","2026-09":"Septiembre","2026-10":"Octubre","2026-11":"Noviembre","2026-12":"Diciembre","2027-01":"Enero","2027-02":"Febrero"};
 
-  const tot=cuadres.reduce((a,c)=>{
+  // Filter all data by active month
+  const cuadresMonth=cuadres.filter(c=>c.date.startsWith(activeMonth));
+  const gastosTransfMonth=(gastosTransf||[]).filter(g=>g.date.startsWith(activeMonth));
+
+  if(cuadresMonth.length===0) return <div style={{textAlign:"center",padding:60,color:C.dim}}><div style={{fontSize:52,marginBottom:14}}>📊</div><p style={{fontSize:20,fontWeight:600}}>Sin datos para {monthLabels[activeMonth]||activeMonth}</p><p style={{fontSize:14}}>Envía las fotos del POS a Claude para registrar</p>{allMonths.length>0&&<div style={{marginTop:20,display:"flex",gap:8,justifyContent:"center",flexWrap:"wrap"}}>{allMonths.map(m=><button key={m} onClick={()=>setActiveMonth(m)} style={{background:m===activeMonth?C.gold:"transparent",color:m===activeMonth?C.bg:C.gold,border:`1px solid ${C.gold}`,padding:"6px 14px",borderRadius:8,fontWeight:600,cursor:"pointer"}}>{monthLabels[m]||m}</button>)}</div>}</div>;
+
+  const tot=cuadresMonth.reduce((a,c)=>{
     a.venta+=c.venta_total;a.estanco+=c.estanco||0;a.cocteles+=c.cocteles||0;
     a.pizza+=c.pizzeria||0;a.efectivo+=c.efectivo;a.tarjeta+=c.tarjeta;
     a.otros+=(c.otros_pago||0);a.p80+=c.pizza_80;a.gastos+=c.gastos;
@@ -1659,23 +1756,44 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
   },{venta:0,estanco:0,cocteles:0,pizza:0,efectivo:0,tarjeta:0,otros:0,p80:0,gastos:0,nomina:0,cf:0,neto:0});
 
   const totalGastos=tot.p80+tot.gastos+tot.nomina+tot.cf;
-  const totalTransf=(gastosTransf||[]).reduce((a,g)=>a+(g.valor||0),0);
+  const totalTransf=gastosTransfMonth.reduce((a,g)=>a+(g.valor||0),0);
   const netoReal=tot.neto-totalTransf;
   const totalGastosReal=totalGastos+totalTransf;
-  const avgDay=tot.venta/cuadres.length;
-  const proyeccion=avgDay*DIAS_MES;
+
+  // ─── ACUMULADO CONSOLIDADO (todos los meses con datos) ───
+  const totAcum=cuadres.reduce((a,c)=>{
+    a.venta+=c.venta_total;
+    a.neto+=c.neto_sala||0;
+    a.cf+=c.costo_financiero||0;
+    return a;
+  },{venta:0,neto:0,cf:0});
+  const totalTransfAcum=(gastosTransf||[]).reduce((a,g)=>a+(g.valor||0),0);
+  const netoRealAcum=totAcum.neto-totalTransfAcum;
+  // Desglose mensual para mostrar el detalle
+  const monthBreakdown=allMonths.map(m=>{
+    const cm=cuadres.filter(c=>c.date.startsWith(m));
+    const gm=(gastosTransf||[]).filter(g=>g.date.startsWith(m));
+    const venta=cm.reduce((s,c)=>s+c.venta_total,0);
+    const netoPos=cm.reduce((s,c)=>s+(c.neto_sala||0),0);
+    const transf=gm.reduce((s,g)=>s+(g.valor||0),0);
+    return{mes:m,label:monthLabels[m]||m,dias:cm.length,venta,netoPos,transf,netoReal:netoPos-transf};
+  });
+  const avgDay=tot.venta/cuadresMonth.length;
+  // mayo tiene 31 días, abril 30, marzo 31
+  const daysInMonth={"2026-03":31,"2026-04":30,"2026-05":31,"2026-06":30,"2026-07":31,"2026-08":31,"2026-09":30,"2026-10":31,"2026-11":30,"2026-12":31}[activeMonth]||31;
+  const proyeccion=avgDay*daysInMonth;
   const pctMeta=tot.venta/META;
-  const diasRestantes=DIAS_MES-cuadres.length;
+  const diasRestantes=daysInMonth-cuadresMonth.length;
   const faltaMeta=META-tot.venta;
   const necesitaDia=diasRestantes>0?faltaMeta/diasRestantes:0;
   const barPct=tot.venta?(tot.estanco+tot.cocteles)/tot.venta:0;
   const margenPct=tot.venta?(tot.neto/tot.venta):0;
   const margenRealPct=tot.venta?(netoReal/tot.venta):0;
 
-  const best=cuadres.reduce((a,b)=>a.venta_total>b.venta_total?a:b);
-  const worst=cuadres.reduce((a,b)=>a.venta_total<b.venta_total?a:b);
+  const best=cuadresMonth.reduce((a,b)=>a.venta_total>b.venta_total?a:b);
+  const worst=cuadresMonth.reduce((a,b)=>a.venta_total<b.venta_total?a:b);
 
-  const chartData=cuadres.map(c=>{
+  const chartData=cuadresMonth.map(c=>{
     const vt=c.venta_total||1;
     return{
       d:fmtD(c.date).split(" ").slice(0,2).join(" "),
@@ -1688,9 +1806,9 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
   });
 
   let acum=0;
-  const acumData=cuadres.map((c,i)=>{
+  const acumData=cuadresMonth.map((c,i)=>{
     acum+=c.venta_total;
-    return{d:fmtD(c.date).split(" ").slice(0,2).join(" "),real:acum,meta:META/DIAS_MES*(i+1)};
+    return{d:fmtD(c.date).split(" ").slice(0,2).join(" "),real:acum,meta:META/daysInMonth*(i+1)};
   });
 
   // Top kitchen
@@ -1754,7 +1872,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
 
   // Day of week
   const dowData=[0,1,2,3,4,5,6].map(dow=>{
-    const de=cuadres.filter(c=>new Date(c.date+"T12:00:00").getDay()===dow);
+    const de=cuadresMonth.filter(c=>new Date(c.date+"T12:00:00").getDay()===dow);
     return{day:["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"][dow],avg:de.length?de.reduce((s,c)=>s+c.venta_total,0)/de.length:0,count:de.length};
   });
 
@@ -1797,7 +1915,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
     <Card style={{background:`linear-gradient(135deg,${C.card} 0%,#1a1510 100%)`,padding:22,marginBottom:16}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14}}>
         <div>
-          <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Meta abril</div>
+          <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Meta mayo</div>
           <div style={{fontSize:32,fontWeight:800,color:C.gold,marginTop:4}}>{fmtF(META)}</div>
         </div>
         <div style={{textAlign:"right"}}>
@@ -1830,16 +1948,65 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
       </div>
     </Card>
 
+    {/* ═══ Selector de mes ═══ */}
+    {allMonths.length>1&&<div style={{display:"flex",gap:6,marginBottom:14,flexWrap:"wrap",alignItems:"center"}}>
+      <span style={{fontSize:11,color:C.dim,letterSpacing:2,textTransform:"uppercase",fontWeight:600,marginRight:6}}>Mes</span>
+      {allMonths.map(m=>(
+        <button key={m} onClick={()=>setActiveMonth(m)} style={{
+          background:m===activeMonth?C.gold:"transparent",
+          color:m===activeMonth?C.bg:C.gold,
+          border:`1px solid ${m===activeMonth?C.gold:C.gold+"60"}`,
+          padding:"5px 14px",borderRadius:8,fontSize:12,fontWeight:600,
+          cursor:"pointer",fontFamily:"'Poppins',sans-serif",letterSpacing:.5,
+          transition:"all 0.2s"
+        }}>{monthLabels[m]||m}</button>
+      ))}
+    </div>}
+
+    {/* ═══ ACUMULADO CONSOLIDADO (multi-mes) ═══ */}
+    {allMonths.length>1&&<Card accent={C.green} style={{background:`linear-gradient(135deg, ${(netoRealAcum>=0?C.green:C.red)}12 0%, ${C.card} 60%)`,boxShadow:`0 12px 40px ${(netoRealAcum>=0?C.green:C.red)}20`,borderWidth:2}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14,gap:10,flexWrap:"wrap"}}>
+        <div>
+          <div style={{fontSize:11,color:C.gold,textTransform:"uppercase",letterSpacing:2.5,fontWeight:700}}>● Acumulado consolidado</div>
+          <div style={{fontSize:13,color:C.dim,marginTop:4}}>Saldo histórico de los {allMonths.length} meses con datos</div>
+        </div>
+        <div style={{textAlign:"right"}}>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:600}}>Neto REAL acumulado</div>
+          <div style={{fontSize:30,fontWeight:800,color:netoRealAcum>=0?C.green:C.red,fontFamily:"'Poppins',sans-serif",letterSpacing:-0.5,lineHeight:1.1,marginTop:4}}>{fmtF(netoRealAcum)}</div>
+          <div style={{fontSize:11,color:C.muted,marginTop:2}}>sobre {fmtF(totAcum.venta)} de venta total</div>
+        </div>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:`repeat(${monthBreakdown.length+1},1fr)`,gap:8}}>
+        {monthBreakdown.map((m,i)=>(
+          <div key={i} style={{background:m.mes===activeMonth?C.bg:C.card,padding:"10px 12px",borderRadius:10,border:`1px solid ${m.mes===activeMonth?C.gold+"60":C.bdr}`,position:"relative"}}>
+            <div style={{fontSize:10,color:m.mes===activeMonth?C.gold:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>{m.label}</div>
+            <div style={{fontSize:9,color:C.muted,marginTop:1}}>{m.dias} días · {fmtF(m.venta)}</div>
+            <div style={{fontSize:16,fontWeight:800,color:m.netoReal>=0?C.green:C.red,marginTop:6,fontFamily:"'Poppins',sans-serif",letterSpacing:-0.3}}>{fmtF(m.netoReal)}</div>
+            <div style={{fontSize:9,color:C.muted,marginTop:2,display:"flex",justifyContent:"space-between"}}>
+              <span>POS {fmtF(m.netoPos)}</span>
+              <span style={{color:C.purple}}>−T {fmtF(m.transf)}</span>
+            </div>
+          </div>
+        ))}
+        <div style={{background:`linear-gradient(135deg, ${(netoRealAcum>=0?C.green:C.red)}25 0%, ${C.bg} 100%)`,padding:"10px 12px",borderRadius:10,border:`2px solid ${netoRealAcum>=0?C.green:C.red}`,position:"relative"}}>
+          <div style={{fontSize:10,color:C.gold,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Σ Total</div>
+          <div style={{fontSize:9,color:C.muted,marginTop:1}}>{cuadres.length} días · {fmtF(totAcum.venta)}</div>
+          <div style={{fontSize:16,fontWeight:800,color:netoRealAcum>=0?C.green:C.red,marginTop:6,fontFamily:"'Poppins',sans-serif",letterSpacing:-0.3}}>{fmtF(netoRealAcum)}</div>
+          <div style={{fontSize:9,color:C.muted,marginTop:2}}>margen real {totAcum.venta?(netoRealAcum/totAcum.venta*100).toFixed(1):"0"}%</div>
+        </div>
+      </div>
+    </Card>}
+
     {/* ═══ KPIs ═══ */}
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(140px,1fr))",gap:10,marginBottom:14}}>
       {[
-        {l:"Venta acumulada",v:fmtF(tot.venta),s:`${cuadres.length} días`,c:C.gold},
-        {l:"Promedio diario",v:fmtF(avgDay),s:`meta: ${fmtF(META/DIAS_MES)}/día`,c:avgDay>=META/DIAS_MES?C.green:"#fbbf24"},
+        {l:"Venta acumulada",v:fmtF(tot.venta),s:`${cuadresMonth.length} días`,c:C.gold},
+        {l:"Promedio diario",v:fmtF(avgDay),s:`meta: ${fmtF(META/daysInMonth)}/día`,c:avgDay>=META/daysInMonth?C.green:"#fbbf24"},
         {l:"Estanco",v:fmtF(tot.estanco),s:pct(tot.estanco,tot.venta),c:C.gold},
         {l:"Cocteles",v:fmtF(tot.cocteles),s:pct(tot.cocteles,tot.venta),c:C.cyan},
         {l:"Pizzería",v:fmtF(tot.pizza),s:pct(tot.pizza,tot.venta),c:C.orange},
         {l:"Neto cuadres POS",v:fmtF(tot.neto),s:`margen ${(margenPct*100).toFixed(1)}%`,c:tot.neto>=0?C.green:C.red},
-        {l:"Gastos transferencia",v:fmtF(totalTransf),s:`${(gastosTransf||[]).length} pagos`,c:C.purple},
+        {l:"Gastos transferencia",v:fmtF(totalTransf),s:`${(gastosTransfMonth||[]).length} pagos`,c:C.purple},
         {l:"NETO REAL",v:fmtF(netoReal),s:`margen real ${(margenRealPct*100).toFixed(1)}%`,c:netoReal>=0?C.green:C.red},
       ].map((k,i)=>(
         <Card key={i} accent={k.c} style={{padding:"14px 16px",marginBottom:0,...(k.l==="NETO REAL"?{background:`linear-gradient(135deg, ${(netoReal>=0?C.greenDim:C.redDim)}25 0%, ${C.card} 100%)`,borderWidth:2,boxShadow:`0 10px 40px ${(netoReal>=0?C.green:C.red)}25`}:{})}}>
@@ -1980,14 +2147,14 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
     </div>
 
     {/* ═══ GASTOS POR TRANSFERENCIA (semanales / proveedores) ═══ */}
-    {gastosTransf&&gastosTransf.length>0&&(()=>{
-      const semanas=[...new Set(gastosTransf.map(g=>g.periodo))].sort();
+    {gastosTransfMonth&&gastosTransfMonth.length>0&&(()=>{
+      const semanas=[...new Set(gastosTransfMonth.map(g=>g.periodo))].sort();
       const semanaData=semanas.map(p=>{
-        const items=gastosTransf.filter(g=>g.periodo===p);
+        const items=gastosTransfMonth.filter(g=>g.periodo===p);
         return{periodo:p,total:items.reduce((a,g)=>a+g.valor,0),items};
       });
       const catTotals={};
-      gastosTransf.forEach(g=>{catTotals[g.categoria]=(catTotals[g.categoria]||0)+g.valor;});
+      gastosTransfMonth.forEach(g=>{catTotals[g.categoria]=(catTotals[g.categoria]||0)+g.valor;});
       const catList=Object.entries(catTotals).map(([k,v],i)=>({name:k,value:v,fill:PIE[i%PIE.length]})).sort((a,b)=>b.value-a.value);
       return(<>
         <Card accent={C.purple}>
@@ -1996,7 +2163,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
             <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",borderLeft:`3px solid ${C.purple}`}}>
               <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:.8}}>Total transferencias</div>
               <div style={{fontSize:24,fontWeight:700,color:C.purple,fontFamily:"'Poppins',sans-serif",marginTop:4}}>{fmtF(totalTransf)}</div>
-              <div style={{fontSize:12,color:C.muted,marginTop:2}}>{gastosTransf.length} pagos en {semanas.length} semanas</div>
+              <div style={{fontSize:12,color:C.muted,marginTop:2}}>{gastosTransfMonth.length} pagos en {semanas.length} semanas</div>
             </div>
             <div style={{background:C.bg,borderRadius:10,padding:"10px 12px",borderLeft:`3px solid ${netoReal>=0?C.green:C.red}`}}>
               <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:.8}}>Neto REAL consolidado</div>
@@ -2033,7 +2200,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
           </Card>
           <Card>
             <Sec color={C.purple}>Top conceptos</Sec>
-            {[...gastosTransf].filter(g=>g.valor>0).sort((a,b)=>b.valor-a.valor).slice(0,5).map((g,i)=>(
+            {[...gastosTransfMonth].filter(g=>g.valor>0).sort((a,b)=>b.valor-a.valor).slice(0,5).map((g,i)=>(
               <div key={i} style={{marginBottom:8}}>
                 <div style={{display:"flex",justifyContent:"space-between",fontSize:12,marginBottom:3}}>
                   <span>{g.concepto}</span>
@@ -2048,7 +2215,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
     })()}
 
     {/* ═══ MAPA DE CALOR (semana × día) ═══ */}
-    {cuadres.length>=5&&(()=>{
+    {cuadresMonth.length>=5&&(()=>{
       // Build matrix: rows = semanas (ISO-like, lunes a domingo), cols = días de semana
       const dowOrder=[1,2,3,4,5,6,0]; // Lun, Mar, Mié, Jue, Vie, Sáb, Dom
       const dowLabels=["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
@@ -2060,14 +2227,14 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
         return`${monday.getFullYear()}-${String(monday.getMonth()+1).padStart(2,"0")}-${String(monday.getDate()).padStart(2,"0")}`;
       };
       const weekMap={};
-      cuadres.forEach(c=>{
+      cuadresMonth.forEach(c=>{
         const wk=weekKey(c.date);
         if(!weekMap[wk]) weekMap[wk]={};
         const dow=new Date(c.date+"T12:00:00").getDay();
         weekMap[wk][dow]=c;
       });
       const sortedWeeks=Object.keys(weekMap).sort();
-      const allValues=cuadres.map(c=>c.venta_total).filter(v=>v>0);
+      const allValues=cuadresMonth.map(c=>c.venta_total).filter(v=>v>0);
       const maxV=Math.max(...allValues,1);
       const heatColor=v=>{
         if(v===0||v==null) return C.bdr;
@@ -2109,9 +2276,9 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
     })()}
 
     {/* ═══ COMPARATIVA SEMANAL ═══ */}
-    {cuadres.length>=4&&(()=>{
+    {cuadresMonth.length>=4&&(()=>{
       // Take last 14 days, split into "esta semana" (last 7) and "semana anterior" (previous 7)
-      const sorted=[...cuadres].sort((a,b)=>a.date.localeCompare(b.date));
+      const sorted=[...cuadresMonth].sort((a,b)=>a.date.localeCompare(b.date));
       const last=sorted.slice(-7);
       const prev=sorted.slice(-14,-7);
       if(prev.length===0) return null;
@@ -2165,7 +2332,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
     })()}
 
     {/* ═══ PATRÓN SEMANAL ═══ */}
-    {cuadres.length>=3&&<Card>
+    {cuadresMonth.length>=3&&<Card>
       <Sec>Venta promedio por día de la semana</Sec>
       <ResponsiveContainer width="100%" height={160}>
         <BarChart data={dowData.filter(d=>d.count>0)}>
@@ -2185,7 +2352,7 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
     {/* ═══ HISTORIAL ═══ */}
     <Card>
       <Sec>Historial día a día</Sec>
-      {[...cuadres].reverse().map(c=>{
+      {[...cuadresMonth].reverse().map(c=>{
         const bp=c.venta_total?(c.estanco+c.cocteles)/c.venta_total:0;
         return(<div key={c.date} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 0",borderBottom:`1px solid ${C.bdr}`}}>
           <div><div style={{fontSize:14,fontWeight:600,color:C.gold}}>{fmtD(c.date)}</div><div style={{fontSize:12,color:C.dim,marginTop:2}}>Est {fmtF(c.estanco)} · Coct {fmtF(c.cocteles)} · Pizza {fmtF(c.pizzeria)}</div></div>
