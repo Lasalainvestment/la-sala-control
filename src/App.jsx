@@ -170,6 +170,13 @@ const PRELOADED_CUADRES = [
     efectivo: 0, tarjeta: 119600, otros_pago: 160000,
     pizza_80: 33280, gastos: 5000, nomina: 155000, costo_financiero: 5980,
     neto_sala: -79660, faltante: -160000,
+  },
+  {
+    date: "2026-05-04", venta_total: 112000,
+    estanco: 60000, cocteles: 15000, pizzeria: 37000, otros_venta: 0,
+    efectivo: 37000, tarjeta: 70000, otros_pago: 5000,
+    pizza_80: 29600, gastos: 5000, nomina: 0, costo_financiero: 3500,
+    neto_sala: 73900, faltante: 0,
   }
 ];
 
@@ -440,6 +447,12 @@ const PRELOADED_COCINA = [
     productos: [
       { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-05-04", total: 37000, total_units: 1,
+    productos: [
+      { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
     ]
   }
 ];
@@ -1507,7 +1520,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"CURAZAO AZUL",saldo:3},
       {nombre:"DRY MARTINY",saldo:0},
       {nombre:"ELECTROLIT",saldo:1},
-      {nombre:"ENCENDEDOR",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
       {nombre:"GASEOSA",saldo:121},
       {nombre:"GASEOSA 1.5",saldo:18},
       {nombre:"GINEBRA BOTELLA",saldo:1},
@@ -1533,6 +1546,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"BUCHANAN'S BOTELLA",saldo:0},
       {nombre:"BUCHANAN'S MEDIA",saldo:2},
       {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
+  },
+  {
+    date: "2026-05-04", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:1},
+      {nombre:"AGT MEDIA CAUCA",saldo:8},
+      {nombre:"AGUA",saldo:36},
+      {nombre:"AGUA TONICA",saldo:7},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:39},
+      {nombre:"CERVEZA IMPORTADA",saldo:51},
+      {nombre:"CERVEZA NACIONAL",saldo:165},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:115},
+      {nombre:"GASEOSA 1.5",saldo:18},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:2},
+      {nombre:"TEQUILA BOTELLA",saldo:0},
+      {nombre:"TEQUILA LITRO",saldo:1},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:2},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
@@ -1725,6 +1790,12 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
     ]
+  },
+  {
+    date: "2026-05-04", total: 5000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+    ]
   }
 ];
 
@@ -1783,7 +1854,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-03");
+  const [selDate,setSelDate]=useState("2026-05-04");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
