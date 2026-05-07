@@ -3176,6 +3176,32 @@ function InventarioValorizado({inventarios}){
             </tr>);
           })}
         </tbody>
+        <tfoot style={{position:"sticky",bottom:0,background:C.card,zIndex:1}}>
+          {(()=>{
+            const tot=sorted.reduce((a,r)=>{
+              a.unidades+=Math.max(0,r.saldo);
+              a.negativos+=r.saldo<0?1:0;
+              a.cero+=r.saldo===0?1:0;
+              a.valorCosto+=r.valorCosto;
+              a.valorVenta+=r.valorVenta;
+              a.utilidad+=r.utilidadPotencial;
+              return a;
+            },{unidades:0,negativos:0,cero:0,valorCosto:0,valorVenta:0,utilidad:0});
+            const margenProm=tot.valorVenta?(tot.utilidad/tot.valorVenta):0;
+            return(<tr style={{borderTop:`2px solid ${C.gold}`,background:C.gold+"15",fontWeight:800}}>
+              <td style={{padding:"10px 6px",color:C.gold,fontFamily:"'Poppins',sans-serif",letterSpacing:1}}>
+                <div style={{fontSize:13,fontWeight:800}}>TOTAL {filterCat==="todos"?"":`· ${filterCat}`}</div>
+                <div style={{fontSize:10,color:C.muted,fontWeight:500}}>{sorted.length} productos · {tot.cero} en cero · {tot.negativos} neg.</div>
+              </td>
+              <td style={{padding:"10px 6px",textAlign:"right",color:C.text,fontSize:14}}>{tot.unidades}</td>
+              <td style={{padding:"10px 6px",textAlign:"right",color:C.muted,fontSize:11,fontStyle:"italic"}}>—</td>
+              <td style={{padding:"10px 6px",textAlign:"right",color:C.muted,fontSize:11,fontStyle:"italic"}}>—</td>
+              <td style={{padding:"10px 6px",textAlign:"right",color:margenProm>=0.5?C.green:margenProm>0?C.gold:C.muted,fontSize:13}}>{tot.valorVenta?(margenProm*100).toFixed(1)+"%":"—"}</td>
+              <td style={{padding:"10px 6px",textAlign:"right",color:C.gold,fontSize:14}}>{fmtF(tot.valorCosto)}</td>
+              <td style={{padding:"10px 6px",textAlign:"right",color:tot.utilidad>0?C.green:C.muted,fontSize:14}}>{fmtF(tot.utilidad)}</td>
+            </tr>);
+          })()}
+        </tfoot>
       </table>
       </div>
     </Card>
