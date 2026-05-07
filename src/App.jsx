@@ -184,6 +184,13 @@ const PRELOADED_CUADRES = [
     efectivo: 0, tarjeta: 114000, otros_pago: 0,
     pizza_80: 62400, gastos: 0, nomina: 0, costo_financiero: 5700,
     neto_sala: 45900, faltante: 0,
+  },
+  {
+    date: "2026-05-06", venta_total: 951400,
+    estanco: 155000, cocteles: 410000, pizzeria: 386400, otros_venta: 0,
+    efectivo: 5150, tarjeta: 933400, otros_pago: 12850,
+    pizza_80: 309120, gastos: 12850, nomina: 0, costo_financiero: 46670,
+    neto_sala: 582760, faltante: 0,
   }
 ];
 
@@ -467,6 +474,20 @@ const PRELOADED_COCINA = [
     productos: [
       { nombre: "PT CARBONARA RG", cantidad: 1, valor: 38400 },
       { nombre: "PZ MEXICANA PEQ", cantidad: 1, valor: 39600 },
+    ]
+  },
+  {
+    date: "2026-05-06", total: 386400, total_units: 13,
+    productos: [
+      { nombre: "PZ AB CARNES GR", cantidad: 1, valor: 67200 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ POLLO CHAMPI MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 4, valor: 44000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
     ]
   }
 ];
@@ -1618,6 +1639,8 @@ const PRELOADED_INVENTARIOS = [
   },
   {
     date: "2026-05-05", tipo: "final",
+    // Saldos actualizados según conteo físico hecho el miércoles 6
+    // (correcciones de Buchanan's, Vodkas, Vino Botella, Tequilas, Ron DL, Triple Sec, Whisky Coct)
     items: [
       {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
       {nombre:"AGT BOTLLA CAUCA",saldo:5},
@@ -1643,27 +1666,79 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"GASEOSA 1.5",saldo:18},
       {nombre:"GINEBRA BOTELLA",saldo:1},
       {nombre:"GINEBRA DL",saldo:5},
-      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"GINEBRA ML",saldo:0},
       {nombre:"LICOR CAFÉ",saldo:1},
       {nombre:"LICOR DE MANZANA",saldo:12},
       {nombre:"LICOR DE MENTA",saldo:-1},
       {nombre:"RED BULL",saldo:7},
       {nombre:"RON CALDAS BOTELLA",saldo:0},
       {nombre:"RON CALDAS MEDIA",saldo:0},
-      {nombre:"RON DL",saldo:2},
-      {nombre:"TEQUILA BOTELLA",saldo:0},
-      {nombre:"TEQUILA LITRO",saldo:1},
-      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
       {nombre:"TEQUILA ML",saldo:2},
-      {nombre:"TRIPLESEC",saldo:3},
-      {nombre:"VINO BOTELLA",saldo:0},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:3},
       {nombre:"VINO CASILLERO BOTELLA",saldo:0},
       {nombre:"VODKA BOTELLA",saldo:0},
-      {nombre:"VODKA MEDIA",saldo:6},
-      {nombre:"VODKA DL",saldo:0},
-      {nombre:"BUCHANAN'S BOTELLA",saldo:2},
-      {nombre:"BUCHANAN'S MEDIA",saldo:0},
-      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
+  },
+  {
+    date: "2026-05-06", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:1},
+      {nombre:"AGT MEDIA CAUCA",saldo:8},
+      {nombre:"AGUA",saldo:36},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:34},
+      {nombre:"CERVEZA IMPORTADA",saldo:48},
+      {nombre:"CERVEZA NACIONAL",saldo:163},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:105},
+      {nombre:"GASEOSA 1.5",saldo:17},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:16},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:6},
+      {nombre:"TRIPLESEC",saldo:5},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
@@ -1862,6 +1937,17 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
     ]
+  },
+  {
+    date: "2026-05-05", total: 0,
+    items: []
+  },
+  {
+    date: "2026-05-06", total: 12850,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "Blanqueador (D1 - Fact. H6Z9437552)", categoria: "Aseo", valor: 2850 },
+    ]
   }
 ];
 
@@ -1994,7 +2080,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-05");
+  const [selDate,setSelDate]=useState("2026-05-06");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
