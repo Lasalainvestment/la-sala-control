@@ -1865,6 +1865,80 @@ const PRELOADED_GASTOS = [
   }
 ];
 
+// ─── CATÁLOGO MAESTRO DE PRECIOS (referencia: inventario_la_sala_para_Claude.xlsx) ───
+// Cada producto: { categoria, compra, venta, fuente, notas }
+// compra=0 → producto sin facturación (verificar). venta=0 → insumo coctelería.
+const CATALOG = {
+  "AGT BOTLLA ANQUEÑ": {categoria:"Aguardiente",compra:42900,venta:90000,fuente:"Compra: ESTIM | Venta: CARTA",notas:"Estim. similar a Caucano (no facturado en periodo)"},
+  "AGT BOTLLA CAUCA": {categoria:"Aguardiente",compra:42900,venta:90000,fuente:"Compra: GIR-24abr | Venta: CARTA",notas:""},
+  "AGT BOTLLA REAL": {categoria:"Aguardiente",compra:42900,venta:90000,fuente:"Compra: ESTIM | Venta: CARTA",notas:"Estim. similar a Caucano (no facturado)"},
+  "AGT MEDIA ANQUEÑ": {categoria:"Aguardiente",compra:29000,venta:60000,fuente:"Compra: ESTIM | Venta: CARTA",notas:"SALDO NEGATIVO: revisar; estim. similar a Caucano media"},
+  "AGT MEDIA CAUCA": {categoria:"Aguardiente",compra:22800,venta:60000,fuente:"Compra: GIR-30mar | Venta: CARTA",notas:"Caucano CAN 375cc"},
+  "AGUA": {categoria:"Bebidas no alcohólicas",compra:1300,venta:6000,fuente:"Compra: GIR-18abr | Venta: CARTA",notas:"Cristal 600cc"},
+  "AGUA TONICA": {categoria:"Bebidas no alcohólicas",compra:2300,venta:6000,fuente:"Compra: GIR-04abr | Venta: CARTA",notas:"Schweppes Tónica 300cc"},
+  "AMARETTO": {categoria:"Licores/Cócteles",compra:53000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo cóctel - sin compra ni venta directa"},
+  "CACHAZA": {categoria:"Licores/Cócteles",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo Caipirinha"},
+  "CAJA DE VINO": {categoria:"Vino",compra:20650,venta:0,fuente:"Compra: GIR-24abr | Venta: VERIFICAR",notas:"Vino Cata Tint Tetrapack 1L"},
+  "CERVEZA CORONA": {categoria:"Cerveza",compra:3704,venta:13000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"Importada - no facturada en periodo"},
+  "CERVEZA IMPORTADA": {categoria:"Cerveza",compra:3563,venta:13000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada en periodo"},
+  "CERVEZA NACIONAL": {categoria:"Cerveza",compra:2893,venta:9000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada en periodo"},
+  "CHICLETS": {categoria:"Otros",compra:6000,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
+  "CIGARRILLOS": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
+  "CREMA DE WHISKY": {categoria:"Licores/Cócteles",compra:27100,venta:0,fuente:"Compra: GIR-02abr | Venta: INSUMO",notas:"Crema/Wh Jumbo 750cc (Baileys $78.500 si premium)"},
+  "CURAZAO AZUL": {categoria:"Licores/Cócteles",compra:25000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo cóctel Blue Hawai/Burbujas Azules"},
+  "DRY MARTINY": {categoria:"Licores/Cócteles",compra:75000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Vermut seco - insumo Martini Dry"},
+  "ELECTROLIT": {categoria:"Bebidas no alcohólicas",compra:7200,venta:15000,fuente:"Compra: GIR-04abr | Venta: VERIFICAR",notas:"Suero Electrolit 625cc"},
+  "ENCENDEDOR": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
+  "GASEOSA": {categoria:"Bebidas no alcohólicas",compra:2400,venta:6000,fuente:"Compra: GIR-24abr | Venta: CARTA",notas:"Postobón 10oz"},
+  "GASEOSA 1.5": {categoria:"Bebidas no alcohólicas",compra:4900,venta:10000,fuente:"Compra: GIR-24abr | Venta: CARTA",notas:"Aprox. Jugo del Valle Citrus 1.5L"},
+  "GINEBRA BOTELLA": {categoria:"Ginebra",compra:150000,venta:280000,fuente:"Compra: GIR-02abr | Venta: CARTA",notas:"Perigans 700cc (Tanqueray/Bombay $280k según marca)"},
+  "GINEBRA DL": {categoria:"Ginebra",compra:20000,venta:20000,fuente:"Compra: INSUMO | Venta: CARTA",notas:"Trago doble - precio carta (Aguard/Ron)"},
+  "GINEBRA ML": {categoria:"Ginebra",compra:77000,venta:0,fuente:"Compra: INSUMO | Venta: INSUMO",notas:"Insumo cóctel"},
+  "LICOR CAFÉ": {categoria:"Licores/Cócteles",compra:49900,venta:0,fuente:"Compra: GIR-24abr | Venta: INSUMO",notas:"Tres Plumas Café 700cc - insumo cóctel"},
+  "LICOR DE MANZANA": {categoria:"Licores/Cócteles",compra:25000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo Apple Martini"},
+  "LICOR DE MENTA": {categoria:"Licores/Cócteles",compra:74400,venta:0,fuente:"Compra: GIR-24abr | Venta: INSUMO",notas:"Convier Menta 750cc - insumo Demonio Verde"},
+  "RED BULL": {categoria:"Bebidas no alcohólicas",compra:6400,venta:15000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado (Amper $2.900 NO es Red Bull)"},
+  "RON CALDAS BOTELLA": {categoria:"Ron",compra:59300,venta:110000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado en periodo"},
+  "RON CALDAS MEDIA": {categoria:"Ron",compra:30700,venta:80000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado en periodo"},
+  "RON DL": {categoria:"Ron",compra:20000,venta:20000,fuente:"Compra: INSUMO | Venta: CARTA",notas:"Trago doble Ron"},
+  "TEQUILA BOTELLA": {categoria:"Tequila",compra:73900,venta:195000,fuente:"Compra: GIR-30mar | Venta: CARTA",notas:"José Cuervo Amar 750cc"},
+  "TEQUILA LITRO": {categoria:"Tequila",compra:87900,venta:110000,fuente:"Compra: GIR-02abr | Venta: VERIFICAR",notas:"Tres Caballos Gold 1L"},
+  "TEQUILA MEDIA": {categoria:"Tequila",compra:43950,venta:110000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada"},
+  "TEQUILA ML": {categoria:"Tequila",compra:86000,venta:0,fuente:"Compra: INSUMO | Venta: INSUMO",notas:"Insumo cóctel"},
+  "TRIPLESEC": {categoria:"Licores/Cócteles",compra:31000,venta:0,fuente:"Compra: MIL-01abr | Venta: INSUMO",notas:"Base $21.008 + impuestos prorrateados"},
+  "VINO BOTELLA": {categoria:"Vino",compra:36900,venta:90000,fuente:"Compra: GIR-18abr | Venta: CARTA",notas:"Gato Negro Cab/Suav 750cc"},
+  "VINO CASILLERO BOTELLA": {categoria:"Vino",compra:61700,venta:100000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado"},
+  "VODKA BOTELLA": {categoria:"Vodka",compra:89000,venta:195000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado en periodo"},
+  "VODKA MEDIA": {categoria:"Vodka",compra:54000,venta:110000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado"},
+  "VODKA DL": {categoria:"Vodka",compra:20000,venta:20000,fuente:"Compra: INSUMO | Venta: CARTA",notas:"Trago doble Vodka aprox"},
+  "BUCHANAN'S BOTELLA": {categoria:"Whisky",compra:156800,venta:310000,fuente:"Compra: GIR-02abr | Venta: CARTA",notas:"Buchanans 12 años 750cc"},
+  "BUCHANAN'S MEDIA": {categoria:"Whisky",compra:96000,venta:230000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada en periodo"},
+  "WHISKEY COCTELERIA": {categoria:"Whisky",compra:51600,venta:0,fuente:"Compra: INSUMO | Venta: INSUMO",notas:"Whisky para cócteles - varios"},
+  "OLD PARR BOTELLA": {categoria:"Whisky",compra:136700,venta:300000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"Botella 750cc no facturada (sí media 500cc)"},
+  "OLD PARR MEDIA": {categoria:"Whisky",compra:99800,venta:220000,fuente:"Compra: GIR-18abr | Venta: CARTA",notas:"Old Parr 12 años 500cc"},
+};
+
+// ─── Categorías con orden y color ───
+const CATEGORIAS = [
+  {nombre:"Aguardiente",color:"#7cc474"},
+  {nombre:"Whisky",color:"#c9943e"},
+  {nombre:"Ron",color:"#c44d3a"},
+  {nombre:"Tequila",color:"#d9a05b"},
+  {nombre:"Vodka",color:"#5fb3d4"},
+  {nombre:"Ginebra",color:"#9d7cd0"},
+  {nombre:"Vino",color:"#8b2538"},
+  {nombre:"Cerveza",color:"#d4a843"},
+  {nombre:"Licores/Cócteles",color:"#e07a5f"},
+  {nombre:"Bebidas no alcohólicas",color:"#7fb3d5"},
+  {nombre:"Otros",color:"#6c7a89"},
+];
+
+// ─── Compras registradas (facturas procesadas) ───
+// Estructura: { fecha, factura, proveedor, items: [{producto_jsx, cant, base_und, icl_und, vr_und, vr_total, observaciones}] }
+const PRELOADED_COMPRAS = [
+  // Cuando lleguen facturas, se agregan aquí. Por ahora vacío para llenar progresivamente.
+];
+
 // ─── Gastos pagados por transferencia (no aparecen en cuadre del POS) ───
 const PRELOADED_GASTOS_TRANSFERENCIA = [
   // SEMANA 1: Lun 30 mar — Dom 5 abr (Total: $624.000)
@@ -1974,7 +2048,7 @@ export default function App(){
 
   if(loading) return <div style={{background:`linear-gradient(135deg, ${C.bg} 0%, #14110d 50%, ${C.bg} 100%)`,minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{color:C.gold,fontFamily:"'Poppins',sans-serif",fontSize:24,fontWeight:800}}>Cargando...</div></div>;
 
-  const tabs=[{id:"dashboard",l:"Dashboard",i:"📊"},{id:"invdash",l:"Inv. Control",i:"🔄"},{id:"resumen",l:"Día",i:"◉"},{id:"cocina",l:"Cocina",i:"🍕"},{id:"inventario",l:"Inventario",i:"📦"},{id:"gastos",l:"Gastos",i:"📋"}];
+  const tabs=[{id:"dashboard",l:"Dashboard",i:"📊"},{id:"invdash",l:"Inv. Control",i:"🔄"},{id:"invvalue",l:"Inv. Valorizado",i:"💰"},{id:"analcat",l:"Por Categoría",i:"📈"},{id:"compras",l:"Compras",i:"🧾"},{id:"resumen",l:"Día",i:"◉"},{id:"cocina",l:"Cocina",i:"🍕"},{id:"inventario",l:"Inventario",i:"📦"},{id:"gastos",l:"Gastos",i:"📋"}];
 
   return(
     <div style={{background:`linear-gradient(135deg, ${C.bg} 0%, #14110d 50%, ${C.bg} 100%)`,backgroundAttachment:"fixed",minHeight:"100vh",fontFamily:"'Poppins',sans-serif",color:C.text}}>
@@ -2003,7 +2077,7 @@ export default function App(){
         </div>
       </header>
 
-      {view!=="dashboard"&&view!=="invdash"&&<div style={{maxWidth:920,margin:"0 auto",padding:"10px 16px",display:"flex",gap:6,overflowX:"auto",alignItems:"center"}}>
+      {view!=="dashboard"&&view!=="invdash"&&view!=="invvalue"&&view!=="analcat"&&view!=="compras"&&<div style={{maxWidth:920,margin:"0 auto",padding:"10px 16px",display:"flex",gap:6,overflowX:"auto",alignItems:"center"}}>
         <span style={{fontSize:14,color:C.dim,letterSpacing:1,textTransform:"uppercase",whiteSpace:"nowrap"}}>Día:</span>
         {dates.map(d=><button key={d} onClick={()=>setSelDate(d)} style={{
           background:selDate===d?C.goldDim+"50":"transparent",color:selDate===d?C.gold:C.muted,
@@ -2015,6 +2089,9 @@ export default function App(){
       <div style={{maxWidth:920,margin:"0 auto",padding:"0 16px 60px"}}>
         {view==="dashboard"&&<DashboardGeneral cuadres={cuadres} cocina={cocinaData} gastos={gastosData} gastosTransf={gastosTransfData} inventarios={inventarios}/>}
         {view==="invdash"&&<InventarioDashboard inventarios={inventarios} cuadres={cuadres}/>}
+        {view==="invvalue"&&<InventarioValorizado inventarios={inventarios}/>}
+        {view==="analcat"&&<AnalisisCategoria inventarios={inventarios} cocina={cocinaData}/>}
+        {view==="compras"&&<ComprasModule compras={PRELOADED_COMPRAS}/>}
         {view==="resumen"&&<Resumen c={c} coc={coc} gas={gas} cross={invCross} date={selDate}/>}
         {view==="cocina"&&<Cocina coc={coc} date={selDate}/>}
         {view==="inventario"&&<Inventario cross={invCross} prevFin={prevFin} fin={fin} date={selDate}/>}
@@ -2964,3 +3041,367 @@ function Gastos({gas,date}){
     </Card>)}
   </div>);
 }
+
+// ═════════════════════════════════════════════════════════════════
+// ─── INVENTARIO VALORIZADO ───
+// ═════════════════════════════════════════════════════════════════
+function InventarioValorizado({inventarios}){
+  // Tomar el último inventario "final" disponible
+  const finals=(inventarios||[]).filter(x=>x.tipo==="final").sort((a,b)=>a.date.localeCompare(b.date));
+  const last=finals[finals.length-1];
+
+  if(!last) return <Card><div style={{textAlign:"center",padding:30,color:C.dim}}>Sin inventarios cargados aún</div></Card>;
+
+  // Construir filas valorizadas con catálogo
+  const rows=last.items.map(it=>{
+    const cat=CATALOG[it.nombre]||{categoria:"Sin clasificar",compra:0,venta:0,fuente:"",notas:""};
+    const valorCosto=(it.saldo||0)*(cat.compra||0);
+    const valorVenta=(it.saldo||0)*(cat.venta||0);
+    const margenUnit=(cat.venta||0)-(cat.compra||0);
+    const margenPct=cat.venta?((cat.venta-cat.compra)/cat.venta):0;
+    const utilidadPotencial=valorVenta-valorCosto;
+    return {nombre:it.nombre,saldo:it.saldo,...cat,valorCosto,valorVenta,margenUnit,margenPct,utilidadPotencial};
+  });
+
+  // KPIs globales
+  const totales=rows.reduce((a,r)=>{
+    a.unidades+=Math.max(0,r.saldo);
+    a.distintos+=r.saldo>0?1:0;
+    a.cero+=r.saldo===0?1:0;
+    a.negativos+=r.saldo<0?1:0;
+    a.valorCosto+=r.valorCosto;
+    a.valorVenta+=r.valorVenta;
+    a.utilidad+=r.utilidadPotencial;
+    return a;
+  },{unidades:0,distintos:0,cero:0,negativos:0,valorCosto:0,valorVenta:0,utilidad:0});
+  totales.margenPromedio=totales.valorVenta?totales.utilidad/totales.valorVenta:0;
+
+  // Sort estado: por defecto por valor inventario al costo descendente
+  const [sortBy,setSortBy]=useState("valorCosto");
+  const [filterCat,setFilterCat]=useState("todos");
+  const cats=["todos",...new Set(rows.map(r=>r.categoria))];
+  const filtered=filterCat==="todos"?rows:rows.filter(r=>r.categoria===filterCat);
+  const sorted=[...filtered].sort((a,b)=>{
+    if(sortBy==="valorCosto")return b.valorCosto-a.valorCosto;
+    if(sortBy==="margen")return b.margenPct-a.margenPct;
+    if(sortBy==="saldo")return b.saldo-a.saldo;
+    if(sortBy==="utilidad")return b.utilidadPotencial-a.utilidadPotencial;
+    return a.nombre.localeCompare(b.nombre);
+  });
+
+  return(<div>
+    <Card accent={C.gold}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14,flexWrap:"wrap",gap:10}}>
+        <div>
+          <div style={{fontSize:11,color:C.gold,textTransform:"uppercase",letterSpacing:2.5,fontWeight:700}}>● Inventario valorizado</div>
+          <div style={{fontSize:13,color:C.dim,marginTop:4}}>Cierre {fmtD(last.date)}</div>
+        </div>
+        <div style={{textAlign:"right"}}>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:600}}>Inventario al costo</div>
+          <div style={{fontSize:30,fontWeight:800,color:C.gold,fontFamily:"'Poppins',sans-serif",letterSpacing:-0.5,lineHeight:1.1,marginTop:4}}>{fmtF(totales.valorCosto)}</div>
+          <div style={{fontSize:11,color:C.muted,marginTop:2}}>valor potencial venta {fmtF(totales.valorVenta)}</div>
+        </div>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,marginTop:10}}>
+        <div style={{background:C.bg,padding:"10px 12px",borderRadius:10,border:`1px solid ${C.bdr}`}}>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Unidades</div>
+          <div style={{fontSize:20,fontWeight:800,color:C.text,marginTop:4}}>{totales.unidades}</div>
+          <div style={{fontSize:10,color:C.muted}}>{totales.distintos} productos &gt; 0</div>
+        </div>
+        <div style={{background:C.bg,padding:"10px 12px",borderRadius:10,border:`1px solid ${C.bdr}`}}>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Util. potencial</div>
+          <div style={{fontSize:20,fontWeight:800,color:C.green,marginTop:4}}>{fmtF(totales.utilidad)}</div>
+          <div style={{fontSize:10,color:C.muted}}>margen {(totales.margenPromedio*100).toFixed(1)}%</div>
+        </div>
+        <div style={{background:C.bg,padding:"10px 12px",borderRadius:10,border:`1px solid ${C.bdr}`}}>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>En cero</div>
+          <div style={{fontSize:20,fontWeight:800,color:C.orange,marginTop:4}}>{totales.cero}</div>
+          <div style={{fontSize:10,color:C.muted}}>productos sin stock</div>
+        </div>
+        <div style={{background:C.bg,padding:"10px 12px",borderRadius:10,border:`1px solid ${C.bdr}${totales.negativos>0?";borderColor:"+C.red:""}`}}>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Negativos</div>
+          <div style={{fontSize:20,fontWeight:800,color:totales.negativos>0?C.red:C.muted,marginTop:4}}>{totales.negativos}</div>
+          <div style={{fontSize:10,color:C.muted}}>{totales.negativos>0?"⚠ revisar":"sin alertas"}</div>
+        </div>
+      </div>
+    </Card>
+
+    <Card>
+      <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:14,alignItems:"center"}}>
+        <span style={{fontSize:11,color:C.dim,letterSpacing:2,textTransform:"uppercase",fontWeight:600,marginRight:6}}>Categoría</span>
+        {cats.map(c=>(
+          <button key={c} onClick={()=>setFilterCat(c)} style={{
+            background:c===filterCat?C.gold:"transparent",color:c===filterCat?C.bg:C.gold,
+            border:`1px solid ${c===filterCat?C.gold:C.gold+"60"}`,padding:"4px 10px",borderRadius:8,fontSize:11,fontWeight:600,cursor:"pointer",fontFamily:"inherit"
+          }}>{c}</button>
+        ))}
+      </div>
+      <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:14,alignItems:"center"}}>
+        <span style={{fontSize:11,color:C.dim,letterSpacing:2,textTransform:"uppercase",fontWeight:600,marginRight:6}}>Ordenar</span>
+        {[{k:"valorCosto",l:"Valor inv."},{k:"saldo",l:"Saldo"},{k:"margen",l:"Margen %"},{k:"utilidad",l:"Utilidad"},{k:"nombre",l:"A-Z"}].map(o=>(
+          <button key={o.k} onClick={()=>setSortBy(o.k)} style={{
+            background:o.k===sortBy?C.green:"transparent",color:o.k===sortBy?C.bg:C.green,
+            border:`1px solid ${o.k===sortBy?C.green:C.green+"60"}`,padding:"4px 10px",borderRadius:8,fontSize:11,fontWeight:600,cursor:"pointer",fontFamily:"inherit"
+          }}>{o.l}</button>
+        ))}
+      </div>
+      <div style={{overflow:"auto",maxHeight:600}}>
+      <table style={{width:"100%",fontSize:12,borderCollapse:"collapse"}}>
+        <thead style={{position:"sticky",top:0,background:C.card,zIndex:1}}>
+          <tr style={{borderBottom:`2px solid ${C.gold}40`,color:C.gold,textAlign:"left"}}>
+            <th style={{padding:"8px 6px"}}>Producto</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Saldo</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Compra</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Venta</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Margen %</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Inv. costo</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Util. pot.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map((r,i)=>{
+            const colorRow=r.saldo<0?C.red+"15":r.saldo===0?C.dim+"08":"transparent";
+            const catColor=(CATEGORIAS.find(c=>c.nombre===r.categoria)||{}).color||C.muted;
+            return(<tr key={i} style={{background:colorRow,borderBottom:`1px solid ${C.bdr}30`}}>
+              <td style={{padding:"6px"}}>
+                <div style={{fontWeight:600,color:C.text}}>{r.nombre}</div>
+                <div style={{fontSize:10,color:catColor}}>● {r.categoria}</div>
+              </td>
+              <td style={{padding:"6px",textAlign:"right",fontWeight:700,color:r.saldo<0?C.red:r.saldo===0?C.dim:C.text}}>{r.saldo}</td>
+              <td style={{padding:"6px",textAlign:"right",color:C.muted}}>{r.compra?fmtF(r.compra):"—"}</td>
+              <td style={{padding:"6px",textAlign:"right",color:C.muted}}>{r.venta?fmtF(r.venta):"insumo"}</td>
+              <td style={{padding:"6px",textAlign:"right",color:r.margenPct>=0.5?C.green:r.margenPct>0?C.gold:C.muted,fontWeight:600}}>{r.venta?(r.margenPct*100).toFixed(0)+"%":"—"}</td>
+              <td style={{padding:"6px",textAlign:"right",fontWeight:700,color:C.gold}}>{fmtF(r.valorCosto)}</td>
+              <td style={{padding:"6px",textAlign:"right",fontWeight:700,color:r.utilidadPotencial>0?C.green:C.muted}}>{r.utilidadPotencial?fmtF(r.utilidadPotencial):"—"}</td>
+            </tr>);
+          })}
+        </tbody>
+      </table>
+      </div>
+    </Card>
+  </div>);
+}
+
+// ═════════════════════════════════════════════════════════════════
+// ─── ANÁLISIS POR CATEGORÍA ───
+// ═════════════════════════════════════════════════════════════════
+function AnalisisCategoria({inventarios,cocina}){
+  const finals=(inventarios||[]).filter(x=>x.tipo==="final").sort((a,b)=>a.date.localeCompare(b.date));
+  const last=finals[finals.length-1];
+
+  if(!last) return <Card><div style={{textAlign:"center",padding:30,color:C.dim}}>Sin inventarios cargados</div></Card>;
+
+  // Agrupar por categoría
+  const porCat={};
+  last.items.forEach(it=>{
+    const cat=CATALOG[it.nombre]||{categoria:"Sin clasificar",compra:0,venta:0};
+    const c=cat.categoria;
+    if(!porCat[c])porCat[c]={productos:0,unidades:0,valorCosto:0,valorVenta:0,utilidad:0,negativos:0,enCero:0,items:[]};
+    porCat[c].productos++;
+    porCat[c].unidades+=Math.max(0,it.saldo);
+    porCat[c].valorCosto+=Math.max(0,it.saldo)*cat.compra;
+    porCat[c].valorVenta+=Math.max(0,it.saldo)*cat.venta;
+    porCat[c].utilidad+=Math.max(0,it.saldo)*(cat.venta-cat.compra);
+    if(it.saldo<0)porCat[c].negativos++;
+    if(it.saldo===0)porCat[c].enCero++;
+    porCat[c].items.push({...it,...cat,valorCosto:Math.max(0,it.saldo)*cat.compra});
+  });
+
+  const filas=CATEGORIAS.map(cat=>({nombre:cat.nombre,color:cat.color,...(porCat[cat.nombre]||{productos:0,unidades:0,valorCosto:0,valorVenta:0,utilidad:0,negativos:0,enCero:0,items:[]})}))
+    .filter(c=>c.productos>0);
+
+  const totalCosto=filas.reduce((a,c)=>a+c.valorCosto,0);
+  const totalVenta=filas.reduce((a,c)=>a+c.valorVenta,0);
+  const totalUtil=filas.reduce((a,c)=>a+c.utilidad,0);
+
+  const pieData=filas.filter(c=>c.valorCosto>0).map(c=>({name:c.nombre,value:c.valorCosto,fill:c.color}));
+
+  return(<div>
+    <Card accent={C.gold}>
+      <Sec color={C.gold}>● Análisis por categoría · {fmtD(last.date)}</Sec>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12,marginBottom:14}}>
+        <div>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Total al costo</div>
+          <div style={{fontSize:24,fontWeight:800,color:C.gold,marginTop:4}}>{fmtF(totalCosto)}</div>
+        </div>
+        <div>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Utilidad potencial</div>
+          <div style={{fontSize:24,fontWeight:800,color:C.green,marginTop:4}}>{fmtF(totalUtil)}</div>
+          <div style={{fontSize:10,color:C.muted}}>margen {totalVenta?(totalUtil/totalVenta*100).toFixed(1):"0"}%</div>
+        </div>
+      </div>
+      {pieData.length>0&&<ResponsiveContainer width="100%" height={220}>
+        <PieChart>
+          <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} innerRadius={35} dataKey="value" paddingAngle={2}>
+            {pieData.map((e,i)=><Cell key={i} fill={e.fill}/>)}
+          </Pie>
+          <Tooltip formatter={v=>fmtF(v)}/>
+        </PieChart>
+      </ResponsiveContainer>}
+    </Card>
+
+    <Card>
+      <Sec>Detalle por categoría</Sec>
+      <div style={{overflow:"auto"}}>
+      <table style={{width:"100%",fontSize:12,borderCollapse:"collapse"}}>
+        <thead>
+          <tr style={{borderBottom:`2px solid ${C.gold}40`,color:C.gold,textAlign:"left"}}>
+            <th style={{padding:"8px 6px"}}>Categoría</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Prod.</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Unid.</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Inv. costo</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Inv. venta</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Util.</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Margen %</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Cero/Neg.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filas.sort((a,b)=>b.valorCosto-a.valorCosto).map((f,i)=>{
+            const margen=f.valorVenta?(f.utilidad/f.valorVenta*100).toFixed(1):"0";
+            return(<tr key={i} style={{borderBottom:`1px solid ${C.bdr}30`}}>
+              <td style={{padding:"8px 6px",color:f.color,fontWeight:600}}>● {f.nombre}</td>
+              <td style={{padding:"8px 6px",textAlign:"right"}}>{f.productos}</td>
+              <td style={{padding:"8px 6px",textAlign:"right"}}>{f.unidades}</td>
+              <td style={{padding:"8px 6px",textAlign:"right",color:C.gold,fontWeight:700}}>{fmtF(f.valorCosto)}</td>
+              <td style={{padding:"8px 6px",textAlign:"right",color:C.muted}}>{fmtF(f.valorVenta)}</td>
+              <td style={{padding:"8px 6px",textAlign:"right",color:C.green,fontWeight:700}}>{fmtF(f.utilidad)}</td>
+              <td style={{padding:"8px 6px",textAlign:"right",color:Number(margen)>=50?C.green:Number(margen)>=30?C.gold:C.muted}}>{margen}%</td>
+              <td style={{padding:"8px 6px",textAlign:"right",color:f.negativos>0?C.red:C.muted,fontWeight:f.negativos>0?700:400}}>{f.enCero}/{f.negativos}</td>
+            </tr>);
+          })}
+          <tr style={{borderTop:`2px solid ${C.gold}`,fontWeight:800,color:C.gold,background:C.gold+"10"}}>
+            <td style={{padding:"10px 6px"}}>TOTAL</td>
+            <td style={{padding:"10px 6px",textAlign:"right"}}>{filas.reduce((a,f)=>a+f.productos,0)}</td>
+            <td style={{padding:"10px 6px",textAlign:"right"}}>{filas.reduce((a,f)=>a+f.unidades,0)}</td>
+            <td style={{padding:"10px 6px",textAlign:"right"}}>{fmtF(totalCosto)}</td>
+            <td style={{padding:"10px 6px",textAlign:"right"}}>{fmtF(totalVenta)}</td>
+            <td style={{padding:"10px 6px",textAlign:"right"}}>{fmtF(totalUtil)}</td>
+            <td style={{padding:"10px 6px",textAlign:"right"}}>{totalVenta?(totalUtil/totalVenta*100).toFixed(1):"0"}%</td>
+            <td style={{padding:"10px 6px",textAlign:"right"}}>{filas.reduce((a,f)=>a+f.enCero,0)}/{filas.reduce((a,f)=>a+f.negativos,0)}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </Card>
+
+    {filas.sort((a,b)=>b.valorCosto-a.valorCosto).map(f=>(
+      <Card key={f.nombre} accent={f.color}>
+        <Sec color={f.color}>● {f.nombre} · {fmtF(f.valorCosto)} al costo</Sec>
+        <div style={{overflow:"auto"}}>
+        <table style={{width:"100%",fontSize:12,borderCollapse:"collapse"}}>
+          <thead>
+            <tr style={{borderBottom:`1px solid ${C.bdr}`,color:C.dim,textAlign:"left",fontSize:10,textTransform:"uppercase",letterSpacing:1}}>
+              <th style={{padding:"6px"}}>Producto</th>
+              <th style={{padding:"6px",textAlign:"right"}}>Saldo</th>
+              <th style={{padding:"6px",textAlign:"right"}}>Compra</th>
+              <th style={{padding:"6px",textAlign:"right"}}>Venta</th>
+              <th style={{padding:"6px",textAlign:"right"}}>Inv. costo</th>
+            </tr>
+          </thead>
+          <tbody>
+            {f.items.sort((a,b)=>b.valorCosto-a.valorCosto).map((it,i)=>(
+              <tr key={i} style={{borderBottom:`1px solid ${C.bdr}20`,background:it.saldo<0?C.red+"10":"transparent"}}>
+                <td style={{padding:"6px"}}>{it.nombre}</td>
+                <td style={{padding:"6px",textAlign:"right",fontWeight:700,color:it.saldo<0?C.red:it.saldo===0?C.dim:C.text}}>{it.saldo}</td>
+                <td style={{padding:"6px",textAlign:"right",color:C.muted}}>{it.compra?fmtF(it.compra):"—"}</td>
+                <td style={{padding:"6px",textAlign:"right",color:C.muted}}>{it.venta?fmtF(it.venta):"insumo"}</td>
+                <td style={{padding:"6px",textAlign:"right",color:C.gold,fontWeight:600}}>{it.valorCosto?fmtF(it.valorCosto):"—"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        </div>
+      </Card>
+    ))}
+  </div>);
+}
+
+// ═════════════════════════════════════════════════════════════════
+// ─── COMPRAS (módulo de facturas por proveedor) ───
+// ═════════════════════════════════════════════════════════════════
+function ComprasModule({compras}){
+  if(!compras||compras.length===0){
+    return(<div>
+      <Card accent={C.gold}>
+        <Sec color={C.gold}>🧾 Módulo de Compras</Sec>
+        <p style={{fontSize:14,color:C.text,lineHeight:1.6,marginBottom:12}}>
+          Aquí se registrarán todas las facturas de proveedores con detalle por producto.
+        </p>
+        <p style={{fontSize:13,color:C.muted,lineHeight:1.5,marginBottom:12}}>
+          <strong style={{color:C.gold}}>Estructura por factura:</strong> fecha, número, proveedor, código de producto, descripción, cantidad, base/unidad sin impuestos, ICL/unidad, valor/unidad con impuestos, valor total, observaciones.
+        </p>
+        <p style={{fontSize:13,color:C.muted,lineHeight:1.5}}>
+          <strong style={{color:C.gold}}>Para empezar:</strong> envía las imágenes o archivos de las facturas a Claude. Se digitalizarán y cargarán automáticamente con el cruce contra el catálogo.
+        </p>
+        <div style={{marginTop:18,padding:"12px 14px",background:C.bg,border:`1px solid ${C.gold}30`,borderRadius:10}}>
+          <div style={{fontSize:11,color:C.gold,textTransform:"uppercase",letterSpacing:2,fontWeight:700}}>Proveedores ya identificados</div>
+          <ul style={{fontSize:13,color:C.muted,marginTop:8,paddingLeft:20,lineHeight:1.7}}>
+            <li><strong style={{color:C.text}}>GIR (Licores Junior)</strong> — proveedor principal de licores premium</li>
+            <li><strong style={{color:C.text}}>MIL (Licorería Milton)</strong> — proveedor de licores complementarios</li>
+            <li><strong style={{color:C.text}}>Bavaria</strong> — cervezas (Águila, Corona, Importadas)</li>
+            <li><strong style={{color:C.text}}>Postobón</strong> — gaseosas, agua, jugos</li>
+            <li><strong style={{color:C.text}}>Licores La Amistad</strong> — licores varios</li>
+          </ul>
+        </div>
+      </Card>
+    </div>);
+  }
+
+  // Si hay facturas, agrupar por proveedor y mostrar
+  const porProveedor={};
+  compras.forEach(f=>{
+    if(!porProveedor[f.proveedor])porProveedor[f.proveedor]={facturas:[],total:0,unidades:0};
+    porProveedor[f.proveedor].facturas.push(f);
+    f.items?.forEach(it=>{
+      porProveedor[f.proveedor].total+=it.vr_total||0;
+      porProveedor[f.proveedor].unidades+=it.cant||0;
+    });
+  });
+  const proveedores=Object.entries(porProveedor).sort((a,b)=>b[1].total-a[1].total);
+  const totalCompras=proveedores.reduce((a,[,d])=>a+d.total,0);
+
+  return(<div>
+    <Card accent={C.gold}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14,gap:10}}>
+        <div>
+          <Sec color={C.gold}>🧾 Compras registradas</Sec>
+          <div style={{fontSize:13,color:C.dim}}>{compras.length} facturas · {proveedores.length} proveedores</div>
+        </div>
+        <div style={{textAlign:"right"}}>
+          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Total compras</div>
+          <div style={{fontSize:26,fontWeight:800,color:C.gold,marginTop:4}}>{fmtF(totalCompras)}</div>
+        </div>
+      </div>
+    </Card>
+
+    {proveedores.map(([prov,data])=>(
+      <Card key={prov} accent={C.gold}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
+          <div>
+            <div style={{fontSize:16,fontWeight:700,color:C.text}}>{prov}</div>
+            <div style={{fontSize:11,color:C.muted}}>{data.facturas.length} facturas · {data.unidades} unidades</div>
+          </div>
+          <div style={{fontSize:18,fontWeight:800,color:C.gold}}>{fmtF(data.total)}</div>
+        </div>
+        {data.facturas.sort((a,b)=>b.fecha.localeCompare(a.fecha)).map((f,i)=>(
+          <div key={i} style={{background:C.bg,padding:"10px 12px",borderRadius:8,marginTop:8,border:`1px solid ${C.bdr}`}}>
+            <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+              <div style={{fontSize:12,fontWeight:600,color:C.gold}}>Factura {f.factura} · {fmtD(f.fecha)}</div>
+              <div style={{fontSize:13,fontWeight:700,color:C.text}}>{fmtF(f.items?.reduce((a,it)=>a+(it.vr_total||0),0))}</div>
+            </div>
+            {f.items?.map((it,j)=>(
+              <div key={j} style={{display:"grid",gridTemplateColumns:"1fr 60px 90px 90px",gap:6,padding:"3px 0",fontSize:11,color:C.muted,borderTop:j>0?`1px solid ${C.bdr}30`:"none"}}>
+                <span>{it.descripcion} {it.codigo?<span style={{color:C.dim}}>({it.codigo})</span>:""}</span>
+                <span style={{textAlign:"right"}}>{it.cant} und</span>
+                <span style={{textAlign:"right"}}>{fmtF(it.vr_und)}/u</span>
+                <span style={{textAlign:"right",color:C.text,fontWeight:600}}>{fmtF(it.vr_total)}</span>
+              </div>
+            ))}
+          </div>
+        ))}
+      </Card>
+    ))}
+  </div>);
+}
+
