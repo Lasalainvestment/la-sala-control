@@ -191,6 +191,13 @@ const PRELOADED_CUADRES = [
     efectivo: 5150, tarjeta: 933400, otros_pago: 12850,
     pizza_80: 309120, gastos: 12850, nomina: 0, costo_financiero: 46670,
     neto_sala: 582760, faltante: 0,
+  },
+  {
+    date: "2026-05-07", venta_total: 951800,
+    estanco: 114000, cocteles: 190000, pizzeria: 647800, otros_venta: 0,
+    efectivo: 250000, tarjeta: 696800, otros_pago: 5000,
+    pizza_80: 518240, gastos: 5000, nomina: 0, costo_financiero: 34840,
+    neto_sala: 393720, faltante: 0,
   }
 ];
 
@@ -487,6 +494,25 @@ const PRELOADED_COCINA = [
       { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
       { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 4, valor: 44000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-05-07", total: 647800, total_units: 17,
+    productos: [
+      { nombre: "PZ FLORENTINA GR", cantidad: 1, valor: 67200 },
+      { nombre: "LASAGNA MIXTA", cantidad: 3, valor: 129000 },
+      { nombre: "PZ PEPERNATA MED", cantidad: 1, valor: 52800 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "PT ALFREDO RG", cantidad: 1, valor: 38400 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "HB BBQ", cantidad: 1, valor: 36000 },
+      { nombre: "HB DE RES CON CHAMPI", cantidad: 1, valor: 36000 },
+      { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 2, valor: 72000 },
+      { nombre: "CHAMPINONES PARMESANOS", cantidad: 1, valor: 28800 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
     ]
   }
@@ -1742,6 +1768,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-07", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:1},
+      {nombre:"AGT MEDIA CAUCA",saldo:8},
+      {nombre:"AGUA",saldo:36},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:33},
+      {nombre:"CERVEZA IMPORTADA",saldo:46},
+      {nombre:"CERVEZA NACIONAL",saldo:150},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:100},
+      {nombre:"GASEOSA 1.5",saldo:17},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:16},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:6},
+      {nombre:"TRIPLESEC",saldo:5},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -1948,6 +2026,12 @@ const PRELOADED_GASTOS = [
       { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
       { concepto: "Blanqueador (D1 - Fact. H6Z9437552)", categoria: "Aseo", valor: 2850 },
     ]
+  },
+  {
+    date: "2026-05-07", total: 5000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+    ]
   }
 ];
 
@@ -2080,7 +2164,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-06");
+  const [selDate,setSelDate]=useState("2026-05-07");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
