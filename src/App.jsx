@@ -212,6 +212,13 @@ const PRELOADED_CUADRES = [
     efectivo: 78200, tarjeta: 3597000, otros_pago: 23800,
     pizza_80: 1190400, gastos: 23800, nomina: 0, costo_financiero: 179850,
     neto_sala: 2304950, faltante: 0,
+  },
+  {
+    date: "2026-05-10", venta_total: 951200,
+    estanco: 127000, cocteles: 299000, pizzeria: 525200, otros_venta: 0,
+    efectivo: 0, tarjeta: 688000, otros_pago: 263200,
+    pizza_80: 420160, gastos: 193500, nomina: 69700, costo_financiero: 34400,
+    neto_sala: 233440, faltante: 0,
   }
 ];
 
@@ -572,6 +579,22 @@ const PRELOADED_COCINA = [
       { nombre: "NACHOS CLASICOS", cantidad: 1, valor: 31800 },
       { nombre: "PZ MARGARITA MED", cantidad: 1, valor: 36000 },
       { nombre: "LASAGNA VEGETARIANA", cantidad: 1, valor: 36000 },
+    ]
+  },
+  {
+    date: "2026-05-10", total: 525200, total_units: 14,
+    productos: [
+      { nombre: "PZ POLLO CHAMPI GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ FLORENTINA GR", cantidad: 1, valor: 67200 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ PTLN 3 INGR RG", cantidad: 1, valor: 42000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 2, valor: 86000 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PT CARBONARA RG", cantidad: 1, valor: 38400 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "PT BOLOGNESA JR", cantidad: 1, valor: 31200 },
+      { nombre: "FOCACCIA", cantidad: 1, valor: 14000 },
     ]
   }
 ];
@@ -1982,6 +2005,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-10", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:13},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:8},
+      {nombre:"AGT MEDIA CAUCA",saldo:7},
+      {nombre:"AGUA",saldo:31},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:15},
+      {nombre:"CERVEZA IMPORTADA",saldo:43},
+      {nombre:"CERVEZA NACIONAL",saldo:87},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:1},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:0},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:172},
+      {nombre:"GASEOSA 1.5",saldo:26},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:1},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -2209,6 +2284,14 @@ const PRELOADED_GASTOS = [
       { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
       { concepto: "6 unidades agua tónica", categoria: "Insumos bar", valor: 13800 },
     ]
+  },
+  {
+    date: "2026-05-10", total: 193500,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "3 Antioqueño Botella (factura DIAN)", categoria: "Compra Licores", valor: 151500 },
+      { concepto: "2 kilos azúcar, naranjas, mermeladas, leche, jugo mandarina", categoria: "Insumos cocina/bar", valor: 37000 },
+    ]
   }
 ];
 
@@ -2311,6 +2394,17 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-01", semana: 5, periodo: "Sem 1 may (27 abr - 3 may)", concepto: "Filin Trío (show 30 abr - 1 may)", categoria: "Eventos/Artistas", valor: 1400000 },
   { date: "2026-05-01", semana: 5, periodo: "Sem 1 may (27 abr - 3 may)", concepto: "Bavaria", categoria: "Bebidas/Licor", valor: 480400 },
   { date: "2026-05-02", semana: 5, periodo: "Sem 1 may (27 abr - 3 may)", concepto: "Licores Junior / La Amistad", categoria: "Bebidas/Licor", valor: 1364200 },
+  // SEMANA 2 MAYO: Lun 4 may — Dom 10 may
+  { date: "2026-05-06", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Vasos desechables Granizados", categoria: "Insumos Granizados", valor: 97000 },
+  { date: "2026-05-06", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Toppings Granizados", categoria: "Insumos Granizados", valor: 46000 },
+  { date: "2026-05-07", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Líquido granizadora", categoria: "Insumos Granizados", valor: 254000 },
+  { date: "2026-05-08", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 198100 },
+  { date: "2026-05-08", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Octavio Guaca", categoria: "Servicios/Otros", valor: 95000 },
+  { date: "2026-05-08", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Licores Junior - Reintegro Tito", categoria: "Bebidas/Licor", valor: 412200 },
+  { date: "2026-05-09", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Compra de Fruta", categoria: "Insumos coctelería", valor: 154300 },
+  { date: "2026-05-09", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Duo Arcángel (show sábado 9 may)", categoria: "Eventos/Artistas", valor: 400000 },
+  { date: "2026-05-09", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Licovacana del Pacífico - Reintegro Pipe", categoria: "Bebidas/Licor", valor: 272400 },
+  { date: "2026-05-10", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Nómina", categoria: "Nómina", valor: 220000 },
 ];
 
 // ─── Storage ───
@@ -2341,7 +2435,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-09");
+  const [selDate,setSelDate]=useState("2026-05-10");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
