@@ -219,6 +219,13 @@ const PRELOADED_CUADRES = [
     efectivo: 0, tarjeta: 688000, otros_pago: 263200,
     pizza_80: 420160, gastos: 193500, nomina: 69700, costo_financiero: 34400,
     neto_sala: 233440, faltante: 0,
+  },
+  {
+    date: "2026-05-11", venta_total: 427400,
+    estanco: 69000, cocteles: 151000, pizzeria: 207400, otros_venta: 0,
+    efectivo: 43000, tarjeta: 379400, otros_pago: 5000,
+    pizza_80: 165920, gastos: 5000, nomina: 0, costo_financiero: 18970,
+    neto_sala: 237510, faltante: 0,
   }
 ];
 
@@ -595,6 +602,15 @@ const PRELOADED_COCINA = [
       { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
       { nombre: "PT BOLOGNESA JR", cantidad: 1, valor: 31200 },
       { nombre: "FOCACCIA", cantidad: 1, valor: 14000 },
+    ]
+  },
+  {
+    date: "2026-05-11", total: 207400, total_units: 7,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 3, valor: 95400 },
+      { nombre: "PZ CARNAVAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 2, valor: 22000 },
     ]
   }
 ];
@@ -2057,6 +2073,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-11", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:13},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:8},
+      {nombre:"AGT MEDIA CAUCA",saldo:7},
+      {nombre:"AGUA",saldo:31},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:15},
+      {nombre:"CERVEZA IMPORTADA",saldo:40},
+      {nombre:"CERVEZA NACIONAL",saldo:85},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:1},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:0},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:169},
+      {nombre:"GASEOSA 1.5",saldo:26},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:1},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -2292,6 +2360,12 @@ const PRELOADED_GASTOS = [
       { concepto: "3 Antioqueño Botella (factura DIAN)", categoria: "Compra Licores", valor: 151500 },
       { concepto: "2 kilos azúcar, naranjas, mermeladas, leche, jugo mandarina", categoria: "Insumos cocina/bar", valor: 37000 },
     ]
+  },
+  {
+    date: "2026-05-11", total: 5000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+    ]
   }
 ];
 
@@ -2435,7 +2509,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-10");
+  const [selDate,setSelDate]=useState("2026-05-11");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
