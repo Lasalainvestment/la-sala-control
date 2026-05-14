@@ -233,6 +233,13 @@ const PRELOADED_CUADRES = [
     efectivo: 162000, tarjeta: 1070000, otros_pago: 175000,
     pizza_80: 483200, gastos: 5000, nomina: 170000, costo_financiero: 53500,
     neto_sala: 695300, faltante: 0,
+  },
+  {
+    date: "2026-05-13", venta_total: 1314200,
+    estanco: 41000, cocteles: 881000, pizzeria: 392200, otros_venta: 0,
+    efectivo: 971600, tarjeta: 167600, otros_pago: 175000,
+    pizza_80: 313760, gastos: 5000, nomina: 170000, costo_financiero: 8380,
+    neto_sala: 817060, faltante: 0,
   }
 ];
 
@@ -637,6 +644,19 @@ const PRELOADED_COCINA = [
       { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-05-13", total: 392200, total_units: 10,
+    productos: [
+      { nombre: "LASAGNA MIXTA", cantidad: 2, valor: 86000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 2, valor: 80000 },
+      { nombre: "PZ POTOTO GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ MEXICANA PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "HB HAWAIANA", cantidad: 1, valor: 37000 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
     ]
   }
 ];
@@ -2203,6 +2223,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-13", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:13},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:8},
+      {nombre:"AGT MEDIA CAUCA",saldo:8},
+      {nombre:"AGUA",saldo:29},
+      {nombre:"AGUA TONICA",saldo:4},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:7},
+      {nombre:"CERVEZA IMPORTADA",saldo:40},
+      {nombre:"CERVEZA NACIONAL",saldo:76},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:1},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:159},
+      {nombre:"GASEOSA 1.5",saldo:26},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0}
+    ]
   }
 ];
 
@@ -2450,6 +2522,12 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
     ]
+  },
+  {
+    date: "2026-05-13", total: 5000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+    ]
   }
 ];
 
@@ -2553,7 +2631,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-01", semana: 5, periodo: "Sem 1 may (27 abr - 3 may)", concepto: "Bavaria", categoria: "Bebidas/Licor", valor: 480400 },
   { date: "2026-05-02", semana: 5, periodo: "Sem 1 may (27 abr - 3 may)", concepto: "Licores Junior / La Amistad", categoria: "Bebidas/Licor", valor: 1364200 },
   // SEMANA 2 MAYO: Lun 4 may — Dom 10 may
-  { date: "2026-05-06", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Vasos desechables Granizados", categoria: "Insumos Granizados", valor: 97000 },
+  { date: "2026-05-07", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Vasos desechables Granizados (Caplas Todo Empaques)", categoria: "Insumos Granizados", valor: 97000 },
   { date: "2026-05-06", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Toppings Granizados", categoria: "Insumos Granizados", valor: 46000 },
   { date: "2026-05-07", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Líquido granizadora", categoria: "Insumos Granizados", valor: 254000 },
   { date: "2026-05-08", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 198100 },
@@ -2568,7 +2646,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-04", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Erika - Administración abril", categoria: "Servicios/Otros", valor: 450000 },
   { date: "2026-05-04", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Reinaldo - Insumos coctelería", categoria: "Insumos coctelería", valor: 387000 },
   { date: "2026-05-04", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Gustavo - Reembolso compras", categoria: "Bebidas/Licor", valor: 349000 },
-  { date: "2026-05-04", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Casa Limpia", categoria: "Servicios", valor: 97000 },
+  { date: "2026-05-08", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Casa Limpia (papel, ambient., pato)", categoria: "Servicios", valor: 145000 },
   { date: "2026-05-04", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Nómina Lunes 4 may", categoria: "Nómina", valor: 155000 },
   { date: "2026-05-05", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Nómina Martes 5 may", categoria: "Nómina", valor: 155000 },
   { date: "2026-05-06", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Nómina Miércoles 6 may", categoria: "Nómina", valor: 155000 },
@@ -2605,7 +2683,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-12");
+  const [selDate,setSelDate]=useState("2026-05-13");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
