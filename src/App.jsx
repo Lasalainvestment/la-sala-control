@@ -240,6 +240,13 @@ const PRELOADED_CUADRES = [
     efectivo: 971600, tarjeta: 167600, otros_pago: 175000,
     pizza_80: 313760, gastos: 5000, nomina: 170000, costo_financiero: 8380,
     neto_sala: 817060, faltante: 0,
+  },
+  {
+    date: "2026-05-14", venta_total: 874000,
+    estanco: 418000, cocteles: 245000, pizzeria: 211000, otros_venta: 0,
+    efectivo: 3200, tarjeta: 691800, otros_pago: 179000,
+    pizza_80: 168800, gastos: 179000, nomina: 0, costo_financiero: 34590,
+    neto_sala: 491610, faltante: 0,
   }
 ];
 
@@ -657,6 +664,16 @@ const PRELOADED_COCINA = [
       { nombre: "HB HAWAIANA", cantidad: 1, valor: 37000 },
       { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+    ]
+  },
+  {
+    date: "2026-05-14", total: 211000, total_units: 5,
+    productos: [
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ HAWAIANA MED", cantidad: 1, valor: 52800 },
+      { nombre: "HB HAWAIANA", cantidad: 1, valor: 37000 },
+      { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
+      { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
     ]
   }
 ];
@@ -2262,7 +2279,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"TEQUILA BOTELLA",saldo:2},
       {nombre:"TEQUILA LITRO",saldo:0},
       {nombre:"TEQUILA MEDIA",saldo:1},
-      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TEQUILA ML",saldo:8},
       {nombre:"TRIPLESEC",saldo:3},
       {nombre:"VINO BOTELLA",saldo:2},
       {nombre:"VINO CASILLERO BOTELLA",saldo:0},
@@ -2271,7 +2288,59 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"VODKA DL",saldo:4},
       {nombre:"BUCHANAN'S BOTELLA",saldo:0},
       {nombre:"BUCHANAN'S MEDIA",saldo:2},
-      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0}
+    ]
+  },
+  {
+    date: "2026-05-14", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:13},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:26},
+      {nombre:"AGUA TONICA",saldo:4},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:6},
+      {nombre:"CERVEZA IMPORTADA",saldo:39},
+      {nombre:"CERVEZA NACIONAL",saldo:67},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:1},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:154},
+      {nombre:"GASEOSA 1.5",saldo:26},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:8},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:0}
     ]
@@ -2528,6 +2597,15 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
     ]
+  },
+  {
+    date: "2026-05-14", total: 179000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "5 botellas Ron DL", categoria: "Bebidas/Licor", valor: 100000 },
+      { concepto: "Salsa piña, toalla cocina, leche, whisky", categoria: "Insumos varios", valor: 67000 },
+      { concepto: "Duplicado llaves", categoria: "Mantenimiento", valor: 7000 },
+    ]
   }
 ];
 
@@ -2683,7 +2761,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-13");
+  const [selDate,setSelDate]=useState("2026-05-14");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
