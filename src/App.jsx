@@ -247,6 +247,20 @@ const PRELOADED_CUADRES = [
     efectivo: 3200, tarjeta: 691800, otros_pago: 179000,
     pizza_80: 168800, gastos: 179000, nomina: 0, costo_financiero: 34590,
     neto_sala: 491610, faltante: 0,
+  },
+  {
+    date: "2026-05-15", venta_total: 2081000,
+    estanco: 568000, cocteles: 1081000, pizzeria: 432000, otros_venta: 0,
+    efectivo: 67000, tarjeta: 1894000, otros_pago: 120000,
+    pizza_80: 345600, gastos: 120000, nomina: 0, costo_financiero: 94700,
+    neto_sala: 1520700, faltante: 0,
+  },
+  {
+    date: "2026-05-16", venta_total: 3466200,
+    estanco: 791000, cocteles: 1128000, pizzeria: 1547200, otros_venta: 0,
+    efectivo: 227300, tarjeta: 2531800, otros_pago: 707100,
+    pizza_80: 1237760, gastos: 707100, nomina: 0, costo_financiero: 126590,
+    neto_sala: 1394750, faltante: 0,
   }
 ];
 
@@ -674,6 +688,44 @@ const PRELOADED_COCINA = [
       { nombre: "HB HAWAIANA", cantidad: 1, valor: 37000 },
       { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
       { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
+    ]
+  },
+  {
+    date: "2026-05-15", total: 432000, total_units: 13,
+    productos: [
+      { nombre: "PZ POTOTO PEQ", cantidad: 2, valor: 79200 },
+      { nombre: "HB DE POLLO", cantidad: 2, valor: 74000 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 2, valor: 72000 },
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 2, valor: 22000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-05-16", total: 1547200, total_units: 42,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 8, valor: 254400 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 4, valor: 160000 },
+      { nombre: "PZ CARNAVAL GR", cantidad: 2, valor: 134400 },
+      { nombre: "PZ MADRILENA GR", cantidad: 2, valor: 134400 },
+      { nombre: "LASAGNA MIXTA", cantidad: 3, valor: 129000 },
+      { nombre: "PT AL CAMPO JR", cantidad: 3, valor: 97200 },
+      { nombre: "HB HAWAIANA", cantidad: 2, valor: 74000 },
+      { nombre: "PZ POTOTO GR", cantidad: 1, valor: 67200 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ NAPOLITANA PQ", cantidad: 2, valor: 55200 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 5, valor: 55000 },
+      { nombre: "PZ MEXICANA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PT AL CAMPO RG", cantidad: 1, valor: 40200 },
+      { nombre: "LASAGNA DE RES", cantidad: 1, valor: 40000 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ PTLN 2 INGR RG", cantidad: 1, valor: 38400 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
     ]
   }
 ];
@@ -2344,6 +2396,110 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:0}
     ]
+  },
+  {
+    date: "2026-05-15", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:8},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:23},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:10},
+      {nombre:"CERVEZA IMPORTADA",saldo:37},
+      {nombre:"CERVEZA NACIONAL",saldo:70},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:1},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:135},
+      {nombre:"GASEOSA 1.5",saldo:26},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:4},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:7},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
+  },
+  {
+    date: "2026-05-16", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:22},
+      {nombre:"AGUA TONICA",saldo:2},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:22},
+      {nombre:"CERVEZA IMPORTADA",saldo:44},
+      {nombre:"CERVEZA NACIONAL",saldo:198},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:4},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:143},
+      {nombre:"GASEOSA 1.5",saldo:24},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:4},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:4},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:7},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:0},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -2606,6 +2762,23 @@ const PRELOADED_GASTOS = [
       { concepto: "Salsa piña, toalla cocina, leche, whisky", categoria: "Insumos varios", valor: 67000 },
       { concepto: "Duplicado llaves", categoria: "Mantenimiento", valor: 7000 },
     ]
+  },
+  {
+    date: "2026-05-15", total: 120000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "Limones", categoria: "Insumos coctelería", valor: 110000 },
+    ]
+  },
+  {
+    date: "2026-05-16", total: 707100,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "Ron DL", categoria: "Bebidas/Licor", valor: 100000 },
+      { concepto: "Hielo, servilletas", categoria: "Insumos varios", valor: 46900 },
+      { concepto: "Bavaria", categoria: "Bebidas/Licor", valor: 525200 },
+      { concepto: "1 Vino Botella", categoria: "Bebidas/Licor", valor: 25000 },
+    ]
   }
 ];
 
@@ -2731,6 +2904,8 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-07", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Nómina Jueves 7 may", categoria: "Nómina", valor: 155000 },
   { date: "2026-05-08", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Nómina Viernes 8 may", categoria: "Nómina", valor: 200000 },
   { date: "2026-05-10", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Nómina Domingo 10 may", categoria: "Nómina", valor: 155000 },
+  // ─── Semana 3 may (11 - 17 may) ───
+  { date: "2026-05-15", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Revisión Bomberos", categoria: "Servicios/Otros", valor: 289900 },
 ];
 
 // ─── Storage ───
@@ -2761,7 +2936,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-14");
+  const [selDate,setSelDate]=useState("2026-05-16");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
