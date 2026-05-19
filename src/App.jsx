@@ -268,6 +268,13 @@ const PRELOADED_CUADRES = [
     efectivo: 16850, tarjeta: 968800, otros_pago: 65150,
     pizza_80: 322240, gastos: 65150, nomina: 0, costo_financiero: 48440,
     neto_sala: 614970, faltante: 0,
+  },
+  {
+    date: "2026-05-18", venta_total: 342800,
+    estanco: 102000, cocteles: 188000, pizzeria: 52800, otros_venta: 0,
+    efectivo: 27800, tarjeta: 125000, otros_pago: 190000,
+    pizza_80: 42240, gastos: 5000, nomina: 185000, costo_financiero: 6250,
+    neto_sala: 104310, faltante: 0,
   }
 ];
 
@@ -748,6 +755,12 @@ const PRELOADED_COCINA = [
       { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
       { nombre: "PZ MARGARITA PQ", cantidad: 1, valor: 30000 },
       { nombre: "PZ NAPOLITANA PQ", cantidad: 1, valor: 27600 },
+    ]
+  },
+  {
+    date: "2026-05-18", total: 52800, total_units: 1,
+    productos: [
+      { nombre: "PZ PEPERNATA MED", cantidad: 1, valor: 52800 },
     ]
   }
 ];
@@ -2574,6 +2587,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-18", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:18},
+      {nombre:"AGUA TONICA",saldo:1},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:21},
+      {nombre:"CERVEZA IMPORTADA",saldo:41},
+      {nombre:"CERVEZA NACIONAL",saldo:171},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:4},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:133},
+      {nombre:"GASEOSA 1.5",saldo:25},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:6},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -2860,6 +2925,12 @@ const PRELOADED_GASTOS = [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
       { concepto: "Gomitas, servilletas, toalla cocina, paño abs, Del Valle, jugo mandarina, naranjas", categoria: "Insumos varios", valor: 60150 },
     ]
+  },
+  {
+    date: "2026-05-18", total: 5000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+    ]
   }
 ];
 
@@ -2987,6 +3058,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-10", semana: 6, periodo: "Sem 2 may (4 - 10 may)", concepto: "Nómina Domingo 10 may", categoria: "Nómina", valor: 155000 },
   // ─── Semana 3 may (11 - 17 may) ───
   { date: "2026-05-15", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Revisión Bomberos", categoria: "Servicios/Otros", valor: 289900 },
+  { date: "2026-05-16", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 60500 },
 ];
 
 // ─── Storage ───
@@ -3017,7 +3089,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-17");
+  const [selDate,setSelDate]=useState("2026-05-18");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
