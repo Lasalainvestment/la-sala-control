@@ -261,6 +261,13 @@ const PRELOADED_CUADRES = [
     efectivo: 227300, tarjeta: 2531800, otros_pago: 707100,
     pizza_80: 1237760, gastos: 707100, nomina: 0, costo_financiero: 126590,
     neto_sala: 1394750, faltante: 0,
+  },
+  {
+    date: "2026-05-17", venta_total: 1050800,
+    estanco: 141000, cocteles: 507000, pizzeria: 402800, otros_venta: 0,
+    efectivo: 16850, tarjeta: 968800, otros_pago: 65150,
+    pizza_80: 322240, gastos: 65150, nomina: 0, costo_financiero: 48440,
+    neto_sala: 614970, faltante: 0,
   }
 ];
 
@@ -726,6 +733,21 @@ const PRELOADED_COCINA = [
       { nombre: "PZ PTLN 2 INGR RG", cantidad: 1, valor: 38400 },
       { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
       { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+    ]
+  },
+  {
+    date: "2026-05-17", total: 402800, total_units: 11,
+    productos: [
+      { nombre: "PZ HAWAIANA PEQ", cantidad: 2, valor: 76800 },
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "PT AL CAMPO RG", cantidad: 1, valor: 40200 },
+      { nombre: "PZ CARNAVAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "NACHOS CLASICOS", cantidad: 1, valor: 31800 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "PZ MARGARITA PQ", cantidad: 1, valor: 30000 },
+      { nombre: "PZ NAPOLITANA PQ", cantidad: 1, valor: 27600 },
     ]
   }
 ];
@@ -2500,6 +2522,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-17", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:18},
+      {nombre:"AGUA TONICA",saldo:1},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:22},
+      {nombre:"CERVEZA IMPORTADA",saldo:44},
+      {nombre:"CERVEZA NACIONAL",saldo:182},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:4},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:135},
+      {nombre:"GASEOSA 1.5",saldo:24},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:6},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -2779,6 +2853,13 @@ const PRELOADED_GASTOS = [
       { concepto: "Bavaria", categoria: "Bebidas/Licor", valor: 525200 },
       { concepto: "1 Vino Botella", categoria: "Bebidas/Licor", valor: 25000 },
     ]
+  },
+  {
+    date: "2026-05-17", total: 65150,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "Gomitas, servilletas, toalla cocina, paño abs, Del Valle, jugo mandarina, naranjas", categoria: "Insumos varios", valor: 60150 },
+    ]
   }
 ];
 
@@ -2936,7 +3017,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-16");
+  const [selDate,setSelDate]=useState("2026-05-17");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
