@@ -2938,19 +2938,19 @@ const PRELOADED_GASTOS = [
 // Cada producto: { categoria, compra, venta, fuente, notas }
 // compra=0 → producto sin facturación (verificar). venta=0 → insumo coctelería.
 const CATALOG = {
-  "AGT BOTLLA ANQUEÑ": {categoria:"Aguardiente",compra:42900,venta:90000,fuente:"Compra: ESTIM | Venta: CARTA",notas:"Estim. similar a Caucano (no facturado en periodo)"},
-  "AGT BOTLLA CAUCA": {categoria:"Aguardiente",compra:42900,venta:90000,fuente:"Compra: GIR-24abr | Venta: CARTA",notas:""},
+  "AGT BOTLLA ANQUEÑ": {categoria:"Aguardiente",compra:47100,venta:90000,fuente:"Compra: GIR-FDJC9405-01may | Venta: CARTA",notas:"Antioqueño Trad Tapa Roja 750cc (Tapa Verde S/AZ $46.800 FDJC9356)"},
+  "AGT BOTLLA CAUCA": {categoria:"Aguardiente",compra:42900,venta:90000,fuente:"Compra: GIR-FDJC9133-24abr | Venta: CARTA",notas:"Caucano Trad 750cc (confirmado factura)"},
   "AGT BOTLLA REAL": {categoria:"Aguardiente",compra:42900,venta:90000,fuente:"Compra: ESTIM | Venta: CARTA",notas:"Estim. similar a Caucano (no facturado)"},
-  "AGT MEDIA ANQUEÑ": {categoria:"Aguardiente",compra:29000,venta:60000,fuente:"Compra: ESTIM | Venta: CARTA",notas:"SALDO NEGATIVO: revisar; estim. similar a Caucano media"},
-  "AGT MEDIA CAUCA": {categoria:"Aguardiente",compra:22800,venta:60000,fuente:"Compra: GIR-30mar | Venta: CARTA",notas:"Caucano CAN 375cc"},
+  "AGT MEDIA ANQUEÑ": {categoria:"Aguardiente",compra:26500,venta:60000,fuente:"Compra: GIR-FDJC9405-01may | Venta: CARTA",notas:"Antioqueño S/AZ Tapa Azul 375cc CAN (real)"},
+  "AGT MEDIA CAUCA": {categoria:"Aguardiente",compra:22800,venta:60000,fuente:"Compra: GIR-FDJC9356-30abr | Venta: CARTA",notas:"Caucano Trad CAN 375cc (confirmado factura)"},
   "AGUA": {categoria:"Bebidas no alcohólicas",compra:1300,venta:6000,fuente:"Compra: GIR-18abr | Venta: CARTA",notas:"Cristal 600cc"},
-  "AGUA TONICA": {categoria:"Bebidas no alcohólicas",compra:2300,venta:6000,fuente:"Compra: GIR-04abr | Venta: CARTA",notas:"Schweppes Tónica 300cc"},
+  "AGUA TONICA": {categoria:"Bebidas no alcohólicas",compra:2300,venta:6000,fuente:"Compra: GIR-FDJC9133-24abr | Venta: CARTA",notas:"Schweppes Tónica NR 300cc (confirmado factura)"},
   "AMARETTO": {categoria:"Licores/Cócteles",compra:53000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo cóctel - sin compra ni venta directa"},
   "CACHAZA": {categoria:"Licores/Cócteles",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo Caipirinha"},
-  "CAJA DE VINO": {categoria:"Vino",compra:20650,venta:0,fuente:"Compra: GIR-24abr | Venta: VERIFICAR",notas:"Vino Cata Tint Tetrapack 1L"},
-  "CERVEZA CORONA": {categoria:"Cerveza",compra:3704,venta:13000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"Importada - no facturada en periodo"},
+  "CAJA DE VINO": {categoria:"Vino",compra:20650,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: VERIFICAR",notas:"Vino Cata Tint T/Pack 1L (confirmado factura)"},
+  "CERVEZA CORONA": {categoria:"Cerveza",compra:3800,venta:13000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Corona Bot 330cc (precio real)"},
   "CERVEZA IMPORTADA": {categoria:"Cerveza",compra:3563,venta:13000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada en periodo"},
-  "CERVEZA NACIONAL": {categoria:"Cerveza",compra:2893,venta:9000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada en periodo"},
+  "CERVEZA NACIONAL": {categoria:"Cerveza",compra:3400,venta:9000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Promedio Club C.Dorada $3.500 / Poker $3.300"},
   "CHICLETS": {categoria:"Otros",compra:6000,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
   "CIGARRILLOS": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
   "CREMA DE WHISKY": {categoria:"Licores/Cócteles",compra:27100,venta:0,fuente:"Compra: GIR-02abr | Venta: INSUMO",notas:"Crema/Wh Jumbo 750cc (Baileys $78.500 si premium)"},
@@ -2958,19 +2958,19 @@ const CATALOG = {
   "DRY MARTINY": {categoria:"Licores/Cócteles",compra:75000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Vermut seco - insumo Martini Dry"},
   "ELECTROLIT": {categoria:"Bebidas no alcohólicas",compra:7200,venta:15000,fuente:"Compra: GIR-04abr | Venta: VERIFICAR",notas:"Suero Electrolit 625cc"},
   "ENCENDEDOR": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
-  "GASEOSA": {categoria:"Bebidas no alcohólicas",compra:2400,venta:6000,fuente:"Compra: GIR-24abr | Venta: CARTA",notas:"Postobón 10oz"},
+  "GASEOSA": {categoria:"Bebidas no alcohólicas",compra:2400,venta:6000,fuente:"Compra: GIR-FDJC9133-24abr | Venta: CARTA",notas:"Postobón NR Soda 10oz (confirmado factura)"},
   "GASEOSA 1.5": {categoria:"Bebidas no alcohólicas",compra:4900,venta:10000,fuente:"Compra: GIR-24abr | Venta: CARTA",notas:"Aprox. Jugo del Valle Citrus 1.5L"},
   "GINEBRA BOTELLA": {categoria:"Ginebra",compra:150000,venta:280000,fuente:"Compra: GIR-02abr | Venta: CARTA",notas:"Perigans 700cc (Tanqueray/Bombay $280k según marca)"},
   "GINEBRA DL": {categoria:"Ginebra",compra:20000,venta:20000,fuente:"Compra: INSUMO | Venta: CARTA",notas:"Trago doble - precio carta (Aguard/Ron)"},
   "GINEBRA ML": {categoria:"Ginebra",compra:77000,venta:0,fuente:"Compra: INSUMO | Venta: INSUMO",notas:"Insumo cóctel"},
-  "LICOR CAFÉ": {categoria:"Licores/Cócteles",compra:49900,venta:0,fuente:"Compra: GIR-24abr | Venta: INSUMO",notas:"Tres Plumas Café 700cc - insumo cóctel"},
+  "LICOR CAFÉ": {categoria:"Licores/Cócteles",compra:49900,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: INSUMO",notas:"Tres Plumas Café 700cc - insumo (confirmado)"},
   "LICOR DE MANZANA": {categoria:"Licores/Cócteles",compra:25000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo Apple Martini"},
-  "LICOR DE MENTA": {categoria:"Licores/Cócteles",compra:74400,venta:0,fuente:"Compra: GIR-24abr | Venta: INSUMO",notas:"Convier Menta 750cc - insumo Demonio Verde"},
+  "LICOR DE MENTA": {categoria:"Licores/Cócteles",compra:74400,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: INSUMO",notas:"Convier Menta 750cc - insumo Demonio Verde (confirmado)"},
   "RED BULL": {categoria:"Bebidas no alcohólicas",compra:6400,venta:15000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado (Amper $2.900 NO es Red Bull)"},
-  "RON CALDAS BOTELLA": {categoria:"Ron",compra:59300,venta:110000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado en periodo"},
-  "RON CALDAS MEDIA": {categoria:"Ron",compra:30700,venta:80000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado en periodo"},
+  "RON CALDAS BOTELLA": {categoria:"Ron",compra:59300,venta:110000,fuente:"Compra: GIR-FDJC9356-30abr | Venta: CARTA",notas:"Ron V.de Caldas 750cc (precio real confirmado)"},
+  "RON CALDAS MEDIA": {categoria:"Ron",compra:30700,venta:80000,fuente:"Compra: GIR-FDJC9420-01may | Venta: CARTA",notas:"Ron V.de Caldas CAN 375cc (precio real confirmado)"},
   "RON DL": {categoria:"Ron",compra:20000,venta:20000,fuente:"Compra: INSUMO | Venta: CARTA",notas:"Trago doble Ron"},
-  "TEQUILA BOTELLA": {categoria:"Tequila",compra:73900,venta:195000,fuente:"Compra: GIR-30mar | Venta: CARTA",notas:"José Cuervo Amar 750cc"},
+  "TEQUILA BOTELLA": {categoria:"Tequila",compra:73900,venta:195000,fuente:"Compra: GIR-FDJC9356-30abr | Venta: CARTA",notas:"José Cuervo Amar 750cc (confirmado factura)"},
   "TEQUILA LITRO": {categoria:"Tequila",compra:87900,venta:110000,fuente:"Compra: GIR-02abr | Venta: VERIFICAR",notas:"Tres Caballos Gold 1L"},
   "TEQUILA MEDIA": {categoria:"Tequila",compra:43950,venta:110000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada"},
   "TEQUILA ML": {categoria:"Tequila",compra:86000,venta:0,fuente:"Compra: INSUMO | Venta: INSUMO",notas:"Insumo cóctel"},
@@ -2982,9 +2982,12 @@ const CATALOG = {
   "VODKA DL": {categoria:"Vodka",compra:20000,venta:20000,fuente:"Compra: INSUMO | Venta: CARTA",notas:"Trago doble Vodka aprox"},
   "BUCHANAN'S BOTELLA": {categoria:"Whisky",compra:156800,venta:310000,fuente:"Compra: GIR-02abr | Venta: CARTA",notas:"Buchanans 12 años 750cc"},
   "BUCHANAN'S MEDIA": {categoria:"Whisky",compra:96000,venta:230000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada en periodo"},
-  "WHISKEY COCTELERIA": {categoria:"Whisky",compra:51600,venta:0,fuente:"Compra: INSUMO | Venta: INSUMO",notas:"Whisky para cócteles - varios"},
-  "OLD PARR BOTELLA": {categoria:"Whisky",compra:136700,venta:300000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"Botella 750cc no facturada (sí media 500cc)"},
-  "OLD PARR MEDIA": {categoria:"Whisky",compra:99800,venta:220000,fuente:"Compra: GIR-18abr | Venta: CARTA",notas:"Old Parr 12 años 500cc"},
+  "WHISKEY COCTELERIA": {categoria:"Whisky",compra:51600,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: INSUMO",notas:"Passport Scot 700cc - insumo cócteles (confirmado)"},
+  "BALLANTINES COCTELERIA": {categoria:"Whisky",compra:83500,venta:0,fuente:"Compra: GIR-FDJC8447-02abr | Venta: INSUMO",notas:"Ballantine's Finest 1L - insumo coctelería"},
+  "SOMETHING SPECIAL COCT": {categoria:"Whisky",compra:59900,venta:0,fuente:"Compra: GIR-FDJC10005-15may | Venta: INSUMO",notas:"Something Special 750cc - insumo coctelería (var. $58.800 FDJC9420)"},
+  "HIELO": {categoria:"Otros",compra:4600,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: INSUMO",notas:"Hielo Kolbitos 3KG - insumo coctelería"},
+  "OLD PARR BOTELLA": {categoria:"Whisky",compra:136700,venta:300000,fuente:"Compra: GIR-FDJC9420-01may | Venta: CARTA",notas:"Old Parr 12AN 750cc (precio real confirmado)"},
+  "OLD PARR MEDIA": {categoria:"Whisky",compra:99800,venta:220000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Old Parr 12AN 500cc (confirmado factura)"},
 };
 
 // ─── Categorías con orden y color ───
@@ -3005,7 +3008,80 @@ const CATEGORIAS = [
 // ─── Compras registradas (facturas procesadas) ───
 // Estructura: { fecha, factura, proveedor, items: [{producto_jsx, cant, base_und, icl_und, vr_und, vr_total, observaciones}] }
 const PRELOADED_COMPRAS = [
-  // Cuando lleguen facturas, se agregan aquí. Por ahora vacío para llenar progresivamente.
+  // FDJC8447 · 2026-04-02 · vence 2026-05-02 · A Pagar $167.000
+  { fecha:"2026-04-02", factura:"FDJC8447", proveedor:"GIR (Licores Junior)", vence:"2026-05-02", a_pagar:167000, items:[
+    { producto_jsx:"BALLANTINES COCTELERIA", cant:2, base_und:47252.38, icl_und:33885, vr_und:83500, vr_total:167000, observaciones:"WHISKY BALLANT FINEST 1LIT · Nota: ya llevo" },
+  ]},
+  // FDJC9133 · 2026-04-24 · vence 2026-05-24 · A Pagar $485.500
+  { fecha:"2026-04-24", factura:"FDJC9133", proveedor:"GIR (Licores Junior)", vence:"2026-05-24", a_pagar:485500, items:[
+    { producto_jsx:"HIELO", cant:10, base_und:4600, icl_und:0, vr_und:4600, vr_total:46000, observaciones:"HIELO KOLBITOS 3KG" },
+    { producto_jsx:"GASEOSA", cant:48, base_und:2400, icl_und:0, vr_und:2400, vr_total:115200, observaciones:"GASEO POSTOBON NR SODA 10OZ" },
+    { producto_jsx:"AGT BOTLLA CAUCA", cant:2, base_und:24907.62, icl_und:16747, vr_und:42900, vr_total:85800, observaciones:"AGUARD CAUCANO TRAD BOT 750CC" },
+    { producto_jsx:"GASEOSA 1.5", cant:2, base_und:4117.65, icl_und:0, vr_und:4900, vr_total:9800, observaciones:"JUGO DEL VALLE CITRUS 1.5LIT" },
+    { producto_jsx:"WHISKEY COCTELERIA", cant:1, base_und:28846.67, icl_und:21311, vr_und:51600, vr_total:51600, observaciones:"WHISKY PASSPORT SCOT BOT 700CC" },
+    { producto_jsx:"LICOR DE MENTA", cant:1, base_und:52542.86, icl_und:19230, vr_und:74400, vr_total:74400, observaciones:"LICOR CONVIER MENTA BOT 750CC" },
+    { producto_jsx:"LICOR CAFÉ", cant:1, base_und:30285.71, icl_und:18100, vr_und:49900, vr_total:49900, observaciones:"LICOR TRES PLUMAS CAFE BOT 700CC" },
+    { producto_jsx:"AGUA TONICA", cant:5, base_und:1932.77, icl_und:0, vr_und:2300, vr_total:11500, observaciones:"GASEO SCHWEPPES TONICA NR 300CC" },
+    { producto_jsx:"CAJA DE VINO", cant:2, base_und:13440.95, icl_und:6537, vr_und:20650, vr_total:41300, observaciones:"VINO CATA TINT T/PACK 1LIT" },
+  ]},
+  // FDJC9356 · 2026-04-30 · vence 2026-05-30 · A Pagar $522.100
+  { fecha:"2026-04-30", factura:"FDJC9356", proveedor:"GIR (Licores Junior)", vence:"2026-05-30", a_pagar:522100, items:[
+    { producto_jsx:"GASEOSA 1.5", cant:12, base_und:4495.8, icl_und:0, vr_und:5350, vr_total:64200, observaciones:"GASEO COC/COLA NR 1.5LIT (Coca-Cola 1.5L $5.350)" },
+    { producto_jsx:"AGT BOTLLA ANQUEÑ", cant:4, base_und:29327.62, icl_und:16006, vr_und:46800, vr_total:187200, observaciones:"AGUARD ANTIOQUENO S/AZ 24° TAPA VERDE 750CC" },
+    { producto_jsx:"AGT MEDIA CAUCA", cant:3, base_und:13725.71, icl_und:8388, vr_und:22800, vr_total:68400, observaciones:"AGUARD CAUCANO TRAD CAN 375CC" },
+    { producto_jsx:"RON CALDAS BOTELLA", cant:2, base_und:35487.62, icl_und:22038, vr_und:59300, vr_total:118600, observaciones:"RON V.DE CALDAS BOT 750CC" },
+    { producto_jsx:"TEQUILA BOTELLA", cant:1, base_und:42722.07, icl_und:29041.83, vr_und:73900, vr_total:73900, observaciones:"TEQUILA JOSE CUERVO AMAR BOT 750CC" },
+    { producto_jsx:"GASEOSA 1.5", cant:2, base_und:4117.65, icl_und:0, vr_und:4900, vr_total:9800, observaciones:"JUGO DEL VALLE CITRUS 1.5LIT" },
+  ]},
+  // FDJC9405 · 2026-05-01 · vence 2026-05-31 · A Pagar $194.300
+  { fecha:"2026-05-01", factura:"FDJC9405", proveedor:"GIR (Licores Junior)", vence:"2026-05-31", a_pagar:194300, items:[
+    { producto_jsx:"AGT BOTLLA ANQUEÑ", cant:3, base_und:27617.14, icl_und:18102, vr_und:47100, vr_total:141300, observaciones:"AGUARD ANTIOQUENO TRAD 29° TAPA ROJA 750CC · Nota: La Sala ya llevo" },
+    { producto_jsx:"AGT MEDIA ANQUEÑ", cant:2, base_und:16271.43, icl_und:9415, vr_und:26500, vr_total:53000, observaciones:"AGUARD ANTIOQUENO S/AZ 29° TAPA AZUL 375CC" },
+  ]},
+  // FDJC9420 · 2026-05-01 · vence 2026-05-31 · A Pagar $256.900
+  { fecha:"2026-05-01", factura:"FDJC9420", proveedor:"GIR (Licores Junior)", vence:"2026-05-31", a_pagar:256900, items:[
+    { producto_jsx:"RON CALDAS MEDIA", cant:2, base_und:18743.81, icl_und:11019, vr_und:30700, vr_total:61400, observaciones:"RON V.DE CALDAS CAN 375CC" },
+    { producto_jsx:"OLD PARR BOTELLA", cant:1, base_und:90360.95, icl_und:41821, vr_und:136700, vr_total:136700, observaciones:"WHISKY OLD PARR 12AN BOT 750CC" },
+    { producto_jsx:"SOMETHING SPECIAL COCT", cant:1, base_und:31522.86, icl_und:25701, vr_und:58800, vr_total:58800, observaciones:"WHISKY SOMET/SPEC 750CC OFE" },
+  ]},
+  // FDJC10005 · 2026-05-15 · vence 2026-06-14 · A Pagar $319.000
+  { fecha:"2026-05-15", factura:"FDJC10005", proveedor:"GIR (Licores Junior)", vence:"2026-06-14", a_pagar:319000, items:[
+    { producto_jsx:"OLD PARR MEDIA", cant:1, base_und:69257.14, icl_und:27080, vr_und:99800, vr_total:99800, observaciones:"WHISKY OLD PARR 12AN 500CC" },
+    { producto_jsx:"AGT MEDIA ANQUEÑ", cant:1, base_und:16271.43, icl_und:9415, vr_und:26500, vr_total:26500, observaciones:"AGUARD ANTIOQUENO S/AZ 29° TAPA AZUL 375CC" },
+    { producto_jsx:"AGT MEDIA ANQUEÑ", cant:1, base_und:15570.48, icl_und:9051, vr_und:25400, vr_total:25400, observaciones:"AGUARD ANTIOQUENO TRAD 29° TAPA ROJA 375CC" },
+    { producto_jsx:"SOMETHING SPECIAL COCT", cant:1, base_und:34300, icl_und:23885, vr_und:59900, vr_total:59900, observaciones:"WHISKY SOMET/SPEC 750CC OFE" },
+    { producto_jsx:"CERVEZA CORONA", cant:12, base_und:2898.82, icl_und:350.4, vr_und:3800, vr_total:45600, observaciones:"CERV CORONA BOT 330CC" },
+    { producto_jsx:"CERVEZA NACIONAL", cant:12, base_und:2497.48, icl_und:528, vr_und:3500, vr_total:42000, observaciones:"CERV CLUB C. DORADA LAT 330CC" },
+    { producto_jsx:"CERVEZA NACIONAL", cant:6, base_und:2297.14, icl_und:566.4, vr_und:3300, vr_total:19800, observaciones:"CERV POKER LAT 330CC" },
+  ]},
+  // BAV-PICKING-01may · 2026-05-01 · Lista Picking Bavaria · Total $480.400 (relacionada y cancelada vía transferencia)
+  { fecha:"2026-05-01", factura:"BAV-PICKING-01may", proveedor:"Bavaria", vence:"2026-05-01", a_pagar:480400, items:[
+    { producto_jsx:"CERVEZA NACIONAL", cant:1, base_und:63900, icl_und:0, vr_und:63900, vr_total:63900, observaciones:"PK Rb330X30 · Poker caja x30 retornable (~$2.130/bot)" },
+    { producto_jsx:"CERVEZA NACIONAL", cant:1, base_und:66500, icl_und:0, vr_und:66500, vr_total:66500, observaciones:"AG Rb330X30 · Águila caja x30 retornable (~$2.217/bot)" },
+    { producto_jsx:"CERVEZA NACIONAL", cant:2, base_und:86800, icl_und:0, vr_und:86800, vr_total:173600, observaciones:"CL Rb330X30N · Club Colombia caja x30 retornable (~$2.893/bot)" },
+    { producto_jsx:"CERVEZA CORONA", cant:4, base_und:22225, icl_und:0, vr_und:22225, vr_total:88900, observaciones:"CORONANRB330X6 · Corona NR sixpack (~$3.704/bot)" },
+    { producto_jsx:"CERVEZA IMPORTADA", cant:4, base_und:21375, icl_und:0, vr_und:21375, vr_total:85500, observaciones:"STEARTNRB300X6 · Stella Artois NR sixpack (~$3.563/bot)" },
+    { producto_jsx:"", cant:1, base_und:2000, icl_und:0, vr_und:2000, vr_total:2000, observaciones:"Envases" },
+  ]},
+];
+
+// ─── Cartera proveedor GIR (Giraldo's S.A.S.) — cuentas por pagar ───
+// Base: estado de cuenta arcoerp al 02/05/2026 (Total Cartera $3.163.900) + FDJC10005 posterior.
+// estado: "pendiente" | "cancelada". Juanma confirma cuáles ya canceladas al 18-05-2026.
+// detalle:true = factura con imagen procesada en PRELOADED_COMPRAS.
+const PRELOADED_CARTERA = [
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC008379", fecha:"2026-04-01", vence:"2026-05-01", valor:459800, detalle:false, estado:"cancelada", nota:"Vencida al corte 02/05 (estado de cuenta). Sin imagen detallada." },
+  // FDJC008440 ($356.500) RETIRADA: no pertenece a La Sala (confirmado Juanma).
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC008445", fecha:"2026-04-02", vence:"2026-05-02", valor:296100, detalle:false, estado:"cancelada", nota:"Sin imagen detallada." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC8447", fecha:"2026-04-02", vence:"2026-05-02", valor:167000, detalle:true, estado:"cancelada", nota:"Detalle cargado (Ballantine's Finest x2). Nota factura: ya llevo." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC008491", fecha:"2026-04-04", vence:"2026-05-04", valor:84800, detalle:false, estado:"cancelada", nota:"Sin imagen detallada." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC008961", fecha:"2026-04-18", vence:"2026-05-18", valor:340900, detalle:false, estado:"cancelada", nota:"Sin imagen detallada." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC9133", fecha:"2026-04-24", vence:"2026-05-24", valor:485500, detalle:true, estado:"pendiente", nota:"Detalle cargado (9 ítems)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC9356", fecha:"2026-04-30", vence:"2026-05-30", valor:522100, detalle:true, estado:"pendiente", nota:"Detalle cargado (6 ítems)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC9405", fecha:"2026-05-01", vence:"2026-05-31", valor:194300, detalle:true, estado:"pendiente", nota:"Detalle cargado (2 ítems). Nota factura: La Sala ya llevo." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC9420", fecha:"2026-05-01", vence:"2026-05-31", valor:256900, detalle:true, estado:"pendiente", nota:"Detalle cargado (3 ítems)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC10005", fecha:"2026-05-15", vence:"2026-06-14", valor:319000, detalle:true, estado:"pendiente", nota:"Posterior al corte del estado de cuenta (02/05). Detalle cargado (7 ítems)." },
+  { proveedor:"Bavaria", factura:"BAV-PICKING-01may", fecha:"2026-05-01", vence:"2026-05-01", valor:480400, detalle:true, estado:"cancelada", nota:"Lista Picking 01-may. Relacionada y cancelada vía transferencia ($480.400, 1 may)." },
 ];
 
 // ─── Gastos pagados por transferencia (no aparecen en cuadre del POS) ───
@@ -3079,6 +3155,20 @@ const C={bg:"#0c0b09",card:"#161412",bdr:"#2a2520",
   text:"#e8e0d4",dim:"#8a7e70",muted:"#5c554a"};
 const PIE=[C.gold,C.cyan,C.orange,C.purple,C.pink,C.blue,C.green];
 
+// ─── Clasificación de gastos: activo recuperable vs consumido vs no operativo ───
+// (a) REPOSICIÓN INVENTARIO = stock embotellado que sigue en bodega (activo recuperable)
+// (b) CONSUMIDO = dinero que sale y no vuelve (nómina, eventos, servicios, perecederos)
+// (c) NO OPERATIVO = préstamos y movimientos que no son gasto del negocio
+const CAT_REPOSICION=new Set(["Bebidas/Licor","Bebidas","Compra Licores","Insumos bar","Bebidas no alcohólicas"]);
+const clasificaGasto=(categoria)=>{
+  const cat=(categoria||"").trim();
+  if(/pr[eé]stamo|no operativo/i.test(cat)) return "no_operativo";
+  if(CAT_REPOSICION.has(cat)) return "reposicion";
+  return "consumido";
+};
+const GRUPO_LABEL={reposicion:"Reposición de inventario",consumido:"Gasto real consumido",no_operativo:"No operativo"};
+const GRUPO_COLOR={reposicion:C.cyan,consumido:C.red,no_operativo:C.muted};
+
 const Card=({children,style,accent,floating})=><div style={{background:C.card,borderRadius:20,border:`1px solid ${C.bdr}`,padding:20,marginBottom:16,boxShadow:floating!==false?"0 10px 30px rgba(0,0,0,0.5)":"none",...(accent?{borderLeft:`3px solid ${accent}`}:{}),...style}}>{children}</div>;
 const Sec=({children,color})=><div style={{fontSize:13,color:color||C.dim,textTransform:"uppercase",letterSpacing:2,marginBottom:14,fontWeight:700}}>{children}</div>;
 
@@ -3143,7 +3233,7 @@ export default function App(){
 
   if(loading) return <div style={{background:`linear-gradient(135deg, ${C.bg} 0%, #14110d 50%, ${C.bg} 100%)`,minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{color:C.gold,fontFamily:"'Poppins',sans-serif",fontSize:24,fontWeight:800}}>Cargando...</div></div>;
 
-  const tabs=[{id:"dashboard",l:"Dashboard",i:"📊"},{id:"invdash",l:"Inv. Control",i:"🔄"},{id:"invvalue",l:"Inv. Valorizado",i:"💰"},{id:"analcat",l:"Por Categoría",i:"📈"},{id:"compras",l:"Compras",i:"🧾"},{id:"resumen",l:"Día",i:"◉"},{id:"cocina",l:"Cocina",i:"🍕"},{id:"inventario",l:"Inventario",i:"📦"},{id:"gastos",l:"Gastos",i:"📋"}];
+  const tabs=[{id:"dashboard",l:"Dashboard",i:"📊"},{id:"resreal",l:"Resultado Real",i:"🧮"},{id:"invdash",l:"Inv. Control",i:"🔄"},{id:"invvalue",l:"Inv. Valorizado",i:"💰"},{id:"analcat",l:"Por Categoría",i:"📈"},{id:"compras",l:"Compras",i:"🧾"},{id:"resumen",l:"Día",i:"◉"},{id:"cocina",l:"Cocina",i:"🍕"},{id:"inventario",l:"Inventario",i:"📦"},{id:"gastos",l:"Gastos",i:"📋"}];
 
   return(
     <div style={{background:`linear-gradient(135deg, ${C.bg} 0%, #14110d 50%, ${C.bg} 100%)`,backgroundAttachment:"fixed",minHeight:"100vh",fontFamily:"'Poppins',sans-serif",color:C.text}}>
@@ -3172,7 +3262,7 @@ export default function App(){
         </div>
       </header>
 
-      {view!=="dashboard"&&view!=="invdash"&&view!=="invvalue"&&view!=="analcat"&&view!=="compras"&&<div style={{maxWidth:920,margin:"0 auto",padding:"10px 16px",display:"flex",gap:6,overflowX:"auto",alignItems:"center"}}>
+      {view!=="dashboard"&&view!=="resreal"&&view!=="invdash"&&view!=="invvalue"&&view!=="analcat"&&view!=="compras"&&<div style={{maxWidth:920,margin:"0 auto",padding:"10px 16px",display:"flex",gap:6,overflowX:"auto",alignItems:"center"}}>
         <span style={{fontSize:14,color:C.dim,letterSpacing:1,textTransform:"uppercase",whiteSpace:"nowrap"}}>Día:</span>
         {dates.map(d=><button key={d} onClick={()=>setSelDate(d)} style={{
           background:selDate===d?C.goldDim+"50":"transparent",color:selDate===d?C.gold:C.muted,
@@ -3183,10 +3273,11 @@ export default function App(){
 
       <div style={{maxWidth:920,margin:"0 auto",padding:"0 16px 60px"}}>
         {view==="dashboard"&&<DashboardGeneral cuadres={cuadres} cocina={cocinaData} gastos={gastosData} gastosTransf={gastosTransfData} inventarios={inventarios}/>}
+        {view==="resreal"&&<ResultadoReal cuadres={cuadres} gastos={gastosData} gastosTransf={gastosTransfData}/>}
         {view==="invdash"&&<InventarioDashboard inventarios={inventarios} cuadres={cuadres}/>}
         {view==="invvalue"&&<InventarioValorizado inventarios={inventarios}/>}
         {view==="analcat"&&<AnalisisCategoria inventarios={inventarios} cocina={cocinaData}/>}
-        {view==="compras"&&<ComprasModule compras={PRELOADED_COMPRAS}/>}
+        {view==="compras"&&<ComprasModule compras={PRELOADED_COMPRAS} cartera={PRELOADED_CARTERA}/>}
         {view==="resumen"&&<Resumen c={c} coc={coc} gas={gas} cross={invCross} date={selDate}/>}
         {view==="cocina"&&<Cocina coc={coc} date={selDate}/>}
         {view==="inventario"&&<Inventario cross={invCross} prevFin={prevFin} fin={fin} date={selDate}/>}
@@ -3197,6 +3288,143 @@ export default function App(){
 }
 
 // ─── Dashboard General (Consolidado + Meta) ───
+function ResultadoReal({cuadres,gastos,gastosTransf}){
+  const monthLabels={"2026-03":"Marzo","2026-04":"Abril","2026-05":"Mayo","2026-06":"Junio","2026-07":"Julio","2026-08":"Agosto","2026-09":"Septiembre","2026-10":"Octubre","2026-11":"Noviembre","2026-12":"Diciembre","2027-01":"Enero","2027-02":"Febrero"};
+  const allMonths=[...new Set(cuadres.map(c=>c.date.slice(0,7)))].sort();
+  const [activeMonth,setActiveMonth]=useState(allMonths[allMonths.length-1]||"2026-05");
+
+  const cm=cuadres.filter(c=>c.date.startsWith(activeMonth));
+  const gtm=(gastosTransf||[]).filter(g=>g.date.startsWith(activeMonth));
+
+  if(cm.length===0) return <div style={{textAlign:"center",padding:60,color:C.dim}}><div style={{fontSize:52,marginBottom:14}}>🧮</div><p style={{fontSize:20,fontWeight:600}}>Sin datos para {monthLabels[activeMonth]||activeMonth}</p>{allMonths.length>0&&<div style={{marginTop:20,display:"flex",gap:8,justifyContent:"center",flexWrap:"wrap"}}>{allMonths.map(m=><button key={m} onClick={()=>setActiveMonth(m)} style={{background:m===activeMonth?C.gold:"transparent",color:m===activeMonth?C.bg:C.gold,border:`1px solid ${C.gold}`,padding:"6px 14px",borderRadius:8,fontWeight:600,cursor:"pointer"}}>{monthLabels[m]||m}</button>)}</div>}</div>;
+
+  // ─── Margen de contribución (lo que mide el cuadre) ───
+  const t=cm.reduce((a,c)=>{
+    a.venta+=c.venta_total||0;a.p80+=c.pizza_80||0;a.gastos+=c.gastos||0;
+    a.nomina+=c.nomina||0;a.cf+=c.costo_financiero||0;a.neto+=c.neto_sala||0;
+    return a;
+  },{venta:0,p80:0,gastos:0,nomina:0,cf:0,neto:0});
+  const margenContrib=t.neto; // venta - p80 - gastos cuadre - nomina cuadre - cf
+
+  // ─── Transferencias clasificadas ───
+  const grupos={reposicion:{total:0,cats:{}},consumido:{total:0,cats:{}},no_operativo:{total:0,cats:{}}};
+  gtm.forEach(g=>{
+    const grp=clasificaGasto(g.categoria);
+    grupos[grp].total+=g.valor||0;
+    grupos[grp].cats[g.categoria]=(grupos[grp].cats[g.categoria]||0)+(g.valor||0);
+  });
+  const reposicion=grupos.reposicion.total;
+  const consumido=grupos.consumido.total;
+  const noOperativo=grupos.no_operativo.total;
+
+  // ─── Resultado operativo real ───
+  // El margen de contribución NO resta transferencias. El consumido SÍ se resta
+  // (no vuelve). La reposición NO se resta (queda como activo en bodega).
+  const resultadoReal=margenContrib-consumido;
+  const margenRealPct=t.venta?(resultadoReal/t.venta*100):0;
+  const margenContribPct=t.venta?(margenContrib/t.venta*100):0;
+
+  const Line=({label,val,color,bold,indent,note})=>(
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",padding:"7px 0",borderBottom:`1px solid ${C.bdr}`,paddingLeft:indent?16:0}}>
+      <span style={{fontSize:bold?15:13,color:color||(bold?C.text:C.dim),fontWeight:bold?700:500}}>{label}{note&&<span style={{fontSize:11,color:C.muted,marginLeft:8}}>{note}</span>}</span>
+      <span style={{fontSize:bold?17:14,color:color||(bold?C.text:C.dim),fontWeight:bold?800:600,fontVariantNumeric:"tabular-nums"}}>{val<0?"−":""}{fmtF(Math.abs(val))}</span>
+    </div>
+  );
+
+  return(
+    <div>
+      <div style={{display:"flex",gap:8,marginBottom:16,flexWrap:"wrap"}}>
+        {allMonths.map(m=><button key={m} onClick={()=>setActiveMonth(m)} style={{background:m===activeMonth?C.gold:"transparent",color:m===activeMonth?C.bg:C.gold,border:`1px solid ${C.gold}`,padding:"7px 16px",borderRadius:8,fontWeight:700,cursor:"pointer",fontFamily:"inherit",fontSize:13}}>{monthLabels[m]||m}</button>)}
+      </div>
+
+      {/* Resultado destacado */}
+      <Card accent={resultadoReal>=0?C.green:C.red}>
+        <Sec color={C.gold}>🧮 Resultado Operativo Real · {monthLabels[activeMonth]||activeMonth} ({cm.length} días)</Sec>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,marginTop:8}}>
+          <div style={{background:C.bg,borderRadius:14,padding:16,border:`1px solid ${C.bdr}`}}>
+            <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:1,fontWeight:600}}>Margen de contribución</div>
+            <div style={{fontSize:26,fontWeight:800,color:C.gold,marginTop:6,fontVariantNumeric:"tabular-nums"}}>{fmtF(margenContrib)}</div>
+            <div style={{fontSize:12,color:C.muted,marginTop:2}}>{margenContribPct.toFixed(1)}% s/ venta · lo que mide el cuadre</div>
+          </div>
+          <div style={{background:C.bg,borderRadius:14,padding:16,border:`1px solid ${resultadoReal>=0?C.greenDim:C.redDim}`}}>
+            <div style={{fontSize:12,color:C.dim,textTransform:"uppercase",letterSpacing:1,fontWeight:600}}>Resultado operativo real</div>
+            <div style={{fontSize:26,fontWeight:800,color:resultadoReal>=0?C.green:C.red,marginTop:6,fontVariantNumeric:"tabular-nums"}}>{resultadoReal<0?"−":""}{fmtF(Math.abs(resultadoReal))}</div>
+            <div style={{fontSize:12,color:C.muted,marginTop:2}}>{margenRealPct.toFixed(1)}% s/ venta · descontando lo consumido</div>
+          </div>
+        </div>
+      </Card>
+
+      {/* Cascada del cálculo */}
+      <Card>
+        <Sec>Cascada del resultado</Sec>
+        <Line label="Venta total" val={t.venta} bold/>
+        <Line label="(−) Pago 80% pizza (cocina/aliado)" val={-t.p80}/>
+        <Line label="(−) Gastos diarios (en cuadre)" val={-t.gastos}/>
+        <Line label="(−) Nómina (en cuadre)" val={-t.nomina}/>
+        <Line label="(−) Costo financiero (5% tarjeta)" val={-t.cf}/>
+        <Line label="= Margen de contribución" val={margenContrib} color={C.gold} bold/>
+        <div style={{height:10}}/>
+        <Line label="(−) Gasto real consumido (transferencias)" val={-consumido} color={C.red} note="no vuelve"/>
+        <Line label="= RESULTADO OPERATIVO REAL" val={resultadoReal} color={resultadoReal>=0?C.green:C.red} bold/>
+        <div style={{marginTop:12,padding:"10px 14px",background:C.cyan+"14",border:`1px solid ${C.cyan}40`,borderRadius:10,fontSize:12.5,color:C.text,lineHeight:1.5}}>
+          <b style={{color:C.cyan}}>+ {fmtF(reposicion)}</b> en reposición de inventario <b>NO</b> se resta aquí: es stock embotellado que sigue en bodega (activo recuperable). Se realiza como costo solo al venderse, vía el inventario valorizado. {noOperativo>0&&<><br/><span style={{color:C.muted}}>{fmtF(noOperativo)} clasificado como no operativo (préstamos) — excluido del resultado.</span></>}
+        </div>
+      </Card>
+
+      {/* Desglose de transferencias por grupo */}
+      {["reposicion","consumido","no_operativo"].filter(g=>grupos[g].total>0).map(g=>(
+        <Card key={g} accent={GRUPO_COLOR[g]}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:12}}>
+            <Sec color={GRUPO_COLOR[g]}>{g==="reposicion"?"📦 ":g==="consumido"?"🔴 ":"⚪ "}{GRUPO_LABEL[g]}</Sec>
+            <span style={{fontSize:20,fontWeight:800,color:GRUPO_COLOR[g],fontVariantNumeric:"tabular-nums"}}>{fmtF(grupos[g].total)}</span>
+          </div>
+          {Object.entries(grupos[g].cats).sort((a,b)=>b[1]-a[1]).map(([cat,v])=>(
+            <div key={cat} style={{display:"flex",justifyContent:"space-between",padding:"6px 0",borderBottom:`1px solid ${C.bdr}`,fontSize:13}}>
+              <span style={{color:C.dim}}>{cat}</span>
+              <span style={{color:C.text,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(v)}</span>
+            </div>
+          ))}
+          {g==="reposicion"&&<div style={{fontSize:11.5,color:C.muted,marginTop:10,lineHeight:1.5}}>Compra de licor/cerveza/gaseosa que ingresa a bodega. Activo recuperable: se convierte en costo solo cuando se vende.</div>}
+          {g==="consumido"&&<div style={{fontSize:11.5,color:C.muted,marginTop:10,lineHeight:1.5}}>Nómina, eventos, servicios, perecederos e insumos consumibles. Dinero que sale y no genera activo en bodega.</div>}
+        </Card>
+      ))}
+
+      {/* Comparativo mensual */}
+      {allMonths.length>1&&<Card>
+        <Sec>Comparativo mensual</Sec>
+        <div style={{overflowX:"auto"}}>
+          <table style={{width:"100%",borderCollapse:"collapse",fontSize:13}}>
+            <thead><tr style={{color:C.dim,textAlign:"right"}}>
+              <th style={{textAlign:"left",padding:"8px 6px",fontWeight:600}}>Mes</th>
+              <th style={{padding:"8px 6px",fontWeight:600}}>Venta</th>
+              <th style={{padding:"8px 6px",fontWeight:600}}>Margen contrib.</th>
+              <th style={{padding:"8px 6px",fontWeight:600}}>Consumido</th>
+              <th style={{padding:"8px 6px",fontWeight:600}}>Result. real</th>
+            </tr></thead>
+            <tbody>
+              {allMonths.map(m=>{
+                const mc=cuadres.filter(c=>c.date.startsWith(m));
+                const mg=(gastosTransf||[]).filter(x=>x.date.startsWith(m));
+                const v=mc.reduce((s,c)=>s+(c.venta_total||0),0);
+                const mar=mc.reduce((s,c)=>s+(c.neto_sala||0),0);
+                const cons=mg.reduce((s,x)=>s+(clasificaGasto(x.categoria)==="consumido"?(x.valor||0):0),0);
+                const rr=mar-cons;
+                return(<tr key={m} style={{borderTop:`1px solid ${C.bdr}`,color:C.text}}>
+                  <td style={{textAlign:"left",padding:"8px 6px",fontWeight:m===activeMonth?700:500,color:m===activeMonth?C.gold:C.text}}>{monthLabels[m]||m}</td>
+                  <td style={{textAlign:"right",padding:"8px 6px",fontVariantNumeric:"tabular-nums"}}>{fmtF(v)}</td>
+                  <td style={{textAlign:"right",padding:"8px 6px",color:C.gold,fontVariantNumeric:"tabular-nums"}}>{fmtF(mar)}</td>
+                  <td style={{textAlign:"right",padding:"8px 6px",color:C.red,fontVariantNumeric:"tabular-nums"}}>{fmtF(cons)}</td>
+                  <td style={{textAlign:"right",padding:"8px 6px",fontWeight:700,color:rr>=0?C.green:C.red,fontVariantNumeric:"tabular-nums"}}>{rr<0?"−":""}{fmtF(Math.abs(rr))}</td>
+                </tr>);
+              })}
+            </tbody>
+          </table>
+        </div>
+      </Card>}
+    </div>
+  );
+}
+
 function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
   const META=45000000;
   const DIAS_MES=31;
@@ -4441,37 +4669,25 @@ function AnalisisCategoria({inventarios,cocina}){
 // ═════════════════════════════════════════════════════════════════
 // ─── COMPRAS (módulo de facturas por proveedor) ───
 // ═════════════════════════════════════════════════════════════════
-function ComprasModule({compras}){
-  if(!compras||compras.length===0){
+function ComprasModule({compras,cartera}){
+  const HOY="2026-05-19";
+  if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
         <Sec color={C.gold}>🧾 Módulo de Compras</Sec>
         <p style={{fontSize:14,color:C.text,lineHeight:1.6,marginBottom:12}}>
           Aquí se registrarán todas las facturas de proveedores con detalle por producto.
         </p>
-        <p style={{fontSize:13,color:C.muted,lineHeight:1.5,marginBottom:12}}>
-          <strong style={{color:C.gold}}>Estructura por factura:</strong> fecha, número, proveedor, código de producto, descripción, cantidad, base/unidad sin impuestos, ICL/unidad, valor/unidad con impuestos, valor total, observaciones.
-        </p>
         <p style={{fontSize:13,color:C.muted,lineHeight:1.5}}>
-          <strong style={{color:C.gold}}>Para empezar:</strong> envía las imágenes o archivos de las facturas a Claude. Se digitalizarán y cargarán automáticamente con el cruce contra el catálogo.
+          <strong style={{color:C.gold}}>Para empezar:</strong> envía las imágenes de las facturas a Claude. Se digitalizan y cargan con el cruce contra el catálogo.
         </p>
-        <div style={{marginTop:18,padding:"12px 14px",background:C.bg,border:`1px solid ${C.gold}30`,borderRadius:10}}>
-          <div style={{fontSize:11,color:C.gold,textTransform:"uppercase",letterSpacing:2,fontWeight:700}}>Proveedores ya identificados</div>
-          <ul style={{fontSize:13,color:C.muted,marginTop:8,paddingLeft:20,lineHeight:1.7}}>
-            <li><strong style={{color:C.text}}>GIR (Licores Junior)</strong> — proveedor principal de licores premium</li>
-            <li><strong style={{color:C.text}}>MIL (Licorería Milton)</strong> — proveedor de licores complementarios</li>
-            <li><strong style={{color:C.text}}>Bavaria</strong> — cervezas (Águila, Corona, Importadas)</li>
-            <li><strong style={{color:C.text}}>Postobón</strong> — gaseosas, agua, jugos</li>
-            <li><strong style={{color:C.text}}>Licores La Amistad</strong> — licores varios</li>
-          </ul>
-        </div>
       </Card>
     </div>);
   }
 
-  // Si hay facturas, agrupar por proveedor y mostrar
+  // ─── Agrupar compras por proveedor ───
   const porProveedor={};
-  compras.forEach(f=>{
+  (compras||[]).forEach(f=>{
     if(!porProveedor[f.proveedor])porProveedor[f.proveedor]={facturas:[],total:0,unidades:0};
     porProveedor[f.proveedor].facturas.push(f);
     f.items?.forEach(it=>{
@@ -4482,47 +4698,132 @@ function ComprasModule({compras}){
   const proveedores=Object.entries(porProveedor).sort((a,b)=>b[1].total-a[1].total);
   const totalCompras=proveedores.reduce((a,[,d])=>a+d.total,0);
 
-  return(<div>
-    <Card accent={C.gold}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14,gap:10}}>
-        <div>
-          <Sec color={C.gold}>🧾 Compras registradas</Sec>
-          <div style={{fontSize:13,color:C.dim}}>{compras.length} facturas · {proveedores.length} proveedores</div>
-        </div>
-        <div style={{textAlign:"right"}}>
-          <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Total compras</div>
-          <div style={{fontSize:26,fontWeight:800,color:C.gold,marginTop:4}}>{fmtF(totalCompras)}</div>
-        </div>
-      </div>
-    </Card>
+  // ─── Cartera (cuentas por pagar) ───
+  const cart=cartera||[];
+  const pend=cart.filter(c=>c.estado!=="cancelada");
+  const totalPend=pend.reduce((a,c)=>a+(c.valor||0),0);
+  const totalCanc=cart.filter(c=>c.estado==="cancelada").reduce((a,c)=>a+(c.valor||0),0);
+  const vencidas=pend.filter(c=>c.vence<HOY);
+  const porVencer=pend.filter(c=>c.vence>=HOY);
+  const totalVenc=vencidas.reduce((a,c)=>a+(c.valor||0),0);
+  const dias=(d)=>{const a=new Date(HOY+"T12:00:00"),b=new Date(d+"T12:00:00");return Math.round((b-a)/86400000);};
 
-    {proveedores.map(([prov,data])=>(
-      <Card key={prov} accent={C.gold}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
-          <div>
-            <div style={{fontSize:16,fontWeight:700,color:C.text}}>{prov}</div>
-            <div style={{fontSize:11,color:C.muted}}>{data.facturas.length} facturas · {data.unidades} unidades</div>
+  return(<div>
+    {cart.length>0&&<>
+      <Card accent={totalVenc>0?C.red:C.gold}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:10,flexWrap:"wrap"}}>
+          <div><Sec color={C.gold}>💳 Cuentas por pagar · GIR (Giraldo's S.A.S.)</Sec>
+            <div style={{fontSize:12,color:C.dim}}>Base: estado de cuenta al 02/05/2026 + facturas posteriores</div></div>
+          <div style={{textAlign:"right"}}>
+            <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Saldo pendiente</div>
+            <div style={{fontSize:26,fontWeight:800,color:C.gold,marginTop:2,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalPend)}</div>
           </div>
-          <div style={{fontSize:18,fontWeight:800,color:C.gold}}>{fmtF(data.total)}</div>
         </div>
-        {data.facturas.sort((a,b)=>b.fecha.localeCompare(a.fecha)).map((f,i)=>(
-          <div key={i} style={{background:C.bg,padding:"10px 12px",borderRadius:8,marginTop:8,border:`1px solid ${C.bdr}`}}>
-            <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
-              <div style={{fontSize:12,fontWeight:600,color:C.gold}}>Factura {f.factura} · {fmtD(f.fecha)}</div>
-              <div style={{fontSize:13,fontWeight:700,color:C.text}}>{fmtF(f.items?.reduce((a,it)=>a+(it.vr_total||0),0))}</div>
-            </div>
-            {f.items?.map((it,j)=>(
-              <div key={j} style={{display:"grid",gridTemplateColumns:"1fr 60px 90px 90px",gap:6,padding:"3px 0",fontSize:11,color:C.muted,borderTop:j>0?`1px solid ${C.bdr}30`:"none"}}>
-                <span>{it.descripcion} {it.codigo?<span style={{color:C.dim}}>({it.codigo})</span>:""}</span>
-                <span style={{textAlign:"right"}}>{it.cant} und</span>
-                <span style={{textAlign:"right"}}>{fmtF(it.vr_und)}/u</span>
-                <span style={{textAlign:"right",color:C.text,fontWeight:600}}>{fmtF(it.vr_total)}</span>
-              </div>
-            ))}
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:10,marginTop:14}}>
+          <div style={{background:C.bg,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.redDim}`}}>
+            <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1,fontWeight:600}}>Vencidas</div>
+            <div style={{fontSize:19,fontWeight:800,color:C.red,marginTop:4,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalVenc)}</div>
+            <div style={{fontSize:11,color:C.muted,marginTop:2}}>{vencidas.length} factura{vencidas.length===1?"":"s"}</div>
           </div>
-        ))}
+          <div style={{background:C.bg,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.bdr}`}}>
+            <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1,fontWeight:600}}>Por vencer</div>
+            <div style={{fontSize:19,fontWeight:800,color:C.text,marginTop:4,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalPend-totalVenc)}</div>
+            <div style={{fontSize:11,color:C.muted,marginTop:2}}>{porVencer.length} factura{porVencer.length===1?"":"s"}</div>
+          </div>
+          <div style={{background:C.bg,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.greenDim}`}}>
+            <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1,fontWeight:600}}>Canceladas</div>
+            <div style={{fontSize:19,fontWeight:800,color:C.green,marginTop:4,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalCanc)}</div>
+            <div style={{fontSize:11,color:C.muted,marginTop:2}}>{cart.filter(c=>c.estado==="cancelada").length} factura{cart.filter(c=>c.estado==="cancelada").length===1?"":"s"}</div>
+          </div>
+        </div>
+        <div style={{marginTop:12,padding:"9px 12px",background:C.gold+"12",border:`1px solid ${C.gold}40`,borderRadius:9,fontSize:12,color:C.text,lineHeight:1.5}}>
+          Todas marcadas <b>pendiente</b> por defecto. Juanma: confirma cuáles ya están canceladas al 18-05-2026 y las muevo a "cancelada" para que el saldo sea exacto.
+        </div>
       </Card>
-    ))}
+
+      <Card>
+        <Sec>Detalle de cartera</Sec>
+        <div style={{overflowX:"auto"}}>
+          <table style={{width:"100%",borderCollapse:"collapse",fontSize:12.5}}>
+            <thead><tr style={{color:C.gold,textAlign:"left",borderBottom:`2px solid ${C.gold}40`}}>
+              <th style={{padding:"8px 6px"}}>Factura</th>
+              <th style={{padding:"8px 6px"}}>Emisión</th>
+              <th style={{padding:"8px 6px"}}>Vence</th>
+              <th style={{padding:"8px 6px",textAlign:"right"}}>Valor</th>
+              <th style={{padding:"8px 6px",textAlign:"center"}}>Días</th>
+              <th style={{padding:"8px 6px",textAlign:"center"}}>Detalle</th>
+              <th style={{padding:"8px 6px",textAlign:"center"}}>Estado</th>
+            </tr></thead>
+            <tbody>
+              {cart.slice().sort((a,b)=>a.vence.localeCompare(b.vence)).map((c,i)=>{
+                const d=dias(c.vence), venc=c.estado!=="cancelada"&&c.vence<HOY;
+                return(<tr key={i} style={{borderBottom:`1px solid ${C.bdr}40`,background:venc?C.red+"0d":"transparent"}}>
+                  <td style={{padding:"8px 6px",fontWeight:700,color:C.gold}}>{c.factura}</td>
+                  <td style={{padding:"8px 6px",color:C.dim}}>{fmtD(c.fecha).replace(" 2026","")}</td>
+                  <td style={{padding:"8px 6px",color:venc?C.red:C.text}}>{fmtD(c.vence).replace(" 2026","")}</td>
+                  <td style={{padding:"8px 6px",textAlign:"right",fontWeight:600,color:C.text,fontVariantNumeric:"tabular-nums"}}>{fmtF(c.valor)}</td>
+                  <td style={{padding:"8px 6px",textAlign:"center",color:c.estado==="cancelada"?C.muted:venc?C.red:d<=7?C.gold:C.muted,fontWeight:venc?700:500}}>{c.estado==="cancelada"?"—":venc?`${Math.abs(d)}d venc.`:`${d}d`}</td>
+                  <td style={{padding:"8px 6px",textAlign:"center"}}>{c.detalle?<span style={{color:C.green}}>✓</span>:<span style={{color:C.muted}}>—</span>}</td>
+                  <td style={{padding:"8px 6px",textAlign:"center"}}><span style={{fontSize:11,fontWeight:700,padding:"2px 8px",borderRadius:6,background:c.estado==="cancelada"?C.greenDim:venc?C.redDim:C.bdr,color:c.estado==="cancelada"?C.green:venc?C.red:C.dim}}>{c.estado==="cancelada"?"Cancelada":"Pendiente"}</span></td>
+                </tr>);
+              })}
+              <tr style={{borderTop:`2px solid ${C.gold}`,fontWeight:800,color:C.gold,background:C.gold+"10"}}>
+                <td style={{padding:"10px 6px"}} colSpan={3}>SALDO PENDIENTE ({pend.length} fact.)</td>
+                <td style={{padding:"10px 6px",textAlign:"right",fontVariantNumeric:"tabular-nums"}}>{fmtF(totalPend)}</td>
+                <td colSpan={3}></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </Card>
+    </>}
+
+    {compras&&compras.length>0&&<>
+      <Card accent={C.gold}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:6,gap:10}}>
+          <div>
+            <Sec color={C.gold}>🧾 Compras registradas (detalle)</Sec>
+            <div style={{fontSize:13,color:C.dim}}>{compras.length} facturas con detalle · {proveedores.length} proveedor{proveedores.length===1?"":"es"}</div>
+          </div>
+          <div style={{textAlign:"right"}}>
+            <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Total facturado</div>
+            <div style={{fontSize:26,fontWeight:800,color:C.gold,marginTop:4,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalCompras)}</div>
+          </div>
+        </div>
+      </Card>
+
+      {proveedores.map(([prov,data])=>(
+        <Card key={prov} accent={C.gold}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
+            <div>
+              <div style={{fontSize:16,fontWeight:700,color:C.text}}>{prov}</div>
+              <div style={{fontSize:11,color:C.muted}}>{data.facturas.length} facturas · {data.unidades} unidades</div>
+            </div>
+            <div style={{fontSize:18,fontWeight:800,color:C.gold,fontVariantNumeric:"tabular-nums"}}>{fmtF(data.total)}</div>
+          </div>
+          {data.facturas.slice().sort((a,b)=>b.fecha.localeCompare(a.fecha)).map((f,i)=>{
+            const tot=f.items?.reduce((a,it)=>a+(it.vr_total||0),0)||0;
+            const cruz=f.items?.filter(it=>it.producto_jsx&&CATALOG[it.producto_jsx]).length||0;
+            return(<div key={i} style={{background:C.bg,padding:"10px 12px",borderRadius:8,marginTop:8,border:`1px solid ${C.bdr}`}}>
+              <div style={{display:"flex",justifyContent:"space-between",marginBottom:8,flexWrap:"wrap",gap:4}}>
+                <div style={{fontSize:12,fontWeight:600,color:C.gold}}>Factura {f.factura} · {fmtD(f.fecha)} · vence {fmtD(f.vence).replace(" 2026","")}</div>
+                <div style={{fontSize:13,fontWeight:700,color:C.text,fontVariantNumeric:"tabular-nums"}}>{fmtF(tot)}</div>
+              </div>
+              <div style={{fontSize:10,color:C.muted,marginBottom:6}}>{cruz}/{f.items?.length||0} ítems cruzados con catálogo</div>
+              {f.items?.map((it,j)=>{
+                const cat=it.producto_jsx&&CATALOG[it.producto_jsx];
+                return(<div key={j} style={{display:"grid",gridTemplateColumns:"1fr 52px 78px 78px",gap:6,padding:"4px 0",fontSize:11,color:C.muted,borderTop:j>0?`1px solid ${C.bdr}30`:"none"}}>
+                  <span>{it.observaciones}{cat?<span style={{color:C.cyan,marginLeft:5}}>→ {it.producto_jsx}</span>:<span style={{color:C.muted,marginLeft:5,fontStyle:"italic"}}>(sin cruce)</span>}</span>
+                  <span style={{textAlign:"right"}}>{it.cant} u</span>
+                  <span style={{textAlign:"right"}}>{fmtF(it.vr_und)}/u</span>
+                  <span style={{textAlign:"right",color:C.text,fontWeight:600}}>{fmtF(it.vr_total)}</span>
+                </div>);
+              })}
+            </div>);
+          })}
+        </Card>
+      ))}
+    </>}
   </div>);
 }
 
