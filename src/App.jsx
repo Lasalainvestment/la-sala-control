@@ -3128,11 +3128,11 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"", cant:1, base_und:2000, icl_und:0, vr_und:2000, vr_total:2000, observaciones:"Envases" },
   ]},
   // PD102247 · 2026-05-14 · Doc Pedido (ya recogido, "LA SALA YA LLEVO") · A Pagar $90.800
-  { fecha:"2026-05-14", factura:"PD102247", proveedor:"GIR (Licores Junior)", vence:"2026-05-14", a_pagar:90800, items:[
+  { fecha:"2026-05-14", factura:"PD102247", proveedor:"GIR (Licores Junior)", vence:"2026-06-13", a_pagar:90800, items:[
     { producto_jsx:"VODKA TAMARINDO", cant:2, base_und:27175, icl_und:18225, vr_und:45400, vr_total:90800, observaciones:"VODKA SMIRNOFF TAMARINDO PICANTE 750CC (insumo coctelería)" },
   ]},
   // PD102560 · 2026-05-17 · Doc Pedido (nota "LA SALA") · A Pagar $284.550
-  { fecha:"2026-05-17", factura:"PD102560", proveedor:"GIR (Licores Junior)", vence:"2026-05-17", a_pagar:284550, items:[
+  { fecha:"2026-05-17", factura:"PD102560", proveedor:"GIR (Licores Junior)", vence:"2026-06-16", a_pagar:284550, items:[
     { producto_jsx:"VINO BOTELLA", cant:1, base_und:36900, icl_und:0, vr_und:36900, vr_total:36900, observaciones:"VINO GATO NEGRO CAB/SUAV BOT 750CC" },
     { producto_jsx:"CAJA DE VINO", cant:1, base_und:20650, icl_und:0, vr_und:20650, vr_total:20650, observaciones:"VINO CATA TINT T/PACK 1LIT" },
     { producto_jsx:"SOMETHING SPECIAL COCT", cant:1, base_und:59900, icl_und:0, vr_und:59900, vr_total:59900, observaciones:"WHISKY SOMET/SPEC BOT 750CC DTO (oferta)" },
@@ -3158,6 +3158,8 @@ const PRELOADED_CARTERA = [
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9405", fecha:"2026-05-01", vence:"2026-05-31", valor:194300, detalle:true, estado:"pendiente", nota:"Detalle cargado (2 ítems). Nota factura: La Sala ya llevo." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9420", fecha:"2026-05-01", vence:"2026-05-31", valor:256900, detalle:true, estado:"pendiente", nota:"Detalle cargado (3 ítems)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10005", fecha:"2026-05-15", vence:"2026-06-14", valor:319000, detalle:true, estado:"pendiente", nota:"Posterior al corte del estado de cuenta (02/05). Detalle cargado (7 ítems)." },
+  { proveedor:"GIR (Licores Junior)", factura:"PD102247", fecha:"2026-05-14", vence:"2026-06-13", valor:90800, detalle:true, estado:"pendiente", nota:"Doc Pedido a crédito (30 días). Detalle cargado (Vodka Smirnoff Tamarindo x2). Nota factura: La Sala ya llevo." },
+  { proveedor:"GIR (Licores Junior)", factura:"PD102560", fecha:"2026-05-17", vence:"2026-06-16", valor:284550, detalle:true, estado:"pendiente", nota:"Doc Pedido a crédito (30 días). Detalle cargado (6 ítems)." },
   { proveedor:"Bavaria", factura:"BAV-PICKING-01may", fecha:"2026-05-01", vence:"2026-05-01", valor:480400, detalle:true, estado:"cancelada", nota:"Lista Picking 01-may. Relacionada y cancelada vía transferencia ($480.400, 1 may)." },
 ];
 
