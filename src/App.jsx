@@ -275,6 +275,13 @@ const PRELOADED_CUADRES = [
     efectivo: 27800, tarjeta: 125000, otros_pago: 190000,
     pizza_80: 42240, gastos: 5000, nomina: 185000, costo_financiero: 6250,
     neto_sala: 104310, faltante: 0,
+  },
+  {
+    date: "2026-05-19", venta_total: 354000,
+    estanco: 0, cocteles: 354000, pizzeria: 0, otros_venta: 0,
+    efectivo: 0, tarjeta: 354000, otros_pago: 0,
+    pizza_80: 0, gastos: 0, nomina: 0, costo_financiero: 17700,
+    neto_sala: 336300, faltante: 0,
   }
 ];
 
@@ -762,6 +769,10 @@ const PRELOADED_COCINA = [
     productos: [
       { nombre: "PZ PEPERNATA MED", cantidad: 1, valor: 52800 },
     ]
+  },
+  {
+    date: "2026-05-19", total: 0, total_units: 0,
+    productos: []
   }
 ];
 
@@ -2598,7 +2609,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"AGT MEDIA CAUCA",saldo:6},
       {nombre:"AGUA",saldo:18},
       {nombre:"AGUA TONICA",saldo:1},
-      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARETTO",saldo:1},
       {nombre:"CACHAZA",saldo:0},
       {nombre:"CAJA DE VINO",saldo:2},
       {nombre:"CERVEZA CORONA",saldo:21},
@@ -2616,7 +2627,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"GINEBRA BOTELLA",saldo:0},
       {nombre:"GINEBRA DL",saldo:5},
       {nombre:"GINEBRA ML",saldo:3},
-      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:1},
       {nombre:"LICOR DE MANZANA",saldo:11},
       {nombre:"LICOR DE MENTA",saldo:0},
       {nombre:"RED BULL",saldo:7},
@@ -2633,6 +2644,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"VODKA BOTELLA",saldo:1},
       {nombre:"VODKA MEDIA",saldo:0},
       {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
+  },
+  {
+    date: "2026-05-19", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:18},
+      {nombre:"AGUA TONICA",saldo:1},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:21},
+      {nombre:"CERVEZA IMPORTADA",saldo:41},
+      {nombre:"CERVEZA NACIONAL",saldo:171},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:4},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:131},
+      {nombre:"GASEOSA 1.5",saldo:25},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:1},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:5},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:2},
       {nombre:"BUCHANAN'S BOTELLA",saldo:0},
       {nombre:"BUCHANAN'S MEDIA",saldo:1},
       {nombre:"WHISKEY COCTELERIA",saldo:0},
@@ -2945,7 +3008,7 @@ const CATALOG = {
   "AGT MEDIA CAUCA": {categoria:"Aguardiente",compra:22800,venta:60000,fuente:"Compra: GIR-FDJC9356-30abr | Venta: CARTA",notas:"Caucano Trad CAN 375cc (confirmado factura)"},
   "AGUA": {categoria:"Bebidas no alcohólicas",compra:1300,venta:6000,fuente:"Compra: GIR-18abr | Venta: CARTA",notas:"Cristal 600cc"},
   "AGUA TONICA": {categoria:"Bebidas no alcohólicas",compra:2300,venta:6000,fuente:"Compra: GIR-FDJC9133-24abr | Venta: CARTA",notas:"Schweppes Tónica NR 300cc (confirmado factura)"},
-  "AMARETTO": {categoria:"Licores/Cócteles",compra:53000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo cóctel - sin compra ni venta directa"},
+  "AMARETTO": {categoria:"Licores/Cócteles",compra:49900,venta:0,fuente:"Compra: GIR-PD102560-17may | Venta: INSUMO",notas:"Tres Plumas Amareto 700cc (precio real)"},
   "CACHAZA": {categoria:"Licores/Cócteles",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo Caipirinha"},
   "CAJA DE VINO": {categoria:"Vino",compra:20650,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: VERIFICAR",notas:"Vino Cata Tint T/Pack 1L (confirmado factura)"},
   "CERVEZA CORONA": {categoria:"Cerveza",compra:3800,venta:13000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Corona Bot 330cc (precio real)"},
@@ -2955,7 +3018,7 @@ const CATALOG = {
   "CIGARRILLOS": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
   "CREMA DE WHISKY": {categoria:"Licores/Cócteles",compra:27100,venta:0,fuente:"Compra: GIR-02abr | Venta: INSUMO",notas:"Crema/Wh Jumbo 750cc (Baileys $78.500 si premium)"},
   "CURAZAO AZUL": {categoria:"Licores/Cócteles",compra:25000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo cóctel Blue Hawai/Burbujas Azules"},
-  "DRY MARTINY": {categoria:"Licores/Cócteles",compra:75000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Vermut seco - insumo Martini Dry"},
+  "DRY MARTINY": {categoria:"Licores/Cócteles",compra:67300,venta:0,fuente:"Compra: GIR-PD102560-17may | Venta: INSUMO",notas:"Martini Extra Dry 750cc (precio real)"},
   "ELECTROLIT": {categoria:"Bebidas no alcohólicas",compra:7200,venta:15000,fuente:"Compra: GIR-04abr | Venta: VERIFICAR",notas:"Suero Electrolit 625cc"},
   "ENCENDEDOR": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
   "GASEOSA": {categoria:"Bebidas no alcohólicas",compra:2400,venta:6000,fuente:"Compra: GIR-FDJC9133-24abr | Venta: CARTA",notas:"Postobón NR Soda 10oz (confirmado factura)"},
@@ -2986,6 +3049,7 @@ const CATALOG = {
   "BALLANTINES COCTELERIA": {categoria:"Whisky",compra:83500,venta:0,fuente:"Compra: GIR-FDJC8447-02abr | Venta: INSUMO",notas:"Ballantine's Finest 1L - insumo coctelería"},
   "SOMETHING SPECIAL COCT": {categoria:"Whisky",compra:59900,venta:0,fuente:"Compra: GIR-FDJC10005-15may | Venta: INSUMO",notas:"Something Special 750cc - insumo coctelería (var. $58.800 FDJC9420)"},
   "HIELO": {categoria:"Otros",compra:4600,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: INSUMO",notas:"Hielo Kolbitos 3KG - insumo coctelería"},
+  "VODKA TAMARINDO": {categoria:"Vodka",compra:45400,venta:0,fuente:"Compra: GIR-PD102247-14may | Venta: INSUMO",notas:"Smirnoff Tamarindo Picante 750cc - insumo coctelería"},
   "OLD PARR BOTELLA": {categoria:"Whisky",compra:136700,venta:300000,fuente:"Compra: GIR-FDJC9420-01may | Venta: CARTA",notas:"Old Parr 12AN 750cc (precio real confirmado)"},
   "OLD PARR MEDIA": {categoria:"Whisky",compra:99800,venta:220000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Old Parr 12AN 500cc (confirmado factura)"},
 };
@@ -3063,6 +3127,19 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"CERVEZA IMPORTADA", cant:4, base_und:21375, icl_und:0, vr_und:21375, vr_total:85500, observaciones:"STEARTNRB300X6 · Stella Artois NR sixpack (~$3.563/bot)" },
     { producto_jsx:"", cant:1, base_und:2000, icl_und:0, vr_und:2000, vr_total:2000, observaciones:"Envases" },
   ]},
+  // PD102247 · 2026-05-14 · Doc Pedido (ya recogido, "LA SALA YA LLEVO") · A Pagar $90.800
+  { fecha:"2026-05-14", factura:"PD102247", proveedor:"GIR (Licores Junior)", vence:"2026-05-14", a_pagar:90800, items:[
+    { producto_jsx:"VODKA TAMARINDO", cant:2, base_und:27175, icl_und:18225, vr_und:45400, vr_total:90800, observaciones:"VODKA SMIRNOFF TAMARINDO PICANTE 750CC (insumo coctelería)" },
+  ]},
+  // PD102560 · 2026-05-17 · Doc Pedido (nota "LA SALA") · A Pagar $284.550
+  { fecha:"2026-05-17", factura:"PD102560", proveedor:"GIR (Licores Junior)", vence:"2026-05-17", a_pagar:284550, items:[
+    { producto_jsx:"VINO BOTELLA", cant:1, base_und:36900, icl_und:0, vr_und:36900, vr_total:36900, observaciones:"VINO GATO NEGRO CAB/SUAV BOT 750CC" },
+    { producto_jsx:"CAJA DE VINO", cant:1, base_und:20650, icl_und:0, vr_und:20650, vr_total:20650, observaciones:"VINO CATA TINT T/PACK 1LIT" },
+    { producto_jsx:"SOMETHING SPECIAL COCT", cant:1, base_und:59900, icl_und:0, vr_und:59900, vr_total:59900, observaciones:"WHISKY SOMET/SPEC BOT 750CC DTO (oferta)" },
+    { producto_jsx:"AMARETTO", cant:1, base_und:49900, icl_und:0, vr_und:49900, vr_total:49900, observaciones:"LICOR TRES PLUMAS AMARETO BOT 700CC" },
+    { producto_jsx:"LICOR CAFÉ", cant:1, base_und:49900, icl_und:0, vr_und:49900, vr_total:49900, observaciones:"LICOR TRES PLUMAS CAFE BOT 700CC" },
+    { producto_jsx:"DRY MARTINY", cant:1, base_und:67300, icl_und:0, vr_und:67300, vr_total:67300, observaciones:"LICOR MARTINI EXTRA DRY BOT 750CC" },
+  ]},
 ];
 
 // ─── Cartera proveedor GIR (Giraldo's S.A.S.) — cuentas por pagar ───
@@ -3135,6 +3212,12 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   // ─── Semana 3 may (11 - 17 may) ───
   { date: "2026-05-15", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Revisión Bomberos", categoria: "Servicios/Otros", valor: 289900 },
   { date: "2026-05-16", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 60500 },
+  { date: "2026-05-11", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Lunes 11 may", categoria: "Nómina", valor: 155000 },
+  { date: "2026-05-14", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Jueves 14 may", categoria: "Nómina", valor: 155000 },
+  { date: "2026-05-15", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Viernes 15 may", categoria: "Nómina", valor: 200000 },
+  { date: "2026-05-16", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Sábado 16 may", categoria: "Nómina", valor: 220000 },
+  { date: "2026-05-17", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Domingo 17 may", categoria: "Nómina", valor: 170000 },
+  { date: "2026-05-15", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Compra de Fruta", categoria: "Insumos coctelería", valor: 208000 },
 ];
 
 // ─── Storage ───
@@ -3179,7 +3262,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-18");
+  const [selDate,setSelDate]=useState("2026-05-19");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -4670,7 +4753,7 @@ function AnalisisCategoria({inventarios,cocina}){
 // ─── COMPRAS (módulo de facturas por proveedor) ───
 // ═════════════════════════════════════════════════════════════════
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-19";
+  const HOY="2026-05-20";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
