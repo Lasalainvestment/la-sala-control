@@ -282,6 +282,13 @@ const PRELOADED_CUADRES = [
     efectivo: 0, tarjeta: 354000, otros_pago: 0,
     pizza_80: 0, gastos: 0, nomina: 0, costo_financiero: 17700,
     neto_sala: 336300, faltante: 0,
+  },
+  {
+    date: "2026-05-20", venta_total: 827400,
+    estanco: 133000, cocteles: 387000, pizzeria: 307400, otros_venta: 0,
+    efectivo: 2000, tarjeta: 815400, otros_pago: 10000,
+    pizza_80: 245920, gastos: 10000, nomina: 0, costo_financiero: 40770,
+    neto_sala: 530710, faltante: 0,
   }
 ];
 
@@ -773,6 +780,18 @@ const PRELOADED_COCINA = [
   {
     date: "2026-05-19", total: 0, total_units: 0,
     productos: []
+  },
+  {
+    date: "2026-05-20", total: 307400, total_units: 8,
+    productos: [
+      { nombre: "PZ ESPAÑOLA MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "PZ DE LA GRANJA PEQ", cantidad: 1, valor: 32400 },
+      { nombre: "PT CARBONARA JR", cantidad: 2, valor: 62400 },
+    ]
   }
 ];
 
@@ -2702,6 +2721,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-20", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:12},
+      {nombre:"AGUA TONICA",saldo:1},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:21},
+      {nombre:"CERVEZA IMPORTADA",saldo:34},
+      {nombre:"CERVEZA NACIONAL",saldo:171},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:4},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:126},
+      {nombre:"GASEOSA 1.5",saldo:25},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:1},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:4},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:2},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -2994,6 +3065,13 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
     ]
+  },
+  {
+    date: "2026-05-20", total: 10000,
+    items: [
+      { concepto: "Comida empleados 19 may", categoria: "Comida", valor: 5000 },
+      { concepto: "Comida empleados 20 may", categoria: "Comida", valor: 5000 },
+    ]
   }
 ];
 
@@ -3049,6 +3127,9 @@ const CATALOG = {
   "BALLANTINES COCTELERIA": {categoria:"Whisky",compra:83500,venta:0,fuente:"Compra: GIR-FDJC8447-02abr | Venta: INSUMO",notas:"Ballantine's Finest 1L - insumo coctelería"},
   "SOMETHING SPECIAL COCT": {categoria:"Whisky",compra:59900,venta:0,fuente:"Compra: GIR-FDJC10005-15may | Venta: INSUMO",notas:"Something Special 750cc - insumo coctelería (var. $58.800 FDJC9420)"},
   "HIELO": {categoria:"Otros",compra:4600,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: INSUMO",notas:"Hielo Kolbitos 3KG - insumo coctelería"},
+  "CREMA DE LECHE": {categoria:"Otros",compra:19500,venta:0,fuente:"Compra: REY-10864-19may | Venta: INSUMO",notas:"El Rey - insumo coctelería"},
+  "PAQUETE DE MENTAS": {categoria:"Otros",compra:30000,venta:0,fuente:"Compra: REY-10864-19may | Venta: INSUMO",notas:"El Rey - insumo coctelería"},
+  "GOTAS AMARGAS": {categoria:"Licores/Cócteles",compra:8000,venta:0,fuente:"Compra: REY-10864-19may | Venta: INSUMO",notas:"El Rey - bitter coctelería (tipo Angostura)"},
   "VODKA TAMARINDO": {categoria:"Vodka",compra:45400,venta:0,fuente:"Compra: GIR-PD102247-14may | Venta: INSUMO",notas:"Smirnoff Tamarindo Picante 750cc - insumo coctelería"},
   "OLD PARR BOTELLA": {categoria:"Whisky",compra:136700,venta:300000,fuente:"Compra: GIR-FDJC9420-01may | Venta: CARTA",notas:"Old Parr 12AN 750cc (precio real confirmado)"},
   "OLD PARR MEDIA": {categoria:"Whisky",compra:99800,venta:220000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Old Parr 12AN 500cc (confirmado factura)"},
@@ -3140,6 +3221,12 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"LICOR CAFÉ", cant:1, base_und:49900, icl_und:0, vr_und:49900, vr_total:49900, observaciones:"LICOR TRES PLUMAS CAFE BOT 700CC" },
     { producto_jsx:"DRY MARTINY", cant:1, base_und:67300, icl_und:0, vr_und:67300, vr_total:67300, observaciones:"LICOR MARTINI EXTRA DRY BOT 750CC" },
   ]},
+  // REY-10864 · 2026-05-19 · Distribuidora El Rey · A Pagar $155.000 (crédito)
+  { fecha:"2026-05-19", factura:"REY-10864", proveedor:"Distribuidora El Rey", vence:"2026-06-18", a_pagar:155000, items:[
+    { producto_jsx:"CREMA DE LECHE", cant:6, base_und:19500, icl_und:0, vr_und:19500, vr_total:117000, observaciones:"6 Crema de Leche (insumo coctelería)" },
+    { producto_jsx:"PAQUETE DE MENTAS", cant:1, base_und:30000, icl_und:0, vr_und:30000, vr_total:30000, observaciones:"1 Paquete de Mentas" },
+    { producto_jsx:"GOTAS AMARGAS", cant:1, base_und:8000, icl_und:0, vr_und:8000, vr_total:8000, observaciones:"1 Gotas Amargas (tipo Angostura)" },
+  ]},
 ];
 
 // ─── Cartera proveedor GIR (Giraldo's S.A.S.) — cuentas por pagar ───
@@ -3160,6 +3247,7 @@ const PRELOADED_CARTERA = [
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10005", fecha:"2026-05-15", vence:"2026-06-14", valor:319000, detalle:true, estado:"pendiente", nota:"Posterior al corte del estado de cuenta (02/05). Detalle cargado (7 ítems)." },
   { proveedor:"GIR (Licores Junior)", factura:"PD102247", fecha:"2026-05-14", vence:"2026-06-13", valor:90800, detalle:true, estado:"pendiente", nota:"Doc Pedido a crédito (30 días). Detalle cargado (Vodka Smirnoff Tamarindo x2). Nota factura: La Sala ya llevo." },
   { proveedor:"GIR (Licores Junior)", factura:"PD102560", fecha:"2026-05-17", vence:"2026-06-16", valor:284550, detalle:true, estado:"pendiente", nota:"Doc Pedido a crédito (30 días). Detalle cargado (6 ítems)." },
+  { proveedor:"Distribuidora El Rey", factura:"REY-10864", fecha:"2026-05-19", vence:"2026-06-18", valor:155000, detalle:true, estado:"pendiente", nota:"Recibo 10864 (Reinaldo López, vendedor). Insumos coctelería: 6 Crema de Leche, 1 Paquete Mentas, 1 Gotas Amargas. Plazo asumido 30 días — confirmar." },
   { proveedor:"Bavaria", factura:"BAV-PICKING-01may", fecha:"2026-05-01", vence:"2026-05-01", valor:480400, detalle:true, estado:"cancelada", nota:"Lista Picking 01-may. Relacionada y cancelada vía transferencia ($480.400, 1 may)." },
 ];
 
@@ -3264,7 +3352,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-19");
+  const [selDate,setSelDate]=useState("2026-05-20");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -4755,7 +4843,7 @@ function AnalisisCategoria({inventarios,cocina}){
 // ─── COMPRAS (módulo de facturas por proveedor) ───
 // ═════════════════════════════════════════════════════════════════
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-20";
+  const HOY="2026-05-21";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
