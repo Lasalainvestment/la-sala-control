@@ -289,6 +289,13 @@ const PRELOADED_CUADRES = [
     efectivo: 2000, tarjeta: 815400, otros_pago: 10000,
     pizza_80: 245920, gastos: 10000, nomina: 0, costo_financiero: 40770,
     neto_sala: 530710, faltante: 0,
+  },
+  {
+    date: "2026-05-21", venta_total: 2269400,
+    estanco: 1454000, cocteles: 595000, pizzeria: 220400, otros_venta: 0,
+    efectivo: 8800, tarjeta: 1976000, otros_pago: 284600,
+    pizza_80: 176320, gastos: 84600, nomina: 200000, costo_financiero: 98800,
+    neto_sala: 1709680, faltante: 0,
   }
 ];
 
@@ -791,6 +798,16 @@ const PRELOADED_COCINA = [
       { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
       { nombre: "PZ DE LA GRANJA PEQ", cantidad: 1, valor: 32400 },
       { nombre: "PT CARBONARA JR", cantidad: 2, valor: 62400 },
+    ]
+  },
+  {
+    date: "2026-05-21", total: 220400, total_units: 7,
+    productos: [
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ HAWAIANA PEQ", cantidad: 1, valor: 38400 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 3, valor: 95400 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
     ]
   }
 ];
@@ -2773,6 +2790,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-05-21", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:8},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:36},
+      {nombre:"AGUA TONICA",saldo:13},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:21},
+      {nombre:"CERVEZA IMPORTADA",saldo:33},
+      {nombre:"CERVEZA NACIONAL",saldo:155},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:1},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:4},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:191},
+      {nombre:"GASEOSA 1.5",saldo:25},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:4},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:4},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:2},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -3072,6 +3141,13 @@ const PRELOADED_GASTOS = [
       { concepto: "Comida empleados 19 may", categoria: "Comida", valor: 5000 },
       { concepto: "Comida empleados 20 may", categoria: "Comida", valor: 5000 },
     ]
+  },
+  {
+    date: "2026-05-21", total: 84600,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "Limones", categoria: "Insumos coctelería", valor: 79600 },
+    ]
   }
 ];
 
@@ -3227,6 +3303,33 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"PAQUETE DE MENTAS", cant:1, base_und:30000, icl_und:0, vr_und:30000, vr_total:30000, observaciones:"1 Paquete de Mentas" },
     { producto_jsx:"GOTAS AMARGAS", cant:1, base_und:8000, icl_und:0, vr_und:8000, vr_total:8000, observaciones:"1 Gotas Amargas (tipo Angostura)" },
   ]},
+  // CC-00001 · 2026-05-20 · Coca-Cola Soporte de Entrega · A Pagar $153.800 (cancelada — pagada vía transferencia 21 may)
+  { fecha:"2026-05-20", factura:"CC-00001", proveedor:"Coca-Cola", vence:"2026-05-20", a_pagar:153800, items:[
+    { producto_jsx:"GASEOSA", cant:1, base_und:55360, icl_und:7140, vr_und:62500, vr_total:62500, observaciones:"COCA-COLA 350ML VIR · 1 caja x 30 botellas retornables (~$2.083/bot)" },
+    { producto_jsx:"AGUA TONICA", cant:1, base_und:26352, icl_und:2448, vr_und:28800, vr_total:28800, observaciones:"SCHWEPPES TONICA 10oz VNR · 1 caja x 12 botellas (~$2.400/bot)" },
+    { producto_jsx:"GASEOSA", cant:1, base_und:62500, icl_und:0, vr_und:62500, vr_total:62500, observaciones:"COCA-COLA ZERO 350ML VR(30) KZ · 1 caja x 30 botellas retornables (~$2.083/bot)" },
+  ]},
+  // H7Z1136639 · 2026-05-21 · D1 SAS · A Pagar $58.350 (cancelada — pagada en contado tarjeta)
+  { fecha:"2026-05-21", factura:"H7Z1136639", proveedor:"D1", vence:"2026-05-21", a_pagar:58350, items:[
+    { producto_jsx:"", cant:2, base_und:3800, icl_und:0, vr_und:3800, vr_total:7600, observaciones:"Jugo del Valle (insumo varios)" },
+    { producto_jsx:"", cant:1, base_und:39950, icl_und:0, vr_und:39950, vr_total:39950, observaciones:"Whisky Escocés (compra emergencia — sin cruce al catálogo)" },
+    { producto_jsx:"", cant:3, base_und:3600, icl_und:0, vr_und:3600, vr_total:10800, observaciones:"3 paquetes Gomas Surtidas (insumo varios)" },
+  ]},
+  // FRUTA-21may · 2026-05-21 · Proveedor Frutas (cuenta de cobro) · A Pagar $153.000 (cancelada — pagada vía transferencia)
+  { fecha:"2026-05-21", factura:"FRUTA-21may", proveedor:"Proveedor Frutas", vence:"2026-05-21", a_pagar:153000, items:[
+    { producto_jsx:"", cant:1, base_und:5000, icl_und:0, vr_und:5000, vr_total:5000, observaciones:"Romero (insumo coctelería)" },
+    { producto_jsx:"", cant:1, base_und:8000, icl_und:0, vr_und:8000, vr_total:8000, observaciones:"Yerbabuena (insumo coctelería)" },
+    { producto_jsx:"", cant:1, base_und:5000, icl_und:0, vr_und:5000, vr_total:5000, observaciones:"Manzanas Verdes" },
+    { producto_jsx:"", cant:2, base_und:5000, icl_und:0, vr_und:5000, vr_total:10000, observaciones:"Fresas (2)" },
+    { producto_jsx:"", cant:3, base_und:5000, icl_und:0, vr_und:5000, vr_total:15000, observaciones:"Mora (3)" },
+    { producto_jsx:"", cant:2, base_und:8000, icl_und:0, vr_und:8000, vr_total:16000, observaciones:"Guanábana (2)" },
+    { producto_jsx:"", cant:4, base_und:5000, icl_und:0, vr_und:5000, vr_total:20000, observaciones:"Piñas (4)" },
+    { producto_jsx:"", cant:2, base_und:5000, icl_und:0, vr_und:5000, vr_total:10000, observaciones:"Naranjas (2)" },
+    { producto_jsx:"", cant:1, base_und:5000, icl_und:0, vr_und:5000, vr_total:5000, observaciones:"Uvas (1)" },
+    { producto_jsx:"", cant:3, base_und:10000, icl_und:0, vr_und:10000, vr_total:30000, observaciones:"Maracuyá (3 libras)" },
+    { producto_jsx:"", cant:3, base_und:8000, icl_und:0, vr_und:8000, vr_total:24000, observaciones:"Mango (3)" },
+    { producto_jsx:"", cant:1, base_und:5000, icl_und:0, vr_und:5000, vr_total:5000, observaciones:"Domicilio" },
+  ]},
 ];
 
 // ─── Cartera proveedor GIR (Giraldo's S.A.S.) — cuentas por pagar ───
@@ -3248,6 +3351,9 @@ const PRELOADED_CARTERA = [
   { proveedor:"GIR (Licores Junior)", factura:"PD102247", fecha:"2026-05-14", vence:"2026-06-13", valor:90800, detalle:true, estado:"pendiente", nota:"Doc Pedido a crédito (30 días). Detalle cargado (Vodka Smirnoff Tamarindo x2). Nota factura: La Sala ya llevo." },
   { proveedor:"GIR (Licores Junior)", factura:"PD102560", fecha:"2026-05-17", vence:"2026-06-16", valor:284550, detalle:true, estado:"pendiente", nota:"Doc Pedido a crédito (30 días). Detalle cargado (6 ítems)." },
   { proveedor:"Distribuidora El Rey", factura:"REY-10864", fecha:"2026-05-19", vence:"2026-06-18", valor:155000, detalle:true, estado:"pendiente", nota:"Recibo 10864 (Reinaldo López, vendedor). Insumos coctelería: 6 Crema de Leche, 1 Paquete Mentas, 1 Gotas Amargas. Plazo asumido 30 días — confirmar." },
+  { proveedor:"Coca-Cola", factura:"CC-00001", fecha:"2026-05-20", vence:"2026-05-20", valor:153800, detalle:true, estado:"cancelada", nota:"Soporte de Entrega 00001. 1 caja Coca-Cola 350ML + 1 caja Schweppes Tónica + 1 caja Coca-Cola Zero. Pagada vía transferencia 21 may." },
+  { proveedor:"D1", factura:"H7Z1136639", fecha:"2026-05-21", vence:"2026-05-21", valor:58350, detalle:true, estado:"cancelada", nota:"Factura electrónica D1. Insumos y licor (Jugo del Valle, Whisky Escocés, Gomas). Pagada en contado tarjeta." },
+  { proveedor:"Proveedor Frutas", factura:"FRUTA-21may", fecha:"2026-05-21", vence:"2026-05-21", valor:153000, detalle:true, estado:"cancelada", nota:"Cuenta de cobro frutas/hierbas + domicilio. Pagada vía transferencia 21 may." },
   { proveedor:"Bavaria", factura:"BAV-PICKING-01may", fecha:"2026-05-01", vence:"2026-05-01", valor:480400, detalle:true, estado:"cancelada", nota:"Lista Picking 01-may. Relacionada y cancelada vía transferencia ($480.400, 1 may)." },
 ];
 
@@ -3308,6 +3414,12 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-16", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Sábado 16 may", categoria: "Nómina", valor: 220000 },
   { date: "2026-05-17", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Domingo 17 may", categoria: "Nómina", valor: 170000 },
   { date: "2026-05-15", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Compra de Fruta", categoria: "Insumos coctelería", valor: 208000 },
+  // ─── Semana 4 may (18 - 24 may) ───
+  { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Pago Fruta", categoria: "Insumos coctelería", valor: 153000 },
+  { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Insumos y licor (D1)", categoria: "Insumos varios", valor: 58350 },
+  { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Coca-Cola", categoria: "Bebidas/Licor", valor: 153800 },
+  { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Coca-Cola (envases)", categoria: "Bebidas/Licor", valor: 4500 },
+  { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 89500 },
 ];
 
 // ─── Storage ───
@@ -3352,7 +3464,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-20");
+  const [selDate,setSelDate]=useState("2026-05-21");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -4843,7 +4955,7 @@ function AnalisisCategoria({inventarios,cocina}){
 // ─── COMPRAS (módulo de facturas por proveedor) ───
 // ═════════════════════════════════════════════════════════════════
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-21";
+  const HOY="2026-05-22";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
