@@ -3525,6 +3525,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-17", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Domingo 17 may", categoria: "Nómina", valor: 170000 },
   { date: "2026-05-15", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Compra de Fruta", categoria: "Insumos coctelería", valor: 208000 },
   // ─── Semana 4 may (18 - 24 may) ───
+  { date: "2026-05-19", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Sombrillas zona exterior (Bre-B Variedad del Mueble)", categoria: "Activo fijo", valor: 325000 },
   { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Pago Fruta", categoria: "Insumos coctelería", valor: 153000 },
   { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Insumos y licor (D1)", categoria: "Insumos varios", valor: 58350 },
   { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Coca-Cola", categoria: "Bebidas/Licor", valor: 153800 },
