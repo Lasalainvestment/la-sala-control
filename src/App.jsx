@@ -3519,6 +3519,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-16", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 60500 },
   { date: "2026-05-11", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Lunes 11 may", categoria: "Nómina", valor: 155000 },
   { date: "2026-05-14", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Jueves 14 may", categoria: "Nómina", valor: 155000 },
+  { date: "2026-05-14", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "2 Bases para mesas (Nequí)", categoria: "Activo fijo", valor: 390000 },
   { date: "2026-05-15", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Viernes 15 may", categoria: "Nómina", valor: 200000 },
   { date: "2026-05-16", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Sábado 16 may", categoria: "Nómina", valor: 220000 },
   { date: "2026-05-17", semana: 7, periodo: "Sem 3 may (11 - 17 may)", concepto: "Nómina Domingo 17 may", categoria: "Nómina", valor: 170000 },
@@ -3707,11 +3708,12 @@ function ResultadoReal({cuadres,gastos,gastosTransf}){
   const margenContrib=t.neto; // venta - p80 - gastos cuadre - nomina cuadre - cf
 
   // ─── Transferencias clasificadas ───
-  const grupos={reposicion:{total:0,cats:{}},consumido:{total:0,cats:{}},no_operativo:{total:0,cats:{}}};
+  const grupos={reposicion:{total:0,cats:{},items:[]},consumido:{total:0,cats:{},items:[]},no_operativo:{total:0,cats:{},items:[]}};
   gtm.forEach(g=>{
     const grp=clasificaGasto(g.categoria);
     grupos[grp].total+=g.valor||0;
     grupos[grp].cats[g.categoria]=(grupos[grp].cats[g.categoria]||0)+(g.valor||0);
+    grupos[grp].items.push(g);
   });
   const reposicion=grupos.reposicion.total;
   const consumido=grupos.consumido.total;
@@ -3778,14 +3780,32 @@ function ResultadoReal({cuadres,gastos,gastosTransf}){
             <Sec color={GRUPO_COLOR[g]}>{g==="reposicion"?"📦 ":g==="consumido"?"🔴 ":"⚪ "}{GRUPO_LABEL[g]}</Sec>
             <span style={{fontSize:20,fontWeight:800,color:GRUPO_COLOR[g],fontVariantNumeric:"tabular-nums"}}>{fmtF(grupos[g].total)}</span>
           </div>
-          {Object.entries(grupos[g].cats).sort((a,b)=>b[1]-a[1]).map(([cat,v])=>(
-            <div key={cat} style={{display:"flex",justifyContent:"space-between",padding:"6px 0",borderBottom:`1px solid ${C.bdr}`,fontSize:13}}>
-              <span style={{color:C.dim}}>{cat}</span>
-              <span style={{color:C.text,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(v)}</span>
-            </div>
-          ))}
+          {g==="no_operativo"?(
+            // Detalle ítem por ítem para No operativo (típicamente pocas entradas, c/u es relevante)
+            <>
+              <div style={{display:"grid",gridTemplateColumns:"70px 1fr auto",gap:10,fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:0.8,fontWeight:600,paddingBottom:6,borderBottom:`1px solid ${C.bdr}`}}>
+                <span>Fecha</span><span>Concepto</span><span style={{textAlign:"right"}}>Valor</span>
+              </div>
+              {grupos[g].items.slice().sort((a,b)=>a.date.localeCompare(b.date)).map((it,i)=>(
+                <div key={i} style={{display:"grid",gridTemplateColumns:"70px 1fr auto",gap:10,padding:"8px 0",borderBottom:`1px solid ${C.bdr}40`,fontSize:13,alignItems:"baseline"}}>
+                  <span style={{color:C.muted,fontVariantNumeric:"tabular-nums",fontSize:12}}>{fmtD(it.date).replace(" 2026","")}</span>
+                  <span style={{color:C.text}}>{it.concepto}<span style={{display:"block",fontSize:10,color:C.muted,marginTop:2,letterSpacing:0.3}}>{it.categoria}</span></span>
+                  <span style={{color:C.text,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(it.valor||0)}</span>
+                </div>
+              ))}
+            </>
+          ):(
+            // Desglose por categoría para Reposición y Consumido (muchas entradas, más útil agrupado)
+            Object.entries(grupos[g].cats).sort((a,b)=>b[1]-a[1]).map(([cat,v])=>(
+              <div key={cat} style={{display:"flex",justifyContent:"space-between",padding:"6px 0",borderBottom:`1px solid ${C.bdr}`,fontSize:13}}>
+                <span style={{color:C.dim}}>{cat}</span>
+                <span style={{color:C.text,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(v)}</span>
+              </div>
+            ))
+          )}
           {g==="reposicion"&&<div style={{fontSize:11.5,color:C.muted,marginTop:10,lineHeight:1.5}}>Compra de licor/cerveza/gaseosa que ingresa a bodega. Activo recuperable: se convierte en costo solo cuando se vende.</div>}
           {g==="consumido"&&<div style={{fontSize:11.5,color:C.muted,marginTop:10,lineHeight:1.5}}>Nómina, eventos, servicios, perecederos e insumos consumibles. Dinero que sale y no genera activo en bodega.</div>}
+          {g==="no_operativo"&&<div style={{fontSize:11.5,color:C.muted,marginTop:10,lineHeight:1.5}}>Préstamos, activos fijos (CAPEX) y movimientos que no son gasto operativo. Salidas de caja informativas, excluidas del resultado operativo del negocio.</div>}
         </Card>
       ))}
 
