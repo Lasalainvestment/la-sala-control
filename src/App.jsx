@@ -296,6 +296,13 @@ const PRELOADED_CUADRES = [
     efectivo: 8800, tarjeta: 1976000, otros_pago: 284600,
     pizza_80: 176320, gastos: 84600, nomina: 200000, costo_financiero: 98800,
     neto_sala: 1709680, faltante: 0,
+  },
+  {
+    date: "2026-05-22", venta_total: 5817800,
+    estanco: 3396000, cocteles: 917000, pizzeria: 1504800, otros_venta: 0,
+    efectivo: 449200, tarjeta: 4557600, otros_pago: 811000,
+    pizza_80: 1203840, gastos: 141000, nomina: 670000, costo_financiero: 227880,
+    neto_sala: 3575080, faltante: 0,
   }
 ];
 
@@ -808,6 +815,28 @@ const PRELOADED_COCINA = [
       { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
       { nombre: "ALITAS BBQ BUFFALO", cantidad: 3, valor: 95400 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+    ]
+  },
+  {
+    date: "2026-05-22", total: 1504800, total_units: 45,
+    productos: [
+      { nombre: "ADICION COMIDA", cantidad: 16, valor: 380000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 7, valor: 222600 },
+      { nombre: "PZ AB CARNES GR", cantidad: 2, valor: 134400 },
+      { nombre: "PZ CARNAVAL GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ MONTERREY GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ DE LA CASA MED", cantidad: 1, valor: 52800 },
+      { nombre: "LASAGNA MIXTA", cantidad: 3, valor: 131000 },
+      { nombre: "PZ MEXICANA PEQ", cantidad: 2, valor: 79200 },
+      { nombre: "PZ PTLN 3 INGR RG", cantidad: 1, valor: 42000 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 2, valor: 74000 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "PZ NAPOLITANA PQ", cantidad: 1, valor: 27600 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 3, valor: 33000 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "EMPAQUE", cantidad: 2, valor: 4000 },
     ]
   }
 ];
@@ -2823,7 +2852,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"LICOR DE MANZANA",saldo:11},
       {nombre:"LICOR DE MENTA",saldo:0},
       {nombre:"RED BULL",saldo:7},
-      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
       {nombre:"RON CALDAS MEDIA",saldo:1},
       {nombre:"RON DL",saldo:4},
       {nombre:"TEQUILA BOTELLA",saldo:2},
@@ -2841,6 +2870,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"WHISKEY COCTELERIA",saldo:0},
       {nombre:"OLD PARR BOTELLA",saldo:1},
       {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
+  },
+  {
+    date: "2026-05-22", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:1},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:31},
+      {nombre:"AGUA TONICA",saldo:13},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:20},
+      {nombre:"CERVEZA IMPORTADA",saldo:24},
+      {nombre:"CERVEZA NACIONAL",saldo:115},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:1},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:3},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:137},
+      {nombre:"GASEOSA 1.5",saldo:22},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:10},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:3},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:0},
+      {nombre:"TEQUILA ML",saldo:0},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:2},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0}
     ]
   }
 ];
@@ -3148,6 +3229,17 @@ const PRELOADED_GASTOS = [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
       { concepto: "Limones", categoria: "Insumos coctelería", valor: 79600 },
     ]
+  },
+  {
+    date: "2026-05-22", total: 141000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "5 Bolsas de Hielo", categoria: "Hielo", valor: 33500 },
+      { concepto: "1 Aceitunas + 2 Crema de Leche", categoria: "Insumos coctelería", valor: 47000 },
+      { concepto: "1 Inflador Bombas + 2 Bases Decoraciones", categoria: "Insumos varios", valor: 30500 },
+      { concepto: "Domicilios Jueves", categoria: "Domicilios", valor: 10000 },
+      { concepto: "Cigarrillos", categoria: "Insumos varios", valor: 10000 },
+    ]
   }
 ];
 
@@ -3170,7 +3262,7 @@ const CATALOG = {
   "CERVEZA NACIONAL": {categoria:"Cerveza",compra:3400,venta:9000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Promedio Club C.Dorada $3.500 / Poker $3.300"},
   "CHICLETS": {categoria:"Otros",compra:6000,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
   "CIGARRILLOS": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
-  "CREMA DE WHISKY": {categoria:"Licores/Cócteles",compra:27100,venta:0,fuente:"Compra: GIR-02abr | Venta: INSUMO",notas:"Crema/Wh Jumbo 750cc (Baileys $78.500 si premium)"},
+  "CREMA DE WHISKY": {categoria:"Licores/Cócteles",compra:27100,venta:0,fuente:"Compra: GIR-FDJC10282-22may | Venta: INSUMO",notas:"Crema/Wh Jumbo 750cc (precio real confirmado factura)"},
   "CURAZAO AZUL": {categoria:"Licores/Cócteles",compra:25000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo cóctel Blue Hawai/Burbujas Azules"},
   "DRY MARTINY": {categoria:"Licores/Cócteles",compra:67300,venta:0,fuente:"Compra: GIR-PD102560-17may | Venta: INSUMO",notas:"Martini Extra Dry 750cc (precio real)"},
   "ELECTROLIT": {categoria:"Bebidas no alcohólicas",compra:7200,venta:15000,fuente:"Compra: GIR-04abr | Venta: VERIFICAR",notas:"Suero Electrolit 625cc"},
@@ -3187,7 +3279,7 @@ const CATALOG = {
   "RON CALDAS BOTELLA": {categoria:"Ron",compra:59300,venta:110000,fuente:"Compra: GIR-FDJC9356-30abr | Venta: CARTA",notas:"Ron V.de Caldas 750cc (precio real confirmado)"},
   "RON CALDAS MEDIA": {categoria:"Ron",compra:30700,venta:80000,fuente:"Compra: GIR-FDJC9420-01may | Venta: CARTA",notas:"Ron V.de Caldas CAN 375cc (precio real confirmado)"},
   "RON DL": {categoria:"Ron",compra:20000,venta:20000,fuente:"Compra: INSUMO | Venta: CARTA",notas:"Trago doble Ron"},
-  "TEQUILA BOTELLA": {categoria:"Tequila",compra:73900,venta:195000,fuente:"Compra: GIR-FDJC9356-30abr | Venta: CARTA",notas:"José Cuervo Amar 750cc (confirmado factura)"},
+  "TEQUILA BOTELLA": {categoria:"Tequila",compra:77800,venta:195000,fuente:"Compra: GIR-FDJC10282-22may | Venta: CARTA",notas:"José Cuervo Amar 750cc $77.800 (var: Jimador $101.000, Olmeca $76.100 - mismo grupo)"},
   "TEQUILA LITRO": {categoria:"Tequila",compra:87900,venta:110000,fuente:"Compra: GIR-02abr | Venta: VERIFICAR",notas:"Tres Caballos Gold 1L"},
   "TEQUILA MEDIA": {categoria:"Tequila",compra:43950,venta:110000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada"},
   "TEQUILA ML": {categoria:"Tequila",compra:86000,venta:0,fuente:"Compra: INSUMO | Venta: INSUMO",notas:"Insumo cóctel"},
@@ -3330,6 +3422,21 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"", cant:3, base_und:8000, icl_und:0, vr_und:8000, vr_total:24000, observaciones:"Mango (3)" },
     { producto_jsx:"", cant:1, base_und:5000, icl_und:0, vr_und:5000, vr_total:5000, observaciones:"Domicilio" },
   ]},
+  // FDJC10282 · 2026-05-22 · vence 2026-06-21 · A Pagar $685.100 (crédito 30 días)
+  { fecha:"2026-05-22", factura:"FDJC10282", proveedor:"GIR (Licores Junior)", vence:"2026-06-21", a_pagar:685100, items:[
+    { producto_jsx:"CREMA DE WHISKY", cant:1, base_und:15999.05, icl_und:10301, vr_und:27100, vr_total:27100, observaciones:"CREMA/WH JUMBO BOT 750CC (Whisky Jumbo)" },
+    { producto_jsx:"OLD PARR BOTELLA", cant:1, base_und:90360.95, icl_und:41821, vr_und:136700, vr_total:136700, observaciones:"WHISKY OLD PARR 12AN BOT 750CC" },
+    { producto_jsx:"RON CALDAS BOTELLA", cant:1, base_und:35487.62, icl_und:22038, vr_und:59300, vr_total:59300, observaciones:"RON V.DE CALDAS BOT 750CC" },
+    { producto_jsx:"RON CALDAS MEDIA", cant:2, base_und:18743.81, icl_und:11019, vr_und:30700, vr_total:61400, observaciones:"RON V.DE CALDAS CAN 375CC" },
+    { producto_jsx:"TEQUILA BOTELLA", cant:1, base_und:45733.33, icl_und:29780, vr_und:77800, vr_total:77800, observaciones:"TEQUILA JOSE CUERVO AMAR BOT 750CC (precio actualizado $77.800 vs $73.900 ant.)" },
+    { producto_jsx:"TEQUILA BOTELLA", cant:1, base_und:67045.48, icl_und:30602.25, vr_und:101000, vr_total:101000, observaciones:"TEQUILA JIMADOR REPOSADO BOT 700CC (premium - tequila botella)" },
+    { producto_jsx:"TEQUILA BOTELLA", cant:2, base_und:46943.81, icl_und:26809, vr_und:76100, vr_total:152200, observaciones:"TEQUILA OLMECA REPOSADO BOT 700CC (premium - tequila botella)" },
+    { producto_jsx:"CERVEZA NACIONAL", cant:24, base_und:1961.01, icl_und:566.4, vr_und:2900, vr_total:69600, observaciones:"CERV POKER LAT 330CC (precio $2.900/lat, var. $3.300/lat FDJC10005)" },
+  ]},
+  // JR-CONTADO-22may · 2026-05-22 · Compra contado Licores Junior · A Pagar $663.000 (cancelada — pagada contado)
+  { fecha:"2026-05-22", factura:"JR-CONTADO-22may", proveedor:"GIR (Licores Junior)", vence:"2026-05-22", a_pagar:663000, items:[
+    { producto_jsx:"", cant:1, base_und:663000, icl_und:0, vr_und:663000, vr_total:663000, observaciones:"Compra de contado (sin detalle de productos provisto) — probablemente 6 tequilas botella adicionales (entradas inventario: 10 tequilas, 4 vienen de FDJC10282; 6 de esta compra)" },
+  ]},
 ];
 
 // ─── Cartera proveedor GIR (Giraldo's S.A.S.) — cuentas por pagar ───
@@ -3354,6 +3461,8 @@ const PRELOADED_CARTERA = [
   { proveedor:"Coca-Cola", factura:"CC-00001", fecha:"2026-05-20", vence:"2026-05-20", valor:153800, detalle:true, estado:"cancelada", nota:"Soporte de Entrega 00001. 1 caja Coca-Cola 350ML + 1 caja Schweppes Tónica + 1 caja Coca-Cola Zero. Pagada vía transferencia 21 may." },
   { proveedor:"D1", factura:"H7Z1136639", fecha:"2026-05-21", vence:"2026-05-21", valor:58350, detalle:true, estado:"cancelada", nota:"Factura electrónica D1. Insumos y licor (Jugo del Valle, Whisky Escocés, Gomas). Pagada en contado tarjeta." },
   { proveedor:"Proveedor Frutas", factura:"FRUTA-21may", fecha:"2026-05-21", vence:"2026-05-21", valor:153000, detalle:true, estado:"cancelada", nota:"Cuenta de cobro frutas/hierbas + domicilio. Pagada vía transferencia 21 may." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC10282", fecha:"2026-05-22", vence:"2026-06-21", valor:685100, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: Crema Whisky Jumbo, Old Parr, Ron Caldas (Bot+Can), 4 Tequilas botella (Cuervo+Jimador+2 Olmeca), 24 Poker." },
+  { proveedor:"GIR (Licores Junior)", factura:"JR-CONTADO-22may", fecha:"2026-05-22", vence:"2026-05-22", valor:663000, detalle:false, estado:"cancelada", nota:"Compra de contado. Pagada el mismo día (probablemente 6 tequilas botella adicionales — sin detalle de productos)." },
   { proveedor:"Bavaria", factura:"BAV-PICKING-01may", fecha:"2026-05-01", vence:"2026-05-01", valor:480400, detalle:true, estado:"cancelada", nota:"Lista Picking 01-may. Relacionada y cancelada vía transferencia ($480.400, 1 may)." },
 ];
 
@@ -3420,6 +3529,12 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Coca-Cola", categoria: "Bebidas/Licor", valor: 153800 },
   { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Coca-Cola (envases)", categoria: "Bebidas/Licor", valor: 4500 },
   { date: "2026-05-21", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Postobón", categoria: "Bebidas/Licor", valor: 89500 },
+  { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Marketing Digital Redes (Nequí)", categoria: "Servicios", valor: 300000 },
+  { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Show Mariachi Monterrey", categoria: "Eventos/Artistas", valor: 600000 },
+  { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Sillas Rimax (Bre-B MKT06)", categoria: "Activo fijo", valor: 440300 },
+  { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Limones (Nequí Renson Erazo)", categoria: "Insumos coctelería", valor: 110000 },
+  { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Seguridad Centinela", categoria: "Servicios", valor: 125000 },
+  { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Compra contado Licores Junior", categoria: "Bebidas/Licor", valor: 663000 },
 ];
 
 // ─── Storage ───
@@ -3443,11 +3558,11 @@ const PIE=[C.gold,C.cyan,C.orange,C.purple,C.pink,C.blue,C.green];
 // ─── Clasificación de gastos: activo recuperable vs consumido vs no operativo ───
 // (a) REPOSICIÓN INVENTARIO = stock embotellado que sigue en bodega (activo recuperable)
 // (b) CONSUMIDO = dinero que sale y no vuelve (nómina, eventos, servicios, perecederos)
-// (c) NO OPERATIVO = préstamos y movimientos que no son gasto del negocio
+// (c) NO OPERATIVO = préstamos, activos fijos/CAPEX y movimientos que no son gasto operativo
 const CAT_REPOSICION=new Set(["Bebidas/Licor","Bebidas","Compra Licores","Insumos bar","Bebidas no alcohólicas"]);
 const clasificaGasto=(categoria)=>{
   const cat=(categoria||"").trim();
-  if(/pr[eé]stamo|no operativo/i.test(cat)) return "no_operativo";
+  if(/pr[eé]stamo|no operativo|activo fijo|capex|mobiliario|inversi[oó]n/i.test(cat)) return "no_operativo";
   if(CAT_REPOSICION.has(cat)) return "reposicion";
   return "consumido";
 };
@@ -3464,7 +3579,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-21");
+  const [selDate,setSelDate]=useState("2026-05-22");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -4955,7 +5070,7 @@ function AnalisisCategoria({inventarios,cocina}){
 // ─── COMPRAS (módulo de facturas por proveedor) ───
 // ═════════════════════════════════════════════════════════════════
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-22";
+  const HOY="2026-05-23";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
