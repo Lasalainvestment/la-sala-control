@@ -310,6 +310,13 @@ const PRELOADED_CUADRES = [
     efectivo: 21800, tarjeta: 1797000, otros_pago: 624600,
     pizza_80: 880320, gastos: 364600, nomina: 260000, costo_financiero: 89850,
     neto_sala: 848630, faltante: 0,
+  },
+  {
+    date: "2026-05-24", venta_total: 196600,
+    estanco: 82000, cocteles: 40000, pizzeria: 74600, otros_venta: 0,
+    efectivo: 0, tarjeta: 196600, otros_pago: 0,
+    pizza_80: 59680, gastos: 0, nomina: 0, costo_financiero: 9830,
+    neto_sala: 127090, faltante: 0,
   }
 ];
 
@@ -871,6 +878,13 @@ const PRELOADED_COCINA = [
       { nombre: "PZ NAPOLITANA PQ", cantidad: 1, valor: 27600 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 2, valor: 22000 },
       { nombre: "EMPAQUE", cantidad: 2, valor: 4000 },
+    ]
+  },
+  {
+    date: "2026-05-24", total: 74600, total_units: 3,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
     ]
   }
 ];
@@ -3009,6 +3023,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:0}
     ]
+  },
+  {
+    date: "2026-05-24", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:29},
+      {nombre:"AGUA TONICA",saldo:13},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:19},
+      {nombre:"CERVEZA IMPORTADA",saldo:19},
+      {nombre:"CERVEZA NACIONAL",saldo:136},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:3},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:143},
+      {nombre:"GASEOSA 1.5",saldo:33},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:14},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:3},
+      {nombre:"RON DL",saldo:1},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:0},
+      {nombre:"TEQUILA ML",saldo:5},
+      {nombre:"TRIPLESEC",saldo:5},
+      {nombre:"VINO BOTELLA",saldo:0},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:2},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:0}
+    ]
   }
 ];
 
@@ -3674,6 +3740,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Limones (Nequí Renson Erazo)", categoria: "Insumos coctelería", valor: 110000 },
   { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Seguridad Centinela", categoria: "Servicios", valor: 125000 },
   { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Compra contado Licores Junior", categoria: "Bebidas/Licor", valor: 663000 },
+  { date: "2026-05-23", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "2 Bases para sonido exterior (Nequí Kevin Sebastián Medina)", categoria: "Activo fijo", valor: 110000 },
 ];
 
 // ─── Storage ───
@@ -3718,7 +3785,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-23");
+  const [selDate,setSelDate]=useState("2026-05-24");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -5228,7 +5295,7 @@ function AnalisisCategoria({inventarios,cocina}){
 // ─── COMPRAS (módulo de facturas por proveedor) ───
 // ═════════════════════════════════════════════════════════════════
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-24";
+  const HOY="2026-05-25";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
