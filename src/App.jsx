@@ -3637,8 +3637,9 @@ const PRELOADED_COMPRAS = [
   ]},
 ];
 
-// ─── Cartera proveedor GIR (Giraldo's S.A.S.) — cuentas por pagar ───
-// Base: estado de cuenta arcoerp al 02/05/2026 (Total Cartera $3.163.900) + FDJC10005 posterior.
+// ─── Cartera multi-proveedor — cuentas por pagar ───
+// Base: estado de cuenta arcoerp GIR al 02/05/2026 (Total Cartera $3.163.900) + facturas posteriores
+// de múltiples proveedores (GIR/Licores Junior, D1, Cervezas y Cervezas, Bavaria, Postobón, Frutas, etc.)
 // estado: "pendiente" | "cancelada". Juanma confirma cuáles ya canceladas al 18-05-2026.
 // detalle:true = factura con imagen procesada en PRELOADED_COMPRAS.
 const PRELOADED_CARTERA = [
@@ -5337,8 +5338,8 @@ function ComprasModule({compras,cartera}){
     {cart.length>0&&<>
       <Card accent={totalVenc>0?C.red:C.gold}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:10,flexWrap:"wrap"}}>
-          <div><Sec color={C.gold}>💳 Cuentas por pagar · GIR (Giraldo's S.A.S.)</Sec>
-            <div style={{fontSize:12,color:C.dim}}>Base: estado de cuenta al 02/05/2026 + facturas posteriores</div></div>
+          <div><Sec color={C.gold}>💳 Cuentas por pagar</Sec>
+            <div style={{fontSize:12,color:C.dim}}>{Array.from(new Set(cart.map(c=>c.proveedor))).length} proveedores · {cart.length} facturas registradas</div></div>
           <div style={{textAlign:"right"}}>
             <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Saldo pendiente</div>
             <div style={{fontSize:26,fontWeight:800,color:C.gold,marginTop:2,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalPend)}</div>
@@ -5362,43 +5363,75 @@ function ComprasModule({compras,cartera}){
           </div>
         </div>
         <div style={{marginTop:12,padding:"9px 12px",background:C.gold+"12",border:`1px solid ${C.gold}40`,borderRadius:9,fontSize:12,color:C.text,lineHeight:1.5}}>
-          Todas marcadas <b>pendiente</b> por defecto. Juanma: confirma cuáles ya están canceladas al 18-05-2026 y las muevo a "cancelada" para que el saldo sea exacto.
+          Cartera agrupada por proveedor abajo. Vencidas en rojo, próximas a vencer (≤7 días) en amarillo.
         </div>
       </Card>
 
       <Card>
-        <Sec>Detalle de cartera</Sec>
-        <div style={{overflowX:"auto"}}>
-          <table style={{width:"100%",borderCollapse:"collapse",fontSize:12.5}}>
-            <thead><tr style={{color:C.gold,textAlign:"left",borderBottom:`2px solid ${C.gold}40`}}>
-              <th style={{padding:"8px 6px"}}>Factura</th>
-              <th style={{padding:"8px 6px"}}>Emisión</th>
-              <th style={{padding:"8px 6px"}}>Vence</th>
-              <th style={{padding:"8px 6px",textAlign:"right"}}>Valor</th>
-              <th style={{padding:"8px 6px",textAlign:"center"}}>Días</th>
-              <th style={{padding:"8px 6px",textAlign:"center"}}>Detalle</th>
-              <th style={{padding:"8px 6px",textAlign:"center"}}>Estado</th>
-            </tr></thead>
-            <tbody>
-              {cart.slice().sort((a,b)=>a.vence.localeCompare(b.vence)).map((c,i)=>{
-                const d=dias(c.vence), venc=c.estado!=="cancelada"&&c.vence<HOY;
-                return(<tr key={i} style={{borderBottom:`1px solid ${C.bdr}40`,background:venc?C.red+"0d":"transparent"}}>
-                  <td style={{padding:"8px 6px",fontWeight:700,color:C.gold}}>{c.factura}</td>
-                  <td style={{padding:"8px 6px",color:C.dim}}>{fmtD(c.fecha).replace(" 2026","")}</td>
-                  <td style={{padding:"8px 6px",color:venc?C.red:C.text}}>{fmtD(c.vence).replace(" 2026","")}</td>
-                  <td style={{padding:"8px 6px",textAlign:"right",fontWeight:600,color:C.text,fontVariantNumeric:"tabular-nums"}}>{fmtF(c.valor)}</td>
-                  <td style={{padding:"8px 6px",textAlign:"center",color:c.estado==="cancelada"?C.muted:venc?C.red:d<=7?C.gold:C.muted,fontWeight:venc?700:500}}>{c.estado==="cancelada"?"—":venc?`${Math.abs(d)}d venc.`:`${d}d`}</td>
-                  <td style={{padding:"8px 6px",textAlign:"center"}}>{c.detalle?<span style={{color:C.green}}>✓</span>:<span style={{color:C.muted}}>—</span>}</td>
-                  <td style={{padding:"8px 6px",textAlign:"center"}}><span style={{fontSize:11,fontWeight:700,padding:"2px 8px",borderRadius:6,background:c.estado==="cancelada"?C.greenDim:venc?C.redDim:C.bdr,color:c.estado==="cancelada"?C.green:venc?C.red:C.dim}}>{c.estado==="cancelada"?"Cancelada":"Pendiente"}</span></td>
-                </tr>);
-              })}
-              <tr style={{borderTop:`2px solid ${C.gold}`,fontWeight:800,color:C.gold,background:C.gold+"10"}}>
-                <td style={{padding:"10px 6px"}} colSpan={3}>SALDO PENDIENTE ({pend.length} fact.)</td>
-                <td style={{padding:"10px 6px",textAlign:"right",fontVariantNumeric:"tabular-nums"}}>{fmtF(totalPend)}</td>
-                <td colSpan={3}></td>
-              </tr>
-            </tbody>
-          </table>
+        <Sec>Detalle de cartera por proveedor</Sec>
+        {(()=>{
+          // Agrupar cartera por proveedor
+          const porProv={};
+          cart.forEach(c=>{
+            const p=c.proveedor||"Sin proveedor";
+            if(!porProv[p]) porProv[p]={facturas:[],pend:0,canc:0,venc:0};
+            porProv[p].facturas.push(c);
+            if(c.estado==="cancelada") porProv[p].canc+=c.valor||0;
+            else{porProv[p].pend+=c.valor||0; if(c.vence<HOY) porProv[p].venc+=c.valor||0;}
+          });
+          // Ordenar proveedores: primero los que tienen pendiente, mayor primero
+          const sortedProvs=Object.entries(porProv).sort((a,b)=>(b[1].pend-a[1].pend)||(b[1].canc-a[1].canc));
+          return sortedProvs.map(([prov,data])=>(
+            <div key={prov} style={{marginBottom:18,background:C.bg,borderRadius:10,padding:"12px 14px",border:`1px solid ${data.venc>0?C.redDim:C.bdr}`}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:10,flexWrap:"wrap",gap:8}}>
+                <div>
+                  <div style={{fontSize:15,fontWeight:700,color:C.text}}>{prov}</div>
+                  <div style={{fontSize:11,color:C.muted,marginTop:1}}>{data.facturas.length} factura{data.facturas.length===1?"":"s"}</div>
+                </div>
+                <div style={{display:"flex",gap:14,fontSize:12,alignItems:"baseline"}}>
+                  {data.pend>0&&<div style={{textAlign:"right"}}>
+                    <div style={{fontSize:9,color:C.dim,textTransform:"uppercase",letterSpacing:1,fontWeight:700}}>Pendiente</div>
+                    <div style={{fontSize:15,fontWeight:800,color:data.venc>0?C.red:C.gold,fontVariantNumeric:"tabular-nums"}}>{fmtF(data.pend)}</div>
+                  </div>}
+                  {data.canc>0&&<div style={{textAlign:"right"}}>
+                    <div style={{fontSize:9,color:C.dim,textTransform:"uppercase",letterSpacing:1,fontWeight:700}}>Cancelado</div>
+                    <div style={{fontSize:15,fontWeight:800,color:C.green,fontVariantNumeric:"tabular-nums"}}>{fmtF(data.canc)}</div>
+                  </div>}
+                </div>
+              </div>
+              <div style={{overflowX:"auto"}}>
+                <table style={{width:"100%",borderCollapse:"collapse",fontSize:12.5}}>
+                  <thead><tr style={{color:C.gold,textAlign:"left",borderBottom:`1px solid ${C.gold}40`}}>
+                    <th style={{padding:"6px 6px"}}>Factura</th>
+                    <th style={{padding:"6px 6px"}}>Emisión</th>
+                    <th style={{padding:"6px 6px"}}>Vence</th>
+                    <th style={{padding:"6px 6px",textAlign:"right"}}>Valor</th>
+                    <th style={{padding:"6px 6px",textAlign:"center"}}>Días</th>
+                    <th style={{padding:"6px 6px",textAlign:"center"}}>Detalle</th>
+                    <th style={{padding:"6px 6px",textAlign:"center"}}>Estado</th>
+                  </tr></thead>
+                  <tbody>
+                    {data.facturas.slice().sort((a,b)=>a.fecha.localeCompare(b.fecha)).map((c,i)=>{
+                      const d=dias(c.vence), venc=c.estado!=="cancelada"&&c.vence<HOY;
+                      return(<tr key={i} style={{borderBottom:`1px solid ${C.bdr}40`,background:venc?C.red+"0d":"transparent"}}>
+                        <td style={{padding:"7px 6px",fontWeight:700,color:C.gold,fontSize:12}}>{c.factura}</td>
+                        <td style={{padding:"7px 6px",color:C.dim}}>{fmtD(c.fecha).replace(" 2026","")}</td>
+                        <td style={{padding:"7px 6px",color:venc?C.red:C.text}}>{fmtD(c.vence).replace(" 2026","")}</td>
+                        <td style={{padding:"7px 6px",textAlign:"right",fontWeight:600,color:C.text,fontVariantNumeric:"tabular-nums"}}>{fmtF(c.valor)}</td>
+                        <td style={{padding:"7px 6px",textAlign:"center",color:c.estado==="cancelada"?C.muted:venc?C.red:d<=7?C.gold:C.muted,fontWeight:venc?700:500}}>{c.estado==="cancelada"?"—":venc?`${Math.abs(d)}d venc.`:`${d}d`}</td>
+                        <td style={{padding:"7px 6px",textAlign:"center"}}>{c.detalle?<span style={{color:C.green}}>✓</span>:<span style={{color:C.muted}}>—</span>}</td>
+                        <td style={{padding:"7px 6px",textAlign:"center"}}><span style={{fontSize:11,fontWeight:700,padding:"2px 8px",borderRadius:6,background:c.estado==="cancelada"?C.greenDim:venc?C.redDim:C.bdr,color:c.estado==="cancelada"?C.green:venc?C.red:C.dim}}>{c.estado==="cancelada"?"Cancelada":"Pendiente"}</span></td>
+                      </tr>);
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ));
+        })()}
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",padding:"12px 14px",background:C.gold+"10",borderRadius:10,border:`2px solid ${C.gold}`,fontWeight:800,color:C.gold,fontSize:14,marginTop:6}}>
+          <span>SALDO PENDIENTE TOTAL ({pend.length} factura{pend.length===1?"":"s"})</span>
+          <span style={{fontSize:18,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalPend)}</span>
         </div>
       </Card>
     </>}
