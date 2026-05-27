@@ -324,6 +324,13 @@ const PRELOADED_CUADRES = [
     efectivo: 24000, tarjeta: 352000, otros_pago: 10000,
     pizza_80: 43200, gastos: 10000, nomina: 0, costo_financiero: 17600,
     neto_sala: 315200, faltante: 0,
+  },
+  {
+    date: "2026-05-26", venta_total: 186000,
+    estanco: 110000, cocteles: 76000, pizzeria: 0, otros_venta: 0,
+    efectivo: 1000, tarjeta: 0, otros_pago: 185000,
+    pizza_80: 0, gastos: 0, nomina: 185000, costo_financiero: 0,
+    neto_sala: 1000, faltante: 0,
   }
 ];
 
@@ -899,19 +906,24 @@ const PRELOADED_COCINA = [
     productos: [
       { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
     ]
+  },
+  {
+    date: "2026-05-26", total: 0, total_units: 0,
+    productos: []
   }
 ];
 
 // ─── Reporte diario de Bar/Coctelería (nuevo desde 25 may 2026) ───
 // Productos vendidos en el área de bar, separados en estanco (botellas/sueltos) y cocteles (preparados)
 // Cada item tiene precio_unit (PVP) y total para validar con el cuadre. Margen se calcula desde CATALOG cuando hay costo.
+// PROMO FIJA: martes y miércoles toda coctelería al 2x1 (se cobran 2 cócteles por cada 4 vendidos, etc.)
 const PRELOADED_BAR = [
   {
     date: "2026-05-25", total_estanco: 46000, total_cocteles: 286000, total: 332000, total_units: 21,
     estanco: [
-      { nombre: "CAJA DE VINO", cantidad: 1, precio_unit: 0, total: 0, nota: "Pendiente confirmar PVP (parece insumo interno)" },
+      { nombre: "CAJA DE VINO", cantidad: 1, precio_unit: 0, total: 0, nota: "PVP pendiente confirmar (posible cortesía/insumo)" },
       { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000 },
-      { nombre: "GASEOSA", cantidad: 4, precio_unit: 0, total: 0, nota: "Pendiente confirmar PVP (parece usado como mezclador)" },
+      { nombre: "GASEOSA", cantidad: 4, precio_unit: 0, total: 0, nota: "Mezclador (no se cobra) - confirmado 27 may" },
     ],
     cocteles: [
       { nombre: "COPA DE VINO", cantidad: 4, precio_unit: 25000, total: 100000 },
@@ -921,7 +933,22 @@ const PRELOADED_BAR = [
       { nombre: "K MARTINI CHOCOLATE", cantidad: 1, precio_unit: 36000, total: 36000 },
       { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000 },
       { nombre: "TRAGO DOBLE WHISKYE", cantidad: 1, precio_unit: 25000, total: 25000 },
-    ]
+    ],
+    nota: "Estanco $46k: 5 cerveza nacional = $45k. CAJA DE VINO y GASEOSA $0. $1k restante posible cerveza importada parcial o ajuste menor (pendiente revisar)."
+  },
+  {
+    date: "2026-05-26", total_estanco: 110000, total_cocteles: 76000, total: 186000, total_units: 14,
+    estanco: [
+      { nombre: "AGUA", cantidad: 1, precio_unit: 6000, total: 6000 },
+      { nombre: "CERVEZA NACIONAL", cantidad: 2, precio_unit: 9000, total: 18000 },
+      { nombre: "GASEOSA", cantidad: 4, precio_unit: 6000, total: 24000, nota: "Martes 26 sí cobradas a $6k (no como mezclador)" },
+      { nombre: "VINO BOTELLA", cantidad: 1, precio_unit: 62000, total: 62000, nota: "PVP confirmado 27 may" },
+    ],
+    cocteles: [
+      { nombre: "K MOJITO MIX", cantidad: 4, precio_unit: 36000, total: 72000, nota: "Promo 2x1 martes/miércoles: 4 vendidos, 2 cobrados a $36k" },
+      { nombre: "LIMONADA NATURAL", cantidad: 2, precio_unit: 4000, total: 4000, nota: "Promo 2x1 martes/miércoles: 2 vendidas, 1 cobrada a $4k (precio especial)" },
+    ],
+    nota: "Promo 2x1 fija martes/miércoles en coctelería. Cuadre: Estanco $110k + Cócteles $76k = $186k. Pago: Efectivo $1k + Nómina Manuel $185k. Faltante $0. Sin pizza, sin gastos."
   }
 ];
 
@@ -3111,6 +3138,128 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:0}
     ]
+  },
+  {
+    // Reconstruido desde foto FINAL lunes 25 may (autoritativo) + foto INICIAL martes 26 may (confirmación cruzada).
+    // Movimientos lunes 25:
+    //   CAJA DE VINO: Sal=1 → 1 (consumo bar 25)
+    //   CERVEZA NACIONAL: Ent=2, Sal=5 → 131 (5 vendidas estanco bar 25; 2 reposición interna)
+    //   GASEOSA: Sal=4 → 139 (4 mezcladores, no cobradas)
+    //   RON DL: Ent=5 → 6 (reposición interna no registrada en compras del día)
+    //   VODKA DL: Ent=5 → 7 (reposición interna no registrada)
+    //   TRIPLE SEC: sin movimiento → sigue en 5 (NO se usaron en cócteles 25)
+    //   CIGARRILLOS: sin movimiento → sigue en 0
+    date: "2026-05-25", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:29},
+      {nombre:"AGUA TONICA",saldo:13},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:19},
+      {nombre:"CERVEZA IMPORTADA",saldo:19},
+      {nombre:"CERVEZA NACIONAL",saldo:131},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:3},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:139},
+      {nombre:"GASEOSA 1.5",saldo:33},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:14},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:3},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:0},
+      {nombre:"TEQUILA ML",saldo:5},
+      {nombre:"TRIPLESEC",saldo:5},
+      {nombre:"VINO BOTELLA",saldo:0},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:0}
+    ]
+  },
+  {
+    // Foto FINAL martes 26 may (validada contra foto INICIAL 26 = FINAL 25).
+    // Salidas únicas el martes 26 (Sal columna foto):
+    //   AGUA: Sal=1 → 28
+    //   CERVEZA NACIONAL: Sal=2 → 129
+    //   GASEOSA: Sal=4 → 135
+    //   VINO BOTELLA: Sal=1 → -1 (vendieron 1 sin stock - faltante a reponer)
+    // TODO LO DEMÁS sin movimiento (TRIPLE SEC=5, CIGARRILLOS=0, VODKA DL=7, etc.)
+    // Cuadra con reporte BAR: 1 AGUA, 2 CERV NAC, 4 GASEOSA, 1 VINO BOT, 4 K MOJITO MIX, 2 LIMONADA NAT.
+    // (Mojitos no usan Triple Sec; usan menta+limón+ron+soda+azúcar)
+    date: "2026-05-26", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:28},
+      {nombre:"AGUA TONICA",saldo:13},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:19},
+      {nombre:"CERVEZA IMPORTADA",saldo:19},
+      {nombre:"CERVEZA NACIONAL",saldo:129},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:3},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:135},
+      {nombre:"GASEOSA 1.5",saldo:33},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:14},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:3},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:0},
+      {nombre:"TEQUILA ML",saldo:5},
+      {nombre:"TRIPLESEC",saldo:5},
+      {nombre:"VINO BOTELLA",saldo:-1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:0}
+    ]
   }
 ];
 
@@ -3531,6 +3680,14 @@ const PRELOADED_COMPRAS = [
   { fecha:"2026-04-02", factura:"FDJC8447", proveedor:"GIR (Licores Junior)", vence:"2026-05-02", a_pagar:167000, items:[
     { producto_jsx:"BALLANTINES COCTELERIA", cant:2, base_und:47252.38, icl_und:33885, vr_und:83500, vr_total:167000, observaciones:"WHISKY BALLANT FINEST 1LIT · Nota: ya llevo" },
   ]},
+  // FDJC8961 · 2026-04-18 · vence 2026-05-18 · A Pagar $340.900 (CANCELADA 26 may pago combinado Davivienda $1.348.500)
+  { fecha:"2026-04-18", factura:"FDJC8961", proveedor:"GIR (Licores Junior)", vence:"2026-05-18", a_pagar:340900, items:[
+    { producto_jsx:"VINO BOTELLA", cant:2, base_und:25836.19, icl_und:9772, vr_und:36900, vr_total:73800, observaciones:"VINO GATO NEGRO CAB/SUAV BOT 750CC" },
+    { producto_jsx:"OLD PARR MEDIA", cant:1, base_und:69257.14, icl_und:27080, vr_und:99800, vr_total:99800, observaciones:"WHISKY OLD PARR 12AN UND 500CC" },
+    { producto_jsx:"CREMA DE WHISKY", cant:1, base_und:55399.05, icl_und:20331, vr_und:78500, vr_total:78500, observaciones:"CREMA/WH BAILEYS BOT 700CC (insumo coctelería premium)" },
+    { producto_jsx:"AGUA", cant:24, base_und:1300, icl_und:0, vr_und:1300, vr_total:31200, observaciones:"AGUA CRISTAL NORMAL UND 600CC" },
+    { producto_jsx:"GASEOSA", cant:24, base_und:2400, icl_und:0, vr_und:2400, vr_total:57600, observaciones:"GASEO POSTOBON NR SODA 10OZ" },
+  ]},
   // FDJC9133 · 2026-04-24 · vence 2026-05-24 · A Pagar $484.500 (valor confirmado por usuario)
   { fecha:"2026-04-24", factura:"FDJC9133", proveedor:"GIR (Licores Junior)", vence:"2026-05-24", a_pagar:485500, items:[
     { producto_jsx:"HIELO", cant:10, base_und:4600, icl_und:0, vr_und:4600, vr_total:46000, observaciones:"HIELO KOLBITOS 3KG" },
@@ -3631,19 +3788,19 @@ const PRELOADED_COMPRAS = [
   ]},
   // FDJC010193 · 2026-05-21 · vence 2026-06-20 · A Pagar $169.700 (crédito 30 días) — Nota PDF: "La sala, ya llevo"
   { fecha:"2026-05-21", factura:"FDJC010193", proveedor:"GIR (Licores Junior)", vence:"2026-06-20", a_pagar:169700, items:[
-    { producto_jsx:"", cant:1, base_und:169700, icl_und:0, vr_und:169700, vr_total:169700, observaciones:"Detalle de items pendiente. Valor confirmado en cartera GIR PDF al 25/05/26 (Nota: La sala, ya llevo)." },
+    { producto_jsx:"TEQUILA BOTELLA", cant:2, base_und:55277.14, icl_und:26809, vr_und:84850, vr_total:169700, observaciones:"TEQUILA OLMECA REPOSADO BOT 700CC (premium). Nota factura: La sala, ya llevo." },
   ]},
   // FDJC010200 · 2026-05-21 · vence 2026-06-20 · A Pagar $169.700 (crédito 30 días)
   { fecha:"2026-05-21", factura:"FDJC010200", proveedor:"GIR (Licores Junior)", vence:"2026-06-20", a_pagar:169700, items:[
-    { producto_jsx:"", cant:1, base_und:169700, icl_und:0, vr_und:169700, vr_total:169700, observaciones:"Detalle de items pendiente. Valor confirmado en cartera GIR PDF al 25/05/26." },
+    { producto_jsx:"TEQUILA BOTELLA", cant:2, base_und:55277.14, icl_und:26809, vr_und:84850, vr_total:169700, observaciones:"TEQUILA OLMECA REPOSADO BOT 700CC (premium - misma referencia que FDJC010193 y FDJC10220, mismo día)" },
   ]},
   // FDJC10220 · 2026-05-21 · vence 2026-06-20 · A Pagar $169.700 (crédito 30 días)
   { fecha:"2026-05-21", factura:"FDJC10220", proveedor:"GIR (Licores Junior)", vence:"2026-06-20", a_pagar:169700, items:[
-    { producto_jsx:"TEQUILA BOTELLA", cant:2, base_und:55277.14, icl_und:26809, vr_und:84850, vr_total:169700, observaciones:"TEQUILA OLMECA REPOSADO BOT 700CC (premium - tequila botella; precio variable: $76.100 en FDJC10282 vs $84.850 en FDJC10220)" },
+    { producto_jsx:"TEQUILA BOTELLA", cant:2, base_und:55277.14, icl_und:26809, vr_und:84850, vr_total:169700, observaciones:"TEQUILA OLMECA REPOSADO BOT 700CC (premium - tequila botella; precio variable: $76.100 en FDJC10282 vs $84.850 en FDJC10220/10193/10200)" },
   ]},
   // FDJC010234 · 2026-05-22 · vence 2026-06-21 · A Pagar $53.000 (crédito 30 días) — Nota PDF: "la sala ya llevo"
   { fecha:"2026-05-22", factura:"FDJC010234", proveedor:"GIR (Licores Junior)", vence:"2026-06-21", a_pagar:53000, items:[
-    { producto_jsx:"", cant:1, base_und:53000, icl_und:0, vr_und:53000, vr_total:53000, observaciones:"Detalle de items pendiente. Valor confirmado en cartera GIR PDF al 25/05/26 (Nota: la sala ya llevo)." },
+    { producto_jsx:"AGT MEDIA ANQUEÑ", cant:2, base_und:16271.43, icl_und:9415, vr_und:26500, vr_total:53000, observaciones:"AGUARD ANTIOQUEÑO S/AZ 29° TAPA AZUL 375CC CAN. Nota factura: la sala ya llevo." },
   ]},
   // FDJC10282 · 2026-05-22 · vence 2026-06-21 · A Pagar $685.100 (crédito 30 días)
   { fecha:"2026-05-22", factura:"FDJC10282", proveedor:"GIR (Licores Junior)", vence:"2026-06-21", a_pagar:685100, items:[
@@ -3703,7 +3860,7 @@ const PRELOADED_CARTERA = [
   { proveedor:"GIR (Licores Junior)", factura:"FDJC008445", fecha:"2026-04-02", vence:"2026-05-02", valor:296100, detalle:false, estado:"cancelada", nota:"Sin imagen detallada." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC8447", fecha:"2026-04-02", vence:"2026-05-02", valor:167000, detalle:true, estado:"cancelada", nota:"Detalle cargado (Ballantine's Finest x2). Nota factura: ya llevo." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC008491", fecha:"2026-04-04", vence:"2026-05-04", valor:84800, detalle:false, estado:"cancelada", nota:"Sin imagen detallada." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC008961", fecha:"2026-04-18", vence:"2026-05-18", valor:340900, detalle:false, estado:"cancelada", nota:"Sin detalle de items. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500: FDJC008961+9133+9356). En PDF cartera al 25/05/26 figuraba pendiente." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC008961", fecha:"2026-04-18", vence:"2026-05-18", valor:340900, detalle:true, estado:"cancelada", nota:"Crédito 30 días. Detalle: 2 Vino Gato Negro, 1 Old Parr 500cc, 1 Baileys 700cc, 24 Agua Cristal 600cc, 24 Postobón Soda. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500: FDJC008961+9133+9356)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9133", fecha:"2026-04-24", vence:"2026-05-24", valor:485500, detalle:true, estado:"cancelada", nota:"Crédito 30 días. Detalle: 10 Hielo, 48 Postobón Soda, 2 Aguard Caucano, 2 Jugo del Valle 1.5L, 1 Whisky Passport, 1 Licor Menta, 1 Licor Café, 5 Schweppes Tónica, 2 Vino Cata Tint. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9356", fecha:"2026-04-30", vence:"2026-05-30", valor:522500, detalle:true, estado:"cancelada", nota:"Crédito 30 días. Detalle: 12 Coca-Cola 1.5L, 4 Aguard Antioqueño, 3 Aguard Caucano Can, 2 Ron V.Caldas, 1 Tequila Cuervo, 2 Jugo del Valle 1.5L + ajuste +$400. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9405", fecha:"2026-05-01", vence:"2026-05-31", valor:194300, detalle:true, estado:"pendiente", nota:"Detalle cargado (2 ítems). Nota factura: La Sala ya llevo." },
@@ -3715,10 +3872,10 @@ const PRELOADED_CARTERA = [
   { proveedor:"Coca-Cola", factura:"CC-00001", fecha:"2026-05-20", vence:"2026-05-20", valor:153800, detalle:true, estado:"cancelada", nota:"Soporte de Entrega 00001. 1 caja Coca-Cola 350ML + 1 caja Schweppes Tónica + 1 caja Coca-Cola Zero. Pagada vía transferencia 21 may." },
   { proveedor:"D1", factura:"H7Z1136639", fecha:"2026-05-21", vence:"2026-05-21", valor:58350, detalle:true, estado:"cancelada", nota:"Factura electrónica D1. Insumos y licor (Jugo del Valle, Whisky Escocés, Gomas). Pagada en contado tarjeta." },
   { proveedor:"Proveedor Frutas", factura:"FRUTA-21may", fecha:"2026-05-21", vence:"2026-05-21", valor:153000, detalle:true, estado:"cancelada", nota:"Cuenta de cobro frutas/hierbas + domicilio. Pagada vía transferencia 21 may." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC010193", fecha:"2026-05-21", vence:"2026-06-20", valor:169700, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle items pendiente. Confirmado en cartera GIR PDF al 25/05/26 (Nota: La sala, ya llevo)." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC010200", fecha:"2026-05-21", vence:"2026-06-20", valor:169700, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle items pendiente. Confirmado en cartera GIR PDF al 25/05/26." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC010193", fecha:"2026-05-21", vence:"2026-06-20", valor:169700, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: 2 Tequila Olmeca Reposado 700cc. Nota factura: La sala, ya llevo." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC010200", fecha:"2026-05-21", vence:"2026-06-20", valor:169700, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: 2 Tequila Olmeca Reposado 700cc (misma ref. FDJC010193/10220 mismo día)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10220", fecha:"2026-05-21", vence:"2026-06-20", valor:169700, detalle:true, estado:"pendiente", nota:"Crédito 30 días. 2 Tequila Olmeca Reposado 700CC a $84.850 c/u (precio variable: $76.100 en FDJC10282)." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC010234", fecha:"2026-05-22", vence:"2026-06-21", valor:53000, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle items pendiente. Confirmado en cartera GIR PDF al 25/05/26 (Nota: la sala ya llevo)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC010234", fecha:"2026-05-22", vence:"2026-06-21", valor:53000, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: 2 Aguardiente Antioqueño S/AZ 29° Tapa Azul 375cc CAN. Nota factura: la sala ya llevo." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10282", fecha:"2026-05-22", vence:"2026-06-21", valor:685100, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: Crema Whisky Jumbo, Old Parr, Ron Caldas (Bot+Can), 4 Tequilas botella (Cuervo+Jimador+2 Olmeca), 24 Poker." },
   { proveedor:"GIR (Licores Junior)", factura:"JR-CONTADO-22may", fecha:"2026-05-22", vence:"2026-05-22", valor:663000, detalle:false, estado:"cancelada", nota:"Compra de contado. Pagada el mismo día (probablemente 6 tequilas botella adicionales — sin detalle de productos)." },
   { proveedor:"Cervezas y Cervezas Ltda", factura:"CYC-POE52876", fecha:"2026-05-23", vence:"2026-05-23", valor:166300, detalle:true, estado:"cancelada", nota:"Factura POE52876. 1 caja Poker + 1 caja Club Colombia Dorada + domicilio $15.000. Pagada contado efectivo." },
@@ -3848,7 +4005,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-25");
+  const [selDate,setSelDate]=useState("2026-05-26");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -5735,7 +5892,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-26";
+  const HOY="2026-05-27";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
