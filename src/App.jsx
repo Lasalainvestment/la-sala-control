@@ -317,6 +317,13 @@ const PRELOADED_CUADRES = [
     efectivo: 0, tarjeta: 196600, otros_pago: 0,
     pizza_80: 59680, gastos: 0, nomina: 0, costo_financiero: 9830,
     neto_sala: 127090, faltante: 0,
+  },
+  {
+    date: "2026-05-25", venta_total: 386000,
+    estanco: 46000, cocteles: 286000, pizzeria: 54000, otros_venta: 0,
+    efectivo: 24000, tarjeta: 352000, otros_pago: 10000,
+    pizza_80: 43200, gastos: 10000, nomina: 0, costo_financiero: 17600,
+    neto_sala: 315200, faltante: 0,
   }
 ];
 
@@ -885,6 +892,35 @@ const PRELOADED_COCINA = [
     productos: [
       { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+    ]
+  },
+  {
+    date: "2026-05-25", total: 54000, total_units: 1,
+    productos: [
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+    ]
+  }
+];
+
+// ─── Reporte diario de Bar/Coctelería (nuevo desde 25 may 2026) ───
+// Productos vendidos en el área de bar, separados en estanco (botellas/sueltos) y cocteles (preparados)
+// Cada item tiene precio_unit (PVP) y total para validar con el cuadre. Margen se calcula desde CATALOG cuando hay costo.
+const PRELOADED_BAR = [
+  {
+    date: "2026-05-25", total_estanco: 46000, total_cocteles: 286000, total: 332000, total_units: 21,
+    estanco: [
+      { nombre: "CAJA DE VINO", cantidad: 1, precio_unit: 0, total: 0, nota: "Pendiente confirmar PVP (parece insumo interno)" },
+      { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000 },
+      { nombre: "GASEOSA", cantidad: 4, precio_unit: 0, total: 0, nota: "Pendiente confirmar PVP (parece usado como mezclador)" },
+    ],
+    cocteles: [
+      { nombre: "COPA DE VINO", cantidad: 4, precio_unit: 25000, total: 100000 },
+      { nombre: "LIMONADA DE VINO", cantidad: 2, precio_unit: 18000, total: 36000 },
+      { nombre: "K ALEXANDER", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MARGARITA MIX", cantidad: 1, precio_unit: 38000, total: 38000 },
+      { nombre: "K MARTINI CHOCOLATE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000 },
+      { nombre: "TRAGO DOBLE WHISKYE", cantidad: 1, precio_unit: 25000, total: 25000 },
     ]
   }
 ];
@@ -3404,6 +3440,12 @@ const PRELOADED_GASTOS = [
       { concepto: "5 Azúcar Blanca (D1)", categoria: "Insumos coctelería", valor: 17250 },
       { concepto: "1 Coco Rayado", categoria: "Insumos coctelería", valor: 64000 },
     ]
+  },
+  {
+    date: "2026-05-25", total: 10000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+    ]
   }
 ];
 
@@ -3418,7 +3460,7 @@ const CATALOG = {
   "AGT MEDIA CAUCA": {categoria:"Aguardiente",compra:22800,venta:60000,fuente:"Compra: GIR-FDJC9356-30abr | Venta: CARTA",notas:"Caucano Trad CAN 375cc (confirmado factura)"},
   "AGUA": {categoria:"Bebidas no alcohólicas",compra:1300,venta:6000,fuente:"Compra: GIR-18abr | Venta: CARTA",notas:"Cristal 600cc"},
   "AGUA TONICA": {categoria:"Bebidas no alcohólicas",compra:2300,venta:6000,fuente:"Compra: GIR-FDJC9133-24abr | Venta: CARTA",notas:"Schweppes Tónica NR 300cc (confirmado factura)"},
-  "AMARETTO": {categoria:"Licores/Cócteles",compra:49900,venta:0,fuente:"Compra: GIR-PD102560-17may | Venta: INSUMO",notas:"Tres Plumas Amareto 700cc (precio real)"},
+  "AMARETTO": {categoria:"Licores/Cócteles",compra:49900,venta:0,fuente:"Compra: GIR-FDJC010090-17may | Venta: INSUMO",notas:"Tres Plumas Amareto 700cc (precio real)"},
   "CACHAZA": {categoria:"Licores/Cócteles",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo Caipirinha"},
   "CAJA DE VINO": {categoria:"Vino",compra:20650,venta:0,fuente:"Compra: GIR-FDJC9133-24abr | Venta: VERIFICAR",notas:"Vino Cata Tint T/Pack 1L (confirmado factura)"},
   "CERVEZA CORONA": {categoria:"Cerveza",compra:3800,venta:13000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Corona Bot 330cc (precio real)"},
@@ -3428,7 +3470,7 @@ const CATALOG = {
   "CIGARRILLOS": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
   "CREMA DE WHISKY": {categoria:"Licores/Cócteles",compra:27100,venta:0,fuente:"Compra: GIR-FDJC10282-22may | Venta: INSUMO",notas:"Crema/Wh Jumbo 750cc (precio real confirmado factura)"},
   "CURAZAO AZUL": {categoria:"Licores/Cócteles",compra:25000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo cóctel Blue Hawai/Burbujas Azules"},
-  "DRY MARTINY": {categoria:"Licores/Cócteles",compra:67300,venta:0,fuente:"Compra: GIR-PD102560-17may | Venta: INSUMO",notas:"Martini Extra Dry 750cc (precio real)"},
+  "DRY MARTINY": {categoria:"Licores/Cócteles",compra:67300,venta:0,fuente:"Compra: GIR-FDJC010090-17may | Venta: INSUMO",notas:"Martini Extra Dry 750cc (precio real)"},
   "ELECTROLIT": {categoria:"Bebidas no alcohólicas",compra:7200,venta:15000,fuente:"Compra: GIR-04abr | Venta: VERIFICAR",notas:"Suero Electrolit 625cc"},
   "ENCENDEDOR": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
   "GASEOSA": {categoria:"Bebidas no alcohólicas",compra:2400,venta:6000,fuente:"Compra: GIR-FDJC9133-24abr | Venta: CARTA",notas:"Postobón NR Soda 10oz (confirmado factura)"},
@@ -3462,7 +3504,7 @@ const CATALOG = {
   "CREMA DE LECHE": {categoria:"Otros",compra:19500,venta:0,fuente:"Compra: REY-10864-19may | Venta: INSUMO",notas:"El Rey - insumo coctelería"},
   "PAQUETE DE MENTAS": {categoria:"Otros",compra:30000,venta:0,fuente:"Compra: REY-10864-19may | Venta: INSUMO",notas:"El Rey - insumo coctelería"},
   "GOTAS AMARGAS": {categoria:"Licores/Cócteles",compra:8000,venta:0,fuente:"Compra: REY-10864-19may | Venta: INSUMO",notas:"El Rey - bitter coctelería (tipo Angostura)"},
-  "VODKA TAMARINDO": {categoria:"Vodka",compra:45400,venta:0,fuente:"Compra: GIR-PD102247-14may | Venta: INSUMO",notas:"Smirnoff Tamarindo Picante 750cc - insumo coctelería"},
+  "VODKA TAMARINDO": {categoria:"Vodka",compra:45400,venta:0,fuente:"Compra: GIR-FDJC009970-15may | Venta: INSUMO",notas:"Smirnoff Tamarindo Picante 750cc - insumo coctelería"},
   "OLD PARR BOTELLA": {categoria:"Whisky",compra:136700,venta:300000,fuente:"Compra: GIR-FDJC9420-01may | Venta: CARTA",notas:"Old Parr 12AN 750cc (precio real confirmado)"},
   "OLD PARR MEDIA": {categoria:"Whisky",compra:99800,venta:220000,fuente:"Compra: GIR-FDJC10005-15may | Venta: CARTA",notas:"Old Parr 12AN 500cc (confirmado factura)"},
 };
@@ -3489,7 +3531,7 @@ const PRELOADED_COMPRAS = [
   { fecha:"2026-04-02", factura:"FDJC8447", proveedor:"GIR (Licores Junior)", vence:"2026-05-02", a_pagar:167000, items:[
     { producto_jsx:"BALLANTINES COCTELERIA", cant:2, base_und:47252.38, icl_und:33885, vr_und:83500, vr_total:167000, observaciones:"WHISKY BALLANT FINEST 1LIT · Nota: ya llevo" },
   ]},
-  // FDJC9133 · 2026-04-24 · vence 2026-05-24 · A Pagar $485.500
+  // FDJC9133 · 2026-04-24 · vence 2026-05-24 · A Pagar $484.500 (valor confirmado por usuario)
   { fecha:"2026-04-24", factura:"FDJC9133", proveedor:"GIR (Licores Junior)", vence:"2026-05-24", a_pagar:485500, items:[
     { producto_jsx:"HIELO", cant:10, base_und:4600, icl_und:0, vr_und:4600, vr_total:46000, observaciones:"HIELO KOLBITOS 3KG" },
     { producto_jsx:"GASEOSA", cant:48, base_und:2400, icl_und:0, vr_und:2400, vr_total:115200, observaciones:"GASEO POSTOBON NR SODA 10OZ" },
@@ -3501,14 +3543,15 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"AGUA TONICA", cant:5, base_und:1932.77, icl_und:0, vr_und:2300, vr_total:11500, observaciones:"GASEO SCHWEPPES TONICA NR 300CC" },
     { producto_jsx:"CAJA DE VINO", cant:2, base_und:13440.95, icl_und:6537, vr_und:20650, vr_total:41300, observaciones:"VINO CATA TINT T/PACK 1LIT" },
   ]},
-  // FDJC9356 · 2026-04-30 · vence 2026-05-30 · A Pagar $522.100
-  { fecha:"2026-04-30", factura:"FDJC9356", proveedor:"GIR (Licores Junior)", vence:"2026-05-30", a_pagar:522100, items:[
+  // FDJC9356 · 2026-04-30 · vence 2026-05-30 · A Pagar $522.500
+  { fecha:"2026-04-30", factura:"FDJC9356", proveedor:"GIR (Licores Junior)", vence:"2026-05-30", a_pagar:522500, items:[
     { producto_jsx:"GASEOSA 1.5", cant:12, base_und:4495.8, icl_und:0, vr_und:5350, vr_total:64200, observaciones:"GASEO COC/COLA NR 1.5LIT (Coca-Cola 1.5L $5.350)" },
     { producto_jsx:"AGT BOTLLA ANQUEÑ", cant:4, base_und:29327.62, icl_und:16006, vr_und:46800, vr_total:187200, observaciones:"AGUARD ANTIOQUENO S/AZ 24° TAPA VERDE 750CC" },
     { producto_jsx:"AGT MEDIA CAUCA", cant:3, base_und:13725.71, icl_und:8388, vr_und:22800, vr_total:68400, observaciones:"AGUARD CAUCANO TRAD CAN 375CC" },
     { producto_jsx:"RON CALDAS BOTELLA", cant:2, base_und:35487.62, icl_und:22038, vr_und:59300, vr_total:118600, observaciones:"RON V.DE CALDAS BOT 750CC" },
     { producto_jsx:"TEQUILA BOTELLA", cant:1, base_und:42722.07, icl_und:29041.83, vr_und:73900, vr_total:73900, observaciones:"TEQUILA JOSE CUERVO AMAR BOT 750CC" },
     { producto_jsx:"GASEOSA 1.5", cant:2, base_und:4117.65, icl_und:0, vr_und:4900, vr_total:9800, observaciones:"JUGO DEL VALLE CITRUS 1.5LIT" },
+    { producto_jsx:"", cant:1, base_und:400, icl_und:0, vr_und:400, vr_total:400, observaciones:"Ajuste valor real factura: items suman $522.100 vs valor confirmado $522.500 (pendiente identificar línea)" },
   ]},
   // FDJC9405 · 2026-05-01 · vence 2026-05-31 · A Pagar $194.300
   { fecha:"2026-05-01", factura:"FDJC9405", proveedor:"GIR (Licores Junior)", vence:"2026-05-31", a_pagar:194300, items:[
@@ -3540,12 +3583,12 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"CERVEZA IMPORTADA", cant:4, base_und:21375, icl_und:0, vr_und:21375, vr_total:85500, observaciones:"STEARTNRB300X6 · Stella Artois NR sixpack (~$3.563/bot)" },
     { producto_jsx:"", cant:1, base_und:2000, icl_und:0, vr_und:2000, vr_total:2000, observaciones:"Envases" },
   ]},
-  // PD102247 · 2026-05-14 · Doc Pedido (ya recogido, "LA SALA YA LLEVO") · A Pagar $90.800
-  { fecha:"2026-05-14", factura:"PD102247", proveedor:"GIR (Licores Junior)", vence:"2026-06-13", a_pagar:90800, items:[
+  // FDJC009970 · 2026-05-15 · vence 2026-06-14 · A Pagar $90.800 (anteriormente PD102247)
+  { fecha:"2026-05-15", factura:"FDJC009970", proveedor:"GIR (Licores Junior)", vence:"2026-06-14", a_pagar:90800, items:[
     { producto_jsx:"VODKA TAMARINDO", cant:2, base_und:27175, icl_und:18225, vr_und:45400, vr_total:90800, observaciones:"VODKA SMIRNOFF TAMARINDO PICANTE 750CC (insumo coctelería)" },
   ]},
-  // PD102560 · 2026-05-17 · Doc Pedido (nota "LA SALA") · A Pagar $284.550
-  { fecha:"2026-05-17", factura:"PD102560", proveedor:"GIR (Licores Junior)", vence:"2026-06-16", a_pagar:284550, items:[
+  // FDJC010090 · 2026-05-17 · vence 2026-06-16 · A Pagar $284.550 (anteriormente PD102560)
+  { fecha:"2026-05-17", factura:"FDJC010090", proveedor:"GIR (Licores Junior)", vence:"2026-06-16", a_pagar:284550, items:[
     { producto_jsx:"VINO BOTELLA", cant:1, base_und:36900, icl_und:0, vr_und:36900, vr_total:36900, observaciones:"VINO GATO NEGRO CAB/SUAV BOT 750CC" },
     { producto_jsx:"CAJA DE VINO", cant:1, base_und:20650, icl_und:0, vr_und:20650, vr_total:20650, observaciones:"VINO CATA TINT T/PACK 1LIT" },
     { producto_jsx:"SOMETHING SPECIAL COCT", cant:1, base_und:59900, icl_und:0, vr_und:59900, vr_total:59900, observaciones:"WHISKY SOMET/SPEC BOT 750CC DTO (oferta)" },
@@ -3586,9 +3629,21 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"", cant:3, base_und:8000, icl_und:0, vr_und:8000, vr_total:24000, observaciones:"Mango (3)" },
     { producto_jsx:"", cant:1, base_und:5000, icl_und:0, vr_und:5000, vr_total:5000, observaciones:"Domicilio" },
   ]},
+  // FDJC010193 · 2026-05-21 · vence 2026-06-20 · A Pagar $169.700 (crédito 30 días) — Nota PDF: "La sala, ya llevo"
+  { fecha:"2026-05-21", factura:"FDJC010193", proveedor:"GIR (Licores Junior)", vence:"2026-06-20", a_pagar:169700, items:[
+    { producto_jsx:"", cant:1, base_und:169700, icl_und:0, vr_und:169700, vr_total:169700, observaciones:"Detalle de items pendiente. Valor confirmado en cartera GIR PDF al 25/05/26 (Nota: La sala, ya llevo)." },
+  ]},
+  // FDJC010200 · 2026-05-21 · vence 2026-06-20 · A Pagar $169.700 (crédito 30 días)
+  { fecha:"2026-05-21", factura:"FDJC010200", proveedor:"GIR (Licores Junior)", vence:"2026-06-20", a_pagar:169700, items:[
+    { producto_jsx:"", cant:1, base_und:169700, icl_und:0, vr_und:169700, vr_total:169700, observaciones:"Detalle de items pendiente. Valor confirmado en cartera GIR PDF al 25/05/26." },
+  ]},
   // FDJC10220 · 2026-05-21 · vence 2026-06-20 · A Pagar $169.700 (crédito 30 días)
   { fecha:"2026-05-21", factura:"FDJC10220", proveedor:"GIR (Licores Junior)", vence:"2026-06-20", a_pagar:169700, items:[
     { producto_jsx:"TEQUILA BOTELLA", cant:2, base_und:55277.14, icl_und:26809, vr_und:84850, vr_total:169700, observaciones:"TEQUILA OLMECA REPOSADO BOT 700CC (premium - tequila botella; precio variable: $76.100 en FDJC10282 vs $84.850 en FDJC10220)" },
+  ]},
+  // FDJC010234 · 2026-05-22 · vence 2026-06-21 · A Pagar $53.000 (crédito 30 días) — Nota PDF: "la sala ya llevo"
+  { fecha:"2026-05-22", factura:"FDJC010234", proveedor:"GIR (Licores Junior)", vence:"2026-06-21", a_pagar:53000, items:[
+    { producto_jsx:"", cant:1, base_und:53000, icl_und:0, vr_und:53000, vr_total:53000, observaciones:"Detalle de items pendiente. Valor confirmado en cartera GIR PDF al 25/05/26 (Nota: la sala ya llevo)." },
   ]},
   // FDJC10282 · 2026-05-22 · vence 2026-06-21 · A Pagar $685.100 (crédito 30 días)
   { fecha:"2026-05-22", factura:"FDJC10282", proveedor:"GIR (Licores Junior)", vence:"2026-06-21", a_pagar:685100, items:[
@@ -3648,19 +3703,22 @@ const PRELOADED_CARTERA = [
   { proveedor:"GIR (Licores Junior)", factura:"FDJC008445", fecha:"2026-04-02", vence:"2026-05-02", valor:296100, detalle:false, estado:"cancelada", nota:"Sin imagen detallada." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC8447", fecha:"2026-04-02", vence:"2026-05-02", valor:167000, detalle:true, estado:"cancelada", nota:"Detalle cargado (Ballantine's Finest x2). Nota factura: ya llevo." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC008491", fecha:"2026-04-04", vence:"2026-05-04", valor:84800, detalle:false, estado:"cancelada", nota:"Sin imagen detallada." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC008961", fecha:"2026-04-18", vence:"2026-05-18", valor:340900, detalle:false, estado:"cancelada", nota:"Sin imagen detallada." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC9133", fecha:"2026-04-24", vence:"2026-05-24", valor:485500, detalle:true, estado:"pendiente", nota:"Detalle cargado (9 ítems)." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC9356", fecha:"2026-04-30", vence:"2026-05-30", valor:522100, detalle:true, estado:"pendiente", nota:"Detalle cargado (6 ítems)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC008961", fecha:"2026-04-18", vence:"2026-05-18", valor:340900, detalle:false, estado:"cancelada", nota:"Sin detalle de items. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500: FDJC008961+9133+9356). En PDF cartera al 25/05/26 figuraba pendiente." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC9133", fecha:"2026-04-24", vence:"2026-05-24", valor:485500, detalle:true, estado:"cancelada", nota:"Crédito 30 días. Detalle: 10 Hielo, 48 Postobón Soda, 2 Aguard Caucano, 2 Jugo del Valle 1.5L, 1 Whisky Passport, 1 Licor Menta, 1 Licor Café, 5 Schweppes Tónica, 2 Vino Cata Tint. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC9356", fecha:"2026-04-30", vence:"2026-05-30", valor:522500, detalle:true, estado:"cancelada", nota:"Crédito 30 días. Detalle: 12 Coca-Cola 1.5L, 4 Aguard Antioqueño, 3 Aguard Caucano Can, 2 Ron V.Caldas, 1 Tequila Cuervo, 2 Jugo del Valle 1.5L + ajuste +$400. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9405", fecha:"2026-05-01", vence:"2026-05-31", valor:194300, detalle:true, estado:"pendiente", nota:"Detalle cargado (2 ítems). Nota factura: La Sala ya llevo." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9420", fecha:"2026-05-01", vence:"2026-05-31", valor:256900, detalle:true, estado:"pendiente", nota:"Detalle cargado (3 ítems)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10005", fecha:"2026-05-15", vence:"2026-06-14", valor:319000, detalle:true, estado:"pendiente", nota:"Posterior al corte del estado de cuenta (02/05). Detalle cargado (7 ítems)." },
-  { proveedor:"GIR (Licores Junior)", factura:"PD102247", fecha:"2026-05-14", vence:"2026-06-13", valor:90800, detalle:true, estado:"pendiente", nota:"Doc Pedido a crédito (30 días). Detalle cargado (Vodka Smirnoff Tamarindo x2). Nota factura: La Sala ya llevo." },
-  { proveedor:"GIR (Licores Junior)", factura:"PD102560", fecha:"2026-05-17", vence:"2026-06-16", valor:284550, detalle:true, estado:"pendiente", nota:"Doc Pedido a crédito (30 días). Detalle cargado (6 ítems)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC009970", fecha:"2026-05-15", vence:"2026-06-14", valor:90800, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: 2 Vodka Smirnoff Tamarindo. Nota cartera GIR: La Sala ya llevo. (Renombrado de PD102247)" },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC010090", fecha:"2026-05-17", vence:"2026-06-16", valor:284550, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: Vino Gato Negro, Cata Tint, Somet/Spec, Amareto, Café, Martini Dry. (Renombrado de PD102560)" },
   { proveedor:"Distribuidora El Rey", factura:"REY-10864", fecha:"2026-05-19", vence:"2026-06-18", valor:155000, detalle:true, estado:"pendiente", nota:"Recibo 10864 (Reinaldo López, vendedor). Insumos coctelería: 6 Crema de Leche, 1 Paquete Mentas, 1 Gotas Amargas. Plazo asumido 30 días — confirmar." },
   { proveedor:"Coca-Cola", factura:"CC-00001", fecha:"2026-05-20", vence:"2026-05-20", valor:153800, detalle:true, estado:"cancelada", nota:"Soporte de Entrega 00001. 1 caja Coca-Cola 350ML + 1 caja Schweppes Tónica + 1 caja Coca-Cola Zero. Pagada vía transferencia 21 may." },
   { proveedor:"D1", factura:"H7Z1136639", fecha:"2026-05-21", vence:"2026-05-21", valor:58350, detalle:true, estado:"cancelada", nota:"Factura electrónica D1. Insumos y licor (Jugo del Valle, Whisky Escocés, Gomas). Pagada en contado tarjeta." },
   { proveedor:"Proveedor Frutas", factura:"FRUTA-21may", fecha:"2026-05-21", vence:"2026-05-21", valor:153000, detalle:true, estado:"cancelada", nota:"Cuenta de cobro frutas/hierbas + domicilio. Pagada vía transferencia 21 may." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC010193", fecha:"2026-05-21", vence:"2026-06-20", valor:169700, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle items pendiente. Confirmado en cartera GIR PDF al 25/05/26 (Nota: La sala, ya llevo)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC010200", fecha:"2026-05-21", vence:"2026-06-20", valor:169700, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle items pendiente. Confirmado en cartera GIR PDF al 25/05/26." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10220", fecha:"2026-05-21", vence:"2026-06-20", valor:169700, detalle:true, estado:"pendiente", nota:"Crédito 30 días. 2 Tequila Olmeca Reposado 700CC a $84.850 c/u (precio variable: $76.100 en FDJC10282)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC010234", fecha:"2026-05-22", vence:"2026-06-21", valor:53000, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle items pendiente. Confirmado en cartera GIR PDF al 25/05/26 (Nota: la sala ya llevo)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10282", fecha:"2026-05-22", vence:"2026-06-21", valor:685100, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: Crema Whisky Jumbo, Old Parr, Ron Caldas (Bot+Can), 4 Tequilas botella (Cuervo+Jimador+2 Olmeca), 24 Poker." },
   { proveedor:"GIR (Licores Junior)", factura:"JR-CONTADO-22may", fecha:"2026-05-22", vence:"2026-05-22", valor:663000, detalle:false, estado:"cancelada", nota:"Compra de contado. Pagada el mismo día (probablemente 6 tequilas botella adicionales — sin detalle de productos)." },
   { proveedor:"Cervezas y Cervezas Ltda", factura:"CYC-POE52876", fecha:"2026-05-23", vence:"2026-05-23", valor:166300, detalle:true, estado:"cancelada", nota:"Factura POE52876. 1 caja Poker + 1 caja Club Colombia Dorada + domicilio $15.000. Pagada contado efectivo." },
@@ -3742,6 +3800,10 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Seguridad Centinela", categoria: "Servicios", valor: 125000 },
   { date: "2026-05-22", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "Compra contado Licores Junior", categoria: "Bebidas/Licor", valor: 663000 },
   { date: "2026-05-23", semana: 8, periodo: "Sem 4 may (18 - 24 may)", concepto: "2 Bases para sonido exterior (Nequí Kevin Sebastián Medina)", categoria: "Activo fijo", valor: 110000 },
+  // ─── Semana 5 may (25 - 31 may) ───
+  { date: "2026-05-26", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Pago a cuenta Licores Junior (sin asignar facturas)", categoria: "Pago proveedor (no operativo)", valor: 992000 },
+  { date: "2026-05-26", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Instalación bases parlantes exterior (Nequí José Gómez)", categoria: "Activo fijo", valor: 46000 },
+  { date: "2026-05-26", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Insumos baños (Bre-B Pro Cleaner)", categoria: "Insumos varios", valor: 90000 },
 ];
 
 // ─── Storage ───
@@ -3786,7 +3848,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-24");
+  const [selDate,setSelDate]=useState("2026-05-25");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -3840,7 +3902,7 @@ export default function App(){
 
   if(loading) return <div style={{background:`linear-gradient(135deg, ${C.bg} 0%, #14110d 50%, ${C.bg} 100%)`,minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{color:C.gold,fontFamily:"'Poppins',sans-serif",fontSize:24,fontWeight:800}}>Cargando...</div></div>;
 
-  const tabs=[{id:"dashboard",l:"Dashboard",i:"📊"},{id:"resreal",l:"Resultado Real",i:"🧮"},{id:"invdash",l:"Inv. Control",i:"🔄"},{id:"invvalue",l:"Inv. Valorizado",i:"💰"},{id:"analcat",l:"Por Categoría",i:"📈"},{id:"compras",l:"Compras",i:"🧾"},{id:"resumen",l:"Día",i:"◉"},{id:"cocina",l:"Cocina",i:"🍕"},{id:"inventario",l:"Inventario",i:"📦"},{id:"gastos",l:"Gastos",i:"📋"}];
+  const tabs=[{id:"dashboard",l:"Dashboard",i:"📊"},{id:"resreal",l:"Resultado Real",i:"🧮"},{id:"invdash",l:"Inv. Control",i:"🔄"},{id:"invvalue",l:"Inv. Valorizado",i:"💰"},{id:"analcat",l:"Por Categoría",i:"📈"},{id:"compras",l:"Compras",i:"🧾"},{id:"bar",l:"Bar",i:"🍸"},{id:"resumen",l:"Día",i:"◉"},{id:"cocina",l:"Cocina",i:"🍕"},{id:"inventario",l:"Inventario",i:"📦"},{id:"gastos",l:"Gastos",i:"📋"}];
 
   return(
     <div style={{background:`linear-gradient(135deg, ${C.bg} 0%, #14110d 50%, ${C.bg} 100%)`,backgroundAttachment:"fixed",minHeight:"100vh",fontFamily:"'Poppins',sans-serif",color:C.text}}>
@@ -3879,12 +3941,13 @@ export default function App(){
       </div>}
 
       <div style={{maxWidth:920,margin:"0 auto",padding:"0 16px 60px"}}>
-        {view==="dashboard"&&<DashboardGeneral cuadres={cuadres} cocina={cocinaData} gastos={gastosData} gastosTransf={gastosTransfData} inventarios={inventarios}/>}
+        {view==="dashboard"&&<DashboardGeneral cuadres={cuadres} cocina={cocinaData} gastos={gastosData} gastosTransf={gastosTransfData} inventarios={inventarios} bar={PRELOADED_BAR}/>}
         {view==="resreal"&&<ResultadoReal cuadres={cuadres} gastos={gastosData} gastosTransf={gastosTransfData}/>}
         {view==="invdash"&&<InventarioDashboard inventarios={inventarios} cuadres={cuadres}/>}
         {view==="invvalue"&&<InventarioValorizado inventarios={inventarios}/>}
         {view==="analcat"&&<AnalisisCategoria inventarios={inventarios} cocina={cocinaData}/>}
         {view==="compras"&&<ComprasModule compras={PRELOADED_COMPRAS} cartera={PRELOADED_CARTERA}/>}
+        {view==="bar"&&<BarModule bar={PRELOADED_BAR} cuadres={cuadres} catalog={CATALOG}/>}
         {view==="resumen"&&<Resumen c={c} coc={coc} gas={gas} cross={invCross} date={selDate}/>}
         {view==="cocina"&&<Cocina coc={coc} date={selDate}/>}
         {view==="inventario"&&<Inventario cross={invCross} prevFin={prevFin} fin={fin} date={selDate}/>}
@@ -4051,7 +4114,7 @@ function ResultadoReal({cuadres,gastos,gastosTransf}){
   );
 }
 
-function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
+function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios,bar}){
   const META=45000000;
   const DIAS_MES=31;
 
@@ -4393,6 +4456,35 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios}){
           </div>
         ))}
       </Card>
+      {/* Bar/Coctelería tracking (nuevo) */}
+      {(()=>{
+        const barMonth=(bar||[]).filter(b=>b.date.startsWith(activeMonth));
+        if(barMonth.length===0) return null;
+        const totEst=barMonth.reduce((s,b)=>s+(b.total_estanco||0),0);
+        const totCoct=barMonth.reduce((s,b)=>s+(b.total_cocteles||0),0);
+        const totUnds=barMonth.reduce((s,b)=>s+(b.total_units||0),0);
+        const coctMap={};
+        barMonth.forEach(b=>(b.cocteles||[]).forEach(p=>{coctMap[p.nombre]=(coctMap[p.nombre]||0)+p.cantidad;}));
+        const topCoct=Object.entries(coctMap).sort((a,b)=>b[1]-a[1])[0];
+        return(<Card accent={C.gold}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:8}}>
+            <Sec color={C.gold}>🍸 Bar tracking</Sec>
+            <span style={{fontSize:11,color:C.muted}}>{barMonth.length} día{barMonth.length===1?"":"s"}</span>
+          </div>
+          <div style={{display:"flex",gap:10,marginBottom:8}}>
+            <div style={{flex:1,padding:"8px 10px",background:C.cyan+"10",borderRadius:6,borderLeft:`2px solid ${C.cyan}`}}>
+              <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",fontWeight:700}}>Estanco</div>
+              <div style={{fontSize:14,color:C.cyan,fontWeight:700,fontVariantNumeric:"tabular-nums"}}>{fmtF(totEst)}</div>
+            </div>
+            <div style={{flex:1,padding:"8px 10px",background:C.gold+"10",borderRadius:6,borderLeft:`2px solid ${C.gold}`}}>
+              <div style={{fontSize:10,color:C.dim,textTransform:"uppercase",fontWeight:700}}>Cócteles</div>
+              <div style={{fontSize:14,color:C.gold,fontWeight:700,fontVariantNumeric:"tabular-nums"}}>{fmtF(totCoct)}</div>
+            </div>
+          </div>
+          {topCoct&&<div style={{fontSize:11.5,color:C.muted,marginTop:4}}>Top coctel: <span style={{color:C.gold,fontWeight:600}}>{topCoct[0]}</span> ({topCoct[1]} uds)</div>}
+          <div style={{fontSize:11,color:C.muted,marginTop:4}}>Total: {totUnds} unds vendidas</div>
+        </Card>);
+      })()}
     </div>
 
     {/* ═══ TOP LICORES / COCTELES / CERVEZAS (del inventario) ═══ */}
@@ -5295,8 +5387,355 @@ function AnalisisCategoria({inventarios,cocina}){
 // ═════════════════════════════════════════════════════════════════
 // ─── COMPRAS (módulo de facturas por proveedor) ───
 // ═════════════════════════════════════════════════════════════════
+// ─── BarModule: analítica de ventas de bar/coctelería con precios, validación cuadre y márgenes ───
+function BarModule({bar,cuadres,catalog}){
+  const [mes,setMes]=useState("2026-05");
+  const [diaSel,setDiaSel]=useState(null);
+
+  const monthBar=useMemo(()=>(bar||[]).filter(b=>b.date.startsWith(mes)).sort((a,b)=>a.date.localeCompare(b.date)),[bar,mes]);
+  const allMonths=useMemo(()=>Array.from(new Set((bar||[]).map(b=>b.date.slice(0,7)))).sort(),[bar]);
+  const cat=catalog||{};
+
+  if(!bar||bar.length===0) return(<div style={{textAlign:"center",padding:60,color:C.dim}}><h2 style={{color:C.gold}}>🍸 Bar/Coctelería</h2><p>Sin reportes de bar registrados aún.</p><p style={{fontSize:12,marginTop:8}}>Se empezó a tracking el 25 may 2026.</p></div>);
+
+  // Helper: calcular sumas y márgenes por día
+  const computeDay=(b)=>{
+    const procItem=(p)=>{
+      const costo=cat[p.nombre]?.compra||0;
+      const totalItem=p.total!=null?p.total:(p.cantidad*(p.precio_unit||0));
+      const totalCosto=p.cantidad*costo;
+      const margen=totalItem-totalCosto;
+      const margenPct=totalItem>0?(margen/totalItem*100):0;
+      return{...p,total:totalItem,costo_unit:costo,total_costo:totalCosto,margen,margen_pct:margenPct};
+    };
+    const estancoItems=(b.estanco||[]).map(procItem);
+    const coctelesItems=(b.cocteles||[]).map(procItem);
+    const sumEstanco=estancoItems.reduce((s,p)=>s+p.total,0);
+    const sumCocteles=coctelesItems.reduce((s,p)=>s+p.total,0);
+    const sumCostoEstanco=estancoItems.reduce((s,p)=>s+p.total_costo,0);
+    const sumCostoCocteles=coctelesItems.reduce((s,p)=>s+p.total_costo,0);
+    return{...b,estancoItems,coctelesItems,sumEstanco,sumCocteles,sumCostoEstanco,sumCostoCocteles,
+      margenEstanco:sumEstanco-sumCostoEstanco,margenCocteles:sumCocteles-sumCostoCocteles};
+  };
+  const monthBarProc=monthBar.map(computeDay);
+
+  // Totales del mes
+  const totalEstanco=monthBarProc.reduce((s,b)=>s+(b.total_estanco||0),0);
+  const totalCocteles=monthBarProc.reduce((s,b)=>s+(b.total_cocteles||0),0);
+  const totalBar=totalEstanco+totalCocteles;
+  const totalUnits=monthBarProc.reduce((s,b)=>s+(b.total_units||0),0);
+  const sumEstancoMes=monthBarProc.reduce((s,b)=>s+b.sumEstanco,0);
+  const sumCoctelesMes=monthBarProc.reduce((s,b)=>s+b.sumCocteles,0);
+  const margenEstancoMes=monthBarProc.reduce((s,b)=>s+b.margenEstanco,0);
+  const margenCoctelesMes=monthBarProc.reduce((s,b)=>s+b.margenCocteles,0);
+  const totalCostoMes=monthBarProc.reduce((s,b)=>s+b.sumCostoEstanco+b.sumCostoCocteles,0);
+  const margenTotalMes=(sumEstancoMes+sumCoctelesMes)-totalCostoMes;
+  const margenPctMes=totalBar>0?(margenTotalMes/(sumEstancoMes+sumCoctelesMes)*100):0;
+  const avgPorDia=monthBarProc.length>0?Math.round(totalBar/monthBarProc.length):0;
+  const avgUnitsPorDia=monthBarProc.length>0?(totalUnits/monthBarProc.length).toFixed(1):0;
+  const pctEstanco=totalBar>0?Math.round(totalEstanco/totalBar*100):0;
+  const pctCocteles=100-pctEstanco;
+
+  // Validación global cuadre vs sumas calculadas
+  const diffEstancoMes=sumEstancoMes-totalEstanco;
+  const diffCoctelesMes=sumCoctelesMes-totalCocteles;
+
+  // Agregar productos mes con valores
+  const estancoMap={},coctelesMap={};
+  monthBarProc.forEach(b=>{
+    b.estancoItems.forEach(p=>{
+      if(!estancoMap[p.nombre]) estancoMap[p.nombre]={cant:0,valor:0,costo:0,margen:0};
+      estancoMap[p.nombre].cant+=p.cantidad; estancoMap[p.nombre].valor+=p.total;
+      estancoMap[p.nombre].costo+=p.total_costo; estancoMap[p.nombre].margen+=p.margen;
+    });
+    b.coctelesItems.forEach(p=>{
+      if(!coctelesMap[p.nombre]) coctelesMap[p.nombre]={cant:0,valor:0,costo:0,margen:0};
+      coctelesMap[p.nombre].cant+=p.cantidad; coctelesMap[p.nombre].valor+=p.total;
+      coctelesMap[p.nombre].costo+=p.total_costo; coctelesMap[p.nombre].margen+=p.margen;
+    });
+  });
+  const topEstanco=Object.entries(estancoMap).sort((a,b)=>b[1].valor-a[1].valor);
+  const topCocteles=Object.entries(coctelesMap).sort((a,b)=>b[1].valor-a[1].valor);
+  const totalEstancoUnits=topEstanco.reduce((s,[,d])=>s+d.cant,0);
+  const totalCoctelesUnits=topCocteles.reduce((s,[,d])=>s+d.cant,0);
+
+  // Día seleccionado
+  const diaData=diaSel?monthBarProc.find(b=>b.date===diaSel):null;
+  const diaCuadre=diaSel?(cuadres||[]).find(c=>c.date===diaSel):null;
+
+  // Tendencia diaria chart
+  const dailyChart=monthBarProc.map(b=>({fecha:fmtD(b.date).split(" ")[0]+" "+fmtD(b.date).split(" ")[1].slice(0,3),estanco:b.total_estanco||0,cocteles:b.total_cocteles||0}));
+
+  return(<div>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:14,flexWrap:"wrap",gap:8}}>
+      <h2 style={{fontFamily:"'Poppins',sans-serif",fontSize:22,color:C.gold,margin:0}}>🍸 Bar / Coctelería</h2>
+      <select value={mes} onChange={e=>{setMes(e.target.value);setDiaSel(null);}} style={{background:C.bg2,color:C.text,border:`1px solid ${C.bdr}`,borderRadius:8,padding:"6px 12px",fontSize:13,fontFamily:"inherit"}}>
+        {allMonths.map(m=><option key={m} value={m}>{m}</option>)}
+      </select>
+    </div>
+
+    {/* Resumen del mes con margen */}
+    <Card accent={C.gold} style={{background:C.gold+"08"}}>
+      <Sec color={C.gold}>Resumen del mes</Sec>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(140px,1fr))",gap:14,marginTop:8}}>
+        <div>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:700}}>Venta bar</div>
+          <div style={{fontSize:22,fontWeight:800,color:C.gold,fontFamily:"'Poppins',sans-serif",marginTop:2,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalBar)}</div>
+          <div style={{fontSize:11,color:C.muted,marginTop:1}}>{monthBarProc.length} día{monthBarProc.length===1?"":"s"} · {totalUnits} unds</div>
+        </div>
+        <div>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:700}}>Costo insumos</div>
+          <div style={{fontSize:22,fontWeight:800,color:C.red,fontFamily:"'Poppins',sans-serif",marginTop:2,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalCostoMes)}</div>
+          <div style={{fontSize:11,color:C.muted,marginTop:1}}>desde CATALOG</div>
+        </div>
+        <div>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:700}}>Margen bruto</div>
+          <div style={{fontSize:22,fontWeight:800,color:C.green,fontFamily:"'Poppins',sans-serif",marginTop:2,fontVariantNumeric:"tabular-nums"}}>{fmtF(margenTotalMes)}</div>
+          <div style={{fontSize:11,color:C.muted,marginTop:1}}>{margenPctMes.toFixed(1)}% margen</div>
+        </div>
+        <div>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:700}}>Promedio/día</div>
+          <div style={{fontSize:22,fontWeight:800,color:C.text,fontFamily:"'Poppins',sans-serif",marginTop:2,fontVariantNumeric:"tabular-nums"}}>{fmtF(avgPorDia)}</div>
+          <div style={{fontSize:11,color:C.muted,marginTop:1}}>{avgUnitsPorDia} unds/día</div>
+        </div>
+      </div>
+    </Card>
+
+    {/* Validación cuadre vs sumas */}
+    {(diffEstancoMes!==0||diffCoctelesMes!==0)&&<Card accent={C.orange} style={{background:C.orange+"08"}}>
+      <Sec color={C.orange}>⚠ Validación contra cuadre</Sec>
+      <div style={{fontSize:12,color:C.muted,marginBottom:8}}>Diferencias entre la suma de items × precio_unit y los totales del cuadre POS:</div>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
+        <div style={{padding:"10px 12px",background:C.bg,borderRadius:8,borderLeft:`3px solid ${diffEstancoMes===0?C.green:C.orange}`}}>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",fontWeight:700}}>Estanco</div>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginTop:4}}><span style={{color:C.muted}}>Suma items:</span><span style={{fontVariantNumeric:"tabular-nums"}}>{fmtF(sumEstancoMes)}</span></div>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13}}><span style={{color:C.muted}}>Cuadre POS:</span><span style={{fontVariantNumeric:"tabular-nums"}}>{fmtF(totalEstanco)}</span></div>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13,fontWeight:700,marginTop:3,paddingTop:3,borderTop:`1px solid ${C.bdr}`,color:diffEstancoMes===0?C.green:C.orange}}><span>Dif:</span><span style={{fontVariantNumeric:"tabular-nums"}}>{diffEstancoMes>=0?"+":""}{fmtF(diffEstancoMes)}</span></div>
+        </div>
+        <div style={{padding:"10px 12px",background:C.bg,borderRadius:8,borderLeft:`3px solid ${diffCoctelesMes===0?C.green:C.orange}`}}>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",fontWeight:700}}>Cócteles</div>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginTop:4}}><span style={{color:C.muted}}>Suma items:</span><span style={{fontVariantNumeric:"tabular-nums"}}>{fmtF(sumCoctelesMes)}</span></div>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13}}><span style={{color:C.muted}}>Cuadre POS:</span><span style={{fontVariantNumeric:"tabular-nums"}}>{fmtF(totalCocteles)}</span></div>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:13,fontWeight:700,marginTop:3,paddingTop:3,borderTop:`1px solid ${C.bdr}`,color:diffCoctelesMes===0?C.green:C.orange}}><span>Dif:</span><span style={{fontVariantNumeric:"tabular-nums"}}>{diffCoctelesMes>=0?"+":""}{fmtF(diffCoctelesMes)}</span></div>
+        </div>
+      </div>
+    </Card>}
+    {(diffEstancoMes===0&&diffCoctelesMes===0)&&<Card accent={C.green} style={{background:C.green+"08"}}>
+      <div style={{display:"flex",alignItems:"center",gap:10}}>
+        <span style={{fontSize:24}}>✓</span>
+        <div><div style={{color:C.green,fontWeight:700,fontSize:14}}>Sumas validadas vs cuadre</div><div style={{fontSize:12,color:C.muted}}>Todos los precios y cantidades cuadran con el POS.</div></div>
+      </div>
+    </Card>}
+
+    {/* Estanco vs Cocteles */}
+    <Card>
+      <Sec>Estanco vs Cócteles</Sec>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,marginTop:6}}>
+        <div style={{padding:"14px 16px",background:C.bg,borderRadius:10,borderLeft:`3px solid ${C.cyan}`}}>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:700}}>📦 Estanco</div>
+          <div style={{fontSize:22,fontWeight:800,color:C.cyan,marginTop:4,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalEstanco)}</div>
+          <div style={{fontSize:12,color:C.muted,marginTop:2}}>{pctEstanco}% · {totalEstancoUnits} unds · Margen {fmtF(margenEstancoMes)}</div>
+        </div>
+        <div style={{padding:"14px 16px",background:C.bg,borderRadius:10,borderLeft:`3px solid ${C.gold}`}}>
+          <div style={{fontSize:11,color:C.dim,textTransform:"uppercase",letterSpacing:1.2,fontWeight:700}}>🍹 Cócteles</div>
+          <div style={{fontSize:22,fontWeight:800,color:C.gold,marginTop:4,fontVariantNumeric:"tabular-nums"}}>{fmtF(totalCocteles)}</div>
+          <div style={{fontSize:12,color:C.muted,marginTop:2}}>{pctCocteles}% · {totalCoctelesUnits} unds · Margen {fmtF(margenCoctelesMes)}</div>
+        </div>
+      </div>
+      <div style={{marginTop:14,height:16,background:C.bg,borderRadius:8,overflow:"hidden",display:"flex"}}>
+        <div style={{width:pctEstanco+"%",background:C.cyan,height:"100%",transition:"width 0.3s"}}/>
+        <div style={{width:pctCocteles+"%",background:C.gold,height:"100%",transition:"width 0.3s"}}/>
+      </div>
+    </Card>
+
+    {/* Top cocteles con margen */}
+    {topCocteles.length>0&&<Card>
+      <Sec color={C.gold}>🍹 Ranking Cócteles ({totalCoctelesUnits} unds)</Sec>
+      <div style={{overflowX:"auto"}}>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:12.5}}>
+          <thead><tr style={{color:C.gold,textAlign:"left",borderBottom:`1px solid ${C.gold}40`}}>
+            <th style={{padding:"6px 6px"}}>#</th><th style={{padding:"6px 6px"}}>Coctel</th>
+            <th style={{padding:"6px 6px",textAlign:"center"}}>Cant</th>
+            <th style={{padding:"6px 6px",textAlign:"right"}}>Venta</th>
+            <th style={{padding:"6px 6px",textAlign:"right"}}>Costo</th>
+            <th style={{padding:"6px 6px",textAlign:"right"}}>Margen</th>
+            <th style={{padding:"6px 6px",textAlign:"right"}}>%</th>
+          </tr></thead>
+          <tbody>
+            {topCocteles.map(([nombre,d],i)=>{
+              const mPct=d.valor>0?(d.margen/d.valor*100):0;
+              return(<tr key={nombre} style={{borderBottom:`1px solid ${C.bdr}30`}}>
+                <td style={{padding:"7px 6px",color:i===0?C.gold:i===1?C.orange:C.dim,fontWeight:700}}>#{i+1}</td>
+                <td style={{padding:"7px 6px",color:C.text,fontWeight:i<3?600:400}}>{nombre}</td>
+                <td style={{padding:"7px 6px",textAlign:"center",color:C.muted}}>{d.cant}</td>
+                <td style={{padding:"7px 6px",textAlign:"right",color:C.gold,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(d.valor)}</td>
+                <td style={{padding:"7px 6px",textAlign:"right",color:d.costo>0?C.red:C.muted,fontVariantNumeric:"tabular-nums"}}>{d.costo>0?fmtF(d.costo):"—"}</td>
+                <td style={{padding:"7px 6px",textAlign:"right",color:d.costo>0?C.green:C.muted,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{d.costo>0?fmtF(d.margen):"—"}</td>
+                <td style={{padding:"7px 6px",textAlign:"right",color:d.costo>0?C.green:C.muted,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{d.costo>0?mPct.toFixed(0)+"%":"—"}</td>
+              </tr>);
+            })}
+          </tbody>
+        </table>
+      </div>
+    </Card>}
+
+    {/* Top estanco con margen */}
+    {topEstanco.length>0&&<Card>
+      <Sec color={C.cyan}>📦 Ranking Estanco ({totalEstancoUnits} unds)</Sec>
+      <div style={{overflowX:"auto"}}>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:12.5}}>
+          <thead><tr style={{color:C.cyan,textAlign:"left",borderBottom:`1px solid ${C.cyan}40`}}>
+            <th style={{padding:"6px 6px"}}>#</th><th style={{padding:"6px 6px"}}>Producto</th>
+            <th style={{padding:"6px 6px",textAlign:"center"}}>Cant</th>
+            <th style={{padding:"6px 6px",textAlign:"right"}}>Venta</th>
+            <th style={{padding:"6px 6px",textAlign:"right"}}>Costo</th>
+            <th style={{padding:"6px 6px",textAlign:"right"}}>Margen</th>
+            <th style={{padding:"6px 6px",textAlign:"right"}}>%</th>
+          </tr></thead>
+          <tbody>
+            {topEstanco.map(([nombre,d],i)=>{
+              const mPct=d.valor>0?(d.margen/d.valor*100):0;
+              return(<tr key={nombre} style={{borderBottom:`1px solid ${C.bdr}30`}}>
+                <td style={{padding:"7px 6px",color:i===0?C.cyan:i===1?C.orange:C.dim,fontWeight:700}}>#{i+1}</td>
+                <td style={{padding:"7px 6px",color:C.text,fontWeight:i<3?600:400}}>{nombre}</td>
+                <td style={{padding:"7px 6px",textAlign:"center",color:C.muted}}>{d.cant}</td>
+                <td style={{padding:"7px 6px",textAlign:"right",color:C.cyan,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(d.valor)}</td>
+                <td style={{padding:"7px 6px",textAlign:"right",color:d.costo>0?C.red:C.muted,fontVariantNumeric:"tabular-nums"}}>{d.costo>0?fmtF(d.costo):"—"}</td>
+                <td style={{padding:"7px 6px",textAlign:"right",color:d.costo>0?C.green:C.muted,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{d.costo>0?fmtF(d.margen):"—"}</td>
+                <td style={{padding:"7px 6px",textAlign:"right",color:d.costo>0?C.green:C.muted,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{d.costo>0?mPct.toFixed(0)+"%":"—"}</td>
+              </tr>);
+            })}
+          </tbody>
+        </table>
+      </div>
+    </Card>}
+
+    {/* Tendencia diaria */}
+    {monthBarProc.length>1&&<Card>
+      <Sec>Tendencia diaria</Sec>
+      <ResponsiveContainer width="100%" height={220}>
+        <BarChart data={dailyChart} margin={{top:10,right:10,left:0,bottom:10}}>
+          <CartesianGrid strokeDasharray="3 3" stroke={C.bdr}/>
+          <XAxis dataKey="fecha" stroke={C.dim} style={{fontSize:11}}/>
+          <YAxis stroke={C.dim} style={{fontSize:10}} tickFormatter={v=>v>=1000?(v/1000)+"k":v}/>
+          <Tooltip formatter={v=>fmtF(v)} contentStyle={{background:C.bg2,border:`1px solid ${C.bdr}`,borderRadius:8}}/>
+          <Bar dataKey="estanco" stackId="a" fill={C.cyan} name="Estanco"/>
+          <Bar dataKey="cocteles" stackId="a" fill={C.gold} name="Cócteles"/>
+        </BarChart>
+      </ResponsiveContainer>
+    </Card>}
+
+    {/* Tabla detalle diario */}
+    <Card>
+      <Sec>Detalle diario</Sec>
+      <div style={{overflowX:"auto"}}>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:13}}>
+          <thead><tr style={{color:C.gold,textAlign:"left",borderBottom:`1px solid ${C.gold}40`}}>
+            <th style={{padding:"8px 6px"}}>Fecha</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Estanco</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Cócteles</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Total</th>
+            <th style={{padding:"8px 6px",textAlign:"center"}}>Unds</th>
+            <th style={{padding:"8px 6px",textAlign:"right"}}>Margen</th>
+            <th style={{padding:"8px 6px",textAlign:"center"}}>Ver</th>
+          </tr></thead>
+          <tbody>
+            {monthBarProc.map((b,i)=>{
+              const margenDia=b.margenEstanco+b.margenCocteles;
+              return(<tr key={i} style={{borderBottom:`1px solid ${C.bdr}40`,background:diaSel===b.date?C.gold+"10":"transparent"}}>
+                <td style={{padding:"9px 6px",color:C.text,fontWeight:600}}>{fmtD(b.date).replace(" 2026","")}</td>
+                <td style={{padding:"9px 6px",textAlign:"right",color:C.cyan,fontVariantNumeric:"tabular-nums"}}>{fmtF(b.total_estanco||0)}</td>
+                <td style={{padding:"9px 6px",textAlign:"right",color:C.gold,fontVariantNumeric:"tabular-nums"}}>{fmtF(b.total_cocteles||0)}</td>
+                <td style={{padding:"9px 6px",textAlign:"right",color:C.text,fontWeight:700,fontVariantNumeric:"tabular-nums"}}>{fmtF((b.total_estanco||0)+(b.total_cocteles||0))}</td>
+                <td style={{padding:"9px 6px",textAlign:"center",color:C.muted}}>{b.total_units||0}</td>
+                <td style={{padding:"9px 6px",textAlign:"right",color:C.green,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(margenDia)}</td>
+                <td style={{padding:"9px 6px",textAlign:"center"}}>
+                  <button onClick={()=>setDiaSel(diaSel===b.date?null:b.date)} style={{background:diaSel===b.date?C.gold:"transparent",color:diaSel===b.date?C.bg:C.gold,border:`1px solid ${C.gold}`,borderRadius:6,padding:"3px 10px",fontSize:11,cursor:"pointer",fontFamily:"inherit",fontWeight:600}}>{diaSel===b.date?"Cerrar":"Detalle"}</button>
+                </td>
+              </tr>);
+            })}
+          </tbody>
+        </table>
+      </div>
+    </Card>
+
+    {/* Detalle del día seleccionado con tabla completa */}
+    {diaData&&<Card accent={C.gold}>
+      <Sec color={C.gold}>📋 Detalle: {fmtD(diaData.date)}</Sec>
+      {diaCuadre&&<div style={{fontSize:12,color:C.muted,marginBottom:10}}>Cuadre POS: Estanco {fmtF(diaCuadre.estanco)} · Cócteles {fmtF(diaCuadre.cocteles)}</div>}
+      
+      {/* Estanco detalle */}
+      <div style={{marginBottom:18}}>
+        <div style={{fontSize:13,color:C.cyan,textTransform:"uppercase",letterSpacing:1,fontWeight:700,marginBottom:8}}>📦 Estanco · {fmtF(diaData.sumEstanco)} {diaCuadre&&diaCuadre.estanco!==diaData.sumEstanco&&<span style={{color:C.orange,fontWeight:500,textTransform:"none",fontSize:11,marginLeft:8}}>(cuadre: {fmtF(diaCuadre.estanco)}, dif {diaData.sumEstanco-diaCuadre.estanco>=0?"+":""}{fmtF(diaData.sumEstanco-diaCuadre.estanco)})</span>}</div>
+        <div style={{overflowX:"auto"}}>
+          <table style={{width:"100%",borderCollapse:"collapse",fontSize:12.5}}>
+            <thead><tr style={{color:C.dim,textAlign:"left",borderBottom:`1px solid ${C.bdr}`}}>
+              <th style={{padding:"5px 6px"}}>Producto</th>
+              <th style={{padding:"5px 6px",textAlign:"center"}}>Cant</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>PVP</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>Total</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>Costo/u</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>Margen</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>%</th>
+            </tr></thead>
+            <tbody>
+              {diaData.estancoItems.map((p,i)=>{
+                const mPct=p.total>0?(p.margen/p.total*100):0;
+                return(<tr key={i} style={{borderBottom:`1px solid ${C.bdr}20`}}>
+                  <td style={{padding:"6px",color:C.text}}>{p.nombre}{p.nota&&<div style={{fontSize:10,color:C.orange,marginTop:1}}>⚠ {p.nota}</div>}</td>
+                  <td style={{padding:"6px",textAlign:"center",color:C.cyan,fontWeight:700}}>{p.cantidad}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:C.text,fontVariantNumeric:"tabular-nums"}}>{p.precio_unit>0?fmtF(p.precio_unit):"—"}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:C.cyan,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(p.total)}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:p.costo_unit>0?C.red:C.muted,fontVariantNumeric:"tabular-nums"}}>{p.costo_unit>0?fmtF(p.costo_unit):"—"}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:p.costo_unit>0?C.green:C.muted,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{p.costo_unit>0?fmtF(p.margen):"—"}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:p.costo_unit>0?C.green:C.muted,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{p.costo_unit>0&&p.total>0?mPct.toFixed(0)+"%":"—"}</td>
+                </tr>);
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      {/* Cocteles detalle */}
+      <div>
+        <div style={{fontSize:13,color:C.gold,textTransform:"uppercase",letterSpacing:1,fontWeight:700,marginBottom:8}}>🍹 Cócteles · {fmtF(diaData.sumCocteles)} {diaCuadre&&diaCuadre.cocteles!==diaData.sumCocteles&&<span style={{color:C.orange,fontWeight:500,textTransform:"none",fontSize:11,marginLeft:8}}>(cuadre: {fmtF(diaCuadre.cocteles)}, dif {diaData.sumCocteles-diaCuadre.cocteles>=0?"+":""}{fmtF(diaData.sumCocteles-diaCuadre.cocteles)})</span>}</div>
+        <div style={{overflowX:"auto"}}>
+          <table style={{width:"100%",borderCollapse:"collapse",fontSize:12.5}}>
+            <thead><tr style={{color:C.dim,textAlign:"left",borderBottom:`1px solid ${C.bdr}`}}>
+              <th style={{padding:"5px 6px"}}>Coctel</th>
+              <th style={{padding:"5px 6px",textAlign:"center"}}>Cant</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>PVP</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>Total</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>Costo/u</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>Margen</th>
+              <th style={{padding:"5px 6px",textAlign:"right"}}>%</th>
+            </tr></thead>
+            <tbody>
+              {diaData.coctelesItems.map((p,i)=>{
+                const mPct=p.total>0?(p.margen/p.total*100):0;
+                return(<tr key={i} style={{borderBottom:`1px solid ${C.bdr}20`}}>
+                  <td style={{padding:"6px",color:C.text}}>{p.nombre}{p.nota&&<div style={{fontSize:10,color:C.orange,marginTop:1}}>⚠ {p.nota}</div>}</td>
+                  <td style={{padding:"6px",textAlign:"center",color:C.gold,fontWeight:700}}>{p.cantidad}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:C.text,fontVariantNumeric:"tabular-nums"}}>{p.precio_unit>0?fmtF(p.precio_unit):"—"}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:C.gold,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{fmtF(p.total)}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:p.costo_unit>0?C.red:C.muted,fontVariantNumeric:"tabular-nums"}}>{p.costo_unit>0?fmtF(p.costo_unit):"—"}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:p.costo_unit>0?C.green:C.muted,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{p.costo_unit>0?fmtF(p.margen):"—"}</td>
+                  <td style={{padding:"6px",textAlign:"right",color:p.costo_unit>0?C.green:C.muted,fontWeight:600,fontVariantNumeric:"tabular-nums"}}>{p.costo_unit>0&&p.total>0?mPct.toFixed(0)+"%":"—"}</td>
+                </tr>);
+              })}
+            </tbody>
+          </table>
+        </div>
+        <div style={{marginTop:10,padding:"8px 10px",background:C.bg,borderRadius:6,fontSize:11,color:C.muted,lineHeight:1.5}}>
+          ⓘ Costo unitario tomado del CATALOG (precio compra del insumo principal). Para cócteles que combinan múltiples insumos, el costo real puede ser más alto. Margen mostrado como aproximación.
+        </div>
+      </div>
+    </Card>}
+  </div>);
+}
+
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-25";
+  const HOY="2026-05-26";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
