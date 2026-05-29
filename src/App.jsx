@@ -338,6 +338,13 @@ const PRELOADED_CUADRES = [
     efectivo: 39400, tarjeta: 289600, otros_pago: 0,
     pizza_80: 150080, gastos: 32600, nomina: 0, costo_financiero: 0,
     neto_sala: 178920, faltante: 0,
+  },
+  {
+    date: "2026-05-28", venta_total: 1010800,
+    estanco: 42000, cocteles: 595000, pizzeria: 373800, otros_venta: 0,
+    efectivo: 46700, tarjeta: 479000, otros_pago: 0,
+    pizza_80: 299040, gastos: 100100, nomina: 385000, costo_financiero: 0,
+    neto_sala: 226660, faltante: 0,
   }
 ];
 
@@ -926,6 +933,16 @@ const PRELOADED_COCINA = [
       { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
       { nombre: "PZ POLLO CHAMPI PEQ", cantidad: 1, valor: 39600 },
     ]
+  },
+  {
+    date: "2026-05-28", total: 373800, total_units: 9,
+    productos: [
+      { nombre: "LASAGNA MIXTA", cantidad: 4, valor: 172000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 2, valor: 80000 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+    ]
   }
 ];
 
@@ -980,6 +997,27 @@ const PRELOADED_BAR = [
       { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000, nota: "No entra en 2x1" },
     ],
     nota: "Promo 2x1 miércoles. Cócteles: 4 referencias 2x1 (8 vendidos, 4 cobrados @ $36k = $144k) + 1 Soda Italiana $15k = $159k ✓. Estanco $15k: 2 gaseosa $12k + 1 trago $3k. GINEBRA ML y TEQUILA ML salieron 1 c/u en inventario."
+  },
+  {
+    date: "2026-05-28", total_estanco: 42000, total_cocteles: 595000, total: 637000, total_units: 23,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 4, precio_unit: 9000, total: 36000 },
+      { nombre: "AGUA", cantidad: 2, precio_unit: 3000, total: 6000, nota: "Agua a $3k (precio confirmado por usuario)" },
+    ],
+    cocteles: [
+      { nombre: "K MARGARITA", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K MARTINI DRY", cantidad: 3, precio_unit: 36000, total: 108000 },
+      { nombre: "K MOJITO", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K ULA ULA", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K PECERA LA SALA", cantidad: 2, precio_unit: 69000, total: 138000, nota: "Cóctel grande/compartido (fishbowl). PVP $69k confirmado por cuadre" },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "JUGO EN LECHE", cantidad: 2, precio_unit: 13000, total: 26000 },
+      { nombre: "JUGO MIX", cantidad: 1, precio_unit: 13000, total: 13000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 1, precio_unit: 18000, total: 18000 },
+      { nombre: "LIMONADA NATURAL", cantidad: 1, precio_unit: 10000, total: 10000 },
+      { nombre: "SODA ITALIANA", cantidad: 2, precio_unit: 15000, total: 30000 },
+    ],
+    nota: "Jueves SIN promo 2x1 (solo mar/mié). Cócteles cuadran exacto a $595k. Bajas de coctelería (insumos no cobrados aparte): RON DL 2, TRIPLE SEC 1, WHISKY COCT 1, GASEOSA 6 (mezclador). Estanco: 4 cerveza nac $36k + 2 agua $6k = $42k."
   }
 ];
 
@@ -3298,7 +3336,8 @@ const PRELOADED_INVENTARIOS = [
     //     CERVEZA CORONA: Ent=24 → 43 (KOPPS 4 sixpacks Corona)
     //     CERVEZA IMPORTADA: Ent=32 → 51 (KOPPS Stella + otros)
     //     CERVEZA NACIONAL: Ent=90 → 219 (KOPPS 2 cajas Club x30 + Coronita x30)
-    //     GASEOSA: Ent=60 → (Postobón Bretaña 60und); Sal=4 (mezclador/venta) → 191
+    //     GASEOSA: Ent=60 → (Postobón Bretaña 60und); Sal=4 (mezclador/venta) → 191 en foto cierre.
+    //              CORREGIDO a 193: la foto inicial 28 (autoritativa) muestra 193 (reconteo/reposición madrugada +2).
     //     VINO BOTELLA: Ent=1 → 0 (repuesta la botella faltante del martes)
     //   SALIDAS:
     //     GINEBRA ML: Sal=1 → 4 (trago estanco)
@@ -3327,7 +3366,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"DRY MARTINY",saldo:0},
       {nombre:"ELECTROLIT",saldo:3},
       {nombre:"ENCENDEDOR",saldo:0},
-      {nombre:"GASEOSA",saldo:191},
+      {nombre:"GASEOSA",saldo:193},
       {nombre:"GASEOSA 1.5",saldo:33},
       {nombre:"GINEBRA BOTELLA",saldo:0},
       {nombre:"GINEBRA DL",saldo:5},
@@ -3352,6 +3391,68 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"BUCHANAN'S BOTELLA",saldo:0},
       {nombre:"BUCHANAN'S MEDIA",saldo:1},
       {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:0}
+    ]
+  },
+  {
+    // Foto FINAL jueves 28 may. Inicial 28 = Final 27 (con corrección GASEOSA 191→193 por reconteo madrugada).
+    // Movimientos jueves 28:
+    //   GASEOSA: Ent=42, Sal=6 → 229 (193+42-6). Reposición + ventas/mezclador.
+    //   AGUA: Sal=2 → 26
+    //   CERVEZA NACIONAL: Sal=4 → 215
+    //   LICOR DE MANZANA: Sal=1 → 13 (cóctel)
+    //   RON DL: Sal=2 → 4 (2 cócteles con ron / tragos)
+    //   TRIPLE SEC: Sal=1 → 4 (1 cóctel: Margarita usa triple sec)
+    //   WHISKY COCT: Sal=1 → (coctelería con whisky)
+    //   Cócteles servidos de botellas abiertas no descuentan unidad base.
+    date: "2026-05-28", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:26},
+      {nombre:"AGUA TONICA",saldo:13},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:43},
+      {nombre:"CERVEZA IMPORTADA",saldo:51},
+      {nombre:"CERVEZA NACIONAL",saldo:215},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:3},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:229},
+      {nombre:"GASEOSA 1.5",saldo:33},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:4},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:13},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:3},
+      {nombre:"RON DL",saldo:4},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:0},
+      {nombre:"TEQUILA ML",saldo:4},
+      {nombre:"TRIPLESEC",saldo:4},
+      {nombre:"VINO BOTELLA",saldo:0},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:0}
     ]
@@ -3698,6 +3799,13 @@ const PRELOADED_GASTOS = [
       { concepto: "Domicilio", categoria: "Domicilios", valor: 5000 },
       { concepto: "D1: 1 Limpiador Todo + 1 Encendedor", categoria: "Insumos varios", valor: 9600 },
       { concepto: "Comida empleados (martes 26 + miércoles 27, $5k c/u)", categoria: "Comida", valor: 10000 },
+    ]
+  },
+  {
+    date: "2026-05-28", total: 100100,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "D1: paños reutilizables + toalla cocina + servilletas + azúcar blanca + leche deslac + gomas surtidas + naranjas + encendedor + paño microfibra + lavaloza + helados (gomitas) + jugo mandarina + limpiavidrios (24 art.)", categoria: "Insumos varios", valor: 95100 },
     ]
   }
 ];
@@ -4141,7 +4249,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-27");
+  const [selDate,setSelDate]=useState("2026-05-28");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -6028,7 +6136,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-28";
+  const HOY="2026-05-29";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
