@@ -331,6 +331,13 @@ const PRELOADED_CUADRES = [
     efectivo: 1000, tarjeta: 0, otros_pago: 185000,
     pizza_80: 0, gastos: 0, nomina: 185000, costo_financiero: 0,
     neto_sala: 1000, faltante: 0,
+  },
+  {
+    date: "2026-05-27", venta_total: 361600,
+    estanco: 15000, cocteles: 159000, pizzeria: 187600, otros_venta: 0,
+    efectivo: 39400, tarjeta: 289600, otros_pago: 0,
+    pizza_80: 150080, gastos: 32600, nomina: 0, costo_financiero: 0,
+    neto_sala: 178920, faltante: 0,
   }
 ];
 
@@ -910,6 +917,15 @@ const PRELOADED_COCINA = [
   {
     date: "2026-05-26", total: 0, total_units: 0,
     productos: []
+  },
+  {
+    date: "2026-05-27", total: 187600, total_units: 4,
+    productos: [
+      { nombre: "PZ POLLO CHAMPI MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "PZ POLLO CHAMPI PEQ", cantidad: 1, valor: 39600 },
+    ]
   }
 ];
 
@@ -949,6 +965,21 @@ const PRELOADED_BAR = [
       { nombre: "LIMONADA NATURAL", cantidad: 2, precio_unit: 4000, total: 4000, nota: "Promo 2x1 martes/miércoles: 2 vendidas, 1 cobrada a $4k (precio especial)" },
     ],
     nota: "Promo 2x1 fija martes/miércoles en coctelería. Cuadre: Estanco $110k + Cócteles $76k = $186k. Pago: Efectivo $1k + Nómina Manuel $185k. Faltante $0. Sin pizza, sin gastos."
+  },
+  {
+    date: "2026-05-27", total_estanco: 15000, total_cocteles: 159000, total: 174000, total_units: 13,
+    estanco: [
+      { nombre: "GASEOSA", cantidad: 2, precio_unit: 6000, total: 12000 },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 3000, total: 3000, nota: "Trago corto ginebra (PVP $3k pendiente confirmar). TEQUILA ML también salió 1 - posible cortesía o trago de coctel" },
+    ],
+    cocteles: [
+      { nombre: "K DAIQUIRI DE FRESAS", cantidad: 2, precio_unit: 36000, total: 36000, nota: "Promo 2x1 miércoles: 2 vendidos, 1 cobrado" },
+      { nombre: "K MARGARITA", cantidad: 2, precio_unit: 36000, total: 36000, nota: "Promo 2x1 miércoles: 2 vendidos, 1 cobrado" },
+      { nombre: "K MARTINI DRY", cantidad: 2, precio_unit: 36000, total: 36000, nota: "Promo 2x1 miércoles: 2 vendidos, 1 cobrado" },
+      { nombre: "K TEQUILA SUNRISE", cantidad: 2, precio_unit: 36000, total: 36000, nota: "Promo 2x1 miércoles: 2 vendidos, 1 cobrado" },
+      { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000, nota: "No entra en 2x1" },
+    ],
+    nota: "Promo 2x1 miércoles. Cócteles: 4 referencias 2x1 (8 vendidos, 4 cobrados @ $36k = $144k) + 1 Soda Italiana $15k = $159k ✓. Estanco $15k: 2 gaseosa $12k + 1 trago $3k. GINEBRA ML y TEQUILA ML salieron 1 c/u en inventario."
   }
 ];
 
@@ -3260,6 +3291,70 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:0}
     ]
+  },
+  {
+    // Foto FINAL miércoles 27 may. Movimientos:
+    //   ENTRADAS (compras del día por transferencia):
+    //     CERVEZA CORONA: Ent=24 → 43 (KOPPS 4 sixpacks Corona)
+    //     CERVEZA IMPORTADA: Ent=32 → 51 (KOPPS Stella + otros)
+    //     CERVEZA NACIONAL: Ent=90 → 219 (KOPPS 2 cajas Club x30 + Coronita x30)
+    //     GASEOSA: Ent=60 → (Postobón Bretaña 60und); Sal=4 (mezclador/venta) → 191
+    //     VINO BOTELLA: Ent=1 → 0 (repuesta la botella faltante del martes)
+    //   SALIDAS:
+    //     GINEBRA ML: Sal=1 → 4 (trago estanco)
+    //     TEQUILA ML: Sal=1 → 4 (trago)
+    //     GASEOSA: Sal=4 (incluido arriba)
+    //   Cócteles (Daiquiri, Margarita, Martini Dry, Tequila Sunrise) servidos de botellas abiertas (no descuentan unidad base).
+    date: "2026-05-27", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:28},
+      {nombre:"AGUA TONICA",saldo:13},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:43},
+      {nombre:"CERVEZA IMPORTADA",saldo:51},
+      {nombre:"CERVEZA NACIONAL",saldo:219},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:3},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:191},
+      {nombre:"GASEOSA 1.5",saldo:33},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:4},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:14},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:3},
+      {nombre:"RON DL",saldo:6},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:0},
+      {nombre:"TEQUILA ML",saldo:4},
+      {nombre:"TRIPLESEC",saldo:5},
+      {nombre:"VINO BOTELLA",saldo:0},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:0}
+    ]
   }
 ];
 
@@ -3595,6 +3690,15 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
     ]
+  },
+  {
+    date: "2026-05-27", total: 32600,
+    items: [
+      { concepto: "Cepillo de sanitario", categoria: "Insumos varios", valor: 8000 },
+      { concepto: "Domicilio", categoria: "Domicilios", valor: 5000 },
+      { concepto: "D1: 1 Limpiador Todo + 1 Encendedor", categoria: "Insumos varios", valor: 9600 },
+      { concepto: "Comida empleados (martes 26 + miércoles 27, $5k c/u)", categoria: "Comida", valor: 10000 },
+    ]
   }
 ];
 
@@ -3847,6 +3951,30 @@ const PRELOADED_COMPRAS = [
     { producto_jsx:"WHISKEY COCTELERIA", cant:1, base_und:28846.67, icl_und:21311, vr_und:51600, vr_total:51600, observaciones:"WHISKY PASSPORT SCOT BOT 700CC (precio confirmado)" },
     { producto_jsx:"", cant:5, base_und:3000, icl_und:0, vr_und:3000, vr_total:15000, observaciones:"HIELO FONTE VIDA 3KGS (insumo - no en inventario)" },
   ]},
+  // POSTOBON GP07444829 · 2026-05-27 · A Pagar $115.000 (cancelada — transferencia, contado)
+  { fecha:"2026-05-27", factura:"GP07444829", proveedor:"Postobón", vence:"2026-05-27", a_pagar:115000, items:[
+    { producto_jsx:"GASEOSA", cant:60, base_und:1916.67, icl_und:0, vr_und:1916.67, vr_total:115000, observaciones:"Bretaña 350ml Vidrio R x30 (2 cajas, 60 unidades · ~$1.917/und). Pago contado vía transferencia." },
+  ]},
+  // BAV-KOPPS-19186 · 2026-05-27 · KOPPS Commercial (Bavaria) Remisión F-AIO-00019186 · A Pagar $430.143 (cancelada — transferencia)
+  { fecha:"2026-05-27", factura:"BAV-KOPPS-19186", proveedor:"Bavaria", vence:"2026-05-27", a_pagar:430143, items:[
+    { producto_jsx:"CERVEZA NACIONAL", cant:2, base_und:58783.20, icl_und:33696, vr_und:70656.61, vr_total:156056, observaciones:"CL Rb330X30N · Club Colombia caja x30 retornable (2 cajas, neto tras dscto)" },
+    { producto_jsx:"", cant:1, base_und:11155.26, icl_und:2208.64, vr_und:15483.40, vr_total:15483, observaciones:"Cajica Miel FRP (insumo)" },
+    { producto_jsx:"CERVEZA CORONA", cant:4, base_und:16909.74, icl_und:8409.60, vr_und:19991.39, vr_total:79966, observaciones:"CORONANRB330 · Corona NR sixpack (4 sxp, neto tras dscto)" },
+    { producto_jsx:"CERVEZA IMPORTADA", cant:4, base_und:16268.07, icl_und:8064, vr_und:18897.05, vr_total:75588, observaciones:"STEARTNRB300 · Stella Artois NR sixpack (4 sxp, neto tras dscto)" },
+    { producto_jsx:"CERVEZA NACIONAL", cant:1, base_und:58504.20, icl_und:17280, vr_und:86900, vr_total:86900, observaciones:"COLTRRRB330X3 · Coronita/Club retornable caja x30" },
+    { producto_jsx:"", cant:1, base_und:11496.86, icl_und:2468.74, vr_und:16150, vr_total:16150, observaciones:"BBCROSENRB33 · cerveza/bebida sixpack" },
+  ]},
+  // CASALIMPIA-PED1370 · 2026-05-27 · Almacén Casa Limpia Popayán · A Pagar $139.000 + $5.000 domicilio = $144.000 (cancelada — transferencia)
+  { fecha:"2026-05-27", factura:"CASALIMPIA-PED1370", proveedor:"Casa Limpia", vence:"2026-05-27", a_pagar:144000, items:[
+    { producto_jsx:"", cant:4, base_und:13750, icl_und:0, vr_und:13750, vr_total:55000, observaciones:"PH JUMBO NUBE BLC X ROL (papel higiénico, 4 rollos · insumo aseo)" },
+    { producto_jsx:"", cant:1, base_und:69000, icl_und:0, vr_und:69000, vr_total:69000, observaciones:"LIMPIA PISOS DYILOP X UNI (insumo aseo)" },
+    { producto_jsx:"", cant:1, base_und:15000, icl_und:0, vr_und:15000, vr_total:15000, observaciones:"DESMANCHADOR TAK TAX UNI (insumo aseo)" },
+    { producto_jsx:"", cant:1, base_und:5000, icl_und:0, vr_und:5000, vr_total:5000, observaciones:"Domicilio Casa Limpia" },
+  ]},
+  // TVBASE-27may · 2026-05-27 · Instalación base TV barra (CAPEX renovación lounge) · A Pagar $200.000 (cancelada — transferencia Nequi 3105280949)
+  { fecha:"2026-05-27", factura:"TVBASE-27may", proveedor:"Servicio Instalación (Nequi)", vence:"2026-05-27", a_pagar:200000, items:[
+    { producto_jsx:"", cant:1, base_und:200000, icl_und:0, vr_und:200000, vr_total:200000, observaciones:"Instalación base TV en barra - La Sala. CAPEX / Activo fijo (renovación lounge). Pago Nequi comprobante G1BJ0JZWX8." },
+  ]},
 ];
 
 // ─── Cartera multi-proveedor — cuentas por pagar ───
@@ -3883,6 +4011,10 @@ const PRELOADED_CARTERA = [
   { proveedor:"D1", factura:"D1-H6Z9444976", fecha:"2026-05-23", vence:"2026-05-23", valor:17250, detalle:true, estado:"cancelada", nota:"D1: 5 Azúcar Blanca. Pagada contado." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10351", fecha:"2026-05-23", vence:"2026-06-22", valor:650600, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: 12 Coca-Cola 1.5L, 4 Aguard Caucano, 1 Old Parr, 1 Tequila Cuervo, 1 Ron Caldas, 1 Licor Menta, 1 Whisky Passport, 5 Hielo. Explica 6 de las 13 entradas inventario 23 may." },
   { proveedor:"Bavaria", factura:"BAV-PICKING-01may", fecha:"2026-05-01", vence:"2026-05-01", valor:480400, detalle:true, estado:"cancelada", nota:"Lista Picking 01-may. Relacionada y cancelada vía transferencia ($480.400, 1 may)." },
+  { proveedor:"Postobón", factura:"GP07444829", fecha:"2026-05-27", vence:"2026-05-27", valor:115000, detalle:true, estado:"cancelada", nota:"Factura electrónica GP07444829. 60 unidades Bretaña 350ml (2 cajas). Pagada vía transferencia 27 may." },
+  { proveedor:"Bavaria", factura:"BAV-KOPPS-19186", fecha:"2026-05-27", vence:"2026-05-27", valor:430143, detalle:true, estado:"cancelada", nota:"Remisión KOPPS Commercial F-AIO-00019186. 2 cajas Club Colombia + Corona + Stella + Coronita + sixpacks. Pagada vía transferencia 27 may." },
+  { proveedor:"Casa Limpia", factura:"CASALIMPIA-PED1370", fecha:"2026-05-27", vence:"2026-05-27", valor:144000, detalle:true, estado:"cancelada", nota:"Pedido PED 1370. 4 papel higiénico Jumbo + Limpia Pisos + Desmanchador + domicilio $5.000. Pagada vía transferencia 27 may ($139.000 + $5.000)." },
+  { proveedor:"Servicio Instalación (Nequi)", factura:"TVBASE-27may", fecha:"2026-05-27", vence:"2026-05-27", valor:200000, detalle:true, estado:"cancelada", nota:"Instalación base TV en barra - CAPEX renovación lounge. Pagada vía transferencia Nequi 3105280949 (comprobante G1BJ0JZWX8)." },
 ];
 
 // ─── Gastos pagados por transferencia (no aparecen en cuadre del POS) ───
@@ -3961,6 +4093,10 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-26", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Pago a cuenta Licores Junior (sin asignar facturas)", categoria: "Pago proveedor (no operativo)", valor: 992000 },
   { date: "2026-05-26", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Instalación bases parlantes exterior (Nequí José Gómez)", categoria: "Activo fijo", valor: 46000 },
   { date: "2026-05-26", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Insumos baños (Bre-B Pro Cleaner)", categoria: "Insumos varios", valor: 90000 },
+  { date: "2026-05-27", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Postobón (Bretaña 60und, factura GP07444829)", categoria: "Bebidas/Licor", valor: 115000 },
+  { date: "2026-05-27", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Bavaria (KOPPS remisión F-AIO-00019186)", categoria: "Bebidas/Licor", valor: 430143 },
+  { date: "2026-05-27", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Casa Limpia (aseo + domicilio, PED 1370)", categoria: "Insumos varios", valor: 144000 },
+  { date: "2026-05-27", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Instalación base TV barra (Nequí 3105280949)", categoria: "Activo fijo", valor: 200000 },
 ];
 
 // ─── Storage ───
@@ -4005,7 +4141,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-26");
+  const [selDate,setSelDate]=useState("2026-05-27");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -5892,7 +6028,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-27";
+  const HOY="2026-05-28";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
