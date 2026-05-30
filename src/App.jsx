@@ -4367,6 +4367,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Show cantante Carlos Valencia (Nequí)", categoria: "Entretenimiento/Eventos", valor: 400000 },
   { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Lava platos 1.20m cubierta poceta (IMVEL FVE6190)", categoria: "Activo fijo", valor: 315000 },
   { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Estructura lava platos (Bre-B James Olivier Medina, comprobante TRwdUF1NmoEC)", categoria: "Activo fijo", valor: 380000 },
+  { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Líquido máquina granizadora (transf. Rodolfo Muñoz Zapata, comprobante 0000025000)", categoria: "Insumos granizados", valor: 176000 },
   { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Lava traperos (Ferretería La Reina, Redeban débito)", categoria: "Activo fijo", valor: 161990 },
 ];
 
