@@ -345,6 +345,13 @@ const PRELOADED_CUADRES = [
     efectivo: 46700, tarjeta: 479000, otros_pago: 0,
     pizza_80: 299040, gastos: 100100, nomina: 385000, costo_financiero: 0,
     neto_sala: 226660, faltante: 0,
+  },
+  {
+    date: "2026-05-29", venta_total: 4858000,
+    estanco: 1042000, cocteles: 2620000, pizzeria: 1196000, otros_venta: 0,
+    efectivo: 466350, tarjeta: 3897800, otros_pago: 0,
+    pizza_80: 956800, gastos: 193850, nomina: 300000, costo_financiero: 0,
+    neto_sala: 1411350, faltante: 0,
   }
 ];
 
@@ -943,6 +950,34 @@ const PRELOADED_COCINA = [
       { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
       { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
     ]
+  },
+  {
+    date: "2026-05-29", total: 1196000, total_units: 28,
+    productos: [
+      { nombre: "LASAGNA DE POLLO", cantidad: 4, valor: 160000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 4, valor: 172000 },
+      { nombre: "LASAGNA DE RES", cantidad: 2, valor: 80000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 3, valor: 95400 },
+      { nombre: "PZ FLORENTINA GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB ESPECIAL GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ POLLO CHAMPI GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ ESPANOLA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "PT AL CAMPO RG", cantidad: 1, valor: 40200 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ PEPERNATA PEQ", cantidad: 1, valor: 38400 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "HB BBQ", cantidad: 1, valor: 36000 },
+      { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "PT BOLOGNESA JR", cantidad: 1, valor: 31200 },
+      { nombre: "PZ MARGARITA PQ", cantidad: 1, valor: 30000 },
+      { nombre: "CHAMPINONES PARMESANOS", cantidad: 1, valor: 28800 },
+      { nombre: "FOCACCIA", cantidad: 1, valor: 14000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "ADICION COMIDA", cantidad: 1, valor: 4000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
   }
 ];
 
@@ -1018,6 +1053,51 @@ const PRELOADED_BAR = [
       { nombre: "SODA ITALIANA", cantidad: 2, precio_unit: 15000, total: 30000 },
     ],
     nota: "Jueves SIN promo 2x1 (solo mar/mié). Cócteles cuadran exacto a $595k. Bajas de coctelería (insumos no cobrados aparte): RON DL 2, TRIPLE SEC 1, WHISKY COCT 1, GASEOSA 6 (mezclador). Estanco: 4 cerveza nac $36k + 2 agua $6k = $42k."
+  },
+  {
+    date: "2026-05-29", total_estanco: 1042000, total_cocteles: 2620000, total: 3662000, total_units: 232,
+    estanco: [
+      { nombre: "MICHELADA", cantidad: 31, precio_unit: 12000, total: 372000, nota: "Cerveza preparada. PVP $12k confirmado. Usa 31 cervezas nacionales" },
+      { nombre: "CERVEZA NACIONAL", cantidad: 25, precio_unit: 9000, total: 225000, nota: "Venta directa (56 total - 31 michelada = 25 directas)" },
+      { nombre: "CERVEZA CORONA", cantidad: 16, precio_unit: 13000, total: 208000 },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 16, precio_unit: 13000, total: 208000 },
+      { nombre: "AGUA", cantidad: 5, precio_unit: 6000, total: 30000 },
+      { nombre: "AGUA TONICA", cantidad: 1, precio_unit: 6000, total: 6000 },
+      { nombre: "AGTE BOTELLA CAUCANO", cantidad: 2, precio_unit: 0, total: 0, nota: "Botella aguardiente - PVP pendiente" },
+      { nombre: "AGTE MEDIA CAUCANO", cantidad: 1, precio_unit: 0, total: 0, nota: "PVP pendiente" },
+      { nombre: "RON CALDAS BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "PVP pendiente" },
+      { nombre: "RON CALDAS MEDIA", cantidad: 1, precio_unit: 0, total: 0, nota: "PVP pendiente" },
+      { nombre: "TRAGO DOBLE", cantidad: 4, precio_unit: 0, total: 0, nota: "Tragos dobles (whisky/aguardiente) - PVP pendiente" },
+      { nombre: "GINEBRA ML", cantidad: 2, precio_unit: 0, total: 0, nota: "Tragos - PVP pendiente" },
+      { nombre: "TEQUILA ML", cantidad: 3, precio_unit: 0, total: 0, nota: "Tragos - PVP pendiente" },
+      { nombre: "VODKA DL", cantidad: 1, precio_unit: 0, total: 0, nota: "Trago - PVP pendiente" },
+      { nombre: "RON DL", cantidad: 4, precio_unit: 0, total: 0, nota: "Tragos - PVP pendiente (también insumo cócteles)" },
+      { nombre: "ELECTROLIT", cantidad: 1, precio_unit: 0, total: 0, nota: "PVP pendiente" },
+    ],
+    cocteles: [
+      { nombre: "JARRA SANGRIA", cantidad: 7, precio_unit: 90000, total: 630000, nota: "Jarra para compartir. PVP $90k confirmado" },
+      { nombre: "K MOJITO", cantidad: 8, precio_unit: 36000, total: 288000 },
+      { nombre: "K MARGARITA", cantidad: 7, precio_unit: 36000, total: 252000 },
+      { nombre: "K MARGARITA MIX", cantidad: 5, precio_unit: 38000, total: 190000 },
+      { nombre: "K TEQUILA SUNRISE", cantidad: 5, precio_unit: 36000, total: 180000 },
+      { nombre: "K LONG ISLAND", cantidad: 4, precio_unit: 36000, total: 144000 },
+      { nombre: "K PECERA LA SALA", cantidad: 3, precio_unit: 69000, total: 207000, nota: "Fishbowl compartido $69k" },
+      { nombre: "K DEMONIO VERDE", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K PINA COLADA SIN LIC", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K BLUE HAWAI", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K COCO LOCO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K GIN TONIC", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MARTINI DRY", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MOJITO MIX", cantidad: 1, precio_unit: 38000, total: 38000 },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 4, precio_unit: 18000, total: 72000 },
+      { nombre: "LIMONADA NATURAL", cantidad: 3, precio_unit: 10000, total: 30000 },
+      { nombre: "LIMONADA DE HIERBABUENA", cantidad: 2, precio_unit: 15000, total: 30000 },
+      { nombre: "LIMONADA DE VINO", cantidad: 1, precio_unit: 18000, total: 18000 },
+      { nombre: "JUGO EN AGUA", cantidad: 2, precio_unit: 10000, total: 20000 },
+      { nombre: "CAJA DE VINO (copas)", cantidad: 6, precio_unit: 0, total: 0, nota: "6 copas servidas de 1 caja física (Caja de Vino inventario -1). Posible Copa de Vino $25k c/u" },
+    ],
+    nota: "Viernes 29 día MASIVO ($4.858.000 venta total). SIN promo 2x1 (solo mar/mié). Estanco con michelada (31) suma ~$1.049k vs $1.042k cuadre (dif menor por PVP tragos pendientes). Cócteles K + jarra sangría + limonadas. PRECIOS PENDIENTES: tragos cortos (ginebra/tequila/vodka ML, ron DL, trago doble), aguardientes botella/media, copas de vino, electrolit. Cantidades 100% validadas contra inventario."
   }
 ];
 
@@ -3456,6 +3536,76 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:0}
     ]
+  },
+  {
+    // Foto FINAL viernes 29 may. ATENCIÓN: la foto tiene DESFASE TIPOGRÁFICO de -1 línea
+    // (los valores Ent/Sal/Saldo aparecen una línea por debajo de su producto).
+    // Validado con inicial+Ent-Sal=Saldo y anclado contra reporte BAR (AGUA-5, GASEOSA-27, CERV NAC-56).
+    // Movimientos viernes 29 (día fuerte, $4.858.000 venta):
+    //   AGT BOTLLA CAUCA: Ent=1 Sal=2 → 4
+    //   AGT MEDIA CAUCA: Ent=2 Sal=1 → 3
+    //   AGUA: Sal=5 → 21 ; AGUA TONICA: Sal=1 → 12 ; AMARETO: sin mov → 1
+    //   CAJA DE VINO: Sal=1 → 0 (6 copas servidas de 1 caja física)
+    //   CERVEZA CORONA: Sal=16 → 27
+    //   CERVEZA IMPORTADA: Sal=16 → 35
+    //   CERVEZA NACIONAL: Sal=56 → 159 (incluye 31 micheladas + cervezas directas)
+    //   ELECTROLIT: Sal=1 → 2
+    //   GASEOSA: Sal=27 → 202
+    //   GINEBRA ML: Sal=2 → 2 ; LICOR MANZANA: Sal=1 → 12
+    //   RON CALDAS BOT: Sal=1 → 1 ; RON CALDAS MED: Sal=1 → 2 ; RON DL: Sal=4 → 0
+    //   TEQUILA MEDIA: Ent=2 → 2 ; TEQUILA ML: Sal=3 → 1
+    //   VINO BOTELLA: Ent=3 → 3 (reposición) ; VODKA DL: Sal=1 → 6
+    //   WHISKY COCT: Ent=1 Sal=1 → 0 ; OLD PARR MEDIA: Ent=1 → 1
+    date: "2026-05-29", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:21},
+      {nombre:"AGUA TONICA",saldo:12},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:0},
+      {nombre:"CERVEZA CORONA",saldo:27},
+      {nombre:"CERVEZA IMPORTADA",saldo:35},
+      {nombre:"CERVEZA NACIONAL",saldo:159},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:202},
+      {nombre:"GASEOSA 1.5",saldo:33},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:4},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -3806,6 +3956,15 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
       { concepto: "D1: paños reutilizables + toalla cocina + servilletas + azúcar blanca + leche deslac + gomas surtidas + naranjas + encendedor + paño microfibra + lavaloza + helados (gomitas) + jugo mandarina + limpiavidrios (24 art.)", categoria: "Insumos varios", valor: 95100 },
+    ]
+  },
+  {
+    date: "2026-05-29", total: 193850,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "Aseo general (servicio miércoles 27 may)", categoria: "Aseo/Servicios", valor: 70000 },
+      { concepto: "Insumos coctelería: Hierbabuena $10k + Romero $6k + Uvas 2lb $7k", categoria: "Insumos coctelería", valor: 23000 },
+      { concepto: "Coca-Cola (FE soporte entrega $87.845 + envases $3.005)", categoria: "Bebidas/Proveedor", valor: 90850 },
     ]
   }
 ];
@@ -4205,6 +4364,10 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-27", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Bavaria (KOPPS remisión F-AIO-00019186)", categoria: "Bebidas/Licor", valor: 430143 },
   { date: "2026-05-27", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Casa Limpia (aseo + domicilio, PED 1370)", categoria: "Insumos varios", valor: 144000 },
   { date: "2026-05-27", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Instalación base TV barra (Nequí 3105280949)", categoria: "Activo fijo", valor: 200000 },
+  { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Show cantante Carlos Valencia (Nequí)", categoria: "Entretenimiento/Eventos", valor: 400000 },
+  { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Lava platos 1.20m cubierta poceta (IMVEL FVE6190)", categoria: "Activo fijo", valor: 315000 },
+  { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Estructura lava platos (Bre-B James Olivier Medina, comprobante TRwdUF1NmoEC)", categoria: "Activo fijo", valor: 380000 },
+  { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Lava traperos (Ferretería La Reina, Redeban débito)", categoria: "Activo fijo", valor: 161990 },
 ];
 
 // ─── Storage ───
@@ -4249,7 +4412,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-28");
+  const [selDate,setSelDate]=useState("2026-05-29");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -6136,7 +6299,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-29";
+  const HOY="2026-05-30";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
