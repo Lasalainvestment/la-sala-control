@@ -352,6 +352,13 @@ const PRELOADED_CUADRES = [
     efectivo: 466350, tarjeta: 3897800, otros_pago: 0,
     pizza_80: 956800, gastos: 193850, nomina: 300000, costo_financiero: 0,
     neto_sala: 1411350, faltante: 0,
+  },
+  {
+    date: "2026-05-30", venta_total: 1221200,
+    estanco: 399000, cocteles: 487000, pizzeria: 335200, otros_venta: 0,
+    efectivo: 141500, tarjeta: 660000, otros_pago: 0,
+    pizza_80: 268160, gastos: 159700, nomina: 260000, costo_financiero: 0,
+    neto_sala: 533340, faltante: 0,
   }
 ];
 
@@ -978,6 +985,18 @@ const PRELOADED_COCINA = [
       { nombre: "ADICION COMIDA", cantidad: 1, valor: 4000 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
     ]
+  },
+  {
+    date: "2026-05-30", total: 335200, total_units: 9,
+    productos: [
+      { nombre: "LASAGNA MIXTA", cantidad: 3, valor: 129000 },
+      { nombre: "PZ AB CARNES GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ ESPANOLA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ MEXICANA PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ DE LA GRANJA PEQ", cantidad: 1, valor: 32400 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
   }
 ];
 
@@ -1098,6 +1117,27 @@ const PRELOADED_BAR = [
       { nombre: "CAJA DE VINO (copas)", cantidad: 6, precio_unit: 0, total: 0, nota: "6 copas servidas de 1 caja física (Caja de Vino inventario -1). Posible Copa de Vino $25k c/u" },
     ],
     nota: "Viernes 29 día MASIVO ($4.858.000 venta total). SIN promo 2x1 (solo mar/mié). Estanco con michelada (31) suma ~$1.049k vs $1.042k cuadre (dif menor por PVP tragos pendientes). Cócteles K + jarra sangría + limonadas. PRECIOS PENDIENTES: tragos cortos (ginebra/tequila/vodka ML, ron DL, trago doble), aguardientes botella/media, copas de vino, electrolit. Cantidades 100% validadas contra inventario."
+  },
+  {
+    date: "2026-05-30", total_estanco: 399000, total_cocteles: 487000, total: 886000, total_units: 31,
+    estanco: [
+      { nombre: "AGTE BOTELLA CAUCANO", cantidad: 4, precio_unit: 90000, total: 360000, nota: "4 botellas Aguardiente Caucano Tradicional (carta $90k botella)" },
+      { nombre: "CERVEZA NACIONAL", cantidad: 3, precio_unit: 9000, total: 27000 },
+      { nombre: "AGUA", cantidad: 2, precio_unit: 6000, total: 12000 },
+    ],
+    cocteles: [
+      { nombre: "JARRA SANGRIA", cantidad: 1, precio_unit: 95000, total: 95000, nota: "Sangría 50oz (carta pág 13)" },
+      { nombre: "COPA DE SANGRIA", cantidad: 12, precio_unit: 7500, total: 90000, nota: "Copa individual de sangría (porción; deriva del jarra $95k)" },
+      { nombre: "K CAIPIRINHA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MEXICO LINDO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K NUBARRON", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K OLD FASHION", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K TEQUILA SUNRISE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MOJITO MIX", cantidad: 1, precio_unit: 38000, total: 38000 },
+      { nombre: "LICOR DE MANZANA", cantidad: 2, precio_unit: 36000, total: 72000, nota: "Cóctel (consistente con 28/29 may)" },
+      { nombre: "MICHELADA", cantidad: 1, precio_unit: 12000, total: 12000 },
+    ],
+    nota: "Sábado 30. Cruce con carta exacto: Estanco $399k (4 aguardiente caucano $90k + 3 cerveza nac $9k + 2 agua $6k) y Cócteles $487k. Bajas/insumos no cobrados: GASEOSA 2 (mezclador; inv consumió 12), CAJA DE VINO 2 + VINO BOTELLA 1 (base sangría), TEQUILA ML 1, TRIPLE SEC 1. Copa de sangría $7.5k derivada (residual exacto)."
   }
 ];
 
@@ -3567,7 +3607,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"AGUA TONICA",saldo:12},
       {nombre:"AMARETTO",saldo:1},
       {nombre:"CACHAZA",saldo:0},
-      {nombre:"CAJA DE VINO",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
       {nombre:"CERVEZA CORONA",saldo:27},
       {nombre:"CERVEZA IMPORTADA",saldo:35},
       {nombre:"CERVEZA NACIONAL",saldo:159},
@@ -3596,6 +3636,68 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"TEQUILA ML",saldo:1},
       {nombre:"TRIPLESEC",saldo:4},
       {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
+  },
+  {
+    // Foto FINAL sábado 30 may (bien alineada, sin desfase). Inicial 30 = final 29 (corregido CAJA DE VINO 0→1).
+    // Movimientos sábado 30 (día fuerte $1.221.200):
+    //   AGTE BOTELLA CAUCANO: Sal=4 → 0 (4 botellas vendidas estanco = $360k)
+    //   AGUA: Sal=2 → 19
+    //   CAJA DE VINO: Sal=2 → -1 (2 cajas para 12 copas sangría + 1 jarra; quedó -1 a reponer)
+    //   CERVEZA NACIONAL: Sal=3 → 156
+    //   GASEOSA: Sal=12 → 190 (2 venta directa + 10 mezcladores)
+    //   LICOR DE MANZANA: Sal=1 → 11 (cócteles)
+    //   RON DL: Ent=5 → 5 (reposición; estaba en 0)
+    //   TEQUILA ML: Sal=1 → 0 ; TRIPLE SEC: Sal=1 → 3 (insumo cóctel) ; VINO BOTELLA: Sal=1 → 2 (insumo sangría)
+    date: "2026-05-30", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:0},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:19},
+      {nombre:"AGUA TONICA",saldo:12},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:-1},
+      {nombre:"CERVEZA CORONA",saldo:27},
+      {nombre:"CERVEZA IMPORTADA",saldo:35},
+      {nombre:"CERVEZA NACIONAL",saldo:156},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:190},
+      {nombre:"GASEOSA 1.5",saldo:33},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:0},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:2},
       {nombre:"VINO CASILLERO BOTELLA",saldo:0},
       {nombre:"VODKA BOTELLA",saldo:1},
       {nombre:"VODKA MEDIA",saldo:0},
@@ -3965,6 +4067,16 @@ const PRELOADED_GASTOS = [
       { concepto: "Aseo general (servicio miércoles 27 may)", categoria: "Aseo/Servicios", valor: 70000 },
       { concepto: "Insumos coctelería: Hierbabuena $10k + Romero $6k + Uvas 2lb $7k", categoria: "Insumos coctelería", valor: 23000 },
       { concepto: "Coca-Cola (FE soporte entrega $87.845 + envases $3.005)", categoria: "Bebidas/Proveedor", valor: 90850 },
+    ]
+  },
+  {
+    date: "2026-05-30", total: 159700,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "3 Vasos rojos plásticos 16oz + bolsa (Dollarcity) + domicilio $5k", categoria: "Insumos varios", valor: 33500 },
+      { concepto: "D1: servilletas, esponjas, toallas cocina, mermeladas, azúcar, jugos (piña/lulo/fresa/naranja/manzana) (16 art., neto tras ajuste -$3k)", categoria: "Insumos varios", valor: 78900 },
+      { concepto: "Palillos de madera para decorar cócteles", categoria: "Insumos coctelería", valor: 2000 },
+      { concepto: "Frutas (Placita Campesina: carambolo, pulpa fresa, pulpa mango, fresa bandeja) + domicilio $5k", categoria: "Insumos coctelería", valor: 35270 },
     ]
   }
 ];
@@ -4368,6 +4480,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Lava platos 1.20m cubierta poceta (IMVEL FVE6190)", categoria: "Activo fijo", valor: 315000 },
   { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Estructura lava platos (Bre-B James Olivier Medina, comprobante TRwdUF1NmoEC)", categoria: "Activo fijo", valor: 380000 },
   { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Líquido máquina granizadora (transf. Rodolfo Muñoz Zapata, comprobante 0000025000)", categoria: "Insumos granizados", valor: 176000 },
+  { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Internet Claro mes mayo (Bancolombia, comprobante TR260530223432BFyElK, ref 78767924)", categoria: "Servicios", valor: 167007 },
   { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Lava traperos (Ferretería La Reina, Redeban débito)", categoria: "Activo fijo", valor: 161990 },
 ];
 
@@ -4413,7 +4526,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-29");
+  const [selDate,setSelDate]=useState("2026-05-30");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -6300,7 +6413,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-30";
+  const HOY="2026-05-31";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
