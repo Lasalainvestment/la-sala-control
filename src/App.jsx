@@ -4482,6 +4482,8 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-29", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Líquido máquina granizadora (transf. Rodolfo Muñoz Zapata, comprobante 0000025000)", categoria: "Insumos granizados", valor: 176000 },
   { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Internet Claro mes mayo (Bancolombia, comprobante TR260530223432BFyElK, ref 78767924)", categoria: "Servicios", valor: 167007 },
   { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Lava traperos (Ferretería La Reina, Redeban débito)", categoria: "Activo fijo", valor: 161990 },
+  { date: "2026-05-25", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Nómina domingo 24 + lunes 25 may", categoria: "Nómina", valor: 370000 },
+  { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Compra Ron y Vodka Don Luis (DL) - reposición (explica RON DL +5 inv 30 may)", categoria: "Compra Licores", valor: 140000 },
 ];
 
 // ─── Storage ───
