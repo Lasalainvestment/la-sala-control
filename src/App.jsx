@@ -359,6 +359,13 @@ const PRELOADED_CUADRES = [
     efectivo: 141500, tarjeta: 660000, otros_pago: 0,
     pizza_80: 268160, gastos: 159700, nomina: 260000, costo_financiero: 0,
     neto_sala: 533340, faltante: 0,
+  },
+  {
+    date: "2026-06-01", venta_total: 952000,
+    estanco: 144000, cocteles: 208000, pizzeria: 600000, otros_venta: 0,
+    efectivo: 3800, tarjeta: 937000, otros_pago: 0,
+    pizza_80: 480000, gastos: 11200, nomina: 0, costo_financiero: 0,
+    neto_sala: 460800, faltante: 0,
   }
 ];
 
@@ -997,6 +1004,26 @@ const PRELOADED_COCINA = [
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
     ]
+  },
+  {
+    date: "2026-06-01", total: 600000, total_units: 18,
+    productos: [
+      { nombre: "PZ POLLO CHAMPI MED", cantidad: 2, valor: 108000 },
+      { nombre: "PZ MARGARITA MED", cantidad: 2, valor: 72000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ HAWAIANA MED", cantidad: 1, valor: 52800 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "PZ MEXICANA PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ CUATRO ESTACIONES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "PZ MARGARITA PQ", cantidad: 1, valor: 30000 },
+      { nombre: "FOCACCIA", cantidad: 1, valor: 14000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "ADICION COMIDA", cantidad: 1, valor: 2000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
   }
 ];
 
@@ -1138,6 +1165,26 @@ const PRELOADED_BAR = [
       { nombre: "MICHELADA", cantidad: 1, precio_unit: 12000, total: 12000 },
     ],
     nota: "Sábado 30. Cruce con carta exacto: Estanco $399k (4 aguardiente caucano $90k + 3 cerveza nac $9k + 2 agua $6k) y Cócteles $487k. Bajas/insumos no cobrados: GASEOSA 2 (mezclador; inv consumió 12), CAJA DE VINO 2 + VINO BOTELLA 1 (base sangría), TEQUILA ML 1, TRIPLE SEC 1. Copa de sangría $7.5k derivada (residual exacto)."
+  },
+  {
+    date: "2026-06-01", total_estanco: 144000, total_cocteles: 208000, total: 352000, total_units: 56,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 15, precio_unit: 9000, total: 135000, nota: "Venta directa: 18 bajas inv − 3 michelada = 15. PVP estándar $9k" },
+      { nombre: "MICHELADA", cantidad: 3, precio_unit: 12000, total: 36000, nota: "Cerveza preparada; usa 3 cerveza nacional. PVP $12k" },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 2, precio_unit: 13000, total: 26000 },
+      { nombre: "AGUA", cantidad: 2, precio_unit: 6000, total: 12000 },
+      { nombre: "AGTE MEDIA ANTIOQUEÑO", cantidad: 2, precio_unit: 60000, total: 120000, nota: "2 medias baja inv. ¿Vendidas como media ($60k) o tragos? PVP/clasificación PENDIENTE" },
+      { nombre: "GINEBRA DL", cantidad: 1, precio_unit: 0, total: 0, nota: "Trago/insumo - PVP pendiente" },
+      { nombre: "GASEOSA", cantidad: 17, precio_unit: 0, total: 0, nota: "Mezclador cócteles (cuba libre/mojito/soda), no cobrado aparte" },
+      { nombre: "GASEOSA 1.5", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo/mezclador" },
+    ],
+    cocteles: [
+      { nombre: "K MOJITO", cantidad: 6, precio_unit: 36000, total: 216000 },
+      { nombre: "K CUBA LIBRE", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "SODA ITALIANA", cantidad: 4, precio_unit: 15000, total: 60000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 1, precio_unit: 18000, total: 18000 },
+    ],
+    nota: "Lunes 01 jun. CANTIDADES 100% validadas (bajas directas = columna Sal del inventario; cócteles del reporte BAR). ⚠️ PRECIOS/CLASIFICACIÓN A CONFIRMAR: a PVP estándar el valor sería ~$695k (estanco ~$329k + cócteles ~$366k), pero el cuadre dice Estanco $144k + Cócteles $208k = $352k (≈ la mitad). Esto apunta a (a) promo 2x1 / descuento fuerte un lunes flojo, y/o (b) cortesías/consumo de personal en cervezas, y/o (c) las 2 AGTE MEDIA fueron baja de inventario y no venta. El cuadre ($144k/$208k) es la fuente de verdad para finanzas; el detalle por ítem se refina cuando Juanma confirme. Sin promo fija lunes (2x1 es solo mar/mié)."
   }
 ];
 
@@ -3708,6 +3755,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-06-01", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:5},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:17},
+      {nombre:"AGUA TONICA",saldo:12},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:27},
+      {nombre:"CERVEZA IMPORTADA",saldo:33},
+      {nombre:"CERVEZA NACIONAL",saldo:138},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:173},
+      {nombre:"GASEOSA 1.5",saldo:32},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:4},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:0},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -4077,6 +4176,13 @@ const PRELOADED_GASTOS = [
       { concepto: "D1: servilletas, esponjas, toallas cocina, mermeladas, azúcar, jugos (piña/lulo/fresa/naranja/manzana) (16 art., neto tras ajuste -$3k)", categoria: "Insumos varios", valor: 78900 },
       { concepto: "Palillos de madera para decorar cócteles", categoria: "Insumos coctelería", valor: 2000 },
       { concepto: "Frutas (Placita Campesina: carambolo, pulpa fresa, pulpa mango, fresa bandeja) + domicilio $5k", categoria: "Insumos coctelería", valor: 35270 },
+    ]
+  },
+  {
+    date: "2026-06-01", total: 11200,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "Sobrante tarjetas (ajuste de cuadre)", categoria: "Ajuste caja", valor: 6200 },
     ]
   }
 ];
@@ -4484,6 +4590,8 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Lava traperos (Ferretería La Reina, Redeban débito)", categoria: "Activo fijo", valor: 161990 },
   { date: "2026-05-25", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Nómina domingo 24 + lunes 25 may", categoria: "Nómina", valor: 370000 },
   { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Compra Ron y Vodka Don Luis (DL) - reposición (explica RON DL +5 inv 30 may)", categoria: "Compra Licores", valor: 140000 },
+  { date: "2026-06-01", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Andrés Chávez - cableado audio y video El Búnker (CAPEX preparación apertura)", categoria: "Capex El Búnker", valor: 227000 },
+  { date: "2026-06-01", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Visita Bomberos La Sala (trámite/permiso)", categoria: "Trámites", valor: 350000 },
 ];
 
 // ─── Storage ───
@@ -4528,7 +4636,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-05-30");
+  const [selDate,setSelDate]=useState("2026-06-01");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -6415,7 +6523,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-05-31";
+  const HOY="2026-06-02";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
