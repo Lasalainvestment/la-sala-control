@@ -366,6 +366,13 @@ const PRELOADED_CUADRES = [
     efectivo: 3800, tarjeta: 937000, otros_pago: 0,
     pizza_80: 480000, gastos: 11200, nomina: 0, costo_financiero: 0,
     neto_sala: 460800, faltante: 0,
+  },
+  {
+    date: "2026-06-02", venta_total: 434400,
+    estanco: 31000, cocteles: 134000, pizzeria: 269400, otros_venta: 0,
+    efectivo: 13500, tarjeta: 388800, otros_pago: 0,
+    pizza_80: 215520, gastos: 32100, nomina: 0, costo_financiero: 0,
+    neto_sala: 186780, faltante: 0,
   }
 ];
 
@@ -1024,6 +1031,18 @@ const PRELOADED_COCINA = [
       { nombre: "ADICION COMIDA", cantidad: 1, valor: 2000 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
     ]
+  },
+  {
+    date: "2026-06-02", total: 269400, total_units: 9,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "HB HAWAIANA", cantidad: 1, valor: 37000 },
+      { nombre: "PT POLLO BECHAMEL JR", cantidad: 1, valor: 31200 },
+      { nombre: "EMPAQUE", cantidad: 2, valor: 4000 },
+    ]
   }
 ];
 
@@ -1185,6 +1204,21 @@ const PRELOADED_BAR = [
       { nombre: "LIMONADA DE COCO", cantidad: 1, precio_unit: 18000, total: 18000 },
     ],
     nota: "Lunes 01 jun. CANTIDADES 100% validadas (bajas directas = columna Sal del inventario; cócteles del reporte BAR). ⚠️ PRECIOS/CLASIFICACIÓN A CONFIRMAR: a PVP estándar el valor sería ~$695k (estanco ~$329k + cócteles ~$366k), pero el cuadre dice Estanco $144k + Cócteles $208k = $352k (≈ la mitad). Esto apunta a (a) promo 2x1 / descuento fuerte un lunes flojo, y/o (b) cortesías/consumo de personal en cervezas, y/o (c) las 2 AGTE MEDIA fueron baja de inventario y no venta. El cuadre ($144k/$208k) es la fuente de verdad para finanzas; el detalle por ítem se refina cuando Juanma confirme. Sin promo fija lunes (2x1 es solo mar/mié)."
+  },
+  {
+    date: "2026-06-02", total_estanco: 31000, total_cocteles: 134000, total: 165000, total_units: 16,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000, nota: "5 bajas inv validadas. A PVP $45k supera el estanco $31k del cuadre → parte cortesía/no cobrada o precio promo; mix exacto pendiente" },
+      { nombre: "AGUA", cantidad: 1, precio_unit: 6000, total: 6000 },
+      { nombre: "GASEOSA", cantidad: 2, precio_unit: 0, total: 0, nota: "Mezclador cócteles, no cobrado aparte" },
+    ],
+    cocteles: [
+      { nombre: "K MOJITO", cantidad: 4, precio_unit: 36000, total: 72000, nota: "Promo 2x1 martes: 4 vendidos, 2 cobrados" },
+      { nombre: "K MARGARITA MIX", cantidad: 2, precio_unit: 38000, total: 38000, nota: "Promo 2x1 martes: 2 vendidos, 1 cobrado" },
+      { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000, nota: "No entra en 2x1" },
+      { nombre: "LIMONADA NATURAL", cantidad: 1, precio_unit: 9000, total: 9000, nota: "Residual exacto del cuadre ($134k − $125k). PVP usual $10k - confirmar" },
+    ],
+    nota: "Martes 02 jun CON promo 2x1. Cócteles cuadran EXACTO a $134k: K Mojito 4→2 cobrados $72k + K Margarita Mix 2→1 cobrado $38k + Soda Italiana $15k + Limonada Natural $9k (residual). Estanco $31k vs $51k a PVP (5 cervezas $45k + 1 agua $6k): mix exacto pendiente. Bajas 100% validadas contra inventario (agua 1, cerveza nac 5, gaseosa 2). REPOSICIÓN coctelería entró en inventario: Ginebra ML +3, Licor de Manzana +4, Tequila ML +6, Triple Sec +2 (factura/pago pendiente de registrar en Compras)."
   }
 ];
 
@@ -3807,6 +3841,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-06-02", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:11},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:5},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:16},
+      {nombre:"AGUA TONICA",saldo:12},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:27},
+      {nombre:"CERVEZA IMPORTADA",saldo:33},
+      {nombre:"CERVEZA NACIONAL",saldo:133},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:171},
+      {nombre:"GASEOSA 1.5",saldo:32},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:4},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:15},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:6},
+      {nombre:"TRIPLESEC",saldo:5},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -4183,6 +4269,14 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
       { concepto: "Sobrante tarjetas (ajuste de cuadre)", categoria: "Ajuste caja", valor: 6200 },
+    ]
+  },
+  {
+    date: "2026-06-02", total: 32100,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "2 bolsas de hielo ($3k c/u, cuenta de cobro La Sala)", categoria: "Insumos coctelería", valor: 6000 },
+      { concepto: "Faltante tarjetas (ajuste de cuadre)", categoria: "Ajuste caja", valor: 21100 },
     ]
   }
 ];
@@ -4592,6 +4686,8 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-05-30", semana: 9, periodo: "Sem 5 may (25 - 31 may)", concepto: "Compra Ron y Vodka Don Luis (DL) - reposición (explica RON DL +5 inv 30 may)", categoria: "Compra Licores", valor: 140000 },
   { date: "2026-06-01", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Andrés Chávez - cableado audio y video El Búnker (CAPEX preparación apertura)", categoria: "Capex El Búnker", valor: 227000 },
   { date: "2026-06-01", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Visita Bomberos La Sala (trámite/permiso)", categoria: "Trámites", valor: 350000 },
+  { date: "2026-06-02", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Portavasos y copas La Sala/El Búnker (transf. a Jaime de Jesús Castaño, comprobante 0000074300, pagada 3 jun)", categoria: "Menaje bar", valor: 680000 },
+  { date: "2026-06-02", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Anticipo 60% Alarma Centinela EL BÚNKER (Davivienda comprobante 110657, pagada 3 jun; saldo 40% pendiente)", categoria: "Capex El Búnker", valor: 1358000 },
 ];
 
 // ─── Storage ───
@@ -4636,7 +4732,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-06-01");
+  const [selDate,setSelDate]=useState("2026-06-02");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -6523,7 +6619,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-06-02";
+  const HOY="2026-06-03";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
