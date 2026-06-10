@@ -408,6 +408,13 @@ const PRELOADED_CUADRES = [
     efectivo: 168600, tarjeta: 1751200, otros_pago: 0,
     pizza_80: 772640, gastos: 5000, nomina: 200000, costo_financiero: 0,
     neto_sala: 1147160, faltante: 0,
+  },
+  {
+    date: "2026-06-08", venta_total: 1156600,
+    estanco: 37000, cocteles: 535000, pizzeria: 584600, otros_venta: 0,
+    efectivo: 36600, tarjeta: 815000, otros_pago: 0,
+    pizza_80: 467680, gastos: 105000, nomina: 200000, costo_financiero: 0,
+    neto_sala: 383920, faltante: 0,
   }
 ];
 
@@ -1166,6 +1173,25 @@ const PRELOADED_COCINA = [
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
     ]
+  },
+  {
+    date: "2026-06-08", total: 584600, total_units: 19,
+    productos: [
+      { nombre: "PZ FLORENTINA GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 2, valor: 79200 },
+      { nombre: "PT POLLO BECHAMEL RG", cantidad: 1, valor: 38400 },
+      { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PT POLLO BECHAMEL JR", cantidad: 1, valor: 31200 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 3, valor: 33000 },
+      { nombre: "ADICION BAR", cantidad: 1, valor: 5000 },
+      { nombre: "EMPAQUE", cantidad: 2, valor: 4000 },
+    ]
   }
 ];
 
@@ -1476,7 +1502,27 @@ const PRELOADED_BAR = [
       { nombre: "LIMONADA CEREZADA", cantidad: 1, precio_unit: 10000, total: 10000, nota: "PVP residual por confirmar" },
       { nombre: "JUGO EN AGUA", cantidad: 1, precio_unit: 5000, total: 5000, nota: "PVP residual por confirmar" },
     ],
-    nota: "Domingo 07 jun SIN promo. Cócteles cuadran EXACTO a $714k con K's a $36k + limonadas/vino/bebidas (varios PVP residuales por confirmar: Frozen Granizado, Conga, Old Fashion, Reserva, copa/botella de vino). Estanco $445k del cuadre vs ~$532k a PVP (29 cerveza nac + 11 michelada + corona/importada): gap ~$87k = cortesías/consumo interno. Bajas 100% validadas contra inventario. REPOSICIÓN entró: Cerveza Nacional +40, AGTE Media Caucano +4, Ron Caldas Media +2 (factura/pago pendiente)."
+    nota: "Domingo 07 jun SIN promo. Cócteles cuadran EXACTO a $714k con K's a $36k + limonadas/vino/bebidas (varios PVP residuales por confirmar: Frozen Granizado, Conga, Old Fashion, Reserva, copa/botella de vino). Estanco $445k del cuadre vs ~$532k a PVP (29 cerveza nac + 11 michelada + corona/importada): gap ~$87k = cortesías/consumo interno. Bajas 100% validadas contra inventario. REPOSICIÓN entró: AGTE Media Caucano +4, Ron Caldas Media +2 (factura/pago pendiente). [Corregido: el saldo de Cerveza Nacional cierra en 224 (264 − 40 vendidas, sin entrada ese día), confirmado por el inventario inicial del 8 jun.]"
+  },
+  {
+    date: "2026-06-08", total_estanco: 37000, total_cocteles: 535000, total: 572000, total_units: 26,
+    estanco: [
+      { nombre: "CERVEZA IMPORTADA", cantidad: 1, precio_unit: 13000, total: 13000 },
+      { nombre: "AGUA TONICA", cantidad: 3, precio_unit: 5000, total: 15000, nota: "Cobrada directa (no como mezclador) - cuadra estanco exacto" },
+      { nombre: "AGUA", cantidad: 1, precio_unit: 6000, total: 6000 },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 3000, total: 3000, nota: "Trago - PVP pendiente" },
+      { nombre: "GASEOSA", cantidad: 6, precio_unit: 0, total: 0, nota: "Mezclador, no cobrado aparte" },
+    ],
+    cocteles: [
+      { nombre: "K PECERA LA SALA", cantidad: 3, precio_unit: 95000, total: 285000, nota: "Formato pecera. PVP $95k CONFIRMADO por cuadre exacto del día" },
+      { nombre: "K GIN TONIC", cantidad: 3, precio_unit: 36000, total: 108000 },
+      { nombre: "K DESTORNILLADOR", cantidad: 2, precio_unit: 36000, total: 72000, nota: "Cóctel nuevo - PVP por confirmar" },
+      { nombre: "LIMONADA DE COCO", cantidad: 2, precio_unit: 18000, total: 36000 },
+      { nombre: "SODA ITALIANA", cantidad: 2, precio_unit: 15000, total: 30000 },
+      { nombre: "JUGO EN AGUA", cantidad: 1, precio_unit: 4000, total: 4000, nota: "PVP residual por confirmar" },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo de cóctel - no cobrado aparte" },
+    ],
+    nota: "Lunes 08 jun SIN promo. Estanco $37k cuadra EXACTO (1 importada $13k + 3 agua tónica $15k + 1 agua $6k + 1 ginebra ML $3k). Cócteles $535k cuadran EXACTO con 3 K Pecera La Sala a $95k + gin tonic + destornillador + limonadas/jugo → CONFIRMA el PVP de la Pecera en $95.000 (resuelve la duda $69k vs $95k). Bajas 100% validadas contra inventario. Día sin venta de cerveza nacional (Cerveza Nacional saldo 224 sin cambio)."
   }
 ];
 
@@ -4375,7 +4421,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"CAJA DE VINO",saldo:1},
       {nombre:"CERVEZA CORONA",saldo:32},
       {nombre:"CERVEZA IMPORTADA",saldo:22},
-      {nombre:"CERVEZA NACIONAL",saldo:264},
+      {nombre:"CERVEZA NACIONAL",saldo:224},
       {nombre:"CHICLETS",saldo:0},
       {nombre:"CIGARRILLOS",saldo:0},
       {nombre:"CREMA DE WHISKY",saldo:1},
@@ -4390,6 +4436,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"GINEBRA ML",saldo:2},
       {nombre:"LICOR CAFÉ",saldo:1},
       {nombre:"LICOR DE MANZANA",saldo:13},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:4},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
+  },
+  {
+    date: "2026-06-08", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:18},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:8},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:32},
+      {nombre:"AGUA TONICA",saldo:4},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:32},
+      {nombre:"CERVEZA IMPORTADA",saldo:21},
+      {nombre:"CERVEZA NACIONAL",saldo:224},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:142},
+      {nombre:"GASEOSA 1.5",saldo:30},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:4},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:12},
       {nombre:"LICOR DE MENTA",saldo:0},
       {nombre:"RED BULL",saldo:7},
       {nombre:"RON CALDAS BOTELLA",saldo:1},
@@ -4831,6 +4929,13 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000, nota: "Sin foto de gastos; total tomado de la línea GASTOS del cuadre ($5.000)" },
     ]
+  },
+  {
+    date: "2026-06-08", total: 105000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "Limones/cítricos (Cítricos Narváez, fact. 11446: limón tahití, maracuyá, tomate, mandarina, naranja, papaya, aguacate)", categoria: "Insumos coctelería", valor: 100000 },
+    ]
   }
 ];
 
@@ -5123,8 +5228,8 @@ const PRELOADED_CARTERA = [
   { proveedor:"GIR (Licores Junior)", factura:"FDJC008961", fecha:"2026-04-18", vence:"2026-05-18", valor:340900, detalle:true, estado:"cancelada", nota:"Crédito 30 días. Detalle: 2 Vino Gato Negro, 1 Old Parr 500cc, 1 Baileys 700cc, 24 Agua Cristal 600cc, 24 Postobón Soda. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500: FDJC008961+9133+9356)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9133", fecha:"2026-04-24", vence:"2026-05-24", valor:485500, detalle:true, estado:"cancelada", nota:"Crédito 30 días. Detalle: 10 Hielo, 48 Postobón Soda, 2 Aguard Caucano, 2 Jugo del Valle 1.5L, 1 Whisky Passport, 1 Licor Menta, 1 Licor Café, 5 Schweppes Tónica, 2 Vino Cata Tint. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC9356", fecha:"2026-04-30", vence:"2026-05-30", valor:522500, detalle:true, estado:"cancelada", nota:"Crédito 30 días. Detalle: 12 Coca-Cola 1.5L, 4 Aguard Antioqueño, 3 Aguard Caucano Can, 2 Ron V.Caldas, 1 Tequila Cuervo, 2 Jugo del Valle 1.5L + ajuste +$400. CANCELADA 26 may vía Davivienda comprobante 311283 (pago combinado $1.348.500)." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC9405", fecha:"2026-05-01", vence:"2026-05-31", valor:194300, detalle:true, estado:"pendiente", nota:"Detalle cargado (2 ítems). Nota factura: La Sala ya llevo." },
-  { proveedor:"GIR (Licores Junior)", factura:"FDJC9420", fecha:"2026-05-01", vence:"2026-05-31", valor:256900, detalle:true, estado:"pendiente", nota:"Detalle cargado (3 ítems)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC9405", fecha:"2026-05-01", vence:"2026-05-31", valor:194300, detalle:true, estado:"cancelada", nota:"Detalle cargado (2 ítems). Nota factura: La Sala ya llevo. CANCELADA 09 jun vía transferencia (estaba vencida desde 31 may)." },
+  { proveedor:"GIR (Licores Junior)", factura:"FDJC9420", fecha:"2026-05-01", vence:"2026-05-31", valor:256900, detalle:true, estado:"cancelada", nota:"Detalle cargado (3 ítems). CANCELADA 09 jun vía transferencia (estaba vencida desde 31 may)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC10005", fecha:"2026-05-15", vence:"2026-06-14", valor:319000, detalle:true, estado:"pendiente", nota:"Posterior al corte del estado de cuenta (02/05). Detalle cargado (7 ítems)." },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC009970", fecha:"2026-05-15", vence:"2026-06-14", valor:90800, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: 2 Vodka Smirnoff Tamarindo. Nota cartera GIR: La Sala ya llevo. (Renombrado de PD102247)" },
   { proveedor:"GIR (Licores Junior)", factura:"FDJC010090", fecha:"2026-05-17", vence:"2026-06-16", valor:284550, detalle:true, estado:"pendiente", nota:"Crédito 30 días. Detalle: Vino Gato Negro, Cata Tint, Somet/Spec, Amareto, Café, Martini Dry. (Renombrado de PD102560)" },
@@ -5241,6 +5346,37 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-06-01", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Visita Bomberos La Sala (trámite/permiso)", categoria: "Trámites", valor: 350000 },
   { date: "2026-06-02", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Portavasos y copas La Sala/El Búnker (transf. a Jaime de Jesús Castaño, comprobante 0000074300, pagada 3 jun)", categoria: "Menaje bar", valor: 680000 },
   { date: "2026-06-02", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Anticipo 60% Alarma Centinela EL BÚNKER (Davivienda comprobante 110657, pagada 3 jun; saldo 40% pendiente)", categoria: "Capex El Búnker", valor: 1358000 },
+  { date: "2026-06-05", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Licovacana Promo Antioqueño (La Sala) [fecha origen 5/06; se asume 2026]", categoria: "Promoción", valor: 283504 },
+  { date: "2026-06-05", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Licovacana Promo Antioqueño (La Sala) [fecha origen 5/06; se asume 2026]", categoria: "Promoción", valor: 283504 },
+  { date: "2026-06-06", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Hielo La Sala", categoria: "Insumos coctelería", valor: 32500 },
+  { date: "2026-06-06", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Sal, tahín, platos La Sala", categoria: "Insumos cocina", valor: 61900 },
+  { date: "2026-06-07", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Paca Corona El Búnker (mercancía)", categoria: "Capex El Búnker", valor: 86400 },
+  { date: "2026-06-07", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Llave/lava traperos El Búnker", categoria: "Capex El Búnker", valor: 27700 },
+  { date: "2026-06-07", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Papelería La Sala (comandas, cauchos, lapiceros, calculadora, tijeras, cuaderno)", categoria: "Papelería", valor: 78500 },
+  { date: "2026-06-07", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Chapa baño El Búnker", categoria: "Capex El Búnker", valor: 24500 },
+  { date: "2026-06-07", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Candado El Búnker", categoria: "Capex El Búnker", valor: 30000 },
+  { date: "2026-06-06", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Bavaria La Sala (compra cerveza)", categoria: "Compra Cerveza", valor: 625244 },
+  { date: "2026-06-06", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Mecato El Búnker (mercancía)", categoria: "Capex El Búnker", valor: 170000 },
+  { date: "2026-06-06", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Nómina y base La Sala", categoria: "Nómina", valor: 440000 },
+  { date: "2026-06-05", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Pago show cantantes (chicas) La Sala", categoria: "Show/Eventos", valor: 400000 },
+  { date: "2026-06-05", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Pago datáfono y QR Bold La Sala", categoria: "Servicios financieros", valor: 378000 },
+  { date: "2026-06-05", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Candado El Búnker", categoria: "Capex El Búnker", valor: 381965 },
+  { date: "2026-06-05", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Señales Bomberos La Sala", categoria: "Seguridad", valor: 18000 },
+  { date: "2026-06-05", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Derechos de autor El Búnker (Sayco/Acinpro)", categoria: "Capex El Búnker", valor: 358000 },
+  { date: "2026-06-05", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Señales de seguridad industrial El Búnker", categoria: "Capex El Búnker", valor: 287500 },
+  { date: "2026-06-04", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Materiales Andrés Chávez audio y video El Búnker (3)", categoria: "Capex El Búnker", valor: 246000 },
+  { date: "2026-06-04", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Pedido Postobón La Sala", categoria: "Bebidas no alcohólicas", valor: 89500 },
+  { date: "2026-06-04", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Instalación bases TV El Búnker", categoria: "Capex El Búnker", valor: 710000 },
+  { date: "2026-06-04", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Programa James Vidal El Búnker", categoria: "Capex El Búnker", valor: 1000000 },
+  { date: "2026-06-04", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Pago Guía Rinos publicidad La Sala", categoria: "Publicidad", valor: 40430 },
+  { date: "2026-06-04", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Banderas Mundial La Sala (decoración)", categoria: "Publicidad", valor: 104000 },
+  { date: "2026-06-03", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Materiales Andrés Chávez audio y video El Búnker (2)", categoria: "Capex El Búnker", valor: 222000 },
+  { date: "2026-06-01", semana: 10, periodo: "Sem 1 jun (1 - 7 jun)", concepto: "Anticipo banderas La Sala (decoración)", categoria: "Publicidad", valor: 104000 },
+  { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Saldo letrero El Búnker", categoria: "Capex El Búnker", valor: 2000000 },
+  { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Recipientes plásticos, porta escobas, herramientas El Búnker", categoria: "Capex El Búnker", valor: 165000 },
+  { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Pago limones La Sala (2 facturas)", categoria: "Insumos coctelería", valor: 210000 },
+  { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Facturas Licores Junior FDJC9405 La Sala", categoria: "Compra Licores", valor: 194300 },
+  { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Facturas Licores Junior FDJC9420 La Sala", categoria: "Compra Licores", valor: 256900 },
 ];
 
 // ─── Storage ───
@@ -5285,7 +5421,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-06-07");
+  const [selDate,setSelDate]=useState("2026-06-08");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -7172,7 +7308,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-06-08";
+  const HOY="2026-06-09";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
