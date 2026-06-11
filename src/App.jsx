@@ -5472,13 +5472,12 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Polisombra El Búnker", categoria: "Capex El Búnker", valor: 92000 },
   { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Recipientes plásticos, porta escobas, herramientas El Búnker", categoria: "Capex El Búnker", valor: 165000 },
   { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Pago limones La Sala (2 facturas)", categoria: "Insumos coctelería", valor: 210000 },
-  { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Facturas Licores Junior FDJC9405 La Sala", categoria: "Compra Licores", valor: 194300 },
-  { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Facturas Licores Junior FDJC9420 La Sala", categoria: "Compra Licores", valor: 256900 },
-  { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Pago proveedor Reinaldo - El Rey La Sala (transf. Bold 10 jun, comprob. 21:34)", categoria: "Proveedor", valor: 647000 },
   { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Pago/devolución botella de vino - Gustavo (barman) La Sala (transf. Bold 10 jun HV5WNUJ4PY)", categoria: "Insumos bar", valor: 25000 },
   { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Banderas ambientación Mundial La Sala (parte de pago compartido $120k)", categoria: "Publicidad", valor: 30000 },
   { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Banderas ambientación Mundial El Búnker (parte de pago compartido $120k)", categoria: "Capex El Búnker", valor: 90000 },
   { date: "2026-06-09", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Tela cortina El Búnker", categoria: "Capex El Búnker", valor: 75000 },
+  { date: "2026-06-10", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Pago cartera Licores Junior (GIR) - 9 facturas + abono FDJC10560 (Recibo RC095550)", categoria: "Pago proveedor (no operativo)", valor: 2593000 },
+  { date: "2026-06-10", semana: 11, periodo: "Sem 2 jun (8 - 14 jun)", concepto: "Pago proveedor Distribuidora El Rey / Reinaldo (transf. Bold 10 jun)", categoria: "Pago proveedor (no operativo)", valor: 647000 },
 ];
 
 // ─── Storage ───
