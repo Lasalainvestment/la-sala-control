@@ -422,6 +422,13 @@ const PRELOADED_CUADRES = [
     efectivo: 99100, tarjeta: 310000, otros_pago: 0,
     pizza_80: 288960, gastos: 20100, nomina: 185000, costo_financiero: 0,
     neto_sala: 120140, faltante: 0,
+  },
+  {
+    date: "2026-06-10", venta_total: 2085600,
+    estanco: 387000, cocteles: 1122000, pizzeria: 576600, otros_venta: 0,
+    efectivo: 11730, tarjeta: 1684400, otros_pago: 0,
+    pizza_80: 461280, gastos: 189470, nomina: 200000, costo_financiero: 0,
+    neto_sala: 1234850, faltante: 0,
   }
 ];
 
@@ -1209,6 +1216,21 @@ const PRELOADED_COCINA = [
       { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
       { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
     ]
+  },
+  {
+    date: "2026-06-10", total: 576600, total_units: 15,
+    productos: [
+      { nombre: "NACHOS ESPECIALES", cantidad: 3, valor: 108000 },
+      { nombre: "PZ AB CARNES GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ CARNAVAL ESP GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ MEXICANA GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ CARNAVAL ESP MED", cantidad: 1, valor: 54000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 4, valor: 127200 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "ADICION COMIDA", cantidad: 1, valor: 7000 },
+    ]
   }
 ];
 
@@ -1557,6 +1579,45 @@ const PRELOADED_BAR = [
       { nombre: "LIMONADA NATURAL", cantidad: 3, precio_unit: 4000, total: 12000 },
     ],
     nota: "Martes 09 jun CON promo 2x1 en cócteles K. Estanco $40k cuadra EXACTO (3 cerveza nacional $27k + 1 red bull $13k). Cócteles $213k cuadran EXACTO aplicando 2x1 a Margarita/Coco Loco/Mexico Lindo + soda + limonadas. Bajas validadas. REPOSICIÓN entró: Tequila ML +6, Ginebra ML +3 (factura/pago pendiente)."
+  },
+  {
+    date: "2026-06-10", total_estanco: 387000, total_cocteles: 1122000, total: 1509000, total_units: 95,
+    estanco: [
+      { nombre: "AGTE BOTELLA ANTIOQUEÑO", cantidad: 2, precio_unit: 58000, total: 116000, nota: "Botella - PVP derivado por residual, por confirmar con carta" },
+      { nombre: "AGTE BOTELLA CAUCANO", cantidad: 1, precio_unit: 53000, total: 53000, nota: "Botella - PVP derivado por residual, por confirmar" },
+      { nombre: "CERVEZA CORONA", cantidad: 10, precio_unit: 12000, total: 120000 },
+      { nombre: "CERVEZA NACIONAL", cantidad: 4, precio_unit: 9000, total: 36000 },
+      { nombre: "RON DL", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "AGUA", cantidad: 2, precio_unit: 6000, total: 12000 },
+      { nombre: "AGUA TONICA", cantidad: 2, precio_unit: 5000, total: 10000 },
+      { nombre: "TRIPLE SEC", cantidad: 1, precio_unit: 10000, total: 10000 },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 3000, total: 3000 },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 3000, total: 3000 },
+      { nombre: "WHISKY COCT", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería (entró 1 hoy, $84k Catay)" },
+      { nombre: "GASEOSA", cantidad: 10, precio_unit: 0, total: 0, nota: "Mezclador" },
+    ],
+    cocteles: [
+      { nombre: "K GIN TONIC", cantidad: 10, precio_unit: 36000, total: 180000, nota: "2x1: 5 cobradas de 10" },
+      { nombre: "K MARGARITA", cantidad: 5, precio_unit: 38000, total: 114000, nota: "2x1: 3 cobradas de 5" },
+      { nombre: "K COSMOPOLITAN", cantidad: 4, precio_unit: 36000, total: 72000, nota: "2x1: 2 de 4" },
+      { nombre: "K BLUE SKY", cantidad: 4, precio_unit: 36000, total: 72000, nota: "2x1: 2 de 4" },
+      { nombre: "K MARTINI DRY", cantidad: 4, precio_unit: 36000, total: 72000, nota: "2x1: 2 de 4" },
+      { nombre: "K MOJITO", cantidad: 4, precio_unit: 36000, total: 72000, nota: "2x1: 2 de 4" },
+      { nombre: "K SUEÑO ROSA", cantidad: 4, precio_unit: 36000, total: 72000, nota: "2x1: 2 de 4" },
+      { nombre: "K ACAPULCO", cantidad: 2, precio_unit: 36000, total: 36000, nota: "2x1: 1 de 2" },
+      { nombre: "K CAIPIRINHA", cantidad: 2, precio_unit: 36000, total: 36000, nota: "2x1: 1 de 2" },
+      { nombre: "K COCO LOCO", cantidad: 2, precio_unit: 36000, total: 36000, nota: "2x1: 1 de 2" },
+      { nombre: "K DAIQUIRI DE FRESAS", cantidad: 2, precio_unit: 36000, total: 36000, nota: "2x1: 1 de 2" },
+      { nombre: "K DEMONIO VERDE", cantidad: 2, precio_unit: 36000, total: 36000, nota: "2x1: 1 de 2" },
+      { nombre: "K ENERGY", cantidad: 2, precio_unit: 36000, total: 36000, nota: "2x1: 1 de 2" },
+      { nombre: "K MARGARITA MIX", cantidad: 2, precio_unit: 38000, total: 38000, nota: "2x1: 1 de 2" },
+      { nombre: "K OLD FASHION", cantidad: 1, precio_unit: 36000, total: 36000, nota: "PVP por confirmar" },
+      { nombre: "K TEQUILA SUNRISE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "SODA ITALIANA", cantidad: 3, precio_unit: 15000, total: 45000 },
+      { nombre: "RESERVA", cantidad: 2, precio_unit: 40000, total: 80000, nota: "PVP derivado por residual, por confirmar" },
+      { nombre: "JUGO MIX", cantidad: 2, precio_unit: 8500, total: 17000, nota: "PVP derivado por residual, por confirmar" },
+    ],
+    nota: "Miércoles 10 jun CON promo 2x1 en cócteles K - NOCHE GRANDE ($1.509.000 en bar). Cócteles $1.122.000 cuadran EXACTO aplicando 2x1 a las 16 referencias K + soda/reserva/jugo mix. Estanco $387k cuadra EXACTO pero OJO: las 3 botellas de aguardiente (2 antioqueño + 1 caucano) se valoraron por residual (~$58k/$53k) - PVP de botella por confirmar con la carta. Reserva y Jugo Mix también derivados. Bajas validadas contra inventario. REPOSICIÓN entró: Whisky Coctelería +1 ($84k Catay). Continuidad inventario inicial 10 = final 09 CONFIRMA Ginebra ML 4 y Tequila ML 6 (lecturas del 9 correctas)."
   }
 ];
 
@@ -4595,6 +4656,58 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-06-10", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:16},
+      {nombre:"AGT BOTLLA CAUCA",saldo:3},
+      {nombre:"AGT BOTLLA REAL",saldo:1},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:8},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:30},
+      {nombre:"AGUA TONICA",saldo:2},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:22},
+      {nombre:"CERVEZA IMPORTADA",saldo:21},
+      {nombre:"CERVEZA NACIONAL",saldo:217},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:127},
+      {nombre:"GASEOSA 1.5",saldo:30},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:4},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:6},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:2},
+      {nombre:"OLD PARR MEDIA",saldo:1}
+    ]
   }
 ];
 
@@ -5029,6 +5142,17 @@ const PRELOADED_GASTOS = [
       { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
       { concepto: "Adhesivos / ganchos auto-adhesivos (Dollarcity)", categoria: "Insumos varios", valor: 5000 },
       { concepto: "Desinfectante + limpiatodo (01 SAS)", categoria: "Aseo", valor: 10100 },
+    ]
+  },
+  {
+    date: "2026-06-10", total: 189470,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+      { concepto: "Faltante tarjetas (ajuste)", categoria: "Servicios financieros", valor: 1470 },
+      { concepto: "Hierbabuena, romero, uva, mango (cta. cobro Sala + domicilio)", categoria: "Insumos coctelería", valor: 37000 },
+      { concepto: "Whisky coctelería (Catay Market)", categoria: "Insumos coctelería", valor: 84000 },
+      { concepto: "Globos (ambientación Mundial)", categoria: "Decoración", valor: 35000 },
+      { concepto: "D1 - toalla cocina + pastillas", categoria: "Aseo", valor: 27000 },
     ]
   }
 ];
@@ -5522,7 +5646,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-06-09");
+  const [selDate,setSelDate]=useState("2026-06-10");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -7409,7 +7533,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-06-10";
+  const HOY="2026-06-11";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
