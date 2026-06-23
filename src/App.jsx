@@ -499,6 +499,13 @@ const PRELOADED_CUADRES = [
     efectivo: 204600, tarjeta: 482200, otros_pago: 0,
     pizza_80: 779520, gastos: 615600, nomina: 260000, costo_financiero: 0,
     neto_sala: -92720, faltante: 0,
+  },
+  {
+    date: "2026-06-22", venta_total: 1137800,
+    estanco: 324000, cocteles: 217000, pizzeria: 596800, otros_venta: 0,
+    efectivo: 59160, tarjeta: 1002400, otros_pago: 0,
+    pizza_80: 477440, gastos: 6240, nomina: 70000, costo_financiero: 0,
+    neto_sala: 584120, faltante: 0,
   }
 ];
 
@@ -1474,6 +1481,26 @@ const PRELOADED_COCINA = [
       { nombre: "PZ POLLO CHAMPI GR", cantidad: 1, valor: 67200 },
       { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
     ]
+  },
+  {
+    date: "2026-06-22", total: 596800, total_units: 16,
+    productos: [
+      { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
+      { nombre: "HB BBQ", cantidad: 1, valor: 36000 },
+      { nombre: "NACHOS CON CHILI", cantidad: 1, valor: 36000 },
+      { nombre: "PZ MEXICANA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ MADRILENA MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "NACHOS CLASICOS", cantidad: 1, valor: 31800 },
+      { nombre: "PT POLLO BECHAMEL RG", cantidad: 1, valor: 38400 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "PT ALFREDO RG", cantidad: 2, valor: 76800 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "PZ DE LA CASA PEQ", cantidad: 1, valor: 38400 },
+      { nombre: "PT CARBONARA RG", cantidad: 1, valor: 38400 },
+    ]
   }
 ];
 
@@ -2118,6 +2145,27 @@ const PRELOADED_BAR = [
       { nombre: "LIMONADA NATURAL", cantidad: 9, precio_unit: 4000, total: 36000 },
     ],
     nota: "Sábado 20 jun SIN promo 2x1. Cócteles $424k a precio lleno (2 granizados, K varios, Reserva, soda, 9 limonadas naturales). Estanco $164k (7 corona + 3 nacional + 2 michelada + electrolit + jugo + agua; gaseosa mezclador). Reposiciones chicas: Cerveza Importada +1, Tequila ML +1. Continuidad perfecta. Día con FIESTA/EVENTO: gastos de globos+decoración $60k y publicidad Búnker = 4 granizados cortesía $100k. NETO DÍA NEGATIVO por gastos no recurrentes (Bold tarjetas $400k + publicidad $100k)."
+  },
+  {
+    date: "2026-06-22", total_estanco: 324000, total_cocteles: 217000, total: 541000, total_units: 55,
+    estanco: [
+      { nombre: "WHISKY OLD PAR BOTELLA", cantidad: 1, precio_unit: 62000, total: 62000, nota: "FLAG: salió 1 botella Old Parr de inventario, pero a precio de carta vale ~$180k+. El estanco POS $324k no alcanza para botella a tarifa -> posible cortesía/precio especial/servicio. PVP derivado por residual, VERIFICAR." },
+      { nombre: "AGTE BOTELLA ANTIOQUEÑO", cantidad: 1, precio_unit: 79000, total: 79000, nota: "Botella - PVP residual" },
+      { nombre: "MICHELADA", cantidad: 6, precio_unit: 12000, total: 72000 },
+      { nombre: "CERVEZA NACIONAL", cantidad: 7, precio_unit: 9000, total: 63000 },
+      { nombre: "CERVEZA CORONA", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "AGUA", cantidad: 2, precio_unit: 6000, total: 12000 },
+      { nombre: "GASEOSA", cantidad: 21, precio_unit: 0, total: 0, nota: "Mezclador" },
+      { nombre: "GASEOSA 1.5", cantidad: 1, precio_unit: 0, total: 0, nota: "Mezclador" },
+    ],
+    cocteles: [
+      { nombre: "SODA ITALIANA", cantidad: 8, precio_unit: 15000, total: 120000 },
+      { nombre: "K MOJITO MIX", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "LICOR DE MANZANA", cantidad: 2, precio_unit: 10500, total: 21000, nota: "Shots licor manzana - PVP por confirmar" },
+      { nombre: "LIMONADA NATURAL", cantidad: 1, precio_unit: 4000, total: 4000 },
+    ],
+    nota: "Lunes 22 jun SIN promo 2x1. Estanco $324k y cócteles $217k = TOTALES POS. FLAG estanco: salieron botella Old Parr + botella Antioqueño de inventario, pero $324k no cubre Old Parr a tarifa (~$180k) + Antioqueño + 10 cervezas + 6 micheladas -> hay cortesía/precio especial, item-level aprox. REPOSICIONES GRANDES (compras de contado): Licores Junior F1JC70279 $1.890.500 (Caucano +5, Real +8, Agua +24, Gaseosa +108, Ron Caldas Bot/Med +2/+2, Tequila Bot +2, Dry Martini +1) y Cervezas y Cervezas $512.800 (Corona +48, Importada +36, Nacional +24). DOMINGO 21: sin cuadre (La Sala no operó); inicial-22 trae desfase menor vs cierre sábado (Corona -1, Gaseosa -2) = consumo/merma fin de semana."
   }
 ];
 
@@ -5728,6 +5776,60 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR BOTELLA",saldo:2},
       {nombre:"OLD PARR MEDIA",saldo:1}
     ]
+  },
+  {
+    date: "2026-06-22", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:13},
+      {nombre:"AGT BOTLLA CAUCA",saldo:10},
+      {nombre:"AGT BOTLLA REAL",saldo:8},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:9},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:35},
+      {nombre:"AGUA TONICA",saldo:9},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:1},
+      {nombre:"CERVEZA CORONA",saldo:49},
+      {nombre:"CERVEZA IMPORTADA",saldo:69},
+      {nombre:"CERVEZA NACIONAL",saldo:255},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:4},
+      {nombre:"DRY MARTINY",saldo:2},
+      {nombre:"ELECTROLIT",saldo:0},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:141},
+      {nombre:"GASEOSA 1.5",saldo:22},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:3},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:13},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:11},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ]
   }
 ];
 
@@ -6258,6 +6360,13 @@ const PRELOADED_GASTOS = [
       { concepto: "Bold - tarjetas/datafono", categoria: "Equipos/Servicios", valor: 400000, nota: "FLAG: $400.000 a Bold (procesador de tarjetas). Probable compra de equipo/datafono (CAPEX) o cargo Bold. No recurrente - empuja el neto del día a negativo. Por confirmar naturaleza." },
       { concepto: "Compras D1 (fresa congelada, manzana royal, gomas, azúcar, mermelada - fact H6Z9461680)", categoria: "Insumos cocina/coctelería", valor: 37600, nota: "Factura D1 SAS 19 jun, pago efectivo $50.000 cambio $12.400" },
     ]
+  },
+  {
+    date: "2026-06-22", total: 6240,
+    items: [
+      { concepto: "Comida (almuerzo personal)", categoria: "Comida", valor: 5000 },
+      { concepto: "Faltante tarjeta", categoria: "Faltante", valor: 1240 },
+    ]
   }
 ];
 
@@ -6284,6 +6393,8 @@ const CATALOG = {
   "CURAZAO AZUL": {categoria:"Licores/Cócteles",compra:25000,venta:0,fuente:"Compra: VERIFICAR | Venta: INSUMO",notas:"Insumo cóctel Blue Hawai/Burbujas Azules"},
   "DRY MARTINY": {categoria:"Licores/Cócteles",compra:67300,venta:0,fuente:"Compra: GIR-FDJC010090-17may | Venta: INSUMO",notas:"Martini Extra Dry 750cc (precio real)"},
   "ELECTROLIT": {categoria:"Bebidas no alcohólicas",compra:7200,venta:15000,fuente:"Compra: GIR-04abr | Venta: VERIFICAR",notas:"Suero Electrolit 625cc"},
+  "SMIRNOFF ICE": {categoria:"Aperitivo",compra:5650,venta:13000,fuente:"Compra: GIR-F1JC70279-22jun | Venta: DERIVADO/VERIFICAR",notas:"Aperitivo Smirnoff Ice 275cc - PVP por confirmar con carta"},
+  "SMIRNOFF GREEN APPLE": {categoria:"Aperitivo",compra:5600,venta:13000,fuente:"Compra: GIR-F1JC70279-22jun | Venta: DERIVADO/VERIFICAR",notas:"Aperitivo Smirnoff Green Apple 275cc - PVP por confirmar con carta"},
   "ENCENDEDOR": {categoria:"Otros",compra:0,venta:0,fuente:"Compra: VERIFICAR | Venta: VERIFICAR",notas:""},
   "GASEOSA": {categoria:"Bebidas no alcohólicas",compra:2400,venta:6000,fuente:"Compra: GIR-FDJC9133-24abr | Venta: CARTA",notas:"Postobón NR Soda 10oz (confirmado factura)"},
   "GASEOSA 1.5": {categoria:"Bebidas no alcohólicas",compra:5350,venta:10000,fuente:"Compra: GIR-FDJC10351-23may | Venta: CARTA",notas:"Coca-Cola NR 1.5L (precio actualizado real)"},
@@ -6716,7 +6827,7 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-06-15", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Transferencia Andrés Chávez - Instalación audio y video El Búnker", categoria: "Capex El Búnker", valor: 1000000 },
   { date: "2026-06-19", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Saldo letrero El Búnker - vinilos nevera", categoria: "Capex El Búnker", valor: 150000 },
   { date: "2026-06-19", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Pedido Coca-Cola para El Búnker", categoria: "El Búnker (no operativo)", valor: 349800 },
-  { date: "2026-06-17", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Butacos plásticos (venue por confirmar - posible El Búnker)", categoria: "Capex El Búnker", valor: 672000 },
+  { date: "2026-06-17", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Butacos plásticos (para La Sala y El Búnker - compartido)", categoria: "Capex compartido La Sala/Búnker", valor: 672000 },
   { date: "2026-06-17", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Cervezas 4 canastas (Cervezas y Cervezas) para El Búnker", categoria: "El Búnker (no operativo)", valor: 314000 },
   { date: "2026-06-16", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Pago Ron DL coctelería La Sala (reposición 16 jun)", categoria: "Pago proveedor (no operativo)", valor: 100000 },
   { date: "2026-06-16", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Pago nómina La Sala (15 y 16 jun)", categoria: "Nómina", valor: 385000 },
@@ -6729,6 +6840,8 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-06-19", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Fruta La Sala", categoria: "Insumos cocina", valor: 126000 },
   { date: "2026-06-17", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Pedido Bavaria - La Sala (cerveza)", categoria: "Pago proveedor (no operativo)", valor: 450000 },
   { date: "2026-06-17", semana: 12, periodo: "Sem 3 jun (15 - 21 jun)", concepto: "Refuerzo base pared TV La Sala", categoria: "Capex La Sala", valor: 60000 },
+  { date: "2026-06-22", semana: 13, periodo: "Sem 4 jun (22 - 28 jun)", concepto: "Compra de contado Licores Junior F1JC70279 - LA SALA (valor total). Contenido La Sala + cantidades cedidas a El Búnker SOLO en producto (18 Smirnoff Ice + 42 Smirnoff Green Apple); el dinero lo asume La Sala completo. La Sala se queda: Coca-Cola 36, Agua 24, Postobón soda 48, Club lata 24, Corona 48, Stella 24, Ron Caldas bot/can 2/2, Caucano 5, Amarillo bot/can 3/3, Tequila J.Cuervo 2, Martini Dry 1, Smirnoff Ice 6, Smirnoff Green Apple 6, Jugo Hit mango/lulo 12/12", categoria: "Pago proveedor (no operativo)", valor: 1890500 },
+  { date: "2026-06-23", semana: 13, periodo: "Sem 4 jun (22 - 28 jun)", concepto: "Compra de contado Cervezas y Cervezas POE 55231 - La Sala (NIT 76328754-0): Club 30, Águila Light 24, Club Trigo 30, Poker 24, Aguardiente Azul Litro 3, Aguardiente Verde Media 3, envases 5", categoria: "Pago proveedor (no operativo)", valor: 512800 },
 ];
 
 // ─── Storage ───
@@ -6773,7 +6886,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-06-20");
+  const [selDate,setSelDate]=useState("2026-06-22");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -8660,7 +8773,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-06-21";
+  const HOY="2026-06-23";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
