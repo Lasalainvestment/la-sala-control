@@ -611,6 +611,13 @@ const PRELOADED_CUADRES = [
     efectivo: 494350, tarjeta: 1492800, otros_pago: 0,
     pizza_80: 551040, gastos: 69650, nomina: 735000, costo_financiero: 0,
     neto_sala: 1436110, faltante: 0,
+  },
+  {
+    date: "2026-07-08", venta_total: 335400,
+    estanco: 184000, cocteles: 10000, pizzeria: 141400, otros_venta: 0,
+    efectivo: 27000, tarjeta: 118400, otros_pago: 0,
+    pizza_80: 113120, gastos: 5000, nomina: 185000, costo_financiero: 0,
+    neto_sala: 32280, faltante: 0,
   }
 ];
 
@@ -1797,6 +1804,16 @@ const PRELOADED_COCINA = [
       { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
       { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
     ]
+  },
+  {
+    date: "2026-07-08", total: 141400, total_units: 5,
+    productos: [
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ PEPERNATA PEQ", cantidad: 1, valor: 38400 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
   }
 ];
 
@@ -2813,6 +2830,19 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE cócteles martes (por confirmar)", cantidad: 0, precio_unit: 0, total: -279000, nota: "PVP carta suma $571k vs cócteles POS $292k (2x1 michelada + cortesías)." },
     ],
     nota: "MARTES 07 JUL — 2x1 MARTES INTENSO (venta $2.791.800). Estanco $1.811k y cócteles $292k = totales POS autoritativos. Ventas cruzan exacto con columna Sal del inventario. Enorme volumen de cerveza (156 Nacional, 36 Corona, 8 Importada) y 35 micheladas a 2x1. Aun con 2x1, las unidades a PVP carta superan los totales POS (~$620k) → probable cortesía/evento adicional además del 2x1. Reposiciones del día (tirilla Ent): Gaseosa +48, AGTE media Anqueño +6, Tequila ML +6, Corona +9, Ginebra ML +3, Gaseosa 1.5 +3, Licor Manzana +2, Triple Sec +1."
+  },
+  {
+    date: "2026-07-08", total_estanco: 184000, total_cocteles: 10000, total: 194000, total_units: 24,
+    estanco: [
+      { nombre: "AGTE BOTELLA ANTIOQUEÑO", cantidad: 1, precio_unit: 90000, total: 90000 },
+      { nombre: "CERVEZA NACIONAL", cantidad: 10, precio_unit: 9000, total: 90000 },
+      { nombre: "AGUA", cantidad: 2, precio_unit: 2000, total: 4000, nota: "Residual para cuadrar al POS" },
+      { nombre: "GASEOSA", cantidad: 6, precio_unit: 0, total: 0, nota: "Mezclador (baja inventario -6)" },
+    ],
+    cocteles: [
+      { nombre: "MICHELADA", cantidad: 5, precio_unit: 2000, total: 10000, nota: "5 micheladas pero cócteles POS solo $10k → mayoría cortesía o incluidas con cerveza. Confirmar." },
+    ],
+    nota: "MIÉRCOLES 08 JUL — día flojo (venta $335.400, neto $32.280 tras nómina $185k). Estanco $184k (1 aguardiente + 10 nacional). Cócteles mínimos $10k con 5 micheladas (probable cortesía). Inventario: AGTE Anqueño -1, Nacional -10, Agua -2, Gaseosa -6. Sin reposiciones."
   }
 ];
 
@@ -7311,6 +7341,64 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"SMIRNOFF ICE",saldo:6},
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
     ]
+  },
+  {
+    date: "2026-07-08", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:6},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:9},
+      {nombre:"AGT MEDIA CAUCA",saldo:6},
+      {nombre:"AGUA",saldo:19},
+      {nombre:"AGUA TONICA",saldo:11},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:0},
+      {nombre:"AMARILLO MED",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:0},
+      {nombre:"CERVEZA CORONA",saldo:7},
+      {nombre:"CERVEZA IMPORTADA",saldo:43},
+      {nombre:"CERVEZA NACIONAL",saldo:96},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:2},
+      {nombre:"ELECTROLIT",saldo:0},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:110},
+      {nombre:"GASEOSA 1.5",saldo:18},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:2},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:8},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:1},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"SMIRNOFF",saldo:1},
+      {nombre:"SMIRNOFF BOT",saldo:1},
+      {nombre:"TEQUILA BOTELLA",saldo:0},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:5},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:5},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:0},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:1},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ]
   }
 ];
 
@@ -7951,6 +8039,12 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 69650, nota: "FLAG: pendiente desglose. El cuadre cierra en 0 con gastos $69.650." },
     ]
+  },
+  {
+    date: "2026-07-08", total: 5000,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 5000, nota: "Monto bajo; pendiente desglose." },
+    ]
   }
 ];
 
@@ -8490,7 +8584,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-07-07");
+  const [selDate,setSelDate]=useState("2026-07-08");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -10377,7 +10471,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-07-07";
+  const HOY="2026-07-08";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
