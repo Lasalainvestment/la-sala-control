@@ -681,6 +681,27 @@ const PRELOADED_CUADRES = [
     efectivo: 700, tarjeta: 2179600, otros_pago: 0,
     pizza_80: 595840, gastos: 10000, nomina: 332500, costo_financiero: 0,
     neto_sala: 1584460, faltante: 0,
+  },
+  {
+    date: "2026-07-18", venta_total: 2394800,
+    estanco: 580000, cocteles: 1250000, pizzeria: 550800, otros_venta: 14000,
+    efectivo: 22750, tarjeta: 2210800, otros_pago: 0,
+    pizza_80: 440640, gastos: 161250, nomina: 0, costo_financiero: 0,
+    neto_sala: 1792910, faltante: 0,
+  },
+  {
+    date: "2026-07-19", venta_total: 1095200,
+    estanco: 86000, cocteles: 404000, pizzeria: 605200, otros_venta: 0,
+    efectivo: 41800, tarjeta: 848400, otros_pago: 0,
+    pizza_80: 484160, gastos: 5000, nomina: 200000, costo_financiero: 0,
+    neto_sala: 406040, faltante: 0,
+  },
+  {
+    date: "2026-07-20", venta_total: 797200,
+    estanco: 118000, cocteles: 363000, pizzeria: 316200, otros_venta: 0,
+    efectivo: 650, tarjeta: 431800, otros_pago: 0,
+    pizza_80: 252960, gastos: 179750, nomina: 185000, costo_financiero: 0,
+    neto_sala: 179490, faltante: 0,
   }
 ];
 
@@ -1992,6 +2013,55 @@ const PRELOADED_COCINA = [
       { nombre: "PZ DE LA GRANJA PEQ", cantidad: 1, valor: 32400 },
       { nombre: "PZ MARGARITA PQ", cantidad: 1, valor: 30000 },
     ]
+  },
+  {
+    date: "2026-07-18", total: 550800, total_units: 16,
+    productos: [
+      { nombre: "PT AL CAMPO RG", cantidad: 2, valor: 80400, nota: "Línea $80.400 = 2 uds" },
+      { nombre: "PZ MEXICANA PEQ", cantidad: 2, valor: 79200 },
+      { nombre: "PZ DE LA GRANJA MED", cantidad: 1, valor: 44400 },
+      { nombre: "LASAGNA DE RES", cantidad: 1, valor: 40000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "PZ CARNAVAL ESP PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "HB HAWAIANA", cantidad: 1, valor: 37000 },
+      { nombre: "NACHOS CON CHILI", cantidad: 1, valor: 36000 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "FOCACCIA", cantidad: 1, valor: 14000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-07-19", total: 605200, total_units: 18,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 4, valor: 127200 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 2, valor: 80000, nota: "Línea $80.000 = 2 uds" },
+      { nombre: "PZ HAWAIANA MED", cantidad: 1, valor: 52800 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ POLLO CHAMPI PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PT BOLOGNESA RG", cantidad: 1, valor: 38400 },
+      { nombre: "HB DE RES CON CHAMPI", cantidad: 1, valor: 36000 },
+      { nombre: "PT AL CAMPO JR", cantidad: 1, valor: 32400 },
+      { nombre: "PZ PTLN 2 INGR JR", cantidad: 1, valor: 32400 },
+      { nombre: "PT BOLOGNESA JR", cantidad: 1, valor: 31200 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-07-20", total: 316200, total_units: 8,
+    productos: [
+      { nombre: "PZ AB CARNES MED", cantidad: 2, valor: 108000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ FLORENTINA MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA DE RES", cantidad: 1, valor: 40000 },
+      { nombre: "PZ CARNAVAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+    ]
   }
 ];
 
@@ -3253,7 +3323,100 @@ const PRELOADED_BAR = [
       { nombre: "LIMONADA CEREZADA", cantidad: 1, precio_unit: 12000, total: 12000 },
       { nombre: "AJUSTE menor cócteles", cantidad: 0, precio_unit: 0, total: 6000, nota: "Diferencia residual de $6.000 sobre $1,2M — el modelo 2x1 explica el 99,5%." },
     ],
-    nota: "VIERNES 17 JUL — EL MEJOR DÍA DEL MES (venta $2.522.800, neto $1.584.460 = 62,8%). ✅ HALLAZGO CLAVE: se CONFIRMA el 2x1 de coctelería los viernes. 60 K-cócteles a PVP completo darían $2.160.000; con 2x1 dan $1.080.000 + $126.000 de bebidas = $1.206.000, contra cócteles POS $1.212.000 (diferencia de solo $6.000 sobre $1,2M). Esto explica retroactivamente los 'ajustes' de viernes anteriores. Noche de MOJITOS (15) y MARGARITA MIX (12). Inventario: 18 verificaciones contra la tirilla, CERO discrepancias. Reposiciones: Ginebra DL +5, Tequila ML +6, Ron Caldas Media +5, Ginebra ML +3, Corona +2, Ron Caldas Bot +1, Amarillo Bot +1, Licor Café +1, Licor Manzana +1."
+    nota: "VIERNES 17 JUL — EL MEJOR DÍA DEL MES (venta $2.522.800, neto $1.584.460 = 62,8%). ✅ HALLAZGO CLAVE: se CONFIRMA el 2x1 de coctelería los viernes. 60 K-cócteles a PVP completo darían $2.160.000; con 2x1 dan $1.080.000 + $126.000 de bebidas = $1.206.000, contra cócteles POS $1.212.000 (diferencia de solo $6.000 sobre $1,2M). Esto explica retroactivamente los 'ajustes' de viernes anteriores. Noche de MOJITOS (15) y MARGARITA MIX (12). Inventario: 18 verificaciones contra la tirilla, CERO discrepancias. Reposiciones: Ginebra DL +5, Tequila ML +6, Ron DL +5, Ginebra ML +3, Corona +2, Ron Caldas Bot +1, Amarillo Bot +1, Licor Manzana +1. [CORREGIDO con la apertura del sábado 18: la reposición de +5 era RON DL (no Ron Caldas Media) y Licor Café quedó en 0.]"
+  },
+  {
+    date: "2026-07-18", total_estanco: 580000, total_cocteles: 1250000, total: 1830000, total_units: 126,
+    estanco: [
+      { nombre: "AGTE BOTELLA ANTIOQUEÑO", cantidad: 3, precio_unit: 90000, total: 270000 },
+      { nombre: "TEQUILA BOTELLA", cantidad: 1, precio_unit: 195000, total: 195000, nota: "Repuesta y vendida el mismo día (Ent 1 / Sal 1)" },
+      { nombre: "CERVEZA NACIONAL", cantidad: 21, precio_unit: 9000, total: 189000 },
+      { nombre: "AGTE BOTELLA CAUCANO", cantidad: 2, precio_unit: 90000, total: 180000 },
+      { nombre: "RON CALDAS BOTELLA", cantidad: 1, precio_unit: 110000, total: 110000, nota: "Repuesta y vendida el mismo día (Ent 1 / Sal 1)" },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 4, precio_unit: 13000, total: 52000 },
+      { nombre: "AGUA", cantidad: 4, precio_unit: 6000, total: 24000 },
+      { nombre: "ELECTROLIT", cantidad: 2, precio_unit: 8000, total: 16000 },
+      { nombre: "CERVEZA CORONA", cantidad: 1, precio_unit: 13000, total: 13000 },
+      { nombre: "GASEOSA", cantidad: 15, precio_unit: 0, total: 0, nota: "Mezclador (baja inventario -15)" },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "TEQUILA ML", cantidad: 2, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "TRIPLE SEC", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "AJUSTE ⚠️ promoción/cortesía estanco (por confirmar)", cantidad: 0, precio_unit: 0, total: -469000, nota: "FLAG: PVP carta $1.049.000 vs estanco POS $580.000. Diferencia grande ($469.000) en un sábado SIN 2x1 (los cócteles del mismo día sí van casi a precio completo). Revisar." },
+    ],
+    cocteles: [
+      { nombre: "K MOJITO", cantidad: 7, precio_unit: 36000, total: 252000 },
+      { nombre: "K MEDUSA", cantidad: 6, precio_unit: 36000, total: 216000 },
+      { nombre: "K DAIQUIRI DE FRESAS", cantidad: 4, precio_unit: 36000, total: 144000 },
+      { nombre: "K MARGARITA", cantidad: 4, precio_unit: 36000, total: 144000 },
+      { nombre: "K DULCE EMBRUJO", cantidad: 3, precio_unit: 36000, total: 108000 },
+      { nombre: "K LONG ISLAND", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K TEQUILA SUNRISE", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K BLUE HAWAI", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K FROZEN GRANIZADO", cantidad: 1, precio_unit: 36000, total: 36000, nota: "Granizado (aún en La Sala hasta ago-2026)" },
+      { nombre: "K GUAYACAN SERIO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MANGO SMOOTHIE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MOJITO MIX", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K ULA ULA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "SODA ITALIANA", cantidad: 4, precio_unit: 15000, total: 60000 },
+      { nombre: "MICHELADA", cantidad: 3, precio_unit: 12000, total: 36000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "LIMONADA NATURAL", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "JUGO EN AGUA", cantidad: 1, precio_unit: 10000, total: 10000 },
+      { nombre: "AJUSTE cócteles (por confirmar)", cantidad: 0, precio_unit: 0, total: -116000, nota: "PVP carta $1.366.000 vs cócteles POS $1.250.000. SIN 2x1 (91% del precio completo), confirmando que la promo 2x1 corre martes y viernes, no sábados." },
+    ],
+    nota: "SÁBADO 18 JUL — segundo mejor día del mes (venta $2.394.800, neto $1.792.910 = 74,9%, el MEJOR margen del mes gracias a NÓMINA $0). ✅ Los cócteles van casi a PRECIO COMPLETO (91%), confirmando que el 2x1 corre martes y viernes, NO sábados. Noche de MOJITOS (7) y MEDUSA (6). 'Otros' $14.000 = Chiscake. Inventario: 17 verificaciones contra la tirilla, CERO discrepancias. GRAN REPOSICIÓN: Nacional +162, Corona +48, Electrolit +18, Ron Caldas Bot +1, Tequila Botella +1."
+  },
+  {
+    date: "2026-07-19", total_estanco: 86000, total_cocteles: 404000, total: 490000, total_units: 40,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 7, precio_unit: 9000, total: 63000 },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 2, precio_unit: 13000, total: 26000 },
+      { nombre: "CERVEZA CORONA", cantidad: 1, precio_unit: 13000, total: 13000 },
+      { nombre: "AGUA", cantidad: 1, precio_unit: 6000, total: 6000 },
+      { nombre: "AGUA TONICA", cantidad: 1, precio_unit: 6000, total: 6000 },
+      { nombre: "RON DL", cantidad: 2, precio_unit: 0, total: 0, nota: "Insumo coctelería (long island, mojito)" },
+      { nombre: "WHISKY OLD PAR MEDIA", cantidad: 1, precio_unit: 0, total: 0, nota: "Baja de media botella para tragos" },
+      { nombre: "GASEOSA", cantidad: 8, precio_unit: 0, total: 0, nota: "Mezclador (baja inventario -8)" },
+      { nombre: "AJUSTE cortesía/promo (por confirmar)", cantidad: 0, precio_unit: 0, total: -28000, nota: "PVP carta $114.000 vs estanco POS $86.000." },
+    ],
+    cocteles: [
+      { nombre: "K DEMONIO VERDE", cantidad: 3, precio_unit: 36000, total: 108000 },
+      { nombre: "K LONG ISLAND", cantidad: 3, precio_unit: 36000, total: 108000 },
+      { nombre: "K GIN TONIC", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MOJITO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "SODA ITALIANA", cantidad: 2, precio_unit: 15000, total: 30000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "LIMONADA NATURAL", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "JUGO EN AGUA", cantidad: 2, precio_unit: 10000, total: 20000 },
+      { nombre: "AROMATICA DE FRUTA", cantidad: 1, precio_unit: 8000, total: 8000, nota: "PVP estimado" },
+      { nombre: "AJUSTE menor cócteles", cantidad: 0, precio_unit: 0, total: 10000, nota: "PVP carta $394.000 vs cócteles POS $404.000 (97,5% de precisión, sin promo)." },
+    ],
+    nota: "DOMINGO 19 JUL (venta $1.095.200, neto $406.040 = 37,1%). Buen domingo: la cocina fue el 55% ($605.200) con 4 alitas + 2 lasagnas de pollo, y los cócteles $404.000. Cócteles a precio COMPLETO (97,5% de precisión) — sin promo, consistente con el patrón (2x1 solo martes y viernes). Inventario: 12 verificaciones contra la tirilla, CERO discrepancias. Reposiciones: Agua +12, Agua tónica +6, Whisky Coct +1."
+  },
+  {
+    date: "2026-07-20", total_estanco: 118000, total_cocteles: 363000, total: 481000, total_units: 42,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 15, precio_unit: 9000, total: 135000 },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 3, precio_unit: 13000, total: 39000 },
+      { nombre: "AGUA", cantidad: 1, precio_unit: 6000, total: 6000 },
+      { nombre: "GASEOSA", cantidad: 8, precio_unit: 0, total: 0, nota: "Mezclador (baja inventario -8)" },
+      { nombre: "LICOR DE MANZANA", cantidad: 2, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "AJUSTE cortesía/promo (por confirmar)", cantidad: 0, precio_unit: 0, total: -62000, nota: "PVP carta $180.000 vs estanco POS $118.000." },
+    ],
+    cocteles: [
+      { nombre: "K NUBARRON", cantidad: 3, precio_unit: 36000, total: 108000 },
+      { nombre: "K COSMOPOLITAN", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "SODA ITALIANA", cantidad: 3, precio_unit: 15000, total: 45000 },
+      { nombre: "K BLUE HAWAI", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K FROZEN GRANIZADO", cantidad: 1, precio_unit: 36000, total: 36000, nota: "Granizado (aún en La Sala hasta ago-2026)" },
+      { nombre: "K SUEÑO ROSA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K ULA ULA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "AJUSTE cócteles (por confirmar)", cantidad: 0, precio_unit: 0, total: -18000, nota: "PVP carta $381.000 vs cócteles POS $363.000 (95% — sin promo, consistente con lunes)." },
+    ],
+    nota: "LUNES 20 JUL (venta $797.200, neto $179.490 = 22,5%). Cócteles $363.000 = 46% de la venta, sin promo (95% del precio de carta). Gastos altos del día ($179.750) recortan el margen. Inventario: 12 verificaciones contra la tirilla, CERO discrepancias. Sin reposiciones."
   }
 ];
 
@@ -8306,13 +8469,13 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"GINEBRA BOTELLA",saldo:0},
       {nombre:"GINEBRA DL",saldo:5},
       {nombre:"GINEBRA ML",saldo:1},
-      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR CAFÉ",saldo:0},
       {nombre:"LICOR DE MANZANA",saldo:10},
       {nombre:"LICOR DE MENTA",saldo:0},
       {nombre:"RED BULL",saldo:8},
       {nombre:"RON CALDAS BOTELLA",saldo:0},
-      {nombre:"RON CALDAS MEDIA",saldo:5},
-      {nombre:"RON DL",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:5},
       {nombre:"SMIRNOFF",saldo:0},
       {nombre:"SMIRNOFF BOT",saldo:0},
       {nombre:"TEQUILA BOTELLA",saldo:0},
@@ -8330,6 +8493,180 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"WHISKEY COCTELERIA",saldo:0},
       {nombre:"OLD PARR BOTELLA",saldo:0},
       {nombre:"OLD PARR MEDIA",saldo:1},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ]
+  },
+  {
+    date: "2026-07-18", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:2},
+      {nombre:"AGT BOTLLA CAUCA",saldo:2},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:5},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:1},
+      {nombre:"AMARILLO MED",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:49},
+      {nombre:"CERVEZA IMPORTADA",saldo:24},
+      {nombre:"CERVEZA NACIONAL",saldo:197},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:16},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:78},
+      {nombre:"GASEOSA 1.5",saldo:13},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:9},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:8},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:5},
+      {nombre:"SMIRNOFF",saldo:0},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:0},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:2},
+      {nombre:"TRIPLESEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:5},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:0},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:1},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ]
+  },
+  {
+    date: "2026-07-19", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:2},
+      {nombre:"AGT BOTLLA CAUCA",saldo:2},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:16},
+      {nombre:"AGUA TONICA",saldo:8},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:1},
+      {nombre:"AMARILLO MED",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:48},
+      {nombre:"CERVEZA IMPORTADA",saldo:22},
+      {nombre:"CERVEZA NACIONAL",saldo:190},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:16},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:70},
+      {nombre:"GASEOSA 1.5",saldo:13},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:9},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:8},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"SMIRNOFF",saldo:0},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:0},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:2},
+      {nombre:"TRIPLESEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:5},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:0},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ]
+  },
+  {
+    date: "2026-07-20", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:2},
+      {nombre:"AGT BOTLLA CAUCA",saldo:2},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:15},
+      {nombre:"AGUA TONICA",saldo:8},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:1},
+      {nombre:"AMARILLO MED",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:48},
+      {nombre:"CERVEZA IMPORTADA",saldo:19},
+      {nombre:"CERVEZA NACIONAL",saldo:175},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:16},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:62},
+      {nombre:"GASEOSA 1.5",saldo:13},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:7},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:8},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"SMIRNOFF",saldo:0},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:0},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:5},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:0},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:0},
       {nombre:"SMIRNOFF ICE",saldo:6},
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
     ]
@@ -9036,6 +9373,30 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 10000, nota: "Monto bajo; pendiente desglose." },
     ]
+  },
+  {
+    date: "2026-07-18", total: 161250,
+    items: [
+      { concepto: "Compras D1", categoria: "Insumos varios", valor: 55600 },
+      { concepto: "Hielo", categoria: "Insumos varios", valor: 39600 },
+      { concepto: "Compras Russo", categoria: "Insumos varios", valor: 36400 },
+      { concepto: "Comida empleados", categoria: "Comida", valor: 10000 },
+      { concepto: "Limpido (Russo)", categoria: "Aseo", valor: 7350 },
+      { concepto: "2 coronitas publicidad El Búnker", categoria: "Publicidad", valor: 7000, nota: "Gasto de El Búnker pagado desde La Sala" },
+      { concepto: "Faltante de tarjeta", categoria: "Faltante", valor: 5300 },
+    ]
+  },
+  {
+    date: "2026-07-19", total: 5000,
+    items: [
+      { concepto: "Comida empleados", categoria: "Comida", valor: 5000 },
+    ]
+  },
+  {
+    date: "2026-07-20", total: 179750,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 179750, nota: "FLAG: monto alto sin desglose. El cuadre cierra en 0 con gastos $179.750." },
+    ]
   }
 ];
 
@@ -9539,6 +9900,10 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-07-16", semana: 16, periodo: "Sem 2 jul (13 - 19 jul)", concepto: "Licores Junior (GIR) - abono cartera", categoria: "Pago proveedor (no operativo)", valor: 1177575 },
   { date: "2026-07-16", semana: 16, periodo: "Sem 2 jul (13 - 19 jul)", concepto: "Compra caja x24 Cerveza Corona (reposición inventario)", categoria: "Reposición inventario", valor: 86900 },
   { date: "2026-07-18", semana: 16, periodo: "Sem 2 jul (13 - 19 jul)", concepto: "Compra Bavaria La Sala (reposición cerveza)", categoria: "Reposición inventario", valor: 693300 },
+  { date: "2026-07-19", semana: 16, periodo: "Sem 2 jul (13 - 19 jul)", concepto: "Pago combinado: nómina 19-jul $197.500 + pulpa de fruta $61.750 + Cervezas y Cervezas $154.300 + Coca-Cola $40.000. ⚠️ FLAG: los componentes suman $453.550 pero el total transferido es $735.915 — faltan $282.365 por identificar", categoria: "Por itemizar", valor: 735915 },
+  { date: "2026-07-20", semana: 17, periodo: "Sem 3 jul (20 - 26 jul)", concepto: "Distribuidora El Rey / Reinaldo - pago facturas", categoria: "Pago proveedor (no operativo)", valor: 615500 },
+  { date: "2026-07-20", semana: 17, periodo: "Sem 3 jul (20 - 26 jul)", concepto: "Limón (facturas 11, 17 y 19 de julio)", categoria: "Insumos coctelería", valor: 240000 },
+  { date: "2026-07-21", semana: 17, periodo: "Sem 3 jul (20 - 26 jul)", concepto: "Luis Carlos Velasco - 10 litros de ginebra (reposición inventario)", categoria: "Reposición inventario", valor: 200000 },
 ];
 
 // ─── Storage ───
@@ -9583,7 +9948,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-07-17");
+  const [selDate,setSelDate]=useState("2026-07-20");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -11470,7 +11835,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-07-17";
+  const HOY="2026-07-20";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
