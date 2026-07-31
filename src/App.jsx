@@ -702,6 +702,13 @@ const PRELOADED_CUADRES = [
     efectivo: 650, tarjeta: 431800, otros_pago: 0,
     pizza_80: 252960, gastos: 179750, nomina: 185000, costo_financiero: 0,
     neto_sala: 179490, faltante: 0,
+  },
+  {
+    date: "2026-07-21", venta_total: 1419200,
+    estanco: 806000, cocteles: 275000, pizzeria: 338200, otros_venta: 0,
+    efectivo: 8640, tarjeta: 1379200, otros_pago: 0,
+    pizza_80: 270560, gastos: 31360, nomina: 0, costo_financiero: 0,
+    neto_sala: 1117280, faltante: 0,
   }
 ];
 
@@ -2062,6 +2069,19 @@ const PRELOADED_COCINA = [
       { nombre: "PZ CARNAVAL PEQ", cantidad: 1, valor: 39600 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
     ]
+  },
+  {
+    date: "2026-07-21", total: 338200, total_units: 9,
+    productos: [
+      { nombre: "PZ POTOTO GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ MEXICANA PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "NACHOS CLASICOS", cantidad: 1, valor: 31800 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+    ]
   }
 ];
 
@@ -3417,6 +3437,31 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE cócteles (por confirmar)", cantidad: 0, precio_unit: 0, total: -18000, nota: "PVP carta $381.000 vs cócteles POS $363.000 (95% — sin promo, consistente con lunes)." },
     ],
     nota: "LUNES 20 JUL (venta $797.200, neto $179.490 = 22,5%). Cócteles $363.000 = 46% de la venta, sin promo (95% del precio de carta). Gastos altos del día ($179.750) recortan el margen. Inventario: 12 verificaciones contra la tirilla, CERO discrepancias. Sin reposiciones."
+  },
+  {
+    date: "2026-07-21", total_estanco: 806000, total_cocteles: 275000, total: 1081000, total_units: 35,
+    estanco: [
+      { nombre: "GINEBRA BOTELLA", cantidad: 1, precio_unit: 280000, total: 280000, nota: "Comprada y vendida el mismo día (Ent 1 / Sal 1)" },
+      { nombre: "WHISKY BUCHANANS BOTELLA", cantidad: 1, precio_unit: 250000, total: 250000, nota: "Comprada y vendida el mismo día (Ent 1 / Sal 1); PVP estimado" },
+      { nombre: "RESERVA", cantidad: 1, precio_unit: 45000, total: 45000, nota: "PVP histórico $45k (confirmar)" },
+      { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000 },
+      { nombre: "CERVEZA CORONA", cantidad: 2, precio_unit: 13000, total: 26000 },
+      { nombre: "ELECTROLIT", cantidad: 2, precio_unit: 8000, total: 16000 },
+      { nombre: "GASEOSA", cantidad: 6, precio_unit: 0, total: 0, nota: "Mezclador (baja inventario -6)" },
+      { nombre: "GASEOSA 1.5", cantidad: 1, precio_unit: 0, total: 0, nota: "Mezclador" },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "AJUSTE cortesía/promo (por confirmar)", cantidad: 0, precio_unit: 0, total: 144000, nota: "PVP carta $662.000 vs estanco POS $806.000 — POS SUPERIOR. Probable que Ginebra y Buchanan's botella tengan PVP mayor al estimado, o Reserva se cobre más alto." },
+    ],
+    cocteles: [
+      { nombre: "K MARGARITA", cantidad: 4, precio_unit: 18000, total: 72000, nota: "2x1 martes" },
+      { nombre: "K MOJITO", cantidad: 2, precio_unit: 18000, total: 36000, nota: "2x1 martes" },
+      { nombre: "K TEQUILA SUNRISE", cantidad: 2, precio_unit: 18000, total: 36000, nota: "2x1 martes" },
+      { nombre: "SODA ITALIANA", cantidad: 2, precio_unit: 15000, total: 30000 },
+      { nombre: "LIMONADA CEREZADA", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "AJUSTE cócteles martes", cantidad: 0, precio_unit: 0, total: 89000, nota: "Con 2x1: K-cócteles $144k + bebidas $42k = $186k vs cócteles POS $275.000. El POS es superior — parte de los cócteles pudo cobrarse sin 2x1, o Reserva entró como cóctel. Confirmar." },
+    ],
+    nota: "MARTES 21 JUL — NOCHE DE BOTELLAS (venta $1.419.200, NÓMINA $0, neto $1.117.280 = 78,7%, uno de los mejores márgenes del mes). El estanco $806k lo impulsan 1 Ginebra botella + 1 Buchanan's botella (ambas compradas y vendidas el mismo día) + Reserva. Cócteles $275k con 2x1. ✅ Inventario: 15 verificaciones contra la tirilla, CERO discrepancias, y el estanco POS es SUPERIOR a la reconstrucción — no hay faltante hoy. Reposiciones: Ginebra botella +1, Buchanan's botella +1."
   }
 ];
 
@@ -8670,6 +8715,64 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"SMIRNOFF ICE",saldo:6},
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
     ]
+  },
+  {
+    date: "2026-07-21", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:2},
+      {nombre:"AGT BOTLLA CAUCA",saldo:2},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:2},
+      {nombre:"AGUA",saldo:15},
+      {nombre:"AGUA TONICA",saldo:8},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:1},
+      {nombre:"AMARILLO MED",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:46},
+      {nombre:"CERVEZA IMPORTADA",saldo:19},
+      {nombre:"CERVEZA NACIONAL",saldo:170},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:14},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:56},
+      {nombre:"GASEOSA 1.5",saldo:12},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:6},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:8},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"SMIRNOFF",saldo:0},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:0},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:0},
+      {nombre:"TRIPLESEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:5},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:0},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ]
   }
 ];
 
@@ -9397,6 +9500,12 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 179750, nota: "FLAG: monto alto sin desglose. El cuadre cierra en 0 con gastos $179.750." },
     ]
+  },
+  {
+    date: "2026-07-21", total: 31360,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 31360, nota: "FLAG: pendiente desglose. El cuadre cierra en 0 con gastos $31.360." },
+    ]
   }
 ];
 
@@ -9948,7 +10057,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-07-20");
+  const [selDate,setSelDate]=useState("2026-07-21");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -11835,7 +11944,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-07-20";
+  const HOY="2026-07-21";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
