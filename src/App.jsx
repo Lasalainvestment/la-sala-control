@@ -834,6 +834,13 @@ const PRELOADED_CUADRES = [
     efectivo: 0, tarjeta: 408400, otros_pago: 0,
     pizza_80: 233920, gastos: 31400, nomina: 38600, costo_financiero: 20420,
     neto_sala: 154060, faltante: 0,
+  },
+  {
+    date: "2026-08-08", venta_total: 2755600,
+    estanco: 973000, cocteles: 1017000, pizzeria: 765600, otros_venta: 0,
+    efectivo: 465520, tarjeta: 1656000, otros_pago: 0,
+    pizza_80: 612480, gastos: 436580, nomina: 197500, costo_financiero: 82800,
+    neto_sala: 1426240, faltante: 0,
   }
 ];
 
@@ -2431,6 +2438,26 @@ const PRELOADED_COCINA = [
       { nombre: "HB DE RES CON CHAMPI", cantidad: 1, valor: 36000 },
       { nombre: "ENSALADA GRANJERA", cantidad: 1, valor: 36000 },
       { nombre: "EMPAQUE", cantidad: 5, valor: 10000, nota: "5 empaques a $2.000 — día con alto componente de domicilios/para llevar" },
+    ]
+  },
+  {
+    date: "2026-08-08", total: 765600, total_units: 24,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 8, valor: 254400, nota: "3 líneas de $63.600 (2 uds c/u) + 2 líneas de $31.800" },
+      { nombre: "LASAGNA MIXTA", cantidad: 3, valor: 129000, nota: "1 línea de $86.000 (2 uds) + 1 de $43.000" },
+      { nombre: "PZ AB ESPECIAL GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA DE RES", cantidad: 1, valor: 40000 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PT BOLOGNESA RG", cantidad: 1, valor: 38400 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
+      { nombre: "PT POLLO BECHAMEL JR", cantidad: 1, valor: 31200 },
+      { nombre: "PZ NAPOLITANA PQ", cantidad: 1, valor: 27600 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "ADIC QUESO", cantidad: 1, valor: 5000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+      { nombre: "PZ MARGARITA MED", cantidad: 1, valor: 0, nota: "🚩 FACTURADA EN $0 (factura A-017940). PVP carta $36.000. SEGUNDA VEZ EN AGOSTO: el 4-ago pasó lo mismo con una PZ POLLO BBQ GR. Ya no es un caso aislado — definir protocolo para cortesías y reposiciones de cocina." },
     ]
   }
 ];
@@ -4250,6 +4277,54 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -3000, nota: "Reconstrucción $27.000 vs cócteles POS $24.000 (88,9%). Solo 2 bebidas, diferencia irrelevante." },
     ],
     nota: "VIERNES 7 AGO — VIERNES ATÍPICO Y MUY FLOJO ($478.400). Es el peor viernes registrado en el archivo: el promedio de los viernes de julio fue $2.163.520, o sea que este día facturó apenas el 22% de lo normal. La coctelería prácticamente no operó ($24.000, solo 1 soda y 1 limonada, cero K-cócteles) y el estanco vendió 7 cervezas en toda la noche. ⚠️ SEGUNDA SEÑAL DE QUE EL 2x1 CAMBIÓ EN AGOSTO: la reconstrucción del estanco a PVP COMPLETO da $149.000 vs $162.000 del POS (92,0%), mientras que con 2x1 daría $109.500 (67,6%). Sumado al viernes 31-jul —donde el 2x1 corrió en cerveza pero no en cócteles— parece que la promoción de viernes se recortó o eliminó. CONFIRMAR la política vigente, porque afecta la reconstrucción de todos los viernes de agosto. La muestra es pequeña (7 cervezas), así que no es concluyente por sí sola. ✅ Tirillas BIEN ALINEADAS: el BAR cruza 6/6 contra la columna Sal; apertura del 7-ago = cierre del 6-ago exacta en los 53 SKUs. ⚠️ EFECTIVO EN $0: toda la venta entró por datáfono. Nómina de solo $38.600. Reposición: Caja de Vino +1."
+  },
+  {
+    date: "2026-08-08", total_estanco: 973000, total_cocteles: 1017000, total: 1990000, total_units: 132,
+    estanco: [
+      { nombre: "TEQUILA BOTELLA", cantidad: 3, precio_unit: 195000, total: 585000, nota: "Compradas y despachadas el mismo día (Ent 4 / Sal 3). PVP carta." },
+      { nombre: "CERVEZA NACIONAL", cantidad: 13, precio_unit: 9000, total: 117000, nota: "Sábado sin 2x1. De las 26 que salieron, 13 son la base de las 13 micheladas (cobradas en coctelería)." },
+      { nombre: "RON CALDAS BOTELLA", cantidad: 1, precio_unit: 110000, total: 110000, nota: "SKU agotado (1→0)" },
+      { nombre: "CERVEZA CORONA", cantidad: 6, precio_unit: 13000, total: 78000 },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 5, precio_unit: 13000, total: 65000 },
+      { nombre: "ELECTROLIT", cantidad: 2, precio_unit: 8000, total: 16000 },
+      { nombre: "AGUA", cantidad: 2, precio_unit: 6000, total: 12000 },
+      { nombre: "CERVEZA NACIONAL (base michelada)", cantidad: 13, precio_unit: 0, total: 0, nota: "Insumo de las 13 micheladas" },
+      { nombre: "WHISKY OLD PAR BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "🚩 SIN FACTURAR. Salió del inventario (1→0) y el estanco POS ya cierra al 99,0% sin ella. Carta $300.000, costo $136.700. Probable TRASLADO A EL BÚNKER (mismo patrón del Buchanan's el 26-jul y del aguardiente el 1-ago) — CONFIRMAR." },
+      { nombre: "VINO BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo: botella abierta para las 2 Copas de Vino (cobradas en coctelería). Repuesta y usada el mismo día (Ent 1 / Sal 1)." },
+      { nombre: "GASEOSA", cantidad: 22, precio_unit: 0, total: 0, nota: "Mezclador (baja inventario -22)" },
+      { nombre: "GASEOSA 1.5", cantidad: 1, precio_unit: 0, total: 0, nota: "Mezclador" },
+      { nombre: "TEQUILA ML", cantidad: 2, precio_unit: 0, total: 0, nota: "Insumo coctelería (K Margarita)" },
+      { nombre: "CURAZAO AZUL", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "TRIPLESEC", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo coctelería" },
+      { nombre: "WHISKEY COCTELERIA", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo: base de los 4 tragos dobles de whisky. Repuesta y agotada el mismo día (Ent 1 / Sal 1)." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -10000, nota: "Reconstrucción $983.000 vs estanco POS $973.000 (99,0%). Cierre casi exacto — el mejor del mes." },
+    ],
+    cocteles: [
+      { nombre: "K PECERA LA SALA", cantidad: 1, precio_unit: 95000, total: 95000 },
+      { nombre: "SODA ITALIANA", cantidad: 13, precio_unit: 15000, total: 195000 },
+      { nombre: "MICHELADA", cantidad: 13, precio_unit: 12000, total: 156000 },
+      { nombre: "K MARGARITA", cantidad: 3, precio_unit: 36000, total: 108000, nota: "Sábado, precio completo" },
+      { nombre: "TRAGO DOBLE WHISKYE", cantidad: 4, precio_unit: 20000, total: 80000 },
+      { nombre: "K CUBA LIBRE", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K NUBARRON", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K ORGASMO MULTIPLE", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K PINA COLADA CON LIC", cantidad: 1, precio_unit: 47000, total: 47000 },
+      { nombre: "K COSMOPOLITAN", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K LONG INSLAND", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MANGO SMOOTHIE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MOJITO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K NEW THE TIME", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K SUEÑO ROSA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K ULA ULA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "COPA DE VINO", cantidad: 2, precio_unit: 15000, total: 30000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "JUGO EN AGUA", cantidad: 2, precio_unit: 10000, total: 20000 },
+      { nombre: "LIMONADA CEREZADA", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -218000, nota: "🚩 Reconstrucción a carta $1.235.000 vs cócteles POS $1.017.000 (82,3%). Sábado no es día de 2x1. Mismo perfil que los sábados 18-jul (91%) y 25-jul (88%): los sábados el bar se cobra sistemáticamente por debajo de carta." },
+    ],
+    nota: "SÁBADO 8 AGO — MEJOR DÍA DE AGOSTO ($2.755.600) Y PRIMER FIN DE SEMANA FUERTE DEL MES. Neto $1.426.240 (51,8%). El bar aporta $1.990.000 (72% de la venta), justo lo contrario del jueves 6 donde mandó la cocina. ✅ Tirillas BIEN ALINEADAS: el BAR cruza 17/17 contra la columna Sal —el cruce más extenso registrado— y la apertura del 8-ago coincide EXACTA con el cierre del 7-ago en los 53 SKUs. ✅ ESTANCO AL 99,0%: $983.000 reconstruidos vs $973.000 POS, el mejor cierre del mes. Lo impulsan 3 botellas de tequila (Ent 4/Sal 3) y 1 Ron Caldas botella. 🚩 CÓCTELES AL 82,3%: faltan ~$218.000. Es el mismo patrón de todos los sábados (18-jul 91%, 25-jul 88%) — los sábados el bar se cobra por debajo de carta de forma sistemática. 🚩 1 BOTELLA DE OLD PARR salió sin facturar (carta $300.000, costo $136.700); probable traslado a El Búnker, confirmar. 🚩 SEGUNDA PIZZA EN $0 DEL MES (PZ Margarita Med, factura A-017940). GRAN REPOSICIÓN: Corona +24, Nacional +12, Gaseosa +24, Agua Tónica +6, Tequila botella +4, Aguardiente botella Antioqueño +2 y media +1, Vino Botella +1, Whisky Coctelería +1. ⚠️ GASTOS $436.580, los más altos de agosto — pedir el detalle."
   }
 ];
 
@@ -10547,6 +10622,64 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"SMIRNOFF ICE",saldo:6},
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
     ]
+  },
+  {
+    date: "2026-08-08", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:3},
+      {nombre:"AGT BOTLLA CAUCA",saldo:7},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:21},
+      {nombre:"AGUA TONICA",saldo:10},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:2},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:3},
+      {nombre:"CERVEZA CORONA",saldo:28},
+      {nombre:"CERVEZA IMPORTADA",saldo:16},
+      {nombre:"CERVEZA NACIONAL",saldo:107},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:12},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:101},
+      {nombre:"GASEOSA 1.5",saldo:7},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:3},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:9},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:4},
+      {nombre:"SMIRNOFF",saldo:6},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:7},
+      {nombre:"TRIPLESEC",saldo:3},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:1},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ]
   }
 ];
 
@@ -11387,6 +11520,12 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 31400, nota: "Monto menor." },
     ]
+  },
+  {
+    date: "2026-08-08", total: 436580,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 436580, nota: "🚩 EL GASTO DIARIO MÁS ALTO DE AGOSTO. Coincide con la gran reposición del día (Corona +24, Nacional +12, Gaseosa +24, Tónica +6, Tequila botella +4, aguardientes, vino, whisky coctelería) — probable que buena parte sea reposición de inventario pagada en efectivo desde caja, no gasto consumido. PEDIR DETALLE para clasificar." },
+    ]
   }
 ];
 
@@ -11956,7 +12095,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-08-07");
+  const [selDate,setSelDate]=useState("2026-08-08");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -13843,7 +13982,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-08-07";
+  const HOY="2026-08-08";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
