@@ -883,6 +883,13 @@ const PRELOADED_CUADRES = [
     efectivo: 830, tarjeta: 1501600, otros_pago: 0,
     pizza_80: 290880, gastos: 80170, nomina: 0, costo_financiero: 75080,
     neto_sala: 1136470, faltante: 0,
+  },
+  {
+    date: "2026-08-16", venta_total: 784400,
+    estanco: 332000, cocteles: 241000, pizzeria: 211400, otros_venta: 0,
+    efectivo: 4420, tarjeta: 628600, otros_pago: 0,
+    pizza_80: 169120, gastos: 26380, nomina: 125000, costo_financiero: 31430,
+    neto_sala: 432470, faltante: 0,
   }
 ];
 
@@ -2567,6 +2574,16 @@ const PRELOADED_COCINA = [
       { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
       { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
       { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-08-16", total: 211400, total_units: 7,
+    productos: [
+      { nombre: "LASAGNA DE POLLO", cantidad: 2, valor: 80000, nota: "Línea multi-unidad: $80.000 = 2 uds × $40.000 (confirmado por el acumulado)" },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ PEPERNATA MED", cantidad: 1, valor: 52800 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "ADICION COMIDA", cantidad: 1, valor: 4000 },
     ]
   }
 ];
@@ -4593,6 +4610,30 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 11000, nota: "Reconstrucción a carta $952.000 vs cócteles POS $963.000 (98,9%). Cierre casi exacto y con el POS por encima — el mejor cierre de coctelería de agosto." },
     ],
     nota: "SÁBADO 15 AGO — MEJOR DÍA DE AGOSTO EN COCTELERÍA ($963.000, 21 K-cócteles) Y MEJOR NETO DEL MES ($1.136.470 = 71,8%). Venta $1.582.600 con nómina POS $0 y gastos de solo $80.170. ✅ Tirillas BIEN ALINEADAS: el BAR cruza 11/11 contra la columna Sal —agua 4, amarillo bot 2, amarillo med 1, caja vino 1, corona 4, importada 3, nacional 14, gaseosa 22, ginebra ML 1, licor manzana 1, tequila ML 3— y las 19 filas con movimiento cumplen inicial+Ent−Sal=final. ✅ CÓCTELES AL 98,9% a PVP completo, el mejor cierre del mes: rompe la racha de sábados por debajo de carta (18-jul 91%, 25-jul 88%, 8-ago 82%). Sábado sin 2x1 confirmado. 🚩 AMARILLO BOT/MED: salieron 3 unidades agotando el SKU de botella; sigue SIN PRECIO EN CATÁLOGO desde julio. El estanco cierra al 83,6% sin valorizarlas y el POS queda por encima, así que probablemente el MED sí se cobró. Es la bandera más antigua sin resolver. SKUs NUEVOS: K DEMONIO VERDE (5 uds, el más vendido del día) y K TOM COLLINS — confirmar PVP de carta. ⚠️ NÓMINA POS $0: según la transferencia del 14-ago la nómina de estos días se paga por banco. GRAN REPOSICIÓN: Aguardiente Antioqueño botella +4, Caucano botella +1 y media +1, Ron Caldas botella +2, Amaretto +1, Crema de Whisky +1, Licor de Café +1. ⚠️ CORRECCIÓN RETROACTIVA: la apertura del 15-ago muestra RON DL en 0 y mi cierre del 14 decía 1 — se aplicó la foto autoritativa (el 14 salieron 4 tragos dobles, no 3; 1 sin registro en el bar)."
+  },
+  {
+    date: "2026-08-16", total_estanco: 332000, total_cocteles: 241000, total: 573000, total_units: 47,
+    estanco: [
+      { nombre: "VINO BOTELLA", cantidad: 2, precio_unit: 90000, total: 180000, nota: "Agota el SKU (2→0). El saldo inicial de 2 obligó la corrección retroactiva del cierre del 15-ago (registraba 1)." },
+      { nombre: "CERVEZA CORONA", cantidad: 7, precio_unit: 13000, total: 91000, nota: "Domingo a PVP completo — la reconstrucción de cerveza a carta cierra el estanco al 99,1%." },
+      { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000 },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 1, precio_unit: 13000, total: 13000 },
+      { nombre: "RON CALDAS BOT", cantidad: 1, precio_unit: 0, total: 0, nota: "Botella abierta como insumo de coctelería (K Cuba Libre): RON DL y RON CALDAS MEDIA están en 0, era la única fuente de ron. Si se hubiera vendido a carta ($110.000) el estanco excedería el POS por mucho." },
+      { nombre: "GINEBRA BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "🚩 Ent 1 / Sal 1 el mismo día (0→1→0). A carta vale $280.000, imposible dentro del estanco POS de $332.000. Hipótesis: insumo de coctelería (2 K Gin Tonic + 2 tónicas) o traslado. La entrada no tiene factura conocida — confirmar origen y destino con Manuel." },
+      { nombre: "GASEOSA", cantidad: 20, precio_unit: 0, total: 0, nota: "Mezcladores (baja inventario -20). Mismo criterio del 15-ago." },
+      { nombre: "AGUA TONICA", cantidad: 2, precio_unit: 0, total: 0, nota: "Insumo exacto de los 2 K Gin Tonic." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 3000, nota: "Reconstrucción $329.000 vs estanco POS $332.000 (99,1%). El POS queda POR ENCIMA en $3.000 — no hay faltante." },
+    ],
+    cocteles: [
+      { nombre: "K PINA COLADA CON LIC", cantidad: 2, precio_unit: 47000, total: 94000 },
+      { nombre: "K GIN TONIC", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K CUBA LIBRE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MOJITO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000 },
+      { nombre: "LIMONADA DE HIERBABUENA", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -24000, nota: "Reconstrucción a carta $265.000 vs cócteles POS $241.000 (91,0%). El POS queda POR DEBAJO en $24.000 — el inventario cruza 100%, así que es brecha de PRECIO, no de producto. Cierra exacto si las 2 Piña Colada se cobraron a $35.000 (precio sin licor) en vez de $47.000. Sin confirmar." },
+    ],
+    nota: "DOMINGO 16 AGO — Venta $784.400, neto $432.470 (55,1%). ✅ TIRILLAS BIEN ALINEADAS: el BAR cruza 8/8 contra la columna Sal (Tónica 2, Corona 7, Importada 1, Nacional 5, Gaseosa 20, Ginebra botella 1, Ron Caldas bot 1, Vino botella 2) y las filas con movimiento cumplen inicial+Ent−Sal=final. NO hubo corrimiento hoy. ✅ DOMINGO SIN 2x1 EN CERVEZA: cerveza a carta cierra el estanco al 99,1% — nueva señal para la tabla del 2x1. Cócteles al 91,0% con brecha de −$24.000 (posible Piña Colada cobrada sin licor). ⚠️ ENTRADAS SIN FACTURA CONOCIDA: Ginebra botella +1, Tequila botella +1, Tequila ML +1, Vodka Absolut botella +1 — los gastos del día ($26.380) no las cubren; confirmar con Manuel si es compra a crédito, transferencia o traslado. 🚩 SMIRNOFF ICE y GREEN APPLE AUSENTES de ambas tirillas de inventario (imprimen 51 filas, no 53): se arrastran los saldos 6/6 del 15-ago — confirmar si salieron del reporte del POS. ✔️ Nómina $125.000 SÍ registrada en caja hoy (no por transferencia). Reposición del día: Tequila botella +1 (2→3) y Tequila ML +1 (0→1, estaba agotado)."
   }
 ];
 
@@ -11283,7 +11324,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"TEQUILA MEDIA",saldo:1},
       {nombre:"TEQUILA ML",saldo:0},
       {nombre:"TRIPLESEC",saldo:2},
-      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:2},
       {nombre:"VINO CASILLERO BOTELLA",saldo:0},
       {nombre:"VODKA BOTELLA",saldo:0},
       {nombre:"VODKA MEDIA",saldo:0},
@@ -11295,7 +11336,67 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PARR MEDIA",saldo:1},
       {nombre:"SMIRNOFF ICE",saldo:6},
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
-    ]
+    ],
+    nota: "⚠️ CORRECCIÓN RETROACTIVA (16-ago): la apertura autoritativa del domingo 16 muestra VINO BOTELLA en 2, no en 1 como se registró en este cierre. Se corrige 1→2. El 15 no hubo venta ni entrada de vino botella, así que el conteo original del 15 (o del 14) subestimó una unidad. La corrección cuadra el domingo 16: se vendieron 2 vinos botella y el SKU cerró en 0 sin negativo."
+  },
+  {
+    date: "2026-08-16", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:5},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:4},
+      {nombre:"AGUA",saldo:10},
+      {nombre:"AGUA TONICA",saldo:7},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"AMARILLO BOT",saldo:0},
+      {nombre:"AMARILLO MED",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:26},
+      {nombre:"CERVEZA IMPORTADA",saldo:36},
+      {nombre:"CERVEZA NACIONAL",saldo:177},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:12},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:87},
+      {nombre:"GASEOSA 1.5",saldo:7},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:3},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:7},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:7},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:0},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"SMIRNOFF",saldo:6},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:0},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:1},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:1},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ],
+    nota: "Tirilla final del 16-ago verificada fila por fila: inicial+Ent−Sal=final en los 51 SKUs impresos. ENTRADAS del día: GINEBRA BOTELLA +1 (y salida el mismo día, cierra en 0), TEQUILA BOTELLA +1 (2→3), TEQUILA ML +1 (0→1, repuesto), VODKA ABSOLUT BOTELLA +1 (0→1) — sin factura conocida, origen por confirmar. 🚩 SMIRNOFF ICE y SMIRNOFF GREEN APPLE NO aparecen en la tirilla (imprime 51 filas): saldos 6/6 arrastrados del 15-ago sin verificación física — confirmar si salieron del reporte de inventario del POS."
   }
 ];
 
@@ -12178,6 +12279,12 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 80170, nota: "Pendiente desglose. Nómina POS $0 — se paga por transferencia (ver ledger del 14-ago)." },
     ]
+  },
+  {
+    date: "2026-08-16", total: 26380,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 26380, nota: "Monto menor. Nómina $125.000 SÍ registrada en caja hoy. Las 4 entradas de inventario del día (ginebra, tequila x2, vodka) NO están cubiertas por este monto — origen por confirmar." },
+    ]
   }
 ];
 
@@ -12750,7 +12857,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-08-15");
+  const [selDate,setSelDate]=useState("2026-08-16");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -14637,7 +14744,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-08-15";
+  const HOY="2026-08-16";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
