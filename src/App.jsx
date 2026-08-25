@@ -932,6 +932,20 @@ const PRELOADED_CUADRES = [
     efectivo: 9100, tarjeta: 2017800, otros_pago: 0,
     pizza_80: 474720, gastos: 50000, nomina: 197500, costo_financiero: 100890,
     neto_sala: 1451290, faltante: 0,
+  },
+  {
+    date: "2026-08-23", venta_total: 235200,
+    estanco: 54000, cocteles: 55000, pizzeria: 126200, otros_venta: 0,
+    efectivo: 2400, tarjeta: 117800, otros_pago: 0,
+    pizza_80: 100960, gastos: 5000, nomina: 110000, costo_financiero: 5890,
+    neto_sala: 13350, faltante: 0,
+  },
+  {
+    date: "2026-08-24", venta_total: 51600,
+    estanco: 12000, cocteles: 0, pizzeria: 39600, otros_venta: 0,
+    efectivo: 0, tarjeta: 0, otros_pago: 0,
+    pizza_80: 31680, gastos: 5000, nomina: 185000, costo_financiero: 0,
+    neto_sala: -170080, faltante: -138400,
   }
 ];
 
@@ -2694,6 +2708,21 @@ const PRELOADED_COCINA = [
       { nombre: "NACHOS CON CHILI", cantidad: 1, valor: 36000 },
       { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
       { nombre: "EMPAQUE", cantidad: 2, valor: 4000 },
+    ]
+  },
+  {
+    date: "2026-08-23", total: 126200, total_units: 4,
+    productos: [
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ HAWAIANA PEQ", cantidad: 1, valor: 38400 },
+      { nombre: "ALITAS PICANTES BUFF", cantidad: 1, valor: 31800, nota: "SKU nuevo en cocina: 'PICANTES' (antes solo BBQ Buffalo), mismo precio $31.800." },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ]
+  },
+  {
+    date: "2026-08-24", total: 39600, total_units: 1,
+    productos: [
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600, nota: "Única venta de cocina del día." },
     ]
   }
 ];
@@ -4900,6 +4929,29 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -131000, nota: "Reconstrucción a carta $1.458.000 vs cócteles POS $1.327.000 (91,0%). Sábados previos cerraron 82-99%. La hipótesis Margarita Mix + Sueño Rosa a $15.000 (bebidas mix sin licor) explica $63.000 de la brecha; el resto (−$68.000) sin identificar — el inventario cruza 100%, es brecha de PRECIO (promos/precios de SKUs nuevos), no de producto. CONFIRMAR PVP de los K nuevos con Manuel." },
     ],
     nota: "SÁBADO 22 AGO — MEJOR NETO DEL MES: $1.451.290 (63,8%) sobre venta de $2.274.400 (segunda mejor del mes tras el sáb 8). COCTELERÍA RÉCORD: $1.327.000 con 31 K-cócteles y 12 micheladas — el patrón del mes en su máxima expresión: los cócteles dejan la plata. Gastos de solo $50.000 y nómina $197.500. ✅ Tirillas alineadas: apertura del 22 cruza contra el cierre CORREGIDO del 21 y el bar cruza 12/12 contra la columna Sal; continuidad verificada 14/14 en filas con movimiento. ✅ LA APERTURA DE HOY RESOLVIÓ EL VIERNES: reveló la gran reposición del 21 (cervezas +24, gaseosas +24, rones +5, amarillo +4, vino +2, Buchanan's +1, whisky coct +1) — los 3 negativos derivados quedaron corregidos. ENTRADAS DE HOY: Agua +12, Nacional +12, Buchanan's media +1 (sin factura — misma compra del viernes o nueva; confirmar). 🚩 Línea RES. con Vr.IVA $96.000 — el SEGUNDO monto más alto de la bandera (tras los $536.000 del 1-ago); undécima aparición y siempre en días de venta alta: ya es urgente la respuesta del proveedor del POS. 🚩 SIGUE ABIERTO del viernes: Buchanan's botella y media, Ron Caldas media y Amarillo bot salieron SIN COBRO (~$620.000 carta). SKU nuevo: K Tequila Sunrise."
+  },
+  {
+    date: "2026-08-23", total_estanco: 54000, total_cocteles: 55000, total: 109000, total_units: 11,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 6, precio_unit: 9000, total: 54000, nota: "Domingo a precio completo — el estanco cierra EXACTO con solo las 6 nacionales." },
+      { nombre: "GASEOSA", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo/cortesía: no cabe en el estanco (cierra exacto sin ella). Posible soda de las limonadas cerezadas." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 0, nota: "Reconstrucción $54.000 vs estanco POS $54.000 — CIERRE EXACTO (100%)." },
+    ],
+    cocteles: [
+      { nombre: "LIMONADA CEREZADA", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "JUGO EN AGUA", cantidad: 1, precio_unit: 10000, total: 10000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 9000, nota: "Reconstrucción a PVP de carta $46.000 vs cócteles POS $55.000 (POS POR ENCIMA +$9.000 — sin faltante). Cierra exacto si las limonadas cerezada/coco se cobraron a $15.000 (y no $12.000): contradice el cierre del jueves 20 al 99,6% con $12.000, así que el PVP de estas limonadas nuevas sigue SIN CONFIRMAR — pedirlo a Manuel junto con los K nuevos." },
+    ],
+    nota: "DOMINGO 23 AGO — Día flojo de cierre de semana: venta $235.200 (53,7% cocina), neto $13.350 (5,7%) — casi tablas tras nómina de $110.000. ✅ Tirillas alineadas, bar cruza 2/2 contra Sal (Nacional 6, Gaseosa 1), estanco EXACTO. ⚠️ CORRECCIÓN RETROACTIVA APLICADA AL 22: la apertura de hoy muestra BUCHANAN'S BOTELLA en 0 — la botella repuesta el viernes salió SIN REGISTRO entre el cierre del sábado y hoy ($310.000 carta). CON ESTA YA SON ~$930.000 A CARTA EN SALIDAS PREMIUM SIN INGRESO EN LA SEMANA: Buchanan's botella ×2, Buchanan's media ×1, Ron Caldas media ×1, Amarillo bot ×1. Es el episodio más grande del patrón 'producto sin ingreso' desde julio (~$2,17M) — HABLAR CON MANUEL YA, con las fechas exactas: vie 21 (4 botellas) y sáb 22 noche (1 botella). 🚩 SMIRNOFF ICE y GREEN APPLE: octava tirilla consecutiva ausentes. Nómina $110.000 en caja."
+  },
+  {
+    date: "2026-08-24", total_estanco: 12000, total_cocteles: 0, total: 12000, total_units: 2,
+    estanco: [
+      { nombre: "GASEOSA", cantidad: 2, precio_unit: 6000, total: 12000, nota: "Único movimiento del bar. Reconstrucción $12.000 = estanco POS $12.000 — CIERRE EXACTO." },
+    ],
+    cocteles: [],
+    nota: "LUNES 24 AGO — Día mínimo: venta $51.600 (una pizza + 2 gaseosas), NETO −$170.080 — el lunes más caro del mes: la nómina de $185.000 (hoy SÍ en caja, no por transferencia) más que triplica la venta. ⚠️ SOBRANTE $138.400: pagos ($190.000) exceden la venta; la base cubrió la nómina — registrado faltante:-138400 (criterio del 3-may y 18-ago). ✅ NÓMINA DE LUNES = $185.000 EN CAJA: mismo monto que la transferencia sin fecha del ledger del 17-ago — REFUERZA que aquella era la nómina del lunes 17 (neto del 17 ajustado a −$131.600). ✅ Tirillas alineadas: apertura del 24 cruza 100% contra el cierre del 23, incluida BUCHANAN'S BOTELLA en 0 (segunda tirilla que confirma la corrección del 22). ENTRADAS: Agua +24, Gaseosa +24 — CUADRAN con las dos facturas Postobón del ledger de hoy ($92.000 + $32.000); Nacional +12 sin factura clara (¿Bavaria pendiente o dentro de Reinaldo El Rey?). 🚩 SMIRNOFF ICE y GREEN APPLE: novena tirilla consecutiva ausentes."
   }
 ];
 
@@ -12008,7 +12060,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"VODKA BOTELLA",saldo:0},
       {nombre:"VODKA MEDIA",saldo:0},
       {nombre:"VODKA DL",saldo:4},
-      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
       {nombre:"BUCHANAN'S MEDIA",saldo:1},
       {nombre:"WHISKEY COCTELERIA",saldo:0},
       {nombre:"OLD PARR BOTELLA",saldo:0},
@@ -12016,7 +12068,125 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"SMIRNOFF ICE",saldo:6},
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
     ],
-    nota: "Verificado fila por fila contra la tirilla física: inicial (=cierre corregido del 21) + Ent − Sal = final, 14/14 en filas con movimiento. ENTRADAS: Agua +12, Cerveza Nacional +12, Buchanan's Media +1 — sin factura aportada; confirmar si pertenecen a la misma compra del viernes o son nuevas. MOVIMIENTOS: Agte media Caucano 4→3, Agua −2, Tónica −1, Corona −6, Importada −6, Nacional −17 (5 directas + 12 michelada), Electrolit −1, Gaseosa −12, Gaseosa 1.5 −2, Red Bull −1, Ron Caldas bot 2→1 (insumo), Tequila ML 11→8, Triple Sec 3→2. 🚩 SMIRNOFF ICE y GREEN APPLE ausentes por séptima tirilla consecutiva: saldos 6/6 arrastrados — ya debe confirmarse con Manuel si salieron del reporte del POS."
+    nota: "Verificado fila por fila contra la tirilla física: inicial (=cierre corregido del 21) + Ent − Sal = final, 14/14 en filas con movimiento. ENTRADAS: Agua +12, Cerveza Nacional +12, Buchanan's Media +1 — sin factura aportada; confirmar si pertenecen a la misma compra del viernes o son nuevas. MOVIMIENTOS: Agte media Caucano 4→3, Agua −2, Tónica −1, Corona −6, Importada −6, Nacional −17 (5 directas + 12 michelada), Electrolit −1, Gaseosa −12, Gaseosa 1.5 −2, Red Bull −1, Ron Caldas bot 2→1 (insumo), Tequila ML 11→8, Triple Sec 3→2. ⚠️ CORRECCIÓN RETROACTIVA (23-ago): la apertura autoritativa del domingo 23 muestra BUCHANAN'S BOTELLA en 0 — la tirilla final del sábado imprimía 1 sin movimiento. Se corrige 1→0: LA BOTELLA REPUESTA EL VIERNES SALIÓ SIN REGISTRO entre el cierre del sábado y la apertura del domingo ($310.000 carta / ~$130.000 costo). Segunda Buchanan's botella de la semana sin ingreso asociado. 🚩 SMIRNOFF ICE y GREEN APPLE ausentes por séptima tirilla consecutiva: saldos 6/6 arrastrados — ya debe confirmarse con Manuel si salieron del reporte del POS."
+  },
+  {
+    date: "2026-08-23", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:5},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:11},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"AMARILLO BOT",saldo:1},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:11},
+      {nombre:"CERVEZA IMPORTADA",saldo:22},
+      {nombre:"CERVEZA NACIONAL",saldo:135},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:8},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:54},
+      {nombre:"GASEOSA 1.5",saldo:5},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:3},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:6},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"SMIRNOFF",saldo:6},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:8},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ],
+    nota: "Verificado fila por fila: inicial+Ent−Sal=final en los 51 SKUs impresos. La apertura del 23 cruza contra el cierre del 22 EXCEPTO Buchanan's botella (1→0, corrección retroactiva aplicada al 22 — botella sin registro de salida). MOVIMIENTOS del domingo: Nacional 141→135 (Sal 6), Gaseosa 55→54 (Sal 1). Los otros 49 SKUs sin cambio. 🚩 SMIRNOFF ICE y GREEN APPLE ausentes por octava tirilla consecutiva: saldos 6/6 arrastrados."
+  },
+  {
+    date: "2026-08-24", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:5},
+      {nombre:"AGT BOTLLA CAUCA",saldo:4},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:7},
+      {nombre:"AGT MEDIA CAUCA",saldo:3},
+      {nombre:"AGUA",saldo:35},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:1},
+      {nombre:"AMARILLO BOT",saldo:1},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:11},
+      {nombre:"CERVEZA IMPORTADA",saldo:22},
+      {nombre:"CERVEZA NACIONAL",saldo:147},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:8},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:76},
+      {nombre:"GASEOSA 1.5",saldo:5},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:3},
+      {nombre:"GINEBRA ML",saldo:2},
+      {nombre:"LICOR CAFÉ",saldo:1},
+      {nombre:"LICOR DE MANZANA",saldo:12},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:6},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"SMIRNOFF",saldo:6},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:8},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:4},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:0},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:0},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6}
+    ],
+    nota: "Verificado fila por fila: inicial+Ent−Sal=final en los 51 SKUs impresos. Apertura del 24 cruza 100% contra el cierre del 23 (Buchanan's botella 0 confirmada por segunda tirilla). ENTRADAS: AGUA +24 (11→35) y GASEOSA +24 (54→76) — cuadran con las facturas Postobón del ledger de hoy ($92.000 + $32.000); CERVEZA NACIONAL +12 (135→147) sin factura identificada — ¿Bavaria pendiente o dentro del pago a Reinaldo El Rey ($244.500)? Confirmar. Única salida: Gaseosa −2. 🚩 SMIRNOFF ICE y GREEN APPLE ausentes por novena tirilla consecutiva: saldos 6/6 arrastrados."
   }
 ];
 
@@ -12941,6 +13111,18 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 50000, nota: "Monto moderado en el mejor día del mes. Nómina $197.500 en caja. Las entradas del día (Agua +12, Nacional +12, Buchanan's media +1) no están cubiertas por este monto — confirmar factura." },
     ]
+  },
+  {
+    date: "2026-08-23", total: 5000,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 5000, nota: "Monto mínimo. Nómina $110.000 en caja el domingo." },
+    ]
+  },
+  {
+    date: "2026-08-24", total: 5000,
+    items: [
+      { concepto: "Gastos del día (sin itemizar)", categoria: "Por itemizar", valor: 5000, nota: "Monto mínimo. Nómina $185.000 en caja (lunes). El grueso del día se movió por transferencia: ver las 3 entradas del 24-ago en el ledger ($1.015.900)." },
+    ]
   }
 ];
 
@@ -13473,6 +13655,9 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-08-18", semana: 21, periodo: "Sem 3 ago (17 - 23 ago)", concepto: "Pago arriendo mes de Agosto La Sala", categoria: "Arriendo", valor: 4666251, nota: "🚩 PRIMER ARRIENDO PAGADO DESDE LA SALA en el archivo — hasta julio el arriendo se cargaba completo en El Búnker con reparto ~50% pendiente de formalizar. CONFIRMAR: ¿este pago cubre solo la parte de La Sala o el total del inmueble? Si es el total, El Búnker debe reembolsar su porción; si es solo La Sala, el reparto de julio sigue pendiente en el otro archivo. Es el gasto operativo más grande del mes: equivale al 22,9% de la venta acumulada de agosto al 22 ($20,3M)." },
   { date: "2026-08-20", semana: 21, periodo: "Sem 3 ago (17 - 23 ago)", concepto: "Pago internet La Sala - Mes de Agosto - Proveedor Claro", categoria: "Servicios", valor: 136007, nota: "Servicio fijo mensual (mismo proveedor de siempre; en marzo fue $137.000)." },
   { date: "2026-08-21", semana: 21, periodo: "Sem 3 ago (17 - 23 ago)", concepto: "Pago servicio de Alarma Proveedor Centinela - Agosto", categoria: "Servicios", valor: 125000, nota: "Servicio fijo mensual de monitoreo." },
+  { date: "2026-08-24", semana: 22, periodo: "Sem 4 ago (24 - 30 ago)", concepto: "Pago facturas varias (Postobón 92.000 + Faltante base 81.400 + Turno domingo 23-ago 75.000 + Postobón 32.000 + Insumos aseo 40.450 + efectivo para base)", categoria: "Nómina", valor: 321400, nota: "⚠️ Los ítems con monto suman $320.850 — la diferencia de $550 correspondería al 'efectivo para base' que vino SIN monto en el detalle; confirmar. CRUCES RESUELTOS: (1) 'Faltante base $81.400' ≈ el SOBRANTE del mar 18-ago ($81.420, difieren $20): la base cubrió gastos ese día y acá se repone — se cierra ese flag como movimiento de caja, evaluar reclasificación junto con los vales del 17-ago. (2) Las DOS facturas Postobón ($124.000) cuadran con las entradas de inventario de HOY: Agua +24 y Gaseosa +24. (3) 'Turno domingo 23-ago $75.000' es nómina adicional del 23: su neto real pasa de +$13.350 a −$61.650 — el domingo también quedó en pérdida. Insumos aseo $40.450 operativo." },
+  { date: "2026-08-24", semana: 22, periodo: "Sem 4 ago (24 - 30 ago)", concepto: "Pago proveedor Reinaldo - El Rey (Insumos)", categoria: "Reposición inventario", valor: 244500, nota: "Segundo pago a Reinaldo El Rey (el del 14-ago fue $494.000, aún por confirmar si stock o abono). Este viene marcado como 'Insumos' → reposición. Verificar si incluye la entrada de Cerveza Nacional +12 de hoy que quedó sin factura identificada." },
+  { date: "2026-08-24", semana: 22, periodo: "Sem 4 ago (24 - 30 ago)", concepto: "Pago administración Julián Pistala", categoria: "Nómina", valor: 450000, nota: "Administración de La Sala (Julián Pistala). Gasto operativo de nómina administrativa — no aparece en los cuadres POS; solo por transferencia." },
 ];
 
 // ─── Storage ───
@@ -13517,7 +13702,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-08-22");
+  const [selDate,setSelDate]=useState("2026-08-24");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -15404,7 +15589,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera}){
-  const HOY="2026-08-22";
+  const HOY="2026-08-24";
   if((!compras||compras.length===0)&&(!cartera||cartera.length===0)){
     return(<div>
       <Card accent={C.gold}>
