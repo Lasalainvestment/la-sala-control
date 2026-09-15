@@ -1079,6 +1079,13 @@ const PRELOADED_CUADRES = [
     efectivo: 44620, tarjeta: 1112200, otros_pago: 0,
     pizza_80: 299200, gastos: 383680, nomina: 197500, costo_financiero: 55610,
     neto_sala: 802010, faltante: 0,
+  },
+  {
+    date: "2026-09-13", venta_total: 482800,
+    estanco: 51000, cocteles: 246000, pizzeria: 185800, otros_venta: 0,
+    efectivo: 2000, tarjeta: 271000, otros_pago: 0,
+    pizza_80: 148640, gastos: 24800, nomina: 185000, costo_financiero: 13550,
+    neto_sala: 110810, faltante: 0,
   }
 ];
 
@@ -3091,7 +3098,18 @@ const PRELOADED_COCINA = [
       { nombre: "HB BBQ", cantidad: 1, valor: 36000 },
       { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
     ],
-    nota: "🚩 DESCUADRE COCINA: la relación de productos suma $328.200 pero el cuadre POS registra pizzería $374.000 → FALTAN $45.800 en la relación impresa. Es la primera vez en septiembre que cocina no iguala pizzería. Los consecutivos de factura saltan (A-018297, 018298, 018299, 018301, 018308, 018311): faltan al menos 018300, 018302-018307 y 018309-018310, así que probablemente hay una factura de cocina no impresa en la relación. Se respeta el POS ($374.000 en el cuadre y en el 80% del aliado) y se deja la relación como vino. PEDIR LA FACTURA FALTANTE A MANUEL — afecta el pago al aliado." }
+    nota: "🚩 DESCUADRE COCINA: la relación de productos suma $328.200 pero el cuadre POS registra pizzería $374.000 → FALTAN $45.800 en la relación impresa. Es la primera vez en septiembre que cocina no iguala pizzería. Los consecutivos de factura saltan (A-018297, 018298, 018299, 018301, 018308, 018311): faltan al menos 018300, 018302-018307 y 018309-018310, así que probablemente hay una factura de cocina no impresa en la relación. Se respeta el POS ($374.000 en el cuadre y en el 80% del aliado) y se deja la relación como vino. ✅ ACLARADO EN PARTE: la factura A-018310 apareció después y resultó ser de BAR (5 FROZEN GRANIZADO $125.000 + propina), no de cocina — los saltos de consecutivo mezclan facturas de bar y cocina, así que por sí solos no prueban el faltante. PEDIR LA FACTURA FALTANTE A MANUEL — afecta el pago al aliado." },
+  {
+    date: "2026-09-13", total: 185800, total_units: 6,
+    productos: [
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+      { nombre: "PZ NAPOLITANA PQ", cantidad: 1, valor: 27600 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+    ]
+  }
 ];
 
 // ─── Reporte diario de Bar/Coctelería (nuevo desde 25 may 2026) ───
@@ -5809,7 +5827,7 @@ const PRELOADED_BAR = [
       { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (2→1). Insumo del K TOM COLLINS." },
       { nombre: "DRY MARTINY", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (1→0). Insumo del K MARTINI DRY. Stock en CERO." },
       { nombre: "OLD PARR MEDIA", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (1→0). Insumo del K OLD FASHION. Stock en CERO." },
-      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -16000, nota: "Reconstrucción de venta directa $176.000 vs estanco POS $160.000 → −$16.000 = 9,1%. Brecha baja: SÁBADO A PRECIO PLENO, sin 2x1. 🚩 Salieron del inventario sin figurar en el POS del bar: 4 AGUA, 2 CERVEZA NACIONAL y 1 ELECTROLIT ($50.000 a carta) — consistente con insumo de coctelería y micheladas, pero conviene confirmarlo." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -16000, nota: "Reconstrucción de venta directa $176.000 vs estanco POS $160.000 → −$16.000 = 9,1%. Brecha baja: SÁBADO A PRECIO PLENO, sin 2x1. ✅ CORREGIDO EL 13-SEP: la tirilla del 12-sep sobrerregistró Sal en Agua (9 vs 5), Nacional (11 vs 9) y Electrolit (1 vs 0); la apertura del 13-sep confirma que esas 7 unidades no salieron. El POS del bar cruza ahora 13/13 exacto con el inventario corregido." },
     ],
     cocteles: [
       { nombre: "K FROZEN GRANIZADO", cantidad: 8, precio_unit: 36000, total: 288000, nota: "El cóctel más vendido del día." },
@@ -5832,6 +5850,26 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 9000, nota: "Reconstrucción $1.195.000 vs cócteles POS $1.204.000 → +$9.000 (99,3% de precisión). La mejor reconstrucción del mes: SÁBADO A PRECIO PLENO, sin 2x1 en coctelería." },
     ],
     nota: "SÁBADO 12 SEP — El mejor día de septiembre en venta: $1.738.000, NETO POS $802.010 (46,1%). LA COCTELERÍA DOMINÓ: $1.204.000 = 69,3% de la venta, con 28 cócteles (8 Frozen Granizado + 7 Mojito + 3 Tequila Sunrise + 1 Pecera + 9 K variados) más 4 soda italiana, 4 michelada y 2 jugo. Estanco solo $160.000 (9,2%) y pizzería $374.000 (21,5%). Efectivo $44.620 + tarjeta $1.112.200 → costo financiero $55.610. FALTANTE $0. ✅✅ RECONSTRUCCIÓN CASI PERFECTA: cócteles +$9.000 (99,3%) y estanco −$16.000 (9,1%). SÁBADO A PRECIO PLENO — confirma que el 2x1 no corre fin de semana. ✅ Inventario 25/25 movimientos verificados, SIN corrimiento; 10 de los 13 SKUs del bar cruzan exacto con la columna Sal. ✅✅ REPOSICIÓN MASIVA: Corona +24, Importada +14, Agua +12, Agt media caucano +4, Ron Caldas botella +3, Agt botella caucano +3, Amarillo bot +2, Amarillo med +2, Caja de vino +2, Ron Caldas media +2, Smirnoff +4. Se repusieron casi todos los ceros arrastrados. 🚩 DESCUADRE COCINA: relación $328.200 vs pizzería POS $374.000 → faltan $45.800 en la relación impresa (primera vez en septiembre). 🚩 AGUA: entraron 12 unidades, pero la factura Postobón del 7-sep era por 60 ($115.000 pagadas el 8-sep). Faltan 48 por ingresar. 🚩 4 SKUs sin registro en POS del bar: 4 agua, 2 nacional, 1 electrolit ($50.000 a carta). 🚩 NUEVOS CEROS: Dry Martiny, Old Parr media y Smirnoff bot. 🚩 SMIRNOFF ICE/GREEN APPLE: 28ª tirilla ausentes. Nómina $197.500 en caja."
+  },
+  {
+    date: "2026-09-13", total_estanco: 51000, total_cocteles: 246000, total: 297000, total_units: 17,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000, nota: "Sal 5 (178→173). Cruza exacto con el POS. Precio confirmado por la factura A-018312 del 12-sep (2 nacionales = $18.000)." },
+      { nombre: "GASEOSA", cantidad: 1, precio_unit: 6000, total: 6000, nota: "Venta directa. Con esta línea el estanco cierra EXACTO en $51.000." },
+      { nombre: "GASEOSA", cantidad: 3, precio_unit: 0, total: 0, nota: "Mezcladores de los 7 cócteles. Completa la Sal 4 del inventario (91→87)." },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (4→3). Insumo coctelería." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 0, nota: "Reconstrucción $51.000 = estanco POS $51.000. AJUSTE CERO — cuadre exacto, el primero del mes en estanco." },
+    ],
+    cocteles: [
+      { nombre: "K MOJITO MIX", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K BLUE SKY", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 SKU nuevo sin PVP confirmado." },
+      { nombre: "K COSMOPOLITAN", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 SKU nuevo sin PVP confirmado." },
+      { nombre: "K DEMONIO VERDE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K DESTORNILLADOR", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 SKU nuevo sin PVP confirmado." },
+      { nombre: "K ULA ULA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -6000, nota: "Reconstrucción $252.000 (7 K-cócteles a $36.000) vs cócteles POS $246.000 → −$6.000 = 2,4%. DOMINGO A PRECIO PLENO. ⚠️ El supuesto de $36.000 uniforme quedó en duda: la factura A-018310 del 12-sep muestra K FROZEN GRANIZADO a $25.000, no $36.000. Los K-cócteles NO tienen precio único — pedir carta actualizada." },
+    ],
+    nota: "DOMINGO 13 SEP — Venta $482.800, NETO POS $110.810 (23,0%). Domingo POSITIVO, algo inusual: los tres domingos anteriores del mes fueron en pérdida o muy flojos (6-sep −$71.150). Mix: cócteles $246.000 (51,0%), pizzería $185.800 (38,5%), estanco $51.000 (10,6%). Efectivo $2.000 + tarjeta $271.000 → costo financiero $13.550. FALTANTE $0. Gastos de caja mínimos ($24.800), lo que explica el neto positivo con venta baja. ✅✅ EL DÍA MÁS LIMPIO DEL MES: solo 3 movimientos de inventario, los 3 cruzan EXACTO con el POS del bar, estanco con AJUSTE CERO y cócteles a −2,4%. ✅ Cocina iguala pizzería al peso ($185.800). ✅ La apertura del 13-sep corrigió el cierre del 12-sep (Agua 20, Nacional 178, Electrolit 6): las 7 unidades que parecían haber salido sin registro nunca salieron. 🚩 SMIRNOFF BOT sigue en CERO con Ent 0: las 2 botellas de Smirnoff Tamarindo compradas el 12-sep ($120.800, transferencia de Pipe) NO han ingresado en dos días. 🚩 AGUA estancada en 20: de las 60 unidades Postobón pagadas el 8-sep solo entraron 12; faltan 48, sexto día. 🚩 3 SKUs NUEVOS sin PVP: K BLUE SKY, K COSMOPOLITAN, K DESTORNILLADOR. 🚩 SMIRNOFF ICE/GREEN APPLE: 29ª tirilla ausentes. Nómina $185.000 en caja."
   }
 ];
 
@@ -14138,7 +14176,7 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"AGT BOTLLA REAL",saldo:0},
       {nombre:"AGT MEDIA ANQUEÑ",saldo:9},
       {nombre:"AGT MEDIA CAUCA",saldo:5},
-      {nombre:"AGUA",saldo:16},
+      {nombre:"AGUA",saldo:20},
       {nombre:"AGUA TONICA",saldo:6},
       {nombre:"AMARETTO",saldo:0},
       {nombre:"AMARILLO BOT",saldo:3},
@@ -14147,13 +14185,13 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"CAJA DE VINO",saldo:3},
       {nombre:"CERVEZA CORONA",saldo:35},
       {nombre:"CERVEZA IMPORTADA",saldo:31},
-      {nombre:"CERVEZA NACIONAL",saldo:176},
+      {nombre:"CERVEZA NACIONAL",saldo:178},
       {nombre:"CHICLETS",saldo:0},
       {nombre:"CIGARRILLOS",saldo:0},
       {nombre:"CREMA DE WHISKY",saldo:1},
       {nombre:"CURAZAO AZUL",saldo:3},
       {nombre:"DRY MARTINY",saldo:0},
-      {nombre:"ELECTROLIT",saldo:5},
+      {nombre:"ELECTROLIT",saldo:6},
       {nombre:"ENCENDEDOR",saldo:0},
       {nombre:"GASEOSA",saldo:91},
       {nombre:"GASEOSA 1.5",saldo:2},
@@ -14187,7 +14225,66 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"SMIRNOFF ICE",saldo:6},
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
     ],
-    nota: "Verificado 25/25 movimientos, SIN corrimiento. La apertura del 12-sep coincide ítem por ítem con el cierre del 11-sep (51 SKUs impresos). ENTRADAS (la reposición más grande del mes): Corona +24 (13→35), Importada +14 (20→31), Agua +12 (13→16 tras venta), Agt media caucano +4 (1→5), Smirnoff +4, Agt botella caucano +3 (4→7), Ron Caldas botella +3, Amarillo bot +2 (1→3), Amarillo med +2 (0→2), Caja de vino +2 (1→3), Ron Caldas media +2 (0→2). SALIDAS: Agua −9, Corona −2, Importada −3, Nacional −11 (187→176), Dry Martiny −1 (1→0), Electrolit −1, Gaseosa −19 (110→91), Ginebra ML −1, Ron Caldas botella −2, Ron DL −1, Smirnoff −6, Smirnoff bot −2 (2→0), Tequila ML −2, Old Parr media −1 (1→0). ✅ 10 de los 13 SKUs del bar cruzan exacto con la columna Sal. 🚩 SALIERON SIN REGISTRO EN EL POS DEL BAR: 4 AGUA (Sal 9 vs POS 5), 2 CERVEZA NACIONAL (Sal 11 vs POS 9) y 1 ELECTROLIT (Sal 1, no figura en el bar) = $50.000 a carta. Consistente con insumo de coctelería y micheladas, pero conviene confirmarlo. 🚩 AGUA: entraron 12 unidades, pero la factura Postobón GP07522462 del 7-sep (pagada el 8-sep, $115.000) era por 60 → FALTAN 48 POR INGRESAR. Quinto día con el tema abierto. ✅ Se repusieron casi todos los ceros arrastrados (Amarillo med, Ron Caldas media, Licor de menta no). 🚩 NUEVOS CEROS: Dry Martiny, Old Parr media y Smirnoff bot — los tres son insumo de coctelería de carta alta (K Martini Dry, K Old Fashion). 🚩 SMIRNOFF BOT: el 12-sep se compraron 2 botellas de Smirnoff Tamarindo por $120.000 (dato de Juanma) pero el inventario registra Ent 0 y el saldo cerró en CERO. Segunda compra del mes que se paga y no ingresa el mismo día (la otra es el agua Postobón). Verificar el Ent el 13-sep. 🚩 SMIRNOFF ICE y GREEN APPLE: 28ª tirilla ausentes (6/6)."
+    nota: "Verificado 25/25 movimientos, SIN corrimiento. La apertura del 12-sep coincide ítem por ítem con el cierre del 11-sep (51 SKUs impresos). ENTRADAS (la reposición más grande del mes): Corona +24 (13→35), Importada +14 (20→31), Agua +12 (13→16 tras venta), Agt media caucano +4 (1→5), Smirnoff +4, Agt botella caucano +3 (4→7), Ron Caldas botella +3, Amarillo bot +2 (1→3), Amarillo med +2 (0→2), Caja de vino +2 (1→3), Ron Caldas media +2 (0→2). SALIDAS: Agua −9, Corona −2, Importada −3, Nacional −11 (187→176), Dry Martiny −1 (1→0), Electrolit −1, Gaseosa −19 (110→91), Ginebra ML −1, Ron Caldas botella −2, Ron DL −1, Smirnoff −6, Smirnoff bot −2 (2→0), Tequila ML −2, Old Parr media −1 (1→0). ✅ 10 de los 13 SKUs del bar cruzan exacto con la columna Sal. 🚩 SALIERON SIN REGISTRO EN EL POS DEL BAR: 4 AGUA (Sal 9 vs POS 5), 2 CERVEZA NACIONAL (Sal 11 vs POS 9) y 1 ELECTROLIT (Sal 1, no figura en el bar) = $50.000 a carta. ✅ CORREGIDO EL 13-SEP: la APERTURA DEL 13-SEP (autoritativa) trae AGUA 20, NACIONAL 178 y ELECTROLIT 6 — es decir, esas 7 unidades NUNCA salieron; la tirilla del 12-sep sobrerregistró las Sal. Saldos corregidos (Agua 16→20, Nacional 176→178, Electrolit 5→6) y el POS del bar queda cruzando 13/13 exacto. La bandera de $50.000 se cierra. 🚩 AGUA: entraron 12 unidades, pero la factura Postobón GP07522462 del 7-sep (pagada el 8-sep, $115.000) era por 60 → FALTAN 48 POR INGRESAR. Quinto día con el tema abierto. ✅ Se repusieron casi todos los ceros arrastrados (Amarillo med, Ron Caldas media, Licor de menta no). 🚩 NUEVOS CEROS: Dry Martiny, Old Parr media y Smirnoff bot — los tres son insumo de coctelería de carta alta (K Martini Dry, K Old Fashion). 🚩 SMIRNOFF BOT: el 12-sep se compraron 2 botellas de Smirnoff Tamarindo por $120.000 (dato de Juanma) pero el inventario registra Ent 0 y el saldo cerró en CERO. Segunda compra del mes que se paga y no ingresa el mismo día (la otra es el agua Postobón). Verificar el Ent el 13-sep. 🚩 SMIRNOFF ICE y GREEN APPLE: 28ª tirilla ausentes (6/6)."
+  },
+  {
+    date: "2026-09-13", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCA",saldo:7},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:9},
+      {nombre:"AGT MEDIA CAUCA",saldo:5},
+      {nombre:"AGUA",saldo:20},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:3},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:3},
+      {nombre:"CERVEZA CORONA",saldo:35},
+      {nombre:"CERVEZA IMPORTADA",saldo:31},
+      {nombre:"CERVEZA NACIONAL",saldo:173},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:6},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:87},
+      {nombre:"GASEOSA 1.5",saldo:2},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:3},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:4},
+      {nombre:"SMIRNOFF",saldo:12},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:9},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
+    ],
+    nota: "Verificado 3/3 movimientos, SIN corrimiento. El día más limpio del mes: SIN ENTRADAS y solo 3 salidas, las tres cruzando EXACTO con el POS del bar. SALIDAS: Cerveza nacional −5 (178→173), Gaseosa −4 (91→87), Licor de manzana −1 (4→3). ⚠️ LA APERTURA DEL 13-SEP CORRIGIÓ EL CIERRE DEL 12-SEP: trae AGUA 20 (habíamos cerrado en 16), CERVEZA NACIONAL 178 (habíamos cerrado en 176) y ELECTROLIT 6 (habíamos cerrado en 5). Las 7 unidades que la tirilla del 12 daba por salidas NUNCA salieron — la tirilla sobrerregistró las Sal y el POS del bar tenía razón. Saldos del 12-sep corregidos; se cierra la bandera de '$50.000 sin registro'. Es el mismo tipo de error que el 8-sep con Corona, pero en sentido contrario: la tirilla de inventario falla en ambas direcciones y el POS del bar es el contraste confiable. 🚩 SMIRNOFF BOT: segundo día en CERO con Ent 0 — las 2 botellas de Smirnoff Tamarindo compradas el 12-sep ($120.800, transferencia de Pipe al proveedor San Diego Catay) NO han ingresado. 🚩 AGUA: saldo estancado en 20; de las 60 unidades de la factura Postobón GP07522462 pagadas el 8-sep solo entraron 12 el 12-sep. Faltan 48 — sexto día con el tema abierto. 🚩 SMIRNOFF ICE y GREEN APPLE: 29ª tirilla ausentes (6/6)."
   }
 ];
 
@@ -15242,6 +15339,12 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 383680, nota: "🚩 TERCER DÍA CONSECUTIVO SIN FOTO DE GASTOS: $500.570 (10-sep) + $405.200 (11-sep) + $383.680 (12-sep) = $1.289.450 sin clasificar en 72 horas. Este día entró la reposición más grande del mes (Corona +24, Importada +14, Agua +12, Smirnoff +4, Ron Caldas +5, aguardientes +7, amarillos +4, caja de vino +2), así que buena parte sería REPOSICIÓN DE INVENTARIO y no gasto operativo. NOTA: la compra de 2 botellas de Smirnoff Tamarindo ($120.800) NO está dentro de este monto — se pagó por transferencia de Pipe y está registrada aparte en el ledger de transferencias. Sin el desglose no se puede separar qué reduce el resultado y qué no." },
     ]
+  },
+  {
+    date: "2026-09-13", total: 24800,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 24800, nota: "Monto bajo, el segundo más bajo de septiembre. Nómina $185.000 en caja (aparte). Los gastos de caja mínimos son la razón de que un domingo de solo $482.800 haya cerrado positivo." },
+    ]
   }
 ];
 
@@ -15806,6 +15909,8 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-09-07", semana: 24, periodo: "Sem 2 sep (7 - 13 sep)", concepto: "Pago proveedor Reinaldo - El Rey (Insumos)", categoria: "Reposición inventario", valor: 197500, nota: "Tercer pago a Reinaldo El Rey (14-ago $494.000, 24-ago $244.500). Insumos → reposición." },
   { date: "2026-09-07", semana: 24, periodo: "Sem 2 sep (7 - 13 sep)", concepto: "Pago facturas varias", categoria: "Por itemizar", valor: 695250, nota: "🚩 Facturas varias sin desglose ($695.250). Pedir detalle a Manuel para clasificar (reposición vs consumo vs no operativo)." },
   { date: "2026-09-12", semana: 24, periodo: "Sem 2 sep (7 - 13 sep)", concepto: "Compra 2 botellas Smirnoff Tamarindo (transferencia Pipe)", categoria: "Reposición inventario", valor: 120800, nota: "Aportado por Juanma. 2 botellas de Smirnoff Tamarindo = $120.800 ($60.400 c/u). PAGADA POR TRANSFERENCIA DE PIPE (socio), no con caja de La Sala: comprobante del 13/09/2026 00:21:28, ID Q265LMU56C, origen Bold CF a nombre de Manuela Patiño Builes, destino SAN DIEGO CATAY, costo de transacción $0. Se imputa al día operativo 12-sep (la noche cerró a las 03:23 del 13). Es REPOSICIÓN DE INVENTARIO: no reduce el resultado del período. 🚩 LA PAGÓ UN SOCIO, NO EL NEGOCIO: genera cuenta por pagar a Pipe (o aporte de capital) por $120.800 — no es un desembolso de caja de La Sala. Definir con los socios el tratamiento. 🚩 NO INGRESÓ AL INVENTARIO DEL 12-SEP: SMIRNOFF BOT registró Ent 0 y Sal 2, cerrando en CERO. Verificar el Ent en el cierre del 13-sep. 🚩 Primer costo documentado de SMIRNOFF BOT — CATALOG actualizado a $60.400." },
+  { date: "2026-09-14", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Ron Don Luis (dentro del pago a Julián Pistala)", categoria: "Reposición inventario", valor: 200000, nota: "Parte identificada del pago de $708.100. REPOSICIÓN DE INVENTARIO: no reduce el resultado del período. 🚩 Verificar el Ent de Ron Don Luis en el inventario del 14-sep — es un SKU que no existe en el maestro actual (hay RON CALDAS BOT/MED y RON DL); si es nuevo hay que crearlo en el inventario y definirle PVP." },
+  { date: "2026-09-14", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Pagos varios a Julián Pistala (resto sin desglosar)", categoria: "Por itemizar", valor: 508100, nota: "🚩 Resto del pago de $708.100 sin desglose. Comprobante: 14/09/2026 21:35:40, ID SQ1E3VFVGY, origen Bold CF a nombre de Manuela Patiño Builes, destino JULIAN PISTALA, costo de transacción $0. PEDIR DETALLE: sin él no se puede separar reposición de inventario (no reduce resultado) de costo operativo (sí lo reduce). ⚠️ El comprobante es del 14-sep 21:35, fuera del día operativo del 13-sep (cerró 00:18 del 14); se imputa al 14-sep. Si corresponde al 13, avisar y se reclasifica. 🚩 Igual que el Smirnoff del 12-sep, salió de la cuenta Bold CF de Manuela Patiño Builes y no de una cuenta de La Sala: confirmar si genera cuenta por pagar a los socios." },
 ];
 
 // ─── Storage ───
@@ -15850,7 +15955,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-09-12");
+  const [selDate,setSelDate]=useState("2026-09-13");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -17737,7 +17842,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera,cxc}){
-  const HOY="2026-09-12";
+  const HOY="2026-09-13";
   const cxcList=(cxc||[]).filter(c=>c.estado!=="cobrada");
   const cxcTotal=cxcList.reduce((a,c)=>a+(c.valor||0),0);
   const cxcVenc=cxcList.filter(c=>c.vence<HOY);
