@@ -1086,6 +1086,41 @@ const PRELOADED_CUADRES = [
     efectivo: 2000, tarjeta: 271000, otros_pago: 0,
     pizza_80: 148640, gastos: 24800, nomina: 185000, costo_financiero: 13550,
     neto_sala: 110810, faltante: 0,
+  },
+  {
+    date: "2026-09-14", venta_total: 270200,
+    estanco: 55000, cocteles: 94000, pizzeria: 121200, otros_venta: 0,
+    efectivo: 0, tarjeta: 96200, otros_pago: 0,
+    pizza_80: 96960, gastos: 6520, nomina: 185000, costo_financiero: 4810,
+    neto_sala: -23090, faltante: -17520,
+  },
+  {
+    date: "2026-09-15", venta_total: 765800,
+    estanco: 70000, cocteles: 468000, pizzeria: 227800, otros_venta: 0,
+    efectivo: 0, tarjeta: 684800, otros_pago: 0,
+    pizza_80: 182240, gastos: 26080, nomina: 185000, costo_financiero: 34240,
+    neto_sala: 338240, faltante: -130080,
+  },
+  {
+    date: "2026-09-16", venta_total: 1356600,
+    estanco: 348000, cocteles: 661000, pizzeria: 347600, otros_venta: 0,
+    efectivo: 89740, tarjeta: 208400, otros_pago: 0,
+    pizza_80: 278080, gastos: 858460, nomina: 200000, costo_financiero: 10420,
+    neto_sala: 9640, faltante: 0,
+  },
+  {
+    date: "2026-09-17", venta_total: 1107800,
+    estanco: 300000, cocteles: 286000, pizzeria: 521800, otros_venta: 0,
+    efectivo: 0, tarjeta: 1055800, otros_pago: 0,
+    pizza_80: 417440, gastos: 5000, nomina: 135000, costo_financiero: 52790,
+    neto_sala: 497570, faltante: -88000,
+  },
+  {
+    date: "2026-09-18", venta_total: 2404600,
+    estanco: 620000, cocteles: 716000, pizzeria: 1068600, otros_venta: 0,
+    efectivo: 9300, tarjeta: 1938000, otros_pago: 0,
+    pizza_80: 854880, gastos: 197300, nomina: 260000, costo_financiero: 96900,
+    neto_sala: 995520, faltante: 0,
   }
 ];
 
@@ -3108,6 +3143,71 @@ const PRELOADED_COCINA = [
       { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
       { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
       { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+    ]
+  },
+  {
+    date: "2026-09-14", total: 121200, total_units: 2,
+    productos: [
+      { nombre: "PZ AB ESPECIAL GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+    ]
+  },
+  {
+    date: "2026-09-15", total: 227800, total_units: 7,
+    productos: [
+      { nombre: "LASAGNA DE POLLO", cantidad: 3, valor: 120000 },
+      { nombre: "PZ FLORENTINA MED", cantidad: 1, valor: 54000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 2, valor: 22000 },
+    ]
+  },
+  {
+    date: "2026-09-16", total: 347600, total_units: 13,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 4, valor: 127200 },
+      { nombre: "PZ AB CARNES GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ FLORENTINA PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 3, valor: 33000 },
+      { nombre: "ADICION COMIDA", cantidad: 2, valor: 4000 },
+    ]
+  },
+  {
+    date: "2026-09-17", total: 521800, total_units: 12,
+    productos: [
+      { nombre: "HB BBQ", cantidad: 2, valor: 72000 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 2, valor: 72000 },
+      { nombre: "PZ MONTERREY GR", cantidad: 1, valor: 67200 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ FLORENTINA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ HAWAIANA MED", cantidad: 1, valor: 52800 },
+      { nombre: "PZ MARGARITA GR", cantidad: 1, valor: 49200 },
+      { nombre: "HB HAWAIANA", cantidad: 1, valor: 37000 },
+    ]
+  },
+  {
+    date: "2026-09-18", total: 1068600, total_units: 25,
+    productos: [
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 3, valor: 118800 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 3, valor: 95400 },
+      { nombre: "PZ POTOTO MED", cantidad: 2, valor: 108000 },
+      { nombre: "LASAGNA DE RES", cantidad: 2, valor: 80000 },
+      { nombre: "PT AL CAMPO JR", cantidad: 2, valor: 64800 },
+      { nombre: "PZ AB CARNES GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ POTOTO GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ AMERICANA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ FLORENTINA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ MEXICANA MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ POLLO BBQ PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ PEPERNATA PEQ", cantidad: 1, valor: 38400 },
+      { nombre: "NACHOS CLASICOS", cantidad: 1, valor: 31800 },
+      { nombre: "PZ MARGARITA PQ", cantidad: 1, valor: 30000 },
+      { nombre: "CHAMPINONES PARMESANOS", cantidad: 1, valor: 28800 },
     ]
   }
 ];
@@ -5870,6 +5970,165 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -6000, nota: "Reconstrucción $252.000 (7 K-cócteles a $36.000) vs cócteles POS $246.000 → −$6.000 = 2,4%. DOMINGO A PRECIO PLENO. ⚠️ El supuesto de $36.000 uniforme quedó en duda: la factura A-018310 del 12-sep muestra K FROZEN GRANIZADO a $25.000, no $36.000. Los K-cócteles NO tienen precio único — pedir carta actualizada." },
     ],
     nota: "DOMINGO 13 SEP — Venta $482.800, NETO POS $110.810 (23,0%). Domingo POSITIVO, algo inusual: los tres domingos anteriores del mes fueron en pérdida o muy flojos (6-sep −$71.150). Mix: cócteles $246.000 (51,0%), pizzería $185.800 (38,5%), estanco $51.000 (10,6%). Efectivo $2.000 + tarjeta $271.000 → costo financiero $13.550. FALTANTE $0. Gastos de caja mínimos ($24.800), lo que explica el neto positivo con venta baja. ✅✅ EL DÍA MÁS LIMPIO DEL MES: solo 3 movimientos de inventario, los 3 cruzan EXACTO con el POS del bar, estanco con AJUSTE CERO y cócteles a −2,4%. ✅ Cocina iguala pizzería al peso ($185.800). ✅ La apertura del 13-sep corrigió el cierre del 12-sep (Agua 20, Nacional 178, Electrolit 6): las 7 unidades que parecían haber salido sin registro nunca salieron. 🚩 SMIRNOFF BOT sigue en CERO con Ent 0: las 2 botellas de Smirnoff Tamarindo compradas el 12-sep ($120.800, transferencia de Pipe) NO han ingresado en dos días. 🚩 AGUA estancada en 20: de las 60 unidades Postobón pagadas el 8-sep solo entraron 12; faltan 48, sexto día. 🚩 3 SKUs NUEVOS sin PVP: K BLUE SKY, K COSMOPOLITAN, K DESTORNILLADOR. 🚩 SMIRNOFF ICE/GREEN APPLE: 29ª tirilla ausentes. Nómina $185.000 en caja."
+  },
+  {
+    date: "2026-09-14", total_estanco: 55000, total_cocteles: 94000, total: 149000, total_units: 24,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 6, precio_unit: 9000, total: 54000, nota: "Sal 6 (173→167). Cruza exacto con el POS." },
+      { nombre: "AGUA", cantidad: 4, precio_unit: 6000, total: 24000, nota: "Sal 4 (20→16). Cruza exacto." },
+      { nombre: "CERVEZA CORONA", cantidad: 1, precio_unit: 13000, total: 13000, nota: "Sal 1 (35→34)." },
+      { nombre: "ELECTROLIT", cantidad: 1, precio_unit: 8000, total: 8000, nota: "Sal 1 (6→5). 🚩 PVP inconsistente: la carta de referencia dice $8.000 y el CATALOG $15.000. Se usa $8.000. Confirmar con Manuel." },
+      { nombre: "GASEOSA", cantidad: 6, precio_unit: 0, total: 0, nota: "Sal 6 (87→81). Mezcladores de los 6 preparados del día." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -44000, nota: "Reconstrucción a carta $99.000 vs estanco POS $55.000 → −$44.000 = 44,4%, la brecha porcentual más alta de septiembre en estanco. Solo 6 nacionales a carta ($54.000) ya casi igualan todo el estanco POS del día. LUNES con descuento fuerte, consistente con el patrón de lunes flojos (7-sep estanco $18.000). El inventario cruza 5/5; la brecha es de precio. CONFIRMAR si hay promo de lunes." },
+    ],
+    cocteles: [
+      { nombre: "SODA ITALIANA", cantidad: 2, precio_unit: 15000, total: 30000 },
+      { nombre: "K MEDUSA", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 SKU sin PVP confirmado (está en la lista de ~20 pendientes desde agosto)." },
+      { nombre: "K FROZEN GRANIZADO", cantidad: 1, precio_unit: 25000, total: 25000, nota: "✅ PVP CONFIRMADO en $25.000 por la factura A-018310 del 12-sep (5 unid. = $125.000). Primera vez que se valoriza con el precio real y no con el supuesto de $36.000." },
+      { nombre: "LIMONADA NATURAL", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -21000, nota: "Reconstrucción $115.000 vs cócteles POS $94.000 → −$21.000 = 18,3%. Con el granizado a $36.000 (supuesto viejo) la brecha habría sido −$32.000: el precio real de $25.000 mejora el ajuste, lo que refuerza que los K-cócteles NO tienen precio único. Pedir carta actualizada." },
+    ],
+    nota: "LUNES 14 SEP — Día en PÉRDIDA: venta $270.200, NETO POS −$23.090 (−8,5%). Cuarto lunes del mes y el patrón se mantiene: la nómina de caja ($185.000) supera por sí sola el margen del día. Mix: pizzería $121.200 (44,9%), cócteles $94.000 (34,8%), estanco $55.000 (20,4%) — la línea de peor margen volvió a dominar. Todo en tarjeta ($96.200, efectivo $0) → costo financiero $4.810. ⚠️ SOBRANTE $17.520 (pagos $287.720 > venta): la base cubrió la nómina — registrado faltante:-17520. ✅ Inventario 5/5 movimientos verificados, SIN corrimiento; los 5 SKUs cruzan EXACTO con el POS del bar. ✅ Cocina iguala pizzería al peso ($121.200, solo 2 pizzas en todo el día). 🚩 BRECHA DE PRECIO ALTA PARA UN LUNES: −$44.000 en estanco (44,4%) y −$21.000 en cócteles (18,3%). 🚩🚩 LA COMPRA DE RON DON LUIS NO INGRESÓ: los $200.000 pagados el 14-sep (transferencia a Julián Pistala) no aparecen como Ent — RON DL sigue en 4. Sin la cantidad no se puede derivar el costo unitario real ni corregir el CATALOG. 🚩 SMIRNOFF BOT: tercer día en CERO, las 2 botellas de $120.800 siguen sin ingresar. 🚩 AGUA bajó a 16: de las 60 unidades Postobón pagadas el 8-sep solo entraron 12; faltan 48, séptimo día. 🚩 SMIRNOFF ICE/GREEN APPLE: 30ª tirilla ausentes. Nómina $185.000 en caja."
+  },
+  {
+    date: "2026-09-15", total_estanco: 70000, total_cocteles: 468000, total: 538000, total_units: 38,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000, nota: "Sal 5 (167→192 tras Ent 30). Cruza exacto con el POS." },
+      { nombre: "CERVEZA CORONA", cantidad: 1, precio_unit: 13000, total: 13000, nota: "Sal 1 (34→57 tras Ent 24). Cruza exacto." },
+      { nombre: "GASEOSA", cantidad: 2, precio_unit: 6000, total: 12000, nota: "Venta directa. Con esta línea el estanco cierra EXACTO en $70.000." },
+      { nombre: "GASEOSA", cantidad: 6, precio_unit: 0, total: 0, nota: "Mezcladores de los 18 preparados. Completa la Sal 8 del inventario (81→73)." },
+      { nombre: "AGT MEDIA CAUCA", cantidad: 1, precio_unit: 0, total: 0, nota: "🚩 Sal 1 (5→4). Valorizada a $0 POR SUPUESTO: con la media a carta ($60.000) el estanco daría $130.000 contra $70.000 del POS; a $0 cierra exacto. CONFIRMAR si fue TRASLADO A EL BÚNKER (ya van tres en septiembre: 5-sep, 11-sep y 12-sep) o insumo de coctelería. Si fue venta a precio de mesa, avisar y se revaloriza." },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (1→0). Insumo coctelería. Stock en CERO." },
+      { nombre: "TEQUILA ML", cantidad: 2, precio_unit: 0, total: 0, nota: "Sal 2 (3→1). Insumo de los 7 K MARGARITA." },
+      { nombre: "WHISKY COCTELERIA", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (1→0). Insumo del K OLD FASHION. Stock en CERO." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 0, nota: "Reconstrucción $70.000 = estanco POS $70.000. AJUSTE CERO, con la media de caucano tratada como no-venta (ver su nota). El inventario cruza 7/7 con el POS del bar." },
+    ],
+    cocteles: [
+      { nombre: "K MARGARITA", cantidad: 7, precio_unit: 36000, total: 252000, nota: "El cóctel más vendido del día. Insumo: Tequila ML (Sal 2) + Triplesec." },
+      { nombre: "K MARTINI DRY", cantidad: 4, precio_unit: 36000, total: 144000, nota: "🚩 VENDIDOS SIN INSUMO: DRY MARTINY está en CERO desde el 12-sep y hoy registra Sal 0. Cuatro Martini Dry preparados sin descargue del vermut. Verificar si se usó otro insumo o si falta el descargue." },
+      { nombre: "K COCO LOCO", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K CAIPIRINHA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K CONGA", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 SKU sin PVP confirmado (lista de pendientes desde agosto)." },
+      { nombre: "K DEMONIO VERDE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K OLD FASHION", cantidad: 1, precio_unit: 36000, total: 36000, nota: "Insumo: Whisky coctelería (Sal 1, quedó en cero)." },
+      { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000 },
+      { nombre: "JUGO MIX", cantidad: 1, precio_unit: 10000, total: 10000, nota: "🚩 SKU nuevo sin PVP confirmado — valorizado como jugo estándar." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -169000, nota: "Reconstrucción a carta $637.000 vs cócteles POS $468.000 → −$169.000 = 26,5%. MARTES 2x1, consistente con mar 1 y mar 8. Los 7 K Margarita y 4 K Martini Dry (11 de los 18 preparados) concentran la brecha. El inventario cruza 7/7; es brecha de precio. Recordar que el supuesto de $36.000 uniforme quedó en duda desde que la factura A-018310 mostró K Frozen Granizado a $25.000." },
+    ],
+    nota: "MARTES 15 SEP — Venta $765.800, NETO POS $338.240 (44,2%). Muy por encima del martes 8 ($699.000 con 13,5%) y del martes 1 ($528.800 con 20,1%): el mejor martes del mes con diferencia. LA COCTELERÍA MANDÓ: $468.000 = 61,1% de la venta con 18 preparados (7 Margarita + 4 Martini Dry + 7 varios). Pizzería $227.800 (29,7%), estanco $70.000 (9,1%). Todo en tarjeta ($684.800, efectivo $0) → costo financiero $34.240. Gastos de caja bajos ($26.080). ⚠️ SOBRANTE $130.080 (pagos $895.880 > venta): la base cubrió nómina $185.000 + gastos — registrado faltante:-130080. ✅ Inventario 8/8 movimientos verificados, SIN corrimiento; los 7 SKUs del bar cruzan EXACTO con la columna Sal — tercer día seguido sin discrepancias de unidades. ✅ Cocina iguala pizzería al peso ($227.800). ✅✅ REPOSICIÓN: Cerveza nacional +30 (167→192), Corona +24 (34→57), Red Bull +4 (2→6). 🚩 MARTES 2x1: brecha −$169.000 en coctelería (26,5%); estanco con AJUSTE CERO. 🚩 K MARTINI DRY ×4 vendidos con DRY MARTINY en cero y Sal 0 — falta descargue o se usó otro insumo. 🚩 NUEVOS CEROS: Ginebra ML y Whisky coctelería, ambos insumos de cócteles de carta alta (Tom Collins, Gin Tonic, Old Fashion). 🚩 AGT MEDIA CAUCA a $0 por supuesto — confirmar si fue traslado a El Búnker. 🚩 RON DON LUIS: los $200.000 pagados el 14-sep siguen SIN ingresar (RON DL en 4, Ent 0), segundo día. 🚩 AGUA estancada en 16: faltan 48 unidades Postobón, octavo día. 🚩 SMIRNOFF ICE/GREEN APPLE: 31ª tirilla ausentes. Nómina $185.000 en caja."
+  },
+  {
+    date: "2026-09-16", total_estanco: 348000, total_cocteles: 661000, total: 1009000, total_units: 73,
+    estanco: [
+      { nombre: "AGT BOTLLA CAUCA", cantidad: 2, precio_unit: 90000, total: 180000, nota: "Sal 2 (7→5). A CARTA, sin brecha: el estanco POS de $348.000 las absorbe sin problema. Contrasta con los aguardientes del 5 y 11-sep, que fueron traslado a El Búnker." },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 6, precio_unit: 13000, total: 78000, nota: "Sal 6 (31→25). Cruza exacto." },
+      { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000, nota: "Sal 5 (192→187). Cruza exacto. 🚩 Hubo 4 MICHELADAS y solo 5 nacionales salieron: no se puede separar base de michelada y venta directa." },
+      { nombre: "GASEOSA", cantidad: 3, precio_unit: 6000, total: 18000, nota: "Venta directa. Con esta línea el estanco cierra EXACTO en $348.000." },
+      { nombre: "RED BULL", cantidad: 1, precio_unit: 15000, total: 15000, nota: "Sal 1 (6→5). Primera venta desde la reposición del 15-sep." },
+      { nombre: "AGUA TONICA", cantidad: 2, precio_unit: 6000, total: 12000, nota: "Sal 2 (6→4). Parte pudo ser insumo de los 2 K GIN TONIC." },
+      { nombre: "GASEOSA", cantidad: 9, precio_unit: 0, total: 0, nota: "Mezcladores de los 30 K-cócteles. 🚩 El POS del bar registra 12 gaseosas y el inventario descarga Sal 11 — 1 unidad de diferencia. La apertura del 17-sep decide." },
+      { nombre: "VINO BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (3→2). Insumo de las 2 COPA DE VINO (valorizadas en cócteles)." },
+      { nombre: "CAJA DE VINO", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (3→2). Insumo de las 2 COPA DE SANGRIA." },
+      { nombre: "GINEBRA BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1. Insumo de los 2 K GIN TONIC. ✅ Entró reposición +1 el mismo día (abrió en 0), así que cerró de nuevo en CERO." },
+      { nombre: "RON DL", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (4→3). Insumo de los 2 K MOJITO y 4 K COCO LOCO. ✅ Confirmado por Juanma: Ron Don Luis es para coctelería." },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (1→0). Insumo de los 2 K TEQUILA SUNRISE. Stock en CERO otra vez." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 0, nota: "Reconstrucción $348.000 = estanco POS $348.000. AJUSTE CERO. El inventario cruza 10/11 con el POS del bar (solo gaseosa difiere en 1)." },
+    ],
+    cocteles: [
+      { nombre: "K COCO LOCO", cantidad: 4, precio_unit: 36000, total: 144000 },
+      { nombre: "K ALEXANDER", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K BURBUJAS AZULES", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K CAIPIRINHA", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K DAIQUIRI DE FRESAS", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K DEMONIO VERDE", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K GIN TONIC", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K MARTINI DRY", cantidad: 2, precio_unit: 36000, total: 72000, nota: "🚩 Segundo día vendiendo Martini Dry con DRY MARTINY en CERO y Sal 0 (también el 15-sep, ×4). Van 6 sin descargue del vermut." },
+      { nombre: "K MOJITO", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K NEW THE TIME", cantidad: 2, precio_unit: 36000, total: 72000, nota: "🚩 SKU nuevo sin PVP confirmado." },
+      { nombre: "K OLD FASHION", cantidad: 2, precio_unit: 36000, total: 72000, nota: "🚩 Vendidos con WHISKEY COCTELERIA en CERO desde el 15-sep y Sal 0. Falta descargue o se usó otro whisky." },
+      { nombre: "K SUEÑO ROSA", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K TEQUILA SUNRISE", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K TOM COLLINS", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "MICHELADA", cantidad: 4, precio_unit: 12000, total: 48000 },
+      { nombre: "COPA DE SANGRIA", cantidad: 2, precio_unit: 15000, total: 30000, nota: "🚩 PVP asumido igual a copa de vino ($15.000) — sin confirmar. Insumo: 1 caja de vino." },
+      { nombre: "COPA DE VINO", cantidad: 2, precio_unit: 15000, total: 30000, nota: "PVP de carta $15.000. Insumo: 1 vino botella." },
+      { nombre: "LIMONADA NATURAL", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "JUGO EN AGUA", cantidad: 1, precio_unit: 10000, total: 10000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -549000, nota: "Reconstrucción a carta $1.210.000 vs cócteles POS $661.000 → −$549.000 = 45,4%, la brecha porcentual MÁS ALTA del mes. 30 K-cócteles a $36.000 darían $1.080.000 solos; el POS implica ~$20.400 por cóctel. MIÉRCOLES 2x1 fuerte, consistente con mié 9 (38,1%). El inventario cruza; es brecha de precio. ⚠️ Recordar que el supuesto de $36.000 uniforme está en duda desde que la factura A-018310 mostró K Frozen Granizado a $25.000 — parte de esta 'brecha' puede ser catálogo desactualizado y no promoción." },
+    ],
+    nota: "MIÉRCOLES 16 SEP — Venta $1.356.600 pero NETO POS de apenas $9.640 (0,7%). El día con más venta de la semana y casi sin resultado: LOS GASTOS DE CAJA FUERON $858.460, el monto más alto de septiembre, y se comieron todo. Mix: cócteles $661.000 (48,7%), pizzería $347.600 (25,6%), estanco $348.000 (25,7%) — buen equilibrio, 30 K-cócteles servidos. Efectivo $89.740 + tarjeta $208.400 → costo financiero $10.420 (bajo, porque solo el 15,4% de la venta fue con tarjeta). FALTANTE $0. ✅ Inventario 13/13 movimientos verificados, SIN corrimiento en la tirilla de inventario. ⚠️ LA TIRILLA DEL BAR SÍ VENÍA CORRIDA (apaisada): la lectura inicial daba Caja de vino 6 e Importada 2; cruzada contra la columna Sal quedó Caja de vino 1 e Importada 6. Corregido antes de valorizar. ✅ 10 de 11 SKUs cruzan exacto; solo gaseosa difiere en 1 (POS 12 vs Sal 11). ✅ Estanco con AJUSTE CERO. ✅ 2 botellas de aguardiente caucano SÍ se vendieron a carta ($180.000) — no fueron traslado. 🚩 MIÉRCOLES 2x1: brecha −$549.000 en coctelería (45,4%), la mayor del mes. 🚩🚩 GASTOS DE CAJA $858.460 SIN DESGLOSE y con reposición mínima ese día (solo Crema de whisky +1 y Ginebra botella +1): a diferencia del 10 al 12-sep, acá NO se puede argumentar que sea compra de inventario. Es el dato más importante del día. 🚩 K MARTINI DRY y K OLD FASHION vendidos con sus insumos en cero. 🚩 RON DON LUIS: los $200.000 pagados el 14-sep siguen sin ingresar (Ent 0), tercer día. 🚩 AGUA estancada en 16: faltan 48 unidades Postobón, noveno día. 🚩 SMIRNOFF ICE/GREEN APPLE: 32ª tirilla ausentes. Nómina $200.000 en caja."
+  },
+  {
+    date: "2026-09-17", total_estanco: 300000, total_cocteles: 286000, total: 586000, total_units: 93,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 21, precio_unit: 9000, total: 189000, nota: "Sal 21 (187→166). Cruza exacto. La mayor salida de nacional del mes." },
+      { nombre: "CERVEZA CORONA", cantidad: 7, precio_unit: 13000, total: 91000, nota: "Sal 7 (57→50). Cruza exacto." },
+      { nombre: "AGT BOTLLA ANQUEÑ", cantidad: 1, precio_unit: 90000, total: 90000, nota: "Venta a carta. 🚩 El POS del bar registra 2 antioqueños y la factura de traslado A-018357 lleva 1; el inventario solo descarga Sal 1. Falta 1 unidad de descargue — la apertura del 18-sep decide." },
+      { nombre: "AGUA", cantidad: 1, precio_unit: 6000, total: 6000, nota: "Venta directa. Las otras 12 fueron traslado a El Búnker (ver línea siguiente)." },
+      { nombre: "AGUA TONICA", cantidad: 1, precio_unit: 6000, total: 6000, nota: "Sal 1 (4→3)." },
+      { nombre: "AGUA — TRASLADO A EL BÚNKER", cantidad: 12, precio_unit: 0, total: 0, nota: "Factura A-018357 'Para Búnker', 09/18/2026 (día operativo 17-sep), todos los ítems a $0. Costo $1.300 c/u según CATALOG = $15.600. 🚩 El costo real del agua es $1.917 (factura Postobón del 7-sep), así que el cargo a El Búnker debería ser $23.004." },
+      { nombre: "GASEOSA — TRASLADO A EL BÚNKER", cantidad: 16, precio_unit: 0, total: 0, nota: "Factura A-018357. Costo $2.400 c/u = $38.400." },
+      { nombre: "RON CALDAS BOTELLA — TRASLADO A EL BÚNKER", cantidad: 2, precio_unit: 0, total: 0, nota: "Factura A-018357. Sal 2 (2→0), stock en CERO. Costo $59.300 c/u = $118.600 — es el ítem más caro del traslado." },
+      { nombre: "AGT BOTLLA ANQUEÑ — TRASLADO A EL BÚNKER", cantidad: 1, precio_unit: 0, total: 0, nota: "Factura A-018357. Costo $47.100." },
+      { nombre: "AMARILLO MED — TRASLADO A EL BÚNKER", cantidad: 1, precio_unit: 0, total: 0, nota: "Factura A-018357. Sal 1 (2→1). 🚩 AMARILLO MED no existe en el CATALOG: no tiene costo ni PVP. Estimar por comparación con AGT MEDIA ANQUEÑ para cerrar el cargo a El Búnker." },
+      { nombre: "GASEOSA", cantidad: 15, precio_unit: 0, total: 0, nota: "Mezcladores. Completa la Sal 31 del inventario (61→30) junto con las 16 del traslado. ✅ La apertura del 17-sep confirmó el saldo corregido de 61 del 16-sep." },
+      { nombre: "CREMA DE WHISKY", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (2→1). Insumo del K ALEXANDER ×2." },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1. Insumo coctelería. ✅ Entró reposición +4 (0→3)." },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1. Insumo del K MARGARITA ×2. ✅✅ ENTRÓ REPOSICIÓN +12 (0→11), la mayor del mes en este SKU." },
+      { nombre: "TRIPLESEC", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1. Insumo del K MARGARITA. ✅ Entró reposición +1." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -82000, nota: "Reconstrucción de VENTA a carta $382.000 vs estanco POS $300.000 → −$82.000 = 21,5%. El traslado a El Búnker ya está excluido (va a $0), así que la brecha es de precio: 21 nacionales + 7 coronas a carta dan $280.000 solos. JUEVES con descuento, consistente con el jueves 10-sep (38,2%)." },
+    ],
+    cocteles: [
+      { nombre: "SODA ITALIANA", cantidad: 3, precio_unit: 15000, total: 45000 },
+      { nombre: "K ALEXANDER", cantidad: 2, precio_unit: 36000, total: 72000, nota: "Insumo: Crema de whisky (Sal 1)." },
+      { nombre: "K MARGARITA", cantidad: 2, precio_unit: 36000, total: 72000, nota: "Insumo: Tequila ML + Triplesec (Sal 1 cada uno)." },
+      { nombre: "K SUEÑO ROSA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K WHITE SKY", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 SKU sin PVP confirmado (está en la lista de pendientes desde agosto como 'K White Sky')." },
+      { nombre: "K PINA COLADA SIN LIC", cantidad: 1, precio_unit: 35000, total: 35000, nota: "PVP de carta $35.000 (piña colada sin licor)." },
+      { nombre: "LIMONADA NATURAL", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -22000, nota: "Reconstrucción $308.000 vs cócteles POS $286.000 → −$22.000 = 7,1%. Brecha baja: el descuento del jueves pegó en el estanco (cerveza), no en la coctelería." },
+    ],
+    nota: "JUEVES 17 SEP — Venta $1.107.800, NETO POS $497.570 (44,9%). El mejor jueves de septiembre por amplio margen: el 3-sep dio −40,6% y el 10-sep −33,2%. La clave fue el gasto de caja: solo $5.000, frente a $858.460 del miércoles. Nómina también baja ($135.000 vs $200.000 habitual). Mix: PIZZERÍA DOMINÓ con $521.800 (47,1%) — el mayor valor de cocina del mes, 12 unidades incluyendo 2 HB BBQ y 2 Nachos Especiales; estanco $300.000 (27,1%), cócteles $286.000 (25,8%). Todo en tarjeta ($1.055.800) → costo financiero $52.790. ⚠️ SOBRANTE $88.000 — registrado faltante:-88000. ✅ Inventario 13/13 movimientos verificados, SIN corrimiento; 11 de 12 SKUs cruzan exacto con el POS del bar. ✅ La apertura del 17-sep confirmó la corrección de gaseosa del 16-sep (61, no 62). ✅✅ TRASLADO A EL BÚNKER DOCUMENTADO POR PRIMERA VEZ CON FACTURA: A-018357 'Para Búnker' con 12 agua + 16 gaseosa + 2 Ron Caldas botella + 1 Amarillo med + 1 Antioqueño botella, todo a $0. Costo aproximado $219.700 a precios de CATALOG (sin Amarillo med, que no está catalogado, y con el agua subvalorada). Es la cuarta salida a El Búnker de septiembre. ✅✅ REPOSICIÓN DE COCTELERÍA: Tequila ML +12 (0→11), Licor de manzana +6 (3→9), Ginebra ML +4 (0→3), Triplesec +1. Se desbloquean Margarita, Gin Tonic y Tom Collins. 🚩 JUEVES CON DESCUENTO: brecha −$82.000 en estanco (21,5%) con 28 cervezas; coctelería casi sin brecha (7,1%). 🚩 Antioqueño: POS bar 2 vs Sal 1 — falta 1 unidad de descargue. 🚩 RON CALDAS BOTELLA en CERO tras el traslado. 🚩 RON DON LUIS: los $200.000 pagados el 14-sep siguen sin ingresar, cuarto día. 🚩 AGUA en 3 unidades: tras el traslado de 12, el stock quedó crítico y las 48 de Postobón siguen sin entrar. 🚩 SMIRNOFF ICE/GREEN APPLE: 33ª tirilla ausentes. Nómina $135.000 en caja."
+  },
+  {
+    date: "2026-09-18", total_estanco: 620000, total_cocteles: 716000, total: 1336000, total_units: 112,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 29, precio_unit: 9000, total: 261000, nota: "Sal 29 (166→227 tras Ent 90). Cruza exacto. La mayor salida de nacional del mes. Incluye la base de las 9 micheladas: valorizadas a carta porque así el estanco cierra exacto." },
+      { nombre: "CERVEZA CORONA", cantidad: 8, precio_unit: 13000, total: 104000, nota: "Sal 8 (50→42). Cruza exacto." },
+      { nombre: "AGT BOTLLA ANQUEÑ", cantidad: 1, precio_unit: 90000, total: 90000, nota: "Sal 1 (4→7 tras Ent 4). Venta a carta." },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 5, precio_unit: 13000, total: 65000, nota: "Sal 5 (25→20). Cruza exacto." },
+      { nombre: "AGT MEDIA ANQUEÑ", cantidad: 1, precio_unit: 60000, total: 60000, nota: "Sal 1 (9→8). Venta a carta." },
+      { nombre: "VODKA DL", cantidad: 2, precio_unit: 20000, total: 40000, nota: "Sal 2 (9→7). Tragos dobles a $20.000. Con esta línea el estanco cierra EXACTO en $620.000." },
+      { nombre: "GASEOSA", cantidad: 21, precio_unit: 0, total: 0, nota: "Sal 21 (30→57 tras Ent 48). Mezcladores. Cruza exacto con el POS." },
+      { nombre: "BUCHANAN'S MEDIA", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (2→1). Insumo del TRAGO DOBLE WHISKYE (valorizado en cócteles). 🚩 A carta la media vale $230.000; si se vendió como botella y no como trago, el estanco estaría subregistrado en ese monto. CONFIRMAR con Manuel." },
+      { nombre: "VINO BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (2→2 tras Ent 1). Insumo de la LIMONADA DE VINO." },
+      { nombre: "CREMA DE WHISKY", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (1→1 tras Ent 1). Insumo coctelería." },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (9→8). Insumo coctelería." },
+      { nombre: "RON DL", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (3→2). Insumo del K MOJITO. ✅ Ron Don Luis, confirmado como insumo de coctelería." },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "Sal 1 (11→10). Insumo de los 4 K MARGARITA + 1 K MARGARITA MIX." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 0, nota: "Reconstrucción $620.000 = estanco POS $620.000. AJUSTE CERO. Los 13 SKUs del bar cruzan EXACTO con la columna Sal — el día más limpio del mes en el cruce bar-inventario." },
+    ],
+    cocteles: [
+      { nombre: "K MARGARITA", cantidad: 4, precio_unit: 36000, total: 144000 },
+      { nombre: "MICHELADA", cantidad: 9, precio_unit: 12000, total: 108000, nota: "Récord de micheladas en un día (antes 13 el 11-sep... este es el segundo). Base: cerveza nacional." },
+      { nombre: "K PECERA LA SALA", cantidad: 1, precio_unit: 95000, total: 95000 },
+      { nombre: "K FROZEN GRANIZADO", cantidad: 3, precio_unit: 25000, total: 75000, nota: "PVP $25.000 confirmado por la factura A-018310 del 12-sep." },
+      { nombre: "SODA ITALIANA", cantidad: 4, precio_unit: 15000, total: 60000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 4, precio_unit: 12000, total: 48000, nota: "🚩 SKU nuevo sin PVP confirmado — valorizado como limonada estándar." },
+      { nombre: "K PINA COLADA CON LIC", cantidad: 1, precio_unit: 47000, total: 47000 },
+      { nombre: "K DEMONIO VERDE", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K ENERGY", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 SKU nuevo sin PVP confirmado." },
+      { nombre: "K MARGARITA MIX", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 SKU nuevo sin PVP confirmado." },
+      { nombre: "K MOJITO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "LIMONADA DE HIERBABUENA", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "LIMONADA NATURAL", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "JUGO EN AGUA", cantidad: 2, precio_unit: 10000, total: 20000 },
+      { nombre: "TRAGO DOBLE WHISKYE", cantidad: 1, precio_unit: 20000, total: 20000, nota: "Insumo: Buchanan's media (Sal 1). Ver la bandera en esa línea del estanco." },
+      { nombre: "LIMONADA CEREZADA", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "LIMONADA DE VINO", cantidad: 1, precio_unit: 12000, total: 12000, nota: "Insumo: vino botella (Sal 1)." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -117000, nota: "Reconstrucción $833.000 vs cócteles POS $716.000 → −$117.000 = 14,0%. Brecha moderada de viernes, muy por debajo del 2x1 de martes/miércoles (26,5% y 45,4%). Parte puede venir de los 4 SKUs nuevos sin PVP (Limonada de Coco ×4, K Energy, K Margarita Mix)." },
+    ],
+    nota: "VIERNES 18 SEP — EL DÍA MÁS GRANDE DEL MES: venta $2.404.600, NETO POS $995.520 (41,4%). Supera al sábado 5-sep ($2.484.000) solo en margen, y es el primer día del mes que pasa el millón de neto. Mix: PIZZERÍA RÉCORD $1.068.600 (44,4%) con 25 unidades y 23 líneas de factura; cócteles $716.000 (29,8%), estanco $620.000 (25,8%). Efectivo $9.300 + tarjeta $1.938.000 → costo financiero $96.900, el más alto del mes. FALTANTE $0. ✅✅ EL CRUCE MÁS LIMPIO DEL MES: los 13 SKUs del bar cruzan EXACTO con la columna Sal, estanco con AJUSTE CERO y cocina igual a pizzería al peso. Inventario 22/22 movimientos verificados, SIN corrimiento. ✅ La apertura del 18-sep corrigió el cierre del 17-sep (Antioqueño 4, no 5): salieron 2, como decía el POS. ✅✅✅ POR FIN ENTRÓ EL AGUA: Ent 48 (3→51). Cierra la bandera abierta desde el 8-sep — las 60 unidades de la factura Postobón GP07522462 quedaron completas (12 el 12-sep + 48 hoy). ✅✅ REPOSICIÓN MASIVA: Nacional +90 (166→227), Agua +48, Gaseosa +48, Agua tónica +6, Antioqueño botella +4, Caucano botella +3, Ron Caldas botella +2 (0→2), Amarillo bot +1, Amarillo med +1, Crema de whisky +1, Vino botella +1, Whisky coctelería +1 (0→1). Se desbloquean Old Fashion y los cócteles con ron. 🚩 VIERNES con brecha moderada: −$117.000 en coctelería (14,0%), estanco sin brecha. 🚩 BUCHANAN'S MEDIA: salió 1 y se valorizó a $0 como insumo del trago doble; a carta vale $230.000 — confirmar si fue venta de botella. 🚩 4 SKUs NUEVOS sin PVP: LIMONADA DE COCO, K ENERGY, K MARGARITA MIX y (de antes) K WHITE SKY. 🚩 RON DON LUIS: los $200.000 del 14-sep siguen sin ingresar, quinto día. 🚩 SMIRNOFF ICE/GREEN APPLE: 34ª tirilla ausentes. Nómina $260.000 en caja, la más alta del mes."
   }
 ];
 
@@ -14285,6 +14544,301 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
     ],
     nota: "Verificado 3/3 movimientos, SIN corrimiento. El día más limpio del mes: SIN ENTRADAS y solo 3 salidas, las tres cruzando EXACTO con el POS del bar. SALIDAS: Cerveza nacional −5 (178→173), Gaseosa −4 (91→87), Licor de manzana −1 (4→3). ⚠️ LA APERTURA DEL 13-SEP CORRIGIÓ EL CIERRE DEL 12-SEP: trae AGUA 20 (habíamos cerrado en 16), CERVEZA NACIONAL 178 (habíamos cerrado en 176) y ELECTROLIT 6 (habíamos cerrado en 5). Las 7 unidades que la tirilla del 12 daba por salidas NUNCA salieron — la tirilla sobrerregistró las Sal y el POS del bar tenía razón. Saldos del 12-sep corregidos; se cierra la bandera de '$50.000 sin registro'. Es el mismo tipo de error que el 8-sep con Corona, pero en sentido contrario: la tirilla de inventario falla en ambas direcciones y el POS del bar es el contraste confiable. 🚩 SMIRNOFF BOT: segundo día en CERO con Ent 0 — las 2 botellas de Smirnoff Tamarindo compradas el 12-sep ($120.800, transferencia de Pipe al proveedor San Diego Catay) NO han ingresado. 🚩 AGUA: saldo estancado en 20; de las 60 unidades de la factura Postobón GP07522462 pagadas el 8-sep solo entraron 12 el 12-sep. Faltan 48 — sexto día con el tema abierto. 🚩 SMIRNOFF ICE y GREEN APPLE: 29ª tirilla ausentes (6/6)."
+  },
+  {
+    date: "2026-09-14", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCA",saldo:7},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:9},
+      {nombre:"AGT MEDIA CAUCA",saldo:5},
+      {nombre:"AGUA",saldo:16},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:3},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:3},
+      {nombre:"CERVEZA CORONA",saldo:34},
+      {nombre:"CERVEZA IMPORTADA",saldo:31},
+      {nombre:"CERVEZA NACIONAL",saldo:167},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:5},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:81},
+      {nombre:"GASEOSA 1.5",saldo:2},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:3},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:4},
+      {nombre:"SMIRNOFF",saldo:12},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:9},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
+    ],
+    nota: "Verificado 5/5 movimientos, SIN corrimiento. La apertura del 14-sep coincide ítem por ítem con el cierre del 13-sep (51 SKUs impresos) — sin correcciones esta vez. SIN ENTRADAS. SALIDAS: Agua −4 (20→16), Corona −1 (35→34), Nacional −6 (173→167), Electrolit −1 (6→5), Gaseosa −6 (87→81). ✅ Los 5 SKUs cruzan EXACTO con el POS del bar, segundo día seguido sin discrepancias de unidades. 🚩🚩 TRES COMPRAS PAGADAS QUE NO HAN INGRESADO: (1) RON DON LUIS $200.000 pagado el 14-sep por transferencia a Julián Pistala — RON DL sigue en 4 con Ent 0, así que no se puede derivar el costo unitario real ni corregir el CATALOG (que hoy tiene un placeholder de $20.000 con margen 0%); (2) SMIRNOFF TAMARINDO 2 botellas $120.800 pagadas el 12-sep — tercer día en CERO; (3) AGUA Postobón, 48 de las 60 unidades pagadas el 8-sep siguen sin entrar y el saldo bajó a 16. En total $436.900 de compras pagadas sin respaldo en inventario. 🚩 SMIRNOFF ICE y GREEN APPLE: 30ª tirilla ausentes (6/6)."
+  },
+  {
+    date: "2026-09-15", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCA",saldo:7},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:9},
+      {nombre:"AGT MEDIA CAUCA",saldo:4},
+      {nombre:"AGUA",saldo:16},
+      {nombre:"AGUA TONICA",saldo:6},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:3},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:3},
+      {nombre:"CERVEZA CORONA",saldo:57},
+      {nombre:"CERVEZA IMPORTADA",saldo:31},
+      {nombre:"CERVEZA NACIONAL",saldo:192},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:5},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:73},
+      {nombre:"GASEOSA 1.5",saldo:2},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:3},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:6},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:4},
+      {nombre:"SMIRNOFF",saldo:12},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:9},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
+    ],
+    nota: "Verificado 8/8 movimientos, SIN corrimiento. La apertura del 15-sep coincide ítem por ítem con el cierre del 14-sep (51 SKUs impresos), sin correcciones. ENTRADAS: Cerveza nacional +30 (167→192), Corona +24 (34→57), Red Bull +4 (2→6). SALIDAS: Agt media caucano −1 (5→4), Corona −1, Nacional −5, Gaseosa −8 (81→73), Ginebra ML −1 (1→0), Tequila ML −2 (3→1), Whisky coctelería −1 (1→0). ✅ Los 7 SKUs del bar cruzan EXACTO con la columna Sal — tercer día seguido sin discrepancias de unidades. ✅ RESUELTO: el SMIRNOFF BOT nunca ingresó porque las 2 botellas compradas el 12-sep SE TRASLADARON A EL BÚNKER (aclarado por Juanma); queda como CxC a El Búnker por $120.800, no como compra perdida. 🚩 K MARTINI DRY ×4 vendidos con DRY MARTINY en CERO y Sal 0 — el vermut se agotó el 12-sep y no se repuso; falta el descargue o se preparó con otro insumo. 🚩 NUEVOS CEROS: GINEBRA ML y WHISKEY COCTELERIA, insumos de K Tom Collins, K Gin Tonic y K Old Fashion. Con Dry Martiny también en cero, son tres cócteles de carta alta bloqueados entrando al fin de semana. 🚩 RON DON LUIS: los $200.000 pagados el 14-sep siguen SIN ingresar (RON DL en 4, Ent 0) — segundo día, y sin la cantidad no se puede derivar el costo unitario real. 🚩 AGUA estancada en 16: faltan 48 de las 60 unidades Postobón pagadas el 8-sep, octavo día. 🚩 SMIRNOFF ICE y GREEN APPLE: 31ª tirilla ausentes (6/6)."
+  },
+  {
+    date: "2026-09-16", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:9},
+      {nombre:"AGT MEDIA CAUCA",saldo:4},
+      {nombre:"AGUA",saldo:16},
+      {nombre:"AGUA TONICA",saldo:4},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:3},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:57},
+      {nombre:"CERVEZA IMPORTADA",saldo:25},
+      {nombre:"CERVEZA NACIONAL",saldo:187},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:2},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:5},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:61},
+      {nombre:"GASEOSA 1.5",saldo:2},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:3},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:5},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"SMIRNOFF",saldo:12},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:0},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:9},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
+    ],
+    nota: "Verificado 13/13 movimientos, SIN corrimiento. La apertura del 16-sep coincide ítem por ítem con el cierre del 15-sep (51 SKUs impresos). ENTRADAS: Crema de whisky +1 (1→2), Ginebra botella +1 (entró y salió el mismo día, cerró en 0). SALIDAS: Agt botella caucano −2 (7→5), Agua tónica −2 (6→4), Caja de vino −1 (3→2), Importada −6 (31→25), Nacional −5 (192→187), Gaseosa −11 (73→62), Ginebra botella −1, Red Bull −1 (6→5), Ron DL −1 (4→3), Tequila ML −1 (1→0), Vino botella −1 (3→2). ⚠️ LA TIRILLA DEL BAR VENÍA CORRIDA (llegó apaisada): la lectura directa daba Caja de vino 6 / Importada 2, y contra la columna Sal quedó Caja de vino 1 / Importada 6. La corrección se hizo antes de valorizar, siguiendo la Regla 8. ✅ 10 de 11 SKUs del bar cruzan exacto con la columna Sal. 🚩 GASEOSA: el POS del bar registra 12 y el inventario descarga 11 — 1 unidad de diferencia. ✅ RESUELTO EL 17-SEP: la apertura del 17 (autoritativa) trae GASEOSA 61 y no 62 → salieron 12, no 11. El POS del bar tenía razón otra vez; saldo corregido a 61 y el cruce queda 11/11 exacto. 🚩 INSUMOS VENDIDOS SIN STOCK: DRY MARTINY en cero desde el 12-sep y sin embargo se vendieron 2 K MARTINI DRY (van 6 con los 4 del 15-sep); WHISKEY COCTELERIA en cero desde el 15-sep y se vendieron 2 K OLD FASHION. Falta descargue o se está usando otro insumo sin registrar. 🚩 NUEVOS/REPETIDOS CEROS: Tequila ML, Ginebra ML, Ginebra botella, Dry Martiny y Whiskey coctelería. 🚩 RON DON LUIS: los $200.000 pagados el 14-sep siguen SIN ingresar (Ent 0) — tercer día. 🚩 AGUA estancada en 16: faltan 48 de las 60 unidades Postobón pagadas el 8-sep, noveno día. 🚩 SMIRNOFF ICE y GREEN APPLE: 32ª tirilla ausentes (6/6)."
+  },
+  {
+    date: "2026-09-17", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:4},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:9},
+      {nombre:"AGT MEDIA CAUCA",saldo:4},
+      {nombre:"AGUA",saldo:3},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:3},
+      {nombre:"AMARILLO MED",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:50},
+      {nombre:"CERVEZA IMPORTADA",saldo:25},
+      {nombre:"CERVEZA NACIONAL",saldo:166},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:5},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:30},
+      {nombre:"GASEOSA 1.5",saldo:2},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:9},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:5},
+      {nombre:"RON CALDAS BOTELLA",saldo:0},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"SMIRNOFF",saldo:12},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:11},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:9},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:2},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
+    ],
+    nota: "Verificado 13/13 movimientos, SIN corrimiento. ⚠️ AMBAS TIRILLAS VENÍAN ROTULADAS 'INICIAL' A MANO; la de la derecha es el cierre (tiene movimientos). ✅ LA APERTURA DEL 17-SEP CORRIGIÓ EL CIERRE DEL 16-SEP: trae GASEOSA 61 y nosotros habíamos cerrado en 62 → salieron 12, no 11, tal como decía el POS del bar. Saldo del 16-sep corregido y la continuidad del 17 (61 − 31 = 30) confirma el ajuste. Tercera vez en el mes que la tirilla de inventario falla y el POS del bar acierta (Corona 8-sep, Agua/Nacional/Electrolit 12-sep, Gaseosa 16-sep). ENTRADAS: Tequila ML +12 (0→11), Licor de manzana +6 (3→9), Ginebra ML +4 (0→3), Triplesec +1. SALIDAS: Antioqueño botella −1 (6→5), Agua −13 (16→3), Agua tónica −1, Amarillo med −1 (2→1), Corona −7 (57→50), Nacional −21 (187→166), Crema de whisky −1 (2→1), Gaseosa −31 (61→30), Ginebra ML −1, Ron Caldas botella −2 (2→0), Tequila ML −1, Triplesec −1. ✅✅ TRASLADO A EL BÚNKER CON FACTURA: A-018357 'Para Búnker' documenta 12 agua + 16 gaseosa + 2 Ron Caldas botella + 1 Amarillo med + 1 Antioqueño botella, todos a $0. Es la primera vez en septiembre que un traslado llega con su factura POS — antes se deducían. Costo aprox. $219.700. 🚩 ANTIOQUEÑO BOTELLA: el POS del bar registra 2 (1 venta + 1 traslado) pero el inventario descarga Sal 1. ✅ RESUELTO EL 18-SEP: la apertura del 18 (autoritativa) trae AGT BOTLLA ANQUEÑ 4 y no 5 → salieron 2, tal como decía el POS. Saldo del 17-sep corregido a 4. CUARTA vez en el mes que la tirilla de inventario falla y el POS del bar acierta (Corona 8-sep, Agua/Nacional/Electrolit 12-sep, Gaseosa 16-sep, Antioqueño 17-sep). 🚩 STOCKS CRÍTICOS TRAS EL TRASLADO: AGUA en 3 (con 48 unidades Postobón aún sin ingresar desde el 8-sep) y RON CALDAS BOTELLA en CERO. 🚩 RON DON LUIS: los $200.000 pagados el 14-sep siguen SIN ingresar (Ent 0) — cuarto día. 🚩 SMIRNOFF ICE y GREEN APPLE: 33ª tirilla ausentes (6/6)."
+  },
+  {
+    date: "2026-09-18", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
+      {nombre:"AGT BOTLLA CAUCA",saldo:8},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:8},
+      {nombre:"AGT MEDIA CAUCA",saldo:4},
+      {nombre:"AGUA",saldo:51},
+      {nombre:"AGUA TONICA",saldo:9},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:4},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:42},
+      {nombre:"CERVEZA IMPORTADA",saldo:20},
+      {nombre:"CERVEZA NACIONAL",saldo:227},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:0},
+      {nombre:"CREMA DE WHISKY",saldo:1},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:5},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:57},
+      {nombre:"GASEOSA 1.5",saldo:2},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:3},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:8},
+      {nombre:"LICOR DE MENTA",saldo:0},
+      {nombre:"RED BULL",saldo:5},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:2},
+      {nombre:"SMIRNOFF",saldo:12},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:1},
+      {nombre:"TEQUILA ML",saldo:10},
+      {nombre:"TRIPLESEC",saldo:2},
+      {nombre:"VINO BOTELLA",saldo:2},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:7},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:1},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:1},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:0},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
+    ],
+    nota: "Verificado 22/22 movimientos, SIN corrimiento. ✅ LA APERTURA DEL 18-SEP CORRIGIÓ EL CIERRE DEL 17-SEP: trae AGT BOTLLA ANQUEÑ 4 y nosotros habíamos cerrado en 5 → salieron 2 (1 venta + 1 traslado en la factura A-018357), tal como decía el POS del bar. Saldo del 17-sep corregido. CUARTA corrección del mismo tipo en el mes; la regla ya es firme: cuando la tirilla de inventario y el POS del bar discrepan, el POS del bar acierta. ENTRADAS (la reposición más grande del mes): Cerveza nacional +90 (166→227), Agua +48 (3→51), Gaseosa +48 (30→57), Agua tónica +6 (3→9), Antioqueño botella +4, Caucano botella +3 (5→8), Ron Caldas botella +2 (0→2), Amarillo bot +1, Amarillo med +1, Crema de whisky +1, Vino botella +1, Whiskey coctelería +1 (0→1). SALIDAS: Antioqueño botella −1, Media antioqueño −1 (9→8), Corona −8 (50→42), Importada −5 (25→20), Nacional −29, Crema de whisky −1, Gaseosa −21, Licor de manzana −1 (9→8), Ron DL −1 (3→2), Tequila ML −1 (11→10), Vino botella −1, Vodka DL −2 (9→7), Buchanan's media −1 (2→1). ✅✅ LOS 13 SKUs DEL BAR CRUZAN EXACTO con la columna Sal — el mejor cruce del mes. ✅✅✅ SE CIERRA LA BANDERA DEL AGUA: entraron las 48 unidades que faltaban de la factura Postobón GP07522462 (60 pagadas el 8-sep: 12 ingresaron el 12-sep y 48 hoy). Once días abierta. ✅ Se desbloquean K OLD FASHION (whiskey coctelería 0→1) y los cócteles con Ron Caldas botella (0→2). 🚩 SIGUEN EN CERO: Dry Martiny, Ginebra botella, Smirnoff bot, Old Parr media. 🚩 RON DON LUIS: los $200.000 pagados el 14-sep siguen SIN ingresar (Ent 0) — quinto día; RON DL bajó a 2. 🚩 SMIRNOFF ICE y GREEN APPLE: 34ª tirilla ausentes (6/6)."
   }
 ];
 
@@ -15345,6 +15899,36 @@ const PRELOADED_GASTOS = [
     items: [
       { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 24800, nota: "Monto bajo, el segundo más bajo de septiembre. Nómina $185.000 en caja (aparte). Los gastos de caja mínimos son la razón de que un domingo de solo $482.800 haya cerrado positivo." },
     ]
+  },
+  {
+    date: "2026-09-14", total: 6520,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 6520, nota: "El gasto de caja más bajo de septiembre. Nómina $185.000 en caja (aparte) — es la nómina, no los gastos, lo que pone el día en pérdida." },
+    ]
+  },
+  {
+    date: "2026-09-15", total: 26080,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 26080, nota: "Monto bajo. Nómina $185.000 en caja (aparte). La reposición del día (Nacional +30, Corona +24, Red Bull +4) NO cabe en este monto, así que se pagó por otra vía — pedir el comprobante para registrarla en el ledger de transferencias." },
+    ]
+  },
+  {
+    date: "2026-09-16", total: 858460,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 858460, nota: "🚩🚩 EL GASTO DE CAJA MÁS ALTO DE SEPTIEMBRE, por encima del 10-sep ($500.570). Se llevó el 63,3% de la venta del día y dejó el neto POS en $9.640 con $1.356.600 vendidos. ⚠️ A DIFERENCIA DEL 10 AL 12-SEP, ACÁ NO SE PUEDE ARGUMENTAR QUE SEA REPOSICIÓN: la única entrada de inventario del 16-sep fue Crema de whisky +1 y Ginebra botella +1, es decir unos pocos miles de pesos. Los $858.460 son casi en su totalidad otra cosa. PEDIR EL DESGLOSE ES PRIORIDAD — es el movimiento individual más grande y menos explicado de la segunda quincena." },
+    ]
+  },
+  {
+    date: "2026-09-17", total: 5000,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 5000, nota: "El gasto de caja más bajo de septiembre, un día después del más alto ($858.460 el 16-sep). Nómina también baja: $135.000 frente a los $185.000-$200.000 habituales. Esa combinación es lo que llevó el neto del día a 44,9%. La reposición de coctelería del día (Tequila ML +12, Licor de manzana +6, Ginebra ML +4, Triplesec +1) NO cabe en $5.000 — se pagó por otra vía; pedir comprobante para el ledger de transferencias." },
+    ]
+  },
+  {
+    date: "2026-09-18", total: 197300,
+    items: [
+      { concepto: "Gastos del día (sin itemizar — foto de gastos no aportada)", categoria: "Por itemizar", valor: 197300, nota: "Monto moderado para el día de mayor venta del mes ($2.404.600). La reposición masiva del día (Nacional +90, Agua +48, Gaseosa +48, aguardientes +7, etc.) NO está acá: se pagó por transferencia al proveedor Cervezas y Cervezas ($1.876.500 + $89.800), registrada aparte en el ledger. Nómina $260.000 en caja, la más alta del mes." },
+    ]
   }
 ];
 
@@ -15386,7 +15970,7 @@ const CATALOG = {
   "RED BULL": {categoria:"Bebidas no alcohólicas",compra:6400,venta:15000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturado (Amper $2.900 NO es Red Bull)"},
   "RON CALDAS BOTELLA": {categoria:"Ron",compra:59300,venta:110000,fuente:"Compra: GIR-FDJC9356-30abr | Venta: CARTA",notas:"Ron V.de Caldas 750cc (precio real confirmado)"},
   "RON CALDAS MEDIA": {categoria:"Ron",compra:30700,venta:80000,fuente:"Compra: GIR-FDJC9420-01may | Venta: CARTA",notas:"Ron V.de Caldas CAN 375cc (precio real confirmado)"},
-  "RON DL": {categoria:"Ron",compra:20000,venta:20000,fuente:"Compra: INSUMO | Venta: CARTA",notas:"Trago doble Ron"},
+  "RON DL": {categoria:"Ron",compra:20000,venta:20000,fuente:"Compra: INSUMO (PLACEHOLDER, no es costo de factura) | Venta: CARTA",notas:"Ron Don Luis (aclarado por Juanma 14-sep-2026: 'RON DL' = Ron Don Luis). 🚩 COSTO NO CONFIABLE: la compra $20.000 se puso igual al PVP del trago doble, dando margen 0%. El 14-sep se pagaron $200.000 de Ron Don Luis (transferencia a Julián Pistala) — con el Ent del inventario del 14-sep se deriva el costo unitario real y se corrige. Afecta el margen de todos los cócteles con ron: Mojito, Cuba Libre, Coco Loco, Long Island."},
   "TEQUILA BOTELLA": {categoria:"Tequila",compra:77800,venta:195000,fuente:"Compra: GIR-FDJC10351-23may | Venta: CARTA",notas:"José Cuervo Amar 750cc $77.800 (var: Jimador $101.000, Olmeca $76.100-$84.850 - mismo grupo)"},
   "TEQUILA LITRO": {categoria:"Tequila",compra:87900,venta:110000,fuente:"Compra: GIR-02abr | Venta: VERIFICAR",notas:"Tres Caballos Gold 1L"},
   "TEQUILA MEDIA": {categoria:"Tequila",compra:43950,venta:110000,fuente:"Compra: VERIFICAR | Venta: CARTA",notas:"No facturada"},
@@ -15908,9 +16492,15 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-09-07", semana: 24, periodo: "Sem 2 sep (7 - 13 sep)", concepto: "Pago limones proveedor Renso Erazo", categoria: "Insumos coctelería", valor: 160000, nota: "Compra de limón (nuevo proveedor: Renso Erazo). Insumo de coctelería recurrente." },
   { date: "2026-09-07", semana: 24, periodo: "Sem 2 sep (7 - 13 sep)", concepto: "Pago proveedor Reinaldo - El Rey (Insumos)", categoria: "Reposición inventario", valor: 197500, nota: "Tercer pago a Reinaldo El Rey (14-ago $494.000, 24-ago $244.500). Insumos → reposición." },
   { date: "2026-09-07", semana: 24, periodo: "Sem 2 sep (7 - 13 sep)", concepto: "Pago facturas varias", categoria: "Por itemizar", valor: 695250, nota: "🚩 Facturas varias sin desglose ($695.250). Pedir detalle a Manuel para clasificar (reposición vs consumo vs no operativo)." },
-  { date: "2026-09-12", semana: 24, periodo: "Sem 2 sep (7 - 13 sep)", concepto: "Compra 2 botellas Smirnoff Tamarindo (transferencia Pipe)", categoria: "Reposición inventario", valor: 120800, nota: "Aportado por Juanma. 2 botellas de Smirnoff Tamarindo = $120.800 ($60.400 c/u). PAGADA POR TRANSFERENCIA DE PIPE (socio), no con caja de La Sala: comprobante del 13/09/2026 00:21:28, ID Q265LMU56C, origen Bold CF a nombre de Manuela Patiño Builes, destino SAN DIEGO CATAY, costo de transacción $0. Se imputa al día operativo 12-sep (la noche cerró a las 03:23 del 13). Es REPOSICIÓN DE INVENTARIO: no reduce el resultado del período. 🚩 LA PAGÓ UN SOCIO, NO EL NEGOCIO: genera cuenta por pagar a Pipe (o aporte de capital) por $120.800 — no es un desembolso de caja de La Sala. Definir con los socios el tratamiento. 🚩 NO INGRESÓ AL INVENTARIO DEL 12-SEP: SMIRNOFF BOT registró Ent 0 y Sal 2, cerrando en CERO. Verificar el Ent en el cierre del 13-sep. 🚩 Primer costo documentado de SMIRNOFF BOT — CATALOG actualizado a $60.400." },
-  { date: "2026-09-14", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Ron Don Luis (dentro del pago a Julián Pistala)", categoria: "Reposición inventario", valor: 200000, nota: "Parte identificada del pago de $708.100. REPOSICIÓN DE INVENTARIO: no reduce el resultado del período. 🚩 Verificar el Ent de Ron Don Luis en el inventario del 14-sep — es un SKU que no existe en el maestro actual (hay RON CALDAS BOT/MED y RON DL); si es nuevo hay que crearlo en el inventario y definirle PVP." },
+  { date: "2026-09-12", semana: 24, periodo: "Sem 2 sep (7 - 13 sep)", concepto: "Compra 2 botellas Smirnoff Tamarindo → TRASLADO A EL BÚNKER", categoria: "Reposición inventario", valor: 120800, nota: "2 botellas de Smirnoff Tamarindo = $120.800 ($60.400 c/u). PAGADA POR TRANSFERENCIA DE PIPE (socio): comprobante 13/09/2026 00:21:28, ID Q265LMU56C, origen Bold CF a nombre de Manuela Patiño Builes, destino SAN DIEGO CATAY, costo de transacción $0. Se imputa al día operativo 12-sep. ✅ ACLARADO POR JUANMA: el Smirnoff SE TRASLADÓ A EL BÚNKER — por eso nunca ingresó al inventario de La Sala (SMIRNOFF BOT quedó en 0 con Ent 0 durante 12, 13 y 14-sep). Queda resuelta la bandera de 'compra pagada sin ingreso'. 🚩 CUENTA POR COBRAR A EL BÚNKER por $120.800: La Sala pagó mercancía que quedó como existencia allá. Se suma a los traslados del 5-sep ($257.400) y del 11-sep ($231.300) → total acumulado $609.500 entre locales solo en septiembre. 🚩 Además lo pagó un socio (Pipe) y no el negocio: confirmar si genera cuenta por pagar a socios además de la CxC a El Búnker. 🚩 Primer costo documentado de SMIRNOFF BOT — CATALOG a $60.400." },
+  { date: "2026-09-14", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Ron Don Luis (dentro del pago a Julián Pistala)", categoria: "Reposición inventario", valor: 200000, nota: "Parte identificada del pago de $708.100. REPOSICIÓN DE INVENTARIO: no reduce el resultado del período. ✅ SKU CONFIRMADO: 'RON DL' en el inventario ES Ron Don Luis (aclarado por Juanma), y su destino es COCTELERÍA — no venta directa por botella. Eso confirma que debe valorizarse a $0 como insumo en el bar, y que el PVP de $20.000 del CATALOG (trago doble) es un uso secundario y esporádico. 🚩 COSTO AÚN SIN DERIVAR: el CATALOG trae compra $20.000 con fuente 'INSUMO', es decir un valor puesto igual al PVP, con margen 0% — evidentemente incorrecto. Esta compra de $200.000 es el primer dato real, pero falta la cantidad: al 15-sep RON DL sigue en 4 con Ent 0, así que la compra todavía no ha ingresado. Cuando aparezca el Ent se deriva el costo unitario y se corrige el CATALOG. Mientras tanto el margen de Mojito, Cuba Libre, Coco Loco y Long Island está mal calculado." },
   { date: "2026-09-14", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Pagos varios a Julián Pistala (resto sin desglosar)", categoria: "Por itemizar", valor: 508100, nota: "🚩 Resto del pago de $708.100 sin desglose. Comprobante: 14/09/2026 21:35:40, ID SQ1E3VFVGY, origen Bold CF a nombre de Manuela Patiño Builes, destino JULIAN PISTALA, costo de transacción $0. PEDIR DETALLE: sin él no se puede separar reposición de inventario (no reduce resultado) de costo operativo (sí lo reduce). ⚠️ El comprobante es del 14-sep 21:35, fuera del día operativo del 13-sep (cerró 00:18 del 14); se imputa al 14-sep. Si corresponde al 13, avisar y se reclasifica. 🚩 Igual que el Smirnoff del 12-sep, salió de la cuenta Bold CF de Manuela Patiño Builes y no de una cuenta de La Sala: confirmar si genera cuenta por pagar a los socios." },
+  { date: "2026-09-14", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "PRÉSTAMO de los tres socios para nivelar saldo en rojo", categoria: "Préstamo de socios (ingreso)", valor: -517124, nota: "⚠️ ES UNA ENTRADA DE DINERO, NO UN GASTO — por eso va con valor NEGATIVO. Es el único registro negativo del ledger; si el dashboard lo muestra raro, avisar y se cambia de formato. ✅ ACLARADO POR JUANMA: es un PRÉSTAMO de los TRES SOCIOS (no aporte de capital), con fecha 14 de septiembre de 2026, para nivelar un saldo en rojo de −$517.124. Al ser préstamo, genera una CUENTA POR PAGAR de La Sala a los socios por $517.124 — es pasivo, no patrimonio, y habrá que devolverlo. NO es costo operativo ni reposición: no toca el resultado del período. 🚩 SEÑAL DE FONDO: en lugar de repartir utilidades, los socios están prestándole plata al negocio. Frente a la meta de $3.000.000 libres por socio al mes, va en dirección contraria: cada socio puso ~$172.375 en vez de recibir. 🚩 PENDIENTE: definir plazo y condiciones de devolución, y a qué saldo corresponde exactamente (caja, cuenta Bold o acumulado del mes)." },
+  { date: "2026-09-18", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Proveedor Cervezas y Cervezas", categoria: "Compra Cerveza", valor: 1876500, nota: "Aportado por Juanma. Compra al proveedor Cervezas y Cervezas. REPOSICIÓN DE INVENTARIO: no reduce el resultado del período. ✅ RESPALDADA POR EL INVENTARIO: el 18-sep entraron 90 cervezas nacionales (166→227), agua +48, gaseosa +48, agua tónica +6 y 7 aguardientes. Es la compra individual más grande registrada en septiembre." },
+  { date: "2026-09-18", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Proveedor Cervezas y Cervezas (segundo pago)", categoria: "Compra Cerveza", valor: 89800, nota: "Aportado por Juanma. Segundo pago al mismo proveedor el mismo día. REPOSICIÓN DE INVENTARIO. Total del 18-sep a Cervezas y Cervezas: $1.966.300." },
+  { date: "2026-09-19", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Tres facturas de limones", categoria: "Insumos coctelería", valor: 240000, nota: "Aportado por Juanma. Tres facturas acumuladas de limón. COSTO OPERATIVO (insumo consumible): SÍ reduce el resultado del período. 🚩 Que se paguen tres facturas juntas sugiere atraso con el proveedor — conviene revisar si hay más cuentas de este tipo pendientes, como la de La Casa del Repostero ($292.600, marcada 'Pendiente' desde el 29-ago)." },
+  { date: "2026-09-19", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Arreglo parlante La Sala", categoria: "Mantenimiento", valor: 180000, nota: "Aportado por Juanma. Reparación de parlante. COSTO OPERATIVO: reduce el resultado del período. Es gasto exclusivo de La Sala, a diferencia del sonido del Búnker de agosto ($40.000) que quedó como CxC entre locales." },
+  { date: "2026-09-19", semana: 25, periodo: "Sem 3 sep (14 - 20 sep)", concepto: "Botella de vino Santa Helena", categoria: "Reposición inventario", valor: 46000, nota: "Aportado por Juanma. REPOSICIÓN DE INVENTARIO: no reduce el resultado del período. 🚩 Costo documentado de la botella de vino: $46.000, contra los $36.900 que trae el CATALOG en VINO BOTELLA. Verificar si es la misma referencia (Santa Helena) y actualizar el costo — afecta el margen de COPA DE VINO y LIMONADA DE VINO. Verificar también el Ent en el inventario del 19-sep." },
 ];
 
 // ─── Storage ───
@@ -15955,7 +16545,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-09-13");
+  const [selDate,setSelDate]=useState("2026-09-18");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -16465,19 +17055,19 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios,bar}){
           <div style={{fontSize:11,color:C.muted,marginTop:2}}>sobre {fmtF(totAcum.venta)} de venta total</div>
         </div>
       </div>
-      <div style={{display:"grid",gridTemplateColumns:`repeat(${monthBreakdown.length+1},1fr)`,gap:8}}>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(160px,1fr))",gap:8}}>
         {monthBreakdown.map((m,i)=>(
-          <div key={i} style={{background:m.mes===activeMonth?C.bg:C.card,padding:"10px 12px",borderRadius:10,border:`1px solid ${m.mes===activeMonth?C.gold+"60":C.bdr}`,position:"relative"}}>
-            <div style={{fontSize:10,color:m.mes===activeMonth?C.gold:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>{m.label}</div>
-            <div style={{fontSize:9,color:C.muted,marginTop:1}}>{m.dias} días · {fmtF(m.venta)}</div>
-            <div style={{fontSize:16,fontWeight:800,color:m.netoReal>=0?C.green:C.red,marginTop:6,fontFamily:"'Poppins',sans-serif",letterSpacing:-0.3}}>{fmtF(m.netoReal)}</div>
-            <div style={{fontSize:9,color:C.muted,marginTop:2,display:"flex",justifyContent:"space-between"}}>
-              <span>POS {fmtF(m.netoPos)}</span>
-              <span style={{color:C.purple}}>−T {fmtF(m.transf)}</span>
+          <div key={i} style={{background:m.mes===activeMonth?C.bg:C.card,padding:"10px 12px",borderRadius:10,border:`1px solid ${m.mes===activeMonth?C.gold+"60":C.bdr}`,position:"relative",minWidth:0,overflow:"hidden"}}>
+            <div style={{fontSize:10,color:m.mes===activeMonth?C.gold:C.dim,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{m.label}</div>
+            <div style={{fontSize:9,color:C.muted,marginTop:1,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{m.dias} días · {fmtF(m.venta)}</div>
+            <div style={{fontSize:16,fontWeight:800,color:m.netoReal>=0?C.green:C.red,marginTop:6,fontFamily:"'Poppins',sans-serif",letterSpacing:-0.3,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{fmtF(m.netoReal)}</div>
+            <div style={{fontSize:9,color:C.muted,marginTop:2,display:"flex",justifyContent:"space-between",gap:6,flexWrap:"wrap"}}>
+              <span style={{whiteSpace:"nowrap"}}>POS {fmtF(m.netoPos)}</span>
+              <span style={{color:C.purple,whiteSpace:"nowrap"}}>−T {fmtF(m.transf)}</span>
             </div>
           </div>
         ))}
-        <div style={{background:`linear-gradient(135deg, ${(netoRealAcum>=0?C.green:C.red)}25 0%, ${C.bg} 100%)`,padding:"10px 12px",borderRadius:10,border:`2px solid ${netoRealAcum>=0?C.green:C.red}`,position:"relative"}}>
+        <div style={{background:`linear-gradient(135deg, ${(netoRealAcum>=0?C.green:C.red)}25 0%, ${C.bg} 100%)`,padding:"10px 12px",borderRadius:10,border:`2px solid ${netoRealAcum>=0?C.green:C.red}`,position:"relative",minWidth:0,overflow:"hidden"}}>
           <div style={{fontSize:10,color:C.gold,textTransform:"uppercase",letterSpacing:1.5,fontWeight:700}}>Σ Total</div>
           <div style={{fontSize:9,color:C.muted,marginTop:1}}>{cuadres.length} días · {fmtF(totAcum.venta)}</div>
           <div style={{fontSize:16,fontWeight:800,color:netoRealAcum>=0?C.green:C.red,marginTop:6,fontFamily:"'Poppins',sans-serif",letterSpacing:-0.3}}>{fmtF(netoRealAcum)}</div>
@@ -17842,7 +18432,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera,cxc}){
-  const HOY="2026-09-13";
+  const HOY="2026-09-18";
   const cxcList=(cxc||[]).filter(c=>c.estado!=="cobrada");
   const cxcTotal=cxcList.reduce((a,c)=>a+(c.valor||0),0);
   const cxcVenc=cxcList.filter(c=>c.vence<HOY);
