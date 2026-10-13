@@ -1254,6 +1254,20 @@ const PRELOADED_CUADRES = [
     efectivo: 0, tarjeta: 1789600, otros_pago: 0,
     pizza_80: 438880, gastos: 11940, nomina: 262500, costo_financiero: 89480,
     neto_sala: 1149800, faltante: -111440,
+  },
+  {
+    date: "2026-10-10", venta_total: 618800,
+    estanco: 200400, cocteles: 182000, pizzeria: 236400, otros_venta: 0,
+    efectivo: 14385, tarjeta: 306800, otros_pago: 0,
+    pizza_80: 189120, gastos: 100115, nomina: 197500, costo_financiero: 15340,
+    neto_sala: 116725, faltante: 0,
+  },
+  {
+    date: "2026-10-11", venta_total: 2318000,
+    estanco: 718000, cocteles: 838000, pizzeria: 762000, otros_venta: 0,
+    efectivo: 0, tarjeta: 2237000, otros_pago: 0,
+    pizza_80: 609600, gastos: 5000, nomina: 197500, costo_financiero: 111850,
+    neto_sala: 1394050, faltante: -121500,
   }
 ];
 
@@ -3613,6 +3627,43 @@ const PRELOADED_COCINA = [
       { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800, nota: "SKU nuevo en el archivo. Mismo precio que las BBQ ($31.800)." },
     ],
     nota: "✅ Suma exacta $548.600 = pizzería POS, y el acumulado cruza 8/8 con el detalle por factura. SIN CORTESÍAS por duodécimo día procesado seguido. 11 comandas (A-018606 a A-018620). 🔎 NOCHE DE PICADA, NO DE PIZZA: 8 porciones de alitas (7 BBQ + 1 picante) = $254.400, el 46,4% de la cocina. Solo 3 pizzas. Es el perfil típico de una noche de show: comida para compartir mientras se bebe. 💰 El aliado se lleva $438.880 y a La Sala le quedan $109.720. ⚠️ REFUERZA EL ARGUMENTO DEL 80/20: las alitas y las pastas son platos de preparación simple y alta rotación, muy distintos de una pizza en horno — y son el 53,6% de lo que se facturó hoy. SKU nuevo: ALITAS PICANTES BUFFALO."
+  },
+  {
+    date: "2026-10-10", total: 236400, total_units: 8,
+    productos: [
+      { nombre: "PT BOLOGNESA RG", cantidad: 2, valor: 76800, nota: "$38.400 c/u, las dos en la factura A-018626." },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 1, valor: 40000 },
+      { nombre: "PT CARBONARA RG", cantidad: 1, valor: 38400 },
+      { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
+      { nombre: "ADICION COMIDA", cantidad: 1, valor: 5000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+    ],
+    nota: "✅ Suma exacta $236.400 = pizzería POS, acumulado 7/7. SIN CORTESÍAS por decimotercer día procesado seguido. Solo 3 comandas (A-018626, 627, 628). 🚩🚩 UN SÁBADO SIN UNA SOLA PIZZA: los 8 ítems son pastas, lasagnas y una adición. Es el quinto día de los últimos siete sin pizza (06, 07, 09 parcialmente, 10). La 'pizzería' se volvió una cocina de pastas que igual entrega el 80%. 💰 El aliado se lleva $189.120 y a La Sala le quedan $47.280 — menos de la cuarta parte de la nómina del día ($197.500). ⚠️ ES LA TERCERA VEZ EN OCHO DÍAS que la cocina factura casi todo en platos que no son pizza. El argumento para renegociar el 80/20 por categoría ya tiene evidencia de sobra."
+  },
+  {
+    date: "2026-10-11", total: 762000, total_units: 23,
+    productos: [
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 5, valor: 159000, nota: "$31.800 c/u. Cuatro comandas (A-018639, 640, 643 y 645, esta última por dos). EL PLATO MÁS VENDIDO DEL DÍA y el de mayor rotación del mes: 5 unidades en una noche." },
+      { nombre: "PZ CARNAVAL ESP MED", cantidad: 2, valor: 108000, nota: "$54.000 c/u (A-018646 y A-018649)." },
+      { nombre: "PZ AB CARNES MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ MEXICANA MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ HAWAIANA MED", cantidad: 1, valor: 52800 },
+      { nombre: "PZ CARNAVAL ESP PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ HAWAIANA PEQ", cantidad: 1, valor: 38400 },
+      { nombre: "PT BOLOGNESA RG", cantidad: 1, valor: 38400 },
+      { nombre: "HB MEXICANA", cantidad: 1, valor: 37000 },
+      { nombre: "HB BBQ", cantidad: 1, valor: 36000 },
+      { nombre: "HB DE RES", cantidad: 1, valor: 35000 },
+      { nombre: "PZ DE LA GRANJA PEQ", cantidad: 1, valor: 32400 },
+      { nombre: "PT POLLO BECHAMEL JR", cantidad: 1, valor: 31200 },
+      { nombre: "PT CARBONARA JR", cantidad: 1, valor: 31200 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "ADICION COMIDA", cantidad: 1, valor: 2000 },
+      { nombre: "EMPAQUE", cantidad: 1, valor: 2000 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 1, valor: 0, nota: "🚩 CORTESÍA. Comanda A-018660, la última de la noche, facturada en CERO. ROMPE UNA RACHA DE 13 DÍAS PROCESADOS SIN CORTESÍAS EN COCINA. A carta una AB Especial pequeña vale ~$39.600, de los cuales $31.680 se los lleva igual el aliado: la cortesía no la paga Abuela Pizza, la paga La Sala. PEDIR LA AUTORIZACIÓN: quién la aprobó y a qué mesa." },
+    ],
+    nota: "✅ Suma exacta $762.000 = pizzería POS, acumulado 8/8. LA MEJOR COCINA DEL MES Y LA SEGUNDA MEJOR DEL ARCHIVO: 23 ítems en 12 comandas (A-018639 a A-018660). ✅✅ VUELVE LA PIZZA: 9 pizzas por $379.200, el 49,8% de la cocina, contra CERO pizzas el sábado y una sola el 6-7 de octubre. El domingo víspera de festivo es día de pizza; el resto de la semana es cocina de pastas, hamburguesas y alitas. ⚠️ Eso matiza —no anula— el argumento del 80/20: la mezcla no es estable, oscila entre 0% y 50% de pizza según el día, y el aliado cobra el 80% de todo por igual. 🚩 UNA CORTESÍA ($39.600 a carta) rompe la racha de 13 días limpios. 💰 El aliado se lleva $609.600 y a La Sala le quedan $152.400 — por primera vez en el mes la cocina cubre su propia nómina, pero apenas."
   }
 ];
 
@@ -7088,6 +7139,68 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -150000, nota: "Reconstrucción $724.000 vs cócteles POS $574.000 → −$150.000 = −20,7%, precisión del 79,3%. Es el ajuste de coctelería más grande del archivo. ⚠️⚠️ PERO HAY QUE LEERLO JUNTO CON EL ESTANCO: allá el ajuste es de +$82.000. TOMANDO EL BAR COMPLETO, la reconstrucción da $1.472.000 contra $1.404.000 del POS → −$68.000, o sea 95,4% de precisión, perfectamente normal. El grueso del problema es de CLASIFICACIÓN entre estanco y coctelería, no de valor. 🔎 LO QUE SÍ PODRÍA SER DESCUENTO REAL: HOY HUBO SHOW EN VIVO (artista Tommy, ver PRELOADED_GASTOS_TRANSFERENCIA) y la nómina subió a $262.500, la más alta del archivo. Las noches de show suelen traer cortesías para el artista y su equipo, y eso no queda marcado en la tirilla. ⚠️ SE VALORIZA TODO A CARTA PLENA porque el viernes NO es día de 2x1 según la política confirmada por Juanma. Aplicar 2x1 a las cinco parejas del día (Gin Tonic, Margarita, New The Time y las dos de Mojito) dejaría la reconstrucción en $544.000 y el ajuste en +$30.000, pero sería contradecir la política. PEDIR LAS FACTURAS DEL VIERNES: con $150.000 en juego y show de por medio, vale la pena saber si hubo cortesías o si el POS clasifica distinto." },
     ],
     nota: "VIERNES 9 OCT — NOCHE DE SHOW. Venta $1.952.600, NETO POS $1.149.800 (58,9%). 🏆🏆 EL MEJOR MARGEN PORCENTUAL DEL ARCHIVO y el segundo mejor neto absoluto, solo por detrás del sábado 19-sep ($2.123.190). Rompe en seco la racha de tres días en mínimos (6, 7 y 8 de octubre sumaron $44.590 de neto; hoy solo, $1.149.800). 🔎 LO QUE HIZO EL DÍA: el ESTANCO disparado a $830.000 (42,5% de la venta), el valor más alto del archivo — 37 cervezas nacionales, 12 Coronas y 4 medias de aguardiente. La coctelería puso $574.000 (29,4%) y la cocina $548.600 (28,1%) con 8 porciones de alitas. Es el perfil clásico de noche de concierto: mucha cerveza, mucho trago, picada para compartir. ✅✅ Y ES EL DÍA QUE MEJOR DEFIENDE LA INVERSIÓN EN SHOWS: el 18 y 19 de septiembre el show de ZicriSabdi costó $1.000.000 y generó $6.673.600 en dos noches. Hoy, con una sola noche de Tommy, se hicieron $1.952.600 contra un viernes normal de ~$1.500.000. ⚠️ GASTOS DE CAJA DE SOLO $11.940 y nómina de $262.500 (la más alta del archivo, lógica para noche de show). Con $438.880 al aliado de cocina y $89.480 de costo financiero, aun así quedaron $1.149.800. ⚠️ EFECTIVO $0 y tarjeta $1.789.600 → el costo financiero más alto del archivo ($89.480). Sobrante $111.440. ✅✅ DÉCIMO DÍA SEGUIDO DE CRUCES: inventario 51/51 y bar 15/16 (falla solo la vodka botella). 🎉 El LICOR DE MENTA por fin entró al inventario tras 13 días. ⚠️ TRASLADO AL BÚNKER DE UNA BOTELLA DE BUCHANAN'S (factura A-018625): el traslado más valioso del archivo. 🚩 Estanco +$82.000 y coctelería −$150.000: tomado el bar completo el día cierra al 95,4%, así que es problema de clasificación entre categorías más (probablemente) cortesías de la noche de show. 🚩 CORONA EN 6 y AGUA TÓNICA EN 1 con sábado por delante. 🚩 Copa de sangría vendida con la caja de vino en cero."
+  },
+  {
+    date: "2026-10-10", total_estanco: 200400, total_cocteles: 182000, total: 382400, total_units: 56,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 15, precio_unit: 9000, total: 135000 },
+      { nombre: "CERVEZA CORONA", cantidad: 6, precio_unit: 13000, total: 78000, nota: "✅ REPUESTA: entraron 24 el mismo día (6→24), atendiendo la alerta del viernes." },
+      { nombre: "GASEOSA 1.5", cantidad: 4, precio_unit: 10000, total: 40000, nota: "El mayor volumen de gaseosa de litro y medio del archivo. Deja el SKU en 3." },
+      { nombre: "SMIRNOFF", cantidad: 2, precio_unit: 13000, total: 26000, nota: "PVP $13.000 (Smirnoff Ice según CATALOG). Deja el SKU en 6." },
+      { nombre: "AGUA", cantidad: 3, precio_unit: 6000, total: 18000 },
+      { nombre: "RED BULL", cantidad: 1, precio_unit: 15000, total: 15000 },
+      { nombre: "AGT BOTLLA CAUCA", cantidad: 4, precio_unit: 0, total: 0, nota: "🚩🚩 CUATRO BOTELLAS SIN INGRESO — LA BANDERA MÁS GRANDE DEL DÍA. Sal 4 (9→5). A PVP son $360.000, casi el DOBLE del estanco POS completo del día ($200.400): no caben ni dejando todo lo demás en cero. Tampoco hay cóctel que las consuma (los únicos preparados son 1 jarra de sangría, 2 K Margarita y 1 limonada cerezada) ni factura de traslado al Búnker. ⚠️ ES LA SEGUNDA VEZ: el 03-oct salieron 3 botellas de aguardiente en las mismas condiciones ($270.000 a carta). Entre los dos días son SIETE BOTELLAS y $630.000 de producto a carta (~$300.000 a costo) fuera del inventario sin ingreso ni documento. PEDIR LA FACTURA DE TRASLADO O LA EXPLICACIÓN: si es consumo de evento, cortesía o traslado al Búnker hay que registrarlo; si no, es la fuga más grande del archivo." },
+      { nombre: "VINO BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "🔎 INSUMO DE LA JARRA DE SANGRÍA, no venta. La CAJA DE VINO lleva tres días en cero y hoy salió una botella con una jarra vendida: queda establecido que la sangría se prepara con VINO BOTELLA cuando no hay caja. Eso resuelve además la duda del 09-oct (copa de sangría con la caja en cero)." },
+      { nombre: "WHISKY COCTELERIA", cantidad: 1, precio_unit: 0, total: 0, nota: "Insumo de coctelería (1→0). Ningún cóctel del día lleva whisky; cuarta vez que este SKU sale sin receta asociada." },
+      { nombre: "GASEOSA", cantidad: 15, precio_unit: 0, total: 0, nota: "Mezcladores. Cruza exacto con la Sal 15." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -111600, nota: "Reconstrucción $312.000 vs estanco POS $200.400 → −$111.600 = −35,8%, precisión del 64,2%. ES EL AJUSTE DE ESTANCO MÁS GRANDE DEL ARCHIVO. ⚠️ NO ES DIFERENCIA DE PRODUCTO: las 10 líneas con movimiento cruzan EXACTO contra la columna Sal. Y NO ES EL AGUARDIENTE: las 4 botellas de Caucano ya están valorizadas en CERO, así que la brecha es ADICIONAL a ellas. 🔎 QUÉ LA EXPLICARÍA: con $111.600 no alcanza ningún SKU individual, pero sí combinaciones — las 6 Coronas ($78.000) más las 2 Smirnoff ($26.000) dan $104.000 y dejarían la brecha en −$7.600 (96,2%). Eso encajaría con un traslado al Búnker de cerveza y Smirnoff junto con el aguardiente, que es exactamente el perfil de los traslados anteriores (el del 02-oct fueron 4 Smirnoff; el del 25-sep, 26 nacionales y 6 importadas). 🚩 NO SE FUERZA EL SUPUESTO porque no llegó factura. El total termina en ',400', lo que además delata al menos una línea con precio digitado a mano. PEDIR LAS FACTURAS DEL SÁBADO Y LA DE TRASLADO: entre el aguardiente ($360.000 a carta) y esta brecha, el día tiene ~$470.000 de producto sin explicar." },
+    ],
+    cocteles: [
+      { nombre: "JARRA SANGRIA", cantidad: 1, precio_unit: 98000, total: 98000, nota: "✅✅ EL PRECIO DE LA JARRA SE CONFIRMA POR SEGUNDA VÍA. El 08-oct la aritmética lo dejó en $99.000 por residuo; hoy, con dos K Margarita a carta plena ($72.000) y una limonada cerezada ($12.000), el residuo da $98.000. DOS DÍAS INDEPENDIENTES CONVERGEN EN ~$98.000-99.000, con composiciones de venta completamente distintas. Eso deja prácticamente probado que la jarra vale ~$98.000 y NO los $30.000 que trae el archivo de septiembre (2, 8 y 11-sep). ACTUALIZAR EL PRECIO y revisar si los tres registros de septiembre fueron a precio viejo o están mal. 💰 Con la jarra a $98.000 y una botella de vino de costo ~$37.600, el margen de la sangría es del 62% — es el producto de mejor margen absoluto de la coctelería después de la Pecera." },
+      { nombre: "K MARGARITA", cantidad: 2, precio_unit: 36000, total: 72000, nota: "Carta plena: sábado, sin 2x1 (política confirmada). Vinieron en pareja y aun así van a $36.000 — es otra confirmación de que la paridad no implica promoción fuera de martes y miércoles." },
+      { nombre: "LIMONADA CEREZADA", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 0, nota: "✅ Reconstrucción $182.000 = cócteles POS $182.000. AJUSTE CERO — pero por construcción: el residuo se asignó a la Jarra de Sangría. ✅✅ LO QUE SÍ ES EVIDENCIA DURA: los 2 K Margarita van a CARTA PLENA en sábado. Si se les hubiera aplicado 2x1, la jarra tendría que valer $134.000, muy lejos del $99.000 que dio el jueves 8. La consistencia entre los dos días SOLO funciona si el sábado va a precio pleno — o sea, la política de martes y miércoles se verifica por tercera vez." },
+    ],
+    nota: "SÁBADO 10 OCT — Venta $618.800, NETO POS $116.725 (18,9%). 🚩🚩 EL PEOR SÁBADO DEL ARCHIVO CON DIFERENCIA: cae un 68% frente al sábado anterior ($1.931.900 el 3-oct) y un 68% frente al viernes ($1.952.600). Es menos de un tercio de lo que hizo la noche de Tommy 24 horas antes. Composición: pizzería $236.400 (38,2%), estanco $200.400 (32,4%), cócteles $182.000 (29,4%). ⚠️ EL CONTRASTE CON EL VIERNES ES LA LECCIÓN DEL MES: viernes con show $1.952.600 y $1.149.800 de neto; sábado sin show $618.800 y $116.725. La diferencia de neto entre los dos días es de $1.033.075. Si el sábado es estructuralmente flojo sin programación, conviene llevar el show al sábado o hacer dos noches, como en el fin de semana del 18-19 de septiembre. ✅ VOLVIÓ ALGO DE EFECTIVO: $14.385 contra tarjeta $306.800 → costo financiero $15.340. Caja exacta, sin faltante. ✅ GRAN REPOSICIÓN DE SÁBADO (9 SKUs): Corona +24 y Agua tónica +4 atienden las dos alertas que quedaron del viernes. ✅✅ UNDÉCIMO DÍA SEGUIDO DE CRUCES PERFECTOS: inventario 51/51 y bar 10/10. ✅✅ EL PRECIO DE LA JARRA DE SANGRÍA QUEDA PRÁCTICAMENTE PROBADO en ~$98.000 (dos días independientes, 08 y 10-oct, convergen) contra los $30.000 registrados en septiembre. Y los 2 K Margarita a carta plena en sábado confirman la política del 2x1 por tercera vez. 🚩🚩 CUATRO BOTELLAS DE AGUARDIENTE CAUCANO SIN INGRESO ($360.000 a carta): segunda vez en ocho días (el 03-oct fueron 3 botellas). Entre los dos, siete botellas y $630.000 sin explicación. 🚩 ESTANCO AL 64,2%, el peor del archivo: hay ~$111.600 adicionales de brecha que probablemente correspondan a un traslado no documentado de cerveza y Smirnoff. PEDIR LA FACTURA. 🚩 Línea RES. con Vr.IVA $30.000: decimonovena aparición."
+  },
+  {
+    date: "2026-10-11", total_estanco: 718000, total_cocteles: 838000, total: 1556000, total_units: 117,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 24, precio_unit: 9000, total: 216000, nota: "Repuestas 48 el mismo día (124→148)." },
+      { nombre: "TEQUILA BOTELLA", cantidad: 2, precio_unit: 195000, total: 390000, nota: "🚩🚩 DOS BOTELLAS DE TEQUILA EN UNA NOCHE, $390.000 a carta — la línea más cara del día. Sal 2 (3→1). Es la CUARTA vez que el tequila botella sale en condiciones dudosas (26-sep, 30-sep y el del 02-oct que lleva nueve días sin aparecer). Ver el AJUSTE." },
+      { nombre: "AGT BOTLLA CAUCA", cantidad: 2, precio_unit: 90000, total: 180000, nota: "Sal 2, repuestas 2 el mismo día (saldo neto 5). Tercer día consecutivo con aguardiente Caucano saliendo en volumen." },
+      { nombre: "AMARILLO BOT", cantidad: 2, precio_unit: 90000, total: 180000, nota: "🚩 Sal 2 (2→0): se vació el SKU. El Amarillo ya figuró como TRASLADO A EL BÚNKER el 20-sep y a precio cero cuatro veces más. Ver el AJUSTE." },
+      { nombre: "RON CALDAS BOTELLA", cantidad: 1, precio_unit: 110000, total: 110000, nota: "Sal 1 (2→1). 🔎 Podría ser insumo de las 3 Peceras y no venta: el Ron Caldas botella ya figuró a precio cero cuatro veces (09 y 12-sep entre otras) y como traslado al Búnker el 17-sep." },
+      { nombre: "CERVEZA CORONA", cantidad: 6, precio_unit: 13000, total: 78000 },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 5, precio_unit: 13000, total: 65000 },
+      { nombre: "AGT MEDIA CAUCA", cantidad: 1, precio_unit: 60000, total: 60000, nota: "Sal 1, repuestas 2 (4→5)." },
+      { nombre: "ELECTROLIT", cantidad: 2, precio_unit: 15000, total: 30000 },
+      { nombre: "SMIRNOFF", cantidad: 1, precio_unit: 13000, total: 13000 },
+      { nombre: "AGUA", cantidad: 1, precio_unit: 6000, total: 6000 },
+      { nombre: "AGUA TONICA", cantidad: 2, precio_unit: 0, total: 0, nota: "✅ INSUMO, no venta: Sal 2 = los 2 K GIN TONIC. Cruce 1:1:1 con la ginebra." },
+      { nombre: "GINEBRA ML", cantidad: 2, precio_unit: 0, total: 0, nota: "✅ INSUMO: Sal 2 = los 2 K GIN TONIC." },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ INSUMO: Sal 1 = la K MARGARITA." },
+      { nombre: "GASEOSA", cantidad: 34, precio_unit: 0, total: 0, nota: "Mezcladores. Cruza exacto con la Sal 34 — el mayor consumo de gaseosa del archivo, coherente con ocho botellas abiertas." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -610000, nota: "🚩🚩🚩 EL AJUSTE MÁS GRANDE DEL ARCHIVO, POR MUCHO. Reconstrucción $1.328.000 vs estanco POS $718.000 → −$610.000, precisión 54,1%. ⚠️ NO ES DIFERENCIA DE PRODUCTO: las 15 líneas con movimiento cruzan EXACTO contra la columna Sal del inventario. ES DIFERENCIA DE VALOR, Y TIENE UN SOLO ORIGEN POSIBLE: LAS OCHO BOTELLAS. 🔎 LA ARITMÉTICA ES CONCLUYENTE: cervezas (24 nacionales, 6 Corona, 5 importadas), agua, 2 Electrolit y 1 Smirnoff suman $408.000 a carta y son indiscutibles. Del estanco POS de $718.000 quedan $310.000 para OCHO BOTELLAS que a carta valen $920.000. Es decir: AL MENOS $610.000 DE BOTELLA SALIERON SIN INGRESO, y el promedio implícito por botella ($38.750) está por debajo del COSTO de la mitad de ellas (tequila $77.800, Ron Caldas $59.300, Caucano $42.900). NO SE FUERZA NINGUNA ASIGNACIÓN porque no hay factura que diga cuáles. 🔎 LAS DOS HIPÓTESIS, Y NO SON EXCLUYENTES: (1) TRASLADO AL BÚNKER — es la explicación que Juanma ya dio para las brechas de estanco en septiembre, y el domingo víspera de festivo es exactamente cuando el Búnker necesita surtido; el Amarillo y el Ron Caldas ya tienen traslado documentado (20-sep y 17-sep). (2) INSUMO DE COCTELERÍA — toda la despensa de coctelería está en CERO (whisky coctelería, ginebra botella, vodka, cachaza, amaretto, licor de café, Smirnoff bot) y 15 de los 18 cócteles del día no tienen ningún insumo registrado: se prepararon con botellas de estanco. Si la combinación fuera 2 Tequila + 2 Amarillo sin ingreso, el residuo cae a −$40.000 (94,4%); si fuera 2 Tequila + 2 Amarillo + Ron Caldas, a +$70.000. 📄 PEDIR: la factura de traslado al Búnker del 11-oct y la 'Baja de Coctelería' de la tirilla del bar (quedó cortada en la foto) — ese segundo documento resuelve el caso solo." },
+    ],
+    cocteles: [
+      { nombre: "K PECERA LA SALA", cantidad: 3, precio_unit: 95000, total: 285000, nota: "✅✅ TRES PECERAS EN UNA NOCHE, récord del archivo. Es el producto de mejor margen de la carta. 🔎 Las 3 Peceras son las principales candidatas a haber consumido el Ron Caldas botella." },
+      { nombre: "K FROZEN GRANIZADO", cantidad: 5, precio_unit: 25000, total: 125000, nota: "$25.000 es el precio vigente, no una promoción: se repite sin excepción desde el 14-sep (18, 19 y 24-sep, 02 y 09-oct), todos ellos días sin 2x1. El archivo todavía lo trae a $36.000 en junio–agosto: HUBO BAJA DE PRECIO en septiembre." },
+      { nombre: "K ULA ULA", cantidad: 3, precio_unit: 36000, total: 108000 },
+      { nombre: "K GIN TONIC", cantidad: 2, precio_unit: 36000, total: 72000, nota: "Carta plena: domingo, sin 2x1. Cruce perfecto con ginebra ML 2 y agua tónica 2." },
+      { nombre: "MICHELADA", cantidad: 6, precio_unit: 12000, total: 72000 },
+      { nombre: "K PINA COLADA CON LIC", cantidad: 1, precio_unit: 47000, total: 47000 },
+      { nombre: "SODA ITALIANA", cantidad: 3, precio_unit: 15000, total: 45000 },
+      { nombre: "K BLUE SKY", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MARGARITA", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MARTINI DRY", cantidad: 1, precio_unit: 36000, total: 36000, nota: "🚩 Sin insumo registrado: DRY MARTINY no se movió (saldo 1) y la ginebra ML se agotó en los gin tonic." },
+      { nombre: "K MOJITO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "LIMONADA NATURAL", cantidad: 2, precio_unit: 12000, total: 24000 },
+      { nombre: "COPA DE VINO", cantidad: 1, precio_unit: 15000, total: 15000, nota: "🚩 Sin insumo: la caja de vino y el vino botella ENTRARON 2 cada uno y no salió ninguno. Segunda vez en tres días (el 09-oct pasó lo mismo con una copa de sangría)." },
+      { nombre: "LIMONADA CEREZADA", cantidad: 1, precio_unit: 12000, total: 12000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -111000, nota: "Reconstrucción $949.000 vs cócteles POS $838.000 → −$111.000, precisión 88,3%. Todos los precios usados están verificados contra observaciones de octubre (gin tonic, margarita, martini dry, mojito y ula ula a $36.000; frozen a $25.000; pecera a $95.000; michelada a $12.000; soda a $15.000). 🔎 LA HIPÓTESIS MÁS LIMPIA ES UNA CORTESÍA: si una de las tres Peceras fue invitación, el residuo cae a −$16.000 (98,1%). Y NO ES ESPECULATIVO QUE HUBO CORTESÍAS ESA NOCHE: la cocina facturó una PZ AB ESPECIAL PEQ en cero (comanda A-018660). PEDIR el listado de cortesías del domingo." },
+    ],
+    nota: "DOMINGO 11 OCT — VÍSPERA DE FESTIVO. Venta $2.318.000, NETO POS $1.394.050 (60,1%). ✅✅✅ EL MEJOR DÍA DE OCTUBRE Y EL MEJOR NETO DEL ARCHIVO SIN SHOW. Supera incluso la noche de Tommy del viernes 9 ($1.952.600 de venta y $1.149.800 de neto) sin pagar un peso de artista. 🚩 LA LECCIÓN DEL MES SE REESCRIBE: el domingo víspera de festivo rinde más que el viernes con show, y el sábado sin programación es el peor día. La programación debería leer el calendario de festivos antes que el día de la semana. ✅ GASTO DE CAJA DE $5.000, el más bajo del archivo en un día de más de $2.000.000: la venta alta llegó sin compras cargadas a la caja. ⚠️ VENTA 100% TARJETA: efectivo $0 y datáfono $2.237.000 → costo financiero $111.850, el más alto del mes y el 4,8% del neto. Con $81.000 de venta en efectivo implícita y $202.500 pagados de nómina y gastos, LA BASE ADELANTÓ $121.500 (el 'sobrante' de la tirilla): hay que reponerla, como el 7 y el 9 de octubre. ✅ FALTANTE DE TARJETA EN CERO POR SEGUNDO DÍA: la racha de diferencias de datáfono ($23.160 en siete días) se cortó. ✅✅ DUODÉCIMO DÍA SEGUIDO DE CRUCES PERFECTOS: inventario 51/51 y bar 15/15 contra la columna Sal, en una tirilla con la columna de saldo desalineada. ✅ VUELVE LA PIZZA: 9 pizzas, el 49,8% de la cocina, contra cero el sábado. 🚩 UNA CORTESÍA EN COCINA (PZ AB Especial pequeña, $39.600) rompe 13 días limpios. 🚩🚩🚩 OCHO BOTELLAS POR $920.000 A CARTA CONTRA UN ESTANCO POS DE $718.000 DEL QUE SOLO $310.000 PUEDEN SER BOTELLA: AL MENOS $610.000 DE PRODUCTO SALIERON SIN INGRESO. Es el tercer día consecutivo del fenómeno (03-oct: 3 aguardientes, $270.000; 10-oct: 4 aguardientes, $360.000) y ahora acumula $1.240.000 a carta —unos $600.000 a costo— en nueve días. YA NO ES UNA ANOMALÍA, ES UN PATRÓN. Si es traslado al Búnker hay que facturarlo entre los dos negocios; si es insumo de coctelería hay que reponer la despensa (está toda en cero) y costear los cócteles de verdad; si no es ninguna de las dos, es la fuga más grande del archivo y lleva tres días seguidos."
   }
 ];
 
@@ -16919,6 +17032,122 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
     ],
     nota: "✅✅ VERIFICADO 51/51 LÍNEAS, SIN CORRIMIENTO, la apertura confirma el cierre del 08-oct en los 51 SKUs, y el bar cruza 15/16 contra la columna Sal — DÉCIMO DÍA CONSECUTIVO de la racha (30-sep a 09-oct). Se hizo zoom sobre la columna final porque el día tenía 31 líneas de bar y el riesgo de desfase era alto; la línea de LICOR DE MENTA, que en primera lectura parecía imposible (Ent 1 con saldo 0), resultó ser Ent 1 / Sal 0 / Saldo 1 y cierra bien. ✅ ENTRADAS (6 SKUs): Buchanan's botella +1 (que salió el mismo día al Búnker), Ron Caldas botella +1, Ron Caldas media +1, Tequila media +1, Cigarrillos +1 y LICOR DE MENTA +1. 🎉 EL LICOR DE MENTA POR FIN INGRESÓ: los 2 Menta Chao comprados el 26-sep (factura POE 83103, $16.600) nunca habían entrado al stock y quedó marcado 13 días seguidos. Hoy entra 1 unidad. Queda pendiente la segunda. SALIDAS (16 SKUs): Nacional −37 (164→127), Gaseosa −18 (105→87), Corona −12 (18→6), Media Antioqueño −4 (6→2), Agua tónica −2, Tequila ML −2, Importada −1, Agua −1, Ginebra ML −1, Licor de manzana −1, Triplesec −1, Ron Caldas botella −1, Buchanan's botella −1, Buchanan's media −1, Old Parr media −1. ⚠️ TRASLADO A EL BÚNKER por factura A-018625 del 10/10/2026, rotulada 'Para Bunker': 1 WHISKY BUCHANANS BOTELLA a $0. A PVP de carta son $230.000 (la media); la botella entera, mucho más. Es el traslado más valioso del archivo y entró y salió el mismo día. ✅ CONFIRMADO POR JUANMA: la botella se CARGÓ AL INVENTARIO DE EL BÚNKER, así que el movimiento tiene contrapartida registrada del otro lado. 🚩 VODKA BOTELLA VENDIDA SIN DESCARGAR: el POS del bar reporta 1 pero el inventario mantiene VODKA ABSOLUT BOTELLA en 0 con Sal 0 — es la única línea que no cruza de las 16. Si se vendió, el stock ya estaba en cero desde antes, así que o se vendió producto que no estaba registrado o es un error de digitación. 🚩 CORONA EN 6 y AGUA TÓNICA EN 1: las dos críticas para el sábado. Reponer HOY. 🚩 BUCHANAN'S MEDIA y OLD PARR MEDIA EN CERO: se usaron los dos para los 2 TRAGO DOBLE del día. 🚩 El tequila del 02-oct lleva SIETE días sin aparecer. 🚩 SMIRNOFF ICE y GREEN APPLE: 52ª tirilla ausentes."
+  },
+  {
+    date: "2026-10-10", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:6},
+      {nombre:"AGT MEDIA CAUCA",saldo:4},
+      {nombre:"AGUA",saldo:23},
+      {nombre:"AGUA TONICA",saldo:5},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:2},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:0},
+      {nombre:"CERVEZA CORONA",saldo:24},
+      {nombre:"CERVEZA IMPORTADA",saldo:18},
+      {nombre:"CERVEZA NACIONAL",saldo:124},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:1},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:7},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:80},
+      {nombre:"GASEOSA 1.5",saldo:3},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:7},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:3},
+      {nombre:"RON CALDAS BOTELLA",saldo:2},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"SMIRNOFF",saldo:6},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:3},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:3},
+      {nombre:"TEQUILA ML",saldo:4},
+      {nombre:"TRIPLESEC",saldo:4},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:2},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:2},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1},
+      {nombre:"SMIRNOFF ICE",saldo:6},
+      {nombre:"SMIRNOFF GREEN APPLE",saldo:6},
+    ],
+    nota: "✅✅ VERIFICADO 51/51 LÍNEAS, SIN CORRIMIENTO, la apertura confirma el cierre del 09-oct en los 51 SKUs, y el bar cruza 10/10 contra la columna Sal — UNDÉCIMO DÍA CONSECUTIVO de la racha (30-sep a 10-oct). 🔧 Se hizo zoom sobre las últimas filas porque la línea de WHISKY BUCHANANS BOTEL parecía no cerrar (Ent 1 con saldo aparente 1 sobre una apertura de 1); el zoom confirma SALDO 2, no 1. Corregido antes de registrar. ✅ GRAN REPOSICIÓN DE SÁBADO (9 SKUs): Cerveza Corona +24 (6→24, se atendió la alerta de ayer), Cerveza Nacional +12, Gaseosa +8, Agua tónica +4 (1→5, también estaba en alerta), Media Antioqueño +4, Antioqueño botella +2, Ron Caldas botella +1, Buchanan's botella +1, Buchanan's media +1 y Old Parr media +1. ⚠️ SIN FACTURA ASOCIADA: ninguna de estas entradas tiene soporte en el módulo de compras ni en el ledger de transferencias. Es la cuarta reposición grande de octubre sin documento. 🚩🚩 CUATRO BOTELLAS DE AGUARDIENTE CAUCANO SALIERON (9→5) Y EL ESTANCO DEL DÍA ES DE SOLO $200.400: a PVP son $360.000, casi el doble de TODO el estanco. No caben de ninguna manera. Es la misma situación del 03-oct (3 botellas por $270.000) y no hay factura de traslado al Búnker hoy. Ver la nota del bar: es la bandera más grande del día. SALIDAS (10 SKUs): Nacional −15, Gaseosa −15, Corona −6, Caucano botella −4, Gaseosa 1.5 −4, Agua −3, Smirnoff −2, Red Bull −1, Vino botella −1, Whisky coctelería −1 (1→0). 🔎 LA SANGRÍA SE HACE CON VINO BOTELLA, NO CON CAJA DE VINO: la caja lleva tres días en cero y hoy salió 1 VINO BOTELLA con una JARRA DE SANGRIA vendida. Eso resuelve también la duda del 09-oct (copa de sangría con la caja en cero). ✅ RON EN BUEN NIVEL por primera vez en semanas: Ron DL 3, Ron Caldas botella 2 y media 2. 🚩 CAJA DE VINO y WHISKY COCTELERÍA en cero. 🚩 El tequila del 02-oct lleva OCHO días sin aparecer. 🚩 SMIRNOFF ICE y GREEN APPLE: 53ª tirilla ausentes."
+  },
+  {
+    date: "2026-10-11", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:7},
+      {nombre:"AGT BOTLLA CAUCA",saldo:5},
+      {nombre:"AGT BOTLLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑ",saldo:6},
+      {nombre:"AGT MEDIA CAUCA",saldo:5},
+      {nombre:"AGUA",saldo:22},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETTO",saldo:0},
+      {nombre:"AMARILLO BOT",saldo:0},
+      {nombre:"AMARILLO MED",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:18},
+      {nombre:"CERVEZA IMPORTADA",saldo:13},
+      {nombre:"CERVEZA NACIONAL",saldo:148},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:1},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:3},
+      {nombre:"DRY MARTINY",saldo:1},
+      {nombre:"ELECTROLIT",saldo:5},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:46},
+      {nombre:"GASEOSA 1.5",saldo:3},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:5},
+      {nombre:"LICOR CAFÉ",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:11},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:3},
+      {nombre:"RON CALDAS BOTELLA",saldo:1},
+      {nombre:"RON CALDAS MEDIA",saldo:2},
+      {nombre:"RON DL",saldo:3},
+      {nombre:"SMIRNOFF",saldo:5},
+      {nombre:"SMIRNOFF BOT",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:3},
+      {nombre:"TEQUILA ML",saldo:3},
+      {nombre:"TRIPLESEC",saldo:4},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO BOTELLA",saldo:0},
+      {nombre:"VODKA BOTELLA",saldo:0},
+      {nombre:"VODKA MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:2},
+      {nombre:"BUCHANAN'S BOTELLA",saldo:2},
+      {nombre:"BUCHANAN'S MEDIA",saldo:1},
+      {nombre:"WHISKEY COCTELERIA",saldo:0},
+      {nombre:"OLD PARR BOTELLA",saldo:1},
+      {nombre:"OLD PARR MEDIA",saldo:1},
+    ],
+    nota: "✅✅ APERTURA = CIERRE DEL 10-OCT EN LAS 51 LÍNEAS. Cruce perfecto, DUODÉCIMO DÍA SEGUIDO. ⚠️ TIRILLA CON LA COLUMNA DE SALDO DESALINEADA (los dígitos imprimen medio renglón por encima del nombre): se reconstruyó línea por línea con apertura + Ent − Sal y las 51 cuadran, pero es la clase de tirilla que produjo los 8 errores de agosto. ✅ REPOSICIÓN FUERTE DE VÍSPERA DE FESTIVO: Cerveza Nacional +48 (124→148, el stock más alto del archivo), Caucano botella +2, Caucano media +2, Caja de vino +2 (vuelve tras tres días en cero) y Vino botella +2. ✅ CAJA DE VINO Y VINO BOTELLA REABASTECIDOS: la sangría recupera insumo. 🚩🚩 OCHO BOTELLAS DE ALTO VALOR SALIERON EN UNA NOCHE: 2 Tequila botella, 2 Amarillo bot, 2 Caucano botella, 1 Caucano media y 1 Ron Caldas botella — $920.000 a carta. El estanco POS completo del día fue de $718.000 y las cervezas, el agua, el electrolit y el Smirnoff ya ocupan $408.000 de ese total: SOLO QUEDA ESPACIO PARA ~$310.000 DE BOTELLA. Ver la nota del bar. 🚩 AMARILLO BOT, TEQUILA LITRO, VODKA (las tres presentaciones), GINEBRA BOTELLA, WHISKY COCTELERÍA, CACHAZA, AMARETTO, LICOR DE CAFÉ y SMIRNOFF BOT en CERO: la despensa de coctelería está vacía y los cócteles se están preparando con botellas de estanco. 🚩 Tequila botella baja a 1; el tequila del 02-oct lleva NUEVE días sin aparecer. 🚩 SMIRNOFF ICE y GREEN APPLE: 54ª tirilla ausentes."
   }
 ];
 
@@ -18186,6 +18415,23 @@ const PRELOADED_GASTOS = [
       { concepto: "Gastos del día (sin foto de soporte)", categoria: "Por itemizar", valor: 11940, nota: "No llegó la nota de gastos del viernes. El monto termina en cifra no redonda, lo que en este archivo casi siempre indica comida ($5.000 o $10.000) más una diferencia de datáfono. Si fueran $5.000 de comida, la diferencia de tarjeta habría sido de $6.940 — muy cerca de los $6.960 del jueves 8. Queda por itemizar hasta tener el soporte." },
     ],
     nota: "$11.940, gasto de caja mínimo en el día de mayor venta del mes. ✅ ES LA COMBINACIÓN QUE MÁS CONVIENE: venta alta sin compras cargadas a la caja. El contraste con el martes 6 es total ($389.600 de venta y $143.350 de gasto). 🚩 Con nómina de $262.500 (la más alta del archivo, por la noche de show) y gastos de solo $11.940, el día deja $1.149.800 de neto POS. Pedir el soporte para separar la comida de la posible quinta diferencia de datáfono del mes."
+  },
+  {
+    date: "2026-10-10", total: 100115,
+    items: [
+      { concepto: "Comida", categoria: "Alimentación personal", valor: 10000, nota: "Monto estándar del archivo." },
+      { concepto: "Compras La Placita (fact. FPT77132)", categoria: "Insumos / Plaza", valor: 41705, nota: "⚠️ La nota manuscrita tiene los dos rótulos INTERCAMBIADOS: el valor de $41.705 corresponde a la factura FPT77132 de La Placita y el de $48.410 a la factura H6Z9520734 de D1. Se corrigió contra los números de factura." },
+      { concepto: "Compras D1 (fact. H6Z9520734)", categoria: "Insumos / D1", valor: 48410, nota: "Factura fechada 2026-10-09 pero cargada al cuadre del sábado 10." },
+      { concepto: "Faltante de tarjeta", categoria: "Diferencia datáfono", valor: 0, nota: "✅ Cero por primera vez desde el 3 de octubre. Rompe la racha de diferencias de datáfono ($13.700 + $1.700 + $800 + $6.960 en los días operativos previos)." },
+    ],
+    nota: "$100.115 de gasto de caja, íntegramente insumos (La Placita $41.705 + D1 $48.410 = $90.115, el 90% del total) más $10.000 de comida. ⚠️ AMBAS FACTURAS ESTÁN FECHADAS 2026-10-09 pero se cargaron al cuadre del sábado 10 — el gasto del viernes queda subestimado y el del sábado sobreestimado; para análisis mensual da igual, para comparación día a día no. ✅ Faltante de tarjeta en CERO: primera vez desde el 3 de octubre. 🚩 Con $618.800 de venta (la más baja de un sábado en el archivo) y $100.115 de gasto, el gasto de caja se come el 16,2% de la venta — contra el 1,0% del viernes 9."
+  },
+  {
+    date: "2026-10-11", total: 5000,
+    items: [
+      { concepto: "Comida", categoria: "Alimentación personal", valor: 5000, nota: "No llegó foto de la nota de gastos, pero el monto es exacto y redondo y coincide con el valor mínimo de comida que usa el archivo. Sin faltante de tarjeta implícito." },
+    ],
+    nota: "$5.000 — EL GASTO DE CAJA MÁS BAJO DEL ARCHIVO EN UN DÍA DE MÁS DE $2.000.000 DE VENTA: el 0,2% de la venta, contra el 16,2% del sábado 10. ✅✅ ES LA COMBINACIÓN IDEAL Y CONVIENE ENTENDER POR QUÉ SE DIO: la reposición fuerte del domingo (48 cervezas, 4 aguardientes, 2 cajas de vino, 2 vinos botella) NO se pagó de la caja, se pagó por transferencia o a crédito del proveedor. Ese es el manejo que hay que estandarizar: compras por transferencia con factura, caja solo para comida y menudeo. ✅ Faltante de tarjeta en cero por segundo día seguido."
   }
 ];
 
@@ -18827,7 +19073,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-10-09");
+  const [selDate,setSelDate]=useState("2026-10-11");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -20714,7 +20960,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera,cxc}){
-  const HOY="2026-10-09";
+  const HOY="2026-10-11";
   const cxcList=(cxc||[]).filter(c=>c.estado!=="cobrada");
   const cxcTotal=cxcList.reduce((a,c)=>a+(c.valor||0),0);
   const cxcVenc=cxcList.filter(c=>c.vence<HOY);
