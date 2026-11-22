@@ -1495,6 +1495,38 @@ const PRELOADED_CUADRES = [
     pizza_80: 105600, gastos: 53700, nomina: 130000, costo_financiero: 17310,
     neto_sala: 85390, faltante: -137900,
   }
+,
+  {
+    date: "2026-11-18", venta_total: 720400,
+    estanco: 77000, cocteles: 343000, pizzeria: 300400, otros_venta: 0,
+    efectivo: 2500, tarjeta: 404600, otros_pago: 0,
+    pizza_80: 240320, gastos: 188300, nomina: 125000, costo_financiero: 20230,
+    neto_sala: 146550, faltante: 0,
+  }
+,
+  {
+    date: "2026-11-19", venta_total: 506200,
+    estanco: 189000, cocteles: 153000, pizzeria: 164200, otros_venta: 0,
+    efectivo: 0, tarjeta: 463200, otros_pago: 0,
+    pizza_80: 131360, gastos: 34220, nomina: 125000, costo_financiero: 23160,
+    neto_sala: 192460, faltante: -116220,
+  }
+,
+  {
+    date: "2026-11-20", venta_total: 1340800,
+    estanco: 688000, cocteles: 253000, pizzeria: 399800, otros_venta: 0,
+    efectivo: 0, tarjeta: 1246800, otros_pago: 0,
+    pizza_80: 319840, gastos: 10000, nomina: 197500, costo_financiero: 62340,
+    neto_sala: 751120, faltante: -113500,
+  }
+,
+  {
+    date: "2026-11-21", venta_total: 1390600,
+    estanco: 242000, cocteles: 557000, pizzeria: 591600, otros_venta: 0,
+    efectivo: 0, tarjeta: 1129800, otros_pago: 0,
+    pizza_80: 473280, gastos: 482400, nomina: 200000, costo_financiero: 56490,
+    neto_sala: 178430, faltante: -421600,
+  }
 ];
 
 const PRELOADED_COCINA = [
@@ -4323,6 +4355,62 @@ const PRELOADED_COCINA = [
       { nombre: "CHAMPINONES PARMESANOS", cantidad: 1, valor: 28800 }
     ],
     nota: "MARTES 17 NOV — Cocina $132.000 en 4 unidades, comandas A-019027, A-019028 y A-019029 (3 mesas). ✅ SUMA EXACTA. 🚩 UNA SOLA PIZZA OTRA VEZ, y apenas el 30,0% de la cocina. Es la tercera proporción de pizza más baja del archivo. Los otros $92.400 fueron dos alitas y unos champiñones parmesanos. 📈 DIFERENCIAL 80/20: el aliado se llevó $105.600 y a La Sala le quedaron $26.400. Con reparto por categoría La Sala habría recibido $100.320: $73.920 MÁS. OTRA VEZ EL ALIADO SE LLEVA CUATRO VECES LO QUE LE QUEDA A LA SALA, y de los cuatro productos vendidos TRES NO SON SUYOS. 📈 DIECISIETE DÍAS MEDIDOS: acumulado $1.448.380, promedio $85.199 diarios → ~$2.556.000 MENSUALES. 📌 EL PATRÓN DE LOS ÚLTIMOS SEIS DÍAS ES CONTUNDENTE: el 12-nov la cocina fue 100% pizza y el diferencial fue $0; desde entonces, a medida que cae la proporción de pizza, el diferencial sube. NO ES UNA OPINIÓN SOBRE EL ALIADO — es aritmética del contrato. 🆕 DOS PRECIOS NUEVOS AL CATÁLOGO: CHAMPINONES PARMESANOS $28.800 y PZ POTOTO PEQ $39.600."
+  },
+  {
+    date: "2026-11-18", total: 300400, total_units: 10,
+    productos: [
+      { nombre: "PZ AB ESPECIAL GR", cantidad: 1, valor: 67200 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 2, valor: 63600 },
+      { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "EMPAQUE", cantidad: 2, valor: 4000 }
+    ],
+    nota: "MIÉRCOLES 18 NOV — Cocina $300.400 en 10 unidades, comandas A-019034 → A-019042 (5 mesas). ✅ SUMA EXACTA. ✅ LA COCINA SE RECUPERÓ: de $132.000 el martes a $300.400 hoy, con dos pizzas grandes/medianas. 🚩🚩 PERO EL MIX ES EL MÁS ADVERSO DEL ARCHIVO PARA EL 80/20: solo $121.200 de pizza (40,3%) contra $179.200 de alitas, hamburguesa, papas y empaques. CUATRO PORCIONES DE ALITAS en una noche. 📈📈 Y POR ESO HOY ES EL SEGUNDO MAYOR DIFERENCIAL DEL ARCHIVO: el aliado se llevó $240.320 y a La Sala le quedaron $60.080. Con reparto por categoría La Sala habría recibido $203.440: $143.360 MÁS EN UN SOLO DÍA. Solo lo supera el sábado 07-nov ($250.400). 📈 DIECIOCHO DÍAS MEDIDOS: acumulado $1.591.740, promedio $88.430 diarios → ~$2.653.000 MENSUALES. 📌 EL ARGUMENTO YA ESTÁ COMPLETO Y MEDIDO: tres semanas de datos, un promedio estable por encima de los $85.000 diarios, y el caso límite del 12-nov (cocina 100% pizza → diferencial $0) que demuestra que el problema NO es el aliado sino el alcance del contrato. ES HORA DE SENTARSE A RENEGOCIAR."
+  },
+  {
+    date: "2026-11-19", total: 164200, total_units: 3,
+    productos: [
+      { nombre: "PZ CARNAVAL ESP GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ CARNAVAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 }
+    ],
+    nota: "JUEVES 19 NOV — Cocina $164.200 en 3 unidades, comandas A-019044, A-019045 y A-019048. ✅ SUMA EXACTA. ✅ BUEN MIX: dos pizzas por $121.200, el 73,8% de la cocina — la segunda proporción más alta de noviembre después del 13-nov (81,7%). Y una de ellas grande. 📈 DIFERENCIAL 80/20: el aliado se llevó $131.360 y a La Sala le quedaron $32.840. Con reparto por categoría La Sala habría recibido $67.240: $34.400 MÁS. Es el diferencial MÁS BAJO de la semana, y la razón es justamente el buen mix: solo la lasagna ($43.000) quedó fuera de la pizzería. 📈 DIECINUEVE DÍAS MEDIDOS: acumulado $1.626.140, promedio $85.586 diarios → ~$2.568.000 MENSUALES. 📌 DOS DÍAS SEGUIDOS QUE ILUSTRAN EL CONTRATO ENTERO: ayer 40,3% de pizza y $143.360 de diferencial; hoy 73,8% de pizza y $34.400. Son los dos extremos de la misma semana. EL COSTO DEL 80/20 NO DEPENDE DE CUÁNTO VENDE LA COCINA SINO DE QUÉ VENDE — y La Sala no controla eso, porque el cliente pide lo que quiere."
+  },
+  {
+    date: "2026-11-20", total: 399800, total_units: 10,
+    productos: [
+      { nombre: "PZ CARNAVAL GR", cantidad: 1, valor: 67200 },
+      { nombre: "PZ AB CARNES PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ CARNAVAL ESP PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PT CARBONARA RG", cantidad: 1, valor: 38400 },
+      { nombre: "HB DE POLLO", cantidad: 1, valor: 37000 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "HB DE RES", cantidad: 2, valor: 70000 },
+      { nombre: "PT AL CAMPO JR", cantidad: 1, valor: 32400 }
+    ],
+    nota: "VIERNES 20 NOV — Cocina $399.800 en 10 unidades, comandas A-019050 → A-019061 (6 mesas). ✅ SUMA EXACTA. ✅ SEGUNDA MEJOR COCINA DE NOVIEMBRE después del 13-nov ($542.200). 🚩🚩 PERO EL MIX VUELVE A SER ADVERSO: cuatro pizzas por $186.000 (46,5%) contra $213.800 de hamburguesas, pastas y nachos. TRES HAMBURGUESAS, DOS PASTAS Y UNOS NACHOS en una sola noche. 📈📈 DIFERENCIAL 80/20: el aliado se llevó $319.840 y a La Sala le quedaron $79.960. Con reparto por categoría La Sala habría recibido $251.000: $171.040 MÁS EN UN SOLO DÍA. Es el SEGUNDO MAYOR DIFERENCIAL DEL ARCHIVO, detrás del sábado 07-nov ($250.400). 📈 VEINTE DÍAS MEDIDOS: acumulado $1.797.180, promedio $89.859 diarios → ~$2.696.000 MENSUALES. 📌 Y FIJESE EN LA SEMANA COMPLETA: lunes cerrado, martes $73.920, miércoles $143.360, jueves $34.400 y viernes $171.040. SOLO ESTA SEMANA EL CONTRATO LE COSTÓ $422.720 A LA SALA. A ese ritmo son $1,7 millones al mes, y el aliado no pone local, ni mesero, ni luz, ni arriendo. 🆕 CUATRO PRECIOS NUEVOS AL CATÁLOGO: PT AL CAMPO JR $32.400, PZ AB CARNES PEQ $39.600, PZ CARNAVAL GR $67.200 y PT CARBONARA RG $38.400."
+  },
+  {
+    date: "2026-11-21", total: 591600, total_units: 18,
+    productos: [
+      { nombre: "PZ PTLN 2 INGR JR", cantidad: 2, valor: 64800 },
+      { nombre: "PZ AB ESPECIAL MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ POTOTO MED", cantidad: 1, valor: 54000 },
+      { nombre: "PZ AB ESPECIAL PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "PZ POTOTO PEQ", cantidad: 1, valor: 39600 },
+      { nombre: "LASAGNA DE POLLO", cantidad: 2, valor: 80000 },
+      { nombre: "LASAGNA MIXTA", cantidad: 1, valor: 43000 },
+      { nombre: "ALITAS BBQ BUFFALO", cantidad: 3, valor: 95400 },
+      { nombre: "ALITAS PICANTES BUFFALO", cantidad: 1, valor: 31800 },
+      { nombre: "PT BOLOGNESA RG", cantidad: 1, valor: 38400 },
+      { nombre: "NACHOS ESPECIALES", cantidad: 1, valor: 36000 },
+      { nombre: "PAPAS A LA FRANCESA", cantidad: 1, valor: 11000 },
+      { nombre: "EMPAQUE", cantidad: 2, valor: 4000 }
+    ],
+    nota: "SÁBADO 21 NOV — Cocina $591.600 en 18 unidades, comandas A-019065 → A-019076 (10 mesas). ✅ SUMA EXACTA. ✅✅ LA MEJOR COCINA DE NOVIEMBRE, por encima del 13-nov ($542.200). 🚩🚩🚩 PERO CON EL PEOR MIX POSIBLE PARA EL CONTRATO: seis pizzas por $252.000 (42,6%) contra $339.600 de DOS LASAGNAS DE POLLO ($80.000), una lasagna mixta, cuatro porciones de alitas, una pasta bolognesa, unos nachos y unas papas. 📈📈📈 Y POR ESO HOY ES EL MAYOR DIFERENCIAL DEL ARCHIVO, superando al sábado 07-nov: el aliado se llevó $473.280 y a La Sala le quedaron $118.320. Con reparto por categoría La Sala habría recibido $390.000: $271.680 MÁS EN UN SOLO DÍA. 📈 VEINTIÚN DÍAS MEDIDOS: acumulado $2.068.860, promedio $98.517 diarios → ~$2.956.000 MENSUALES. EL ACUMULADO PASA LOS DOS MILLONES Y EL PROMEDIO SUPERA LOS $98.000 DIARIOS. 📌 MIRE LA SEMANA COMPLETA: martes $73.920, miércoles $143.360, jueves $34.400, viernes $171.040 y sábado $271.680. SEIS DÍAS DE OPERACIÓN LE COSTARON $694.400 A LA SALA. A ese ritmo son $2,9 millones al mes — más que el arriendo completo del local. 📌 Y HOY LO DEJA NÍTIDO: las dos lasagnas de pollo valen $80.000 y el aliado se llevó $64.000 de ellas. NO SON PIZZA. No las hace él, no las vende él, y aun así cobra el 80%. 🆕 PRECIO NUEVO AL CATÁLOGO: PZ PTLN 2 INGR JR $32.400 (se vendieron dos)."
   }
 ];
 
@@ -8675,6 +8763,115 @@ const PRELOADED_BAR = [
       { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 0, nota: "✅✅✅ CRUCE EXACTO AL PESO: reconstrucción $195.000 vs cócteles POS $195.000 → AJUSTE CERO, PRECISIÓN 100%. Segundo cruce perfecto de coctelería del archivo, después del jueves 12-nov. 🚩🚩 PERO CUADRA A PRECIO PLENO — Y HOY ES MARTES, QUE ES DÍA DE 2x1. Los cinco cócteles de kit (3 gin tonic y 2 martini dry) se facturaron a $36.000 cada uno, más una limonada de coco a $15.000. Con 2x1 la reconstrucción daría $123.000 (pareja a $36.000) o $133.000 (pareja a $40.000), y el POS dice $195.000. NO HAY MARGEN DE DUDA: ESTE MARTES NO SE APLICÓ EL 2x1. 📌 Compare con el martes 10 y el miércoles 11, que SÍ cuadraron con descuento. Entonces, o la promoción se suspendió, o hoy no se aplicó por descuido. 📄 LA PREGUNTA ES DIRECTA Y VALE PLATA EN LOS DOS SENTIDOS: ¿SIGUE VIGENTE EL 2x1 DE MARTES Y MIÉRCOLES? Si sigue vigente, hoy se cobró de más a los clientes. Si se suspendió, hay que registrarlo porque cambia cómo valoro todos los martes y miércoles de aquí en adelante." }
     ],
     nota: "MARTES 17 NOV — Venta $392.000, NETO POS +$85.390. 🚩 CON EL ARRIENDO CARGADO ($185.869/día) EL DÍA CIERRA EN −$100.479. Es el primer día en rojo real desde el domingo 08. Una venta de $392.000 no alcanza a cubrir la estructura. ✅✅✅ CRUCE DE INVENTARIO 6/6 PERFECTO y TIRILLA LIMPIA en las dos columnas, revisada línea por línea: tónica (9→3), corona (35→34), nacional (154→143), Dry Martini (1→0), gaseosa (121→120) y ginebra ML (3→2). La apertura cuadra EXACTO con el cierre del domingo en las 51 referencias — el lunes 16 estuvo cerrado y no hubo movimiento. ✅✅✅ LA COCTELERÍA CRUZA EXACTO AL PESO: $195.000 contra $195.000. Segundo cruce perfecto del archivo. 🚩🚩 PERO CUADRA A PRECIO PLENO, Y HOY ES MARTES — DÍA DE 2x1. ESTE MARTES NO SE APLICÓ LA PROMOCIÓN. El martes 10 y el miércoles 11 sí cuadraron con descuento. ¿SE SUSPENDIÓ EL 2x1, O NO SE APLICÓ POR DESCUIDO? Ver la nota del ajuste: la respuesta cambia cómo valoro todos los martes y miércoles de aquí en adelante. 🔬 Y ESE CRUCE PERFECTO VUELVE CONCLUYENTE LO DE LA CERVEZA: el mismo día, la misma tirilla y el mismo cajero, los cócteles cuadran al 100% y el estanco al 58,0%. YA NO ES UN PROBLEMA DE CATÁLOGO NI DE LECTURA: ES LA CERVEZA, Y SOLO LA CERVEZA. Segundo día seguido: ayer 21 cervezas a $3.952, hoy 12 a $5.417. 📄 CON DOCE CERVEZAS, LAS FACTURAS DE LAS MESAS DE HOY LO RESUELVEN EN CINCO MINUTOS. 🚩🚩🚩 LA BASE YA VA EN $648.750 SIN REPONER — Y ESTO SE ESTÁ VOLVIENDO EL PROBLEMA MÁS SERIO DE CAJA DEL MES. Sábado $470.850 + domingo $40.000 + hoy $137.900. Son TRES DÍAS SEGUIDOS cerrando con CERO efectivo. La práctica de reponer al día siguiente funcionó dos veces la semana pasada y se soltó por completo este fin de semana. CON $648.750 FUERA DE LA BASE, EL NEGOCIO ESTÁ OPERANDO SIN COLCHÓN DE CAJA. ✅ LA NOTA DE GASTOS SUMA EXACTO y la cuenta de cobro de la galería (#84, $48.000) viene fechada HOY. 🚩 FALTANTE DE TARJETA $700: el datáfono reportó $346.900 contra $346.200 del POS. Pequeño, pero vuelve la diferencia tras el cero del sábado. SIGO SIN EL EXTRACTO. ✅ NÓMINA $130.000 — dos turnos de martes, esquema aprobado. Se respeta por décimo día. 📌 LUNES 16 CERRADO: sin cuadre y sin movimiento de bodega. Queda registrado el salto en la serie. 📊 NETO ACUMULADO POS DESDE EL PUNTO CERO: +$3.327.380."
+  },
+  {
+    date: "2026-11-18", total_estanco: 77000, total_cocteles: 343000, total: 420000, total_units: 49,
+    estanco: [
+      { nombre: "CERVEZA NACIONAL", cantidad: 14, precio_unit: 9000, total: 126000, nota: "✅ CRUCE PERFECTO (143→129)." },
+      { nombre: "ELECTROLIT", cantidad: 1, precio_unit: 8000, total: 8000, nota: "✅ CRUCE PERFECTO (3→2)." },
+      { nombre: "GASEOSA", cantidad: 9, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (120→111). Mezclador de los 16 cócteles." },
+      { nombre: "TEQUILA BOTELLA", cantidad: 1, precio_unit: 0, total: 0, nota: "🚩🚩 SALIÓ UNA BOTELLA ENTERA (2→1) el mismo día que salió 1 TEQUILA ML. Las margaritas se preparan con ML, no con botella. A carta la botella vale $195.000 y el estanco facturado del día fue $77.000: NO ESTÁ VENDIDA. O es traslado, o se abrió para fraccionar sin registrar la conversión. PREGUNTAR." },
+      { nombre: "AMARETO", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (1→0). Insumo. Queda en CERO — reponer si sigue en carta." },
+      { nombre: "CREMA DE WHISKY", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (1→0). Insumo. Queda en CERO." },
+      { nombre: "CURAZAO AZUL", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (3→2). Insumo de las Burbujas Azules." },
+      { nombre: "LICOR DE MANZANA", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (5→4). Insumo." },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (3→2). Insumo de las margaritas." },
+      { nombre: "TRIPLE SEC", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (2→1). Insumo de margarita y cosmopolitan. Queda 1 — reponer." },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (2→1). 🚩 Queda UNA medida y la botella y la DL siguen en cero." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -57000, nota: "🚩🚩 Reconstrucción $134.000 vs estanco POS $77.000 → −$57.000, precisión 57,5%. TERCER DÍA SEGUIDO CON LA CERVEZA MUY POR DEBAJO DE CARTA: domingo 15 a $3.952, martes 17 a $5.417, hoy a $4.929. 💸 Y AHORA SE PUEDE MEDIR CONTRA EL COSTO REAL, que la factura Bavaria del 14-nov dejó en $4.370 por unidad: las 14 nacionales costaron $61.180 y se facturaron unos $69.000. MARGEN DE 11%, cuando a carta debería ser 52%. Sumando los tres días: 47 cervezas que costaron $205.390 dejaron apenas $9.610 de margen bruto. 📌 LA CERVEZA DEJÓ DE SER NEGOCIO ESTOS TRES DÍAS, y no es un problema de catálogo: la coctolería del MISMO día cruza al 98,8% con los precios del archivo. Es específico de la cerveza. 📄 SIGO PIDIENDO LO MISMO Y YA ES LA CUARTA VEZ: el detalle de facturas por mesa de uno de estos tres días. Con 14 cervezas y 5 mesas, el del miércoles se revisa en cinco minutos y cierra la pregunta de una vez." }
+    ],
+    cocteles: [
+      { nombre: "K MARGARITA", cantidad: 5, precio_unit: 21600, total: 108000, nota: "2x1 — dos parejas a $36.000 más una suelta a $36.000." },
+      { nombre: "K BURBUJAS AZULES", cantidad: 4, precio_unit: 18000, total: 72000, nota: "2x1 — dos parejas. Consume el curazao azul del estanco." },
+      { nombre: "K LONG ISLAND", cantidad: 3, precio_unit: 24000, total: 72000, nota: "2x1 — una pareja a $36.000 más una suelta a $36.000." },
+      { nombre: "K COSMOPOLITAN", cantidad: 2, precio_unit: 18000, total: 36000, nota: "2x1 — pareja." },
+      { nombre: "K MOJITO", cantidad: 2, precio_unit: 18000, total: 36000, nota: "2x1 — pareja. 🚩 Dos mojitos con Ron Caldas botella y Ron DL en CERO: salen de las 2 medias que quedan." },
+      { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000 },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 4000, nota: "✅✅ Reconstrucción $339.000 vs cócteles POS $343.000 → +$4.000, PRECISIÓN 98,8% sobre 17 bebidas. 🎯 Y ESTE DÍA CONFIRMA CÓMO FUNCIONA EL 2x1, que venía siendo la duda más cara del archivo. Los 16 cócteles de kit salieron en 7 PAREJAS más 2 SUELTAS. Valorando la pareja a $36.000 y la suelta también a $36.000 — es decir, 2x1 literal: se paga uno y se llevan dos — el día cuadra al 98,8%. Sin promoción, los 16 cócteles darían $591.000 contra $343.000 facturados: imposible. 📌 QUEDA ESTABLECIDO: la pareja del mismo SKU vale $36.000, igual que una sola. Coincide con el miércoles 11 ($35.818 implícitos en once parejas) y descarta la lectura de $40.000 la pareja que parecía cuadrar el 03 y el 10 de noviembre. 🚩🚩 PERO EL MARTES 17 NO SE APLICÓ: ese día los cinco cócteles se facturaron a $36.000 CADA UNO y el cruce dio exacto a precio pleno. Miércoles sí, martes no. 📄 LA PREGUNTA SIGUE ABIERTA Y AHORA ES MÁS CONCRETA: ¿el 2x1 sigue vigente los MARTES, o quedó solo los miércoles? Si sigue vigente, el martes se cobró de más. 🍸 CINCO MARGARITAS — segundo día del mes con el SKU por encima de 5 unidades." }
+    ],
+    nota: "MIÉRCOLES 18 NOV — Venta $720.400, NETO POS +$146.550. 🚩 Con el arriendo cargado ($185.869/día) EL DÍA CIERRA EN −$39.319. Segundo día seguido en rojo real. ✅✅ PERO EL NETO POS SUBESTIMA EL DÍA: de los $188.300 de gastos, $177.900 son REPOSICIÓN DE BASE (domingo 15 y martes 17), que no es gasto sino devolución al cajón. EL GASTO OPERATIVO REAL FUERON $10.400 y el resultado económico del día es +$324.450 — o +$138.581 después del arriendo. VISTO ASÍ, EL MIÉRCOLES CERRÓ EN VERDE. ✅✅✅ SE REPUSO LA BASE — $177.900 del domingo 15 ($40.000) y el martes 17 ($137.900), cada uno con su nota de respaldo. Es la tercera vez en el mes que un señalamiento del tablero se corrige, y esta vez con el soporte separado por día. LA PRÁCTICA ESTÁ VOLVIENDO. ✅✅✅ FALTANTE CERO EXACTO con $2.500 de efectivo. ✅✅✅ CRUCE DE INVENTARIO 11/11 PERFECTO: amareto, nacional, crema de whisky, curazao, Electrolit, gaseosa, ginebra ML, licor de manzana, tequila botella, tequila ML y triple sec. Y la apertura cuadra EXACTO con el cierre del martes en las 51 referencias. ⚠️⚠️ LA COLUMNA FINAL VIENE CORRIDA otra vez — sexto episodio en doce días. Ver la nota del inventario. 🎯🎯 QUEDA RESUELTO EL 2x1: la pareja del mismo SKU vale $36.000, lo mismo que una sola. Es 2x1 literal. El día cuadra al 98,8% con esa lectura y es imposible sin promoción. PERO EL MARTES 17 NO SE APLICÓ — ver la nota del ajuste de coctolería: queda por confirmar si el 2x1 sigue corriendo los martes o quedó solo los miércoles. 🚩🚩🚩 TERCER DÍA SEGUIDO CON LA CERVEZA POR DEBAJO DE CARTA, y ahora se puede medir contra el costo real: con $4.370 por unidad de la factura Bavaria, las 47 cervezas de domingo, martes y miércoles costaron $205.390 y dejaron $9.610 de margen bruto. DEBERÍAN HABER DEJADO MÁS DE $100.000. La coctolería del mismo día cruza al 98,8%, así que no es un problema general: ES LA CERVEZA. 🚩 SALIÓ UNA BOTELLA DE TEQUILA ($195.000 a carta) junto con una medida de tequila ML. Las cinco margaritas se preparan con ML, no con botella. CONVIENE PREGUNTAR QUÉ PASÓ CON ESA BOTELLA: o fue venta de estanco no facturada, o traslado, o se abrió para fraccionar y no quedó registrado como conversión. 🚩 BASE PENDIENTE TRAS LA REPOSICIÓN: quedan $1.257.050 — el sábado 14 ($470.850), el sábado 07 ($785.300, el más antiguo y el más grande) y $900 del 01-nov. ✅ NÓMINA $125.000 — dos turnos de miércoles. Se respeta por undécimo día. 📊 NETO ACUMULADO POS DESDE EL PUNTO CERO: +$3.473.930."
+  },
+  {
+    date: "2026-11-19", total_estanco: 189000, total_cocteles: 153000, total: 342000, total_units: 30,
+    estanco: [
+      { nombre: "AGT MEDIA CAUCANO", cantidad: 2, precio_unit: 60000, total: 120000, nota: "✅ CRUCE PERFECTO (4→2). Primera venta de aguardiente desde el 13-nov. 📌 Su valor a carta ($120.000) coincide EXACTO con la línea RES. Vr.IVA del cuadre — ver la nota del día." },
+      { nombre: "CERVEZA NACIONAL", cantidad: 5, precio_unit: 9000, total: 45000, nota: "✅ CRUCE PERFECTO (129→124). Incluye las 3 cervezas de las micheladas, facturadas aparte de la preparación." },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 1, precio_unit: 13000, total: 13000, nota: "✅ CRUCE PERFECTO (25→24)." },
+      { nombre: "GASEOSA", cantidad: 9, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (111→102). Mezclador del aguardiente y los cócteles." },
+      { nombre: "GASEOSA 1.5", cantidad: 2, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (22→20). Insumo de las cinco sodas italianas, que ya van facturadas en coctolería." },
+      { nombre: "RON CALDAS MEDIA", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (2→1). Base del mojito y el cuba libre. 🚩 QUEDA UNA SOLA MEDIA: botella en cero y Ron DL en cero hace 34 días. Mañana es viernes." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 11000, nota: "✅ Reconstrucción $178.000 vs estanco POS $189.000 → +$11.000, precisión 94,2% sobre 8 unidades vendibles. 🔬 Y ESTO ROMPE LA RACHA DE TRES DÍAS DE CERVEZA BARATA, lo cual es informativo: hoy se vendieron 6 cervezas (5 nacionales y 1 importada) y CRUZAN BIEN a precio de carta. Domingo, martes y miércoles no cruzaban; hoy sí. 📌 EL PATRÓN SE AFINA OTRA VEZ: no es que la cerveza SIEMPRE se venda barata, es que en ALGUNOS días se vende barata y en otros no. Hoy fueron 6 cervezas; los días con brecha fueron 21, 12 y 14. Puede ser volumen (cubetazo a partir de cierto número) o puede ser mesa específica. 📄 El detalle de facturas por mesa de un día con brecha sigue siendo lo único que lo cierra." }
+    ],
+    cocteles: [
+      { nombre: "SODA ITALIANA", cantidad: 5, precio_unit: 15000, total: 75000, nota: "Iguala el récord del SKU del viernes 13." },
+      { nombre: "K CUBA LIBRE", cantidad: 1, precio_unit: 36000, total: 36000, nota: "Primera venta del SKU desde el 21-oct." },
+      { nombre: "K MOJITO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "MICHELADA", cantidad: 3, precio_unit: 2000, total: 6000, nota: "Preparación a $2.000; las tres cervezas van facturadas aparte en estanco." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 0, nota: "✅✅✅ CRUCE EXACTO AL PESO: reconstrucción $153.000 vs cócteles POS $153.000 → AJUSTE CERO, PRECISIÓN 100%. TERCER CRUCE PERFECTO DE COCTELERÍA del archivo, y los tres en los últimos ocho días (12-nov, 17-nov y hoy). 📌 Lo componen: un Cuba Libre y un Mojito a $36.000 cada uno, tres micheladas a $2.000 (la preparación; las tres cervezas van facturadas aparte en estanco) y CINCO SODAS ITALIANAS a $15.000. ✅ CONFIRMA DOS COSAS A LA VEZ: que el cóctel de kit vale $36.000 sin promoción los jueves, y que la michelada vale $2.000 — el precio que corrigí el 07-nov con factura a la mano. 🍸 CINCO SODAS ITALIANAS igualan el récord del SKU del viernes 13." }
+    ],
+    nota: "JUEVES 19 NOV — Venta $506.200, NETO POS +$192.460. Con el arriendo cargado ($185.869/día) EL DÍA CIERRA EN +$6.591 — apenas por encima de cero, pero en verde. ✅✅✅ CRUCE DE INVENTARIO 6/6 PERFECTO: aguardiente media Caucano (4→2), importada (25→24), nacional (129→124), gaseosa (111→102), gaseosa 1.5 (22→20) y ron Caldas media (2→1). La apertura cuadra EXACTO con el cierre del miércoles en las 51 referencias. ✅✅✅ LA COCTELERÍA CRUZA EXACTO AL PESO — tercer cruce perfecto del archivo y el tercero en ocho días. ✅✅ Y EL ESTANCO VUELVE A CRUZAR BIEN (94,2%), rompiendo la racha de tres días de cerveza por debajo de carta. Hoy fueron 6 cervezas y cuadran; los días con brecha fueron de 21, 12 y 14. Ver la nota del ajuste: el patrón se afina. ✅✅ SE VENDIERON DOS MEDIAS DE AGUARDIENTE CAUCANO ($120.000) — primera venta de aguardiente desde el 13-nov. Es lo que levanta el estanco a $189.000, el segundo más alto de la semana. 🚩🚩🚩 PERO HAY UN FALTANTE DE TARJETA DE $29.220, Y ESO SÍ ES NUEVO. Es DE LEJOS el más grande del archivo: los anteriores de noviembre fueron $8.900, $5.400, $2.300 y $1.300. Representa el 6,3% de lo facturado por datáfono ($463.200). Un redondeo de operador no produce $29.220 — esto es otra cosa: una transacción que no llegó, una comisión retenida o un cobro mal digitado. 📄 CON ESTE MONTO, EL EXTRACTO DEL DATÁFONO DEJA DE SER UNA TAREA PENDIENTE Y PASA A SER URGENTE. En lo que va de noviembre las diferencias suman ~$59.000, y $29.220 de eso es de un solo día. 📌 RES. Vr.IVA = $120.000 — QUINTA APARICIÓN, y la primera que coincide EXACTO con una línea de producto: las dos medias de aguardiente Caucano valen $120.000 a carta. Las cuatro anteriores fueron $60.000 (31-oct), $200.000 (06-nov), $215.000 (13-nov) y $36.000 (15-nov) — y la del 15-nov coincide con un cóctel de kit ($36.000). ES LA MEJOR PISTA QUE HA DADO ESA COLUMNA: podría estar acumulando licor gravado con impuesto al consumo. SE PRUEBA EL PRÓXIMO DÍA QUE SE VENDA AGUARDIENTE O BOTELLA. 🚩 SOBRANTE $116.220 Y CERO EFECTIVO por cuarto día del mes: LA BASE PENDIENTE SUBE A $1.373.270. Ayer se repusieron $177.900 y hoy salió casi lo mismo. Mientras los sobrantes se generen más rápido de lo que se reponen, el hueco no se cierra. 🚩 RON: Caldas media baja a 1, la botella sigue en cero y el Ron DL cumple 34 DÍAS desde el pago de $200.000. Hoy salieron un mojito y un cuba libre de esa última media. MAÑANA ES VIERNES Y NO HAY RON. ✅ NÓMINA $125.000 — dos turnos de jueves. Se respeta por duodécimo día. 📊 NETO ACUMULADO POS DESDE EL PUNTO CERO: +$3.666.390."
+  },
+  {
+    date: "2026-11-20", total_estanco: 688000, total_cocteles: 253000, total: 941000, total_units: 60,
+    estanco: [
+      { nombre: "TEQUILA BOTELLA", cantidad: 2, precio_unit: 195000, total: 390000, nota: "✅ CRUCE PERFECTO (Ent 2 / Sal 2 → 1). Entraron dos y salieron dos el mismo día. 🔬 Es el 52% de la reconstrucción del estanco y el origen probable de la brecha: a carta son $390.000, pero si el resto va a precio pleno el tequila sale implícito a $163.500 la botella. VER EL AJUSTE." },
+      { nombre: "CERVEZA NACIONAL", cantidad: 9, precio_unit: 9000, total: 81000, nota: "✅ CRUCE PERFECTO (124→115). Incluye las 6 cervezas de las micheladas, facturadas aparte de la preparación." },
+      { nombre: "CERVEZA CORONA", cantidad: 5, precio_unit: 13000, total: 65000, nota: "✅ CRUCE PERFECTO (34→29)." },
+      { nombre: "CERVEZA IMPORTADA", cantidad: 5, precio_unit: 13000, total: 65000, nota: "✅ CRUCE PERFECTO (24→19). Cinco importadas en una noche — el mayor registro desde el 14-nov." },
+      { nombre: "VINO BOTELLA", cantidad: 1, precio_unit: 90000, total: 90000, nota: "✅ CRUCE PERFECTO (3→1) sumando el traslado. De las dos que salieron, UNA se vendió y la otra va en la factura cero del Búnker." },
+      { nombre: "AMARILLO MEDIA", cantidad: 1, precio_unit: 60000, total: 60000, nota: "✅ CRUCE PERFECTO (1→0). 🚩 El aguardiente Amarillo queda en CERO por los dos lados (botella desde el 30-oct y ahora la media). Si sigue en carta, reponer." },
+      { nombre: "AGT BOTLLA ANQUEÑ — TRASLADO A EL BÚNKER", cantidad: 2, precio_unit: 0, total: 0, nota: "📌📌 TRASLADO CON SOPORTE: factura A-019063 marcada a mano 'Bunker', valor CERO. ✅ CRUCE PERFECTO (3→1). A carta son $180.000 para la cuenta corriente Búnker ↔ Sala." },
+      { nombre: "VINO BOTELLA — TRASLADO A EL BÚNKER", cantidad: 1, precio_unit: 0, total: 0, nota: "📌📌 TRASLADO CON SOPORTE: misma factura A-019063, valor CERO. A carta son $90.000 para la cuenta corriente." },
+      { nombre: "GASEOSA", cantidad: 16, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (102→86). Mezclador del aguardiente, el tequila y los cócteles. Dieciséis gaseosas es el mayor consumo desde el 07-nov." },
+      { nombre: "CAJA DE VINO", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (3→2). Insumo de la copa de vino, que va facturada en coctolería." },
+      { nombre: "RON CALDAS MEDIA", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (1→0). 🚩🚩 ERA LA ÚLTIMA: el ron queda en CERO por las tres referencias (Caldas botella, Caldas media y DL). Mañana es sábado." },
+      { nombre: "TEQUILA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (2→1). Insumo de las margaritas." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -63000, nota: "🚩 Reconstrucción $751.000 vs estanco POS $688.000 → −$63.000, precisión 91,6% sobre 23 unidades vendibles. 📌 LOS TRASLADOS AL BÚNKER YA ESTÁN EXCLUIDOS A CERO (2 aguardientes y 1 vino, factura A-019063), así que no explican la brecha. 🔬 Y HOY LA BRECHA TIENE UN SOSPECHOSO CLARO, QUE NO ES LA CERVEZA: las 19 cervezas a carta valen $211.000 y las dos botellas de tequila valen $390.000, el 52% de la reconstrucción. Si todo lo demás va a carta (cervezas, vino botella y la media de amarillo), EL TEQUILA SALE IMPLÍCITO A $163.500 LA BOTELLA en vez de los $195.000 del archivo. La diferencia de $31.500 por botella explica los $63.000 COMPLETOS. 📄 ES UNA PREGUNTA DE UNA SOLA LÍNEA: ¿a cuánto se vende hoy la botella de tequila? El último precio registrado en el archivo es del 24-oct. Si bajó a $163.500 basta corregir el catálogo y la brecha del día desaparece." }
+    ],
+    cocteles: [
+      { nombre: "K MARGARITA", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K ULA ULA", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K MEXICO LINDO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MOJITO", cantidad: 1, precio_unit: 36000, total: 36000, nota: "Consume la última media de Ron Caldas." },
+      { nombre: "JUGO EN AGUA", cantidad: 2, precio_unit: 10000, total: 20000 },
+      { nombre: "COPA DE VINO", cantidad: 1, precio_unit: 15000, total: 15000, nota: "Sale de la caja de vino del estanco." },
+      { nombre: "MICHELADA", cantidad: 6, precio_unit: 2000, total: 12000, nota: "Segundo mayor registro del SKU tras las 13 del 06-nov. Las seis cervezas van en estanco." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -10000, nota: "✅✅ Reconstrucción $263.000 vs cócteles POS $253.000 → −$10.000, precisión 96,2% sobre 15 bebidas. Viernes sin 2x1: los seis cócteles de kit a $36.000, que es el precio confirmado al peso los días 12, 17 y 19. 🍸 SEIS MICHELADAS — el segundo mayor registro del SKU después de las 13 del 06-nov. Las seis cervezas van facturadas aparte en estanco, dentro de las 9 nacionales. 📌 La copa de vino sale de la caja de vino que bajó del inventario." }
+    ],
+    nota: "VIERNES 20 NOV — Venta $1.340.800, NETO POS +$751.120. ✅✅✅ CON EL ARRIENDO CARGADO ($185.869/día) EL DÍA CIERRA EN +$565.251 — EL MEJOR RESULTADO REAL DEL ARCHIVO DESPUÉS DEL 06-NOV. Y con apenas $10.000 de gastos, el más bajo del mes. ✅✅✅ CRUCE DE INVENTARIO 11/11 PERFECTO y TIRILLA LIMPIA en las dos columnas: aguardiente botella Antioqueño, amarillo media, caja de vino, corona, importada, nacional, gaseosa, ron Caldas media, tequila botella, tequila ML y vino botella. La apertura cuadra EXACTO con el cierre del jueves en las 51 referencias. 📌📌 SEGUNDO TRASLADO AL BÚNKER CON SOPORTE DOCUMENTAL: factura A-019063 del 21/11, marcada a mano \"Bunker\", por 2 AGUARDIENTE BOTELLA ANTIOQUEÑO y 1 VINO BOTELLA, todo en valor CERO. A precio de carta son $270.000 que deben cargarse a la cuenta corriente Búnker ↔ Sala. ✅ LA PRÁCTICA SE ESTÁ INSTALANDO: es la segunda vez en ocho días que el traslado llega con su factura cero, tras la del 13-nov. CON ESTA, EL ACUMULADO DOCUMENTADO HACIA EL BÚNKER EN NOVIEMBRE VA EN $670.000. 💰 HAY QUE FORMALIZAR ESA CUENTA CORRIENTE YA: entre el arriendo ($2.896.405), la inyección de capital ($1.834.652) y estos traslados ($670.000), el saldo cruzado entre las dos sociedades pasa de $5 millones y no está en ningún documento. ✅✅ ENTRARON 2 BOTELLAS DE TEQUILA y salieron las 2 el mismo día. Es el patrón Ent=Sal que a veces indica corrección de cargue doble, PERO AQUÍ NO LO ES: sin esas dos botellas el estanco no llega a $688.000 ni de cerca. Se vendieron. 🔬 EL ESTANCO CRUZA AL 91,6% y por primera vez el sospechoso NO es la cerveza: si todo lo demás va a carta, el tequila sale implícito a $163.500 la botella en vez de $195.000, y esa diferencia explica los $63.000 completos. VER LA NOTA DEL AJUSTE — se cierra preguntando un precio. 📌 RES. Vr.IVA = $200.000 — SEXTA APARICIÓN, y la hipótesis del aguardiente se refuerza. Hoy salieron 2 botellas de aguardiente Antioqueño y RES marca $200.000, igual que el 06-nov, que también tuvo exactamente 2 botellas Antioqueño. El 19-nov salieron 2 medias Caucano y RES marcó $120.000. ESO DA BOTELLA $100.000 Y MEDIA $60.000, consistente en tres días distintos. La columna parece acumular el aguardiente — el producto con impuesto al consumo departamental. ⚠️ No cuadra con el 13-nov ($215.000) ni con el 15-nov ($36.000, sin aguardiente ese día), así que falta una pieza. PERO ES LA MEJOR LECTURA EN 216 DÍAS y ya se puede preguntar en concreto. 🚩 SOBRANTE $113.500 Y CERO EFECTIVO por quinto día del mes: LA BASE PENDIENTE SUBE A $1.486.770. Es el tercer día seguido generando sobrante después de la reposición del miércoles. 🚩🚩 Y LLAMA LA ATENCIÓN QUE CON $1.340.800 DE VENTA EL EFECTIVO HAYA SIDO CERO: todo entró por datáfono ($1.246.800), lo que disparó el costo financiero a $62.340 — el segundo más alto del mes. 🚩 EL RON SE ACABÓ: salió la última media de Ron Caldas y quedan las tres referencias en CERO. El Ron DL cumple 35 DÍAS desde el pago de $200.000. Hoy solo hubo un mojito; mañana es sábado. ✅ NÓMINA $197.500 — tres turnos de viernes, esquema aprobado. 📊 NETO ACUMULADO POS DESDE EL PUNTO CERO: +$4.417.510."
+  },
+  {
+    date: "2026-11-21", total_estanco: 242000, total_cocteles: 557000, total: 799000, total_units: 60,
+    estanco: [
+      { nombre: "CERVEZA IMPORTADA", cantidad: 6, precio_unit: 13000, total: 78000, nota: "✅ CRUCE PERFECTO (19→13). Las seis fueron a micheladas." },
+      { nombre: "AGT MEDIA ANQUEÑ", cantidad: 1, precio_unit: 60000, total: 60000, nota: "✅ CRUCE PERFECTO (7→6). Entraron 5 botellas Antioqueño y 2 medias Caucano en la reposición del día." },
+      { nombre: "RON DL", cantidad: 1, precio_unit: 20000, total: 20000, nota: "✅✅✅ ENT 5 / SAL 1 — LLEGÓ EL RON DL tras 36 DÍAS EN CERO desde el pago de $200.000 del 28-oct. Se vendió uno el mismo día. 📌 El ron de hoy se pagó aparte ($100.000 a Don Luis, en caja): los $200.000 de octubre SIGUEN SIN MERCANCÍA." },
+      { nombre: "AGUA", cantidad: 3, precio_unit: 6000, total: 18000, nota: "✅ CRUCE PERFECTO (25→22)." },
+      { nombre: "RED BULL", cantidad: 1, precio_unit: 15000, total: 15000, nota: "✅ CRUCE PERFECTO (2→1). Primera venta del SKU desde el 10-oct." },
+      { nombre: "CERVEZA CORONA", cantidad: 1, precio_unit: 13000, total: 13000, nota: "✅ CRUCE PERFECTO (29→28)." },
+      { nombre: "CERVEZA NACIONAL", cantidad: 1, precio_unit: 9000, total: 9000, nota: "✅ CRUCE PERFECTO (115→114). UNA SOLA NACIONAL en todo el sábado — el registro más bajo del archivo para un fin de semana." },
+      { nombre: "AGUA TONICA", cantidad: 1, precio_unit: 6000, total: 6000, nota: "✅ CRUCE PERFECTO (3+6−1=8). Entraron 6 Schweppes en el pedido de Coca-Cola del 20-nov." },
+      { nombre: "GASEOSA", cantidad: 19, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (86+24−19=91). Mezclador. 📌 Diecinueve gaseosas para 14 cócteles y 8 micheladas es mucho: parte pudo venderse suelta, y eso explicaría el ajuste del estanco." },
+      { nombre: "GINEBRA ML", cantidad: 1, precio_unit: 0, total: 0, nota: "✅ CRUCE PERFECTO (1→0). Insumo. Entraron 1 botella y 5 DL de ginebra en la reposición." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: 23000, nota: "🚩 Reconstrucción $219.000 vs estanco POS $242.000 → +$23.000, precisión 90,5% sobre 14 unidades vendibles. 📌 Hoy el POS facturó POR ENCIMA de la reconstrucción, al revés que los días de brecha de cerveza. Lo más probable es que parte de las 19 gaseosas se haya vendido suelta en vez de usarse como mezclador: con 8 micheladas y 14 cócteles, 19 gaseosas es más de lo que esos tragos necesitan. 📀 OJO CON LA CERVEZA DE HOY: salieron exactamente 8 (6 importadas, 1 corona y 1 nacional) y se vendieron 8 MICHELADAS. Es el primer día del archivo en que TODA la cerveza del día fue a micheladas, y cuadra unidad por unidad — confirma otra vez que la michelada es cerveza facturada en estanco más $2.000 de preparación. ✅ LA MEDIA DE AGUARDIENTE ANTIOQUEÑO ($60.000) y el Ron DL ($20.000) cuadran a carta." }
+    ],
+    cocteles: [
+      { nombre: "K MOJITO MIX", cantidad: 3, precio_unit: 36000, total: 108000, nota: "✅ Posible gracias al Ron DL que entró hoy." },
+      { nombre: "K TEQUILA SUNRISE", cantidad: 3, precio_unit: 36000, total: 108000, nota: "Primera venta del SKU desde el 26-sep." },
+      { nombre: "K MOJITO", cantidad: 2, precio_unit: 36000, total: 72000 },
+      { nombre: "K BLUE HAWAI", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K BURBUJAS AZULES", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K COCO LOCO", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K MARGARITA MIX", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K NEW THE TIME", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "K PINA COLADA SIN LIC", cantidad: 1, precio_unit: 36000, total: 36000 },
+      { nombre: "LIMONADA DE COCO", cantidad: 1, precio_unit: 15000, total: 15000 },
+      { nombre: "LIMONADA NATURAL", cantidad: 1, precio_unit: 15000, total: 15000 },
+      { nombre: "SODA ITALIANA", cantidad: 1, precio_unit: 15000, total: 15000 },
+      { nombre: "MICHELADA", cantidad: 8, precio_unit: 2000, total: 16000, nota: "Segundo mayor registro del SKU tras las 13 del 06-nov. Las 8 cervezas van facturadas en estanco — y hoy coinciden EXACTO: salieron 8 cervezas y se vendieron 8 micheladas." },
+      { nombre: "AJUSTE al POS", cantidad: 0, precio_unit: 0, total: -8000, nota: "✅✅ Reconstrucción $565.000 vs cócteles POS $557.000 → −$8.000, precisión 98,6% sobre 25 bebidas. Sábado sin 2x1: los catorce cócteles de kit a $36.000, el precio confirmado al peso los días 12, 17 y 19. 🍸🍸 CATORCE CÓCTELES DE KIT Y OCHO MICHELADAS: la coctolería fue $557.000, el 40,1% de la venta del día y el mejor registro desde el 14-nov. 🍸 OCHO MICHELADAS es el segundo mayor registro del SKU tras las 13 del 06-nov. ✅ TRES MOJITO MIX Y DOS MOJITOS el mismo día que entró el Ron DL — cinco mojitos que no se habrían podido preparar ayer, cuando el ron estaba en cero por las tres referencias. ES LA MEDIDA EXACTA DE LO QUE CUESTA EL DESABASTECIMIENTO: cinco mojitos son $180.000." }
+    ],
+    nota: "SÁBADO 21 NOV — Venta $1.390.600, NETO POS +$178.430. 🚩 Con el arriendo cargado ($185.869/día) EL DÍA CIERRA EN −$7.439, apenas por debajo de cero. 💰 PERO HAY QUE LEER BIEN LOS $482.400 DE GASTOS: $268.800 son REPOSICIÓN DE INVENTARIO (Don Luis $100.000 de ron, D1 $101.300 de tequila y ginebra, Coca-Cola $67.500), y esa plata está en bodega. El gasto consumido real fueron $213.600. ✅✅✅ LLEGÓ EL RON DL — 36 DÍAS DESPUÉS DEL PAGO DE $200.000 DEL 28-OCT. Entraron 5 unidades y se vendió 1. Con él entraron también 2 botellas y 1 media de Ron Caldas: el ron pasó de CERO en las tres referencias a estar surtido. 📌 PERO OJO CON LA PLATA: el ron de hoy se pagó $100.000 a Don Luis, EN CAJA. Los $200.000 del 28-oct siguen sin tener mercancía asociada. HAY QUE RECLAMARLOS — van 36 días. ✅✅✅ CRUCE DE INVENTARIO 10/10 PERFECTO: aguardiente media Antioqueño, agua, agua tónica, corona, importada, nacional, gaseosa, ginebra ML, Red Bull y Ron DL. La apertura cuadra EXACTO con el cierre del viernes en las 51 referencias y la tirilla viene LIMPIA en las dos columnas. ✅✅✅ GRAN REPOSICIÓN — 65 UNIDADES: 24 gaseosas, 6 tónicas, 5 aguardientes Antioqueño botella, 5 ginebra DL, 5 Ron DL, 5 Vodka DL, 2 Caucano media, 2 Amarillo botella, 2 Amarillo media, 2 Electrolit, 2 Ron Caldas botella, 2 vino botella, 1 Ron Caldas media, 1 ginebra botella y 1 tequila botella. SE ATENDIÓ TODA LA ALERTA DE COCTELERÍA de los últimos tres días: ginebra, ron, tequila y aguardiente amarillo. ✅✅ Y TODO CON SOPORTE: el D1 del 21-nov (H6Z9543053) trae el Tequila Neto $49.950 y la Ginebra Dafne $44.950, y el soporte de Coca-Cola del 20-nov trae las 6 Schweppes tónica y las 24 gaseosas. Las entradas del inventario cuadran una a una con las facturas. ES LA MEJOR TRAZABILIDAD DEL ARCHIVO. ✅✅ LA COCTELERÍA FUE $557.000, el 40,1% de la venta y el mejor registro desde el 14-nov: catorce cócteles de kit, ocho micheladas, dos limonadas y una soda. Cruza al 98,6%. 📀 Y HOY TODA LA CERVEZA FUE A MICHELADAS: salieron 8 cervezas y se vendieron 8 micheladas, unidad por unidad. Primer día del archivo en que coinciden exacto. 🚩🚩🚩 PERO LA COCINA DEJA EL PEOR DIFERENCIAL DEL ARCHIVO: $271.680 en un solo día. Dos lasagnas de pollo por $80.000, cuatro porciones de alitas, una pasta, unos nachos y unas papas — $339.600 que NO son pizza y sobre los que el aliado cobró el 80%. VER LA NOTA DE COCINA. 🚩🚩 SOBRANTE $421.600 Y CERO EFECTIVO por sexto día del mes, otra vez con TODA la venta por datáfono. Se pagaron $482.400 de proveedores y $200.000 de nómina con plata del cajón. ✅ SE ENTREGARON $600.000 EN EFECTIVO EL 20-NOV para completar la base — registrado aparte. Con esa entrega y el sobrante de hoy, LA BASE PENDIENTE QUEDA EN $1.308.370. ✅ NÓMINA $200.000 — tres turnos de sábado. 📌 ENTREGÓ: Gustavo C. 📊 NETO ACUMULADO POS DESDE EL PUNTO CERO: +$4.595.940."
   }
 ];
 
@@ -20337,6 +20534,234 @@ const PRELOADED_INVENTARIOS = [
       {nombre:"OLD PAR MEDIA",saldo:1}
     ],
     nota: "MARTES 17 NOV — CRUCE 6/6 PERFECTO: tónica (9→3), corona (35→34), nacional (154→143), Dry Martini (1→0), gaseosa (121→120) y ginebra ML (3→2). ✅✅ TIRILLA LIMPIA EN LAS DOS COLUMNAS — revisada línea por línea según la regla, sin un solo desfase. Es un alivio después del domingo, donde 43 de 51 líneas venían corridas. ✅ LA APERTURA CUADRA EXACTO con el cierre del domingo en las 51 referencias. EL LUNES 16 ESTUVO CERRADO: sin cuadre, sin ventas y sin movimiento de bodega, así que la cadena no se rompe. 🚩 SE AGOTÓ EL DRY MARTINI EN TRES DÍAS: entró 1 el sábado tras meses en cero y salió hoy con los dos martinis. Si el martini dry se va a mantener en carta, hay que reponerlo con más de una unidad. 🚩 AGUA TÓNICA BAJA DE 9 A 3 EN UNA NOCHE: seis tónicas para tres gin tonics, dos por trago. Con el gin tonic vendiéndose bien, QUEDAN APENAS PARA UN DÍA Y MEDIO. REPONER. 🚩 GINEBRA: quedan 2 ML; la botella y la DL siguen en cero. Mismo caso que la tónica — se vendieron tres gin tonics hoy y el inventario no aguanta otro día así. 🚩🚩 RON DL: TREINTA Y DOS DÍAS EN CERO desde el pago por transferencia de $200.000 del 28-oct. Y el Ron Caldas botella también sigue en cero (quedan 2 medias). ESE PAGO HAY QUE RECLAMARLO. ✅ LA CERVEZA SIGUE SÓLIDA tras la reposición del sábado: 143 nacionales, 34 coronas y 25 importadas. A este ritmo de consumo (12 cervezas el martes) hay inventario para dos semanas. 📌 TRES REFERENCIAS PARA EL PRÓXIMO PEDIDO: agua tónica, ginebra y Dry Martini. Las tres alimentan la coctelería, que es justo lo que más margen deja."
+  },
+  {
+    date: "2026-11-18", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:3},
+      {nombre:"AGT BOTLLA CAUCANO",saldo:7},
+      {nombre:"AGT BOTELLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑO",saldo:7},
+      {nombre:"AGT MEDIA CAUCANO",saldo:4},
+      {nombre:"AGUA",saldo:25},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETO",saldo:0},
+      {nombre:"AMARILLO BOTELLA",saldo:0},
+      {nombre:"AMARILLO MEDIA",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:3},
+      {nombre:"CERVEZA CORONA",saldo:34},
+      {nombre:"CERVEZA IMPORTADA",saldo:25},
+      {nombre:"CERVEZA NACIONAL",saldo:129},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:1},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:111},
+      {nombre:"GASEOSA 1.5",saldo:22},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR DE CAFE",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:4},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOT",saldo:0},
+      {nombre:"RON CALDAS MED",saldo:2},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"SMIRNOFF",saldo:13},
+      {nombre:"SMIRNOFF BOTELLA",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:2},
+      {nombre:"TRIPLE SEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO",saldo:0},
+      {nombre:"VODKA ABS BOTELLA",saldo:0},
+      {nombre:"VODKA ABS MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:1},
+      {nombre:"BUCHANANS BOTELLA",saldo:2},
+      {nombre:"BUCHANANS MEDIA",saldo:1},
+      {nombre:"WHISKY COCTELERIA",saldo:1},
+      {nombre:"OLD PAR BOTELLA",saldo:1},
+      {nombre:"OLD PAR MEDIA",saldo:1}
+    ],
+    nota: "MIÉRCOLES 18 NOV — CRUCE 11/11 PERFECTO: amareto (1→0), nacional (143→129), crema de whisky (1→0), curazao azul (3→2), Electrolit (3→2), gaseosa (120→111), ginebra ML (2→1), licor de manzana (5→4), tequila botella (2→1), tequila ML (3→2) y triple sec (2→1). ✅ LA APERTURA CUADRA EXACTO con el cierre del martes en las 51 referencias. ⚠️⚠️ LA COLUMNA FINAL VIENE CORRIDA — SEXTO EPISODIO EN DOCE DÍAS, revisada línea por línea según la regla. El papel imprime los valores de la NACIONAL en la línea de CERVEZA IMPORTADA (0 14 129), los de la GASEOSA en la línea de ENCENDEDOR (0 9 111), los de GINEBRA ML en GINEBRA DL, los de TEQUILA BOTELLA en SMIRNOFF BOT y los de TRIPLE SEC en TEQUILA ML. 📌 CÓMO SE VALIDÓ: reconstruido con apertura + Ent − Sal, las once referencias con movimiento coinciden EXACTO con el acumulado del bar, y los saldos legibles del papel (129, 111, 25, 34, 22, 13) confirman la lectura. 📌 SEIS EPISODIOS EN DOCE DÍAS YA NO ES UN ACCIDENTE. El comprobante de inventario del POS no sirve como control mientras desalinee nombre y saldo. HAY QUE ESCALÁRSELO AL PROVEEDOR: cualquiera que lo lea sin cruzarlo contra el bar va a concluir faltantes que no existen. 🚩🚩 UNA BOTELLA DE TEQUILA SALIÓ DE BODEGA (2→1) el mismo día que salió una medida de tequila ML. Las cinco margaritas se preparan con ML. A carta la botella vale $195.000 y el estanco total del día fue $77.000: NO ESTÁ VENDIDA. O es traslado al Búnker sin la factura cero, o se abrió para fraccionar sin registrar la conversión. ES LA SALIDA MÁS CARA SIN EXPLICAR DE LA SEMANA — preguntar hoy. 🚩 TRES INSUMOS DE COCTELERÍA QUEDAN EN CERO O EN UNO: amareto 0, crema de whisky 0, triple sec 1, ginebra ML 1. El triple sec entra en margarita y cosmopolitan, que fueron 7 de los 16 cócteles de hoy. REPONER ESTA SEMANA. 🚩 RON: Caldas botella en cero y Ron DL cumple 33 DÍAS EN CERO desde el pago de $200.000 del 28-oct. Los dos mojitos de hoy salieron de las 2 medias que quedan. ✅ LA CERVEZA SIGUE SÓLIDA: 129 nacionales, 34 coronas y 25 importadas tras la reposición del sábado."
+  },
+  {
+    date: "2026-11-19", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:3},
+      {nombre:"AGT BOTLLA CAUCANO",saldo:7},
+      {nombre:"AGT BOTELLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑO",saldo:7},
+      {nombre:"AGT MEDIA CAUCANO",saldo:2},
+      {nombre:"AGUA",saldo:25},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETO",saldo:0},
+      {nombre:"AMARILLO BOTELLA",saldo:0},
+      {nombre:"AMARILLO MEDIA",saldo:1},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:3},
+      {nombre:"CERVEZA CORONA",saldo:34},
+      {nombre:"CERVEZA IMPORTADA",saldo:24},
+      {nombre:"CERVEZA NACIONAL",saldo:124},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:1},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:102},
+      {nombre:"GASEOSA 1.5",saldo:20},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR DE CAFE",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:4},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOT",saldo:0},
+      {nombre:"RON CALDAS MED",saldo:1},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"SMIRNOFF",saldo:13},
+      {nombre:"SMIRNOFF BOTELLA",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:2},
+      {nombre:"TRIPLE SEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO",saldo:0},
+      {nombre:"VODKA ABS BOTELLA",saldo:0},
+      {nombre:"VODKA ABS MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:1},
+      {nombre:"BUCHANANS BOTELLA",saldo:2},
+      {nombre:"BUCHANANS MEDIA",saldo:1},
+      {nombre:"WHISKY COCTELERIA",saldo:1},
+      {nombre:"OLD PAR BOTELLA",saldo:1},
+      {nombre:"OLD PAR MEDIA",saldo:1}
+    ],
+    nota: "JUEVES 19 NOV — CRUCE 6/6 PERFECTO: aguardiente media Caucano (4→2), cerveza importada (25→24), cerveza nacional (129→124), gaseosa (111→102), gaseosa 1.5 (22→20) y ron Caldas media (2→1). ✅ LA APERTURA CUADRA EXACTO con el cierre del miércoles en las 51 referencias. ⚠️ LA COLUMNA FINAL VIENE CORRIDA EN EL TRAMO DE ABAJO — séptimo episodio en trece días, revisada línea por línea según la regla. Desde TEQUILA ML hacia el final, cada producto muestra los valores del siguiente: el papel imprime 1 en TEQUILA ML (que es el saldo del TRIPLE SEC) y 3 en TRIPLE SEC (que es el del VINO BOTELLA). 📌 CÓMO SE VALIDÓ: las seis referencias con movimiento están en el tramo ALTO de la tirilla, que viene bien alineado, y sus saldos impresos (2, 24, 124, 102, 20, 1) coinciden EXACTO con apertura − Sal y con el acumulado del bar. El tramo corrido solo afecta referencias SIN movimiento, que conservan su saldo de apertura. 🚩🚩🚩 EL RON SE ACABA MAÑANA: queda UNA media de Ron Caldas, la botella está en cero y el Ron DL cumple 34 DÍAS EN CERO desde el pago por transferencia de $200.000 del 28-oct. Hoy salieron un mojito y un cuba libre de esa media. MAÑANA ES VIERNES, que es el día de mayor coctolería: el viernes 06-nov se vendieron 13 micheladas y una pecera, y el 13-nov no hubo ni un mojito justamente por falta de ron. HAY QUE COMPRAR RON HOY. Y de paso reclamar los $200.000 del proveedor de Ron DL, que lleva más de un mes sin entregar. 🚩 AGUARDIENTE: la media Caucano baja de 4 a 2 tras la primera venta desde el 13-nov. Quedan 7 botellas Caucano, 3 Antioqueño, 7 medias Antioqueño y 2 medias Caucano — inventario holgado. 🚩 INSUMOS DE COCTELERÍA EN MÍNIMOS: amareto 0, crema de whisky 0, ginebra ML 1, triple sec 1, ginebra botella y DL en 0, Dry Martini 0. Son seis referencias que alimentan la carta de cócteles, que es justo lo que deja más margen. PEDIDO DE COCTELERÍA ESTA SEMANA. ✅ LA CERVEZA SIGUE SÓLIDA: 124 nacionales, 34 coronas y 24 importadas."
+  },
+  {
+    date: "2026-11-20", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:1},
+      {nombre:"AGT BOTLLA CAUCANO",saldo:7},
+      {nombre:"AGT BOTELLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑO",saldo:7},
+      {nombre:"AGT MEDIA CAUCANO",saldo:2},
+      {nombre:"AGUA",saldo:25},
+      {nombre:"AGUA TONICA",saldo:3},
+      {nombre:"AMARETO",saldo:0},
+      {nombre:"AMARILLO BOTELLA",saldo:0},
+      {nombre:"AMARILLO MEDIA",saldo:0},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:29},
+      {nombre:"CERVEZA IMPORTADA",saldo:19},
+      {nombre:"CERVEZA NACIONAL",saldo:115},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:1},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:2},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:86},
+      {nombre:"GASEOSA 1.5",saldo:20},
+      {nombre:"GINEBRA BOTELLA",saldo:0},
+      {nombre:"GINEBRA DL",saldo:0},
+      {nombre:"GINEBRA ML",saldo:1},
+      {nombre:"LICOR DE CAFE",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:4},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:2},
+      {nombre:"RON CALDAS BOT",saldo:0},
+      {nombre:"RON CALDAS MED",saldo:0},
+      {nombre:"RON DL",saldo:0},
+      {nombre:"SMIRNOFF",saldo:13},
+      {nombre:"SMIRNOFF BOTELLA",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:1},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLE SEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:1},
+      {nombre:"VINO CASILLERO",saldo:0},
+      {nombre:"VODKA ABS BOTELLA",saldo:0},
+      {nombre:"VODKA ABS MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:1},
+      {nombre:"BUCHANANS BOTELLA",saldo:2},
+      {nombre:"BUCHANANS MEDIA",saldo:1},
+      {nombre:"WHISKY COCTELERIA",saldo:1},
+      {nombre:"OLD PAR BOTELLA",saldo:1},
+      {nombre:"OLD PAR MEDIA",saldo:1}
+    ],
+    nota: "VIERNES 20 NOV — CRUCE 11/11 PERFECTO: aguardiente botella Antioqueño (3→1), amarillo media (1→0), caja de vino (3→2), corona (34→29), importada (24→19), nacional (124→115), gaseosa (102→86), ron Caldas media (1→0), tequila botella (Ent 2 / Sal 2 → 1), tequila ML (2→1) y vino botella (3→1). ✅✅ TIRILLA LIMPIA EN LAS DOS COLUMNAS — revisada línea por línea según la regla, sin un solo desfase, y es el día con más referencias en movimiento de la semana. ✅ LA APERTURA CUADRA EXACTO con el cierre del jueves en las 51 referencias. 📌📌 TRASLADO AL BÚNKER CON SOPORTE: la factura A-019063, marcada a mano \"Bunker\" y emitida en valor CERO, cubre 2 AGUARDIENTE BOTELLA ANTIOQUEÑO y 1 VINO BOTELLA. Por eso el aguardiente baja de 3 a 1 y el vino de 3 a 1 (una vendida, una trasladada). A carta son $270.000 para la cuenta corriente Búnker ↔ Sala. ES LA SEGUNDA FACTURA DE TRASLADO EN OCHO DÍAS — la práctica se está instalando y hay que sostenerla. ✅✅ ENTRARON 2 BOTELLAS DE TEQUILA y salieron las 2 el mismo día. El patrón Ent=Sal a veces indica corrección de cargue doble, pero aquí no: sin esas botellas el estanco no llega a $688.000. Se vendieron. 🚩🚩🚩 EL RON QUEDÓ EN CERO POR LAS TRES REFERENCIAS: Caldas botella, Caldas media y Ron DL. Salió la última media con el mojito de hoy, y el Ron DL cumple 35 DÍAS EN CERO desde el pago por transferencia de $200.000 del 28-oct. MAÑANA ES SÁBADO, el día de mayor coctolería de la semana. SIN RON NO HAY MOJITO, NI CUBA LIBRE, NI PECERA — y la pecera sola vale $95.000. HAY QUE COMPRAR RON HOY. 🚩 EL AGUARDIENTE AMARILLO QUEDA EN CERO POR LOS DOS LADOS: la botella desde el 30-oct y ahora la media. 🚩 INSUMOS DE COCTELERÍA EN MÍNIMOS por tercer día: amareto 0, crema de whisky 0, Dry Martini 0, ginebra botella y DL 0, ginebra ML 1, triple sec 1, tequila ML 1. SON SIETE REFERENCIAS QUE ALIMENTAN LA CARTA DE CÓCTELES, que es lo que más margen deja. EL PEDIDO DE COCTELERÍA YA NO PUEDE ESPERAR. ✅ LA CERVEZA SIGUE HOLGADA: 115 nacionales, 29 coronas y 19 importadas."
+  },
+  {
+    date: "2026-11-21", tipo: "final",
+    items: [
+      {nombre:"AGT BOTLLA ANQUEÑ",saldo:6},
+      {nombre:"AGT BOTLLA CAUCANO",saldo:7},
+      {nombre:"AGT BOTELLA REAL",saldo:0},
+      {nombre:"AGT MEDIA ANQUEÑO",saldo:6},
+      {nombre:"AGT MEDIA CAUCANO",saldo:4},
+      {nombre:"AGUA",saldo:22},
+      {nombre:"AGUA TONICA",saldo:8},
+      {nombre:"AMARETO",saldo:0},
+      {nombre:"AMARILLO BOTELLA",saldo:2},
+      {nombre:"AMARILLO MEDIA",saldo:2},
+      {nombre:"CACHAZA",saldo:0},
+      {nombre:"CAJA DE VINO",saldo:2},
+      {nombre:"CERVEZA CORONA",saldo:28},
+      {nombre:"CERVEZA IMPORTADA",saldo:13},
+      {nombre:"CERVEZA NACIONAL",saldo:114},
+      {nombre:"CHICLETS",saldo:0},
+      {nombre:"CIGARRILLOS",saldo:1},
+      {nombre:"CREMA DE WHISKY",saldo:0},
+      {nombre:"CURAZAO AZUL",saldo:2},
+      {nombre:"DRY MARTINY",saldo:0},
+      {nombre:"ELECTROLIT",saldo:4},
+      {nombre:"ENCENDEDOR",saldo:0},
+      {nombre:"GASEOSA",saldo:91},
+      {nombre:"GASEOSA 1.5",saldo:20},
+      {nombre:"GINEBRA BOTELLA",saldo:1},
+      {nombre:"GINEBRA DL",saldo:5},
+      {nombre:"GINEBRA ML",saldo:0},
+      {nombre:"LICOR DE CAFE",saldo:0},
+      {nombre:"LICOR DE MANZANA",saldo:4},
+      {nombre:"LICOR DE MENTA",saldo:1},
+      {nombre:"RED BULL",saldo:1},
+      {nombre:"RON CALDAS BOT",saldo:2},
+      {nombre:"RON CALDAS MED",saldo:1},
+      {nombre:"RON DL",saldo:4},
+      {nombre:"SMIRNOFF",saldo:13},
+      {nombre:"SMIRNOFF BOTELLA",saldo:0},
+      {nombre:"TEQUILA BOTELLA",saldo:2},
+      {nombre:"TEQUILA LITRO",saldo:0},
+      {nombre:"TEQUILA MEDIA",saldo:2},
+      {nombre:"TEQUILA ML",saldo:1},
+      {nombre:"TRIPLE SEC",saldo:1},
+      {nombre:"VINO BOTELLA",saldo:3},
+      {nombre:"VINO CASILLERO",saldo:0},
+      {nombre:"VODKA ABS BOTELLA",saldo:0},
+      {nombre:"VODKA ABS MEDIA",saldo:0},
+      {nombre:"VODKA DL",saldo:6},
+      {nombre:"BUCHANANS BOTELLA",saldo:2},
+      {nombre:"BUCHANANS MEDIA",saldo:1},
+      {nombre:"WHISKY COCTELERIA",saldo:1},
+      {nombre:"OLD PAR BOTELLA",saldo:1},
+      {nombre:"OLD PAR MEDIA",saldo:1}
+    ],
+    nota: "SÁBADO 21 NOV — CRUCE 10/10 PERFECTO: aguardiente media Antioqueño (7→6), agua (25→22), agua tónica (3+6−1=8), corona (29→28), importada (19→13), nacional (115→114), gaseosa (86+24−19=91), ginebra ML (1→0), Red Bull (2→1) y Ron DL (0+5−1=4). ✅✅ TIRILLA LIMPIA EN LAS DOS COLUMNAS y apertura cuadrando EXACTO con el cierre del viernes en las 51 referencias. Revisada línea por línea según la regla. ✅✅✅ LLEGÓ EL RON DL — TREINTA Y SEIS DÍAS DESPUÉS DEL PAGO DE $200.000 DEL 28-OCT. Entraron 5 unidades y se vendió 1. Con él llegaron 2 botellas y 1 media de Ron Caldas: el ron pasó de CERO en las tres referencias a quedar surtido. 📌 PERO EL RON DE HOY SE PAGÓ APARTE: $100.000 a Don Luis, en efectivo, registrado en la nota de gastos. LOS $200.000 DEL 28-OCT SIGUEN SIN MERCANCÍA ASOCIADA. Hay que reclamarlos — ya son 36 días y ahora además se pagó dos veces por el mismo producto. ✅✅✅ LA REPOSICIÓN MÁS COMPLETA DEL MES — 65 UNIDADES: 24 gaseosas, 6 tónicas Schweppes, 5 aguardientes Antioqueño botella, 5 ginebra DL, 5 Ron DL, 5 Vodka DL, 2 Caucano media, 2 Amarillo botella, 2 Amarillo media, 2 Electrolit, 2 Ron Caldas botella, 2 vino botella, 1 Ron Caldas media, 1 ginebra botella y 1 tequila botella. ✅ SE ATENDIÓ LA ALERTA COMPLETA DE COCTELERÍA que venía marcando desde el 18-nov: ginebra (botella, DL y ML estaban en 0/0/1 → ahora 1/5/0), ron (las tres en cero → ahora 2/1/4), tequila botella (1→2) y aguardiente amarillo (en cero por los dos lados desde el 30-oct → ahora 2 y 2). ✅✅ Y CADA ENTRADA CUADRA CON SU FACTURA: el D1 del 21-nov (H6Z9543053) trae Tequila Neto $49.950 y Ginebra Dafne $44.950 — justo las dos botellas que entraron. El soporte de Coca-Cola del 20-nov trae 6 Schweppes tónica, 12 Coca-Cola Zero y 12 Coca-Cola — las 6 tónicas y las 24 gaseosas. ES LA MEJOR TRAZABILIDAD ENTRE FACTURAS E INVENTARIO DE TODO EL ARCHIVO. 🚩 QUEDAN EN CERO CINCO REFERENCIAS DE COCTELERÍA: amareto, crema de whisky, Dry Martini, ginebra ML (se fraccionará de la botella nueva) y licor de café. También Cachaza, Smirnoff botella, Tequila litro, Vino Casillero y Vodka Absolut (las dos). ✅ EL INVENTARIO QUEDA EN SU MEJOR ESTADO DEL MES: 114 nacionales, 28 coronas, 13 importadas, 6 aguardientes Antioqueño, 7 Caucano, ron surtido y ginebra repuesta."
   }
 ];
 
@@ -21929,6 +22354,45 @@ const PRELOADED_GASTOS = [
       { concepto: "Faltante de tarjeta", valor: 700, categoria: "Diferencia de caja", nota: "Datáfono $346.900 vs POS $346.200. Decimotercer día de noviembre con diferencia sin conciliar." }
     ],
     nota: "MARTES 17 NOV — Gastos $53.700, el 13,7% de la venta. ✅ LA NOTA SUMA EXACTO: $5.000 + $48.000 + $700 = $53.700. ✅ LA CUENTA DE COBRO DE LA GALERÍA (#84) VIENE FECHADA HOY, 17/nov, por $48.000: uva, hierbabuena, romero, fresa y mora. Insumo de coctelería, al día. 📌 UN DETALLE EN ESA CUENTA: los ítems escritos a mano no suman el total — según se lean, dan $48.000 o $57.000 dependiendo de si la hierbabuena es $1.000 o $10.000 y la fresa $20.000 o $29.000. El TOTAL escrito ($48.000) sí coincide con la nota y con el POS, así que registro ese valor, pero conviene pedirle al proveedor que escriba los unitarios con más claridad. 🚩 FALTANTE DE TARJETA $700: datáfono $346.900 contra POS $346.200. Vuelve la diferencia después del cero del sábado. Es un monto trivial, pero YA VAN TRECE DÍAS DE NOVIEMBRE con diferencias de datáfono y SIGO SIN EL EXTRACTO. Sin él no se puede saber si es redondeo del operador, comisión no visible o transacciones que no llegan. 🚩🚩🚩 Y EL PROBLEMA GRANDE DE CAJA: LA BASE YA VA EN $648.750 SIN REPONER. Sábado $470.850 + domingo $40.000 + hoy $137.900, y TRES DÍAS SEGUIDOS cerrando con CERO efectivo. 📌 La práctica de reponer al día siguiente se instaló la semana pasada — $95.900 el martes 10 y $17.100 el viernes 13 — y se soltó por completo desde el fin de semana. CON $648.750 FUERA DE LA BASE EL NEGOCIO OPERA SIN COLCHÓN: si llega un proveedor de contado, no hay con qué pagarle, y Bavaria se paga de contado. ESTA ES LA PRIORIDAD DE CAJA DE LA SEMANA."
+  },
+  {
+    date: "2026-11-18", total: 188300,
+    items: [
+      { concepto: "Reposición de base — sobrante martes 17/11", valor: 137900, categoria: "Movimiento de caja — NO operativo", nota: "Devolución al cajón con nota de respaldo propia. No reduce el resultado. ✅" },
+      { concepto: "Reposición de base — sobrante domingo 15/11", valor: 40000, categoria: "Movimiento de caja — NO operativo", nota: "Devolución al cajón con nota de respaldo propia. No reduce el resultado. ✅" },
+      { concepto: "Faltante de tarjeta", valor: 5400, categoria: "Diferencia de caja", nota: "Decimocuarto día de noviembre con diferencia de datáfono sin conciliar." },
+      { concepto: "Comida personal", valor: 5000, categoria: "Nómina en especie" }
+    ],
+    nota: "MIÉRCOLES 18 NOV — Gastos POS $188.300. ✅ LA NOTA SUMA EXACTO: $5.000 + $5.400 + $40.000 + $137.900 = $188.300. ✅✅✅ LO IMPORTANTE: $177.900 DE LOS $188.300 NO SON GASTO — son REPOSICIÓN DE BASE del domingo 15 ($40.000) y del martes 17 ($137.900), cada uno con su propia nota de respaldo separada. ✅✅ LA PRÁCTICA ESTÁ VOLVIENDO: es la tercera reposición del mes ($95.900 el 10-nov, $17.100 el 13-nov y $177.900 hoy), y esta vez vino con el soporte partido por día, que es como debería ser siempre. 💰 EL GASTO OPERATIVO REAL DEL DÍA FUERON $10.400 — el 1,4% de la venta. Por eso el resultado económico del miércoles es +$324.450 y no +$146.550: el neto POS castiga el día con una devolución de caja que no es gasto. CON EL ARRIENDO CARGADO, EL DÍA CIERRA EN +$138.581. 🚩 PERO QUEDAN $1.257.050 DE BASE SIN REPONER, y el más antiguo es el más grande: el SÁBADO 07-NOV con $785.300, que lleva once días pendiente y NUNCA apareció en ninguna de las tres reposiciones. Le siguen el sábado 14 ($470.850) y $900 del 01-nov. 📌 LOS DOS PENDIENTES SON SÁBADOS, y es lógico: son los días en que se le paga de contado a los proveedores con plata del cajón. CONVIENE FIJAR LA REGLA de reponer cada lunes lo que haya salido el fin de semana. 🚩 FALTANTE DE TARJETA $5.400 — decimocuarto día de noviembre con diferencia de datáfono y SIGO SIN EL EXTRACTO. En lo que va del mes las diferencias suman unos $30.000: pequeñas una a una, pero sin extracto no hay forma de saber si son redondeo, comisión o transacciones que no llegan."
+  },
+  {
+    date: "2026-11-19", total: 34220,
+    items: [
+      { concepto: "Faltante de tarjeta", valor: 29220, categoria: "Diferencia de caja", nota: "🚩🚩🚩 EL MÁS GRANDE DEL ARCHIVO. 6,3% de lo facturado por datáfono. Tres veces el mayor anterior ($8.900). NO es redondeo — requiere el extracto URGENTE." },
+      { concepto: "Comida personal", valor: 5000, categoria: "Nómina en especie" }
+    ],
+    nota: "JUEVES 19 NOV — Gastos POS $34.220. ✅ LA NOTA SUMA EXACTO: $5.000 + $29.220 = $34.220. 💰 PERO EL GASTO OPERATIVO REAL FUERON $5.000 — la comida del personal. Los otros $29.220 son una DIFERENCIA DE CAJA, no una compra: no se gastó en nada, faltó. 🚩🚩🚩 Y ESE FALTANTE DE TARJETA DE $29.220 ES EL MÁS GRANDE DEL ARCHIVO, con mucha diferencia. Los de noviembre venían siendo $8.900 (10-nov), $5.400 (18-nov), $3.000 (11-nov), $2.300 (13-nov), $1.300 (12-nov) y $700 (17-nov). Hoy es TRES VECES el mayor anterior y representa EL 6,3% DE TODO LO FACTURADO POR DATÁFONO ($463.200). 📌 UN REDONDEO DE OPERADOR NO PRODUCE $29.220. Las explicaciones posibles son otras: una transacción que no llegó a la cuenta, una comisión retenida que no estamos viendo, un cobro digitado por un valor distinto al de la factura, o una devolución. 📄 EL EXTRACTO DEL DATÁFONO DEJA DE SER UNA TAREA PENDIENTE Y PASA A SER URGENTE. En lo que va de noviembre las diferencias acumulan ~$59.000 y la mitad es de hoy. Es el único frente del negocio donde se está perdiendo plata sin saber por qué. 🚩 SOBRANTE $116.220 Y CERO EFECTIVO: la base pendiente sube a $1.373.270. Ayer se repusieron $177.900 y hoy volvió a salir casi lo mismo. MIENTRAS LOS SOBRANTES SE GENEREN MÁS RÁPIDO DE LO QUE SE REPONEN, EL HUECO NO SE CIERRA. 📌 Conviene separar las dos cosas: reponer el acumulado viejo de una vez (los dos sábados, $1.256.150) y de ahí en adelante reponer cada día lo del día anterior."
+  },
+  {
+    date: "2026-11-20", total: 10000,
+    items: [
+      { concepto: "Comida personal (sin nota de respaldo)", valor: 10000, categoria: "Nómina en especie", nota: "📌 No llegó nota de gastos del día. Registrado por el valor del POS; el concepto se infiere del monto y del patrón. ✅ SIN faltante de tarjeta por primera vez en tres días." }
+    ],
+    nota: "VIERNES 20 NOV — Gastos $10.000, el 0,7% de la venta. ES EL GASTO MÁS BAJO DEL ARCHIVO EN PROPORCIÓN para un día de más de un millón de venta. No llegó nota de gastos con el detalle; por el monto corresponde a la comida del personal. ✅✅ Y NO HAY LÍNEA DE FALTANTE DE TARJETA — después del descuadre de $29.220 de ayer, hoy el datáfono no dejó diferencia. Es una buena señal, pero NO sustituye el extracto: lo de ayer sigue sin explicarse y noviembre acumula $57.920 en diferencias de datáfono. ✅ SIN COMPRAS, SIN HIELO Y SIN DOMICILIOS en un viernes de $1.340.800 — por eso el día cierra en +$565.251 después del arriendo, el mejor resultado real desde el 06-nov. 🚩 PERO EL SOBRANTE FUE $113.500 Y EL EFECTIVO CERO: con gastos de solo $10.000, la base financió la nómina de $197.500 porque TODA la venta entró por datáfono. LA BASE PENDIENTE SUBE A $1.486.770 y es el tercer día seguido generando sobrante tras la reposición del miércoles. 📌 EL PATRÓN YA ES ESTRUCTURAL, NO UN DESCUIDO: cuando el efectivo del día es cero y la nómina se paga en efectivo, la base SIEMPRE va a quedar corta. O se le paga la nómina por transferencia, o hay que reponer la base todos los días sin excepción. Con $1,48 millones acumulados, esto ya no se arregla con reposiciones esporádicas."
+  },
+  {
+    date: "2026-11-21", total: 482400,
+    items: [
+      { concepto: "Compras D1 — Tequila Neto y Ginebra Dafne (H6Z9543053)", valor: 101300, categoria: "Reposición", nota: "Tequila Neto $49.950 + Ginebra Dafne $44.950 + naranja $6.400. Factura DIAN del 21/11. ✅ Cuadra EXACTO con las entradas de tequila botella +1 y ginebra botella +1 del inventario." },
+      { concepto: "Don Luis — Ron", valor: 100000, categoria: "Reposición", nota: "✅✅ ES EL RON QUE FALTABA HACE 36 DÍAS: entraron 5 Ron DL, 2 Ron Caldas botella y 1 media. 🚩 PERO los $200.000 pagados por transferencia el 28-oct siguen sin mercancía — se terminó pagando dos veces. RECLAMAR." },
+      { concepto: "Compras D1 — aseo y cocina (H6Z9542301)", valor: 86300, categoria: "Insumos", nota: "Servilletas, toalla de cocina, jabón, encendedor, paños, leche y fruta. Factura DIAN del 19/11." },
+      { concepto: "Limones — Cítricos Narváez (factura 10186)", valor: 80000, categoria: "Insumos", nota: "Limón tahití. Factura del 21/11, el mismo día. ✅" },
+      { concepto: "Coca-Cola — 6 Schweppes tónica + 24 gaseosas", valor: 67500, categoria: "Reposición", nota: "Soporte de entrega del 20/11, cliente 1224121862. ✅ Cuadra EXACTO con agua tónica +6 y gaseosa +24 del inventario." },
+      { concepto: "Hielo — 10 bolsas (Hielos Puracé 28152)", valor: 35000, categoria: "Insumos", nota: "Factura del 21/11, el mismo día. ✅" },
+      { concepto: "Comida personal", valor: 10000, categoria: "Nómina en especie" },
+      { concepto: "Faltante de tarjeta", valor: 2300, categoria: "Diferencia de caja", nota: "Vuelve a montos normales tras los $29.220 del jueves. Noviembre acumula $60.220." }
+    ],
+    nota: "SÁBADO 21 NOV — Gastos $482.400, el 34,7% de la venta. ✅ LA NOTA SUMA EXACTO y cuadra con el POS al peso. 💰 PERO $268.800 SON REPOSICIÓN DE INVENTARIO y están en bodega, no perdidos: Don Luis $100.000 (el ron), D1 $101.300 (tequila y ginebra) y Coca-Cola $67.500 (gaseosas y tónicas). EL GASTO VERDADERAMENTE CONSUMIDO FUERON $213.600 — el 15,4% de la venta: limones $80.000, D1 de aseo y cocina $86.300, hielo $35.000, comida $10.000 y el faltante de tarjeta $2.300. ✅✅✅ TRAZABILIDAD PERFECTA — LAS CINCO COMPRAS CON FACTURA Y NÚMERO, y todas cruzan con el inventario: Hielos Puracé 28152 del 21/11, Cítricos Narváez 10186 del 21/11 ($80.000 de limón tahití), D1 H6Z9542301 del 19/11 ($86.300 de servilletas, jabón, leche y aseo), D1 H6Z9543053 del 21/11 ($101.300 = Tequila Neto $49.950 + Ginebra Dafne $44.950 + naranja $6.400) y el soporte de Coca-Cola del 20/11 ($67.500 = 6 Schweppes + 24 gaseosas). ES LA MEJOR SEMANA DE SOPORTES DEL ARCHIVO. 📌 OJO CON EL RON: los $100.000 a Don Luis trajeron el Ron DL que faltaba hace 36 días. PERO LOS $200.000 PAGADOS POR TRANSFERENCIA EL 28-OCT SIGUEN SIN MERCANCÍA. En la práctica se pagó dos veces por el mismo producto: $300.000 por un pedido de $100.000. RECLAMAR YA. ✅ FALTANTE DE TARJETA $2.300 — vuelve a montos normales tras los $29.220 del jueves. Noviembre acumula $60.220 en diferencias de datáfono y el extracto sigue pendiente. 🚩 SOBRANTE $421.600 Y CERO EFECTIVO por sexto día del mes: toda la venta entró por datáfono y la base pagó $482.400 de proveedores más $200.000 de nómina. ✅ PERO EL 20-NOV SE ENTREGARON $600.000 EN EFECTIVO para completar la base — registrado aparte como movimiento de caja. Con esa entrega, LA BASE PENDIENTE QUEDA EN $1.308.370. 📌 LA ENTREGA AYUDA PERO NO RESUELVE EL FONDO: mientras la nómina y los proveedores se paguen en efectivo y la venta entre íntegramente por datáfono, la base se vacía todos los fines de semana. Los dos sábados grandes del mes (07-nov $785.300 y 14-nov $470.850) siguen sin reponer."
   }
 ];
 
@@ -22534,9 +22998,9 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Reposición de base de caja", categoria: "Movimiento de caja — NO operativo", valor: 107000, nota: "✅ CRUCE RESUELTO: los $107.000 son exactamente el SOBRANTE del miércoles 23-sep (registrado faltante:-107000), cuando la base cubrió nómina $185.000 + gastos $5.000 con efectivo $0. Esta transferencia repone esa base. NO ES COSTO: es movimiento de caja, no reduce el resultado del período. Queda cerrada la bandera del 23-sep." },
   { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Pago sin concepto identificado (a)", categoria: "Por itemizar", valor: 161800, nota: "🚩 SIN CONCEPTO. Llegó en el bloque de pagos del viernes sin descripción. Es el ítem más grande sin identificar del bloque. Pedir el soporte." },
   { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Pago sin concepto identificado (b)", categoria: "Por itemizar", valor: 91200, nota: "🚩 SIN CONCEPTO. Junto con el anterior son $253.000 del bloque sin soporte — el 35% del total transferido ese día. Pedir los comprobantes." },
-  { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Compras D1", categoria: "Insumo operativo / aseo", valor: 73350, nota: "🚩 POSIBLE DUPLICADO. El mismo 25-sep hay una compra D1 de $63.310 dentro de los gastos de caja, soportada por la factura electrónica H7Z09626 y pagada EN EFECTIVO ($100.000, cambio $36.700). Esta transferencia es por $73.350, $10.040 más. O son dos compras distintas el mismo día, o una de las dos está mal registrada. Pedir el comprobante de la transferencia." },
-  { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Limón y fruta", categoria: "Insumo coctelería", valor: 86527, nota: "🚩 POSIBLE DUPLICADO. El mismo día hay $100.000 de limón Tahití en los gastos de caja, soportados por la factura 4715 de Cítricos Narváez. Este pago es por otro valor ($86.527) — pueden ser dos compras (limón por un lado, fruta por otro, que también cruzaría con la compra de La Placita) o un doble registro. ⚠️ ARITMÉTICA: con $86.527 el bloque suma $721.677, $27 por encima del total informado de $721.650; con $86.500 cierra exacto. Confirmar la cifra." },
-  { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Hielos", categoria: "Insumo operativo", valor: 35000, nota: "🚩🚩 DUPLICADO CASI SEGURO. Valor idéntico ($35.000) al de la factura 27987 de Hielos Puracé del mismo 25-sep, que YA está registrada dentro de los gastos de caja del día. Una compra de hielo no se paga dos veces por el mismo monto el mismo día. Lo más probable es que la factura se haya pagado por transferencia y se haya anotado además en la caja. Si se confirma, hay que sacarla de uno de los dos lados: $35.000 contados dos veces." },
+  { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Compras D1", categoria: "Insumo operativo / aseo", valor: 73350, nota: "✅ RESUELTO EL 18-NOV CON LA REGLA DE LA CASA: las facturas se pagan por caja O por transferencia, nunca dos veces. La compra D1 de $63.310 del mismo día se pagó EN EFECTIVO (factura H7Z09626, $100.000 con cambio de $36.700), así que esa factura ya quedó saldada en caja. Esta transferencia de $73.350 es por OTRO valor y corresponde a UNA COMPRA DISTINTA del mismo día. NO ES DUPLICADO — marca retirada." },
+  { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Limón y fruta", categoria: "Insumo coctelería", valor: 86527, nota: "✅ RESUELTO EL 18-NOV CON LA REGLA DE LA CASA: las facturas se pagan por caja O por transferencia, nunca dos veces. Los $100.000 de limón Tahití del mismo día se pagaron en CAJA con la factura 4715 de Cítricos Narváez, así que esa quedó saldada ahí. Esta transferencia de $86.527 es por otro valor: ES OTRA COMPRA — la fruta, que cruza con La Placita. NO ES DUPLICADO — marca retirada. ⚠️ ARITMÉTICA: con $86.527 el bloque suma $721.677, $27 por encima del total informado de $721.650; con $86.500 cierra exacto. Confirmar la cifra." },
+  { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Hielos", categoria: "Insumo operativo", valor: 35000, nota: "🚩🚩 DUPLICADO CONFIRMADO EL 18-NOV POR LA REGLA DE LA CASA: las facturas se pagan por caja O por transferencia, nunca dos veces. La factura 27987 de Hielos Puracé por $35.000 está registrada en los gastos de CAJA del 25-sep Y también como esta transferencia, por el MISMO valor y el MISMO día. Es la única de las tres marcas del 25-sep que la regla no resuelve a favor de dos compras distintas: aquí el valor coincide al peso. 💸 SON $35.000 CONTADOS DOS VECES, y hay que anularlos de un lado. 📄 CUÁL ANULAR LO DEFINE EL EXTRACTO BANCARIO: si la transferencia salió de verdad, el error está en la nota de caja; si no salió, sobra este registro. Septiembre ya está cerrado, así que no reescribo el mes — queda documentado para corregirlo cuando se concilie el extracto." },
   { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Comida artista ZicriSabdi", categoria: "Publicidad y eventos", valor: 31800, nota: "Alimentación del artista. Se suma al pago del show de $1.000.000 del 19-sep: el costo total de ZicriSabdi va en $1.031.800. Aun así el retorno sigue siendo claro (ver la nota del 19-sep)." },
   { date: "2026-09-25", semana: 26, periodo: "Sem 4 sep (21 - 27 sep)", concepto: "Sodas litro", categoria: "Reposición inventario", valor: 10000, nota: "REPOSICIÓN DE INVENTARIO: no reduce el resultado del período. 🚩 El inventario del 25-sep cierra GASEOSA 1.5 en 2 con Ent 0 — la compra no ingresó ese día. Verificar en la apertura del 26 (que también trae 2). Igual que los 2 Menta Chao del 26-sep, es compra que no aparece como entrada." },
   // ─── Bloque informado por Juanma el 04-oct: 6 movimientos entre el 20-sep y el 3-oct, $4.465.630 ───
@@ -22591,9 +23055,9 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
   {
     date: "2026-11-14", semana: 33, periodo: "Sem 2 nov (9 - 15 nov)",
     concepto: "Un bulto de limón",
-    categoria: "Insumos coctelería — POSIBLE DUPLICADO",
+    categoria: "Insumos coctelería",
     valor: 80000,
-    nota: "⚠️⚠️ VERIFICAR SI ES COMPRA NUEVA O REEMBOLSO. En las notas de caja ya quedaron registrados DOS bultos de limón de $80.000 cada uno pagados en efectivo: el 12-nov (Cítricos Narváez factura 10036) y el 13-nov (factura 4199). Si esta transferencia del 14-nov corresponde a un TERCER bulto, está bien registrada como gasto. PERO SI ES EL REEMBOLSO de alguno de los dos que ya salieron de la base, entonces NO es gasto nuevo — es movimiento de caja — y estaría contado dos veces. 📄 SE RESUELVE CON UNA SOLA PREGUNTA: ¿hay una tercera factura de Cítricos Narváez fechada el 14-nov? 📌 Tres bultos en tres días sería un consumo alto pero no imposible: el limón es el insumo principal de la coctelería y esa semana se vendieron 23 cócteles el martes y 22 el miércoles."
+    nota: "✅ RESUELTO EL 18-NOV CON LA REGLA DE LA CASA: las facturas se pagan por caja O por transferencia, nunca dos veces. Los bultos del 12-nov (Cítricos Narváez 10036) y del 13-nov (factura 4199) salieron de CAJA, así que sus facturas ya quedaron saldadas ahí. Esta transferencia del 14-nov NO puede ser el reembolso de ninguna de las dos: ES UN TERCER BULTO, con su propia factura. Queda registrado como gasto de insumo, sin marca de duplicado. 📌 Tres bultos en tres días es consumo alto pero coherente: el limón es el insumo principal de la coctolería y esa semana se vendieron 23 cócteles el martes, 22 el miércoles y 10 el jueves. 📄 Único pendiente menor: adjuntar la factura del 14-nov al archivo de soportes."
   },
   {
     date: "2026-11-06", semana: 32, periodo: "Sem 1 nov (2 - 8 nov)",
@@ -22601,6 +23065,13 @@ const PRELOADED_GASTOS_TRANSFERENCIA = [
     categoria: "Recaudo de cartera — INGRESO, no gasto",
     valor: -600000,
     nota: "💵💵 INGRESO DE DINERO, NO GASTO — por eso va con valor NEGATIVO: entra a la cuenta bancaria y reduce la salida neta del mes. 📌 POR QUÉ ES CORRECTO SUMARLO AL RESULTADO Y NO DEJARLO SOLO EN CARTERA: cuando cada bono se redimió (agosto, septiembre y el #008 el 31-oct) el consumo entró como GASTO en la caja del POS y redujo el neto de ese día, aunque no era un gasto real sino una cuenta por cobrar contra la Universidad. Este recaudo es el espejo de aquellos gastos: al entrar la plata, se revierte la reducción que se hizo en su momento. Registrarlo solo como baja de cartera dejaba el dinero invisible en el tablero — que es justo lo que Juanma señaló. 📊 DOBLE EFECTO, COMO DEBE SER: la cartera de bonos baja de $700.000 a $100.000 Y el banco sube $600.000. ⚠️ SIGUE PENDIENTE el detalle de cuáles cuatro bonos cubre, para cerrarlos uno a uno en cuentas por cobrar."
+  },
+  {
+    date: "2026-11-20", semana: 34, periodo: "Sem 3 nov (16 - 22 nov)",
+    concepto: "Entrega de efectivo — reposición de base de caja La Sala",
+    categoria: "Movimiento de caja — NO operativo",
+    valor: 600000,
+    nota: "✅✅ ENTREGA DE EFECTIVO PARA COMPLETAR LA BASE DE CAJA DE LA SALA, confirmada por Juanma. 📌 NO ES GASTO NI ES INGRESO: es plata que entra al cajón para restablecer la base que se había consumido pagando proveedores y nómina en efectivo. Por eso va clasificada como MOVIMIENTO DE CAJA y NO afecta el neto. 💰 EFECTO SOBRE LA BASE: venía en $1.486.770 sin reponer al cierre del viernes 20. Con esta entrega baja a $886.770, y con el sobrante del sábado 21 ($421.600) queda en $1.308.370. 📌 ES LA CUARTA REPOSICIÓN DE BASE DEL MES y la primera por entrega directa de efectivo: las tres anteriores ($95.900 el 10-nov, $17.100 el 13-nov y $177.900 el 18-nov) se hicieron descontando de la caja del día. Esta forma es mejor — no castiga el neto de un día específico. 🚩 PERO NO RESUELVE EL FONDO: los dos sábados grandes (07-nov $785.300 y 14-nov $470.850) siguen pendientes, y mientras la venta entre íntegramente por datáfono y la nómina se pague en efectivo, la base se va a seguir vaciando cada fin de semana."
   },
 ];
 
@@ -22646,7 +23117,7 @@ export default function App(){
   const [gastosData,setGastosData]=useState([]);
   const [gastosTransfData,setGastosTransfData]=useState([]);
   const [view,setView]=useState("dashboard");
-  const [selDate,setSelDate]=useState("2026-11-17");
+  const [selDate,setSelDate]=useState("2026-11-21");
   const [loading,setLoading]=useState(true);
 
   useEffect(()=>{
@@ -23092,11 +23563,17 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios,bar}){
 
   const _nd=(cuadres||[]).filter(d=>d.date>=NETO_RESET.desde);
   const _nAcum=_nd.reduce((s,d)=>s+(d.neto_sala||0),0);
-  const _ntr=(gastosTransf||[]).filter(g=>g.date>=NETO_RESET.desde);
+  // CONVENCIÓN DE CAJA (definida por Juanma, 18-nov-2026): TODA salida real de dinero
+  // —transferencia, pago, compra, abono a proveedor, reposición de inventario— resta del neto.
+  // Solo se excluye lo que NO es plata de La Sala saliendo: la inyección de capital de El Búnker
+  // (ya reflejada arriba como la línea que lleva el saldo a cero) y los movimientos internos
+  // entre banco y base de caja, que no salen del negocio.
+  const _NETO_EXCL=/inyecci[oó]n de capital|movimiento de caja|reposici[oó]n de base|reembolso de base/i;
+  const _ntr=(gastosTransf||[]).filter(g=>g.date>=NETO_RESET.desde&&!_NETO_EXCL.test(g.categoria||""));
   const _nIng=_ntr.reduce((s,g)=>s+((g.valor||0)<0?-(g.valor||0):0),0);
-  const _nCons=_ntr.reduce((s,g)=>s+((g.valor||0)>0&&clasificaGasto(g.categoria)==="consumido"?(g.valor||0):0),0);
-  const _nFuera=_ntr.reduce((s,g)=>s+((g.valor||0)>0&&clasificaGasto(g.categoria)!=="consumido"?(g.valor||0):0),0);
-  const _nSaldo=NETO_RESET.saldo_inicial+_nAcum+_nIng-_nCons;
+  const _nSal=_ntr.reduce((s,g)=>s+((g.valor||0)>0?(g.valor||0):0),0);
+  const _nExc=(gastosTransf||[]).filter(g=>g.date>=NETO_RESET.desde&&_NETO_EXCL.test(g.categoria||"")).reduce((s,g)=>s+(g.valor||0),0);
+  const _nSaldo=NETO_RESET.saldo_inicial+_nAcum+_nIng-_nSal;
   const _nUlt=_nd.length?_nd[_nd.length-1].date:NETO_RESET.desde;
   const _NL=({lbl,val,col,bold,sub})=>(
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",padding:"9px 0",borderBottom:`1px solid ${C.bdr}`}}>
@@ -23114,12 +23591,12 @@ function DashboardGeneral({cuadres,cocina,gastos,gastosTransf,inventarios,bar}){
       <_NL lbl={`Neto al abrir el ${fmtD(NETO_RESET.desde)}`} val={NETO_RESET.saldo_inicial} col={C.gold} bold/>
       <_NL lbl="Neto generado en los cuadres" sub={`${_nd.length} día${_nd.length===1?"":"s"} desde el ${fmtD(NETO_RESET.desde)}`} val={_nAcum}/>
       {_nIng>0&&<_NL lbl="Recaudos que entraron a banco" sub="cartera cobrada — no venía en los cuadres" val={_nIng}/>}
-      {_nCons>0&&<_NL lbl="Gastos pagados por transferencia" sub="solo lo consumido; no incluye reposición de inventario" val={-_nCons}/>}
+      {_nSal>0&&<_NL lbl="Salidas de dinero por transferencia" sub={`${_ntr.filter(g=>(g.valor||0)>0).length} pago${_ntr.filter(g=>(g.valor||0)>0).length===1?"":"s"} — compras, proveedores y reposición`} val={-_nSal}/>}
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginTop:14,paddingTop:12,borderTop:`2px solid ${C.gold}50`}}>
         <div>
           <div style={{fontSize:13,color:C.dim,textTransform:"uppercase",letterSpacing:1.5}}>Neto acumulado actual</div>
           <div style={{fontSize:12,color:C.muted,marginTop:2}}>al {fmtD(_nUlt)}</div>
-          {_nFuera>0&&<div style={{fontSize:11,color:C.muted,marginTop:6,maxWidth:330,lineHeight:1.4}}>No se resta {fmtF(_nFuera)} de transferencias: es reposición de inventario (vuelve como stock) y movimientos no operativos.</div>}
+          {_nExc!==0&&<div style={{fontSize:11,color:C.muted,marginTop:6,maxWidth:340,lineHeight:1.4}}>Convención de caja: toda salida real resta. Solo queda fuera {fmtF(Math.abs(_nExc))} que no es plata de La Sala saliendo (inyección de capital y movimientos entre banco y base).</div>}
         </div>
         <div style={{fontSize:36,fontWeight:800,fontFamily:"'Poppins',sans-serif",color:_nSaldo<0?C.red:_nSaldo>0?C.green:C.text,fontVariantNumeric:"tabular-nums"}}>
           {_nSaldo<0?"−":"+"}{fmtF(Math.abs(_nSaldo))}
@@ -24609,7 +25086,7 @@ function BarModule({bar,cuadres,catalog}){
 }
 
 function ComprasModule({compras,cartera,cxc}){
-  const HOY="2026-11-17";
+  const HOY="2026-11-21";
   const cxcList=(cxc||[]).filter(c=>c.estado!=="cobrada");
   const cxcTotal=cxcList.reduce((a,c)=>a+(c.valor||0),0);
   const cxcVenc=cxcList.filter(c=>c.vence<HOY);
